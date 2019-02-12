@@ -1,0 +1,59 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+
+      <h1>My Portfolio</h1>
+      
+      <div class="portfoliogrid">
+          
+          <div id="portfoliopar">
+              <img src="portfolio1.png" class="portfolioicon"/>
+              <h3 class="portfoliotitle">Celestial Simulation</h3>
+              <p class="portfoliotext">A simulation of the solar system, visualized in p5.js</p>
+              <a href="solarsystem.html"><button class="portfoliobutton"><p><b>View Project</b></p></button></a>
+          </div>
+          
+          <div id="portfoliopar">
+              <img src="portfolio2.jpg" class="portfolioicon"/>
+              <h3 class="portfoliotitle">Virtual Pet</h3>
+              <p class="portfoliotext">A virtual dog, visualized in HTML Canvas and JavaScript</p>
+              <a href="virtualpet.html"><button class="portfoliobutton"><p><b>View Project</b></p></button></a>
+          </div>
+          
+          <div id="portfoliopar">
+              <img src="portfolio3.jpg" class="portfolioicon"/>
+              <h3 class="portfoliotitle">Terminal Customizer</h3>
+              <p class="portfoliotext">A tool to customize your terminal, using JavaScript and Bash</p>
+              <a href="terminal.html"><button class="portfoliobutton"><p><b>View Project</b></p></button></a>
+          </div>
+          
+      </div>
+     
+  
+      <div class="footer" id="footerportfolio">
+      <div class="contactbar1">
+      <a href="mailto: ian.ronk0@gmail.com"><img src="contact/emaillogo.png"/></a>
+      <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/"><img src="contact/linkedinlogo.png"/></a>
+      <a href="https://github.com/werdert45"><img src="contact/githublogo.png"/></a>
+      <a href="https://stackoverflow.com/users/9374829/ian-ronk"><img src="contact/stackoverflowlogo.png"/></a>
+      <a href="https://www.instagram.com/ianronk/"><img src="contact/instagramlogo.png"/></a>  
+      </div>
+        
+      <div class="footerproject">
+      <h2>Personal Projects</h2>
+      <br>
+      <a href="#virtualpet"><div class="footerbutton1"><p>Virtual Pet</p></div></a>
+      
+      <a href="#terminal"><div class="footerbutton2"><p>Terminal</p></div></a>
+          </div>
+      <div class="footertext">
+      <h3>IAN RONK</h3>
+      <br>
+      <p>&copy; Copyright 2018-2019</p>
+      <br>  
+      <p>All rights reserved. Powered by !SERVERS!</p>
+      </div>
+      </div>
+ 
+
+{% endblock %}

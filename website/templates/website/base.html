@@ -1,0 +1,24 @@
+{% load staticfiles %}
+
+
+<html>
+<head>
+      <title>Ian Ronk | Portfolio</title>
+      <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+      <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+      <link type="text/javascript" href="{% static 'js/main.js'%}">
+  </head>
+  <body>
+<div class="topnav">
+        <a href="{% url 'contact'%}">Contact</a>
+        <a href="{% url 'resume' %}">Resume</a> 
+        <a href="{% url 'portfolio' %}">Portfolio</a> 
+        <a href="{% url 'index' %}">Home</a> 
+</div>     
+
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

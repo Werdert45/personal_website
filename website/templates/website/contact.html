@@ -1,0 +1,66 @@
+{% extends 'website/base.html' %}
+
+{% block content %}
+
+  
+  <div id="contactbox"> 
+    <h1 id="contacttitle">Contact</h1>
+      <div id="computer">
+      <div id="screenouter"></div>
+      <div id="screentopbar"><img src="portfolio/terminaltopbar.jpg" id="terminaltopbaricon"/></div>
+      <div id="screeninner"></div>
+      <div id="footing"></div>
+          <button id="compfoot"><p>SUBMIT</p></button>
+      </div>
+      
+<form method="post" enctype="text/plain">
+    <b>
+<input type="text" name="name" placeholder="Name"><br><br>
+<input type="text" name="mail" placeholder="Email"><br><br>
+<textarea type="text" rows="7" placeholder="Type your message here"></textarea>
+    </b>
+      </form>
+      
+      <div id="contact2">
+          <div id="phonenumber"><img src="phoneicon.png" id="contacticon"/><h3 id="contacttext">(+31) 6 37 56 49 17</h3></div>
+          
+          <div id="email"><img src="email.png" id="contacticon"/><h3 id="contacttext"><a href="mailto: ianronk0@gmail.com">ianronk0@gmail.com</a></h3></div>
+          
+      <div class="contactbar2">
+      <a href="mailto: ian.ronk0@gmail.com"><img src="contact/emaillogo.png"/></a>
+      <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/"><img src="contact/linkedinlogo.png"/></a>
+      <a href="https://github.com/werdert45"><img src="contact/githublogo.png"/></a>
+      <a href="https://stackoverflow.com/users/9374829/ian-ronk"><img src="contact/stackoverflowlogo.png"/></a>
+      <a href="https://www.instagram.com/ianronk/"><img src="contact/instagramlogo.png"/></a>  
+      </div>
+      </div>
+    
+      </div>
+   
+    <div class="footer" id="footercontact">
+      <div class="contactbar1">
+      <a href="mailto: ian.ronk0@gmail.com"><img src="contact/emaillogo.png"/></a>
+      <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/"><img src="contact/linkedinlogo.png"/></a>
+      <a href="https://github.com/werdert45"><img src="contact/githublogo.png"/></a>
+      <a href="https://stackoverflow.com/users/9374829/ian-ronk"><img src="contact/stackoverflowlogo.png"/></a>
+      <a href="https://www.instagram.com/ianronk/"><img src="contact/instagramlogo.png"/></a>  
+      </div>
+        
+      <div class="footerproject">
+      <h2>Personal Projects</h2>
+      <br>
+      <a href="#virtualpet"><div class="footerbutton1"><p>Virtual Pet</p></div></a>
+      
+      <a href="#terminal"><div class="footerbutton2"><p>Terminal</p></div></a>
+          </div>
+      <div class="footertext">
+      <h3>IAN RONK</h3>
+      <br>
+      <p>&copy; Copyright 2018-2019</p>
+      <br>  
+      <p>All rights reserved. Powered by !SERVERS!</p>
+      </div>
+      </div>
+
+
+{% endblock %}
