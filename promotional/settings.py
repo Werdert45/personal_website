@@ -26,7 +26,7 @@ SECRET_KEY = '7p4&14z_mhka0g_(--6phux9ojr0v=w48+m5uwm+s6)rd&na$m'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '77.162.250.32',
+    # Insert host in string form,
 ]
 
 
@@ -120,4 +120,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/home/calypso/Django-Websites/promotional/website/static/'
+STATIC_URL = 'path/to/project/promotional/website/static/'
