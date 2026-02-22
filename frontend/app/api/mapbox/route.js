@@ -5,14 +5,10 @@
 
 import { NextResponse } from "next/server";
 
-const DJANGO_API_URL = process.env.DJANGO_API_URL || "http://localhost:8000";
-
-// Fallback token for development when backend is unavailable
-const FALLBACK_TOKEN = process.env.MAPBOX_ACCESS_TOKEN || "";
+const DJANGO_API_URL = process.env.DJANGO_API_URL || "http://backend:8001";
 
 export async function GET() {
   try {
-    // Try to get token from Django backend
     const response = await fetch(`${DJANGO_API_URL}/api/auth/mapbox-token/`, {
       headers: {
         "Content-Type": "application/json",
@@ -24,13 +20,10 @@ export async function GET() {
       const data = await response.json();
       return NextResponse.json({ token: data.token });
     }
-  } catch (error) {
-    console.error("Failed to fetch Mapbox token from backend:", error.message);
-  }
 
-  // Fallback to environment variable if backend is unavailable
-  if (FALLBACK_TOKEN) {
-    return NextResponse.json({ token: FALLBACK_TOKEN });
+    console.error(`[Mapbox Proxy] Failed to fetch token: ${response.status}`);
+  } catch (error) {
+    console.error("[Mapbox Proxy] Failed to fetch token:", error.message);
   }
 
   return NextResponse.json(

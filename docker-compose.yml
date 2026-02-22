@@ -23,15 +23,8 @@ services:
     container_name: personal-website-backend
     working_dir: /app
     environment:
-      - DJANGO_SECRET_KEY=django-insecure-dev-key-change-in-production
-      - DJANGO_DEBUG=True
+      - DJANGO_DEBUG=False
       - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,backend,ianronk.nl
-      - POSTGRES_DB=personal_website
-      - POSTGRES_USER=thesis
-      - POSTGRES_PASSWORD=thesis
-      - POSTGRES_HOST=188.245.79.77
-      - POSTGRES_PORT=5432
-      - CORS_ALLOWED_ORIGINS=http://localhost:3001,http://127.0.0.1:3001
     volumes:
       - ./backend:/app
     ports:
@@ -39,7 +32,7 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              python manage.py collectstatic --noinput &&
-             gunicorn --bind 0.0.0.0:8001 --reload config.wsgi:application"
+             gunicorn --bind 0.0.0.0:8001 config.wsgi:application"
 
   frontend:
     build: ./frontend
@@ -47,6 +40,7 @@ services:
     container_name: personal-website-frontend
     environment:
       - DJANGO_API_URL=http://backend:8001
+      - NODE_ENV=production
       - HOSTNAME=0.0.0.0
       - PORT=3001
     volumes:
