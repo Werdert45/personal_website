@@ -58,7 +58,7 @@ services:
       - "3001:3001"
     depends_on:
       - backend
-    command: npx next dev -p 3001 -H 0.0.0.0
+    command: npx next dev -p 3001 -H 0.0.0.0 --no-turbo
 
 # volumes:
 #   postgres_data:
