@@ -25,14 +25,13 @@ services:
     environment:
       - DJANGO_SECRET_KEY=django-insecure-dev-key-change-in-production
       - DJANGO_DEBUG=True
-      - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,backend
+      - DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1,backend,ianronk.nl
       - POSTGRES_DB=personal_website
       - POSTGRES_USER=thesis
       - POSTGRES_PASSWORD=thesis
       - POSTGRES_HOST=188.245.79.77
       - POSTGRES_PORT=5432
       - CORS_ALLOWED_ORIGINS=http://localhost:3001,http://127.0.0.1:3001
-      - MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
     volumes:
       - ./backend:/app
     ports:
@@ -48,7 +47,6 @@ services:
     container_name: personal-website-frontend
     environment:
       - DJANGO_API_URL=http://backend:8001
-      - MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
       - HOSTNAME=0.0.0.0
       - PORT=3001
     volumes:

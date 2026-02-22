@@ -64,8 +64,7 @@ setup_env() {
 # Django Backend URL
 DJANGO_API_URL=http://localhost:8000
 
-# Mapbox (fallback if backend unavailable)
-MAPBOX_ACCESS_TOKEN=your_mapbox_token_here
+# MAPBOX_ACCESS_TOKEN is set via Dokploy environment variables
 EOF
         print_status "Created frontend/.env.local"
     else
