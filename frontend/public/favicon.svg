@@ -1,0 +1,31 @@
+<svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  <!-- Globe circle -->
+  <circle cx="32" cy="32" r="27" stroke="#3b82f6" stroke-width="1.5" stroke-opacity="0.3"/>
+  <!-- Globe meridians -->
+  <ellipse cx="32" cy="32" rx="13" ry="27" stroke="#3b82f6" stroke-width="1" stroke-opacity="0.15"/>
+  <!-- Globe latitudes -->
+  <line x1="7" y1="22" x2="57" y2="22" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.12"/>
+  <line x1="5" y1="32" x2="59" y2="32" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.15"/>
+  <line x1="7" y1="42" x2="57" y2="42" stroke="#3b82f6" stroke-width="0.8" stroke-opacity="0.12"/>
+  <!-- Data connections -->
+  <line x1="15" y1="15" x2="22" y2="22" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.3"/>
+  <line x1="49" y1="15" x2="42" y2="22" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.3"/>
+  <line x1="49" y1="49" x2="42" y2="42" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.3"/>
+  <line x1="15" y1="49" x2="22" y2="42" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.3"/>
+  <!-- Data nodes -->
+  <circle cx="15" cy="15" r="2.2" fill="#60a5fa" fill-opacity="0.5"/>
+  <circle cx="49" cy="15" r="1.8" fill="#60a5fa" fill-opacity="0.4"/>
+  <circle cx="49" cy="49" r="2.2" fill="#60a5fa" fill-opacity="0.5"/>
+  <circle cx="15" cy="49" r="1.8" fill="#60a5fa" fill-opacity="0.4"/>
+  <!-- Letter I -->
+  <path d="M20 20v24" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <path d="M16 20h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M16 44h8" stroke="white" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Letter R -->
+  <path d="M30 44V20h5c4 0 7 2.5 7 6.5S39 33 35 33H30" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M35 33l8 11" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  <!-- Accent dots -->
+  <circle cx="20" cy="20" r="2.5" fill="#60a5fa"/>
+  <circle cx="43" cy="44" r="2.5" fill="#60a5fa"/>
+</svg>

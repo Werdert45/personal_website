@@ -1,0 +1,177 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "visualizations": "Visualizations",
+    "research": "Research",
+    "contact": "Contact",
+    "brand": "Ian Ronk"
+  },
+  "Hero": {
+    "location": "Amsterdam, NL",
+    "role": "Head of Data @ KR&A",
+    "title": "Geodata Engineer & ",
+    "titleHighlight": "Real Estate",
+    "titleEnd": " Data Scientist",
+    "description": "Delivering data-driven insights for real estate investment decisions across European markets. Specializing in machine learning, geospatial analysis, and alternative data solutions for REITs and funds.",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get in Touch",
+    "yearsExperience": "Years Experience",
+    "marketsMapped": "Markets Mapped",
+    "geoProjects": "Geo Projects Completed",
+    "expertise": "Expertise:",
+    "dataEngineering": "Data Engineering",
+    "machineLearning": "Machine Learning"
+  },
+  "About": {
+    "expertiseBadge": "Expertise",
+    "coreCompetencies": "Core Competencies",
+    "expertiseSubtitle": "Specialized skills and technologies for enterprise-grade geospatial solutions.",
+    "educationBadge": "Education",
+    "experienceBadge": "Experience",
+    "academicTitle": "Academic Accolades",
+    "professionalTitle": "Professional Journey",
+    "professional": "Professional",
+    "academic": "Academic",
+    "educationSubtitle": "Strong foundation in AI, data science, and business analytics from top European institutions.",
+    "experienceSubtitle": "4+ years delivering data-driven insights for real estate investment across European markets.",
+    "expertise": [
+      {
+        "title": "Machine Learning",
+        "description": "Developing predictive models for real estate valuation, rent prediction, flood risk assessment (90%+ accuracy), and market forecasting using models, such as SAM, LVMs and Ensemble Methods."
+      },
+      {
+        "title": "Data Engineering and System Maintenance",
+        "description": "Building robust data pipelines to process alternative data sources for European REITs, funds, and institutional investors, ranging from geodata to unstructured scrape data, using a distributed and dockerized Airflow system."
+      },
+      {
+        "title": "Geospatial Analysis and Spatial Econometrics",
+        "description": "Advanced spatial analytics including agent-based modeling for gentrification prediction, computer vision on street-level imagery and spatially significant data science such as downsampling, yielding statistically robust results."
+      },
+      {
+        "title": "Scraping and Data Mining",
+        "description": "Collecting and extracting insights from unstructured data, using cutting-edge tools, such as Captcha Solvers, Proxy Rotation and Selenium. I have done this for high frequency scraping, multi-year projects extracting 20+ million records."
+      }
+    ],
+    "experience": [
+      {
+        "year": "Jul 2025 - Present",
+        "role": "Head of Data",
+        "company": "KR&A | Europe | FinTech",
+        "description": "Leading data strategy and AI initiatives for alternative data FinTech serving European real estate funds, assets, and REITs. Working on the rollout of a project aggregating, homogenising and visualising intracity data from world cities."
+      },
+      {
+        "year": "Jun 2022 - Jul 2025",
+        "role": "Medior Data Scientist",
+        "company": "KR&A | Europe | FinTech",
+        "description": "Delivered data-driven insights for real estate investment decisions. Built ML models for property valuation and market analysis across 15+ European markets, working on projects for leading real estate companies, pension funds and for Eurostat."
+      },
+      {
+        "year": "Oct 2021 - Jun 2022",
+        "role": "Junior Data Scientist",
+        "company": "KR&A",
+        "description": "Thesis on predicting flooding occurrences in Europe using alternative data and ML models, achieving 90%+ accuracy in risk classification and working on smaller items, preparing, aggregating and visualising data."
+      },
+      {
+        "year": "Sep 2019 - Sep 2022",
+        "role": "Junior Full Stack Developer",
+        "company": "Exact (former SRXP)",
+        "description": "Part-Time Full Stack Developer maintaining enterprise-grade digital declaration software, working with web technologies such as EmberJS, PHP and sensitive customer data, using CI/CD and testing."
+      }
+    ],
+    "education": [
+      {
+        "year": "2023 - 2025",
+        "degree": "M.Sc. Data Science & Business Analytics",
+        "institution": "Bocconi University",
+        "description": "Thesis: Building an Agent-Based Model to Explain Gentrification in European Cities (Grade: 8/8)"
+      },
+      {
+        "year": "2019 - 2023",
+        "degree": "B.Sc. Artificial Intelligence",
+        "institution": "University of Amsterdam",
+        "description": "Focus on machine learning, NLP, and computational methods for data analysis."
+      }
+    ]
+  },
+  "AboutPage": {
+    "projectsBadge": "Featured Projects",
+    "projectsTitle": "Recent Work",
+    "projectsSubtitle": "Personal and academic projects showcasing my technical capabilities.",
+    "readMore": "Read more",
+    "backToAbout": "Back to About"
+  },
+  "Research": {
+    "badge": "Publications",
+    "title": "Research & Articles",
+    "subtitle": "In-depth analyses, case studies, and technical guides on geospatial technologies and real estate analytics.",
+    "searchPlaceholder": "Search articles...",
+    "all": "All",
+    "research": "Research",
+    "caseStudies": "Case Studies",
+    "methodology": "Methodology",
+    "interactiveMap": "Interactive Map",
+    "readMore": "Read more",
+    "noResults": "No articles found matching your criteria.",
+    "loading": "Loading research articles...",
+    "previewBadge": "Research & Blog",
+    "previewTitle": "Latest Research & Insights",
+    "previewSubtitle": "Deep dives into geospatial analysis, real estate trends, and technical innovations.",
+    "viewAll": "View All"
+  },
+  "Contact": {
+    "aboutBadge": "About Me",
+    "name": "Ian Ronk",
+    "roleTitle": "Head of Data | Real Estate AI & Analytics",
+    "bio": "Based in Amsterdam, I lead data initiatives at KR&A, delivering AI-powered insights for European real estate funds, REITs, and institutional investors. With expertise in machine learning, geospatial analysis, and alternative data, I help transform complex data into investment decisions.",
+    "location": "Amsterdam, Netherlands",
+    "company": "Head of Data @ KR&A FinTech",
+    "yearsExperience": "4+ years in Real Estate Data Science",
+    "formTitle": "Get in Touch",
+    "formSubtitle": "Have a project in mind? Let's discuss how I can help with your geospatial needs.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "your@email.com",
+    "phoneLabel": "Phone (Optional)",
+    "phonePlaceholder": "+1 (555) 000-0000",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "What's this about?",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell me about your project...",
+    "captchaLabel": "Verify you're human",
+    "captchaHint": "Please complete the captcha to send your message",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "privacy": "We protect your privacy. Your message is encrypted and will only be used to respond to your inquiry.",
+    "europeanMarkets": "European Markets",
+    "modelAccuracy": "Model Accuracy",
+    "successMessage": "Message sent successfully! I'll get back to you soon.",
+    "errorEmail": "Please enter a valid email address",
+    "errorSpam": "Your message was flagged as potential spam. Please try again.",
+    "errorShort": "Please enter a longer message (at least 10 characters)",
+    "errorCaptcha": "Please complete the captcha verification",
+    "errorGeneric": "Error sending message. Please try again."
+  },
+  "Projects": {
+    "badge": "Visualizations",
+    "title": "Featured Data Visualizations",
+    "subtitle": "Explore interactive map-based analyses showcasing spatial insights for the European real estate market.",
+    "viewAll": "View All",
+    "viewProject": "View Project"
+  },
+  "Footer": {
+    "copyright": "{year} Ian Ronk. All rights reserved.",
+    "crmLogin": "CRM",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "cookiePolicy": "Cookie Policy"
+  },
+  "Common": {
+    "language": "Language",
+    "english": "English",
+    "dutch": "Dutch",
+    "italian": "Italian",
+    "german": "German"
+  }
+}

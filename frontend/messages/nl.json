@@ -1,0 +1,177 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "Over Mij",
+    "visualizations": "Visualisaties",
+    "research": "Onderzoek",
+    "contact": "Contact",
+    "brand": "Ian Ronk"
+  },
+  "Hero": {
+    "location": "Amsterdam, NL",
+    "role": "Head of Data @ KR&A",
+    "title": "Geodata Engineer & ",
+    "titleHighlight": "Vastgoed",
+    "titleEnd": " Data Scientist",
+    "description": "Datagedreven inzichten leveren voor vastgoedinvesteringsbeslissingen in Europese markten. Gespecialiseerd in machine learning, geospatiale analyse en alternatieve dataoplossingen voor REITs en fondsen.",
+    "viewProjects": "Bekijk Projecten",
+    "getInTouch": "Neem Contact Op",
+    "yearsExperience": "Jaar Ervaring",
+    "marketsMapped": "Markten In Kaart",
+    "geoProjects": "Geo Projecten Afgerond",
+    "expertise": "Expertise:",
+    "dataEngineering": "Data Engineering",
+    "machineLearning": "Machine Learning"
+  },
+  "About": {
+    "expertiseBadge": "Expertise",
+    "coreCompetencies": "Kerncompetenties",
+    "expertiseSubtitle": "Gespecialiseerde vaardigheden en technologieën voor enterprise-grade geospatiale oplossingen.",
+    "educationBadge": "Opleiding",
+    "experienceBadge": "Ervaring",
+    "academicTitle": "Academische Prestaties",
+    "professionalTitle": "Professioneel Traject",
+    "professional": "Professioneel",
+    "academic": "Academisch",
+    "educationSubtitle": "Sterke basis in AI, data science en business analytics van top Europese instellingen.",
+    "experienceSubtitle": "4+ jaar datagedreven inzichten leveren voor vastgoedinvesteringen in Europese markten.",
+    "expertise": [
+      {
+        "title": "Machine Learning",
+        "description": "Ontwikkelen van voorspellende modellen voor vastgoedwaardering, huurvoorspelling, overstromingsrisicobeoordeling (90%+ nauwkeurigheid) en marktvoorspelling met modellen zoals SAM, LVMs en Ensemble Methods."
+      },
+      {
+        "title": "Data Engineering en Systeemonderhoud",
+        "description": "Bouwen van robuuste datapipelines voor het verwerken van alternatieve databronnen voor Europese REITs, fondsen en institutionele beleggers, variërend van geodata tot ongestructureerde scrape-data, met een gedistribueerd en gedockeriseerd Airflow-systeem."
+      },
+      {
+        "title": "Geospatiale Analyse en Ruimtelijke Econometrie",
+        "description": "Geavanceerde ruimtelijke analyses inclusief agent-based modellering voor gentrificatievoorspelling, computer vision op straatniveau-beelden en ruimtelijk significante data science zoals downsampling, wat statistisch robuuste resultaten oplevert."
+      },
+      {
+        "title": "Scraping en Data Mining",
+        "description": "Verzamelen en extraheren van inzichten uit ongestructureerde data, met gebruik van geavanceerde tools zoals Captcha Solvers, Proxy Rotation en Selenium. Dit heb ik gedaan voor high-frequency scraping, meerjarige projecten met 20+ miljoen records."
+      }
+    ],
+    "experience": [
+      {
+        "year": "Jul 2025 - Heden",
+        "role": "Head of Data",
+        "company": "KR&A | Europa | FinTech",
+        "description": "Leiden van datastrategie en AI-initiatieven voor alternatieve data FinTech die Europese vastgoedfondsen, activa en REITs bedient. Werken aan de uitrol van een project dat intracity-data van wereldsteden aggregeert, homogeniseert en visualiseert."
+      },
+      {
+        "year": "Jun 2022 - Jul 2025",
+        "role": "Medior Data Scientist",
+        "company": "KR&A | Europa | FinTech",
+        "description": "Datagedreven inzichten geleverd voor vastgoedinvesteringsbeslissingen. ML-modellen gebouwd voor vastgoedwaardering en marktanalyse in 15+ Europese markten, werkend aan projecten voor vooraanstaande vastgoedbedrijven, pensioenfondsen en Eurostat."
+      },
+      {
+        "year": "Okt 2021 - Jun 2022",
+        "role": "Junior Data Scientist",
+        "company": "KR&A",
+        "description": "Scriptie over het voorspellen van overstromingen in Europa met alternatieve data en ML-modellen, met 90%+ nauwkeurigheid in risicoclassificatie en werkend aan kleinere items, data voorbereiden, aggregeren en visualiseren."
+      },
+      {
+        "year": "Sep 2019 - Sep 2022",
+        "role": "Junior Full Stack Developer",
+        "company": "Exact (voorheen SRXP)",
+        "description": "Parttime Full Stack Developer voor het onderhouden van enterprise-grade digitale declaratiesoftware, werkend met webtechnologieën zoals EmberJS, PHP en gevoelige klantgegevens, met CI/CD en testing."
+      }
+    ],
+    "education": [
+      {
+        "year": "2023 - 2025",
+        "degree": "M.Sc. Data Science & Business Analytics",
+        "institution": "Bocconi University",
+        "description": "Scriptie: Een Agent-Based Model Bouwen om Gentrificatie in Europese Steden te Verklaren (Cijfer: 8/8)"
+      },
+      {
+        "year": "2019 - 2023",
+        "degree": "B.Sc. Artificial Intelligence",
+        "institution": "Universiteit van Amsterdam",
+        "description": "Focus op machine learning, NLP en computationele methoden voor data-analyse."
+      }
+    ]
+  },
+  "AboutPage": {
+    "projectsBadge": "Uitgelichte Projecten",
+    "projectsTitle": "Recent Werk",
+    "projectsSubtitle": "Persoonlijke en academische projecten die mijn technische vaardigheden tonen.",
+    "readMore": "Lees meer",
+    "backToAbout": "Terug naar Over Mij"
+  },
+  "Research": {
+    "badge": "Publicaties",
+    "title": "Onderzoek & Artikelen",
+    "subtitle": "Diepgaande analyses, casestudies en technische gidsen over geospatiale technologieën en vastgoedanalytics.",
+    "searchPlaceholder": "Zoek artikelen...",
+    "all": "Alle",
+    "research": "Onderzoek",
+    "caseStudies": "Casestudies",
+    "methodology": "Methodologie",
+    "interactiveMap": "Interactieve Kaart",
+    "readMore": "Lees meer",
+    "noResults": "Geen artikelen gevonden die aan uw criteria voldoen.",
+    "loading": "Onderzoeksartikelen laden...",
+    "previewBadge": "Onderzoek & Blog",
+    "previewTitle": "Laatste Onderzoek & Inzichten",
+    "previewSubtitle": "Diepgaande analyses van geospatiale analyse, vastgoedtrends en technische innovaties.",
+    "viewAll": "Bekijk Alles"
+  },
+  "Contact": {
+    "aboutBadge": "Over Mij",
+    "name": "Ian Ronk",
+    "roleTitle": "Head of Data | Vastgoed AI & Analytics",
+    "bio": "Gevestigd in Amsterdam, leid ik data-initiatieven bij KR&A en lever ik AI-gedreven inzichten voor Europese vastgoedfondsen, REITs en institutionele beleggers. Met expertise in machine learning, geospatiale analyse en alternatieve data, help ik complexe data om te zetten in investeringsbeslissingen.",
+    "location": "Amsterdam, Nederland",
+    "company": "Head of Data @ KR&A FinTech",
+    "yearsExperience": "4+ jaar in Vastgoed Data Science",
+    "formTitle": "Neem Contact Op",
+    "formSubtitle": "Heeft u een project in gedachten? Laten we bespreken hoe ik kan helpen met uw geospatiale behoeften.",
+    "nameLabel": "Naam",
+    "namePlaceholder": "Uw naam",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "uw@email.com",
+    "phoneLabel": "Telefoon (Optioneel)",
+    "phonePlaceholder": "+31 (0) 6 12345678",
+    "subjectLabel": "Onderwerp",
+    "subjectPlaceholder": "Waar gaat het over?",
+    "messageLabel": "Bericht",
+    "messagePlaceholder": "Vertel me over uw project...",
+    "captchaLabel": "Verifieer dat u mens bent",
+    "captchaHint": "Voltooi de captcha om uw bericht te verzenden",
+    "sendButton": "Verstuur Bericht",
+    "sending": "Verzenden...",
+    "privacy": "Wij beschermen uw privacy. Uw bericht is versleuteld en wordt alleen gebruikt om op uw vraag te reageren.",
+    "europeanMarkets": "Europese Markten",
+    "modelAccuracy": "Model Nauwkeurigheid",
+    "successMessage": "Bericht succesvol verzonden! Ik neem spoedig contact met u op.",
+    "errorEmail": "Voer een geldig e-mailadres in",
+    "errorSpam": "Uw bericht is als mogelijke spam gemarkeerd. Probeer het opnieuw.",
+    "errorShort": "Voer een langer bericht in (minimaal 10 tekens)",
+    "errorCaptcha": "Voltooi de captcha-verificatie",
+    "errorGeneric": "Fout bij het verzenden van het bericht. Probeer het opnieuw."
+  },
+  "Projects": {
+    "badge": "Visualisaties",
+    "title": "Uitgelichte Data Visualisaties",
+    "subtitle": "Ontdek interactieve kaartgebaseerde analyses met ruimtelijke inzichten voor de Europese vastgoedmarkt.",
+    "viewAll": "Bekijk Alles",
+    "viewProject": "Bekijk Project"
+  },
+  "Footer": {
+    "copyright": "{year} Ian Ronk. Alle rechten voorbehouden.",
+    "crmLogin": "CRM",
+    "privacyPolicy": "Privacybeleid",
+    "termsOfService": "Servicevoorwaarden",
+    "cookiePolicy": "Cookiebeleid"
+  },
+  "Common": {
+    "language": "Taal",
+    "english": "Engels",
+    "dutch": "Nederlands",
+    "italian": "Italiaans",
+    "german": "Duits"
+  }
+}
