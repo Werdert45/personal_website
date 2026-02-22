@@ -21,6 +21,7 @@ services:
     build: ./backend
     platform: linux/amd64
     container_name: personal-website-backend
+    working_dir: /app
     environment:
       - DJANGO_SECRET_KEY=django-insecure-dev-key-change-in-production
       - DJANGO_DEBUG=True
