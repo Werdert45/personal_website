@@ -39,7 +39,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let vizEntries: MetadataRoute.Sitemap = []
   try {
     const djangoUrl = process.env.DJANGO_API_URL || 'http://backend:8001'
-    const res = await fetch(`${djangoUrl}/api/visualizations/`, { next: { revalidate: 3600 } })
+    const res = await fetch(`${djangoUrl}/api/research/visualizations/`, { next: { revalidate: 3600 } })
     if (res.ok) {
       const vizs = await res.json()
       vizEntries = (vizs || []).flatMap((viz: any) =>

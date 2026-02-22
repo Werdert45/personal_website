@@ -116,6 +116,7 @@ class VisualizationSerializer(serializers.ModelSerializer):
     )
     preview_image = serializers.CharField(required=False, allow_blank=True, allow_null=True, default="")
     value_field = serializers.CharField(required=False, allow_blank=True, allow_null=True, default="")
+    translations = serializers.JSONField(required=False, write_only=True)
 
     class Meta:
         model = Visualization
@@ -140,6 +141,7 @@ class VisualizationSerializer(serializers.ModelSerializer):
             "value_field",
             "is_premium",
             "preview_image",
+            "translations",
             "created_at",
             "updated_at",
         ]
@@ -150,6 +152,14 @@ class VisualizationSerializer(serializers.ModelSerializer):
 
     def validate_value_field(self, value):
         return value or ""
+
+    def create(self, validated_data):
+        validated_data.pop("translations", None)
+        return super().create(validated_data)
+
+    def update(self, instance, validated_data):
+        validated_data.pop("translations", None)
+        return super().update(instance, validated_data)
 
 
 class VisualizationListSerializer(serializers.ModelSerializer):
