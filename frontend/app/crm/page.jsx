@@ -310,7 +310,16 @@ export default function CRMPage() {
         else fetchVisualizations();
       } else {
         const errorData = await response.json();
-        setError(errorData.detail || errorData.message || "Failed to save");
+        console.error("Save error response:", response.status, errorData);
+        // Format field-level validation errors from Django
+        if (typeof errorData === "object" && !errorData.detail && !errorData.message) {
+          const fieldErrors = Object.entries(errorData)
+            .map(([field, errors]) => `${field}: ${Array.isArray(errors) ? errors.join(", ") : errors}`)
+            .join("; ");
+          setError(fieldErrors || "Failed to save");
+        } else {
+          setError(errorData.detail || errorData.message || `Failed to save (${response.status})`);
+        }
       }
     } catch (err) {
       console.error("Error saving:", err);

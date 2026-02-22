@@ -5,6 +5,11 @@ import { NextResponse } from "next/server";
 // Example: DJANGO_API_URL=https://your-django-api.com
 const DJANGO_API_URL = process.env.DJANGO_API_URL;
 
+function buildDjangoUrl(endpoint, extraParams) {
+  const qs = extraParams ? extraParams.toString() : "";
+  return `${DJANGO_API_URL}/api/${endpoint}/${qs ? `?${qs}` : ""}`;
+}
+
 // GET - Fetch data from Django (or return dummy data)
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
@@ -18,8 +23,7 @@ export async function GET(request) {
       extraParams.set(key, value);
     }
   }
-  const queryString = extraParams.toString();
-  const djangoUrl = `${DJANGO_API_URL}/api/${endpoint}/${queryString ? `?${queryString}` : ""}`;
+  const djangoUrl = buildDjangoUrl(endpoint, extraParams);
 
   // If Django URL is configured, try to fetch from it
   if (DJANGO_API_URL) {
@@ -34,8 +38,13 @@ export async function GET(request) {
       if (response.ok) {
         const data = await response.json();
         return NextResponse.json(data);
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error(`[Django Proxy] GET ${djangoUrl} -> ${response.status}`, errorData);
+        return NextResponse.json(errorData, { status: response.status });
       }
     } catch (error) {
+      console.error(`[Django Proxy] GET ${djangoUrl} failed:`, error.message);
       // Fall through to mock data
     }
   }
@@ -50,10 +59,11 @@ export async function POST(request) {
   const endpoint = searchParams.get("endpoint") || "projects";
   const token = request.headers.get("authorization");
   const body = await request.json();
+  const djangoUrl = buildDjangoUrl(endpoint);
 
   if (DJANGO_API_URL) {
     try {
-      const response = await fetch(`${DJANGO_API_URL}/api/${endpoint}/`, {
+      const response = await fetch(djangoUrl, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -67,10 +77,11 @@ export async function POST(request) {
         return NextResponse.json(data);
       } else {
         const errorData = await response.json().catch(() => ({}));
+        console.error(`[Django Proxy] POST ${djangoUrl} -> ${response.status}`, errorData);
         return NextResponse.json(errorData, { status: response.status });
       }
     } catch (error) {
-      console.error("POST error:", error);
+      console.error(`[Django Proxy] POST ${djangoUrl} failed:`, error.message);
       return NextResponse.json({ error: "Failed to create" }, { status: 500 });
     }
   }
@@ -93,10 +104,10 @@ export async function PUT(request) {
 
   if (DJANGO_API_URL) {
     try {
-      const url = id
+      const djangoUrl = id
         ? `${DJANGO_API_URL}/api/${endpoint}/${id}/`
-        : `${DJANGO_API_URL}/api/${endpoint}/`;
-      const response = await fetch(url, {
+        : buildDjangoUrl(endpoint);
+      const response = await fetch(djangoUrl, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -110,10 +121,11 @@ export async function PUT(request) {
         return NextResponse.json(data);
       } else {
         const errorData = await response.json().catch(() => ({}));
+        console.error(`[Django Proxy] PUT ${djangoUrl} -> ${response.status}`, errorData);
         return NextResponse.json(errorData, { status: response.status });
       }
     } catch (error) {
-      console.error("PUT error:", error);
+      console.error(`[Django Proxy] PUT ${djangoUrl} failed:`, error.message);
       return NextResponse.json({ error: "Failed to update" }, { status: 500 });
     }
   }
@@ -134,10 +146,10 @@ export async function DELETE(request) {
 
   if (DJANGO_API_URL) {
     try {
-      const url = id
+      const djangoUrl = id
         ? `${DJANGO_API_URL}/api/${endpoint}/${id}/`
-        : `${DJANGO_API_URL}/api/${endpoint}/`;
-      const response = await fetch(url, {
+        : buildDjangoUrl(endpoint);
+      const response = await fetch(djangoUrl, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -149,10 +161,11 @@ export async function DELETE(request) {
         return NextResponse.json({ success: true });
       } else {
         const errorData = await response.json().catch(() => ({}));
+        console.error(`[Django Proxy] DELETE ${djangoUrl} -> ${response.status}`, errorData);
         return NextResponse.json(errorData, { status: response.status });
       }
     } catch (error) {
-      console.error("DELETE error:", error);
+      console.error(`[Django Proxy] DELETE ${djangoUrl} failed:`, error.message);
       return NextResponse.json({ error: "Failed to delete" }, { status: 500 });
     }
   }
