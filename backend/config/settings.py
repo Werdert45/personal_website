@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "apps.projects",
     "apps.research",
     "apps.geodata",
+    "apps.blog",
 ]
 
 MIDDLEWARE = [
