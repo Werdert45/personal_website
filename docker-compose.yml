@@ -16,15 +16,31 @@ services:
       - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
     ports:
       - "8001:8001"
+    networks:
+      - default
+      - dokploy-network
     command: >
-      sh -c "python manage.py migrate &&
-             gunicorn --bind 0.0.0.0:8001 config.wsgi:application"
+      sh -c "
+        until python -c \"
+import os, psycopg
+try:
+    psycopg.connect(host=os.environ['POSTGRES_HOST'], port=os.environ.get('POSTGRES_PORT','5432'), dbname=os.environ['POSTGRES_DB'], user=os.environ['POSTGRES_USER'], password=os.environ['POSTGRES_PASSWORD'], connect_timeout=3)
+    print('DB ready')
+except Exception as e:
+    print('DB not ready:', e)
+    exit(1)
+\" 2>&1; do
+          echo 'Waiting for database...';
+          sleep 5;
+        done &&
+        python manage.py migrate &&
+        gunicorn --bind 0.0.0.0:8001 config.wsgi:application"
     healthcheck:
       test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1', 8001), 3)"]
       interval: 10s
       timeout: 5s
       retries: 10
-      start_period: 40s
+      start_period: 60s
 
   frontend:
     build: ./frontend
@@ -37,6 +53,13 @@ services:
       - PORT=3001
     ports:
       - "3001:3001"
+    networks:
+      - default
+      - dokploy-network
     depends_on:
       backend:
         condition: service_healthy
+
+networks:
+  dokploy-network:
+    external: true
