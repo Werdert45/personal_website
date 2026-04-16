@@ -10,6 +10,7 @@ import tempfile
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.core.management.base import BaseCommand
 
+from apps.blog.models import BlogPost, BlogPostTranslation
 from apps.geodata.models import GeoDataset, GeoFeature, GeoUploadedDataset
 from apps.geodata.services.geo_processor import GeoProcessor
 from apps.projects.models import Project
@@ -192,6 +193,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         if options["reset"]:
             self.stdout.write("Resetting existing data...")
+            BlogPost.objects.all().delete()
             Research.objects.all().delete()
             Visualization.objects.all().delete()
             GeoDataset.objects.all().delete()
@@ -203,6 +205,7 @@ class Command(BaseCommand):
         self.create_research(dataset)
         self.create_visualization(dataset)
         self.create_project()
+        self.create_blog_post()
         self.stdout.write(self.style.SUCCESS("Database seeded successfully!"))
 
     def upload_geojson(self):
@@ -387,3 +390,125 @@ European capital property markets are diverging rather than converging, with pol
         )
         status = "Created" if created else "Already exists"
         self.stdout.write(f"  {status}: {project.title}")
+
+    def create_blog_post(self):
+        """Create a sample blog post with a Dutch translation."""
+        self.stdout.write("Creating Blog post...")
+
+        defaults = {
+            "title": "Why PostGIS Beats a Plain Postgres Index for Spatial Queries",
+            "excerpt": (
+                "If you are storing coordinates in Postgres and querying them with bounding boxes, "
+                "you are probably leaving a lot of performance on the table. Here is what switching "
+                "to PostGIS GiST indexes changed for me."
+            ),
+            "content": """## The problem
+
+I had a Django app storing property coordinates as plain `FloatField` columns — `lat` and `lng`. Querying "all properties within this bounding box" meant:
+
+```sql
+SELECT * FROM properties
+WHERE lat BETWEEN 52.30 AND 52.45
+  AND lng BETWEEN 4.80 AND 5.02;
+```
+
+With a compound B-tree index on `(lat, lng)` this was fast enough at 10,000 rows. At 500,000 rows it started hurting. At 2 million rows it became unusable.
+
+## What PostGIS adds
+
+PostGIS extends Postgres with a `geometry` column type and a **GiST** (Generalized Search Tree) index that understands spatial relationships. Instead of two scalar comparisons, the database evaluates a single spatial predicate:
+
+```sql
+SELECT * FROM properties
+WHERE ST_Within(location, ST_MakeEnvelope(4.80, 52.30, 5.02, 52.45, 4326));
+```
+
+The GiST index uses R-tree decomposition: it groups geometries into nested bounding boxes, so the planner can prune huge swaths of the table with a single comparison rather than scanning row-by-row.
+
+## Benchmarks on my dataset
+
+| Rows | B-tree (ms) | GiST (ms) | Speedup |
+|------|-------------|-----------|---------|
+| 10k  | 3           | 4         | —       |
+| 100k | 28          | 6         | 4.7×    |
+| 500k | 190         | 9         | 21×     |
+| 2M   | 980         | 14        | 70×     |
+
+The crossover point is somewhere around 50,000 rows. Below that, B-tree is competitive because its lower per-row overhead wins out.
+
+## Setting it up in Django
+
+```python
+# models.py
+from django.contrib.gis.db import models
+
+class Property(models.Model):
+    location = models.PointField(srid=4326)
+    price_sqm = models.FloatField()
+    # ...
+```
+
+```python
+# In settings.py, add to INSTALLED_APPS:
+"django.contrib.gis",
+
+# And use the PostGIS backend:
+DATABASES = {
+    "default": {
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        ...
+    }
+}
+```
+
+Django's GeoDjango layer generates the `CREATE INDEX USING GIST` automatically on first migration.
+
+## Querying from Django
+
+```python
+from django.contrib.gis.geos import Polygon
+
+bbox = Polygon.from_bbox((4.80, 52.30, 5.02, 52.45))
+properties = Property.objects.filter(location__within=bbox)
+```
+
+GeoDjango translates the `__within` lookup to `ST_Within` under the hood, using the GiST index automatically.
+
+## Takeaway
+
+If you are working with any spatial data at scale — property listings, POIs, vehicle tracks, sensor readings — PostGIS GiST indexes are not a nice-to-have. The 70× speedup at 2M rows is the difference between a usable product and one that needs a caching layer bolted on to hide a broken query plan.
+""",
+            "category": "article",
+            "status": "published",
+            "tags": ["postgis", "django", "spatial", "performance", "database"],
+            "read_time": "6 min",
+            "date": "March 2026",
+            "author": "Ian Ronk",
+            "featured": True,
+            "published_at": "2026-03-12T10:00:00Z",
+        }
+
+        post, created = BlogPost.objects.get_or_create(
+            slug="postgis-gist-vs-btree",
+            defaults=defaults,
+        )
+        status = "Created" if created else "Already exists"
+        self.stdout.write(f"  {status}: {post.title}")
+
+        # Dutch translation
+        if created:
+            BlogPostTranslation.objects.get_or_create(
+                post=post,
+                language="nl",
+                defaults={
+                    "title": "Waarom PostGIS beter is dan een gewone Postgres-index voor ruimtelijke queries",
+                    "slug": "postgis-gist-vs-btree-nl",
+                    "excerpt": (
+                        "Als je coördinaten opslaat in Postgres en queried met bounding boxes, "
+                        "laat je waarschijnlijk veel prestaties liggen. Hier is wat het overstappen "
+                        "naar PostGIS GiST-indexen voor mij veranderde."
+                    ),
+                    "content": "*(Volledige Nederlandse vertaling beschikbaar)*",
+                },
+            )
+            self.stdout.write("  Created Dutch translation")
