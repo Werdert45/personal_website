@@ -392,8 +392,8 @@ European capital property markets are diverging rather than converging, with pol
         self.stdout.write(f"  {status}: {project.title}")
 
     def create_blog_post(self):
-        """Create a sample blog post with a Dutch translation."""
-        self.stdout.write("Creating Blog post...")
+        """Create sample blog posts covering all category types."""
+        self.stdout.write("Creating Blog posts (all categories)...")
 
         defaults = {
             "title": "Why PostGIS Beats a Plain Postgres Index for Spatial Queries",
@@ -495,7 +495,7 @@ If you are working with any spatial data at scale — property listings, POIs, v
         status = "Created" if created else "Already exists"
         self.stdout.write(f"  {status}: {post.title}")
 
-        # Dutch translation
+        # Dutch translation for the article
         if created:
             BlogPostTranslation.objects.get_or_create(
                 post=post,
@@ -512,3 +512,168 @@ If you are working with any spatial data at scale — property listings, POIs, v
                 },
             )
             self.stdout.write("  Created Dutch translation")
+
+        # --- Tutorial ---
+        tutorial, created = BlogPost.objects.get_or_create(
+            slug="django-geojson-api-tutorial",
+            defaults={
+                "title": "Building a GeoJSON API with Django and GeoDjango",
+                "excerpt": "Step-by-step guide to exposing PostGIS data as a GeoJSON endpoint using Django REST Framework and GeoDjango — ready to consume by Mapbox GL JS.",
+                "content": """## Prerequisites
+
+- Django 4.2+, Python 3.11+
+- PostGIS database (see the docker-compose in this repo)
+- `djangorestframework`, `django.contrib.gis`
+
+## Step 1 — Install GeoDjango
+
+Add to `INSTALLED_APPS`:
+
+```python
+"django.contrib.gis",
+```
+
+Switch the database backend:
+
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.contrib.gis.db.backends.postgis",
+        ...
+    }
+}
+```
+
+## Step 2 — Define a spatial model
+
+```python
+from django.contrib.gis.db import models
+
+class Property(models.Model):
+    address = models.CharField(max_length=255)
+    price_sqm = models.FloatField()
+    location = models.PointField(srid=4326)
+```
+
+## Step 3 — Serializer with GeoJSON output
+
+```python
+from rest_framework_gis.serializers import GeoFeatureModelSerializer
+
+class PropertyGeoSerializer(GeoFeatureModelSerializer):
+    class Meta:
+        model = Property
+        geo_field = "location"
+        fields = ["id", "address", "price_sqm"]
+```
+
+## Step 4 — View
+
+```python
+from rest_framework.generics import ListAPIView
+from rest_framework.permissions import AllowAny
+
+class PropertyGeoView(ListAPIView):
+    serializer_class = PropertyGeoSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        return Property.objects.all()
+```
+
+## Step 5 — Wire up and test
+
+```bash
+curl https://yourapp.com/api/properties/geo/ | python -m json.tool
+```
+
+The response is a valid `FeatureCollection` you can pass directly to `map.addSource()` in Mapbox GL JS.
+""",
+                "category": "tutorial",
+                "status": "published",
+                "tags": ["django", "geojson", "mapbox", "geodjango", "tutorial"],
+                "read_time": "10 min",
+                "date": "February 2026",
+                "author": "Ian Ronk",
+                "featured": False,
+                "published_at": "2026-02-10T09:00:00Z",
+            },
+        )
+        self.stdout.write(f"  {'Created' if created else 'Already exists'}: {tutorial.title}")
+
+        # --- Note ---
+        note, created = BlogPost.objects.get_or_create(
+            slug="quick-note-srid-4326-vs-3857",
+            defaults={
+                "title": "Quick note: SRID 4326 vs 3857 — when it matters",
+                "excerpt": "A two-minute explainer on which coordinate system to use and why mixing them silently gives you wrong distances.",
+                "content": """**SRID 4326** is WGS 84 — degrees of latitude/longitude. It's what GPS gives you and what GeoJSON expects.
+
+**SRID 3857** is Web Mercator — metres projected onto a flat surface. It's what Mapbox, Google Maps, and OpenStreetMap tiles use internally.
+
+### The trap
+
+If you store points in 4326 and call `ST_Distance` without transforming, Postgres returns degrees, not metres. `ST_Distance(a, b) < 0.01` does not mean "within 10 metres" — it means "within 0.01°", which is roughly 1 km near the equator and 500 m near Amsterdam.
+
+### The fix
+
+```sql
+-- Returns metres
+SELECT ST_Distance(
+  ST_Transform(location, 3857),
+  ST_Transform(ST_SetSRID(ST_MakePoint(4.90, 52.37), 4326), 3857)
+)
+FROM properties;
+```
+
+Or use `ST_DWithin` with `use_spheroid=true` on geography columns — it works in metres natively.
+
+**Rule of thumb**: store in 4326 (universal), transform to 3857 for distance/area calculations, transform back to 4326 for GeoJSON output.
+""",
+                "category": "note",
+                "status": "published",
+                "tags": ["postgis", "coordinate-systems", "gis"],
+                "read_time": "2 min",
+                "date": "April 2026",
+                "author": "Ian Ronk",
+                "featured": False,
+                "published_at": "2026-04-01T08:00:00Z",
+            },
+        )
+        self.stdout.write(f"  {'Created' if created else 'Already exists'}: {note.title}")
+
+        # --- Announcement ---
+        announcement, created = BlogPost.objects.get_or_create(
+            slug="new-visualizations-section-live",
+            defaults={
+                "title": "New: Interactive Visualizations Section Now Live",
+                "excerpt": "The visualizations gallery is now live — explore interactive spatial analyses of European property markets built with PostGIS and Mapbox GL JS.",
+                "content": """I've just launched the visualizations section of this site. It's been a few months in the making and I'm happy to finally ship it.
+
+## What's there
+
+- **European Capital Property Prices** — a choropleth map comparing price/m² across 12 capitals
+- **Amsterdam Housing Heatmap** — transaction density across Amsterdam neighbourhoods
+- **Berlin Commercial Growth** — a time-series showing district-level commercial activity 2018–2024
+
+Each visualization is backed by a live PostGIS database and rendered with Mapbox GL JS. Data updates weekly from public cadastral sources.
+
+## What's coming
+
+- Paris rental vs. ownership split (choropleth)
+- Transit accessibility isochrones for Amsterdam
+- Price trajectory forecasts using spatial regression
+
+If there's a market or dataset you'd like to see, [get in touch](/contact).
+""",
+                "category": "announcement",
+                "status": "published",
+                "tags": ["announcement", "visualizations", "mapbox"],
+                "read_time": "2 min",
+                "date": "April 2026",
+                "author": "Ian Ronk",
+                "featured": True,
+                "published_at": "2026-04-16T07:00:00Z",
+            },
+        )
+        self.stdout.write(f"  {'Created' if created else 'Already exists'}: {announcement.title}")
