@@ -62,7 +62,7 @@ export function HeroSection() {
       style={{
         position: "relative",
         overflow: "hidden",
-        padding: "140px 50px 96px",
+        padding: "140px 80px 96px",
       }}
     >
       <div ref={spotRef} className="spot" />

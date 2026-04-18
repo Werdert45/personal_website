@@ -23,11 +23,12 @@ function renderTitle(title) {
 }
 
 const DEFAULT_ITEMS = [
-  { id: 1, slug: "rent-prediction-hedonic", category: "RESEARCH", date: "2025-11", title: "Hedonic rent prediction across 15 EU metros", abstract: "Predicting apartment rents with PostGIS, gradient boosting and amenity-weighted isochrones. Cross-validated at parcel level." },
-  { id: 2, slug: "gentrification-abm", category: "METHODOLOGY", date: "2024-06", title: "Agent-based simulation of gentrification", abstract: "Modelling 10-year neighbourhood turnover in Amsterdam using Kadaster + CBS microdata and calibrated move probabilities." },
-  { id: 3, slug: "flood-risk-parcels", category: "CASE-STUDY", date: "2023-09", title: "Parcel-level flood risk for insurers", abstract: "90%+ accuracy on insurable-loss classification combining LiDAR, rainfall radar, and cadastre data." },
-  { id: 4, slug: "street-view-maintenance", category: "RESEARCH", date: "2024-02", title: "Street-view CV for maintenance signals", abstract: "Extracting façade wear and commerce intensity from 4M frames across six European cities." },
-  { id: 5, slug: "isochrones-api", category: "CASE-STUDY", date: "2025-03", title: "Sub-200ms isochrone API on OSRM + GTFS", abstract: "Replacing three paid vendors with an in-house stack covering walk/bike/transit for any EU point." },
+  { id: 1, slug: "rent-prediction-hedonic", category: "PAPER", date: "2025-11", title: "Hedonic rent prediction across 15 EU metros", abstract: "A parcel-level hedonic model combining PostGIS spatial joins, gradient boosting and amenity-weighted isochrones. Cross-validated out-of-sample; preprint under review." },
+  { id: 2, slug: "gentrification-abm", category: "WORKING-PAPER", date: "2024-06", title: "Agent-based simulation of neighbourhood turnover", abstract: "Calibrated ABM for 10-year turnover in Amsterdam on Kadaster + CBS microdata. Robustness checks and sensitivity analyses across move-probability priors." },
+  { id: 3, slug: "flood-risk-parcels", category: "PAPER", date: "2023-09", title: "Parcel-level flood-risk classification for insurers", abstract: "Supervised classification on LiDAR, rainfall radar and cadastre features. Reports 90%+ balanced accuracy on held-out insurable-loss claims." },
+  { id: 4, slug: "street-view-cv", category: "PREPRINT", date: "2024-02", title: "Façade and commerce signals from street-view imagery", abstract: "CNN-based extraction of maintenance and retail-intensity signals from 4M frames across six European cities; inter-rater agreement and limitations." },
+  { id: 5, slug: "isochrone-methodology", category: "METHOD", date: "2025-03", title: "Sub-200ms isochrones on OSRM + GTFS: a replication note", abstract: "Methodology note documenting routing-graph preprocessing, tile-cache strategy and measured p95 latency against three commercial baselines." },
+  { id: 6, slug: "cadastre-review", category: "REVIEW", date: "2024-10", title: "Open cadastre data in the EU: a coverage review", abstract: "Survey of cadastral data access and licensing across NL, DE, BE, FR, IT, ES. Tabulates fields, refresh cadence, and reproducibility gaps." },
 ];
 
 export function ResearchList() {
@@ -40,9 +41,11 @@ export function ResearchList() {
 
   const categories = [
     { value: "all", label: t("all") },
-    { value: "research", label: t("research") },
-    { value: "case-study", label: t("caseStudies") },
-    { value: "methodology", label: t("methodology") },
+    { value: "paper", label: "Papers" },
+    { value: "preprint", label: "Preprints" },
+    { value: "working-paper", label: "Working papers" },
+    { value: "method", label: "Methods" },
+    { value: "review", label: "Reviews" },
   ];
 
   useEffect(() => {
@@ -83,7 +86,7 @@ export function ResearchList() {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 04</span>
-        <span>Research — case notes, methods, essays</span>
+        <span>Research — papers, preprints, methods</span>
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 64, flexWrap: "wrap" }}>
@@ -95,11 +98,11 @@ export function ResearchList() {
             letterSpacing: "-0.02em",
           }}
         >
-          Field <i style={{ fontStyle: "italic" }}>notes</i>,<br />
-          public <span style={{ color: "var(--yellow-2)" }}>record</span>.
+          Peer-reviewed <i style={{ fontStyle: "italic" }}>papers</i><br />
+          &amp; working <span style={{ color: "var(--yellow-2)" }}>drafts</span>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "38ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          {t("subtitle")}
+          Academic output on real-estate econometrics, geospatial methods and alternative-data pipelines.
         </p>
       </div>
 

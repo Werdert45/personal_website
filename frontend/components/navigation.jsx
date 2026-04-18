@@ -35,7 +35,7 @@ export function Navigation() {
   const navLinks = [
     { href: `/${locale}`, label: t("home"), idx: "01", routeKey: "/" },
     { href: `/${locale}/about`, label: t("about"), idx: "02", routeKey: "/about" },
-    { href: `/${locale}/visualizations`, label: t("visualizations"), idx: "03", routeKey: "/visualizations" },
+    { href: `/${locale}/blog`, label: t("visualizations"), idx: "03", routeKey: "/blog" },
     { href: `/${locale}/research`, label: t("research"), idx: "04", routeKey: "/research" },
     { href: `/${locale}/contact`, label: t("contact"), idx: "05", routeKey: "/contact" },
   ];
@@ -57,7 +57,7 @@ export function Navigation() {
       className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between"
       style={{
         height: 72,
-        padding: "0 24px 0 50px",
+        padding: "0 40px 0 80px",
         background: "linear-gradient(var(--paper) 70%, transparent)",
       }}
     >

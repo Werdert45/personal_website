@@ -23,10 +23,10 @@ function renderTitle(title) {
 }
 
 const DEFAULT_ITEMS = [
-  { id: 1, slug: "rent-prediction-hedonic", category: "RESEARCH", date: "2025-11", title: "Hedonic rent prediction across 15 EU metros", abstract: "PostGIS + gradient boosting at parcel level." },
-  { id: 2, slug: "gentrification-abm", category: "METHODOLOGY", date: "2024-06", title: "Agent-based simulation of gentrification", abstract: "10-year neighbourhood turnover in Amsterdam." },
-  { id: 3, slug: "flood-risk-parcels", category: "CASE-STUDY", date: "2023-09", title: "Parcel-level flood risk for insurers", abstract: "LiDAR + rainfall radar + cadastre." },
-  { id: 4, slug: "street-view-maintenance", category: "RESEARCH", date: "2024-02", title: "Street-view CV for maintenance signals", abstract: "4M frames across six European cities." },
+  { id: 1, slug: "rent-prediction-hedonic", category: "PAPER", date: "2025-11", title: "Hedonic rent prediction across 15 EU metros", abstract: "Parcel-level hedonic model on PostGIS + gradient boosting." },
+  { id: 2, slug: "gentrification-abm", category: "WORKING-PAPER", date: "2024-06", title: "Agent-based simulation of neighbourhood turnover", abstract: "10-year ABM calibrated on Kadaster + CBS microdata." },
+  { id: 3, slug: "flood-risk-parcels", category: "PAPER", date: "2023-09", title: "Parcel-level flood-risk classification for insurers", abstract: "Supervised classification on LiDAR + rainfall radar." },
+  { id: 4, slug: "street-view-cv", category: "PREPRINT", date: "2024-02", title: "Façade and commerce signals from street-view imagery", abstract: "CNN extraction from 4M frames, six EU cities." },
 ];
 
 export function ResearchPreview() {
@@ -69,10 +69,10 @@ export function ResearchPreview() {
             letterSpacing: "-0.02em",
           }}
         >
-          Recent <i style={{ fontStyle: "italic" }}>research</i>.
+          Selected <i style={{ fontStyle: "italic" }}>papers</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "34ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          {t("previewSubtitle")}{" "}
+          Recent output on real-estate econometrics and geospatial methods.{" "}
           <Link href={`/${locale}/research`} style={{ borderBottom: "1px solid" }}>
             {t("viewAll")} →
           </Link>

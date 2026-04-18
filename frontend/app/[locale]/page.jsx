@@ -1,7 +1,6 @@
 import { HeroSection } from "@/components/hero-section";
 import { Marquee } from "@/components/marquee";
 import { SkillsGrid } from "@/components/skills-grid";
-import { ProjectsPreview } from "@/components/projects-preview";
 import { WritingTeaser } from "@/components/writing-teaser";
 import { ResearchPreview } from "@/components/research-preview";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/json-ld";
@@ -14,9 +13,8 @@ export default function HomePage() {
       <HeroSection />
       <Marquee />
       <SkillsGrid />
-      <ProjectsPreview />
-      <ResearchPreview />
       <WritingTeaser />
+      <ResearchPreview />
     </main>
   );
 }

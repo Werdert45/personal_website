@@ -177,7 +177,7 @@
 
 /* ---------- Sections ---------- */
 .section-pad {
-  padding: 160px 50px;
+  padding: 160px 80px;
   position: relative;
   border-top: 1px solid var(--rule);
 }
@@ -448,7 +448,7 @@
 .xp {
   background: var(--ink);
   color: var(--paper);
-  padding: 160px 50px;
+  padding: 160px 80px;
 }
 .xp .section-label { color: #8A8676; }
 .xp .section-label .bar { background: var(--paper); }
@@ -727,7 +727,7 @@
 
 /* ---------- Yellow band ---------- */
 .yellow-band {
-  padding: 160px 50px 80px;
+  padding: 160px 80px 80px;
   background: var(--yellow);
   color: var(--ink);
   position: relative;
@@ -767,7 +767,7 @@
 .site-footer {
   background: var(--ink);
   color: #8A8676;
-  padding: 32px 50px;
+  padding: 32px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
