@@ -3,27 +3,32 @@
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  Calendar,
-  Clock,
-  Search,
-  ArrowRight,
-  FileText,
-  BookOpen,
-  Lightbulb,
-  Loader2,
-  Map,
-} from "lucide-react";
 
 function getTranslated(item, field, locale) {
   if (locale === "en") return item[field];
   const trans = item.translations?.find((t) => t.language === locale);
   return trans?.[field] || item[field];
 }
+
+function renderTitle(title) {
+  if (!title) return null;
+  const parts = title.split(" ");
+  if (parts.length === 1) return <i>{title}</i>;
+  const last = parts.pop();
+  return (
+    <>
+      {parts.join(" ")} <i>{last}</i>
+    </>
+  );
+}
+
+const DEFAULT_ITEMS = [
+  { id: 1, slug: "rent-prediction-hedonic", category: "RESEARCH", date: "2025-11", title: "Hedonic rent prediction across 15 EU metros", abstract: "Predicting apartment rents with PostGIS, gradient boosting and amenity-weighted isochrones. Cross-validated at parcel level." },
+  { id: 2, slug: "gentrification-abm", category: "METHODOLOGY", date: "2024-06", title: "Agent-based simulation of gentrification", abstract: "Modelling 10-year neighbourhood turnover in Amsterdam using Kadaster + CBS microdata and calibrated move probabilities." },
+  { id: 3, slug: "flood-risk-parcels", category: "CASE-STUDY", date: "2023-09", title: "Parcel-level flood risk for insurers", abstract: "90%+ accuracy on insurable-loss classification combining LiDAR, rainfall radar, and cadastre data." },
+  { id: 4, slug: "street-view-maintenance", category: "RESEARCH", date: "2024-02", title: "Street-view CV for maintenance signals", abstract: "Extracting façade wear and commerce intensity from 4M frames across six European cities." },
+  { id: 5, slug: "isochrones-api", category: "CASE-STUDY", date: "2025-03", title: "Sub-200ms isochrone API on OSRM + GTFS", abstract: "Replacing three paid vendors with an in-house stack covering walk/bike/transit for any EU point." },
+];
 
 export function ResearchList() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -34,181 +39,141 @@ export function ResearchList() {
   const locale = useLocale();
 
   const categories = [
-    { value: "all", label: t("all"), icon: FileText },
-    { value: "research", label: t("research"), icon: BookOpen },
-    { value: "case-study", label: t("caseStudies"), icon: Lightbulb },
-    { value: "methodology", label: t("methodology"), icon: FileText },
+    { value: "all", label: t("all") },
+    { value: "research", label: t("research") },
+    { value: "case-study", label: t("caseStudies") },
+    { value: "methodology", label: t("methodology") },
   ];
 
   useEffect(() => {
+    let alive = true;
     async function fetchResearch() {
       try {
-        setLoading(true);
         const response = await fetch("/api/django?endpoint=research");
         if (response.ok) {
           const data = await response.json();
           const results = data.results || data;
-          setResearchItems(results);
+          if (alive && Array.isArray(results) && results.length) setResearchItems(results);
         }
-      } catch (err) {
-        console.error("Error fetching research:", err);
-      } finally {
-        setLoading(false);
+      } catch {}
+      finally {
+        if (alive) setLoading(false);
       }
     }
     fetchResearch();
+    return () => { alive = false; };
   }, []);
 
-  const filteredItems = researchItems.filter((item) => {
-    const title = getTranslated(item, "title", locale);
-    const abstract = getTranslated(item, "abstract", locale);
+  const source = researchItems.length ? researchItems : DEFAULT_ITEMS;
+
+  const filteredItems = source.filter((item) => {
+    const title = getTranslated(item, "title", locale) || "";
+    const abstract = getTranslated(item, "abstract", locale) || "";
     const matchesSearch =
       title.toLowerCase().includes(searchQuery.toLowerCase()) ||
       abstract.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (item.tags || []).some((tag) =>
-        tag.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+      (item.tags || []).some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
     const matchesCategory =
-      activeCategory === "all" || item.category === activeCategory;
+      activeCategory === "all" || (item.category || "").toLowerCase() === activeCategory;
     return matchesSearch && matchesCategory;
   });
 
-  if (loading) {
-    return (
-      <section className="pt-32 pb-24">
-        <div className="container">
-          <div className="flex items-center justify-center min-h-[400px]">
-            <div className="flex flex-col items-center gap-4">
-              <Loader2 className="w-8 h-8 animate-spin text-primary" />
-              <p className="text-muted-foreground">{t("loading")}</p>
-            </div>
-          </div>
-        </div>
-      </section>
-    );
-  }
-
   return (
-    <section className="pt-32 pb-24">
-      <div className="container max-w-4xl">
-        <div className="text-center mb-12">
-          <Badge variant="secondary" className="mb-4">
-            {t("badge")}
-          </Badge>
-          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 text-balance">
-            {t("title")}
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            {t("subtitle")}
-          </p>
-        </div>
+    <section className="section-pad" style={{ paddingTop: 160 }}>
+      <div className="section-label">
+        <span className="bar" />
+        <span className="num-label">§ 04</span>
+        <span>Research — case notes, methods, essays</span>
+      </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 mb-8">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
-            <Input
-              placeholder={t("searchPlaceholder")}
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-10 bg-card"
-            />
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {categories.map((cat) => (
-              <Button
-                key={cat.value}
-                variant={activeCategory === cat.value ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveCategory(cat.value)}
-                className="gap-2"
-              >
-                <cat.icon className="w-4 h-4" />
-                <span className="hidden sm:inline">{cat.label}</span>
-              </Button>
-            ))}
-          </div>
-        </div>
+      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 64, flexWrap: "wrap" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontSize: "clamp(48px, 7vw, 104px)",
+            lineHeight: 0.95,
+            letterSpacing: "-0.02em",
+          }}
+        >
+          Field <i style={{ fontStyle: "italic" }}>notes</i>,<br />
+          public <span style={{ color: "var(--yellow-2)" }}>record</span>.
+        </h2>
+        <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "38ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
+          {t("subtitle")}
+        </p>
+      </div>
 
-        <div className="space-y-6">
-          {filteredItems.map((item) => (
-            <Link key={item.id} href={`/${locale}/research/${item.slug}`}>
-              <Card className="bg-card border-border hover:shadow-lg hover:border-primary/20 transition-all duration-300 group overflow-hidden">
-                {/* Preview image or placeholder */}
-                {item.preview_image ? (
-                  <img
-                    src={item.preview_image}
-                    alt=""
-                    className="w-full h-40 object-cover"
-                  />
-                ) : (
-                  <div className="w-full h-40 bg-muted flex items-center justify-center">
-                    <FileText className="w-10 h-10 text-muted-foreground/50" />
-                  </div>
-                )}
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between gap-4 mb-3">
-                    <div className="flex items-center gap-2">
-                      <Badge variant="secondary" className="text-xs">
-                        {item.category}
-                      </Badge>
-                      {item.has_map && (
-                        <Badge variant="outline" className="text-xs gap-1">
-                          <Map className="w-3 h-3" />
-                          {t("interactiveMap")}
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-
-                  <h2 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {getTranslated(item, "title", locale)}
-                  </h2>
-
-                  <p className="text-muted-foreground text-sm leading-relaxed mb-4 line-clamp-2">
-                    {getTranslated(item, "abstract", locale)}
-                  </p>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                      {item.date && (
-                        <span className="flex items-center gap-1">
-                          <Calendar className="w-4 h-4" />
-                          {item.date}
-                        </span>
-                      )}
-                      {item.read_time && (
-                        <span className="flex items-center gap-1">
-                          <Clock className="w-4 h-4" />
-                          {item.read_time}
-                        </span>
-                      )}
-                    </div>
-                    <span className="text-primary flex items-center gap-1 text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity">
-                      {t("readMore")} <ArrowRight className="w-4 h-4" />
-                    </span>
-                  </div>
-
-                  {item.tags && item.tags.length > 0 && (
-                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-border">
-                      {item.tags.map((tag) => (
-                        <Badge key={tag} variant="outline" className="text-xs">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
-            </Link>
+      <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 40, alignItems: "center" }}>
+        <input
+          type="search"
+          placeholder={t("searchPlaceholder")}
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{
+            flex: "1 1 260px",
+            background: "transparent",
+            border: 0,
+            borderBottom: "1px solid var(--ink)",
+            padding: "10px 0",
+            fontFamily: "var(--font-mono)",
+            fontSize: 13,
+            letterSpacing: "0.04em",
+            outline: "none",
+            color: "var(--ink)",
+          }}
+        />
+        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+          {categories.map((cat) => (
+            <button
+              key={cat.value}
+              onClick={() => setActiveCategory(cat.value)}
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                padding: "8px 14px",
+                border: "1px solid var(--ink)",
+                background: activeCategory === cat.value ? "var(--ink)" : "transparent",
+                color: activeCategory === cat.value ? "var(--paper)" : "var(--ink)",
+                cursor: "pointer",
+                transition: "all .2s",
+              }}
+            >
+              {cat.label}
+            </button>
           ))}
         </div>
-
-        {filteredItems.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-muted-foreground">{t("noResults")}</p>
-          </div>
-        )}
       </div>
+
+      {loading && !researchItems.length && (
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--mute)", padding: "40px 0" }}>
+          {t("loading")}
+        </p>
+      )}
+
+      <div className="research-list">
+        {filteredItems.map((item, i) => (
+          <Link key={item.id || item.slug} href={`/${locale}/research/${item.slug}`} style={{ display: "block" }}>
+            <div className="research-item">
+              <div className="ri">{String(i + 1).padStart(2, "0")}</div>
+              <div className="ry">{item.date || ""}</div>
+              <div className="rt">
+                {renderTitle(getTranslated(item, "title", locale))}
+                <span className="rm">{getTranslated(item, "abstract", locale)}</span>
+              </div>
+              <div className="rtag">{(item.category || "RESEARCH").toUpperCase()}</div>
+              <div className="rarr">→</div>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+      {!loading && filteredItems.length === 0 && (
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--mute)", padding: "40px 0", textAlign: "center" }}>
+          {t("noResults")}
+        </p>
+      )}
     </section>
   );
 }

@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 
 export const metadata = {
   title: "Terms of Service",
@@ -8,8 +6,7 @@ export const metadata = {
 
 export default function TermsOfServicePage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <div className="max-w-3xl mx-auto px-4 md:px-6 py-24 md:py-32">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">Terms of Service</h1>
         <p className="text-sm text-muted-foreground mb-8">
@@ -150,7 +147,6 @@ export default function TermsOfServicePage() {
           </section>
         </div>
       </div>
-      <Footer />
     </main>
   );
 }

@@ -1,6 +1,9 @@
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { Navigation } from "@/components/navigation";
+import { Footer } from "@/components/footer";
+import { PageFrame } from "@/components/page-frame";
 
 export default async function LocaleLayout({
   children,
@@ -24,7 +27,11 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      {children}
+      <PageFrame>
+        <Navigation />
+        {children}
+        <Footer />
+      </PageFrame>
     </NextIntlClientProvider>
   );
 }

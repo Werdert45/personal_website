@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { ABMThesisContent } from "@/components/project-abm-thesis";
 
 export const metadata = {
@@ -10,10 +8,8 @@ export const metadata = {
 
 export default function ABMThesisPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <ABMThesisContent />
-      <Footer />
     </main>
   );
 }

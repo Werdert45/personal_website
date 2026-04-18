@@ -435,56 +435,46 @@ export function ResearchArticle({ slug }) {
   };
 
   return (
-    <article className="pt-32 pb-24">
-      <div className="max-w-3xl mx-auto px-6">
-        {/* Back link */}
-        <Link
-          href="/research"
-          className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground mb-8 transition-colors"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          Back to Research
-        </Link>
+    <article className="section-pad reader" style={{ paddingTop: 160 }}>
+      <div style={{ maxWidth: 780, margin: "0 auto" }}>
+        <div className="section-label">
+          <span className="bar" />
+          <span className="num-label">§ 04</span>
+          <Link href="/research" style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <ArrowLeft className="w-4 h-4" />
+            Back to Research
+          </Link>
+        </div>
 
-        {/* Article Header */}
-        <header className="mb-10">
-          <div className="flex flex-wrap gap-2 mb-4">
-            <Badge variant="secondary">{article.category}</Badge>
+        <header style={{ marginBottom: 48, paddingBottom: 40, borderBottom: "1px solid var(--rule)" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, border: "1px solid var(--ink)", padding: "5px 9px", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              {article.category}
+            </span>
             {article.tags.map((tag) => (
-              <Badge key={tag} variant="outline">
+              <span key={tag} style={{ fontFamily: "var(--font-mono)", fontSize: 10.5, border: "1px solid var(--rule)", padding: "5px 9px", textTransform: "uppercase", letterSpacing: "0.06em", color: "var(--mute)" }}>
                 {tag}
-              </Badge>
+              </span>
             ))}
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3 text-balance">
+          <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(40px, 5vw, 68px)", lineHeight: 1, letterSpacing: "-0.02em", marginBottom: 16 }}>
             {article.title}
           </h1>
 
-          <p className="text-xl text-muted-foreground mb-6">{article.subtitle}</p>
+          <p style={{ fontFamily: "var(--font-serif)", fontSize: 22, fontStyle: "italic", color: "var(--ink-2)", marginBottom: 24 }}>
+            {article.subtitle}
+          </p>
 
-          <div className="flex items-center justify-between flex-wrap gap-4">
-            <div className="flex items-center gap-4 text-sm text-muted-foreground">
-              <span className="font-medium text-foreground">{article.author}</span>
-              <span className="flex items-center gap-1">
-                <Calendar className="w-4 h-4" />
-                {article.date}
-              </span>
-              <span className="flex items-center gap-1">
-                <Clock className="w-4 h-4" />
-                {article.readTime}
-              </span>
+          <div style={{ display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: 16, fontFamily: "var(--font-mono)", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em" }}>
+            <div style={{ display: "flex", gap: 24, alignItems: "center" }}>
+              <span style={{ color: "var(--ink)" }}>{article.author}</span>
+              <span style={{ color: "var(--mute)" }}>{article.date}</span>
+              <span style={{ color: "var(--mute)" }}>{article.readTime}</span>
             </div>
-
-            <div className="flex gap-2">
-              <Button variant="outline" size="sm">
-                <Share2 className="w-4 h-4 mr-2" />
-                Share
-              </Button>
-              <Button variant="outline" size="sm">
-                <Download className="w-4 h-4 mr-2" />
-                PDF
-              </Button>
+            <div style={{ display: "flex", gap: 16 }}>
+              <button style={{ fontFamily: "var(--font-mono)", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", borderBottom: "1px solid var(--ink)", paddingBottom: 2 }}>Share ↗</button>
+              <button style={{ fontFamily: "var(--font-mono)", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.08em", borderBottom: "1px solid var(--ink)", paddingBottom: 2 }}>PDF ↓</button>
             </div>
           </div>
         </header>
@@ -496,23 +486,17 @@ export function ResearchArticle({ slug }) {
           )}
         </div>
 
-        {/* Article Footer */}
-        <footer className="mt-12 pt-8 border-t border-border">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-sm text-muted-foreground mb-2">Written by</p>
-              <p className="font-semibold text-foreground">{article.author}</p>
-              <p className="text-sm text-muted-foreground">
-                GIS Developer & Spatial Analyst
-              </p>
-            </div>
-            <Link href="/contact">
-              <Button className="gap-2">
-                Discuss this research
-                <ExternalLink className="w-4 h-4" />
-              </Button>
-            </Link>
+        <footer style={{ marginTop: 64, paddingTop: 40, borderTop: "1px solid var(--rule)", display: "flex", justifyContent: "space-between", alignItems: "end", gap: 24, flexWrap: "wrap" }}>
+          <div>
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--mute)", marginBottom: 8 }}>Written by</p>
+            <p style={{ fontFamily: "var(--font-serif)", fontSize: 28 }}>{article.author}</p>
+            <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.08em", color: "var(--mute)" }}>
+              GIS Developer & Spatial Analyst
+            </p>
           </div>
+          <Link href="/contact" className="btn primary">
+            Discuss this research →
+          </Link>
         </footer>
       </div>
     </article>

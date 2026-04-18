@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { VisualizationsGallery } from "@/components/visualizations-gallery";
 
 export const metadata = {
@@ -16,10 +14,8 @@ export const metadata = {
 
 export default function VisualizationsPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <VisualizationsGallery />
-      <Footer />
     </main>
   );
 }

@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { ResearchList } from "@/components/research-list";
 
 export const metadata = {
@@ -16,10 +14,8 @@ export const metadata = {
 
 export default function ResearchPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <ResearchList />
-      <Footer />
     </main>
   );
 }

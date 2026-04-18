@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { AboutContent } from "@/components/about-content";
 
 export const metadata = {
@@ -10,10 +8,8 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <AboutContent />
-      <Footer />
     </main>
   );
 }
