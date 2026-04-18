@@ -125,7 +125,7 @@ export function Navigation() {
             letterSpacing: "0.1em",
           }}
         >
-          {Object.entries(localeLabels).slice(0, 2).map(([key, { label, flag }]) => (
+          {Object.entries(localeLabels).map(([key, { label, flag }]) => (
             <button
               key={key}
               onClick={() => switchLocale(key)}
@@ -216,7 +216,7 @@ export function Navigation() {
               </Link>
             ))}
             <div className="flex gap-2 pt-4">
-              {Object.entries(localeLabels).slice(0, 2).map(([key, { label, flag }]) => (
+              {Object.entries(localeLabels).map(([key, { label, flag }]) => (
                 <button
                   key={key}
                   onClick={() => switchLocale(key)}
