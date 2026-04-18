@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { ContactContent } from "@/components/contact-content";
 
 export const metadata = {
@@ -16,10 +14,8 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <ContactContent />
-      <Footer />
     </main>
   );
 }

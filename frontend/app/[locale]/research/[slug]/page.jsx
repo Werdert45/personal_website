@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import ResearchArticleDetail from "@/components/research-article-detail";
 
 export async function generateMetadata({ params }) {
@@ -73,10 +71,8 @@ export async function generateMetadata({ params }) {
 export default async function ResearchArticlePage({ params }) {
   const { slug } = await params;
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <ResearchArticleDetail slug={slug} />
-      <Footer />
     </main>
   );
 }
