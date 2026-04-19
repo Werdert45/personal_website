@@ -1,10 +1,10 @@
 """
-Serializers for Research, ResearchTranslation, and Visualization models.
+Serializers for Research and ResearchTranslation models.
 """
 
 from rest_framework import serializers
 
-from .models import Research, ResearchTranslation, Visualization
+from .models import Research, ResearchTranslation
 
 
 class ResearchTranslationSerializer(serializers.ModelSerializer):
@@ -102,92 +102,6 @@ class ResearchListSerializer(serializers.ModelSerializer):
             "pdf_file",
             "preview_image",
             "translations",
-            "created_at",
-        ]
-
-
-class VisualizationSerializer(serializers.ModelSerializer):
-    """Serializer for Visualization model."""
-
-    geodataset_id = serializers.IntegerField(
-        source="geodataset.id",
-        read_only=True,
-        allow_null=True,
-    )
-    preview_image = serializers.CharField(required=False, allow_blank=True, allow_null=True, default="")
-    value_field = serializers.CharField(required=False, allow_blank=True, allow_null=True, default="")
-    translations = serializers.JSONField(required=False, write_only=True)
-
-    class Meta:
-        model = Visualization
-        fields = [
-            "id",
-            "title",
-            "slug",
-            "description",
-            "content",
-            "category",
-            "status",
-            "technologies",
-            "data_points",
-            "region",
-            "date",
-            "metrics",
-            "map_config",
-            "geojson_endpoint",
-            "geojson_data",
-            "geodataset",
-            "geodataset_id",
-            "value_field",
-            "is_premium",
-            "preview_image",
-            "translations",
-            "created_at",
-            "updated_at",
-        ]
-        read_only_fields = ["id", "created_at", "updated_at", "geodataset_id"]
-
-    def validate_preview_image(self, value):
-        return value or ""
-
-    def validate_value_field(self, value):
-        return value or ""
-
-    def create(self, validated_data):
-        validated_data.pop("translations", None)
-        return super().create(validated_data)
-
-    def update(self, instance, validated_data):
-        validated_data.pop("translations", None)
-        return super().update(instance, validated_data)
-
-
-class VisualizationListSerializer(serializers.ModelSerializer):
-    """Lightweight serializer for visualization listings."""
-
-    geodataset_id = serializers.IntegerField(
-        source="geodataset.id",
-        read_only=True,
-        allow_null=True,
-    )
-
-    class Meta:
-        model = Visualization
-        fields = [
-            "id",
-            "title",
-            "slug",
-            "description",
-            "category",
-            "status",
-            "technologies",
-            "data_points",
-            "region",
-            "date",
-            "geodataset_id",
-            "value_field",
-            "is_premium",
-            "preview_image",
             "created_at",
         ]
 

@@ -1,5 +1,5 @@
 """
-Views for Research, ResearchTranslation, Visualizations, and Image uploads.
+Views for Research, ResearchTranslation, and Image uploads.
 """
 
 import os
@@ -12,14 +12,12 @@ from rest_framework.permissions import IsAuthenticated, SAFE_METHODS, BasePermis
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import Research, ResearchTranslation, Visualization
+from .models import Research, ResearchTranslation
 from .serializers import (
     ImageUploadSerializer,
     ResearchListSerializer,
     ResearchSerializer,
     ResearchTranslationSerializer,
-    VisualizationListSerializer,
-    VisualizationSerializer,
 )
 
 
@@ -130,45 +128,6 @@ class ResearchTranslationView(generics.GenericAPIView):
             serializer.data,
             status=status.HTTP_201_CREATED if created else status.HTTP_200_OK,
         )
-
-
-class VisualizationListCreateView(generics.ListCreateAPIView):
-    """List all visualizations or create a new one."""
-
-    queryset = Visualization.objects.all()
-    permission_classes = [IsAuthenticatedOrReadOnly]
-
-    def get_serializer_class(self):
-        if self.request.method == "GET":
-            return VisualizationListSerializer
-        return VisualizationSerializer
-
-    def get_queryset(self):
-        queryset = Visualization.objects.all()
-
-        # Filter by status if specified
-        status_filter = self.request.query_params.get("status")
-        if status_filter:
-            queryset = queryset.filter(status=status_filter)
-
-        # Filter by category
-        category = self.request.query_params.get("category")
-        if category:
-            queryset = queryset.filter(category=category)
-
-        return queryset
-
-
-class VisualizationDetailView(generics.RetrieveUpdateDestroyAPIView):
-    """Retrieve, update, or delete a visualization."""
-
-    queryset = Visualization.objects.all()
-    serializer_class = VisualizationSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
-    lookup_field = "slug"
-
-    def get_queryset(self):
-        return Visualization.objects.all()
 
 
 class ImageUploadView(APIView):
