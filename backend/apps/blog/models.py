@@ -15,20 +15,26 @@ class BlogPost(models.Model):
     ]
 
     CATEGORY_CHOICES = [
-        ("article", "Article"),
-        ("tutorial", "Tutorial"),
+        ("visualisation", "Visualisation"),
+        ("update", "Update"),
+        ("explanation", "Explanation"),
+        ("thought", "Thought"),
         ("note", "Note"),
-        ("announcement", "Announcement"),
-        ("other", "Other"),
     ]
 
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     excerpt = models.TextField(blank=True, help_text="Short summary shown in listings")
     content = models.TextField(blank=True, help_text="Markdown content")
-    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="article")
+    category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="thought")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="draft")
     tags = models.JSONField(default=list)
+
+    meta = models.JSONField(
+        default=dict,
+        blank=True,
+        help_text="Arbitrary metadata (e.g., map_config, geojson_endpoint for visualisation posts).",
+    )
 
     read_time = models.CharField(max_length=20, blank=True, help_text="e.g., '5 min'")
     date = models.CharField(max_length=50, blank=True, help_text="Display date, e.g., 'March 2026'")
