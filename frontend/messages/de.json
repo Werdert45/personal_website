@@ -257,5 +257,19 @@
     "kicker": "Expertise — vier Kernkompetenzen",
     "titleItalic": "Kern-",
     "titleRest": "kompetenzen."
+  },
+  "Consent": {
+    "dialogLabel": "Cookie-Einwilligung",
+    "body": "Ich verwende Cookies, um den Traffic zu messen und die Seite zu verbessern. Es werden keine personenbezogenen Daten verkauft oder geteilt. Sie können ablehnen, die Seite bleibt voll funktionsfähig.",
+    "accept": "Akzeptieren",
+    "decline": "Ablehnen",
+    "policyLink": "Cookie-Richtlinie lesen"
+  },
+  "Share": {
+    "label": "Teilen",
+    "linkedin": "LinkedIn",
+    "twitter": "X / Twitter",
+    "copy": "Link kopieren",
+    "copied": "Kopiert"
   }
 }

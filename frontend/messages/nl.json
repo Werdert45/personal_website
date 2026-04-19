@@ -257,5 +257,19 @@
     "kicker": "Expertise — vier kerncompetenties",
     "titleItalic": "Kern-",
     "titleRest": "competenties."
+  },
+  "Consent": {
+    "dialogLabel": "Cookie-toestemming",
+    "body": "Ik gebruik cookies om bezoek te meten en de site te verbeteren. Geen persoonlijke data wordt verkocht of gedeeld. Weiger kan, de site blijft volledig werken.",
+    "accept": "Accepteren",
+    "decline": "Weigeren",
+    "policyLink": "Lees het cookiebeleid"
+  },
+  "Share": {
+    "label": "Delen",
+    "linkedin": "LinkedIn",
+    "twitter": "X / Twitter",
+    "copy": "Link kopiëren",
+    "copied": "Gekopieerd"
   }
 }

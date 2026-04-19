@@ -4,6 +4,9 @@ import { routing } from "@/i18n/routing";
 import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { PageFrame } from "@/components/page-frame";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { LinkedInInsight } from "@/components/analytics/linkedin-insight";
+import { CookieConsent } from "@/components/analytics/cookie-consent";
 
 export default async function LocaleLayout({
   children,
@@ -32,6 +35,9 @@ export default async function LocaleLayout({
         {children}
         <Footer />
       </PageFrame>
+      <GoogleAnalytics />
+      <LinkedInInsight />
+      <CookieConsent />
     </NextIntlClientProvider>
   );
 }

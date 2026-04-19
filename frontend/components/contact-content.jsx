@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Script from "next/script";
+import { trackEvent } from "@/lib/analytics";
 
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
@@ -104,6 +105,7 @@ export function ContactContent() {
         setStatus({ type: "success", message: t("successMessage") });
         setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
         resetCaptcha();
+        trackEvent("contact_submit", { form: "contact" });
       } else {
         setStatus({ type: "error", message: data.error || t("errorGeneric") });
       }

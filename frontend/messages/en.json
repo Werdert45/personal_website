@@ -257,5 +257,19 @@
     "kicker": "Expertise — four core competencies",
     "titleItalic": "Core",
     "titleRest": "competencies."
+  },
+  "Consent": {
+    "dialogLabel": "Cookie consent",
+    "body": "I use cookies to measure traffic and improve the site. No personal data is sold or shared. You can decline and the site stays fully functional.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "policyLink": "Read the cookie policy"
+  },
+  "Share": {
+    "label": "Share",
+    "linkedin": "LinkedIn",
+    "twitter": "X / Twitter",
+    "copy": "Copy link",
+    "copied": "Copied"
   }
 }

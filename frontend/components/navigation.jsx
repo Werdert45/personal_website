@@ -5,6 +5,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const localeLabels = {
   en: { label: "EN", flag: "🇬🇧" },
@@ -142,6 +143,7 @@ export function Navigation() {
 
         <Link
           href={`/${locale}/contact`}
+          onClick={() => trackEvent("cta_click", { cta: "lets_talk", location: "nav" })}
           style={{
             fontFamily: "var(--font-mono)",
             fontSize: 12,

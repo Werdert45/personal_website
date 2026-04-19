@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { EUROPE_PATH, europeanCities, dataConnections } from "./europe-map-path";
+import { trackEvent } from "@/lib/analytics";
 
 function renderTitle(title, highlight, end) {
   const cleanTitle = (title || "").replace(/[&\s]+$/, "").trim();
@@ -126,11 +127,19 @@ export function HeroSection() {
           </p>
 
           <div style={{ marginTop: 40, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
-            <Link href={`/${locale}/thoughts`} className="btn primary">
+            <Link
+              href={`/${locale}/thoughts`}
+              className="btn primary"
+              onClick={() => trackEvent("cta_click", { cta: "view_projects", location: "hero" })}
+            >
               <span>{t("viewProjects")}</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
             </Link>
-            <Link href={`/${locale}/contact`} className="btn ghost">
+            <Link
+              href={`/${locale}/contact`}
+              className="btn ghost"
+              onClick={() => trackEvent("cta_click", { cta: "get_in_touch", location: "hero" })}
+            >
               <span>{t("getInTouch")}</span>
             </Link>
           </div>

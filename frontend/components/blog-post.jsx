@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { ShareBar } from "@/components/share-bar";
 
 function getField(post, field, locale) {
   if (locale === "en") return post[field];
@@ -84,6 +85,8 @@ export function BlogPost({ slug }) {
       {excerpt && <p className="dek">{excerpt}</p>}
 
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+
+      <ShareBar slug={slug} title={title} />
 
       <div className="byline" style={{ marginTop: 48, paddingTop: 24, borderTop: "1px solid var(--rule)" }}>
         <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--mute)" }}>

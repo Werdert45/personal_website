@@ -3,8 +3,6 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { Providers } from '@/components/providers'
-import { CookieConsent } from '@/components/cookie-consent'
-import { GoogleAnalytics } from '@/components/google-analytics'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -78,8 +76,6 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
-        <CookieConsent />
-        <GoogleAnalytics />
         <Analytics />
       </body>
     </html>

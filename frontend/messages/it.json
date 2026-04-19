@@ -257,5 +257,19 @@
     "kicker": "Competenze — quattro competenze chiave",
     "titleItalic": "Competenze",
     "titleRest": "principali."
+  },
+  "Consent": {
+    "dialogLabel": "Consenso ai cookie",
+    "body": "Uso i cookie per misurare il traffico e migliorare il sito. Nessun dato personale viene venduto o condiviso. Puoi rifiutare e il sito rimane pienamente funzionale.",
+    "accept": "Accetta",
+    "decline": "Rifiuta",
+    "policyLink": "Leggi la cookie policy"
+  },
+  "Share": {
+    "label": "Condividi",
+    "linkedin": "LinkedIn",
+    "twitter": "X / Twitter",
+    "copy": "Copia link",
+    "copied": "Copiato"
   }
 }
