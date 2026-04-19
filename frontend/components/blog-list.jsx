@@ -5,12 +5,12 @@ import { useLocale } from "next-intl";
 import Link from "next/link";
 
 const DEFAULT_POSTS = [
-  { slug: "against-dashboards", category: "OPINION", date: "2026-04", title: "The case against dashboards", excerpt: "Why opinionated internal tools outperform generic dashboards for real estate teams — with five examples from the past year." },
-  { slug: "h3-for-real-estate", category: "GEODATA", date: "2026-03", title: "Why we switched to H3 for real-estate geoindexing", excerpt: "Trading quadkeys for hexagons: what changed in query latency, cache hit-rate, and analyst ergonomics." },
-  { slug: "20m-records-scraping", category: "DATA", date: "2026-02", title: "Scraping at scale: 20M records, one pipeline", excerpt: "A field report on running a 20M-record scrape behind Airflow, with lessons on rate-limiting, deduplication and cost." },
-  { slug: "postgis-vs-duckdb", category: "TUTORIAL", date: "2026-01", title: "PostGIS vs DuckDB for analyst queries", excerpt: "When each wins, and how we route analyst notebooks to the right backend without them noticing." },
-  { slug: "cadastre-as-code", category: "OSS", date: "2025-12", title: "Cadastre-as-Code, one year in", excerpt: "Notes from maintaining an MIT-licensed library that normalises cadastral dumps across six EU countries." },
-  { slug: "isochrone-api", category: "CASE-STUDY", date: "2025-11", title: "Replacing three paid isochrone vendors", excerpt: "How we built a sub-200ms in-house isochrone API on OSRM + GTFS and retired three recurring contracts." },
+  { slug: "against-dashboards", category: "THOUGHT", date: "2026-04", title: "The case against dashboards", excerpt: "Why opinionated internal tools outperform generic dashboards for real estate teams — with five examples from the past year." },
+  { slug: "h3-for-real-estate", category: "EXPLANATION", date: "2026-03", title: "Why we switched to H3 for real-estate geoindexing", excerpt: "Trading quadkeys for hexagons: what changed in query latency, cache hit-rate, and analyst ergonomics." },
+  { slug: "internal-tools-beat-dashboards", category: "UPDATE", date: "2026-02", title: "Internal tools that quietly replaced our dashboards", excerpt: "A field report on building three small apps that retired a 40-tab dashboard farm over six months." },
+  { slug: "postgis-vs-duckdb", category: "EXPLANATION", date: "2026-01", title: "PostGIS vs DuckDB for analyst queries", excerpt: "When each wins, and how we route analyst notebooks to the right backend without them noticing." },
+  { slug: "cadastre-as-code", category: "UPDATE", date: "2025-12", title: "Cadastre-as-Code, one year in", excerpt: "Notes from maintaining an MIT-licensed library that normalises cadastral dumps across six EU countries." },
+  { slug: "isochrone-api", category: "EXPLANATION", date: "2025-11", title: "Replacing three paid isochrone vendors", excerpt: "How we built a sub-200ms in-house isochrone API on OSRM + GTFS and retired three recurring contracts." },
 ];
 
 function renderTitle(title) {
@@ -58,7 +58,7 @@ export function BlogList() {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 03</span>
-        <span>Blog — essays, tutorials, field notes</span>
+        <span>Thoughts — essays, updates, notes</span>
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 64, flexWrap: "wrap" }}>
@@ -70,7 +70,7 @@ export function BlogList() {
             letterSpacing: "-0.02em",
           }}
         >
-          Recent <i style={{ fontStyle: "italic" }}>writing</i>.
+          Recent <i style={{ fontStyle: "italic" }}>thoughts</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "38ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
           Short pieces on tools, pipelines, spatial methods and the occasional rant.
@@ -84,14 +84,14 @@ export function BlogList() {
       )}
 
       {featured && (
-        <Link href={`/${locale}/blog/${featured.slug}`} style={{ display: "block" }}>
+        <Link href={`/${locale}/thoughts/${featured.slug}`} style={{ display: "block" }}>
           <div className="blog-feat">
             <div className="cover">
-              <span className="kicker">Featured · {getField(featured, "category", locale, "ARTICLE").toUpperCase()}</span>
+              <span className="kicker">Featured · {getField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
             </div>
             <div className="body">
               <div className="tag">
-                <span>{getField(featured, "category", locale, "ARTICLE").toUpperCase()}</span>
+                <span>{getField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
                 <span>{(featured.date || featured.published_at || "").slice(0, 7)}</span>
               </div>
               <h3>{renderTitle(getField(featured, "title", locale, ""))}</h3>
@@ -104,7 +104,7 @@ export function BlogList() {
 
       <div className="blog-list">
         {rest.map((post, i) => (
-          <Link key={post.slug} href={`/${locale}/blog/${post.slug}`} style={{ display: "block" }}>
+          <Link key={post.slug} href={`/${locale}/thoughts/${post.slug}`} style={{ display: "block" }}>
             <div className="blog-row">
               <div className="bi">{String(i + 2).padStart(2, "0")}</div>
               <div className="by">{(post.date || post.published_at || "").slice(0, 7)}</div>
@@ -112,7 +112,7 @@ export function BlogList() {
                 {renderTitle(getField(post, "title", locale, ""))}
                 <span className="bm">{getField(post, "excerpt", locale, "")}</span>
               </div>
-              <div className="bg">{getField(post, "category", locale, "ARTICLE").toUpperCase()}</div>
+              <div className="bg">{getField(post, "category", locale, "THOUGHT").toUpperCase()}</div>
               <div className="barr">→</div>
             </div>
           </Link>
