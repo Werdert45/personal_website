@@ -33,20 +33,10 @@ const DEFAULT_ITEMS = [
 
 export function ResearchList() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [activeCategory, setActiveCategory] = useState("all");
   const [researchItems, setResearchItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const t = useTranslations("Research");
   const locale = useLocale();
-
-  const categories = [
-    { value: "all", label: t("all") },
-    { value: "paper", label: "Papers" },
-    { value: "preprint", label: "Preprints" },
-    { value: "working-paper", label: "Working papers" },
-    { value: "method", label: "Methods" },
-    { value: "review", label: "Reviews" },
-  ];
 
   useEffect(() => {
     let alive = true;
@@ -72,13 +62,12 @@ export function ResearchList() {
   const filteredItems = source.filter((item) => {
     const title = getTranslated(item, "title", locale) || "";
     const abstract = getTranslated(item, "abstract", locale) || "";
-    const matchesSearch =
-      title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      abstract.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (item.tags || []).some((tag) => tag.toLowerCase().includes(searchQuery.toLowerCase()));
-    const matchesCategory =
-      activeCategory === "all" || (item.category || "").toLowerCase() === activeCategory;
-    return matchesSearch && matchesCategory;
+    const q = searchQuery.toLowerCase();
+    return (
+      title.toLowerCase().includes(q) ||
+      abstract.toLowerCase().includes(q) ||
+      (item.tags || []).some((tag) => tag.toLowerCase().includes(q))
+    );
   });
 
   return (
@@ -125,28 +114,6 @@ export function ResearchList() {
             color: "var(--ink)",
           }}
         />
-        <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          {categories.map((cat) => (
-            <button
-              key={cat.value}
-              onClick={() => setActiveCategory(cat.value)}
-              style={{
-                fontFamily: "var(--font-mono)",
-                fontSize: 11,
-                textTransform: "uppercase",
-                letterSpacing: "0.08em",
-                padding: "8px 14px",
-                border: "1px solid var(--ink)",
-                background: activeCategory === cat.value ? "var(--ink)" : "transparent",
-                color: activeCategory === cat.value ? "var(--paper)" : "var(--ink)",
-                cursor: "pointer",
-                transition: "all .2s",
-              }}
-            >
-              {cat.label}
-            </button>
-          ))}
-        </div>
       </div>
 
       {loading && !researchItems.length && (
