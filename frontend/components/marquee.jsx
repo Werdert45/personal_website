@@ -2,8 +2,8 @@ export function Marquee({ items }) {
   const defaults = [
     "Machine Learning",
     "Data Engineering",
-    "Spatial Econometrics",
-    "Scraping & Data Mining",
+    "Geospatial Analysis",
+    "Internal Processes",
     "REITs · Funds · Eurostat",
   ];
   const list = items || defaults;
