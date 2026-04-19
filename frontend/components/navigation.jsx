@@ -24,7 +24,7 @@ export function Navigation() {
     router = useRouter();
   } catch {
     t = (key) => {
-      const fallback = { home: "Home", about: "About", visualizations: "Visualizations", research: "Research", contact: "Contact", blog: "Blog", brand: "Ian Ronk" };
+      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", brand: "Ian Ronk" };
       return fallback[key] || key;
     };
     locale = "en";
@@ -35,7 +35,7 @@ export function Navigation() {
   const navLinks = [
     { href: `/${locale}`, label: t("home"), idx: "01", routeKey: "/" },
     { href: `/${locale}/about`, label: t("about"), idx: "02", routeKey: "/about" },
-    { href: `/${locale}/blog`, label: t("visualizations"), idx: "03", routeKey: "/blog" },
+    { href: `/${locale}/thoughts`, label: t("visualizations"), idx: "03", routeKey: "/thoughts" },
     { href: `/${locale}/research`, label: t("research"), idx: "04", routeKey: "/research" },
     { href: `/${locale}/contact`, label: t("contact"), idx: "05", routeKey: "/contact" },
   ];
