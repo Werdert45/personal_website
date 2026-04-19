@@ -69,20 +69,26 @@ function SkillViz({ index }) {
       </svg>
     );
   }
-  // Scraping — browser window
+  // Internal Processes — closed-loop automation diagram
   return (
     <svg viewBox="0 0 320 100" style={{ width: "100%", height: "100%" }}>
-      <g fontFamily="var(--font-mono)" fontSize="8" fill="#111110">
-        <rect x="10" y="10" width="300" height="80" fill="#F6F4EE" stroke="#111110" />
-        <rect x="10" y="10" width="300" height="14" fill="#111110" />
-        <circle cx="18" cy="17" r="2" fill="#FFD60A" />
-        <circle cx="26" cy="17" r="2" fill="#FFD60A" />
-        <circle cx="34" cy="17" r="2" fill="#FFD60A" />
-        <text x="20" y="38" fill="#111110">GET /listings?p=</text>
-        <rect x="20" y="46" width="150" height="6" fill="#FFD60A" />
-        <rect x="20" y="58" width="240" height="6" fill="#111110" opacity="0.15" />
-        <rect x="20" y="70" width="200" height="6" fill="#111110" opacity="0.15" />
-        <text x="230" y="85" fill="#111110">20M+ rec</text>
+      <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
+        <rect x="14" y="34" width="72" height="30" fill="#F6F4EE" stroke="#111110" />
+        <text x="28" y="53">trigger</text>
+
+        <rect x="124" y="34" width="72" height="30" fill="#FFD60A" stroke="#111110" />
+        <text x="146" y="53">run</text>
+
+        <rect x="234" y="34" width="72" height="30" fill="#111110" stroke="#111110" />
+        <text x="250" y="53" fill="#FFD60A">report</text>
+      </g>
+      <g stroke="#111110" strokeWidth="1.2" fill="none">
+        <path d="M86 49 L124 49" />
+        <path d="M196 49 L234 49" />
+        <path d="M270 34 C 270 10, 50 10, 50 34" strokeDasharray="3 3" />
+        <path d="M54 34 L50 30 L46 34" />
+        <path d="M118 45 L124 49 L118 53" />
+        <path d="M228 45 L234 49 L228 53" />
       </g>
     </svg>
   );
@@ -92,10 +98,10 @@ const stacks = [
   ["SAM", "LVMs", "XGBoost", "PyTorch", "scikit-learn"],
   ["Airflow", "Docker", "Python", "Postgres", "PostGIS", "dbt"],
   ["PostGIS", "GeoPandas", "H3", "CV", "Agent-based"],
-  ["Selenium", "Proxies", "Captcha", "Playwright", "ETL"],
+  ["Airflow", "dbt", "Docker", "FastAPI", "Streamlit", "Postgres"],
 ];
 
-const shortTags = ["ML", "ENG", "GEO", "SCR"];
+const shortTags = ["ML", "ENG", "GEO", "OPS"];
 
 function splitTitle(title) {
   const parts = title.split(" ");
