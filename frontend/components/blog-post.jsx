@@ -46,13 +46,13 @@ export function BlogPost({ slug }) {
         <div className="section-label">
           <span className="bar" />
           <span className="num-label">§ 03</span>
-          <Link href={`/${locale}/blog`}>← Back to blog</Link>
+          <Link href={`/${locale}/thoughts`}>← Back to thoughts</Link>
         </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(40px,5vw,68px)", lineHeight: 1 }}>
           Post not <i style={{ fontStyle: "italic" }}>found</i>.
         </h1>
         <p style={{ marginTop: 24, color: "var(--mute)" }}>
-          The post at <code>/{locale}/blog/{slug}</code> hasn&apos;t been published yet.
+          The post at <code>/{locale}/thoughts/{slug}</code> hasn&apos;t been published yet.
         </p>
       </section>
     );
@@ -68,7 +68,7 @@ export function BlogPost({ slug }) {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 03</span>
-        <Link href={`/${locale}/blog`}>← Back to blog</Link>
+        <Link href={`/${locale}/thoughts`}>← Back to thoughts</Link>
       </div>
 
       <div className="meta" style={{ display: "flex", gap: 24, flexWrap: "wrap", marginBottom: 24 }}>
