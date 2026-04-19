@@ -5,9 +5,9 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 
 const DEFAULT_POSTS = [
-  { slug: "against-dashboards", date: "2026-04", category: "OPINION", title: "The case against dashboards", italic: "dashboards" },
-  { slug: "h3-for-real-estate", date: "2026-03", category: "GEODATA", title: "Why we switched to H3 for real-estate geoindexing", italic: "H3" },
-  { slug: "20m-records-scraping", date: "2026-02", category: "DATA", title: "Scraping at scale: 20M records", italic: "20M records" },
+  { slug: "against-dashboards", date: "2026-04", category: "THOUGHT", title: "The case against dashboards", italic: "dashboards" },
+  { slug: "h3-for-real-estate", date: "2026-03", category: "EXPLANATION", title: "Why we switched to H3 for real-estate geoindexing", italic: "H3" },
+  { slug: "internal-tools-beat-dashboards", date: "2026-02", category: "UPDATE", title: "Internal tools that quietly replaced our dashboards", italic: "tools" },
 ];
 
 function renderTitle(title, italicToken) {
@@ -73,11 +73,11 @@ export function WritingTeaser() {
             letterSpacing: "-0.02em",
           }}
         >
-          Recent <i style={{ fontStyle: "italic" }}>writing</i>.
+          Recent <i style={{ fontStyle: "italic" }}>thoughts</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "34ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
           Essays, tutorials and field notes.{" "}
-          <Link href={`/${locale}/blog`} style={{ borderBottom: "1px solid" }}>
+          <Link href={`/${locale}/thoughts`} style={{ borderBottom: "1px solid" }}>
             View all →
           </Link>
         </p>
@@ -89,7 +89,7 @@ export function WritingTeaser() {
           const date = (p.published_at || p.date || "").slice(0, 7);
           const tag = (getField(p, "category", locale) || p.category || "ARTICLE").toUpperCase();
           return (
-            <Link href={`/${locale}/blog/${p.slug}`} key={p.slug} className="wt-card">
+            <Link href={`/${locale}/thoughts/${p.slug}`} key={p.slug} className="wt-card">
               <div className="t">
                 <span>{tag}</span>
                 <span>{date}</span>
