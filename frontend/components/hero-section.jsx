@@ -62,7 +62,6 @@ export function HeroSection() {
       style={{
         position: "relative",
         overflow: "hidden",
-        padding: "140px 80px 96px",
       }}
     >
       <div ref={spotRef} className="spot" />
@@ -94,10 +93,6 @@ export function HeroSection() {
       <div
         className="hero-grid"
         style={{
-          display: "grid",
-          gridTemplateColumns: "1.35fr 1fr",
-          gap: 64,
-          alignItems: "center",
           position: "relative",
           zIndex: 2,
         }}
@@ -147,9 +142,7 @@ export function HeroSection() {
           style={{
             position: "relative",
             aspectRatio: "1 / 1",
-            maxWidth: 520,
             width: "100%",
-            justifySelf: "end",
           }}
         >
           <svg viewBox="200 80 760 560" style={{ width: "100%", height: "100%", display: "block" }}>
@@ -225,9 +218,6 @@ export function HeroSection() {
         className="hero-stats"
         style={{
           marginTop: 64,
-          display: "grid",
-          gridTemplateColumns: "auto auto auto 1fr",
-          gap: 0,
           borderTop: "1px solid var(--ink)",
           position: "relative",
           zIndex: 2,
@@ -255,30 +245,6 @@ export function HeroSection() {
         </div>
       </div>
 
-      <style jsx>{`
-        @media (max-width: 980px) {
-          .hero-grid {
-            grid-template-columns: 1fr !important;
-            gap: 40px !important;
-          }
-          .hero-visual {
-            max-width: 400px !important;
-            justify-self: start !important;
-          }
-          .hero-stats {
-            grid-template-columns: 1fr 1fr !important;
-          }
-          .hero-stats > div {
-            border-right: none !important;
-            padding: 20px 0 !important;
-            border-bottom: 1px solid var(--rule);
-          }
-          .hero-stats > div:last-child {
-            grid-column: 1 / -1;
-            justify-content: flex-start !important;
-          }
-        }
-      `}</style>
     </section>
   );
 }

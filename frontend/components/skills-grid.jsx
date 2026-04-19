@@ -126,7 +126,7 @@ export function SkillsGrid() {
         <span className="num-label">§ 01</span>
         <span>Expertise — four core competencies</span>
       </div>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "end", marginBottom: 80 }}>
+      <div className="section-head" style={{ alignItems: "end", marginBottom: 80 }}>
         <h2
           style={{
             fontFamily: "var(--font-serif)",

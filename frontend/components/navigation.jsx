@@ -54,10 +54,9 @@ export function Navigation() {
 
   return (
     <nav
-      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between"
+      className="site-nav fixed top-0 left-0 right-0 z-50 flex items-center justify-between"
       style={{
         height: 72,
-        padding: "0 40px 0 80px",
         background: "linear-gradient(var(--paper) 70%, transparent)",
       }}
     >
