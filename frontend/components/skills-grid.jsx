@@ -69,26 +69,32 @@ function SkillViz({ index }) {
       </svg>
     );
   }
-  // Internal Processes — closed-loop automation diagram
+  // Internal Processes — sales pipeline / backend automation
   return (
     <svg viewBox="0 0 320 100" style={{ width: "100%", height: "100%" }}>
-      <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
-        <rect x="14" y="34" width="72" height="30" fill="#F6F4EE" stroke="#111110" />
-        <text x="28" y="53">trigger</text>
+      <g fontFamily="var(--font-mono)" fontSize="8" fill="#111110">
+        <rect x="12" y="34" width="62" height="30" fill="#F6F4EE" stroke="#111110" />
+        <text x="24" y="53">intake</text>
 
-        <rect x="124" y="34" width="72" height="30" fill="#FFD60A" stroke="#111110" />
-        <text x="146" y="53">run</text>
+        <rect x="86" y="34" width="62" height="30" fill="#FFD60A" stroke="#111110" />
+        <text x="96" y="53">qualify</text>
 
-        <rect x="234" y="34" width="72" height="30" fill="#111110" stroke="#111110" />
-        <text x="250" y="53" fill="#FFD60A">report</text>
+        <rect x="160" y="34" width="62" height="30" fill="#FFD60A" stroke="#111110" />
+        <text x="174" y="53">quote</text>
+
+        <rect x="234" y="34" width="62" height="30" fill="#111110" stroke="#111110" />
+        <text x="252" y="53" fill="#FFD60A">close</text>
       </g>
       <g stroke="#111110" strokeWidth="1.2" fill="none">
-        <path d="M86 49 L124 49" />
-        <path d="M196 49 L234 49" />
-        <path d="M270 34 C 270 10, 50 10, 50 34" strokeDasharray="3 3" />
-        <path d="M54 34 L50 30 L46 34" />
-        <path d="M118 45 L124 49 L118 53" />
+        <path d="M74 49 L86 49" />
+        <path d="M148 49 L160 49" />
+        <path d="M222 49 L234 49" />
+        <path d="M80 45 L86 49 L80 53" />
+        <path d="M154 45 L160 49 L154 53" />
         <path d="M228 45 L234 49 L228 53" />
+      </g>
+      <g fontFamily="var(--font-mono)" fontSize="7" fill="#8A8676">
+        <text x="12" y="22">sales backend · automations</text>
       </g>
     </svg>
   );
@@ -98,7 +104,7 @@ const stacks = [
   ["SAM", "LVMs", "XGBoost", "PyTorch", "scikit-learn"],
   ["Airflow", "Docker", "Python", "Postgres", "PostGIS", "dbt"],
   ["PostGIS", "GeoPandas", "H3", "CV", "Agent-based"],
-  ["Airflow", "dbt", "Docker", "FastAPI", "Streamlit", "Postgres"],
+  ["FastAPI", "Postgres", "Stripe", "HubSpot", "n8n", "Docker"],
 ];
 
 const shortTags = ["ML", "ENG", "GEO", "OPS"];
