@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 
 const DEFAULT_POSTS = [
   { slug: "against-dashboards", date: "2026-04", category: "THOUGHT", title: "The case against dashboards", italic: "dashboards" },
@@ -41,6 +41,7 @@ function getField(post, field, locale) {
 export function WritingTeaser() {
   const [posts, setPosts] = useState([]);
   const locale = useLocale();
+  const t = useTranslations("Thoughts");
 
   useEffect(() => {
     let alive = true;
@@ -62,7 +63,7 @@ export function WritingTeaser() {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 03</span>
-        <span>Blog — recent posts</span>
+        <span>{t("writingTeaserKicker")}</span>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 32, gap: 40, flexWrap: "wrap" }}>
         <h2
@@ -73,12 +74,12 @@ export function WritingTeaser() {
             letterSpacing: "-0.02em",
           }}
         >
-          Recent <i style={{ fontStyle: "italic" }}>thoughts</i>.
+          {t("recentTitle")} <i style={{ fontStyle: "italic" }}>{t("recentItalic")}</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "34ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          Essays, tutorials and field notes.{" "}
+          {t("writingTeaserSubtitle")}{" "}
           <Link href={`/${locale}/thoughts`} style={{ borderBottom: "1px solid" }}>
-            View all →
+            {t("viewAll")}
           </Link>
         </p>
       </div>
@@ -95,7 +96,7 @@ export function WritingTeaser() {
                 <span>{date}</span>
               </div>
               <h4>{renderTitle(title, p.italic)}</h4>
-              <div className="more">Read →</div>
+              <div className="more">{t("readShort")}</div>
             </Link>
           );
         })}

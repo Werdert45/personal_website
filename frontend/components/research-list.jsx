@@ -75,7 +75,7 @@ export function ResearchList() {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 04</span>
-        <span>Research — papers, preprints, methods</span>
+        <span>{t("listKicker")}</span>
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 64, flexWrap: "wrap" }}>
@@ -87,11 +87,11 @@ export function ResearchList() {
             letterSpacing: "-0.02em",
           }}
         >
-          Peer-reviewed <i style={{ fontStyle: "italic" }}>papers</i><br />
-          &amp; working <span style={{ color: "var(--yellow-2)" }}>drafts</span>.
+          {t("listTitlePrefix")} <i style={{ fontStyle: "italic" }}>{t("listTitleItalic")}</i><br />
+          {t("listTitleAmp")} <span style={{ color: "var(--yellow-2)" }}>{t("listTitleHighlight")}</span>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "38ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          Academic output on real-estate econometrics, geospatial methods and alternative-data pipelines.
+          {t("listSubtitle")}
         </p>
       </div>
 

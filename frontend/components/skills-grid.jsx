@@ -117,6 +117,7 @@ function splitTitle(title) {
 
 export function SkillsGrid() {
   const t = useTranslations("About");
+  const sk = useTranslations("SkillsGrid");
   const expertise = t.raw("expertise");
 
   return (
@@ -124,7 +125,7 @@ export function SkillsGrid() {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 01</span>
-        <span>Expertise — four core competencies</span>
+        <span>{sk("kicker")}</span>
       </div>
       <div className="section-head" style={{ alignItems: "end", marginBottom: 80 }}>
         <h2
@@ -135,7 +136,7 @@ export function SkillsGrid() {
             letterSpacing: "-0.02em",
           }}
         >
-          <i style={{ fontStyle: "italic", color: "var(--yellow-2)" }}>Core</i> competencies.
+          <i style={{ fontStyle: "italic", color: "var(--yellow-2)" }}>{sk("titleItalic")}</i> {sk("titleRest")}
         </h2>
         <p style={{ fontSize: 17, maxWidth: "52ch", color: "var(--ink-2)" }}>
           {t("expertiseSubtitle")}

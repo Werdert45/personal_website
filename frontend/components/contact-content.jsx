@@ -123,13 +123,13 @@ export function ContactContent() {
         <div className="section-label">
           <span className="bar" />
           <span className="num-label">§ 05</span>
-          <span>Contact — briefs, introductions, questions</span>
+          <span>{t("sectionKicker")}</span>
         </div>
 
         <div className="contact-wrap">
           <div className="contact-copy">
             <h2>
-              Let&apos;s <i>talk</i>.
+              {t("letsTalkPrefix")} <i>{t("letsTalkItalic")}</i>.
             </h2>
             <p>
               {t("bio")}
@@ -145,7 +145,7 @@ export function ContactContent() {
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="head">
               <span>{t("formTitle")}</span>
-              <span>REF · {new Date().getFullYear()}</span>
+              <span>{t("formHeadRef")} · {new Date().getFullYear()}</span>
             </div>
 
             <div style={{ position: "fixed", left: "-9999px", top: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true" tabIndex={-1}>
@@ -213,18 +213,18 @@ export function ContactContent() {
 
       <section className="yellow-band">
         <div className="big">
-          Let&apos;s build<br />
-          <i>something,</i><br />
-          together.
+          {t("bandLine1")}<br />
+          <i>{t("bandLine2Italic")}</i><br />
+          {t("bandLine3")}
         </div>
         <div className="row">
           <h3>
             <a href="mailto:ian@example.com">ian@example.com</a>
           </h3>
           <div className="links">
-            <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">Book a call</a>
+            <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">{t("linkLinkedIn")}</a>
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">{t("linkGitHub")}</a>
+            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">{t("linkBookCall")}</a>
           </div>
         </div>
       </section>

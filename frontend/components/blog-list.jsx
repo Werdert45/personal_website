@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 
 const DEFAULT_POSTS = [
@@ -35,6 +35,7 @@ export function BlogList() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const locale = useLocale();
+  const t = useTranslations("Thoughts");
 
   useEffect(() => {
     let alive = true;
@@ -58,7 +59,7 @@ export function BlogList() {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 03</span>
-        <span>Thoughts — essays, updates, notes</span>
+        <span>{t("kicker")}</span>
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 64, flexWrap: "wrap" }}>
@@ -70,16 +71,16 @@ export function BlogList() {
             letterSpacing: "-0.02em",
           }}
         >
-          Recent <i style={{ fontStyle: "italic" }}>thoughts</i>.
+          {t("recentTitle")} <i style={{ fontStyle: "italic" }}>{t("recentItalic")}</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "38ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          Short pieces on tools, pipelines, spatial methods and the occasional rant.
+          {t("subtitle")}
         </p>
       </div>
 
       {loading && !posts.length && (
         <p style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--mute)", padding: "40px 0" }}>
-          Loading…
+          {t("loading")}
         </p>
       )}
 
@@ -87,7 +88,7 @@ export function BlogList() {
         <Link href={`/${locale}/thoughts/${featured.slug}`} style={{ display: "block" }}>
           <div className="blog-feat">
             <div className="cover">
-              <span className="kicker">Featured · {getField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
+              <span className="kicker">{t("featuredKicker")} {getField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
             </div>
             <div className="body">
               <div className="tag">
@@ -96,7 +97,7 @@ export function BlogList() {
               </div>
               <h3>{renderTitle(getField(featured, "title", locale, ""))}</h3>
               <p>{getField(featured, "excerpt", locale, "")}</p>
-              <span className="cta">Read the piece →</span>
+              <span className="cta">{t("readPiece")}</span>
             </div>
           </div>
         </Link>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -16,6 +16,7 @@ export function BlogPost({ slug }) {
   const [post, setPost] = useState(null);
   const [status, setStatus] = useState("loading");
   const locale = useLocale();
+  const t = useTranslations("Thoughts");
 
   useEffect(() => {
     let alive = true;
@@ -37,7 +38,7 @@ export function BlogPost({ slug }) {
   if (status === "loading") {
     return (
       <section className="section-pad" style={{ paddingTop: 160 }}>
-        <p style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--mute)" }}>Loading…</p>
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--mute)" }}>{t("loading")}</p>
       </section>
     );
   }
@@ -48,13 +49,13 @@ export function BlogPost({ slug }) {
         <div className="section-label">
           <span className="bar" />
           <span className="num-label">§ 03</span>
-          <Link href={`/${locale}/thoughts`}>← Back to thoughts</Link>
+          <Link href={`/${locale}/thoughts`}>{t("backToList")}</Link>
         </div>
         <h1 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(40px,5vw,68px)", lineHeight: 1 }}>
-          Post not <i style={{ fontStyle: "italic" }}>found</i>.
+          {t("notFoundTitle")} <i style={{ fontStyle: "italic" }}>{t("notFoundItalic")}</i>.
         </h1>
         <p style={{ marginTop: 24, color: "var(--mute)" }}>
-          The post at <code>/{locale}/thoughts/{slug}</code> hasn&apos;t been published yet.
+          {t("notFoundBodyPrefix")} <code>/{locale}/thoughts/{slug}</code> {t("notFoundBody")}
         </p>
       </section>
     );
@@ -70,13 +71,13 @@ export function BlogPost({ slug }) {
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 03</span>
-        <Link href={`/${locale}/thoughts`}>← Back to thoughts</Link>
+        <Link href={`/${locale}/thoughts`}>{t("backToList")}</Link>
       </div>
 
       <div className="meta" style={{ display: "flex", gap: 24, flexWrap: "wrap", marginBottom: 24 }}>
         <span>{(post.category || "ARTICLE").toUpperCase()}</span>
         <span>{published}</span>
-        {post.reading_time && <span>{post.reading_time} min read</span>}
+        {post.reading_time && <span>{post.reading_time} {t("minRead")}</span>}
       </div>
 
       <h1>{title}</h1>
@@ -86,7 +87,7 @@ export function BlogPost({ slug }) {
 
       <div className="byline" style={{ marginTop: 48, paddingTop: 24, borderTop: "1px solid var(--rule)" }}>
         <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--mute)" }}>
-          Written by Ian Ronk · Amsterdam
+          {t("bylinePrefix")} Ian Ronk {t("bylineSuffix")}
         </p>
       </div>
     </article>

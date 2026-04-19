@@ -17,54 +17,54 @@ export function AboutContent() {
         <div className="section-label">
           <span className="bar" />
           <span className="num-label">§ 02</span>
-          <span>About — who, where, how</span>
+          <span>{t("sectionKicker")}</span>
         </div>
 
         <div className="about-top">
           <div>
             <h2>
-              Head of <i>Data</i> —<br />
-              Real Estate <span className="u">AI</span>
+              {t("heroTitleLine1a")} <i>{t("heroTitleLine1aItalic")}</i> —<br />
+              {t("heroTitleLine2")} <span className="u">{t("heroTitleLine2Underline")}</span>
               <br />
-              &amp; Analytics.
+              {t("heroTitleLine3")}
             </h2>
             <p className="lede">
-              Based in Amsterdam, I lead data initiatives at KR&amp;A, delivering AI-powered insights for European real estate funds, REITs and institutional investors. With expertise in machine learning, geospatial analysis, and alternative data, I help transform complex data into investment decisions.
+              {t("lede1")}
             </p>
             <p className="lede">
-              My bias: opinionated internal tools beat big platforms; a tested pipeline beats a clever one; and a map should answer a question, not perform complexity.
+              {t("lede2")}
             </p>
           </div>
           <div className="portrait">
             <Image src="/profile.jpg" alt="Ian Ronk" width={600} height={800} priority />
-            <span className="cap">IAN · AMS · 2026</span>
+            <span className="cap">{t("portraitCaption")}</span>
           </div>
         </div>
 
         <div className="about-facts">
           <div className="fact">
-            <span className="k">Role</span>
-            <span className="v"><b>Head of Data</b> · KR&amp;A, Europe · FinTech</span>
+            <span className="k">{t("factRole")}</span>
+            <span className="v"><b>{t("factRoleValueHighlight")}</b> {t("factRoleValueRest")}</span>
           </div>
           <div className="fact">
-            <span className="k">Basis</span>
-            <span className="v">Amsterdam, Netherlands · working EU-wide</span>
+            <span className="k">{t("factBasis")}</span>
+            <span className="v">{t("factBasisValue")}</span>
           </div>
           <div className="fact">
-            <span className="k">Experience</span>
-            <span className="v"><b>4+ years</b> in Real Estate Data Science</span>
+            <span className="k">{t("factExperience")}</span>
+            <span className="v"><b>{t("factExperienceValueHighlight")}</b> {t("factExperienceValueRest")}</span>
           </div>
           <div className="fact">
-            <span className="k">Markets</span>
-            <span className="v"><b>15+</b> European markets mapped</span>
+            <span className="k">{t("factMarkets")}</span>
+            <span className="v"><b>{t("factMarketsValueHighlight")}</b> {t("factMarketsValueRest")}</span>
           </div>
           <div className="fact">
-            <span className="k">Clients</span>
-            <span className="v">REITs · funds · Eurostat · leading real-estate companies</span>
+            <span className="k">{t("factClients")}</span>
+            <span className="v">{t("factClientsValue")}</span>
           </div>
           <div className="fact">
-            <span className="k">Stack</span>
-            <span className="v">Python · PostGIS · Airflow · Docker · PyTorch · React</span>
+            <span className="k">{t("factStack")}</span>
+            <span className="v">{t("factStackValue")}</span>
           </div>
         </div>
       </section>
@@ -73,17 +73,17 @@ export function AboutContent() {
         <div className="section-label">
           <span className="bar" />
           <span className="num-label">§ 03</span>
-          <span>Professional journey</span>
+          <span>{t("journeyKicker")}</span>
         </div>
         <h2>
-          <i>Four</i> years delivering<br />
-          data-driven insights.
+          <i>{t("journeyTitlePrefixItalic")}</i> {t("journeyTitleRest")}<br />
+          {t("journeyTitleLine2")}
         </h2>
         <p className="lede">{t("experienceSubtitle")}</p>
 
         <div className="xp-toggle">
-          <button className={tab === "pro" ? "sel" : ""} onClick={() => setTab("pro")}>Professional</button>
-          <button className={tab === "aca" ? "sel" : ""} onClick={() => setTab("aca")}>Academic</button>
+          <button className={tab === "pro" ? "sel" : ""} onClick={() => setTab("pro")}>{t("professional")}</button>
+          <button className={tab === "aca" ? "sel" : ""} onClick={() => setTab("aca")}>{t("academic")}</button>
         </div>
 
         {tab === "pro" && (

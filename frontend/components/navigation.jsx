@@ -24,7 +24,7 @@ export function Navigation() {
     router = useRouter();
   } catch {
     t = (key) => {
-      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", brand: "Ian Ronk" };
+      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", brand: "Ian Ronk", letsTalk: "Let's talk", menu: "Menu" };
       return fallback[key] || key;
     };
     locale = "en";
@@ -163,7 +163,7 @@ export function Navigation() {
             e.currentTarget.style.color = "var(--ink)";
           }}
         >
-          Let&apos;s talk
+          {t("letsTalk")}
         </Link>
       </div>
 
@@ -171,7 +171,7 @@ export function Navigation() {
       <div className="md:hidden flex items-center gap-2">
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Menu"
+          aria-label={t("menu")}
           style={{
             width: 40, height: 40,
             border: "1px solid var(--ink)",

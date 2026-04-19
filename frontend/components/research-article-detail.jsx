@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
@@ -26,10 +26,16 @@ export default function ResearchArticleDetail({ slug }) {
   const [relatedArticles, setRelatedArticles] = useState([]);
 
   let locale;
+  let t;
   try {
     locale = useLocale();
   } catch {
     locale = "en";
+  }
+  try {
+    t = useTranslations("Research");
+  } catch {
+    t = (key) => key;
   }
 
   useEffect(() => {
@@ -129,7 +135,7 @@ export default function ResearchArticleDetail({ slug }) {
           <div className="flex items-center justify-center min-h-[400px]">
             <div className="flex flex-col items-center gap-4">
               <Loader2 className="w-8 h-8 animate-spin text-primary" />
-              <p className="text-muted-foreground">Loading article...</p>
+              <p className="text-muted-foreground">{t("loadingArticle")}</p>
             </div>
           </div>
         </div>
@@ -144,15 +150,15 @@ export default function ResearchArticleDetail({ slug }) {
           <Button variant="ghost" asChild className="mb-8">
             <Link href={`/${locale}/research`} className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4" />
-              Back to Research
+              {t("backToResearch")}
             </Link>
           </Button>
           <div className="min-h-96 flex items-center justify-center text-center">
             <div>
-              <h1 className="text-2xl font-bold mb-4">Article not found</h1>
-              <p className="text-muted-foreground mb-6">The requested research article doesn't exist.</p>
+              <h1 className="text-2xl font-bold mb-4">{t("articleNotFound")}</h1>
+              <p className="text-muted-foreground mb-6">{t("articleNotFoundBody")}</p>
               <Button asChild>
-                <Link href={`/${locale}/research`}>Browse all articles</Link>
+                <Link href={`/${locale}/research`}>{t("browseAll")}</Link>
               </Button>
             </div>
           </div>
@@ -179,7 +185,7 @@ export default function ResearchArticleDetail({ slug }) {
         <Button variant="ghost" asChild className="mb-8">
           <Link href={`/${locale}/research`} className="flex items-center gap-2">
             <ArrowLeft className="w-4 h-4" />
-            Back to Research
+            {t("backToResearch")}
           </Link>
         </Button>
 
@@ -218,7 +224,7 @@ export default function ResearchArticleDetail({ slug }) {
               <span className="text-sm text-muted-foreground">{article.date}</span>
             </div>
             <h1 className="text-4xl font-bold mb-4">{title}</h1>
-            {article.author && <p className="text-lg text-muted-foreground mb-4">by {article.author}</p>}
+            {article.author && <p className="text-lg text-muted-foreground mb-4">{t("byAuthor")} {article.author}</p>}
             <p className="text-lg text-muted-foreground mb-6">{abstract}</p>
 
             {article.tags && article.tags.length > 0 && (
@@ -265,7 +271,7 @@ export default function ResearchArticleDetail({ slug }) {
 
           {relatedArticles.length > 0 && (
             <div className="mt-12 md:mt-16 pt-8 border-t border-border">
-              <h2 className="text-xl md:text-2xl font-bold mb-6">You might also like</h2>
+              <h2 className="text-xl md:text-2xl font-bold mb-6">{t("youMightAlsoLike")}</h2>
               <div className="grid gap-4 md:gap-6 md:grid-cols-3">
                 {relatedArticles.map((item) => (
                   <Link key={item.slug} href={`/${locale}/research/${item.slug}`}>
@@ -293,7 +299,7 @@ export default function ResearchArticleDetail({ slug }) {
                           </div>
                         )}
                         <span className="text-xs text-primary flex items-center gap-1">
-                          Read article <ArrowRight className="w-3 h-3" />
+                          {t("readArticle")} <ArrowRight className="w-3 h-3" />
                         </span>
                       </CardContent>
                     </Card>

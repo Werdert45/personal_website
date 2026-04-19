@@ -69,10 +69,10 @@ export function ResearchPreview() {
             letterSpacing: "-0.02em",
           }}
         >
-          Selected <i style={{ fontStyle: "italic" }}>papers</i>.
+          {t("previewTitlePrefix")} <i style={{ fontStyle: "italic" }}>{t("previewTitleItalic")}</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "34ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          Recent output on real-estate econometrics and geospatial methods.{" "}
+          {t("previewSubtitleShort")}{" "}
           <Link href={`/${locale}/research`} style={{ borderBottom: "1px solid" }}>
             {t("viewAll")} →
           </Link>
