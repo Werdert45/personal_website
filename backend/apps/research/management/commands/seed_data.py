@@ -14,7 +14,7 @@ from apps.blog.models import BlogPost, BlogPostTranslation
 from apps.geodata.models import GeoDataset, GeoFeature, GeoUploadedDataset
 from apps.geodata.services.geo_processor import GeoProcessor
 from apps.projects.models import Project
-from apps.research.models import Research, Visualization
+from apps.research.models import Research
 
 
 EUROPEAN_CAPITALS_GEOJSON = {
@@ -195,7 +195,6 @@ class Command(BaseCommand):
             self.stdout.write("Resetting existing data...")
             BlogPost.objects.all().delete()
             Research.objects.all().delete()
-            Visualization.objects.all().delete()
             GeoDataset.objects.all().delete()
             GeoUploadedDataset.objects.all().delete()
             Project.objects.all().delete()
@@ -203,7 +202,6 @@ class Command(BaseCommand):
 
         dataset = self.upload_geojson()
         self.create_research(dataset)
-        self.create_visualization(dataset)
         self.create_project()
         self.create_blog_post()
         self.stdout.write(self.style.SUCCESS("Database seeded successfully!"))
@@ -329,39 +327,6 @@ European capital property markets are diverging rather than converging, with pol
         status = "Created" if created else "Already exists"
         self.stdout.write(f"  {status}: {research.title}")
 
-    def create_visualization(self, dataset):
-        """Create a visualization linked to the uploaded PostGIS dataset."""
-        self.stdout.write("Creating Visualization...")
-
-        defaults = {
-            "title": "European Capital Property Price Comparison",
-            "description": (
-                "Interactive map comparing residential property prices per square meter "
-                "across 12 major European capital cities with market status indicators."
-            ),
-            "category": "choropleth",
-            "status": "published",
-            "technologies": ["PostGIS", "Mapbox GL JS", "Python", "Django"],
-            "data_points": "12 capital cities",
-            "region": "Europe",
-            "date": "2025",
-            "metrics": [
-                {"label": "Cities", "value": "12"},
-                {"label": "Avg Price/m2", "value": "5,854"},
-                {"label": "Top Market", "value": "London"},
-            ],
-            "map_config": {"center": [10, 50], "zoom": 4},
-            "geodataset": dataset,
-            "value_field": "avg_price_sqm",
-        }
-
-        viz, created = Visualization.objects.get_or_create(
-            slug="european-capital-prices",
-            defaults=defaults,
-        )
-        status = "Created" if created else "Already exists"
-        self.stdout.write(f"  {status}: {viz.title}")
-
     def create_project(self):
         """Create a sample project."""
         self.stdout.write("Creating Project...")
@@ -377,7 +342,7 @@ European capital property markets are diverging rather than converging, with pol
                 "Mapbox GL JS to visualize and analyze property market data across "
                 "12 European capital cities."
             ),
-            "category": "web",
+            "category": "webapp",
             "status": "published",
             "technologies": ["Python", "Django", "PostGIS", "Mapbox GL JS", "Next.js"],
             "featured": True,
@@ -478,7 +443,7 @@ GeoDjango translates the `__within` lookup to `ST_Within` under the hood, using 
 
 If you are working with any spatial data at scale — property listings, POIs, vehicle tracks, sensor readings — PostGIS GiST indexes are not a nice-to-have. The 70× speedup at 2M rows is the difference between a usable product and one that needs a caching layer bolted on to hide a broken query plan.
 """,
-            "category": "article",
+            "category": "thought",
             "status": "published",
             "tags": ["postgis", "django", "spatial", "performance", "database"],
             "read_time": "6 min",
@@ -589,7 +554,7 @@ curl https://yourapp.com/api/properties/geo/ | python -m json.tool
 
 The response is a valid `FeatureCollection` you can pass directly to `map.addSource()` in Mapbox GL JS.
 """,
-                "category": "tutorial",
+                "category": "explanation",
                 "status": "published",
                 "tags": ["django", "geojson", "mapbox", "geodjango", "tutorial"],
                 "read_time": "10 min",
@@ -666,7 +631,7 @@ Each visualization is backed by a live PostGIS database and rendered with Mapbox
 
 If there's a market or dataset you'd like to see, [get in touch](/contact).
 """,
-                "category": "announcement",
+                "category": "update",
                 "status": "published",
                 "tags": ["announcement", "visualizations", "mapbox"],
                 "read_time": "2 min",
@@ -677,3 +642,41 @@ If there's a market or dataset you'd like to see, [get in touch](/contact).
             },
         )
         self.stdout.write(f"  {'Created' if created else 'Already exists'}: {announcement.title}")
+
+        # --- Visualisation (migrated from Visualization model) ---
+        viz_post, created = BlogPost.objects.get_or_create(
+            slug="european-capital-prices",
+            defaults={
+                "title": "European Capital Property Price Comparison",
+                "excerpt": (
+                    "Interactive map comparing residential property prices per square metre "
+                    "across 12 major European capital cities with market status indicators."
+                ),
+                "content": (
+                    "A choropleth map across 12 European capital cities, built on a live PostGIS "
+                    "dataset and rendered with Mapbox GL JS. Price/m² ranges from ~2.8k in Warsaw "
+                    "to ~12.4k in London."
+                ),
+                "category": "visualisation",
+                "status": "published",
+                "tags": ["mapbox", "postgis", "choropleth"],
+                "meta": {
+                    "map_config": {"center": [10, 50], "zoom": 4},
+                    "region": "Europe",
+                    "data_points": "12 capital cities",
+                    "technologies": ["PostGIS", "Mapbox GL JS", "Python", "Django"],
+                    "value_field": "avg_price_sqm",
+                    "metrics": [
+                        {"label": "Cities", "value": "12"},
+                        {"label": "Avg Price/m2", "value": "5,854"},
+                        {"label": "Top Market", "value": "London"},
+                    ],
+                },
+                "read_time": "3 min",
+                "date": "2025",
+                "author": "Ian Ronk",
+                "featured": False,
+                "published_at": "2025-11-15T09:00:00Z",
+            },
+        )
+        self.stdout.write(f"  {'Created' if created else 'Already exists'}: {viz_post.title}")
