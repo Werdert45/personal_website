@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import { useLocale } from "next-intl";
 import Link from "next/link";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 function getField(post, field, locale) {
   if (locale === "en") return post[field];
@@ -80,14 +82,7 @@ export function BlogPost({ slug }) {
       <h1>{title}</h1>
       {excerpt && <p className="dek">{excerpt}</p>}
 
-      <div
-        dangerouslySetInnerHTML={{
-          __html: content
-            .split("\n\n")
-            .map((p) => `<p>${p.replace(/\n/g, "<br/>")}</p>`)
-            .join(""),
-        }}
-      />
+      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
 
       <div className="byline" style={{ marginTop: 48, paddingTop: 24, borderTop: "1px solid var(--rule)" }}>
         <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--mute)" }}>
