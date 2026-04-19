@@ -2,7 +2,7 @@
   "Navigation": {
     "home": "Home",
     "about": "About",
-    "visualizations": "Blog",
+    "visualizations": "Thoughts",
     "research": "Research",
     "contact": "Contact",
     "brand": "Ian Ronk"
@@ -42,15 +42,15 @@
       },
       {
         "title": "Data Engineering and System Maintenance",
-        "description": "Building robust data pipelines to process alternative data sources for European REITs, funds, and institutional investors, ranging from geodata to unstructured scrape data, using a distributed and dockerized Airflow system."
+        "description": "Building robust data pipelines to process alternative data sources for European REITs, funds, and institutional investors, ranging from geodata to unstructured inputs, using a distributed and dockerized Airflow system."
       },
       {
         "title": "Geospatial Analysis and Spatial Econometrics",
         "description": "Advanced spatial analytics including agent-based modeling for gentrification prediction, computer vision on street-level imagery and spatially significant data science such as downsampling, yielding statistically robust results."
       },
       {
-        "title": "Scraping and Data Mining",
-        "description": "Collecting and extracting insights from unstructured data, using cutting-edge tools, such as Captcha Solvers, Proxy Rotation and Selenium. I have done this for high frequency scraping, multi-year projects extracting 20+ million records."
+        "title": "Internal Processes",
+        "description": "Automating the machinery teams rely on — orchestrating data pipelines, building internal tooling, and replacing manual workflows with reliable systems."
       }
     ],
     "experience": [

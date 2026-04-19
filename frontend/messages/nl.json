@@ -2,7 +2,7 @@
   "Navigation": {
     "home": "Home",
     "about": "Over Mij",
-    "visualizations": "Blog",
+    "visualizations": "Gedachten",
     "research": "Onderzoek",
     "contact": "Contact",
     "brand": "Ian Ronk"
@@ -42,15 +42,15 @@
       },
       {
         "title": "Data Engineering en Systeemonderhoud",
-        "description": "Bouwen van robuuste datapipelines voor het verwerken van alternatieve databronnen voor Europese REITs, fondsen en institutionele beleggers, variërend van geodata tot ongestructureerde scrape-data, met een gedistribueerd en gedockeriseerd Airflow-systeem."
+        "description": "Bouwen van robuuste datapipelines voor het verwerken van alternatieve databronnen voor Europese REITs, fondsen en institutionele beleggers, variërend van geodata tot ongestructureerde inputs, met een gedistribueerd en gedockeriseerd Airflow-systeem."
       },
       {
         "title": "Geospatiale Analyse en Ruimtelijke Econometrie",
         "description": "Geavanceerde ruimtelijke analyses inclusief agent-based modellering voor gentrificatievoorspelling, computer vision op straatniveau-beelden en ruimtelijk significante data science zoals downsampling, wat statistisch robuuste resultaten oplevert."
       },
       {
-        "title": "Scraping en Data Mining",
-        "description": "Verzamelen en extraheren van inzichten uit ongestructureerde data, met gebruik van geavanceerde tools zoals Captcha Solvers, Proxy Rotation en Selenium. Dit heb ik gedaan voor high-frequency scraping, meerjarige projecten met 20+ miljoen records."
+        "title": "Interne Processen",
+        "description": "Het automatiseren van de motor waar teams op draaien — pipelines orchestreren, interne tools bouwen en handmatig werk vervangen door betrouwbare systemen."
       }
     ],
     "experience": [
