@@ -37,20 +37,20 @@
     "experienceSubtitle": "4+ anni di approfondimenti basati sui dati per investimenti immobiliari nei mercati europei.",
     "expertise": [
       {
-        "title": "Machine Learning",
-        "description": "Sviluppo di modelli predittivi per la valutazione immobiliare, previsione degli affitti, valutazione del rischio alluvionale (accuratezza 90%+) e previsione di mercato utilizzando modelli come SAM, LVM e Metodi Ensemble."
+        "title": "Machine Learning & AI",
+        "description": "ML e AI in produzione — modelli predittivi per valutazione, affitti e rischio alluvionale (accuratezza 90%+), oltre a pipeline LLM e AI agent con strumenti che automatizzano ricerca, classificazione e reportistica."
       },
       {
-        "title": "Data Engineering e Manutenzione dei Sistemi",
-        "description": "Costruzione di pipeline dati robuste per elaborare fonti di dati alternativi per REIT europei, fondi e investitori istituzionali, dai geodati agli input non strutturati, utilizzando un sistema Airflow distribuito e dockerizzato."
+        "title": "Data Engineering",
+        "description": "Pipeline dati robuste per REIT europei, fondi e investitori istituzionali — geodati, input alternativi e non strutturati su uno stack Airflow distribuito e dockerizzato."
       },
       {
-        "title": "Analisi Geospaziale ed Econometria Spaziale",
-        "description": "Analisi spaziali avanzate tra cui modellazione agent-based per la previsione della gentrificazione, computer vision su immagini a livello stradale e data science spazialmente significativa come il downsampling, producendo risultati statisticamente robusti."
+        "title": "Analisi Geospaziale",
+        "description": "Analisi spaziali avanzate — modellazione agent-based della gentrificazione, computer vision su immagini stradali e data science spazialmente consapevole (downsampling, test di significatività) che produce risultati statisticamente robusti."
       },
       {
         "title": "Processi Interni",
-        "description": "Costruire il backend di un'azienda — sistemi di vendita, CRM e automazioni operative che sostituiscono il lavoro manuale e scalano con il team."
+        "description": "Il backend di un'azienda — sistemi di vendita, CRM e automazioni potenziate dall'AI che sostituiscono il lavoro manuale e scalano con il team."
       }
     ],
     "experience": [

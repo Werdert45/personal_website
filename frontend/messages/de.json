@@ -37,20 +37,20 @@
     "experienceSubtitle": "4+ Jahre datengestützte Erkenntnisse für Immobilieninvestitionen auf europäischen Märkten.",
     "expertise": [
       {
-        "title": "Machine Learning",
-        "description": "Entwicklung prädiktiver Modelle für Immobilienbewertung, Mietprognosen, Hochwasserrisikobewertung (90%+ Genauigkeit) und Marktprognosen mit Modellen wie SAM, LVMs und Ensemble-Methoden."
+        "title": "Machine Learning & AI",
+        "description": "ML und KI in Produktion — prädiktive Modelle für Bewertung, Miete und Hochwasserrisiko (90%+ Genauigkeit), plus LLM-Pipelines und Tool-nutzende KI-Agenten, die Recherche, Klassifikation und Reporting automatisieren."
       },
       {
-        "title": "Data Engineering und Systemwartung",
-        "description": "Aufbau robuster Datenpipelines zur Verarbeitung alternativer Datenquellen für europäische REITs, Fonds und institutionelle Investoren, von Geodaten bis zu unstrukturierten Eingabedaten, mit einem verteilten und dockerisierten Airflow-System."
+        "title": "Data Engineering",
+        "description": "Robuste Datenpipelines für europäische REITs, Fonds und institutionelle Investoren — Geodaten, alternative und unstrukturierte Eingabedaten auf einem verteilten, dockerisierten Airflow-Stack."
       },
       {
-        "title": "Geodatenanalyse und Räumliche Ökonometrie",
-        "description": "Fortgeschrittene räumliche Analysen einschließlich agentenbasierter Modellierung für Gentrifizierungsvorhersage, Computer Vision auf Straßenebene und räumlich signifikante Data Science wie Downsampling, die statistisch robuste Ergebnisse liefert."
+        "title": "Geodatenanalyse",
+        "description": "Fortgeschrittene räumliche Analysen — agentenbasierte Gentrifizierungsmodellierung, Computer Vision auf Straßenebene und räumlich bewusste Data Science (Downsampling, Signifikanztests), die statistisch robuste Ergebnisse liefert."
       },
       {
         "title": "Interne Prozesse",
-        "description": "Das Backend eines Unternehmens bauen — Vertriebssysteme, CRMs und operative Automatisierungen, die manuelle Arbeit ersetzen und mit dem Team skalieren."
+        "description": "Das Backend eines Unternehmens — Vertriebssysteme, CRMs und KI-gestützte Automatisierungen, die manuelle Arbeit ersetzen und mit dem Team skalieren."
       }
     ],
     "experience": [

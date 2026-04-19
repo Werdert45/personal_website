@@ -37,20 +37,20 @@
     "experienceSubtitle": "4+ jaar datagedreven inzichten leveren voor vastgoedinvesteringen in Europese markten.",
     "expertise": [
       {
-        "title": "Machine Learning",
-        "description": "Ontwikkelen van voorspellende modellen voor vastgoedwaardering, huurvoorspelling, overstromingsrisicobeoordeling (90%+ nauwkeurigheid) en marktvoorspelling met modellen zoals SAM, LVMs en Ensemble Methods."
+        "title": "Machine Learning & AI",
+        "description": "Productie-ML en AI — voorspellende modellen voor waardering, huur en overstromingsrisico (90%+ nauwkeurigheid), plus LLM-pipelines en tool-gebruikende AI-agents die onderzoek, classificatie en rapportage automatiseren."
       },
       {
-        "title": "Data Engineering en Systeemonderhoud",
-        "description": "Bouwen van robuuste datapipelines voor het verwerken van alternatieve databronnen voor Europese REITs, fondsen en institutionele beleggers, variërend van geodata tot ongestructureerde inputs, met een gedistribueerd en gedockeriseerd Airflow-systeem."
+        "title": "Data Engineering",
+        "description": "Robuuste datapipelines voor Europese REITs, fondsen en institutionele beleggers — geodata, alternatieve en ongestructureerde inputs op een gedistribueerde, gedockeriseerde Airflow-stack."
       },
       {
-        "title": "Geospatiale Analyse en Ruimtelijke Econometrie",
-        "description": "Geavanceerde ruimtelijke analyses inclusief agent-based modellering voor gentrificatievoorspelling, computer vision op straatniveau-beelden en ruimtelijk significante data science zoals downsampling, wat statistisch robuuste resultaten oplevert."
+        "title": "Geospatiale Analyse",
+        "description": "Geavanceerde ruimtelijke analyses — agent-based gentrificatiemodellering, computer vision op straatniveau en ruimtelijk bewuste data science (downsampling, significantietesten) die statistisch robuuste resultaten oplevert."
       },
       {
         "title": "Interne Processen",
-        "description": "De backend van een bedrijf bouwen — verkoopsystemen, CRM's en operationele automatiseringen die handmatig werk vervangen en meegroeien met het team."
+        "description": "De backend van een bedrijf — verkoopsystemen, CRM's en AI-gedreven automatiseringen die handmatig werk vervangen en meegroeien met het team."
       }
     ],
     "experience": [

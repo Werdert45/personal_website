@@ -101,10 +101,10 @@ function SkillViz({ index }) {
 }
 
 const stacks = [
-  ["SAM", "LVMs", "XGBoost", "PyTorch", "scikit-learn"],
+  ["SAM", "LVMs", "LangChain", "RAG", "PyTorch", "XGBoost"],
   ["Airflow", "Docker", "Python", "Postgres", "PostGIS", "dbt"],
   ["PostGIS", "GeoPandas", "H3", "CV", "Agent-based"],
-  ["FastAPI", "Postgres", "Stripe", "HubSpot", "n8n", "Docker"],
+  ["FastAPI", "Postgres", "LLMs", "n8n", "Stripe", "Docker"],
 ];
 
 const shortTags = ["ML", "ENG", "GEO", "OPS"];

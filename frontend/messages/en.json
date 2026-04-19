@@ -37,20 +37,20 @@
     "experienceSubtitle": "4+ years delivering data-driven insights for real estate investment across European markets.",
     "expertise": [
       {
-        "title": "Machine Learning",
-        "description": "Developing predictive models for real estate valuation, rent prediction, flood risk assessment (90%+ accuracy), and market forecasting using models, such as SAM, LVMs and Ensemble Methods."
+        "title": "Machine Learning & AI",
+        "description": "Production ML and AI — predictive models for valuation, rent and flood risk (90%+ accuracy), plus LLM pipelines and tool-using AI agents that automate research, classification and reporting."
       },
       {
-        "title": "Data Engineering and System Maintenance",
-        "description": "Building robust data pipelines to process alternative data sources for European REITs, funds, and institutional investors, ranging from geodata to unstructured inputs, using a distributed and dockerized Airflow system."
+        "title": "Data Engineering",
+        "description": "Robust data pipelines for European REITs, funds and institutional investors — geodata, alternative and unstructured inputs running on a distributed, dockerized Airflow stack."
       },
       {
-        "title": "Geospatial Analysis and Spatial Econometrics",
-        "description": "Advanced spatial analytics including agent-based modeling for gentrification prediction, computer vision on street-level imagery and spatially significant data science such as downsampling, yielding statistically robust results."
+        "title": "Geospatial Analysis",
+        "description": "Advanced spatial analytics — agent-based gentrification modelling, street-level computer vision, and spatially-aware data science (downsampling, significance testing) that yields statistically robust results."
       },
       {
         "title": "Internal Processes",
-        "description": "Building the backend of a business — sales systems, CRMs, and operational automations that replace manual work and scale with the team."
+        "description": "The backend of a business — sales systems, CRMs and AI-powered automations that replace manual work and scale with the team."
       }
     ],
     "experience": [
