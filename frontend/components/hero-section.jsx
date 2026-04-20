@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
+import Image from "next/image";
 import Link from "next/link";
 import { EUROPE_PATH, europeanCities, dataConnections } from "./europe-map-path";
 import { trackEvent } from "@/lib/analytics";
@@ -99,6 +100,50 @@ export function HeroSection() {
         }}
       >
         <div>
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: 16,
+              marginBottom: 24,
+            }}
+          >
+            <div
+              style={{
+                position: "relative",
+                width: 72,
+                height: 72,
+                borderRadius: "50%",
+                overflow: "hidden",
+                border: "1px solid var(--ink)",
+                boxShadow: "0 0 0 4px var(--yellow-soft)",
+                flexShrink: 0,
+              }}
+            >
+              <Image
+                src="/ianronk.jpeg"
+                alt="Ian Ronk"
+                fill
+                sizes="72px"
+                style={{ objectFit: "cover" }}
+                priority
+              />
+            </div>
+            <div
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 11,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                color: "var(--mute)",
+                lineHeight: 1.5,
+              }}
+            >
+              <div style={{ color: "var(--ink)" }}>Ian Ronk</div>
+              <div>{t("role")}</div>
+            </div>
+          </div>
+
           <h1
             className={`hero-title${inview ? " inview" : ""}`}
             style={{

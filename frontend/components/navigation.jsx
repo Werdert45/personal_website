@@ -25,7 +25,7 @@ export function Navigation() {
     router = useRouter();
   } catch {
     t = (key) => {
-      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", brand: "Ian Ronk", letsTalk: "Let's talk", menu: "Menu" };
+      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", work: "Work with me", brand: "Ian Ronk", letsTalk: "Let's talk", menu: "Menu" };
       return fallback[key] || key;
     };
     locale = "en";
@@ -38,7 +38,8 @@ export function Navigation() {
     { href: `/${locale}/about`, label: t("about"), idx: "02", routeKey: "/about" },
     { href: `/${locale}/thoughts`, label: t("visualizations"), idx: "03", routeKey: "/thoughts" },
     { href: `/${locale}/research`, label: t("research"), idx: "04", routeKey: "/research" },
-    { href: `/${locale}/contact`, label: t("contact"), idx: "05", routeKey: "/contact" },
+    { href: `/${locale}/work`, label: t("work"), idx: "05", routeKey: "/work" },
+    { href: `/${locale}/contact`, label: t("contact"), idx: "06", routeKey: "/contact" },
   ];
 
   const activeKey = (() => {

@@ -4,7 +4,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ianronk.com'
   const locales = ['en', 'nl', 'it', 'de']
 
-  const staticPages = ['', '/research', '/thoughts', '/contact', '/privacy-policy', '/terms-of-service', '/cookie-policy']
+  const staticPages = ['', '/research', '/thoughts', '/work', '/contact', '/privacy-policy', '/terms-of-service', '/cookie-policy']
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>
     locales.map((locale) => ({
