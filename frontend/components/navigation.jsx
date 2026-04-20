@@ -143,8 +143,8 @@ export function Navigation() {
         </div>
 
         <Link
-          href={`/${locale}/contact`}
-          onClick={() => trackEvent("cta_click", { cta: "lets_talk", location: "nav" })}
+          href={`/${locale}/work`}
+          onClick={() => trackEvent("cta_click", { cta: "work_with_me", location: "nav", source: "nav_primary" })}
           style={{
             fontFamily: "var(--font-mono)",
             fontSize: 12,
@@ -163,6 +163,32 @@ export function Navigation() {
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.background = "var(--yellow)";
+            e.currentTarget.style.color = "var(--ink)";
+          }}
+        >
+          {t("work")}
+        </Link>
+        <Link
+          href={`/${locale}/contact`}
+          onClick={() => trackEvent("cta_click", { cta: "lets_talk", location: "nav", source: "nav_secondary" })}
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 12,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            padding: "10px 14px",
+            border: "1px solid var(--ink)",
+            background: "transparent",
+            color: "var(--ink)",
+            borderRadius: 2,
+            marginLeft: 6,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "var(--ink)";
+            e.currentTarget.style.color = "var(--paper)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "transparent";
             e.currentTarget.style.color = "var(--ink)";
           }}
         >

@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect } from "react";
 import { trackEvent } from "@/lib/analytics";
 
 const offers = [
@@ -137,6 +138,10 @@ const processSteps = [
 ];
 
 export function WorkContent() {
+  useEffect(() => {
+    trackEvent("work_page_view", { location: "work_page" });
+  }, []);
+
   return (
     <>
       {/* § 01 POSITIONING */}
@@ -154,6 +159,25 @@ export function WorkContent() {
         <p className="wm-lede">
           I take on a small number of outside engagements each year, alongside my role as Head of Data at KR&amp;A. The teams I work with best are 20–300 people, have a specific operational process that's outgrown spreadsheets and off-the-shelf tools, and want something measurable they can own and maintain afterwards. I do the scoping, the building, and the handover myself — no account managers, no junior staff, no perpetual retainer.
         </p>
+        <div style={{ marginTop: 36, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
+          <a
+            href="https://cal.com/ianronk/intro"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn primary"
+            onClick={() => trackEvent("cta_click", { cta: "book_call", location: "work_hero", source: "work_hero" })}
+          >
+            <span>Book a 20-minute call</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+          </a>
+          <a
+            href="#offers"
+            className="btn ghost"
+            onClick={() => trackEvent("cta_click", { cta: "view_offers", location: "work_hero", source: "work_hero" })}
+          >
+            <span>See the three offers</span>
+          </a>
+        </div>
       </section>
 
       {/* § 02 FIT */}
@@ -186,7 +210,7 @@ export function WorkContent() {
       </section>
 
       {/* § 03 OFFERS */}
-      <section className="section-pad">
+      <section className="section-pad" id="offers">
         <div className="section-label">
           <span className="bar" />
           <span className="num-label">§ 03</span>
@@ -234,7 +258,7 @@ export function WorkContent() {
                 <a
                   href={o.cta.href}
                   className="wm-o-cta"
-                  onClick={() => trackEvent("cta_click", { cta: o.cta.event, location: "work_offer" })}
+                  onClick={() => trackEvent("cta_click", { cta: o.cta.event, location: "work_offer", source: "work_offer", offer: o.cta.event })}
                 >
                   {o.cta.label}
                   <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
@@ -259,7 +283,7 @@ export function WorkContent() {
             target="_blank"
             rel="noopener noreferrer"
             className="wm-bigbtn"
-            onClick={() => trackEvent("cta_click", { cta: "book_call", location: "work_mid" })}
+            onClick={() => trackEvent("cta_click", { cta: "book_call", location: "work_mid", source: "work_mid" })}
           >
             <span>Book a 20-minute call</span>
             <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
@@ -383,7 +407,7 @@ export function WorkContent() {
               href="https://cal.com/ianronk/intro"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackEvent("cta_click", { cta: "book_call", location: "work_final" })}
+              onClick={() => trackEvent("cta_click", { cta: "book_call", location: "work_final", source: "work_final" })}
             >
               Book a 20-minute call →
             </a>

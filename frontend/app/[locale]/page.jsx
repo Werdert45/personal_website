@@ -3,6 +3,7 @@ import { Marquee } from "@/components/marquee";
 import { SkillsGrid } from "@/components/skills-grid";
 import { WritingTeaser } from "@/components/writing-teaser";
 import { ResearchPreview } from "@/components/research-preview";
+import { WorkTeaser } from "@/components/work-teaser";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/json-ld";
 
 export default function HomePage() {
@@ -15,6 +16,7 @@ export default function HomePage() {
       <SkillsGrid />
       <WritingTeaser />
       <ResearchPreview />
+      <WorkTeaser />
     </main>
   );
 }

@@ -19,6 +19,7 @@
     "description": "Fornire approfondimenti basati sui dati per decisioni di investimento immobiliare nei mercati europei. Specializzato in machine learning, analisi geospaziale e soluzioni di dati alternativi per REIT e fondi.",
     "viewProjects": "Vedi Progetti",
     "getInTouch": "Contattami",
+    "workWithMe": "Lavora con me",
     "yearsExperience": "Anni di Esperienza",
     "marketsMapped": "Mercati Mappati",
     "geoProjects": "Geo Progetti Completati",
@@ -223,7 +224,8 @@
     "crmLogin": "CRM",
     "privacyPolicy": "Informativa sulla Privacy",
     "termsOfService": "Termini di Servizio",
-    "cookiePolicy": "Politica sui Cookie"
+    "cookiePolicy": "Politica sui Cookie",
+    "work": "Lavora con me"
   },
   "Common": {
     "language": "Lingua",
@@ -252,7 +254,12 @@
     "bylineSuffix": "· Amsterdam",
     "minRead": "min di lettura",
     "writingTeaserKicker": "Blog — articoli recenti",
-    "writingTeaserSubtitle": "Saggi, tutorial e appunti dal campo."
+    "writingTeaserSubtitle": "Saggi, tutorial e appunti dal campo.",
+    "endCtaKicker": "§ Prossimo passo",
+    "endCtaTitle": "Hai un problema simile che vale la pena",
+    "endCtaTitleItalic": "risolvere?",
+    "endCtaBody": "Ogni anno accetto un piccolo numero di incarichi esterni — strumenti interni, pipeline dati e sistemi integrati con AI per team operativi al di fuori dell'immobiliare.",
+    "endCtaButton": "Scopri come lavoreremmo insieme"
   },
   "SkillsGrid": {
     "kicker": "Competenze — quattro competenze chiave",

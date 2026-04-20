@@ -19,6 +19,7 @@
     "description": "Datagedreven inzichten leveren voor vastgoedinvesteringsbeslissingen in Europese markten. Gespecialiseerd in machine learning, geospatiale analyse en alternatieve dataoplossingen voor REITs en fondsen.",
     "viewProjects": "Bekijk Projecten",
     "getInTouch": "Neem Contact Op",
+    "workWithMe": "Samenwerken",
     "yearsExperience": "Jaar Ervaring",
     "marketsMapped": "Markten In Kaart",
     "geoProjects": "Geo Projecten Afgerond",
@@ -223,7 +224,8 @@
     "crmLogin": "CRM",
     "privacyPolicy": "Privacybeleid",
     "termsOfService": "Servicevoorwaarden",
-    "cookiePolicy": "Cookiebeleid"
+    "cookiePolicy": "Cookiebeleid",
+    "work": "Samenwerken"
   },
   "Common": {
     "language": "Taal",
@@ -252,7 +254,12 @@
     "bylineSuffix": "· Amsterdam",
     "minRead": "min lezen",
     "writingTeaserKicker": "Blog — recente berichten",
-    "writingTeaserSubtitle": "Essays, tutorials en veldnotities."
+    "writingTeaserSubtitle": "Essays, tutorials en veldnotities.",
+    "endCtaKicker": "§ Volgende stap",
+    "endCtaTitle": "Een vergelijkbaar probleem dat de moeite waard is om",
+    "endCtaTitleItalic": "op te lossen?",
+    "endCtaBody": "Ik neem jaarlijks een klein aantal externe opdrachten aan — interne tools, datapijplijnen en AI-geïntegreerde systemen voor operationeel-zware teams buiten vastgoed.",
+    "endCtaButton": "Zie hoe we samenwerken"
   },
   "SkillsGrid": {
     "kicker": "Expertise — vier kerncompetenties",
