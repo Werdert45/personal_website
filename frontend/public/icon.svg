@@ -1,7 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 180" width="180" height="180">
   <rect width="180" height="180" rx="30" fill="#111110"/>
   <circle cx="90" cy="90" r="64" fill="#FFD60A" fill-opacity="0.14"/>
-  <circle cx="90" cy="90" r="50" fill="#FFD60A" fill-opacity="0.26"/>
-  <circle cx="90" cy="90" r="58" fill="none" stroke="#FFD60A" stroke-opacity="0.45" stroke-width="2.5"/>
-  <circle cx="90" cy="90" r="32" fill="#FFD60A"/>
+  <circle cx="90" cy="90" r="58" fill="none" stroke="#FFD60A" stroke-opacity="0.45" stroke-width="2"/>
+  <text x="90" y="122" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-weight="400" font-size="108" fill="#FFD60A">IR</text>
 </svg>
