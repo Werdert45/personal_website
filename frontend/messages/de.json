@@ -13,16 +13,19 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data @ KR&A",
-    "title": "Geodata Engineer & ",
-    "titleHighlight": "Software",
-    "titleEnd": " Developer",
-    "description": "Datengestützte Erkenntnisse für Immobilieninvestitionsentscheidungen auf europäischen Märkten. Spezialisiert auf maschinelles Lernen, Geodatenanalyse und alternative Datenlösungen für REITs und Fonds.",
-    "viewProjects": "Projekte Ansehen",
+    "title": "Geodata Engineering & ",
+    "titleHighlight": "KI/ML Automatisierung",
+    "titleEnd": " für operative Teams",
+    "description": "Ich entwerfe und liefere produktionsreife Datensysteme und KI-Automatisierungen — Pipelines, Modelle und interne Tools, die manuelle Arbeit ersetzen. Aktuell mit Teams in Geodaten, Versicherung, Logistik, öffentlichem Sektor und Immobilien.",
+    "viewProjects": "So arbeiten wir zusammen",
     "getInTouch": "Kontakt Aufnehmen",
-    "workWithMe": "Zusammenarbeiten",
+    "workWithMe": "20-Minuten-Gespräch buchen",
     "yearsExperience": "Jahre Erfahrung",
     "marketsMapped": "Märkte Kartiert",
     "geoProjects": "Geo-Projekte Abgeschlossen",
+    "statHoursLabel": "Std. / Jahr zurückgewonnen",
+    "statOnboardingLabel": "Tage · Onboarding-Redesign",
+    "statSectorsLabel": "Sektoren in Produktion",
     "expertise": "Expertise:",
     "dataEngineering": "Data Engineering",
     "machineLearning": "Machine Learning"
@@ -30,7 +33,7 @@
   "About": {
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kernkompetenzen",
-    "expertiseSubtitle": "Spezialisierte Fähigkeiten und Technologien für geospatiale Lösungen auf Enterprise-Niveau.",
+    "expertiseSubtitle": "Spezialisierte Fähigkeiten für produktionsreife Datensysteme, KI-Automatisierungen und Geodaten-Pipelines — gebaut, um zu liefern und im Einsatz zu bleiben.",
     "educationBadge": "Ausbildung",
     "experienceBadge": "Erfahrung",
     "academicTitle": "Akademische Leistungen",
@@ -265,6 +268,35 @@
     "kicker": "Expertise — vier Kernkompetenzen",
     "titleItalic": "Kern-",
     "titleRest": "kompetenzen."
+  },
+  "Sectors": {
+    "kicker": "Sektoren — wo diese Arbeit landet",
+    "titlePrefix": "Gebaut für",
+    "titleItalic": "operativ-lastige",
+    "titleSuffix": "Teams.",
+    "subtitle": "Dieselbe Engineering-Arbeit, fünf Einstiegstüren. Wenn dein Team mit Tabellen, manueller Triage und Dashboards arbeitet, die niemand öffnet, ist das die Liste.",
+    "items": [
+      { "name": "Geospatial Analytics", "blurb": "Räumliche Pipelines, H3-Indizierung, Parzellen-Modelle, Alt-Daten-Ingestion." },
+      { "name": "Versicherung & Klimarisiko", "blurb": "Exposure Modelling, Hochwasser- und CV-Pipelines, Schadens-Triage-Automatisierung." },
+      { "name": "Logistik & Mobilität", "blurb": "Routing, Depot-Standortwahl, Last-Mile, Ops-Dashboards, die zehn manuelle Reports ersetzen." },
+      { "name": "Öffentlicher Sektor & Planung", "blurb": "Mobilität, Klimaanpassung, Infrastruktur-Resilienz und Parzellen-Analyse." },
+      { "name": "Immobilien & Investment", "blurb": "Bewertung, Gentrifizierungs-ABMs, Alt-Daten für REITs, Fonds und Asset Manager." }
+    ]
+  },
+  "Proof": {
+    "kicker": "Belege — Ergebnisse, die ausgeliefert wurden",
+    "titlePrefix": "Dinge, die",
+    "titleItalic": "live gegangen",
+    "titleSuffix": "und geblieben sind.",
+    "quote": "Ian hat geliefert, was er versprochen hat — in der Zeit, die er zugesagt hat.",
+    "quoteAttribution": "COO, regulierte Dienstleistungen",
+    "outcomes": [
+      { "value": "2.500+", "unit": "Std. / Jahr zurückgewonnen", "context": "Deal-Screening-Tool · 6 Wochen" },
+      { "value": "11 → 3", "unit": "Tage · Onboarding", "context": "Compliance-Intake Neuaufbau · 8 Wochen" },
+      { "value": "18", "unit": "Std. / Woche identifizierte Einsparung", "context": "Automatisierungs-Audit · 2 Wochen" }
+    ],
+    "ctaPrimary": "So arbeiten wir zusammen",
+    "ctaSecondary": "20-Minuten-Gespräch buchen"
   },
   "Consent": {
     "dialogLabel": "Cookie-Einwilligung",

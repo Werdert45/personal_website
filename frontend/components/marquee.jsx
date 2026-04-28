@@ -1,10 +1,10 @@
 export function Marquee({ items }) {
   const defaults = [
-    "Machine Learning",
+    "AI / ML Automation",
     "Data Engineering",
     "Geospatial Analysis",
-    "Internal Processes",
-    "REITs · Funds · Eurostat",
+    "Internal Tools",
+    "Insurance · Logistics · Public Sector · Real Estate",
   ];
   const list = items || defaults;
   const row = (

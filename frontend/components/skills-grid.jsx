@@ -124,7 +124,7 @@ export function SkillsGrid() {
     <section className="section-pad" style={{ paddingBottom: 200 }}>
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 01</span>
+        <span className="num-label">§ 02</span>
         <span>{sk("kicker")}</span>
       </div>
       <div className="section-head" style={{ alignItems: "end", marginBottom: 80 }}>
@@ -149,7 +149,7 @@ export function SkillsGrid() {
           return (
             <div key={i} className="skill">
               <div className="skill-top">
-                <span>§ 01.{String(i + 1).padStart(2, "0")}</span>
+                <span>§ 02.{String(i + 1).padStart(2, "0")}</span>
                 <span>{shortTags[i]}</span>
               </div>
               <div className="skill-num serif">{String(i + 1).padStart(2, "0")}</div>

@@ -13,16 +13,19 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data @ KR&A",
-    "title": "Geodata Engineer & ",
-    "titleHighlight": "Software",
-    "titleEnd": " Developer",
-    "description": "Fornire approfondimenti basati sui dati per decisioni di investimento immobiliare nei mercati europei. Specializzato in machine learning, analisi geospaziale e soluzioni di dati alternativi per REIT e fondi.",
-    "viewProjects": "Vedi Progetti",
+    "title": "Geodata Engineering & ",
+    "titleHighlight": "AI/ML Automazione",
+    "titleEnd": " per team operativi",
+    "description": "Progetto e realizzo sistemi dati di produzione e automazioni AI — pipeline, modelli e strumenti interni che sostituiscono il lavoro manuale. Attualmente lavoro con team in ambito geospaziale, assicurativo, logistica, settore pubblico e immobiliare.",
+    "viewProjects": "Scopri come lavoriamo insieme",
     "getInTouch": "Contattami",
-    "workWithMe": "Lavora con me",
+    "workWithMe": "Prenota una chiamata di 20 min",
     "yearsExperience": "Anni di Esperienza",
     "marketsMapped": "Mercati Mappati",
     "geoProjects": "Geo Progetti Completati",
+    "statHoursLabel": "Ore / anno recuperate",
+    "statOnboardingLabel": "Giorni · onboarding ridisegnato",
+    "statSectorsLabel": "Settori in produzione",
     "expertise": "Competenze:",
     "dataEngineering": "Data Engineering",
     "machineLearning": "Machine Learning"
@@ -30,7 +33,7 @@
   "About": {
     "expertiseBadge": "Competenze",
     "coreCompetencies": "Competenze Principali",
-    "expertiseSubtitle": "Competenze specializzate e tecnologie per soluzioni geospaziali di livello enterprise.",
+    "expertiseSubtitle": "Competenze specializzate per sistemi dati di produzione, automazioni AI e pipeline geospaziali — costruiti per essere rilasciati e restare in produzione.",
     "educationBadge": "Formazione",
     "experienceBadge": "Esperienza",
     "academicTitle": "Traguardi Accademici",
@@ -265,6 +268,35 @@
     "kicker": "Competenze — quattro competenze chiave",
     "titleItalic": "Competenze",
     "titleRest": "principali."
+  },
+  "Sectors": {
+    "kicker": "Settori — dove questo lavoro va in produzione",
+    "titlePrefix": "Costruito per team",
+    "titleItalic": "operativi",
+    "titleSuffix": "ad alto carico.",
+    "subtitle": "Stessa ingegneria, cinque porte d'ingresso. Se il tuo team gira su fogli di calcolo, triage manuale e dashboard che nessuno apre, questa è la lista.",
+    "items": [
+      { "name": "Geospatial Analytics", "blurb": "Pipeline spaziali, indicizzazione H3, modelli a livello di particella, ingestion alt-data." },
+      { "name": "Assicurazioni & Rischio Climatico", "blurb": "Exposure modelling, pipeline alluvioni e CV, automazione triage sinistri." },
+      { "name": "Logistica & Mobilità", "blurb": "Routing, scelta depositi, last-mile, dashboard operative che sostituiscono dieci report manuali." },
+      { "name": "Settore Pubblico & Pianificazione", "blurb": "Mobilità, adattamento climatico, resilienza infrastrutturale e analisi a livello di particella." },
+      { "name": "Immobiliare & Investimenti", "blurb": "Valutazione, ABM di gentrificazione, alt-data per REIT, fondi e asset manager." }
+    ]
+  },
+  "Proof": {
+    "kicker": "Prove — risultati arrivati in produzione",
+    "titlePrefix": "Cose che",
+    "titleItalic": "hanno spedito",
+    "titleSuffix": "e sono rimaste.",
+    "quote": "Ian ha consegnato quello che aveva detto, nei tempi che aveva detto.",
+    "quoteAttribution": "COO, servizi regolamentati",
+    "outcomes": [
+      { "value": "2.500+", "unit": "ore / anno recuperate", "context": "Tool di deal-screening · 6 settimane" },
+      { "value": "11 → 3", "unit": "giorni · onboarding", "context": "Ricostruzione intake compliance · 8 settimane" },
+      { "value": "18", "unit": "ore / sett. di risparmio identificate", "context": "Automation audit · 2 settimane" }
+    ],
+    "ctaPrimary": "Scopri come lavoriamo insieme",
+    "ctaSecondary": "Prenota una chiamata di 20 min"
   },
   "Consent": {
     "dialogLabel": "Consenso ai cookie",

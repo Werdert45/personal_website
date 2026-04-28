@@ -13,16 +13,19 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data @ KR&A",
-    "title": "Geodata Engineer & ",
-    "titleHighlight": "Software",
-    "titleEnd": " Developer",
-    "description": "Datagedreven inzichten leveren voor vastgoedinvesteringsbeslissingen in Europese markten. Gespecialiseerd in machine learning, geospatiale analyse en alternatieve dataoplossingen voor REITs en fondsen.",
-    "viewProjects": "Bekijk Projecten",
+    "title": "Geodata Engineering & ",
+    "titleHighlight": "AI/ML Automatisering",
+    "titleEnd": " voor ops-zware teams",
+    "description": "Ik ontwerp en lever productie-datasystemen en AI-automatiseringen — pipelines, modellen en interne tools die handmatig werk vervangen. Werk momenteel met teams in geospatial, verzekeringen, logistiek, publieke sector en vastgoed.",
+    "viewProjects": "Bekijk hoe we samenwerken",
     "getInTouch": "Neem Contact Op",
-    "workWithMe": "Samenwerken",
+    "workWithMe": "Plan een gesprek van 20 min",
     "yearsExperience": "Jaar Ervaring",
     "marketsMapped": "Markten In Kaart",
     "geoProjects": "Geo Projecten Afgerond",
+    "statHoursLabel": "Uur / jr teruggewonnen",
+    "statOnboardingLabel": "Dagen · onboarding herontwerp",
+    "statSectorsLabel": "Sectoren in productie",
     "expertise": "Expertise:",
     "dataEngineering": "Data Engineering",
     "machineLearning": "Machine Learning"
@@ -30,7 +33,7 @@
   "About": {
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kerncompetenties",
-    "expertiseSubtitle": "Gespecialiseerde vaardigheden en technologieën voor enterprise-grade geospatiale oplossingen.",
+    "expertiseSubtitle": "Gespecialiseerde vaardigheden voor productie-datasystemen, AI-automatiseringen en geospatial pipelines — gebouwd om te verschepen en te blijven werken.",
     "educationBadge": "Opleiding",
     "experienceBadge": "Ervaring",
     "academicTitle": "Academische Prestaties",
@@ -265,6 +268,35 @@
     "kicker": "Expertise — vier kerncompetenties",
     "titleItalic": "Kern-",
     "titleRest": "competenties."
+  },
+  "Sectors": {
+    "kicker": "Sectoren — waar dit werk landt",
+    "titlePrefix": "Gebouwd voor",
+    "titleItalic": "operationeel-zware",
+    "titleSuffix": "teams.",
+    "subtitle": "Dezelfde engineering, vijf ingangen. Als je team draait op spreadsheets, handmatige triage en dashboards die niemand opent, is dit de lijst.",
+    "items": [
+      { "name": "Geospatial Analytics", "blurb": "Spatial pipelines, H3-indexing, perceelmodellen, alt-data ingestion." },
+      { "name": "Verzekeringen & Klimaatrisico", "blurb": "Exposure modelling, overstromings- en CV-pipelines, claims-triage automatisering." },
+      { "name": "Logistiek & Mobiliteit", "blurb": "Routing, depot-locatie, last-mile, ops-dashboards die tien handmatige rapporten vervangen." },
+      { "name": "Publieke Sector & Planning", "blurb": "Mobiliteit, klimaatadaptatie, infrastructuur-resilience, perceelanalyse." },
+      { "name": "Vastgoed & Investeringen", "blurb": "Waardering, gentrificatie-ABMs, alt-data voor REITs, fondsen en assetmanagers." }
+    ]
+  },
+  "Proof": {
+    "kicker": "Bewijs — uitkomsten die zijn gerealiseerd",
+    "titlePrefix": "Wat we hebben",
+    "titleItalic": "gebouwd",
+    "titleSuffix": "en wat is gebleven.",
+    "quote": "Ian leverde precies wat hij beloofde, in de tijd die hij beloofde.",
+    "quoteAttribution": "COO, gereguleerde dienstverlening",
+    "outcomes": [
+      { "value": "2.500+", "unit": "uur / jr teruggewonnen", "context": "Deal-screening tool · 6 weken" },
+      { "value": "11 → 3", "unit": "dagen · onboarding", "context": "Compliance-intake herbouw · 8 weken" },
+      { "value": "18", "unit": "uur / wk besparing geïdentificeerd", "context": "Automatiserings-audit · 2 weken" }
+    ],
+    "ctaPrimary": "Bekijk hoe we samenwerken",
+    "ctaSecondary": "Plan een gesprek van 20 min"
   },
   "Consent": {
     "dialogLabel": "Cookie-toestemming",

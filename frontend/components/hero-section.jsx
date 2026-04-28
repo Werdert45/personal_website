@@ -173,20 +173,22 @@ export function HeroSection() {
 
           <div style={{ marginTop: 40, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
             <Link
-              href={`/${locale}/thoughts`}
+              href={`/${locale}/work`}
               className="btn primary"
-              onClick={() => trackEvent("cta_click", { cta: "view_projects", location: "hero", source: "hero_primary" })}
+              onClick={() => trackEvent("cta_click", { cta: "work_with_me", location: "hero", source: "hero_primary" })}
             >
               <span>{t("viewProjects")}</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
             </Link>
-            <Link
-              href={`/${locale}/work`}
+            <a
+              href="https://cal.com/ianronk/intro"
+              target="_blank"
+              rel="noopener noreferrer"
               className="btn ghost"
-              onClick={() => trackEvent("cta_click", { cta: "work_with_me", location: "hero", source: "hero_secondary" })}
+              onClick={() => trackEvent("cta_click", { cta: "book_call", location: "hero", source: "hero_secondary" })}
             >
               <span>{t("workWithMe")}</span>
-            </Link>
+            </a>
           </div>
         </div>
 
@@ -278,23 +280,23 @@ export function HeroSection() {
         }}
       >
         <div style={{ padding: "20px 36px 20px 0", borderRight: "1px solid var(--rule)" }}>
-          <b style={{ fontFamily: "var(--font-serif)", fontSize: 40, lineHeight: 1, color: "var(--yellow-2)", display: "block" }}>4+</b>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginTop: 6, display: "block" }}>{t("yearsExperience")}</span>
+          <b style={{ fontFamily: "var(--font-serif)", fontSize: 40, lineHeight: 1, color: "var(--yellow-2)", display: "block" }}>2,500+</b>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginTop: 6, display: "block" }}>{t("statHoursLabel")}</span>
         </div>
         <div style={{ padding: "20px 36px", borderRight: "1px solid var(--rule)" }}>
-          <b style={{ fontFamily: "var(--font-serif)", fontSize: 40, lineHeight: 1, color: "var(--yellow-2)", display: "block" }}>15+</b>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginTop: 6, display: "block" }}>{t("marketsMapped")}</span>
+          <b style={{ fontFamily: "var(--font-serif)", fontSize: 40, lineHeight: 1, color: "var(--yellow-2)", display: "block" }}>11 → 3</b>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginTop: 6, display: "block" }}>{t("statOnboardingLabel")}</span>
         </div>
         <div style={{ padding: "20px 36px", borderRight: "1px solid var(--rule)" }}>
-          <b style={{ fontFamily: "var(--font-serif)", fontSize: 40, lineHeight: 1, color: "var(--yellow-2)", display: "block" }}>10+</b>
-          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginTop: 6, display: "block" }}>{t("geoProjects")}</span>
+          <b style={{ fontFamily: "var(--font-serif)", fontSize: 40, lineHeight: 1, color: "var(--yellow-2)", display: "block" }}>5+</b>
+          <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginTop: 6, display: "block" }}>{t("statSectorsLabel")}</span>
         </div>
         <div style={{ padding: "20px 0 20px 36px", display: "flex", flexWrap: "wrap", alignItems: "center", gap: 8, justifyContent: "flex-end" }}>
           <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginRight: 8 }}>{t("expertise")}</span>
           <span className="chip">Python</span>
           <span className="chip">PostGIS</span>
           <span className="chip">Airflow</span>
-          <span className="chip">Mapbox</span>
+          <span className="chip">LLM/RAG</span>
           <span className="chip">PyTorch</span>
         </div>
       </div>
