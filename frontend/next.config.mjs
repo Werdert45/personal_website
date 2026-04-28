@@ -25,6 +25,11 @@ const nextConfig = {
         destination: `/${locale}/thoughts/:slug`,
         permanent: true,
       },
+      {
+        source: `/${locale}/work`,
+        destination: `/${locale}/about`,
+        permanent: false,
+      },
     ]);
   },
 };

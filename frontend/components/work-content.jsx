@@ -8,8 +8,6 @@ const offers = [
     kicker: "§ 03.01 · Diagnostic",
     title: ["Automation ", "Audit", "."],
     timeline: "2 weeks",
-    price: "€5,500",
-    priceNote: "fixed",
     pitch:
       "A two-week engagement where I map your operational workflows, identify the five highest-ROI automation targets, and deliver a prioritised roadmap with effort estimates and a build plan you can execute with me or with your own team.",
     gets: [
@@ -27,8 +25,6 @@ const offers = [
     kicker: "§ 03.02 · Build",
     title: ["Internal ", "System", " Build."],
     timeline: "6–10 weeks",
-    price: "€18k–€35k",
-    priceNote: "scoped",
     pitch:
       "A fixed-scope engagement to design, build, and hand over one internal tool — typically a CRM, workflow engine, data pipeline, or AI-integrated internal app. Includes deployment, documentation, and a four-week post-handover support window.",
     gets: [
@@ -47,8 +43,6 @@ const offers = [
     kicker: "§ 03.03 · Embedded",
     title: ["Technical ", "Fractional", "."],
     timeline: "3-month min.",
-    price: "€10k / mo",
-    priceNote: "· 2 days / wk",
     pitch:
       "Embedded with your team as a fractional senior engineer — designing, building, and shipping alongside your people. Best for technical founders or ops leads who need experienced building capacity without a full-time hire.",
     gets: [
@@ -238,7 +232,6 @@ export function WorkContent() {
                 </h3>
                 <div className="wm-o-price">
                   <div><span className="k">Timeline</span><b>{o.timeline}</b></div>
-                  <div><span className="k">Price</span><b>{o.price} <em>{o.priceNote}</em></b></div>
                 </div>
               </header>
               <div className="wm-o-body">
@@ -349,10 +342,6 @@ export function WorkContent() {
           ))}
         </div>
 
-        <div className="wm-quote">
-          <p>&ldquo;Ian shipped the thing he said he'd ship, in the time he said he'd ship it. Rare in my experience hiring technical freelancers.&rdquo;</p>
-          <div className="wm-quote-att">— COO, regulated services firm · Case 02</div>
-        </div>
       </section>
 
       {/* § 06 WHO */}
