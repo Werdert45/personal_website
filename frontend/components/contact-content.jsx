@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
+import Link from "next/link";
 import Script from "next/script";
 import { trackEvent } from "@/lib/analytics";
+import ObfuscatedEmail from "@/components/obfuscated-email";
 
 const RECAPTCHA_SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "";
 
@@ -14,6 +16,7 @@ export function ContactContent() {
   } catch {
     t = (key) => key;
   }
+  const locale = useLocale();
 
   const [formData, setFormData] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
   const [honeypot, setHoneypot] = useState("");
@@ -137,7 +140,7 @@ export function ContactContent() {
               {t("bio")}
             </p>
             <div className="direct">
-              <a href="mailto:ian@example.com">✉ ian@example.com</a>
+              <ObfuscatedEmail prefixIcon="✉" />
               <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">in · /ian-ronk</a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer">gh · /ianronk</a>
               <span>◉ {t("location")}</span>
@@ -208,7 +211,9 @@ export function ContactContent() {
               <span>→</span>
             </button>
 
-            <p className="privacy">{t("privacy")}</p>
+            <p className="privacy">
+              <Link href={`/${locale}/privacy-policy`}>{t("privacy")}</Link>
+            </p>
           </form>
         </div>
       </section>
@@ -221,7 +226,7 @@ export function ContactContent() {
         </div>
         <div className="row">
           <h3>
-            <a href="mailto:ian@example.com">ian@example.com</a>
+            <ObfuscatedEmail />
           </h3>
           <div className="links">
             <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">{t("linkLinkedIn")}</a>

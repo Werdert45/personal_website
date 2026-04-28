@@ -2,6 +2,7 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import ObfuscatedEmail from "@/components/obfuscated-email";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -35,7 +36,7 @@ export function Footer() {
         <Link href="/login">{t("crmLogin")}</Link>
         <a href="https://github.com" target="_blank" rel="noopener noreferrer">GH</a>
         <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">LI</a>
-        <a href="mailto:ian@example.com">@</a>
+        <ObfuscatedEmail>@</ObfuscatedEmail>
       </div>
       <span>AMS · 52.37°N / 4.90°E</span>
     </footer>
