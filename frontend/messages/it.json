@@ -269,6 +269,25 @@
     "titleItalic": "Competenze",
     "titleRest": "principali."
   },
+  "AboutTeaser": {
+    "kicker": "Chi sono — la persona dietro al lavoro",
+    "titleLine1": "Ciao, sono",
+    "titleLine1Italic": "Ian.",
+    "titleLine2": "Costruisco sistemi",
+    "titleLine2Underline": "in produzione.",
+    "bio1": "Head of Data presso KR&A ad Amsterdam, dove guido le iniziative AI per clienti europei in ambito immobiliare, clima e alt-data. MSc in Data Science & Business Analytics alla Bocconi; BSc in Intelligenza Artificiale all'Università di Amsterdam.",
+    "bio2": "Oltre al lavoro principale accetto un numero limitato di progetti l'anno — strumenti interni, pipeline di dati e automazioni AI per team operativi in ambito geospaziale, assicurazioni, logistica, settore pubblico e immobiliare.",
+    "factRoleK": "Ruolo",
+    "factRoleV": "Head of Data · KR&A",
+    "factBasisK": "Sede",
+    "factBasisV": "Amsterdam · lavoro in tutta l'UE",
+    "factEduK": "Formazione",
+    "factEduV": "MSc Bocconi · BSc AI Amsterdam",
+    "factStackK": "Stack",
+    "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
+    "portraitCaption": "IAN · AMS · 2026",
+    "cta": "Leggi la biografia completa"
+  },
   "Sectors": {
     "kicker": "Settori — dove questo lavoro va in produzione",
     "titlePrefix": "Costruito per team",

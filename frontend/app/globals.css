@@ -1538,7 +1538,23 @@
   .work-teaser { grid-template-columns: 1fr; }
 }
 
-/* ---------- Sectors strip (homepage § 03) ---------- */
+/* ---------- About teaser (homepage § 02) ---------- */
+.about-teaser .portrait {
+  max-width: 420px;
+  justify-self: end;
+  width: 100%;
+}
+.about-teaser .about-top {
+  padding-bottom: 56px;
+}
+.about-facts-teaser {
+  margin-top: 56px;
+}
+@media (max-width: 1000px) {
+  .about-teaser .portrait { max-width: 100%; justify-self: stretch; }
+}
+
+/* ---------- Sectors strip (homepage § 04) ---------- */
 .sectors-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

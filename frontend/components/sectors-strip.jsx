@@ -10,7 +10,7 @@ export function SectorsStrip() {
     <section className="section-pad">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 03</span>
+        <span className="num-label">§ 04</span>
         <span>{t("kicker")}</span>
       </div>
 
@@ -36,7 +36,7 @@ export function SectorsStrip() {
         {items.map((item, i) => (
           <div key={item.name} className="sector-tile">
             <div className="sector-kicker">
-              <span>§ 03.{String(i + 1).padStart(2, "0")}</span>
+              <span>§ 04.{String(i + 1).padStart(2, "0")}</span>
               <span className="sector-dot" />
             </div>
             <h3 className="sector-name">{item.name}</h3>

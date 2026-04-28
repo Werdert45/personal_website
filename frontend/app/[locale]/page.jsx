@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/hero-section";
 import { Marquee } from "@/components/marquee";
+import { AboutTeaser } from "@/components/about-teaser";
 import { SkillsGrid } from "@/components/skills-grid";
 import { SectorsStrip } from "@/components/sectors-strip";
 import { ProofStrip } from "@/components/proof-strip";
@@ -15,6 +16,7 @@ export default function HomePage() {
       <WebSiteJsonLd />
       <HeroSection />
       <Marquee />
+      <AboutTeaser />
       <SkillsGrid />
       <SectorsStrip />
       <ProofStrip />

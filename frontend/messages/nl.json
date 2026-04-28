@@ -269,6 +269,25 @@
     "titleItalic": "Kern-",
     "titleRest": "competenties."
   },
+  "AboutTeaser": {
+    "kicker": "Over mij — wie er achter het werk zit",
+    "titleLine1": "Hoi, ik ben",
+    "titleLine1Italic": "Ian.",
+    "titleLine2": "Ik bouw productie-",
+    "titleLine2Underline": "systemen.",
+    "bio1": "Head of Data bij KR&A in Amsterdam, waar ik AI-initiatieven leid voor Europese vastgoed-, klimaat- en alt-dataklanten. MSc in Data Science & Business Analytics aan Bocconi; BSc in Kunstmatige Intelligentie aan de Universiteit van Amsterdam.",
+    "bio2": "Naast mijn vaste rol neem ik een beperkt aantal opdrachten per jaar aan — interne tools, datapipelines en AI-automatiseringen voor ops-zware teams in geospatial, verzekeringen, logistiek, publieke sector en vastgoed.",
+    "factRoleK": "Rol",
+    "factRoleV": "Head of Data · KR&A",
+    "factBasisK": "Standplaats",
+    "factBasisV": "Amsterdam · werkend EU-breed",
+    "factEduK": "Opleiding",
+    "factEduV": "MSc Bocconi · BSc AI Amsterdam",
+    "factStackK": "Stack",
+    "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
+    "portraitCaption": "IAN · AMS · 2026",
+    "cta": "Lees de volledige bio"
+  },
   "Sectors": {
     "kicker": "Sectoren — waar dit werk landt",
     "titlePrefix": "Gebouwd voor",

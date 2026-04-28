@@ -17,7 +17,7 @@ export function WorkTeaser() {
     <section className="section-pad">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 05</span>
+        <span className="num-label">§ 06</span>
         <span>Work with me — three ways to work together</span>
       </div>
       <div className="skill-head" style={{ marginBottom: 24 }}>
