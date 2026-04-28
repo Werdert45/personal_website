@@ -27,8 +27,8 @@ git checkout -b negatives-cleanup
 
 ```bash
 cd /Users/ianronk/Projects/personal-website/frontend
-pnpm install
-pnpm build
+npm install
+npm run build
 ```
 
 Expected: build succeeds. If it doesn't, fix the baseline before proceeding.
@@ -42,8 +42,8 @@ Expected: build succeeds. If it doesn't, fix the baseline before proceeding.
 - Modify: `frontend/components/footer.jsx` (line 38)
 - Modify: `frontend/app/api/contact/route.js`
 - Create: `frontend/components/obfuscated-email.jsx`
-- Create: `frontend/lib/spam/disposable-domains.json`
-- Create: `frontend/lib/spam/check-submitter.js`
+- Create: `backend/apps/users/views.py` (append `ValidateEmailView`) — not a new file but a new class in the existing one
+- Modify: `backend/apps/users/urls.py` (route the new validate-email view)
 
 ### Task A1: Build the email obfuscation helper
 
@@ -137,7 +137,7 @@ Find the email link in the footer (mailto:ian@example.com) and replace it with `
 
 ```bash
 cd /Users/ianronk/Projects/personal-website/frontend
-pnpm dev
+npm run dev
 ```
 
 In a browser:
@@ -183,134 +183,142 @@ git add frontend/components/contact-content.jsx
 git commit -m "Contact: link privacy line to /privacy-policy"
 ```
 
-### Task A3: Disposable-domain denylist
+### Task A3: Reuse Django `validate_serious_email` for contact spam check
 
-- [ ] **A3.1: Create `frontend/lib/spam/disposable-domains.json`**
+The codebase has `validate_serious_email` in `backend/apps/users/models.py:62` doing strict validation (email-validator deliverability, disposable-email-checker, fake-pattern matching, digit-density check). We expose it as a new endpoint and call it from the contact route.
 
-Source list: use the well-maintained list at https://github.com/disposable-email-domains/disposable-email-domains (download the `disposable_email_blocklist.conf`). Save its contents as a JSON array. For the plan, the engineer should include at minimum these high-confidence entries (full list ~3000 domains; including all is fine):
+- [ ] **A3.1: Add Django view `ValidateEmailView`**
 
-```json
-[
-  "0-mail.com",
-  "10minutemail.com",
-  "10minutemail.net",
-  "20minutemail.com",
-  "anonymbox.com",
-  "beefmilk.com",
-  "discard.email",
-  "discardmail.com",
-  "dispostable.com",
-  "dodgeit.com",
-  "fakeinbox.com",
-  "getairmail.com",
-  "guerrillamail.biz",
-  "guerrillamail.com",
-  "guerrillamail.net",
-  "guerrillamail.org",
-  "guerrillamailblock.com",
-  "harakirimail.com",
-  "incognitomail.com",
-  "jetable.org",
-  "kasmail.com",
-  "mailinator.com",
-  "mailinator.net",
-  "mailnesia.com",
-  "mintemail.com",
-  "mohmal.com",
-  "mytrashmail.com",
-  "nepwk.com",
-  "nowmymail.com",
-  "objectmail.com",
-  "oneoffemail.com",
-  "sharklasers.com",
-  "spam4.me",
-  "spamgourmet.com",
-  "tempinbox.com",
-  "tempmail.net",
-  "tempmail.us",
-  "tempmailo.com",
-  "throwawaymail.com",
-  "trashmail.com",
-  "trashmail.de",
-  "trashmail.net",
-  "yopmail.com",
-  "yopmail.net",
-  "zetmail.com"
+Open `backend/apps/users/views.py`. After the existing imports, ensure `ValidationError` is imported:
+
+```python
+from django.core.exceptions import ValidationError
+from rest_framework import status
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+from rest_framework.views import APIView
+
+from .models import NewsletterSubscriber, validate_serious_email
+```
+
+(Adjust if the existing `from .models import …` line already has these names.)
+
+Append a new view to the file:
+
+```python
+class ValidateEmailView(APIView):
+    """Public stateless email-quality check. No persistence side-effect.
+
+    Accepts {"email": "..."}. Returns 200 {"valid": true} on pass,
+    400 {"valid": false, "reason": "..."} on fail.
+    Used by the Next.js contact route to silently drop spam submissions.
+    """
+
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        email = (request.data.get("email") or "").lower().strip()
+        try:
+            validate_serious_email(email)
+            return Response({"valid": True})
+        except ValidationError as e:
+            return Response(
+                {"valid": False, "reason": getattr(e, "message", str(e))},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+```
+
+- [ ] **A3.2: Wire the URL**
+
+Open `backend/apps/users/urls.py` and add (alongside whatever already routes `/newsletter/...` and `/login/`):
+
+```python
+from .views import ValidateEmailView
+
+urlpatterns = [
+    # ... existing
+    path("validate-email/", ValidateEmailView.as_view(), name="validate_email"),
 ]
 ```
 
-- [ ] **A3.2: Create `frontend/lib/spam/check-submitter.js`**
+The users app is mounted at `/api/auth/`, so the full path is `/api/auth/validate-email/`.
+
+- [ ] **A3.3: Modify `frontend/app/api/contact/route.js`**
+
+In the POST handler, after the email format validation and before the captcha verification or mail-sending step, add:
 
 ```js
-import disposableDomains from "./disposable-domains.json";
+const DJANGO_API_URL = process.env.DJANGO_API_URL || "http://localhost:8000";
 
-const DISPOSABLE_SET = new Set(disposableDomains.map((d) => d.toLowerCase()));
-
-const SUSPICIOUS_LOCAL_PATTERNS = [
-  /^[a-z]{20,}$/i,
-  /^[0-9]{8,}$/,
-  /^(test|asdf|qwer|zxcv|spam|bot)[0-9]*$/i,
-];
-
-export function isLikelySpamSubmitter(email) {
-  if (typeof email !== "string") return true;
-  const trimmed = email.trim().toLowerCase();
-  const at = trimmed.lastIndexOf("@");
-  if (at < 1 || at === trimmed.length - 1) return true;
-
-  const local = trimmed.slice(0, at);
-  const domain = trimmed.slice(at + 1);
-
-  if (DISPOSABLE_SET.has(domain)) return true;
-  if (SUSPICIOUS_LOCAL_PATTERNS.some((re) => re.test(local))) return true;
-
-  return false;
+// inside POST(...), after basic email format validation:
+try {
+  const validateRes = await fetch(`${DJANGO_API_URL}/api/auth/validate-email/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email }),
+    // 3-second timeout — if Django is unreachable, fall through and let mail proceed
+    signal: AbortSignal.timeout(3000),
+  });
+  if (validateRes.status === 400) {
+    // Spam — silently 200 OK to the bot
+    return NextResponse.json({ ok: true }, { status: 200 });
+  }
+  // Any other non-OK status (5xx, network) is treated as "Django unavailable" — don't block legit users
+} catch {
+  // Network error / timeout — same: don't block legit users on infra failure
 }
 ```
 
-- [ ] **A3.3: Wire into `frontend/app/api/contact/route.js`**
-
-In the POST handler (around line 56–280), after the email format validation and before the captcha verification or mail-sending step, add:
-
-```js
-import { isLikelySpamSubmitter } from "@/lib/spam/check-submitter";
-
-// inside POST(...)
-if (isLikelySpamSubmitter(email)) {
-  return NextResponse.json({ ok: true }, { status: 200 });
-}
-```
-
-(The existing handler uses absolute imports rooted at the project; adjust the path if `@/` isn't configured — `/Users/ianronk/Projects/personal-website/frontend/lib/spam/check-submitter.js`.)
+Place this block *after* the existing email regex check but *before* the captcha verification.
 
 - [ ] **A3.4: Manual verification with curl**
 
+Start backend:
+
 ```bash
-cd /Users/ianronk/Projects/personal-website/frontend
-pnpm dev
+cd /Users/ianronk/Projects/personal-website/backend
+python manage.py runserver
 ```
 
 In another terminal:
 
 ```bash
-# Should return 200 OK with no email actually being sent (silently dropped)
+# Direct hit on the validator endpoint
+curl -X POST http://localhost:8000/api/auth/validate-email/ \
+  -H "Content-Type: application/json" \
+  -d '{"email":"test@mailinator.com"}'
+# Expected: {"valid": false, "reason": "..."}
+
+curl -X POST http://localhost:8000/api/auth/validate-email/ \
+  -H "Content-Type: application/json" \
+  -d '{"email":"alice@example.com"}'
+# Expected: {"valid": true}
+```
+
+Then start frontend:
+
+```bash
+cd /Users/ianronk/Projects/personal-website/frontend
+npm run dev
+```
+
+```bash
+# Through the contact route — should silently 200, no mail sent
 curl -X POST http://localhost:3000/api/contact \
   -H "Content-Type: application/json" \
   -d '{"name":"Test","email":"test@mailinator.com","subject":"hi","message":"This is a long enough message to pass the length check, more than ten chars."}'
 
-# Should proceed normally (check your inbox or server logs)
+# Should proceed (may fail captcha — that's fine; what we want is to confirm it got past the validator)
 curl -X POST http://localhost:3000/api/contact \
   -H "Content-Type: application/json" \
-  -d '{"name":"Test","email":"real@example.com","subject":"hi","message":"This is a long enough message to pass the length check, more than ten chars."}'
+  -d '{"name":"Test","email":"alice@example.com","subject":"hi","message":"This is a long enough message to pass the length check, more than ten chars."}'
 ```
-
-The first should be silently 200 (no inbox delivery). The second should attempt delivery (but may fail captcha — that's fine; what we want is to confirm it got *past* `isLikelySpamSubmitter`).
 
 - [ ] **A3.5: Commit**
 
 ```bash
-git add frontend/lib/spam/disposable-domains.json frontend/lib/spam/check-submitter.js frontend/app/api/contact/route.js
-git commit -m "Contact API: silently drop submissions from disposable email providers"
+git add backend/apps/users/views.py backend/apps/users/urls.py frontend/app/api/contact/route.js
+git commit -m "Contact: validate submitter email via Django validate_serious_email; silently drop spam"
 ```
 
 ---
@@ -319,27 +327,34 @@ git commit -m "Contact API: silently drop submissions from disposable email prov
 
 **Files:**
 - Delete: `frontend/components/email-gate.jsx`
-- Delete: `frontend/components/newsletter-gate.jsx`
+- Delete: `frontend/components/newsletter-gate.jsx` (the only live consumer is `providers.jsx`, also deleted below)
 - Delete: `frontend/components/newsletter-popup.jsx`
 - Delete: `frontend/components/project-abm-thesis.jsx`
 - Delete: `frontend/components/project-languagebuddy.jsx`
 - Delete: `frontend/components/work-content.jsx`
 - Delete: `frontend/components/work-teaser.jsx`
+- Delete: `frontend/components/providers.jsx` (its only purpose was wrapping the app in `<NewsletterProvider>`)
+- Modify: `frontend/app/layout.tsx` — remove the `Providers` import (line 5) and unwrap the `<Providers>...</Providers>` block (lines 76–78)
 - Delete: `ianronk.jpeg`, `ianronk2.jpeg` (project root)
 
-### Task B1: Verify nothing imports the dead files
+### Task B1: Verify nothing else imports the dead files
 
 - [ ] **B1.1: Grep for imports of each file**
 
 ```bash
 cd /Users/ianronk/Projects/personal-website
-for f in email-gate newsletter-gate newsletter-popup project-abm-thesis project-languagebuddy work-content work-teaser; do
+for f in email-gate newsletter-gate newsletter-popup project-abm-thesis project-languagebuddy work-content work-teaser providers; do
   echo "=== $f ==="
-  grep -rn "$f" frontend/app frontend/components | grep -v "$f.jsx"
+  grep -rn "$f" frontend/app frontend/components | grep -v "$f.jsx" | grep -v "$f.tsx"
 done
 ```
 
-Expected: no matches (or only matches inside the files themselves). If anything else imports any of these, STOP and report — those usages need to be excised first or the file isn't actually dead.
+Expected matches:
+- `newsletter-gate` → `providers.jsx` (gone after this section)
+- `providers` → `app/layout.tsx:5` and `app/layout.tsx:76,78` (handled in B3 below)
+- everything else: no matches
+
+If anything else surfaces, STOP and report — those usages need to be excised first or the file isn't actually dead.
 
 - [ ] **B1.2: Verify root images aren't referenced**
 
@@ -361,7 +376,8 @@ git rm frontend/components/email-gate.jsx \
        frontend/components/project-abm-thesis.jsx \
        frontend/components/project-languagebuddy.jsx \
        frontend/components/work-content.jsx \
-       frontend/components/work-teaser.jsx
+       frontend/components/work-teaser.jsx \
+       frontend/components/providers.jsx
 ```
 
 - [ ] **B2.2: Delete the root images**
@@ -370,20 +386,56 @@ git rm frontend/components/email-gate.jsx \
 git rm ianronk.jpeg ianronk2.jpeg
 ```
 
-- [ ] **B2.3: Build to confirm no orphan imports**
+### Task B3: Unwrap `<Providers>` in `app/layout.tsx`
+
+- [ ] **B3.1: Remove the import**
+
+In `frontend/app/layout.tsx`, delete line 5:
+
+```tsx
+import { Providers } from '@/components/providers'
+```
+
+- [ ] **B3.2: Unwrap the JSX**
+
+Around lines 76–78, replace:
+
+```tsx
+        <Providers>
+          {children}
+        </Providers>
+```
+
+with:
+
+```tsx
+        {children}
+```
+
+(Keep the surrounding `<body>` / `<html>` / other wrappers untouched.)
+
+- [ ] **B3.3: Build to confirm no orphan imports**
 
 ```bash
 cd /Users/ianronk/Projects/personal-website/frontend
-pnpm build
+npm run build
 ```
 
 Expected: build succeeds. If a missing-module error surfaces, the grep in B1.1 missed something — find and fix.
 
-- [ ] **B2.4: Commit**
+- [ ] **B3.4: Smoke-test the dev server**
+
+```bash
+npm run dev
+```
+
+In a browser visit `/en` and `/en/contact`. Confirm no runtime crashes (the deleted `NewsletterProvider` wrapped the app, so any orphan `useNewsletter()` call would surface as "must be used within NewsletterProvider"). Check the browser console for errors.
+
+- [ ] **B3.5: Commit**
 
 ```bash
 git add -A
-git commit -m "Cleanup: remove unused gate/popup components, abandoned project pages, work components, and orphan root images"
+git commit -m "Cleanup: remove unused gate/popup/project/work components, providers wrapper, and orphan root images"
 ```
 
 ---
@@ -633,7 +685,7 @@ For each match without a `sizes` prop, decide:
 
 - [ ] **C5.4: Manual verification**
 
-Run `pnpm build`; observe the `Generated...` output for image optimization warnings — the "image with `fill` but no `sizes`" warning should be gone.
+Run `npm run build`; observe the `Generated...` output for image optimization warnings — the "image with `fill` but no `sizes`" warning should be gone.
 
 - [ ] **C5.5: Commit**
 
@@ -850,7 +902,7 @@ twitter: {
 - [ ] **D1.5: Manual verification**
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 Visit `/` then view source. Confirm `<meta property="og:image" content="https://.../og.png">` appears.
@@ -945,7 +997,7 @@ export const contentType = "image/png";
 
 export default async function OgImage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const djangoUrl = process.env.NEXT_PUBLIC_DJANGO_URL ?? process.env.DJANGO_URL ?? "http://localhost:8000";
+  const djangoUrl = process.env.DJANGO_API_URL ?? "http://localhost:8000";
 
   try {
     const res = await fetch(`${djangoUrl}/api/blog/${slug}/`, { next: { revalidate: 300 } });
@@ -978,7 +1030,7 @@ export const contentType = "image/png";
 
 export default async function OgImage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const djangoUrl = process.env.NEXT_PUBLIC_DJANGO_URL ?? process.env.DJANGO_URL ?? "http://localhost:8000";
+  const djangoUrl = process.env.DJANGO_API_URL ?? "http://localhost:8000";
 
   try {
     const res = await fetch(`${djangoUrl}/api/research/${slug}/`, { next: { revalidate: 300 } });
@@ -999,7 +1051,7 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
 - [ ] **D2.4: Manual verification**
 
 ```bash
-pnpm dev
+npm run dev
 # In browser
 open http://localhost:3000/en/research/<some-real-slug>/opengraph-image
 ```
@@ -1140,7 +1192,7 @@ In `frontend/app/[locale]/thoughts/[slug]/page.jsx` (or its render component `bl
 - [ ] **D3.6: Manual verification**
 
 ```bash
-pnpm dev
+npm run dev
 # View source of /en/research/<slug>
 ```
 
@@ -1230,7 +1282,7 @@ const staticEntries = staticPages.flatMap(({ path, priority }) =>
 - [ ] **D4.4: Manual verification**
 
 ```bash
-pnpm dev
+npm run dev
 curl -s http://localhost:3000/sitemap.xml | head -100
 ```
 
@@ -1269,7 +1321,7 @@ import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 
 async function fetchPosts() {
-  const djangoUrl = process.env.DJANGO_URL ?? process.env.NEXT_PUBLIC_DJANGO_URL ?? "http://localhost:8000";
+  const djangoUrl = process.env.DJANGO_API_URL ?? "http://localhost:8000";
   try {
     const res = await fetch(`${djangoUrl}/api/blog/?status=published&page_size=3`, {
       next: { revalidate: 60 },
@@ -1341,7 +1393,7 @@ Translate appropriately for each locale.
 - [ ] **E1.4: Manual verification**
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 Disable network to Django (e.g., temporarily stop the docker-compose backend or block `localhost:8000` in dev tools):
@@ -1395,7 +1447,7 @@ If it's a client component fetching data, split:
 ```jsx
 // frontend/app/[locale]/research/page.jsx (server)
 async function fetchAllResearch(locale) {
-  const djangoUrl = process.env.DJANGO_URL ?? "http://localhost:8000";
+  const djangoUrl = process.env.DJANGO_API_URL ?? "http://localhost:8000";
   const res = await fetch(`${djangoUrl}/api/research/?status=published&page_size=100`, {
     next: { revalidate: 60 },
   });
@@ -1430,8 +1482,8 @@ If `blog-list.jsx` also fetches client-side, mirror E3.1. Otherwise skip.
 - [ ] **E3.3: Manual verification**
 
 ```bash
-pnpm build
-pnpm start
+npm run build
+npm run start
 ```
 
 In a real browser (production-mode, not dev), view source on `/en/research`. Confirm post titles appear in the HTML (not just empty placeholders that hydrate later). Filter input still works interactively.
@@ -1449,61 +1501,47 @@ git commit -m "Perf: server-fetch research list with client filter only for inte
 
 ---
 
-# Section F — Newsletter subscribe (Spec §3)
+# Section F — Newsletter subscribe (Spec §3, revised — reuse `apps.users.NewsletterSubscriber`)
 
 **Files:**
 
-Frontend:
+Frontend (new):
 - Create: `frontend/components/newsletter-subscribe.jsx`
-- Create: `frontend/app/api/newsletter/subscribe/route.js`
 - Modify: `frontend/components/footer.jsx`
 - Modify: `frontend/components/blog-post.jsx` (or wherever post body ends)
 - Modify: `frontend/components/research-article-detail.jsx`
 - Modify: `frontend/messages/{en,nl,it,de}.json` (new `Newsletter` namespace)
+- Modify: `frontend/app/api/newsletter/subscribe/route.js` (already exists; add honeypot/timestamp/forward locale+source)
+- Delete: `frontend/app/api/newsletter/route.js` (duplicate of `subscribe/route.js`)
+- Delete: `frontend/app/api/newsletter/verify/route.js` (only consumer was the gate UI deleted in Section B)
 
-Backend:
-- Create: `backend/apps/newsletter/__init__.py`
-- Create: `backend/apps/newsletter/apps.py`
-- Create: `backend/apps/newsletter/models.py`
-- Create: `backend/apps/newsletter/serializers.py`
-- Create: `backend/apps/newsletter/views.py`
-- Create: `backend/apps/newsletter/urls.py`
-- Create: `backend/apps/newsletter/admin.py`
-- Create: `backend/apps/newsletter/tests.py`
-- Create: `backend/apps/newsletter/migrations/__init__.py`
-- Modify: `backend/config/settings.py` (INSTALLED_APPS, REST_FRAMEWORK throttling)
-- Modify: `backend/config/urls.py`
+Backend (reshape, no new app):
+- Modify: `backend/apps/users/models.py` — drop map-gating fields, add `locale`/`source`
+- Modify: `backend/apps/users/views.py` — extend `NewsletterSubscribeView` to accept `locale`/`source`; delete `VerifyMapAccessView` and `CheckSubscriptionView`
+- Modify: `backend/apps/users/urls.py` — drop verify-access/check route bindings
+- Modify: `backend/apps/users/admin.py` — register or update `NewsletterSubscriber` with new list_display
+- Create: `backend/apps/users/migrations/0003_newsletter_locale_source.py`
+- Modify: `backend/config/settings.py` (`REST_FRAMEWORK` throttle defaults if not present)
 
+Privacy:
 - Modify: `frontend/app/[locale]/privacy-policy/page.jsx` (newsletter disclosure)
 
-### Task F1: Backend — create the newsletter Django app
+### Task F1: Backend — reshape `NewsletterSubscriber`
 
-- [ ] **F1.1: Scaffold the app**
+- [ ] **F1.1: Update `NewsletterSubscriber` model in `apps/users/models.py`**
 
-```bash
-cd /Users/ianronk/Projects/personal-website/backend
-python manage.py startapp newsletter apps/newsletter
-```
-
-If `startapp` doesn't accept that path, scaffold then move:
-
-```bash
-python manage.py startapp newsletter
-mv newsletter apps/
-```
-
-Edit `apps/newsletter/apps.py` — change `name = "newsletter"` to `name = "apps.newsletter"`.
-
-- [ ] **F1.2: Define the `Subscriber` model**
-
-`backend/apps/newsletter/models.py`:
+Locate the existing class around line 156. Replace its docstring and field list to:
 
 ```python
-from django.core.validators import EmailValidator
-from django.db import models
+class NewsletterSubscriber(models.Model):
+    """Newsletter subscriber.
 
+    Originally built for map-access gating; now the public newsletter
+    signup feeds this model. ``is_verified`` / ``verification_token`` /
+    ``verified_at`` are kept for forthcoming double-opt-in; sender pipeline
+    is deferred.
+    """
 
-class Subscriber(models.Model):
     LOCALE_CHOICES = [
         ("en", "English"),
         ("nl", "Dutch"),
@@ -1515,242 +1553,254 @@ class Subscriber(models.Model):
         ("footer", "Footer"),
         ("post-end", "Post end"),
         ("research-end", "Research end"),
+        ("contact-form", "Contact form"),
         ("other", "Other"),
     ]
 
-    email = models.EmailField(unique=True, validators=[EmailValidator()])
+    email = models.EmailField(unique=True, validators=[validate_serious_email])
+    is_business_email = models.BooleanField(default=False)
+    email_domain = models.CharField(max_length=255, blank=True)
+
     locale = models.CharField(max_length=5, choices=LOCALE_CHOICES, default="en")
     source = models.CharField(max_length=20, choices=SOURCE_CHOICES, default="other")
-    confirmed_at = models.DateTimeField(null=True, blank=True)
+
+    # Verification (kept for forthcoming double-opt-in)
+    is_verified = models.BooleanField(default=False)
+    verification_token = models.CharField(max_length=64, blank=True)
+    verified_at = models.DateTimeField(null=True, blank=True)
+
+    # Metadata
+    subscribed_at = models.DateTimeField(auto_now_add=True)
+    ip_address = models.GenericIPAddressField(null=True, blank=True)
+    user_agent = models.TextField(blank=True)
+
+    # Unsubscribe
+    is_active = models.BooleanField(default=True)
     unsubscribed_at = models.DateTimeField(null=True, blank=True)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["-created_at"]
-        # Sender, double-opt-in, and consent-tier integration are deferred
-        # until the sending pipeline is built.
-
-    def save(self, *args, **kwargs):
-        self.email = self.email.strip().lower()
-        super().save(*args, **kwargs)
+        db_table = "newsletter_subscribers"
+        ordering = ["-subscribed_at"]
 
     def __str__(self):
         return self.email
 ```
 
-- [ ] **F1.3: Serializer**
+Also delete any methods on the class related to map-access tracking (`can_access_map`, `record_map_access`, `get_hourly_remaining`, etc.). Keep only `__str__`.
 
-`backend/apps/newsletter/serializers.py`:
-
-```python
-from rest_framework import serializers
-
-from .models import Subscriber
-
-
-class SubscriberSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Subscriber
-        fields = ["email", "locale", "source"]
-
-    def validate_email(self, v):
-        return v.strip().lower()
-```
-
-- [ ] **F1.4: View — idempotent POST**
-
-`backend/apps/newsletter/views.py`:
-
-```python
-from rest_framework import status
-from rest_framework.permissions import AllowAny
-from rest_framework.response import Response
-from rest_framework.throttling import AnonRateThrottle
-from rest_framework.views import APIView
-
-from .models import Subscriber
-from .serializers import SubscriberSerializer
-
-
-class NewsletterThrottle(AnonRateThrottle):
-    rate = "5/minute"
-
-
-class SubscribeView(APIView):
-    permission_classes = [AllowAny]
-    throttle_classes = [NewsletterThrottle]
-
-    def post(self, request):
-        serializer = SubscriberSerializer(data=request.data)
-        if not serializer.is_valid():
-            # Don't leak which fields failed; bots get the same shape as humans
-            return Response({"ok": False}, status=status.HTTP_400_BAD_REQUEST)
-
-        email = serializer.validated_data["email"]
-        locale = serializer.validated_data.get("locale", "en")
-        source = serializer.validated_data.get("source", "other")
-
-        Subscriber.objects.get_or_create(
-            email=email,
-            defaults={"locale": locale, "source": source},
-        )
-
-        # Idempotent: always return 200 OK; never reveal existence.
-        return Response({"ok": True}, status=status.HTTP_200_OK)
-```
-
-- [ ] **F1.5: URLs**
-
-`backend/apps/newsletter/urls.py`:
-
-```python
-from django.urls import path
-
-from .views import SubscribeView
-
-urlpatterns = [
-    path("subscribe/", SubscribeView.as_view(), name="newsletter_subscribe"),
-]
-```
-
-- [ ] **F1.6: Admin**
-
-`backend/apps/newsletter/admin.py`:
-
-```python
-from django.contrib import admin
-
-from .models import Subscriber
-
-
-@admin.register(Subscriber)
-class SubscriberAdmin(admin.ModelAdmin):
-    list_display = ("email", "locale", "source", "confirmed_at", "unsubscribed_at", "created_at")
-    list_filter = ("locale", "source", "confirmed_at", "unsubscribed_at")
-    search_fields = ("email",)
-    readonly_fields = ("created_at", "updated_at")
-```
-
-- [ ] **F1.7: Register the app + throttle config in settings**
-
-`backend/config/settings.py`:
-
-In `INSTALLED_APPS`, add `"apps.newsletter"`:
-
-```python
-INSTALLED_APPS = [
-    # ... existing entries
-    "apps.blog",
-    "apps.newsletter",
-]
-```
-
-In `REST_FRAMEWORK` (lines 124–134), add throttle defaults:
-
-```python
-REST_FRAMEWORK = {
-    # ... existing entries
-    "DEFAULT_THROTTLE_CLASSES": [
-        "rest_framework.throttling.AnonRateThrottle",
-    ],
-    "DEFAULT_THROTTLE_RATES": {
-        "anon": "60/minute",  # generous default; specific views can override
-    },
-}
-```
-
-- [ ] **F1.8: Wire URL include**
-
-`backend/config/urls.py`, add:
-
-```python
-path("api/newsletter/", include("apps.newsletter.urls")),
-```
-
-- [ ] **F1.9: Generate and apply migration**
+- [ ] **F1.2: Generate the migration**
 
 ```bash
 cd /Users/ianronk/Projects/personal-website/backend
-python manage.py makemigrations newsletter
+python manage.py makemigrations users --name newsletter_locale_source
+```
+
+Expected: a new file `apps/users/migrations/0003_newsletter_locale_source.py` with `RemoveField` operations for `access_count`, `last_access`, `access_attempts_this_hour`, `current_hour_start` and `AddField` operations for `locale`, `source`.
+
+Inspect the generated migration file. If `makemigrations` produces anything unexpected (e.g., changing the email validator on the unique field), pause and check.
+
+- [ ] **F1.3: Apply the migration**
+
+```bash
 python manage.py migrate
 ```
 
-Expected output: `Migrations for 'newsletter': ... Create model Subscriber ...` and then a successful migrate.
+Expected: applies cleanly. If there is existing data in `newsletter_subscribers`, the dropped columns disappear; the new columns are added with defaults `"en"` / `"other"` so existing rows are populated.
 
-- [ ] **F1.10: Write Django tests**
+- [ ] **F1.4: Update `NewsletterSubscribeView` in `apps/users/views.py`**
 
-`backend/apps/newsletter/tests.py`:
+Locate the view (around line 140). Edit `post()` to accept `locale` and `source`, and to persist them on new subscribers:
+
+```python
+def post(self, request):
+    email = request.data.get("email", "").lower().strip()
+    locale = request.data.get("locale", "en")
+    source = request.data.get("source", "other")
+
+    # Validate email
+    try:
+        email = validate_serious_email(email)
+    except ValidationError as e:
+        return Response(
+            {"error": str(e.message)},
+            status=status.HTTP_400_BAD_REQUEST,
+        )
+
+    # Coerce to allowed choices; silently fall back if a bad client sends garbage
+    if locale not in dict(NewsletterSubscriber.LOCALE_CHOICES):
+        locale = "en"
+    if source not in dict(NewsletterSubscriber.SOURCE_CHOICES):
+        source = "other"
+
+    ip_address = self.get_client_ip(request)
+    user_agent = request.META.get("HTTP_USER_AGENT", "")[:500]
+
+    subscriber = NewsletterSubscriber.objects.filter(email=email).first()
+
+    if subscriber:
+        if not subscriber.is_active:
+            subscriber.is_active = True
+            subscriber.unsubscribed_at = None
+            subscriber.save(update_fields=["is_active", "unsubscribed_at"])
+        # Existing subscriber: leave locale/source unchanged (preserve original signup context).
+        # Idempotent 200 — do not reveal existence.
+        return Response({"ok": True}, status=status.HTTP_200_OK)
+
+    # New subscriber
+    NewsletterSubscriber.objects.create(
+        email=email,
+        locale=locale,
+        source=source,
+        ip_address=ip_address,
+        user_agent=user_agent,
+        is_verified=True,  # Auto-verify until double-opt-in is wired
+        verified_at=timezone.now(),
+    )
+
+    return Response({"ok": True}, status=status.HTTP_201_CREATED)
+```
+
+- [ ] **F1.5: Delete `VerifyMapAccessView` and `CheckSubscriptionView`**
+
+In the same file (`apps/users/views.py`), delete the two view classes (around lines 211–onward — the file's other views). Also delete any `secrets` import if no remaining view uses it. Confirm `from django.utils import timezone` and the other imports stay in place if `NewsletterSubscribeView` still needs them.
+
+- [ ] **F1.6: Update `apps/users/urls.py`**
+
+Open `apps/users/urls.py`. Remove the URL patterns binding `VerifyMapAccessView` and `CheckSubscriptionView`. The remaining newsletter route is `path("newsletter/subscribe/", NewsletterSubscribeView.as_view(), …)`. The `validate-email/` route added in Section A also lives here.
+
+- [ ] **F1.7: Update Django admin**
+
+In `apps/users/admin.py`, register `NewsletterSubscriber` (or update the existing registration):
+
+```python
+from django.contrib import admin
+from .models import NewsletterSubscriber
+
+@admin.register(NewsletterSubscriber)
+class NewsletterSubscriberAdmin(admin.ModelAdmin):
+    list_display = ("email", "locale", "source", "is_verified", "is_active", "subscribed_at")
+    list_filter = ("locale", "source", "is_verified", "is_active")
+    search_fields = ("email",)
+    readonly_fields = ("subscribed_at", "ip_address", "user_agent")
+```
+
+If `NewsletterSubscriber` was already registered, replace the previous admin with this one.
+
+- [ ] **F1.8: Add throttle defaults to settings (if missing)**
+
+In `backend/config/settings.py`, in the `REST_FRAMEWORK` dict (around lines 124–134), add throttle defaults if not present:
+
+```python
+"DEFAULT_THROTTLE_CLASSES": [
+    "rest_framework.throttling.AnonRateThrottle",
+],
+"DEFAULT_THROTTLE_RATES": {
+    "anon": "60/minute",
+},
+```
+
+- [ ] **F1.9: Write Django tests**
+
+Create `backend/apps/users/tests_newsletter.py`:
 
 ```python
 from django.test import TestCase
-from django.urls import reverse
 
-from .models import Subscriber
+from .models import NewsletterSubscriber
 
 
-class SubscribeTests(TestCase):
-    def test_creates_subscriber(self):
+class NewsletterSubscribeTests(TestCase):
+    URL = "/api/auth/newsletter/subscribe/"
+
+    def test_creates_subscriber_with_locale_and_source(self):
         response = self.client.post(
-            "/api/newsletter/subscribe/",
-            data={"email": "alice@example.com", "locale": "en", "source": "footer"},
+            self.URL,
+            data={"email": "alice@example.com", "locale": "nl", "source": "footer"},
             content_type="application/json",
         )
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(Subscriber.objects.count(), 1)
-        sub = Subscriber.objects.get()
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(NewsletterSubscriber.objects.count(), 1)
+        sub = NewsletterSubscriber.objects.get()
         self.assertEqual(sub.email, "alice@example.com")
+        self.assertEqual(sub.locale, "nl")
+        self.assertEqual(sub.source, "footer")
 
     def test_normalizes_email(self):
         self.client.post(
-            "/api/newsletter/subscribe/",
+            self.URL,
             data={"email": "  Alice@EXAMPLE.com  ", "source": "footer"},
             content_type="application/json",
         )
-        sub = Subscriber.objects.get()
+        sub = NewsletterSubscriber.objects.get()
         self.assertEqual(sub.email, "alice@example.com")
 
-    def test_idempotent(self):
+    def test_idempotent_does_not_overwrite_source(self):
         self.client.post(
-            "/api/newsletter/subscribe/",
-            data={"email": "alice@example.com", "source": "footer"},
+            self.URL,
+            data={"email": "alice@example.com", "locale": "en", "source": "footer"},
             content_type="application/json",
         )
         response = self.client.post(
-            "/api/newsletter/subscribe/",
-            data={"email": "alice@example.com", "source": "post-end"},
+            self.URL,
+            data={"email": "alice@example.com", "locale": "nl", "source": "post-end"},
             content_type="application/json",
         )
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(Subscriber.objects.count(), 1)
-        # Source is NOT updated on duplicate (we don't overwrite original signup context)
-        sub = Subscriber.objects.get()
+        self.assertEqual(NewsletterSubscriber.objects.count(), 1)
+        sub = NewsletterSubscriber.objects.get()
+        self.assertEqual(sub.locale, "en")
         self.assertEqual(sub.source, "footer")
 
-    def test_invalid_email_400(self):
+    def test_unknown_locale_falls_back_to_en(self):
+        self.client.post(
+            self.URL,
+            data={"email": "alice@example.com", "locale": "xx", "source": "footer"},
+            content_type="application/json",
+        )
+        sub = NewsletterSubscriber.objects.get()
+        self.assertEqual(sub.locale, "en")
+
+    def test_disposable_email_rejected_400(self):
         response = self.client.post(
-            "/api/newsletter/subscribe/",
-            data={"email": "not-an-email"},
+            self.URL,
+            data={"email": "test@mailinator.com", "source": "footer"},
             content_type="application/json",
         )
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(Subscriber.objects.count(), 0)
+        self.assertEqual(NewsletterSubscriber.objects.count(), 0)
+
+    def test_reactivates_unsubscribed(self):
+        sub = NewsletterSubscriber.objects.create(
+            email="alice@example.com",
+            locale="en",
+            source="footer",
+            is_active=False,
+        )
+        response = self.client.post(
+            self.URL,
+            data={"email": "alice@example.com", "source": "footer"},
+            content_type="application/json",
+        )
+        self.assertEqual(response.status_code, 200)
+        sub.refresh_from_db()
+        self.assertTrue(sub.is_active)
+        self.assertIsNone(sub.unsubscribed_at)
 ```
 
-- [ ] **F1.11: Run tests**
+- [ ] **F1.10: Run tests**
 
 ```bash
 cd /Users/ianronk/Projects/personal-website/backend
-python manage.py test apps.newsletter
+python manage.py test apps.users.tests_newsletter
 ```
 
-Expected: 4 tests, all pass.
+Expected: 6 tests, all pass.
 
-- [ ] **F1.12: Commit**
+- [ ] **F1.11: Commit**
 
 ```bash
-git add backend/apps/newsletter backend/config/settings.py backend/config/urls.py
-git commit -m "Newsletter: Django app for collecting subscribers (no sending yet)"
+git add backend/apps/users backend/config/settings.py
+git commit -m "Newsletter: reshape users.NewsletterSubscriber for public signup (locale/source, drop map-gating fields, keep verification fields for double-opt-in)"
 ```
 
 ### Task F2: Frontend — newsletter subscribe component
@@ -1898,13 +1948,14 @@ Add matching styles in `frontend/app/globals.css`:
 .newsletter-error { color: #B33A3A; font-size: 13px; }
 ```
 
-- [ ] **F2.3: Create the Next.js API route proxy**
+- [ ] **F2.3: Update the Next.js API route proxy**
 
-`frontend/app/api/newsletter/subscribe/route.js`:
+The file `frontend/app/api/newsletter/subscribe/route.js` already exists. Replace its contents with:
 
 ```js
 import { NextResponse } from "next/server";
-import { isLikelySpamSubmitter } from "@/lib/spam/check-submitter";
+
+const DJANGO_API_URL = process.env.DJANGO_API_URL || "http://localhost:8000";
 
 export async function POST(request) {
   let body;
@@ -1914,30 +1965,33 @@ export async function POST(request) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
 
-  const { email, source, locale, hp, ts } = body ?? {};
+  const { email, source = "other", locale = "en", hp, ts } = body ?? {};
 
   if (typeof email !== "string" || !email.includes("@")) {
     return NextResponse.json({ ok: false }, { status: 400 });
   }
+  // Honeypot — bots fill this; humans don't
   if (hp) {
     return NextResponse.json({ ok: true }, { status: 200 });
   }
+  // Submitted too fast — likely a bot
   if (typeof ts === "number" && Date.now() - ts < 2000) {
     return NextResponse.json({ ok: true }, { status: 200 });
   }
-  if (isLikelySpamSubmitter(email)) {
-    return NextResponse.json({ ok: true }, { status: 200 });
-  }
 
-  const djangoUrl = process.env.DJANGO_URL ?? "http://localhost:8000";
-
+  // Forward to Django; the existing NewsletterSubscribeView there runs
+  // validate_serious_email and rejects disposable/suspicious addresses.
   try {
-    const res = await fetch(`${djangoUrl}/api/newsletter/subscribe/`, {
+    const res = await fetch(`${DJANGO_API_URL}/api/auth/newsletter/subscribe/`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, locale, source }),
     });
     if (res.ok) return NextResponse.json({ ok: true });
+    if (res.status === 400) {
+      // Django rejected the email (disposable / fake / etc.) — silently 200 OK to the bot
+      return NextResponse.json({ ok: true });
+    }
     return NextResponse.json({ ok: false }, { status: 502 });
   } catch (err) {
     console.error("newsletter proxy error:", err);
@@ -1945,6 +1999,17 @@ export async function POST(request) {
   }
 }
 ```
+
+- [ ] **F2.4: Delete the duplicate root proxy and the orphaned verify proxy**
+
+```bash
+git rm frontend/app/api/newsletter/route.js \
+       frontend/app/api/newsletter/verify/route.js
+```
+
+These two routes were:
+- `route.js` — duplicated `subscribe/route.js` and pointed to `/api/newsletter/subscribe/` (the Django path is actually `/api/auth/newsletter/subscribe/`, so this duplicate was misrouted).
+- `verify/route.js` — only consumer was `newsletter-gate.jsx`, deleted in Section B.
 
 ### Task F3: Frontend — placement
 
@@ -1989,7 +2054,7 @@ python manage.py runserver
 
 # Frontend (separate terminal)
 cd /Users/ianronk/Projects/personal-website/frontend
-pnpm dev
+npm run dev
 ```
 
 In a browser:
@@ -1997,9 +2062,11 @@ In a browser:
 2. Visit a `/en/thoughts/<slug>` page — scroll to bottom of post, see the inline form before the share bar.
 3. Submit a real test address.
 4. Confirm "Thanks — we'll be in touch." replaces the form.
-5. Open Django admin (`localhost:8000/admin`) → Newsletter → Subscribers — confirm the new entry appears with `source=post-end` (or `footer`) and the right `locale`.
+5. Open Django admin (`localhost:8000/admin`) → Users → Newsletter subscribers — confirm the new entry appears with `source=post-end` (or `footer`) and the right `locale`.
 
 Submit again with the same address — should still get success message but no duplicate row in admin.
+
+Submit a disposable address (e.g., `test@mailinator.com`) — should still get the success message in the UI but NO new row in the admin (Django's `validate_serious_email` rejects it; the proxy silently returns 200).
 
 - [ ] **F3.5: Update privacy policy**
 
@@ -2451,7 +2518,7 @@ Confirm:
 - [ ] **G4.4: Manual verification**
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
 Open `/en` in incognito (no prior consent stored).
@@ -2505,9 +2572,9 @@ git commit -m "Consent: tiered cookie banner (analytics/marketing) with consent-
 
 ```bash
 cd /Users/ianronk/Projects/personal-website/frontend
-pnpm install
-pnpm build
-pnpm lint
+npm install
+npm run build
+npm run lint
 ```
 
 All clean.
@@ -2517,14 +2584,14 @@ All clean.
 ```bash
 cd /Users/ianronk/Projects/personal-website/backend
 python manage.py migrate --dry-run
-python manage.py test apps.newsletter
+python manage.py test apps.users.tests_newsletter
 ```
 
 All pass.
 
 - [ ] **Z.3: End-to-end manual walkthrough**
 
-In `pnpm start` (production-mode):
+In `npm run start` (production-mode):
 - Hit `/en`, `/en/about`, `/en/contact`, `/en/research`, `/en/thoughts`. No console errors.
 - Repeat for `/nl/...`. Locale switching works.
 - Submit the contact form with a real email — receive auto-reply, see the message in your inbox.

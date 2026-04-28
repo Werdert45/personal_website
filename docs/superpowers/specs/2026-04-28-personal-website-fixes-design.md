@@ -37,27 +37,41 @@ The following are explicitly NOT part of this spec:
    - JS-disabled fallback: a "Use the contact form" link.
 3. Privacy line at `contact-content.jsx:211` ("We respect your privacy") becomes a link to `/privacy-policy`.
 
-**Server-side spam tightening (`frontend/app/api/contact/route.js`):**
+**Server-side spam tightening (revised — see Discoveries §A):**
 
-- New file `frontend/lib/spam/disposable-domains.json` ships a list of disposable-email providers (mailinator, tempmail, guerrillamail, 10minutemail, yopmail, etc. — ~80 entries).
-- New file `frontend/lib/spam/check-submitter.js` exports a `isLikelySpamSubmitter(email)` helper. Returns `true` if the domain matches the denylist or if the local-part matches obvious spam patterns (random-letter prefixes, all-numeric local parts beyond N digits).
-- The contact route, before sending mail, runs `isLikelySpamSubmitter`. If `true`, returns 200 OK (silently dropping) — never signals rejection back to the bot.
+The codebase already has `validate_serious_email` in `backend/apps/users/models.py` (lines 62–132). It runs:
+- email-validator deliverability check (when `email-validator` is installed).
+- django-disposable-email-checker against a maintained list (or a fallback hardcoded list of ~30 free-mail/disposable domains).
+- Pattern checks: rejects digit-heavy local parts, plus `^test\d*@`, `^fake\d*@`, `^spam\d*@`, `^noreply@`, `^no-reply@`, `^donotreply@`, `^asdf`, `^qwerty`, `^aaa+@`, `^xxx+@`, `^zzz+@`.
+
+Rather than duplicating this in a frontend denylist, we expose it as an HTTP endpoint and call it from the contact route:
+
+- New view `ValidateEmailView` in `apps/users/views.py`: `POST /api/auth/validate-email/` accepts `{"email": "…"}`, runs `validate_serious_email`, returns 200 (`{"valid": true}`) or 400 (`{"valid": false, "reason": "…"}`). No persistence side-effect.
+- `frontend/app/api/contact/route.js`, before sending mail, POSTs the submitter email to that endpoint. If the response is 400, the contact route returns 200 OK to the client (silently dropping) — never signals rejection back to the bot.
 - Existing keyword-body filter, honeypot, reCAPTCHA, and timestamp validation all stay.
+- If `DJANGO_API_URL` is unreachable, the contact route falls through (does not block legitimate submissions on infrastructure failure).
 
 ---
 
 ## Section 2 — Dead-code removal & route cleanup
 
-**Delete (unused, verified by repo-wide grep before removal):**
+**Delete (verified by repo-wide grep before removal):**
 
-- `frontend/components/email-gate.jsx`
-- `frontend/components/newsletter-gate.jsx`
-- `frontend/components/newsletter-popup.jsx`
-- `frontend/components/project-abm-thesis.jsx`
-- `frontend/components/project-languagebuddy.jsx`
-- `frontend/components/work-content.jsx`
-- `frontend/components/work-teaser.jsx`
+- `frontend/components/email-gate.jsx` (truly unused)
+- `frontend/components/newsletter-gate.jsx` — see note below
+- `frontend/components/newsletter-popup.jsx` (truly unused)
+- `frontend/components/project-abm-thesis.jsx` (truly unused)
+- `frontend/components/project-languagebuddy.jsx` (truly unused)
+- `frontend/components/work-content.jsx` (truly unused)
+- `frontend/components/work-teaser.jsx` (truly unused)
+- `frontend/components/providers.jsx` — its only purpose was wrapping the app in `<NewsletterProvider>` from newsletter-gate
 - `ianronk.jpeg` and `ianronk2.jpeg` at the repo root.
+
+**Note on newsletter-gate.jsx (revised — see Discoveries §B):** the original review said this file was unused. It was wrong: `newsletter-gate.jsx` exports `NewsletterProvider`, which `providers.jsx` mounts in `app/layout.tsx`. The provider's *consumers* (`MapAccessGate`, `useNewsletter` callers) are however genuinely unused — confirmed by grep against `mapbox-map.jsx`, `mapbox-wrapper.jsx`, and the rest of the tree. Deleting the gate file plus `providers.jsx` plus the `<Providers>` wrapper in `app/layout.tsx` (lines 5, 76, 78) cleanly removes the orphaned scaffolding.
+
+**Modify:**
+
+- `frontend/app/layout.tsx` — remove the `import { Providers } from '@/components/providers'` (line 5) and unwrap the `<Providers>…</Providers>` block (lines 76–78). The new `ConsentProvider` from Section 7 takes over wrapping the app.
 
 **Keep:**
 
@@ -68,6 +82,7 @@ The following are explicitly NOT part of this spec:
 
 - `pnpm build` succeeds.
 - Grep confirms no orphan imports of any deleted file.
+- Page loads at `/en` and `/en/contact` — confirm no runtime crash from the unmounted provider.
 
 ---
 
@@ -89,22 +104,47 @@ The following are explicitly NOT part of this spec:
 2. End of every `/thoughts/[slug]` page (`frontend/app/[locale]/thoughts/[slug]/page.jsx` or its render component) — `inline` variant after the post body, before the share bar.
 3. End of every `/research/[slug]` page — `inline` variant in the same position.
 
-### Backend (new Django app)
+### Backend (revised — reuse existing `apps.users.NewsletterSubscriber`, see Discoveries §C)
 
-- New app `backend/apps/newsletter/`:
-  - `Subscriber` model fields:
-    - `email` — unique, indexed, lowercased before save.
-    - `locale` — char field, validated to one of `en`/`nl`/`it`/`de`.
-    - `source` — char field, validated to one of `footer`/`post-end`/`research-end`/`other`.
-    - `created_at`, `confirmed_at` (nullable, for future double-opt-in), `unsubscribed_at` (nullable).
-  - DRF endpoint `POST /api/newsletter/subscribe/`:
-    - Validates email format and normalizes (lowercase, strip).
-    - Idempotent: if email already exists, return 200 OK without modification (do not leak existence).
-    - Records `source` and `locale` from the request body.
-    - Rate-limited per IP via a DRF `UserRateThrottle` / `AnonRateThrottle` (added to `REST_FRAMEWORK` settings if not already configured) — 5 requests/minute is sufficient for a subscribe form.
-  - Migration generated; app registered in `backend/config/settings.py` `INSTALLED_APPS`.
-  - Django admin registration so the user can browse subscribers, filter by source/locale, and export.
-- Model docstring explicitly notes: "Sender, double-opt-in, and consent-tier integration are deferred until the sending pipeline is built."
+The original review missed that there is already a `NewsletterSubscriber` model in `backend/apps/users/models.py` (built for map-access gating, now orphaned at the consumer level after Section 2 deletes the gate UI). It already validates emails via the strict `validate_serious_email` and stores `email`, `is_business_email`, `email_domain`, `is_verified`, `verification_token`, `verified_at`, `subscribed_at`, `ip_address`, `user_agent`, `is_active`, `unsubscribed_at`. Three fields exist solely for the now-gone map-gating flow: `access_count`, `last_access`, `access_attempts_this_hour`, `current_hour_start`.
+
+**Plan: reshape the existing model rather than building a parallel `apps.newsletter` app.**
+
+- Migration `apps/users/migrations/0003_newsletter_locale_source.py`:
+  - Add `locale` — `CharField(max_length=5, choices=[("en","English"),("nl","Dutch"),("it","Italian"),("de","German")], default="en")`.
+  - Add `source` — `CharField(max_length=20, choices=[("footer","Footer"),("post-end","Post end"),("research-end","Research end"),("contact-form","Contact form"),("other","Other")], default="other")`.
+  - Drop `access_count`, `last_access`, `access_attempts_this_hour`, `current_hour_start` (all map-gating-only).
+  - Keep `is_verified`, `verification_token`, `verified_at` — re-purposed for forthcoming double-opt-in.
+  - Also drop the model's `can_access_map` / `record_map_access` / `get_hourly_remaining` methods if defined on the model.
+
+- `apps/users/models.py` `NewsletterSubscriber` class — update field list to match the migration above. Update the docstring to reflect the new purpose: "Newsletter subscribers (replaces the deprecated map-access-gating use case). `is_verified`/`verification_token` are kept for forthcoming double-opt-in."
+
+- Existing `NewsletterSubscribeView` (`apps/users/views.py:140`) — extend `post()` to:
+  - Accept optional `locale` and `source` from `request.data`.
+  - On NEW subscriber: persist `locale` and `source` alongside the existing fields.
+  - On EXISTING subscriber: leave `locale`/`source` unchanged (preserve original signup context).
+  - Return 200 OK regardless of new/existing (the response no longer needs to expose `access_token` since the new consumer doesn't use it; for backwards compatibility with any vestigial caller, keep returning the field but do not add new logic around it).
+  - Existing IP / user-agent capture stays.
+  - Existing rate-limiting on the view (or DRF default throttling, whichever is in place — `REST_FRAMEWORK` lacks throttle defaults today, so add `AnonRateThrottle: 60/minute` as a global default).
+
+- Existing `VerifyMapAccessView` and `CheckSubscriptionView` — DELETE. Their only consumers were the gate UI in newsletter-gate.jsx (deleted in Section 2) and the Next.js `/api/newsletter/verify/route.js` (deleted below). Remove their URL bindings.
+
+- Existing `apps/users/urls.py` — remove the verify/check route bindings; add a new binding for `ValidateEmailView` (Section 1) at `/api/auth/validate-email/`.
+
+- Django admin (`apps/users/admin.py`) — register `NewsletterSubscriber` if not already registered, with `list_display = ("email", "locale", "source", "is_verified", "is_active", "subscribed_at")`, `list_filter = ("locale", "source", "is_verified", "is_active")`, `search_fields = ("email",)`.
+
+### Frontend proxy routes (revised)
+
+- `frontend/app/api/newsletter/subscribe/route.js` — already exists (proxies to `${DJANGO_API_URL}/api/auth/newsletter/subscribe/`). Edit it to:
+  - Honeypot + timestamp checks (parity with contact form).
+  - Forward `locale` and `source` from the request body to Django.
+  - Always return 200 OK on success or "duplicate" (Django's idempotent path); 400 only for malformed input or `validate_serious_email` failure (which surfaces from Django as 400).
+- `frontend/app/api/newsletter/route.js` — DELETE. It duplicates `subscribe/route.js` and was wired to the deprecated `${DJANGO_API_URL}/api/newsletter/subscribe/` path (note: the existing Django URL pattern is `/api/auth/newsletter/subscribe/`, so this duplicate route was probably broken in production anyway).
+- `frontend/app/api/newsletter/verify/route.js` — DELETE. Only consumer was the gate UI deleted in Section 2.
+
+Notes:
+- `DJANGO_API_URL` is the project-wide convention (visible in `app/api/auth/login/route.js:3` etc.). All new and revised routes use `process.env.DJANGO_API_URL` with a `"http://localhost:8000"` fallback.
+- The frontend `<NewsletterSubscribe />` component does NOT consume any access token from the response — it only reads `response.ok`. The Django response shape is therefore free to evolve later without breaking the frontend.
 
 ### Privacy disclosure
 
@@ -270,7 +310,7 @@ The implementation plan that follows this spec will sequence work to keep each c
 3. Section 5 — UX & a11y targeted fixes (small, isolated).
 4. Section 4 — SEO: OG images + locale JSON-LD.
 5. Section 6 — Server-side fetching (also kills `DEFAULT_POSTS`).
-6. Section 3 — Newsletter feature (touches frontend + new Django app).
+6. Section 3 — Newsletter feature (frontend + reshape `apps.users.NewsletterSubscriber`).
 7. Section 7 — Tracking + consent (largest, touches the most surfaces; ships last so the rest is verified beforehand).
 
 Each section is its own commit (or small commit cluster) so review is incremental and individual sections can be reverted if needed.
@@ -284,3 +324,19 @@ Each section is its own commit (or small commit cluster) so review is incrementa
 - Axe-devtools clean of Serious/Critical issues on the same pages.
 - Manual consent-tier verification (per Section 7 "Verification").
 - Submit the contact form once (real email) and the newsletter form once (real email) end-to-end.
+
+---
+
+## Discoveries during execution (2026-04-28)
+
+When the implementer set up the baseline build, several pieces of pre-existing infrastructure surfaced that the original review and design missed. These were resolved by user decision (Q1=R, Q2=R3, Q3=D) before any code was dispatched:
+
+**§A — Contact spam check.** The codebase already has `validate_serious_email` in `apps/users/models.py:62` doing comprehensive validation (deliverability, disposable-email-checker, fake-pattern matching). The original Section 1 plan (frontend `disposable-domains.json` + `check-submitter.js`) would have duplicated this. **Decision (Q3=D): expose `validate_serious_email` as `POST /api/auth/validate-email/` and have the contact route call it.** Section 1 above reflects this.
+
+**§B — `newsletter-gate.jsx` was not actually unused.** It exports `NewsletterProvider`, mounted in `providers.jsx`, mounted in `app/layout.tsx:76`. Its consumers (`MapAccessGate`, `useNewsletter`) are however genuinely unused. **Decision: also delete `providers.jsx` and remove the `<Providers>` wrapper from `app/layout.tsx`.** Section 2 above reflects this.
+
+**§C — A `NewsletterSubscriber` model already exists in `apps.users`** with email validation, IP/user-agent capture, verification fields, and active/unsubscribed tracking — built for map-access gating. Three views serve it (`NewsletterSubscribeView`, `VerifyMapAccessView`, `CheckSubscriptionView`); three Next.js proxy routes consume them (`/api/newsletter/`, `/api/newsletter/subscribe/`, `/api/newsletter/verify/`). **Decision (Q1=R, Q2=R3): reshape the existing model rather than building a parallel `apps.newsletter` app — keep `is_verified`/`verification_token`/`verified_at` for forthcoming double-opt-in, drop `access_count`/`last_access`/`access_attempts_this_hour`/`current_hour_start`, add `locale` and `source`. Extend the existing `NewsletterSubscribeView`. Delete `VerifyMapAccessView`, `CheckSubscriptionView`, and the matching Next.js routes (`/api/newsletter/route.js`, `/api/newsletter/verify/route.js`).** Section 3 above reflects this.
+
+**§D — Env var convention.** The codebase consistently uses `DJANGO_API_URL` (visible in `app/api/auth/login/route.js:3`, `app/api/geodata/datasets/route.js:3`, etc.). The original plan referenced `DJANGO_URL` in places. **Decision: standardize on `DJANGO_API_URL`** with a `"http://localhost:8000"` fallback in any new route handler.
+
+**§E — Mixed package manager state.** The repo contained both `pnpm-lock.yaml` and `package-lock.json`, with `node_modules` installed via npm and a stale `next` binary that crashed `pnpm` and `npm run build` until `node_modules` was wiped and reinstalled. No code change needed; just an environment fix. **Going forward, use `npm` for the frontend** to match the lockfile that's actually working.
