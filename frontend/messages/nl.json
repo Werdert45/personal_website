@@ -17,9 +17,9 @@
     "titleHighlight": "AI/ML Automatisering",
     "titleEnd": " voor ops-zware teams",
     "description": "Ik ontwerp en lever productie-datasystemen en AI-automatiseringen — pipelines, modellen en interne tools die handmatig werk vervangen. Werk momenteel met teams in geospatial, verzekeringen, logistiek, publieke sector en vastgoed.",
-    "viewProjects": "Bekijk hoe we samenwerken",
+    "viewProjects": "Over mij",
     "getInTouch": "Neem Contact Op",
-    "workWithMe": "Plan een gesprek van 20 min",
+    "workWithMe": "Neem contact op",
     "yearsExperience": "Jaar Ervaring",
     "marketsMapped": "Markten In Kaart",
     "geoProjects": "Geo Projecten Afgerond",
@@ -258,11 +258,12 @@
     "minRead": "min lezen",
     "writingTeaserKicker": "Blog — recente berichten",
     "writingTeaserSubtitle": "Essays, tutorials en veldnotities.",
-    "endCtaKicker": "§ Volgende stap",
-    "endCtaTitle": "Een vergelijkbaar probleem dat de moeite waard is om",
-    "endCtaTitleItalic": "op te lossen?",
-    "endCtaBody": "Ik neem jaarlijks een klein aantal externe opdrachten aan — interne tools, datapijplijnen en AI-geïntegreerde systemen voor operationeel-zware teams buiten vastgoed.",
-    "endCtaButton": "Zie hoe we samenwerken"
+    "endCtaKicker": "§ Meer",
+    "endCtaTitle": "Meer schrijfsels op de",
+    "endCtaTitleItalic": "blog.",
+    "endCtaBody": "Browse andere essays over geodata, AI/ML en operations — of lees meer over wie er achter de schrijfsels zit.",
+    "endCtaButton": "Meer schrijfsels",
+    "endCtaSecondary": "Over mij"
   },
   "SkillsGrid": {
     "kicker": "Expertise — vier kerncompetenties",
@@ -276,7 +277,7 @@
     "titleLine2": "Ik bouw productie-",
     "titleLine2Underline": "systemen.",
     "bio1": "Head of Data bij KR&A in Amsterdam, waar ik AI-initiatieven leid voor Europese vastgoed-, klimaat- en alt-dataklanten. MSc in Data Science & Business Analytics aan Bocconi; BSc in Kunstmatige Intelligentie aan de Universiteit van Amsterdam.",
-    "bio2": "Naast mijn vaste rol neem ik een beperkt aantal opdrachten per jaar aan — interne tools, datapipelines en AI-automatiseringen voor ops-zware teams in geospatial, verzekeringen, logistiek, publieke sector en vastgoed.",
+    "bio2": "Ik werk op het snijvlak van geospatial analytics, AI/ML en de saaie data-infrastructuur die ze bruikbaar maakt. Op deze site verzamel ik dingen waar ik aan denk, aan bouw of die ik heb gepubliceerd.",
     "factRoleK": "Rol",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Standplaats",
@@ -289,11 +290,11 @@
     "cta": "Lees de volledige bio"
   },
   "Sectors": {
-    "kicker": "Sectoren — waar dit werk landt",
-    "titlePrefix": "Gebouwd voor",
-    "titleItalic": "operationeel-zware",
-    "titleSuffix": "teams.",
-    "subtitle": "Dezelfde engineering, vijf ingangen. Als je team draait op spreadsheets, handmatige triage en dashboards die niemand opent, is dit de lijst.",
+    "kicker": "Domeinen — waar ik me thuis voel",
+    "titlePrefix": "Waar ik",
+    "titleItalic": "meestal",
+    "titleSuffix": "werk.",
+    "subtitle": "Domeinen waar ik tijd in heb gestoken — academisch, professioneel of beide. Elk domein heeft zijn eigen data-eigenaardigheden en zijn eigen idee van \"goed genoeg.\"",
     "items": [
       { "name": "Geospatial Analytics", "blurb": "Spatial pipelines, H3-indexing, perceelmodellen, alt-data ingestion." },
       { "name": "Verzekeringen & Klimaatrisico", "blurb": "Exposure modelling, overstromings- en CV-pipelines, claims-triage automatisering." },
@@ -303,69 +304,60 @@
     ]
   },
   "Projects": {
-    "kicker": "Geselecteerde projecten — gebouwd, gelanceerd, in productie",
-    "titlePrefix": "Geselecteerde",
-    "titleItalic": "projecten.",
-    "subtitle": "Een dwarsdoorsnede van wat ik heb opgeleverd — in geospatial analytics, klimaatrisico, gereguleerde dienstverlening en operationeel-zware back-offices.",
+    "kicker": "Geselecteerd werk — onderzoek, scripties, eigen projecten",
+    "titlePrefix": "Geselecteerd",
+    "titleItalic": "werk.",
+    "subtitle": "Dingen die ik heb gebouwd of bestudeerd — aan de universiteit, in onderzoek en in mijn eigen tijd. Geen portfolio van klantopdrachten; een portfolio van denken.",
     "items": [
       {
-        "image": "/projects/crm-page.png",
-        "viz": "image",
-        "sector": "Vastgoed · AI Automatisering",
-        "title": "Deal-screening AI pipeline",
-        "outcome": "Ongeveer 50 analist-uren per week aan handmatige dealreview vervangen bij een REIT.",
-        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
-        "link": ""
+        "image": "",
+        "viz": "abm",
+        "sector": "MSc Scriptie · Bocconi",
+        "title": "Gentrificatie agent-based model",
+        "outcome": "Tienjarige simulatie van wijkverandering in Europese steden, gekalibreerd op Kadaster- en CBS-microdata.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
       },
       {
         "image": "/projects/flood-paths.png",
         "viz": "image",
-        "sector": "Verzekeringen & Klimaatrisico",
+        "sector": "BSc Scriptie · UvA",
         "title": "Overstromingsrisico op perceelniveau",
-        "outcome": "Supervised classificatie op LiDAR + neerslagradar, 90%+ nauwkeurigheid op perceelniveau.",
+        "outcome": "Supervised classificatie op LiDAR- en neerslagradar-features op perceelniveau — uitgewerkt als bachelor-scriptie.",
         "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
-        "link": ""
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Gereguleerde Diensten · Automatisering",
-        "title": "Compliance-intake herbouw",
-        "outcome": "Onboarding teruggebracht van 11 naar 3 dagen — geautomatiseerde KYC + documentparsing.",
-        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
         "link": ""
       },
       {
         "image": "/projects/rent-markers.png",
         "viz": "image",
-        "sector": "Geospatial Analytics",
+        "sector": "Onderzoek · Geospatial",
         "title": "Hedonisch huurmodel · 15 EU-metro's",
-        "outcome": "Hedonische huurbenchmarks op perceelniveau gebouwd op PostGIS + gradient boosting.",
+        "outcome": "Hedonische huurbenchmarks op perceelniveau, gebouwd op PostGIS en gradient boosting in Europese metropolen.",
         "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
         "link": "/research/rent-prediction-hedonic"
       },
       {
         "image": "",
-        "viz": "abm",
-        "sector": "Publieke Sector & Onderzoek",
-        "title": "Gentrificatie agent-based model",
-        "outcome": "10-jarige simulatie van wijkverandering, gekalibreerd op Kadaster + CBS-microdata.",
-        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
-        "link": "/research/gentrification-abm"
+        "viz": "pipeline",
+        "sector": "Eigen project · Persoonlijk",
+        "title": "LanguageBuddy",
+        "outcome": "Een kleine app voor conversatie-taaloefening: LLM-correctie, spaced repetition en een habit-vriendelijke UI.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "React"],
+        "link": "/about/projects/languagebuddy"
       },
       {
         "image": "",
-        "viz": "pipeline",
-        "sector": "Interne Tools · Ops-Automatisering",
-        "title": "Sales-backend met LLM-agents",
-        "outcome": "CRM + qualificatie-agents die handmatige lead-triage end-to-end vervingen.",
-        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
-        "link": ""
+        "viz": "intake",
+        "sector": "Onderzoek · Computer Vision",
+        "title": "Gevel- & handelssignalen uit street-view",
+        "outcome": "CNN-extractie van gevel- en handelskenmerken uit ~4M street-view frames in zes EU-steden.",
+        "stack": ["PyTorch", "OpenCV", "GeoPandas", "Postgres"],
+        "link": "/research/street-view-cv"
       }
     ],
-    "viewCase": "Bekijk case",
+    "viewCase": "Lees meer",
     "viewPaper": "Bekijk paper",
-    "ctaAll": "Bekijk alle engagementen"
+    "ctaAll": "Bekijk alles"
   },
   "Proof": {
     "kicker": "Bewijs — uitkomsten die zijn gerealiseerd",

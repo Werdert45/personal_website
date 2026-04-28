@@ -90,70 +90,74 @@ export function BlogPost({ slug }) {
       <ShareBar slug={slug} title={title} />
 
       <aside
-        className="post-end-cta"
+        className="post-end-cta-soft"
         aria-label={t("endCtaKicker")}
         style={{
           marginTop: 56,
-          padding: "36px 32px",
-          background: "var(--ink)",
-          color: "var(--paper)",
-          display: "grid",
-          gridTemplateColumns: "1fr auto",
-          alignItems: "end",
-          gap: 32,
-          position: "relative",
+          paddingTop: 32,
+          borderTop: "1px solid var(--ink)",
+          display: "flex",
+          flexDirection: "column",
+          gap: 14,
         }}
       >
-        <div>
-          <div
-            style={{
-              fontFamily: "var(--font-mono)",
-              fontSize: 11,
-              letterSpacing: "0.14em",
-              textTransform: "uppercase",
-              color: "var(--yellow)",
-              marginBottom: 12,
-            }}
-          >
-            {t("endCtaKicker")}
-          </div>
-          <h3
-            style={{
-              fontFamily: "var(--font-serif)",
-              fontSize: "clamp(26px, 3.4vw, 40px)",
-              lineHeight: 1.08,
-              letterSpacing: "-0.01em",
-              color: "var(--paper)",
-              marginBottom: 12,
-            }}
-          >
-            {t("endCtaTitle")} <i style={{ fontStyle: "italic", color: "var(--yellow)" }}>{t("endCtaTitleItalic")}</i>
-          </h3>
-          <p style={{ fontSize: 15, lineHeight: 1.55, color: "#C9C7BE", maxWidth: "60ch" }}>
-            {t("endCtaBody")}
-          </p>
-        </div>
-        <Link
-          href={`/${locale}/work`}
-          onClick={() => trackEvent("cta_click", { cta: "work_with_me", location: "blog_post_end", source: "blog_post_end", slug })}
+        <div
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 10,
-            padding: "18px 22px",
-            background: "var(--yellow)",
-            color: "var(--ink)",
-            border: "1px solid var(--yellow)",
             fontFamily: "var(--font-mono)",
-            fontSize: 12,
+            fontSize: 11,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
-            whiteSpace: "nowrap",
+            color: "var(--mute)",
           }}
         >
-          {t("endCtaButton")}
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
-        </Link>
+          {t("endCtaKicker")}
+        </div>
+        <h3
+          style={{
+            fontFamily: "var(--font-serif)",
+            fontSize: "clamp(24px, 2.8vw, 34px)",
+            lineHeight: 1.1,
+            letterSpacing: "-0.01em",
+            color: "var(--ink)",
+          }}
+        >
+          {t("endCtaTitle")} <i style={{ fontStyle: "italic", color: "var(--yellow-2)" }}>{t("endCtaTitleItalic")}</i>
+        </h3>
+        <p style={{ fontSize: 15, lineHeight: 1.55, color: "var(--ink-2)", maxWidth: "60ch" }}>
+          {t("endCtaBody")}
+        </p>
+        <div style={{ display: "flex", gap: 18, flexWrap: "wrap", marginTop: 6 }}>
+          <Link
+            href={`/${locale}/thoughts`}
+            onClick={() => trackEvent("cta_click", { cta: "more_writing", location: "blog_post_end", source: "blog_post_end", slug })}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 12,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--ink)",
+              borderBottom: "1px solid var(--ink)",
+              paddingBottom: 2,
+            }}
+          >
+            {t("endCtaButton")} →
+          </Link>
+          <Link
+            href={`/${locale}/about`}
+            onClick={() => trackEvent("cta_click", { cta: "about_me", location: "blog_post_end", source: "blog_post_end", slug })}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 12,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--ink-2)",
+              borderBottom: "1px solid var(--rule)",
+              paddingBottom: 2,
+            }}
+          >
+            {t("endCtaSecondary")} →
+          </Link>
+        </div>
       </aside>
 
       <div className="byline" style={{ marginTop: 48, paddingTop: 24, borderTop: "1px solid var(--rule)" }}>

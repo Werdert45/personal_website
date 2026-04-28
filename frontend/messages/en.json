@@ -17,9 +17,9 @@
     "titleHighlight": "AI/ML Automation",
     "titleEnd": " for ops-heavy teams",
     "description": "I design and ship production data systems and AI automations — pipelines, models and internal tools that replace manual work. Currently working across geospatial analytics, insurance, logistics, public sector and real estate.",
-    "viewProjects": "See how we'd work together",
+    "viewProjects": "About me",
     "getInTouch": "Get in Touch",
-    "workWithMe": "Book a 20-minute call",
+    "workWithMe": "Get in touch",
     "yearsExperience": "Years Experience",
     "marketsMapped": "Markets Mapped",
     "geoProjects": "Geo Projects Completed",
@@ -258,11 +258,12 @@
     "minRead": "min read",
     "writingTeaserKicker": "Blog — recent posts",
     "writingTeaserSubtitle": "Essays, tutorials and field notes.",
-    "endCtaKicker": "§ Next step",
-    "endCtaTitle": "Have a similar problem worth",
-    "endCtaTitleItalic": "solving?",
-    "endCtaBody": "I take on a small number of outside engagements each year — internal tools, data pipelines, and AI-integrated systems for operator-heavy teams outside real estate.",
-    "endCtaButton": "See how we'd work together"
+    "endCtaKicker": "§ More",
+    "endCtaTitle": "More writing on the",
+    "endCtaTitleItalic": "blog.",
+    "endCtaBody": "Browse other essays on geodata, AI/ML and operations — or read more about who's behind the writing.",
+    "endCtaButton": "More writing",
+    "endCtaSecondary": "About me"
   },
   "SkillsGrid": {
     "kicker": "Expertise — four core competencies",
@@ -275,8 +276,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "I ship production",
     "titleLine2Underline": "systems.",
-    "bio1": "Head of Data at KR&A in Amsterdam, where I lead AI initiatives for European real estate, climate and alt-data clients. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam.",
-    "bio2": "Outside the day job I take on a small number of engagements each year — internal tools, data pipelines and AI automations for ops-heavy teams across geospatial, insurance, logistics, public sector and real estate.",
+    "bio1": "Head of Data at KR&A in Amsterdam, leading AI initiatives across European real estate, climate and alt-data work. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam.",
+    "bio2": "I work at the intersection of geospatial analytics, AI/ML and the unglamorous data infrastructure that makes them useful. This site is where I keep the things I'm thinking about, building or have published.",
     "factRoleK": "Role",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Based",
@@ -289,11 +290,11 @@
     "cta": "Read the full bio"
   },
   "Sectors": {
-    "kicker": "Sectors — where this work ships",
-    "titlePrefix": "Built for",
-    "titleItalic": "operator-heavy",
-    "titleSuffix": "teams.",
-    "subtitle": "Same engineering, five entry doors. If your team runs on spreadsheets, manual triage and dashboards nobody opens, this is the list.",
+    "kicker": "Domains — where I tend to work",
+    "titlePrefix": "Where I",
+    "titleItalic": "tend",
+    "titleSuffix": "to work.",
+    "subtitle": "Domains I've spent time in — academically, professionally or both. Each has its own data quirks and its own definition of \"good enough.\"",
     "items": [
       { "name": "Geospatial Analytics", "blurb": "Spatial pipelines, H3 indexing, parcel-level models, alt-data ingestion." },
       { "name": "Insurance & Climate Risk", "blurb": "Exposure modelling, flood and CV pipelines, claims triage automations." },
@@ -303,69 +304,60 @@
     ]
   },
   "Projects": {
-    "kicker": "Selected projects — built, shipped, in production",
+    "kicker": "Selected work — research, theses, side projects",
     "titlePrefix": "Selected",
-    "titleItalic": "projects.",
-    "subtitle": "A cross-section of what I've shipped — across geospatial analytics, climate risk, regulated services and operator-heavy back-offices.",
+    "titleItalic": "work.",
+    "subtitle": "Things I've built or studied — at university, in research, and in my own time. Not a portfolio of client deliverables; a portfolio of thinking.",
     "items": [
       {
-        "image": "/projects/crm-page.png",
-        "viz": "image",
-        "sector": "Real Estate · AI Automation",
-        "title": "Deal-screening AI pipeline",
-        "outcome": "Replaced ~50 analyst-hours/week of manual deal review across a REIT pipeline.",
-        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
-        "link": ""
+        "image": "",
+        "viz": "abm",
+        "sector": "MSc Thesis · Bocconi",
+        "title": "Gentrification agent-based model",
+        "outcome": "Ten-year simulation of neighbourhood turnover in European cities, calibrated on Kadaster and CBS microdata.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
       },
       {
         "image": "/projects/flood-paths.png",
         "viz": "image",
-        "sector": "Insurance & Climate Risk",
+        "sector": "BSc Thesis · UvA",
         "title": "Parcel-level flood-risk classifier",
-        "outcome": "Supervised classification on LiDAR + rainfall radar, 90%+ accuracy at parcel level.",
+        "outcome": "Supervised classification on LiDAR and rainfall-radar features at parcel level — written up as the bachelor's thesis.",
         "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
-        "link": ""
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Regulated Services · Automation",
-        "title": "Compliance intake rebuild",
-        "outcome": "Onboarding time cut from 11 days to 3 — automated KYC + document parsing.",
-        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
         "link": ""
       },
       {
         "image": "/projects/rent-markers.png",
         "viz": "image",
-        "sector": "Geospatial Analytics",
+        "sector": "Research · Geospatial",
         "title": "Hedonic rent model · 15 EU metros",
-        "outcome": "Parcel-level hedonic rent benchmarks built on PostGIS + gradient boosting.",
+        "outcome": "Parcel-level hedonic rent benchmarks built on PostGIS and gradient boosting across European metros.",
         "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
         "link": "/research/rent-prediction-hedonic"
       },
       {
         "image": "",
-        "viz": "abm",
-        "sector": "Public Sector & Research",
-        "title": "Gentrification agent-based model",
-        "outcome": "10-year neighbourhood-turnover simulation calibrated on Kadaster + CBS microdata.",
-        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
-        "link": "/research/gentrification-abm"
+        "viz": "pipeline",
+        "sector": "Side project · Personal",
+        "title": "LanguageBuddy",
+        "outcome": "A small conversational language-practice app: LLM-driven correction, spaced repetition, and a habit-friendly UI.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "React"],
+        "link": "/about/projects/languagebuddy"
       },
       {
         "image": "",
-        "viz": "pipeline",
-        "sector": "Internal Tools · Ops Automation",
-        "title": "Sales backend with LLM agents",
-        "outcome": "CRM + qualification agents that replaced manual lead triage end-to-end.",
-        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
-        "link": ""
+        "viz": "intake",
+        "sector": "Research · Computer Vision",
+        "title": "Façade & commerce signals from street-view",
+        "outcome": "CNN extraction of façade and commerce features from ~4M street-view frames across six EU cities.",
+        "stack": ["PyTorch", "OpenCV", "GeoPandas", "Postgres"],
+        "link": "/research/street-view-cv"
       }
     ],
-    "viewCase": "View case study",
+    "viewCase": "Read more",
     "viewPaper": "View paper",
-    "ctaAll": "See all engagements"
+    "ctaAll": "See all"
   },
   "Proof": {
     "kicker": "Proof — outcomes that shipped",

@@ -29,7 +29,6 @@ export function Footer() {
     <footer className="site-footer">
       <span>© Ian Ronk {CURRENT_YEAR} — {t("copyright", { year: CURRENT_YEAR })}</span>
       <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
-        <Link href={`/${locale}/work`} style={{ color: "var(--ink)", fontWeight: 500 }}>{t("work")}</Link>
         <Link href={`/${locale}/privacy-policy`}>{t("privacyPolicy")}</Link>
         <Link href={`/${locale}/terms-of-service`}>{t("termsOfService")}</Link>
         <Link href={`/${locale}/cookie-policy`}>{t("cookiePolicy")}</Link>

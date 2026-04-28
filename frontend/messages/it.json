@@ -17,9 +17,9 @@
     "titleHighlight": "AI/ML Automazione",
     "titleEnd": " per team operativi",
     "description": "Progetto e realizzo sistemi dati di produzione e automazioni AI — pipeline, modelli e strumenti interni che sostituiscono il lavoro manuale. Attualmente lavoro con team in ambito geospaziale, assicurativo, logistica, settore pubblico e immobiliare.",
-    "viewProjects": "Scopri come lavoriamo insieme",
+    "viewProjects": "Chi sono",
     "getInTouch": "Contattami",
-    "workWithMe": "Prenota una chiamata di 20 min",
+    "workWithMe": "Contattami",
     "yearsExperience": "Anni di Esperienza",
     "marketsMapped": "Mercati Mappati",
     "geoProjects": "Geo Progetti Completati",
@@ -258,11 +258,12 @@
     "minRead": "min di lettura",
     "writingTeaserKicker": "Blog — articoli recenti",
     "writingTeaserSubtitle": "Saggi, tutorial e appunti dal campo.",
-    "endCtaKicker": "§ Prossimo passo",
-    "endCtaTitle": "Hai un problema simile che vale la pena",
-    "endCtaTitleItalic": "risolvere?",
-    "endCtaBody": "Ogni anno accetto un piccolo numero di incarichi esterni — strumenti interni, pipeline dati e sistemi integrati con AI per team operativi al di fuori dell'immobiliare.",
-    "endCtaButton": "Scopri come lavoreremmo insieme"
+    "endCtaKicker": "§ Altro",
+    "endCtaTitle": "Altri scritti sul",
+    "endCtaTitleItalic": "blog.",
+    "endCtaBody": "Sfoglia altri saggi su geodata, AI/ML e operations — oppure scopri di più su chi c'è dietro alla scrittura.",
+    "endCtaButton": "Altri scritti",
+    "endCtaSecondary": "Chi sono"
   },
   "SkillsGrid": {
     "kicker": "Competenze — quattro competenze chiave",
@@ -276,7 +277,7 @@
     "titleLine2": "Costruisco sistemi",
     "titleLine2Underline": "in produzione.",
     "bio1": "Head of Data presso KR&A ad Amsterdam, dove guido le iniziative AI per clienti europei in ambito immobiliare, clima e alt-data. MSc in Data Science & Business Analytics alla Bocconi; BSc in Intelligenza Artificiale all'Università di Amsterdam.",
-    "bio2": "Oltre al lavoro principale accetto un numero limitato di progetti l'anno — strumenti interni, pipeline di dati e automazioni AI per team operativi in ambito geospaziale, assicurazioni, logistica, settore pubblico e immobiliare.",
+    "bio2": "Lavoro all'incrocio tra geospatial analytics, AI/ML e l'infrastruttura dati poco glamour che li rende utili. Su questo sito raccolgo le cose a cui sto pensando, che sto costruendo o che ho pubblicato.",
     "factRoleK": "Ruolo",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Sede",
@@ -289,11 +290,11 @@
     "cta": "Leggi la biografia completa"
   },
   "Sectors": {
-    "kicker": "Settori — dove questo lavoro va in produzione",
-    "titlePrefix": "Costruito per team",
-    "titleItalic": "operativi",
-    "titleSuffix": "ad alto carico.",
-    "subtitle": "Stessa ingegneria, cinque porte d'ingresso. Se il tuo team gira su fogli di calcolo, triage manuale e dashboard che nessuno apre, questa è la lista.",
+    "kicker": "Ambiti — dove tendo a lavorare",
+    "titlePrefix": "Dove",
+    "titleItalic": "tendo",
+    "titleSuffix": "a lavorare.",
+    "subtitle": "Ambiti in cui ho passato tempo — accademicamente, professionalmente o entrambi. Ognuno ha le sue stranezze sui dati e la sua idea di \"abbastanza buono.\"",
     "items": [
       { "name": "Geospatial Analytics", "blurb": "Pipeline spaziali, indicizzazione H3, modelli a livello di particella, ingestion alt-data." },
       { "name": "Assicurazioni & Rischio Climatico", "blurb": "Exposure modelling, pipeline alluvioni e CV, automazione triage sinistri." },
@@ -303,69 +304,60 @@
     ]
   },
   "Projects": {
-    "kicker": "Progetti selezionati — costruiti, rilasciati, in produzione",
-    "titlePrefix": "Progetti",
+    "kicker": "Lavori selezionati — ricerca, tesi, progetti personali",
+    "titlePrefix": "Lavori",
     "titleItalic": "selezionati.",
-    "subtitle": "Una panoramica di ciò che ho consegnato — in geospatial analytics, rischio climatico, servizi regolamentati e back-office ad alto carico operativo.",
+    "subtitle": "Cose che ho costruito o studiato — all'università, nella ricerca e nel mio tempo libero. Non un portfolio di consegne ai clienti; un portfolio di pensiero.",
     "items": [
       {
-        "image": "/projects/crm-page.png",
-        "viz": "image",
-        "sector": "Immobiliare · Automazione AI",
-        "title": "Pipeline AI di deal-screening",
-        "outcome": "Sostituite circa 50 ore/settimana di review manuale dei deal nel pipeline di un REIT.",
-        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
-        "link": ""
+        "image": "",
+        "viz": "abm",
+        "sector": "Tesi MSc · Bocconi",
+        "title": "Modello agent-based di gentrificazione",
+        "outcome": "Simulazione decennale del ricambio di quartiere nelle città europee, calibrata su microdati Kadaster e CBS.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
       },
       {
         "image": "/projects/flood-paths.png",
         "viz": "image",
-        "sector": "Assicurazioni & Rischio Climatico",
+        "sector": "Tesi BSc · UvA",
         "title": "Classificatore di rischio alluvione",
-        "outcome": "Classificazione supervisionata su LiDAR + radar pluviale, oltre il 90% di accuratezza a livello particella.",
+        "outcome": "Classificazione supervisionata su LiDAR e radar pluviale a livello particella — sviluppata come tesi triennale.",
         "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
-        "link": ""
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Servizi Regolamentati · Automazione",
-        "title": "Ricostruzione intake compliance",
-        "outcome": "Tempo di onboarding ridotto da 11 a 3 giorni — KYC automatizzato + parsing documenti.",
-        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
         "link": ""
       },
       {
         "image": "/projects/rent-markers.png",
         "viz": "image",
-        "sector": "Geospatial Analytics",
+        "sector": "Ricerca · Geospatial",
         "title": "Modello edonico affitti · 15 metropoli UE",
-        "outcome": "Benchmark edonici degli affitti a livello particella, costruiti su PostGIS + gradient boosting.",
+        "outcome": "Benchmark edonici a livello particella, costruiti su PostGIS e gradient boosting nelle metropoli europee.",
         "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
         "link": "/research/rent-prediction-hedonic"
       },
       {
         "image": "",
-        "viz": "abm",
-        "sector": "Settore Pubblico & Ricerca",
-        "title": "ABM di gentrificazione",
-        "outcome": "Simulazione decennale del ricambio di quartiere calibrata su microdati Kadaster + CBS.",
-        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
-        "link": "/research/gentrification-abm"
+        "viz": "pipeline",
+        "sector": "Progetto personale",
+        "title": "LanguageBuddy",
+        "outcome": "Una piccola app per la pratica conversazionale: correzione guidata da LLM, ripetizione spaziata e UI orientata all'abitudine.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "React"],
+        "link": "/about/projects/languagebuddy"
       },
       {
         "image": "",
-        "viz": "pipeline",
-        "sector": "Strumenti Interni · Automazione Ops",
-        "title": "Backend vendite con agenti LLM",
-        "outcome": "CRM + agenti di qualifica che hanno sostituito il triage manuale dei lead end-to-end.",
-        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
-        "link": ""
+        "viz": "intake",
+        "sector": "Ricerca · Computer Vision",
+        "title": "Segnali di facciata e commercio da street-view",
+        "outcome": "Estrazione CNN di facciate e segnali commerciali da circa 4M frame street-view in sei città europee.",
+        "stack": ["PyTorch", "OpenCV", "GeoPandas", "Postgres"],
+        "link": "/research/street-view-cv"
       }
     ],
-    "viewCase": "Vedi case study",
+    "viewCase": "Leggi di più",
     "viewPaper": "Vedi paper",
-    "ctaAll": "Vedi tutti gli engagement"
+    "ctaAll": "Vedi tutto"
   },
   "Proof": {
     "kicker": "Prove — risultati arrivati in produzione",

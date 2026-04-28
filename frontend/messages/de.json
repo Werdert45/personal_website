@@ -17,9 +17,9 @@
     "titleHighlight": "KI/ML Automatisierung",
     "titleEnd": " für operative Teams",
     "description": "Ich entwerfe und liefere produktionsreife Datensysteme und KI-Automatisierungen — Pipelines, Modelle und interne Tools, die manuelle Arbeit ersetzen. Aktuell mit Teams in Geodaten, Versicherung, Logistik, öffentlichem Sektor und Immobilien.",
-    "viewProjects": "So arbeiten wir zusammen",
+    "viewProjects": "Über mich",
     "getInTouch": "Kontakt Aufnehmen",
-    "workWithMe": "20-Minuten-Gespräch buchen",
+    "workWithMe": "Kontakt aufnehmen",
     "yearsExperience": "Jahre Erfahrung",
     "marketsMapped": "Märkte Kartiert",
     "geoProjects": "Geo-Projekte Abgeschlossen",
@@ -258,11 +258,12 @@
     "minRead": "Min. Lesedauer",
     "writingTeaserKicker": "Blog — letzte Beiträge",
     "writingTeaserSubtitle": "Essays, Tutorials und Notizen aus der Praxis.",
-    "endCtaKicker": "§ Nächster Schritt",
-    "endCtaTitle": "Ein ähnliches Problem, das es wert ist,",
-    "endCtaTitleItalic": "gelöst zu werden?",
-    "endCtaBody": "Ich nehme jedes Jahr eine kleine Anzahl externer Aufträge an — interne Tools, Daten-Pipelines und KI-integrierte Systeme für operativ anspruchsvolle Teams außerhalb der Immobilienbranche.",
-    "endCtaButton": "So würden wir zusammenarbeiten"
+    "endCtaKicker": "§ Mehr",
+    "endCtaTitle": "Mehr Texte im",
+    "endCtaTitleItalic": "Blog.",
+    "endCtaBody": "Stöbere durch weitere Essays zu Geodaten, KI/ML und Operations — oder lies mehr über die Person hinter den Texten.",
+    "endCtaButton": "Mehr Texte",
+    "endCtaSecondary": "Über mich"
   },
   "SkillsGrid": {
     "kicker": "Expertise — vier Kernkompetenzen",
@@ -276,7 +277,7 @@
     "titleLine2": "Ich baue Produktiv-",
     "titleLine2Underline": "systeme.",
     "bio1": "Head of Data bei KR&A in Amsterdam, wo ich KI-Initiativen für europäische Immobilien-, Klima- und Alt-Daten-Kunden leite. MSc in Data Science & Business Analytics an der Bocconi; BSc in Künstlicher Intelligenz an der Universität Amsterdam.",
-    "bio2": "Neben meiner Hauptrolle übernehme ich pro Jahr eine begrenzte Anzahl an Engagements — interne Tools, Datenpipelines und KI-Automatisierungen für operativ-lastige Teams in Geodaten, Versicherung, Logistik, öffentlichem Sektor und Immobilien.",
+    "bio2": "Ich arbeite an der Schnittstelle von Geospatial-Analytik, KI/ML und der unspektakulären Dateninfrastruktur, die sie nutzbar macht. Auf dieser Seite sammle ich, worüber ich nachdenke, was ich baue oder veröffentlicht habe.",
     "factRoleK": "Rolle",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Standort",
@@ -289,11 +290,11 @@
     "cta": "Vollständige Bio lesen"
   },
   "Sectors": {
-    "kicker": "Sektoren — wo diese Arbeit landet",
-    "titlePrefix": "Gebaut für",
-    "titleItalic": "operativ-lastige",
-    "titleSuffix": "Teams.",
-    "subtitle": "Dieselbe Engineering-Arbeit, fünf Einstiegstüren. Wenn dein Team mit Tabellen, manueller Triage und Dashboards arbeitet, die niemand öffnet, ist das die Liste.",
+    "kicker": "Bereiche — wo ich meistens arbeite",
+    "titlePrefix": "Wo ich",
+    "titleItalic": "meistens",
+    "titleSuffix": "arbeite.",
+    "subtitle": "Bereiche, in denen ich Zeit verbracht habe — akademisch, beruflich oder beides. Jeder hat seine eigenen Daten-Eigenheiten und seine eigene Vorstellung von \"gut genug.\"",
     "items": [
       { "name": "Geospatial Analytics", "blurb": "Räumliche Pipelines, H3-Indizierung, Parzellen-Modelle, Alt-Daten-Ingestion." },
       { "name": "Versicherung & Klimarisiko", "blurb": "Exposure Modelling, Hochwasser- und CV-Pipelines, Schadens-Triage-Automatisierung." },
@@ -303,69 +304,60 @@
     ]
   },
   "Projects": {
-    "kicker": "Ausgewählte Projekte — gebaut, ausgeliefert, in Produktion",
+    "kicker": "Ausgewählte Arbeiten — Forschung, Abschlussarbeiten, Side-Projects",
     "titlePrefix": "Ausgewählte",
-    "titleItalic": "Projekte.",
-    "subtitle": "Ein Querschnitt dessen, was ich ausgeliefert habe — in Geospatial-Analytik, Klimarisiko, regulierten Diensten und operativ-lastigen Back-Offices.",
+    "titleItalic": "Arbeiten.",
+    "subtitle": "Was ich gebaut oder studiert habe — an der Universität, in der Forschung und in meiner eigenen Zeit. Kein Portfolio von Kundenprojekten; ein Portfolio des Denkens.",
     "items": [
       {
-        "image": "/projects/crm-page.png",
-        "viz": "image",
-        "sector": "Immobilien · KI-Automatisierung",
-        "title": "Deal-Screening KI-Pipeline",
-        "outcome": "Etwa 50 Analysten-Stunden/Woche manueller Deal-Review im REIT-Pipeline ersetzt.",
-        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
-        "link": ""
+        "image": "",
+        "viz": "abm",
+        "sector": "MSc-Arbeit · Bocconi",
+        "title": "Gentrifizierungs-ABM",
+        "outcome": "Zehnjährige Simulation des Quartierswandels in europäischen Städten, kalibriert auf Kadaster- und CBS-Mikrodaten.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
       },
       {
         "image": "/projects/flood-paths.png",
         "viz": "image",
-        "sector": "Versicherung & Klimarisiko",
+        "sector": "BSc-Arbeit · UvA",
         "title": "Hochwasserrisiko-Klassifikator",
-        "outcome": "Überwachte Klassifikation auf LiDAR + Niederschlagsradar, 90 %+ Genauigkeit auf Parzellenebene.",
+        "outcome": "Überwachte Klassifikation auf LiDAR- und Niederschlagsradar-Features auf Parzellenebene — als Bachelorarbeit ausgearbeitet.",
         "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
-        "link": ""
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Regulierte Dienstleistungen · Automatisierung",
-        "title": "Compliance-Intake Neuaufbau",
-        "outcome": "Onboarding-Zeit von 11 auf 3 Tage gesenkt — automatisiertes KYC + Dokumenten-Parsing.",
-        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
         "link": ""
       },
       {
         "image": "/projects/rent-markers.png",
         "viz": "image",
-        "sector": "Geospatial Analytics",
+        "sector": "Forschung · Geospatial",
         "title": "Hedonisches Mietmodell · 15 EU-Metropolen",
-        "outcome": "Hedonische Mietbenchmarks auf Parzellenebene, gebaut auf PostGIS + Gradient Boosting.",
+        "outcome": "Hedonische Mietbenchmarks auf Parzellenebene, gebaut auf PostGIS und Gradient Boosting in europäischen Metropolen.",
         "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
         "link": "/research/rent-prediction-hedonic"
       },
       {
         "image": "",
-        "viz": "abm",
-        "sector": "Öffentlicher Sektor & Forschung",
-        "title": "Gentrifizierungs-ABM",
-        "outcome": "10-jährige Simulation des Quartierswandels, kalibriert auf Kadaster + CBS-Mikrodaten.",
-        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
-        "link": "/research/gentrification-abm"
+        "viz": "pipeline",
+        "sector": "Side-Project · Persönlich",
+        "title": "LanguageBuddy",
+        "outcome": "Eine kleine App zum Konversations-Sprachtraining: LLM-gestützte Korrektur, Spaced Repetition und gewohnheitsfreundliche UI.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "React"],
+        "link": "/about/projects/languagebuddy"
       },
       {
         "image": "",
-        "viz": "pipeline",
-        "sector": "Interne Tools · Ops-Automatisierung",
-        "title": "Sales-Backend mit LLM-Agenten",
-        "outcome": "CRM + Qualifikations-Agenten, die manuelle Lead-Triage end-to-end ersetzt haben.",
-        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
-        "link": ""
+        "viz": "intake",
+        "sector": "Forschung · Computer Vision",
+        "title": "Fassaden- & Handelssignale aus Street-View",
+        "outcome": "CNN-Extraktion von Fassaden- und Handelsmerkmalen aus etwa 4M Street-View-Frames in sechs EU-Städten.",
+        "stack": ["PyTorch", "OpenCV", "GeoPandas", "Postgres"],
+        "link": "/research/street-view-cv"
       }
     ],
-    "viewCase": "Case Study ansehen",
+    "viewCase": "Mehr lesen",
     "viewPaper": "Paper ansehen",
-    "ctaAll": "Alle Engagements ansehen"
+    "ctaAll": "Alle ansehen"
   },
   "Proof": {
     "kicker": "Belege — Ergebnisse, die ausgeliefert wurden",

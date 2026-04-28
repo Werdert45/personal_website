@@ -38,8 +38,7 @@ export function Navigation() {
     { href: `/${locale}/about`, label: t("about"), idx: "02", routeKey: "/about" },
     { href: `/${locale}/thoughts`, label: t("visualizations"), idx: "03", routeKey: "/thoughts" },
     { href: `/${locale}/research`, label: t("research"), idx: "04", routeKey: "/research" },
-    { href: `/${locale}/work`, label: t("work"), idx: "05", routeKey: "/work" },
-    { href: `/${locale}/contact`, label: t("contact"), idx: "06", routeKey: "/contact" },
+    { href: `/${locale}/contact`, label: t("contact"), idx: "05", routeKey: "/contact" },
   ];
 
   const activeKey = (() => {
@@ -143,34 +142,8 @@ export function Navigation() {
         </div>
 
         <Link
-          href={`/${locale}/work`}
-          onClick={() => trackEvent("cta_click", { cta: "work_with_me", location: "nav", source: "nav_primary" })}
-          style={{
-            fontFamily: "var(--font-mono)",
-            fontSize: 12,
-            textTransform: "uppercase",
-            letterSpacing: "0.08em",
-            padding: "10px 16px",
-            border: "1px solid var(--ink)",
-            background: "var(--yellow)",
-            color: "var(--ink)",
-            borderRadius: 2,
-            marginLeft: 10,
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = "var(--ink)";
-            e.currentTarget.style.color = "var(--yellow)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = "var(--yellow)";
-            e.currentTarget.style.color = "var(--ink)";
-          }}
-        >
-          {t("work")}
-        </Link>
-        <Link
           href={`/${locale}/contact`}
-          onClick={() => trackEvent("cta_click", { cta: "lets_talk", location: "nav", source: "nav_secondary" })}
+          onClick={() => trackEvent("cta_click", { cta: "lets_talk", location: "nav", source: "nav_primary" })}
           style={{
             fontFamily: "var(--font-mono)",
             fontSize: 12,
@@ -181,7 +154,7 @@ export function Navigation() {
             background: "transparent",
             color: "var(--ink)",
             borderRadius: 2,
-            marginLeft: 6,
+            marginLeft: 10,
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = "var(--ink)";
