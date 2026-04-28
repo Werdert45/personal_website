@@ -60,18 +60,23 @@ Rather than duplicating this in a frontend denylist, we expose it as an HTTP end
 - `frontend/components/email-gate.jsx` (truly unused)
 - `frontend/components/newsletter-gate.jsx` — see note below
 - `frontend/components/newsletter-popup.jsx` (truly unused)
-- `frontend/components/project-abm-thesis.jsx` (truly unused)
-- `frontend/components/project-languagebuddy.jsx` (truly unused)
-- `frontend/components/work-content.jsx` (truly unused)
-- `frontend/components/work-teaser.jsx` (truly unused)
+- `frontend/components/project-abm-thesis.jsx` (truly unused — projects-gallery card for ABM points to `/research/gentrification-abm`, not this component's route)
+- `frontend/app/[locale]/about/projects/abm-gentrification/page.jsx` (the only consumer of the deleted component; route is unlinked from anywhere in the UI)
+- `frontend/components/work-content.jsx` (only consumer was `work/page.jsx`, which becomes a redirect — see "Modify" below)
+- `frontend/components/work-teaser.jsx` (truly unused; CSS classes `.work-teaser` in globals.css are harmless and left in place)
 - `frontend/components/providers.jsx` — its only purpose was wrapping the app in `<NewsletterProvider>` from newsletter-gate
 - `ianronk.jpeg` and `ianronk2.jpeg` at the repo root.
+
+**Kept (overrides the original brainstorming "delete all five" — corrected on inspection):**
+
+- `frontend/components/project-languagebuddy.jsx` and `frontend/app/[locale]/about/projects/languagebuddy/page.jsx` — the LanguageBuddy projects-gallery card has a live link to `/about/projects/languagebuddy` in `messages/{en,nl,it,de}.json:346`. Deleting the page would break that link. The original brainstorming was based on the wrong assumption that this was unused.
 
 **Note on newsletter-gate.jsx (revised — see Discoveries §B):** the original review said this file was unused. It was wrong: `newsletter-gate.jsx` exports `NewsletterProvider`, which `providers.jsx` mounts in `app/layout.tsx`. The provider's *consumers* (`MapAccessGate`, `useNewsletter` callers) are however genuinely unused — confirmed by grep against `mapbox-map.jsx`, `mapbox-wrapper.jsx`, and the rest of the tree. Deleting the gate file plus `providers.jsx` plus the `<Providers>` wrapper in `app/layout.tsx` (lines 5, 76, 78) cleanly removes the orphaned scaffolding.
 
 **Modify:**
 
 - `frontend/app/layout.tsx` — remove the `import { Providers } from '@/components/providers'` (line 5) and unwrap the `<Providers>…</Providers>` block (lines 76–78). The new `ConsentProvider` from Section 7 takes over wrapping the app.
+- `frontend/app/[locale]/work/page.jsx` — replace the `<WorkContent />` render with a server-side `redirect("/${locale}/about")`. The `next.config.mjs` redirect can stay as a belt-and-suspenders.
 
 **Keep:**
 

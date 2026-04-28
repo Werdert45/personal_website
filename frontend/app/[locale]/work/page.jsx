@@ -1,15 +1,10 @@
-import { WorkContent } from "@/components/work-content";
+import { redirect } from "next/navigation";
 
 export const metadata = {
-  title: "Work with me",
-  description: "",
   robots: { index: false, follow: false },
 };
 
-export default function WorkPage() {
-  return (
-    <main>
-      <WorkContent />
-    </main>
-  );
+export default async function WorkPage({ params }) {
+  const { locale } = await params;
+  redirect(`/${locale}/about`);
 }
