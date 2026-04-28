@@ -39,7 +39,7 @@ export function AboutTeaser() {
         </div>
 
         <div className="portrait">
-          <Image src="/profile.jpg" alt="Ian Ronk" width={600} height={800} priority={false} />
+          <Image src="/profile.jpg" alt="Ian Ronk" width={600} height={800} priority={false} sizes="(max-width: 768px) 100vw, 600px" />
           <span className="cap">{t("portraitCaption")}</span>
         </div>
       </div>

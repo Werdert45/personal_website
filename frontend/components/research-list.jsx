@@ -95,12 +95,17 @@ export function ResearchList() {
         </p>
       </div>
 
-      <div style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 40, alignItems: "center" }}>
+      <div role="search" style={{ display: "flex", gap: 16, flexWrap: "wrap", marginBottom: 40, alignItems: "center" }}>
+        <label htmlFor="research-search" className="sr-only">
+          {t("searchPlaceholder")}
+        </label>
         <input
+          id="research-search"
           type="search"
           placeholder={t("searchPlaceholder")}
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
+          className="focus-ring"
           style={{
             flex: "1 1 260px",
             background: "transparent",

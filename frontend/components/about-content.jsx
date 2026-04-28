@@ -36,7 +36,7 @@ export function AboutContent() {
             </p>
           </div>
           <div className="portrait">
-            <Image src="/profile.jpg" alt="Ian Ronk" width={600} height={800} priority />
+            <Image src="/profile.jpg" alt="Ian Ronk" width={600} height={800} priority sizes="(max-width: 768px) 100vw, 600px" />
             <span className="cap">{t("portraitCaption")}</span>
           </div>
         </div>

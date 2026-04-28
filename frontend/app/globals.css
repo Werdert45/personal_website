@@ -1808,3 +1808,21 @@
 @media (min-width: 768px) { .container { max-width: 768px; } }
 @media (min-width: 1024px) { .container { max-width: 1024px; padding-left: 2rem; padding-right: 2rem; } }
 @media (min-width: 1280px) { .container { max-width: 1280px; } }
+
+/* Accessibility utilities */
+.focus-ring:focus-visible {
+  outline: 2px solid #FFD60A;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

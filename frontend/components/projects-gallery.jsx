@@ -7,7 +7,7 @@ import { trackEvent } from "@/lib/analytics";
 
 function VizIntake() {
   return (
-    <svg viewBox="0 0 320 180" style={{ width: "100%", height: "100%" }}>
+    <svg viewBox="0 0 320 180" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
       <defs>
         <pattern id="vizGridA" width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
@@ -68,7 +68,7 @@ function VizABM() {
     { x1: 250, y1: 130, x2: 210, y2: 80 },
   ];
   return (
-    <svg viewBox="0 0 320 180" style={{ width: "100%", height: "100%" }}>
+    <svg viewBox="0 0 320 180" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
       {cells}
       {arrows.map((a, i) => (
         <g key={i}>
@@ -86,7 +86,7 @@ function VizABM() {
 
 function VizPipeline() {
   return (
-    <svg viewBox="0 0 320 180" style={{ width: "100%", height: "100%" }}>
+    <svg viewBox="0 0 320 180" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
       <defs>
         <pattern id="vizGridB" width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
@@ -196,7 +196,7 @@ export function ProjectsGallery() {
                 {item.link && (
                   <div className="project-link">
                     <span>{linkLabel}</span>
-                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+                    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
                   </div>
                 )}
               </div>

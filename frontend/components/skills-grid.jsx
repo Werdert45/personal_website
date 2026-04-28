@@ -6,7 +6,7 @@ function SkillViz({ index }) {
   if (index === 0) {
     // ML line chart
     return (
-      <svg viewBox="0 0 320 100" style={{ width: "100%", height: "100%" }}>
+      <svg viewBox="0 0 320 100" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
         <path d="M10 80 L40 70 L70 76 L100 52 L130 58 L160 40 L190 48 L220 26 L250 34 L280 18 L310 28 L310 96 L10 96 Z" fill="#FFD60A" opacity="0.4" />
         <path d="M10 80 L40 70 L70 76 L100 52 L130 58 L160 40 L190 48 L220 26 L250 34 L280 18 L310 28" fill="none" stroke="#111110" strokeWidth="1.4" />
         <g fill="#FFD60A" stroke="#111110" strokeWidth="1">
@@ -20,7 +20,7 @@ function SkillViz({ index }) {
   if (index === 1) {
     // Engineering DAG
     return (
-      <svg viewBox="0 0 320 100" style={{ width: "100%", height: "100%" }}>
+      <svg viewBox="0 0 320 100" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
         <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
           <rect x="10" y="10" width="54" height="26" fill="#F6F4EE" stroke="#111110" />
           <text x="20" y="27">source</text>
@@ -64,14 +64,14 @@ function SkillViz({ index }) {
       }
     }
     return (
-      <svg viewBox="0 0 320 100" style={{ width: "100%", height: "100%" }}>
+      <svg viewBox="0 0 320 100" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
         {cells}
       </svg>
     );
   }
   // Internal Processes — sales pipeline / backend automation
   return (
-    <svg viewBox="0 0 320 100" style={{ width: "100%", height: "100%" }}>
+    <svg viewBox="0 0 320 100" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
       <g fontFamily="var(--font-mono)" fontSize="8" fill="#111110">
         <rect x="12" y="34" width="62" height="30" fill="#F6F4EE" stroke="#111110" />
         <text x="24" y="53">intake</text>
