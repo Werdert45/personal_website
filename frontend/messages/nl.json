@@ -302,6 +302,71 @@
       { "name": "Vastgoed & Investeringen", "blurb": "Waardering, gentrificatie-ABMs, alt-data voor REITs, fondsen en assetmanagers." }
     ]
   },
+  "Projects": {
+    "kicker": "Geselecteerde projecten — gebouwd, gelanceerd, in productie",
+    "titlePrefix": "Geselecteerde",
+    "titleItalic": "projecten.",
+    "subtitle": "Een dwarsdoorsnede van wat ik heb opgeleverd — in geospatial analytics, klimaatrisico, gereguleerde dienstverlening en operationeel-zware back-offices.",
+    "items": [
+      {
+        "image": "/projects/crm-page.png",
+        "viz": "image",
+        "sector": "Vastgoed · AI Automatisering",
+        "title": "Deal-screening AI pipeline",
+        "outcome": "Ongeveer 50 analist-uren per week aan handmatige dealreview vervangen bij een REIT.",
+        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
+        "link": ""
+      },
+      {
+        "image": "/projects/flood-paths.png",
+        "viz": "image",
+        "sector": "Verzekeringen & Klimaatrisico",
+        "title": "Overstromingsrisico op perceelniveau",
+        "outcome": "Supervised classificatie op LiDAR + neerslagradar, 90%+ nauwkeurigheid op perceelniveau.",
+        "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
+        "link": ""
+      },
+      {
+        "image": "",
+        "viz": "intake",
+        "sector": "Gereguleerde Diensten · Automatisering",
+        "title": "Compliance-intake herbouw",
+        "outcome": "Onboarding teruggebracht van 11 naar 3 dagen — geautomatiseerde KYC + documentparsing.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
+        "link": ""
+      },
+      {
+        "image": "/projects/rent-markers.png",
+        "viz": "image",
+        "sector": "Geospatial Analytics",
+        "title": "Hedonisch huurmodel · 15 EU-metro's",
+        "outcome": "Hedonische huurbenchmarks op perceelniveau gebouwd op PostGIS + gradient boosting.",
+        "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
+        "link": "/research/rent-prediction-hedonic"
+      },
+      {
+        "image": "",
+        "viz": "abm",
+        "sector": "Publieke Sector & Onderzoek",
+        "title": "Gentrificatie agent-based model",
+        "outcome": "10-jarige simulatie van wijkverandering, gekalibreerd op Kadaster + CBS-microdata.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
+      },
+      {
+        "image": "",
+        "viz": "pipeline",
+        "sector": "Interne Tools · Ops-Automatisering",
+        "title": "Sales-backend met LLM-agents",
+        "outcome": "CRM + qualificatie-agents die handmatige lead-triage end-to-end vervingen.",
+        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
+        "link": ""
+      }
+    ],
+    "viewCase": "Bekijk case",
+    "viewPaper": "Bekijk paper",
+    "ctaAll": "Bekijk alle engagementen"
+  },
   "Proof": {
     "kicker": "Bewijs — uitkomsten die zijn gerealiseerd",
     "titlePrefix": "Wat we hebben",

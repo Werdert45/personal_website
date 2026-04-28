@@ -302,6 +302,71 @@
       { "name": "Immobiliare & Investimenti", "blurb": "Valutazione, ABM di gentrificazione, alt-data per REIT, fondi e asset manager." }
     ]
   },
+  "Projects": {
+    "kicker": "Progetti selezionati — costruiti, rilasciati, in produzione",
+    "titlePrefix": "Progetti",
+    "titleItalic": "selezionati.",
+    "subtitle": "Una panoramica di ciò che ho consegnato — in geospatial analytics, rischio climatico, servizi regolamentati e back-office ad alto carico operativo.",
+    "items": [
+      {
+        "image": "/projects/crm-page.png",
+        "viz": "image",
+        "sector": "Immobiliare · Automazione AI",
+        "title": "Pipeline AI di deal-screening",
+        "outcome": "Sostituite circa 50 ore/settimana di review manuale dei deal nel pipeline di un REIT.",
+        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
+        "link": ""
+      },
+      {
+        "image": "/projects/flood-paths.png",
+        "viz": "image",
+        "sector": "Assicurazioni & Rischio Climatico",
+        "title": "Classificatore di rischio alluvione",
+        "outcome": "Classificazione supervisionata su LiDAR + radar pluviale, oltre il 90% di accuratezza a livello particella.",
+        "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
+        "link": ""
+      },
+      {
+        "image": "",
+        "viz": "intake",
+        "sector": "Servizi Regolamentati · Automazione",
+        "title": "Ricostruzione intake compliance",
+        "outcome": "Tempo di onboarding ridotto da 11 a 3 giorni — KYC automatizzato + parsing documenti.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
+        "link": ""
+      },
+      {
+        "image": "/projects/rent-markers.png",
+        "viz": "image",
+        "sector": "Geospatial Analytics",
+        "title": "Modello edonico affitti · 15 metropoli UE",
+        "outcome": "Benchmark edonici degli affitti a livello particella, costruiti su PostGIS + gradient boosting.",
+        "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
+        "link": "/research/rent-prediction-hedonic"
+      },
+      {
+        "image": "",
+        "viz": "abm",
+        "sector": "Settore Pubblico & Ricerca",
+        "title": "ABM di gentrificazione",
+        "outcome": "Simulazione decennale del ricambio di quartiere calibrata su microdati Kadaster + CBS.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
+      },
+      {
+        "image": "",
+        "viz": "pipeline",
+        "sector": "Strumenti Interni · Automazione Ops",
+        "title": "Backend vendite con agenti LLM",
+        "outcome": "CRM + agenti di qualifica che hanno sostituito il triage manuale dei lead end-to-end.",
+        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
+        "link": ""
+      }
+    ],
+    "viewCase": "Vedi case study",
+    "viewPaper": "Vedi paper",
+    "ctaAll": "Vedi tutti gli engagement"
+  },
   "Proof": {
     "kicker": "Prove — risultati arrivati in produzione",
     "titlePrefix": "Cose che",

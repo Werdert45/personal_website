@@ -3,6 +3,7 @@ import { Marquee } from "@/components/marquee";
 import { AboutTeaser } from "@/components/about-teaser";
 import { SkillsGrid } from "@/components/skills-grid";
 import { SectorsStrip } from "@/components/sectors-strip";
+import { ProjectsGallery } from "@/components/projects-gallery";
 import { ProofStrip } from "@/components/proof-strip";
 import { WorkTeaser } from "@/components/work-teaser";
 import { WritingTeaser } from "@/components/writing-teaser";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <AboutTeaser />
       <SkillsGrid />
       <SectorsStrip />
+      <ProjectsGallery />
       <ProofStrip />
       <WorkTeaser />
       <WritingTeaser />

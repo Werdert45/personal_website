@@ -56,7 +56,7 @@ export function ResearchPreview() {
     <section className="section-pad">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 08</span>
+        <span className="num-label">§ 09</span>
         <span>{t("previewBadge")}</span>
       </div>
 

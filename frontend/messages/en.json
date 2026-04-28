@@ -302,6 +302,71 @@
       { "name": "Real Estate & Investment", "blurb": "Valuation, gentrification ABMs, alt-data for REITs, funds and asset managers." }
     ]
   },
+  "Projects": {
+    "kicker": "Selected projects — built, shipped, in production",
+    "titlePrefix": "Selected",
+    "titleItalic": "projects.",
+    "subtitle": "A cross-section of what I've shipped — across geospatial analytics, climate risk, regulated services and operator-heavy back-offices.",
+    "items": [
+      {
+        "image": "/projects/crm-page.png",
+        "viz": "image",
+        "sector": "Real Estate · AI Automation",
+        "title": "Deal-screening AI pipeline",
+        "outcome": "Replaced ~50 analyst-hours/week of manual deal review across a REIT pipeline.",
+        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
+        "link": ""
+      },
+      {
+        "image": "/projects/flood-paths.png",
+        "viz": "image",
+        "sector": "Insurance & Climate Risk",
+        "title": "Parcel-level flood-risk classifier",
+        "outcome": "Supervised classification on LiDAR + rainfall radar, 90%+ accuracy at parcel level.",
+        "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
+        "link": ""
+      },
+      {
+        "image": "",
+        "viz": "intake",
+        "sector": "Regulated Services · Automation",
+        "title": "Compliance intake rebuild",
+        "outcome": "Onboarding time cut from 11 days to 3 — automated KYC + document parsing.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
+        "link": ""
+      },
+      {
+        "image": "/projects/rent-markers.png",
+        "viz": "image",
+        "sector": "Geospatial Analytics",
+        "title": "Hedonic rent model · 15 EU metros",
+        "outcome": "Parcel-level hedonic rent benchmarks built on PostGIS + gradient boosting.",
+        "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
+        "link": "/research/rent-prediction-hedonic"
+      },
+      {
+        "image": "",
+        "viz": "abm",
+        "sector": "Public Sector & Research",
+        "title": "Gentrification agent-based model",
+        "outcome": "10-year neighbourhood-turnover simulation calibrated on Kadaster + CBS microdata.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
+      },
+      {
+        "image": "",
+        "viz": "pipeline",
+        "sector": "Internal Tools · Ops Automation",
+        "title": "Sales backend with LLM agents",
+        "outcome": "CRM + qualification agents that replaced manual lead triage end-to-end.",
+        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
+        "link": ""
+      }
+    ],
+    "viewCase": "View case study",
+    "viewPaper": "View paper",
+    "ctaAll": "See all engagements"
+  },
   "Proof": {
     "kicker": "Proof — outcomes that shipped",
     "titlePrefix": "Things that",

@@ -302,6 +302,71 @@
       { "name": "Immobilien & Investment", "blurb": "Bewertung, Gentrifizierungs-ABMs, Alt-Daten für REITs, Fonds und Asset Manager." }
     ]
   },
+  "Projects": {
+    "kicker": "Ausgewählte Projekte — gebaut, ausgeliefert, in Produktion",
+    "titlePrefix": "Ausgewählte",
+    "titleItalic": "Projekte.",
+    "subtitle": "Ein Querschnitt dessen, was ich ausgeliefert habe — in Geospatial-Analytik, Klimarisiko, regulierten Diensten und operativ-lastigen Back-Offices.",
+    "items": [
+      {
+        "image": "/projects/crm-page.png",
+        "viz": "image",
+        "sector": "Immobilien · KI-Automatisierung",
+        "title": "Deal-Screening KI-Pipeline",
+        "outcome": "Etwa 50 Analysten-Stunden/Woche manueller Deal-Review im REIT-Pipeline ersetzt.",
+        "stack": ["LangChain", "OpenAI", "Postgres", "n8n", "FastAPI"],
+        "link": ""
+      },
+      {
+        "image": "/projects/flood-paths.png",
+        "viz": "image",
+        "sector": "Versicherung & Klimarisiko",
+        "title": "Hochwasserrisiko-Klassifikator",
+        "outcome": "Überwachte Klassifikation auf LiDAR + Niederschlagsradar, 90 %+ Genauigkeit auf Parzellenebene.",
+        "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
+        "link": ""
+      },
+      {
+        "image": "",
+        "viz": "intake",
+        "sector": "Regulierte Dienstleistungen · Automatisierung",
+        "title": "Compliance-Intake Neuaufbau",
+        "outcome": "Onboarding-Zeit von 11 auf 3 Tage gesenkt — automatisiertes KYC + Dokumenten-Parsing.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "n8n", "Docker"],
+        "link": ""
+      },
+      {
+        "image": "/projects/rent-markers.png",
+        "viz": "image",
+        "sector": "Geospatial Analytics",
+        "title": "Hedonisches Mietmodell · 15 EU-Metropolen",
+        "outcome": "Hedonische Mietbenchmarks auf Parzellenebene, gebaut auf PostGIS + Gradient Boosting.",
+        "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
+        "link": "/research/rent-prediction-hedonic"
+      },
+      {
+        "image": "",
+        "viz": "abm",
+        "sector": "Öffentlicher Sektor & Forschung",
+        "title": "Gentrifizierungs-ABM",
+        "outcome": "10-jährige Simulation des Quartierswandels, kalibriert auf Kadaster + CBS-Mikrodaten.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
+      },
+      {
+        "image": "",
+        "viz": "pipeline",
+        "sector": "Interne Tools · Ops-Automatisierung",
+        "title": "Sales-Backend mit LLM-Agenten",
+        "outcome": "CRM + Qualifikations-Agenten, die manuelle Lead-Triage end-to-end ersetzt haben.",
+        "stack": ["FastAPI", "Postgres", "LangChain", "Stripe", "Docker"],
+        "link": ""
+      }
+    ],
+    "viewCase": "Case Study ansehen",
+    "viewPaper": "Paper ansehen",
+    "ctaAll": "Alle Engagements ansehen"
+  },
   "Proof": {
     "kicker": "Belege — Ergebnisse, die ausgeliefert wurden",
     "titlePrefix": "Dinge, die",
