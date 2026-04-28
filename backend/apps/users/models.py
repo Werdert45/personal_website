@@ -154,24 +154,37 @@ class User(AbstractUser):
 
 
 class NewsletterSubscriber(models.Model):
+    """Newsletter subscriber.
+
+    Originally built for map-access gating; now the public newsletter
+    signup feeds this model. ``is_verified`` / ``verification_token`` /
+    ``verified_at`` are kept for forthcoming double-opt-in; sender pipeline
+    is deferred.
     """
-    Newsletter subscriber model for map access gating.
-    Stores email addresses of users who subscribe to view maps.
-    """
+
+    LOCALE_CHOICES = [
+        ("en", "English"),
+        ("nl", "Dutch"),
+        ("it", "Italian"),
+        ("de", "German"),
+    ]
+
+    SOURCE_CHOICES = [
+        ("footer", "Footer"),
+        ("post-end", "Post end"),
+        ("research-end", "Research end"),
+        ("contact-form", "Contact form"),
+        ("other", "Other"),
+    ]
 
     email = models.EmailField(unique=True, validators=[validate_serious_email])
     is_business_email = models.BooleanField(default=False)
     email_domain = models.CharField(max_length=255, blank=True)
 
-    # Access tracking
-    access_count = models.IntegerField(default=0)
-    last_access = models.DateTimeField(null=True, blank=True)
+    locale = models.CharField(max_length=5, choices=LOCALE_CHOICES, default="en")
+    source = models.CharField(max_length=20, choices=SOURCE_CHOICES, default="other")
 
-    # Rate limiting - track access attempts per hour
-    access_attempts_this_hour = models.IntegerField(default=0)
-    current_hour_start = models.DateTimeField(null=True, blank=True)
-
-    # Verification
+    # Verification (kept for forthcoming double-opt-in)
     is_verified = models.BooleanField(default=False)
     verification_token = models.CharField(max_length=64, blank=True)
     verified_at = models.DateTimeField(null=True, blank=True)
@@ -200,63 +213,3 @@ class NewsletterSubscriber(models.Model):
 
     def __str__(self):
         return self.email
-
-    def can_access_map(self):
-        """
-        Check if this subscriber can access maps.
-        Implements rate limiting: max 10 map views per hour.
-        """
-        from django.utils import timezone
-        from datetime import timedelta
-
-        now = timezone.now()
-
-        # Check if we're in a new hour window
-        if self.current_hour_start is None or now >= self.current_hour_start + timedelta(hours=1):
-            # Reset counter for new hour
-            self.access_attempts_this_hour = 0
-            self.current_hour_start = now
-            self.save(update_fields=['access_attempts_this_hour', 'current_hour_start'])
-
-        # Check if under hourly limit (10 views per hour)
-        if self.access_attempts_this_hour >= 10:
-            # Calculate time until reset
-            time_until_reset = (self.current_hour_start + timedelta(hours=1)) - now
-            minutes_remaining = int(time_until_reset.total_seconds() / 60)
-            return False, f"Hourly access limit reached. Please try again in {minutes_remaining} minutes."
-
-        return True, None
-
-    def record_map_access(self):
-        """Record a map access and update counters."""
-        from django.utils import timezone
-        from datetime import timedelta
-
-        now = timezone.now()
-
-        # Reset if we're in a new hour
-        if self.current_hour_start is None or now >= self.current_hour_start + timedelta(hours=1):
-            self.access_attempts_this_hour = 1
-            self.current_hour_start = now
-        else:
-            self.access_attempts_this_hour += 1
-
-        self.access_count += 1
-        self.last_access = now
-        self.save(update_fields=[
-            'access_attempts_this_hour', 'current_hour_start',
-            'access_count', 'last_access'
-        ])
-
-    def get_hourly_remaining(self):
-        """Get the number of map views remaining this hour."""
-        from django.utils import timezone
-        from datetime import timedelta
-
-        now = timezone.now()
-
-        # If no hour window or expired, full allowance
-        if self.current_hour_start is None or now >= self.current_hour_start + timedelta(hours=1):
-            return 10
-
-        return max(0, 10 - self.access_attempts_this_hour)
