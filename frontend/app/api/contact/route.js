@@ -5,6 +5,7 @@ const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY || "";
 const EMAIL_USER = process.env.EMAIL_USER || "";
 const EMAIL_PASS = process.env.EMAIL_PASS || "";
 const CONTACT_EMAIL = "ianronk0@gmail.com";
+const DJANGO_API_URL = process.env.DJANGO_API_URL || "http://localhost:8000";
 
 // Escape HTML to prevent XSS in email templates
 function escapeHtml(text) {
@@ -85,6 +86,24 @@ export async function POST(request) {
       { error: "Invalid email address" },
       { status: 400 }
     );
+  }
+
+  // Validate email quality via Django — silently drop spam without signaling rejection
+  try {
+    const validateRes = await fetch(`${DJANGO_API_URL}/api/auth/validate-email/`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+      // 3-second timeout — if Django is unreachable, fall through and let mail proceed
+      signal: AbortSignal.timeout(3000),
+    });
+    if (validateRes.status === 400) {
+      // Spam — silently 200 OK to the bot
+      return NextResponse.json({ ok: true }, { status: 200 });
+    }
+    // Any other non-OK status (5xx, network) is treated as "Django unavailable" — don't block legit users
+  } catch {
+    // Network error / timeout — same: don't block legit users on infra failure
   }
 
   // Verify captcha if configured

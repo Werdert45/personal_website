@@ -12,6 +12,7 @@ from .views import (
     MeView,
     NewsletterSubscribeView,
     RegisterView,
+    ValidateEmailView,
 )
 
 urlpatterns = [
@@ -23,4 +24,6 @@ urlpatterns = [
     path("mapbox-token/", MapboxTokenView.as_view(), name="mapbox_token"),
     # Newsletter subscription
     path("newsletter/subscribe/", NewsletterSubscribeView.as_view(), name="newsletter_subscribe"),
+    # Email quality check — used by contact route to silently drop spam
+    path("validate-email/", ValidateEmailView.as_view(), name="validate_email"),
 ]

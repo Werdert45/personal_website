@@ -193,3 +193,25 @@ class NewsletterSubscribeView(APIView):
         if x_forwarded_for:
             return x_forwarded_for.split(",")[0].strip()
         return request.META.get("REMOTE_ADDR")
+
+
+class ValidateEmailView(APIView):
+    """Public stateless email-quality check. No persistence side-effect.
+
+    Accepts {"email": "..."}. Returns 200 {"valid": true} on pass,
+    400 {"valid": false, "reason": "..."} on fail.
+    Used by the Next.js contact route to silently drop spam submissions.
+    """
+
+    permission_classes = [AllowAny]
+
+    def post(self, request):
+        email = (request.data.get("email") or "").lower().strip()
+        try:
+            validate_serious_email(email)
+            return Response({"valid": True})
+        except ValidationError as e:
+            return Response(
+                {"valid": False, "reason": getattr(e, "message", str(e))},
+                status=status.HTTP_400_BAD_REQUEST,
+            )
