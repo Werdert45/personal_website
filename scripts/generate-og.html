@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Instrument+Serif&family=JetBrains+Mono&display=swap');
+    body { margin: 0; }
+    .og {
+      width: 1200px;
+      height: 630px;
+      background: #F6F4EE;
+      display: flex;
+      align-items: stretch;
+      font-family: 'Instrument Serif', serif;
+      color: #111110;
+      position: relative;
+      overflow: hidden;
+    }
+    .accent {
+      width: 24px;
+      background: #FFD60A;
+    }
+    .left {
+      flex: 0 0 420px;
+      background-image: url('../frontend/public/profile.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+    .right {
+      flex: 1;
+      padding: 80px 64px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 32px;
+    }
+    .kicker {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 18px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8A8676;
+    }
+    .title {
+      font-size: 88px;
+      line-height: 1.05;
+      font-weight: 400;
+    }
+    .title em { font-style: italic; }
+    .footer {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 16px;
+      letter-spacing: 0.08em;
+      color: #8A8676;
+    }
+  </style>
+</head>
+<body>
+  <div class="og">
+    <div class="accent"></div>
+    <div class="left"></div>
+    <div class="right">
+      <div class="kicker">Ian Ronk · Amsterdam</div>
+      <div class="title">Geospatial · ML · <em>AI</em></div>
+      <div class="footer">ianronk.com</div>
+    </div>
+  </div>
+</body>
+</html>

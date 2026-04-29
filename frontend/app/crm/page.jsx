@@ -31,7 +31,6 @@ import {
   Loader2,
   RefreshCw,
   AlertCircle,
-  Database,
   ArrowLeft,
   Save,
   FileUp,
@@ -46,13 +45,11 @@ export default function CRMPage() {
   const router = useRouter();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [research, setResearch] = useState([]);
-  const [visualizations, setVisualizations] = useState([]);
   const [loadingResearch, setLoadingResearch] = useState(true);
-  const [loadingVisualizations, setLoadingVisualizations] = useState(true);
   const [token, setToken] = useState(null);
 
   // Inline form state
-  const [formMode, setFormMode] = useState(null); // null | "research" | "visualization"
+  const [formMode, setFormMode] = useState(null); // null | "research"
   const [editingItem, setEditingItem] = useState(null);
   const [formData, setFormData] = useState({});
   const [saving, setSaving] = useState(false);
@@ -82,7 +79,6 @@ export default function CRMPage() {
       setIsAuthenticated(true);
       setToken(storedToken);
       fetchResearch();
-      fetchVisualizations();
     }
   }, [router]);
 
@@ -101,24 +97,6 @@ export default function CRMPage() {
       console.error("Error fetching research:", err);
     } finally {
       setLoadingResearch(false);
-    }
-  };
-
-  const fetchVisualizations = async () => {
-    try {
-      setLoadingVisualizations(true);
-      const storedToken = localStorage.getItem("crm_token");
-      const response = await fetch("/api/django?endpoint=research/visualizations", {
-        headers: storedToken ? { Authorization: `Bearer ${storedToken}` } : {},
-      });
-      if (response.ok) {
-        const data = await response.json();
-        setVisualizations(data.results || data);
-      }
-    } catch (err) {
-      console.error("Error fetching visualizations:", err);
-    } finally {
-      setLoadingVisualizations(false);
     }
   };
 
@@ -164,40 +142,6 @@ export default function CRMPage() {
     setFormMode("research");
   };
 
-  const openVisualizationForm = (item = null) => {
-    setEditingItem(item);
-    setError(null);
-    setGeoDataMode(item?.geodataset_id ? "existing" : "paste");
-    setSelectedDataset(item?.geodataset_id ? { id: item.geodataset_id, available_fields: item.available_fields || [], field_types: item.field_types || {} } : null);
-    setUploadedDataset(null);
-    setFormData({
-      title: item?.title || "",
-      category: item?.category || "heatmap",
-      description: item?.description || "",
-      content: item?.content || "",
-      region: item?.region || "",
-      data_points: item?.data_points || "",
-      status: item?.status || "draft",
-      technologies: item ? (item.technologies || []).join(", ") : "",
-      metrics: item?.metrics ? JSON.stringify(item.metrics, null, 2) : "",
-      geojson_data: item?.geojson_data ? JSON.stringify(item.geojson_data, null, 2) : "",
-      geodataset_id: item?.geodataset_id || null,
-      value_field: item?.value_field || null,
-      map_config: item?.map_config || { center: [10, 50], zoom: 4 },
-      preview_image: null,
-      preview_image_url: item?.preview_image || null,
-      title_en: item?.translations?.title?.en || item?.title || "",
-      title_nl: item?.translations?.title?.nl || "",
-      title_it: item?.translations?.title?.it || "",
-      title_de: item?.translations?.title?.de || "",
-      description_en: item?.translations?.description?.en || item?.description || "",
-      description_nl: item?.translations?.description?.nl || "",
-      description_it: item?.translations?.description?.it || "",
-      description_de: item?.translations?.description?.de || "",
-    });
-    setFormMode("visualization");
-  };
-
   const handleSave = async () => {
     setSaving(true);
     setError(null);
@@ -231,67 +175,28 @@ export default function CRMPage() {
         }
       }
 
-      let payload;
-      let endpoint;
-      let method;
-
-      if (formMode === "research") {
-        payload = {
-          title: formData.title,
-          slug: slug,
-          category: formData.category,
-          status: formData.status,
-          author: formData.author,
-          abstract: formData.abstract,
-          content: formData.content,
-          tags: formData.tags ? formData.tags.split(",").map((t) => t.trim()).filter(Boolean) : [],
-          has_map: formData.has_map,
-          map_config: formData.map_config,
-          geodataset: geoDataMode !== "paste" ? formData.geodataset_id : null,
-          value_field: geoDataMode !== "paste" ? formData.value_field : null,
-          geojson_data: geoDataMode === "paste" && formData.geojson_data ? JSON.parse(formData.geojson_data) : null,
-          preview_image: previewImageUrl,
-          translations: {
-            title: { en: formData.title_en, nl: formData.title_nl, it: formData.title_it, de: formData.title_de },
-            abstract: { en: formData.abstract_en, nl: formData.abstract_nl, it: formData.abstract_it, de: formData.abstract_de },
-          },
-        };
-        endpoint = editingItem ? `research/${editingItem.slug}` : "research";
-        method = editingItem ? "PUT" : "POST";
-      } else {
-        let metricsData = null;
-        if (formData.metrics) {
-          try { metricsData = JSON.parse(formData.metrics); } catch { setError("Invalid JSON for metrics"); setSaving(false); return; }
-        }
-        let geojsonData = null;
-        if (geoDataMode === "paste" && formData.geojson_data) {
-          try { geojsonData = JSON.parse(formData.geojson_data); } catch { setError("Invalid JSON for GeoJSON data"); setSaving(false); return; }
-        }
-
-        payload = {
-          title: formData.title,
-          slug: slug,
-          category: formData.category,
-          status: formData.status,
-          description: formData.description,
-          content: formData.content,
-          region: formData.region,
-          data_points: formData.data_points,
-          technologies: formData.technologies ? formData.technologies.split(",").map((t) => t.trim()).filter(Boolean) : [],
-          metrics: metricsData,
-          map_config: formData.map_config,
-          geojson_data: geojsonData,
-          geodataset: geoDataMode !== "paste" ? formData.geodataset_id : null,
-          value_field: geoDataMode !== "paste" ? formData.value_field : null,
-          preview_image: previewImageUrl,
-          translations: {
-            title: { en: formData.title_en, nl: formData.title_nl, it: formData.title_it, de: formData.title_de },
-            description: { en: formData.description_en, nl: formData.description_nl, it: formData.description_it, de: formData.description_de },
-          },
-        };
-        endpoint = editingItem ? `research/visualizations/${editingItem.slug}` : "research/visualizations";
-        method = editingItem ? "PUT" : "POST";
-      }
+      const payload = {
+        title: formData.title,
+        slug: slug,
+        category: formData.category,
+        status: formData.status,
+        author: formData.author,
+        abstract: formData.abstract,
+        content: formData.content,
+        tags: formData.tags ? formData.tags.split(",").map((t) => t.trim()).filter(Boolean) : [],
+        has_map: formData.has_map,
+        map_config: formData.map_config,
+        geodataset: geoDataMode !== "paste" ? formData.geodataset_id : null,
+        value_field: geoDataMode !== "paste" ? formData.value_field : null,
+        geojson_data: geoDataMode === "paste" && formData.geojson_data ? JSON.parse(formData.geojson_data) : null,
+        preview_image: previewImageUrl,
+        translations: {
+          title: { en: formData.title_en, nl: formData.title_nl, it: formData.title_it, de: formData.title_de },
+          abstract: { en: formData.abstract_en, nl: formData.abstract_nl, it: formData.abstract_it, de: formData.abstract_de },
+        },
+      };
+      const endpoint = editingItem ? `research/${editingItem.slug}` : "research";
+      const method = editingItem ? "PUT" : "POST";
 
       const storedToken = localStorage.getItem("crm_token");
       const response = await fetch(`/api/django?endpoint=${endpoint}`, {
@@ -306,8 +211,7 @@ export default function CRMPage() {
       if (response.ok) {
         setFormMode(null);
         setEditingItem(null);
-        if (formMode === "research") fetchResearch();
-        else fetchVisualizations();
+        fetchResearch();
       } else {
         const errorData = await response.json();
         console.error("Save error response:", response.status, errorData);
@@ -333,7 +237,7 @@ export default function CRMPage() {
     if (!confirm(`Are you sure you want to delete "${item.title}"?`)) return;
 
     try {
-      const endpoint = type === "research" ? `research/${item.slug}` : `research/visualizations/${item.slug}`;
+      const endpoint = `research/${item.slug}`;
       const storedToken = localStorage.getItem("crm_token");
       const response = await fetch(`/api/django?endpoint=${endpoint}`, {
         method: "DELETE",
@@ -341,8 +245,7 @@ export default function CRMPage() {
       });
 
       if (response.ok || response.status === 204) {
-        if (type === "research") fetchResearch();
-        else fetchVisualizations();
+        fetchResearch();
       } else {
         alert("Failed to delete item");
       }
@@ -353,7 +256,6 @@ export default function CRMPage() {
   };
 
   const openTranslation = (type, item) => {
-    const descKey = type === "research" ? "abstract" : "description";
     const existing = item.translations || {};
     setTranslatingItem({ type, item });
     setTranslationData({
@@ -361,10 +263,10 @@ export default function CRMPage() {
       title_nl: existing.title?.nl || "",
       title_it: existing.title?.it || "",
       title_de: existing.title?.de || "",
-      [`${descKey}_en`]: existing[descKey]?.en || item[descKey] || "",
-      [`${descKey}_nl`]: existing[descKey]?.nl || "",
-      [`${descKey}_it`]: existing[descKey]?.it || "",
-      [`${descKey}_de`]: existing[descKey]?.de || "",
+      abstract_en: existing.abstract?.en || item.abstract || "",
+      abstract_nl: existing.abstract?.nl || "",
+      abstract_it: existing.abstract?.it || "",
+      abstract_de: existing.abstract?.de || "",
     });
   };
 
@@ -385,15 +287,14 @@ export default function CRMPage() {
   const saveTranslation = async () => {
     if (!translatingItem) return;
     setSavingTranslation(true);
-    const { type, item } = translatingItem;
-    const descKey = type === "research" ? "abstract" : "description";
+    const { item } = translatingItem;
     const translations = {
       title: { en: translationData.title_en, nl: translationData.title_nl, it: translationData.title_it, de: translationData.title_de },
-      [descKey]: { en: translationData[`${descKey}_en`], nl: translationData[`${descKey}_nl`], it: translationData[`${descKey}_it`], de: translationData[`${descKey}_de`] },
+      abstract: { en: translationData.abstract_en, nl: translationData.abstract_nl, it: translationData.abstract_it, de: translationData.abstract_de },
     };
 
     try {
-      const endpoint = type === "research" ? `research/${item.slug}` : `research/visualizations/${item.slug}`;
+      const endpoint = `research/${item.slug}`;
       const storedToken = localStorage.getItem("crm_token");
       const response = await fetch(`/api/django?endpoint=${endpoint}`, {
         method: "PATCH",
@@ -406,8 +307,7 @@ export default function CRMPage() {
 
       if (response.ok) {
         setTranslatingItem(null);
-        if (type === "research") fetchResearch();
-        else fetchVisualizations();
+        fetchResearch();
       } else {
         alert("Failed to save translations");
       }
@@ -576,7 +476,7 @@ export default function CRMPage() {
                 Back
               </Button>
               <h1 className="font-semibold text-foreground">
-                {editingItem ? "Edit" : "New"} {formMode === "research" ? "Research Article" : "Visualization"}
+                {editingItem ? "Edit" : "New"} Research Article
               </h1>
             </div>
             <div className="flex items-center gap-2">
@@ -624,22 +524,10 @@ export default function CRMPage() {
                     >
                       <SelectTrigger><SelectValue placeholder="Select category" /></SelectTrigger>
                       <SelectContent>
-                        {formMode === "research" ? (
-                          <>
-                            <SelectItem value="research">Research</SelectItem>
-                            <SelectItem value="analysis">Analysis</SelectItem>
-                            <SelectItem value="case-study">Case Study</SelectItem>
-                            <SelectItem value="methodology">Methodology</SelectItem>
-                          </>
-                        ) : (
-                          <>
-                            <SelectItem value="heatmap">Heatmap</SelectItem>
-                            <SelectItem value="choropleth">Choropleth</SelectItem>
-                            <SelectItem value="scatter">Scatter Plot</SelectItem>
-                            <SelectItem value="time-series">Time Series</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
-                          </>
-                        )}
+                        <SelectItem value="research">Research</SelectItem>
+                        <SelectItem value="analysis">Analysis</SelectItem>
+                        <SelectItem value="case-study">Case Study</SelectItem>
+                        <SelectItem value="methodology">Methodology</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -659,83 +547,31 @@ export default function CRMPage() {
                   </div>
                 </div>
 
-                {formMode === "research" ? (
-                  <>
-                    <div>
-                      <Label className="text-sm font-medium mb-2 block">Author</Label>
-                      <Input
-                        value={formData.author || ""}
-                        onChange={(e) => setFormData({ ...formData, author: e.target.value })}
-                        placeholder="Author name"
-                      />
-                    </div>
-                    <div>
-                      <Label className="text-sm font-medium mb-2 block">Abstract</Label>
-                      <Textarea
-                        value={formData.abstract || ""}
-                        onChange={(e) => setFormData({ ...formData, abstract: e.target.value })}
-                        placeholder="Brief abstract/description"
-                        rows={3}
-                      />
-                    </div>
-                    <div>
-                      <Label className="text-sm font-medium mb-2 block">Tags (comma-separated)</Label>
-                      <Input
-                        value={formData.tags || ""}
-                        onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
-                        placeholder="e.g., machine-learning, real-estate, python"
-                      />
-                    </div>
-                  </>
-                ) : (
-                  <>
-                    <div>
-                      <Label className="text-sm font-medium mb-2 block">Description</Label>
-                      <Textarea
-                        value={formData.description || ""}
-                        onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                        placeholder="Brief description"
-                        rows={2}
-                      />
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <Label className="text-sm font-medium mb-2 block">Region</Label>
-                        <Input
-                          value={formData.region || ""}
-                          onChange={(e) => setFormData({ ...formData, region: e.target.value })}
-                          placeholder="e.g., Amsterdam, NL"
-                        />
-                      </div>
-                      <div>
-                        <Label className="text-sm font-medium mb-2 block">Data Points</Label>
-                        <Input
-                          value={formData.data_points || ""}
-                          onChange={(e) => setFormData({ ...formData, data_points: e.target.value })}
-                          placeholder="e.g., 45,000+ properties"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <Label className="text-sm font-medium mb-2 block">Technologies (comma-separated)</Label>
-                      <Input
-                        value={formData.technologies || ""}
-                        onChange={(e) => setFormData({ ...formData, technologies: e.target.value })}
-                        placeholder="e.g., Mapbox, PostGIS, Python"
-                      />
-                    </div>
-                    <div>
-                      <Label className="text-sm font-medium mb-2 block">Metrics (JSON array)</Label>
-                      <Textarea
-                        value={formData.metrics || ""}
-                        onChange={(e) => setFormData({ ...formData, metrics: e.target.value })}
-                        placeholder='[{"label": "Properties", "value": "45K+"}]'
-                        rows={3}
-                        className="font-mono text-sm"
-                      />
-                    </div>
-                  </>
-                )}
+                <div>
+                  <Label className="text-sm font-medium mb-2 block">Author</Label>
+                  <Input
+                    value={formData.author || ""}
+                    onChange={(e) => setFormData({ ...formData, author: e.target.value })}
+                    placeholder="Author name"
+                  />
+                </div>
+                <div>
+                  <Label className="text-sm font-medium mb-2 block">Abstract</Label>
+                  <Textarea
+                    value={formData.abstract || ""}
+                    onChange={(e) => setFormData({ ...formData, abstract: e.target.value })}
+                    placeholder="Brief abstract/description"
+                    rows={3}
+                  />
+                </div>
+                <div>
+                  <Label className="text-sm font-medium mb-2 block">Tags (comma-separated)</Label>
+                  <Input
+                    value={formData.tags || ""}
+                    onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
+                    placeholder="e.g., machine-learning, real-estate, python"
+                  />
+                </div>
               </CardContent>
             </Card>
 
@@ -750,9 +586,7 @@ export default function CRMPage() {
               <CardContent className="space-y-6">
                 {[
                   { key: "title", label: "Title" },
-                  ...(formMode === "research"
-                    ? [{ key: "abstract", label: "Abstract" }]
-                    : [{ key: "description", label: "Description" }]),
+                  { key: "abstract", label: "Abstract" },
                 ].map((field) => {
                   const yamlValue = ["en", "nl", "it", "de"]
                     .map((lang) => {
@@ -796,7 +630,7 @@ export default function CRMPage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">Preview Image</CardTitle>
-                <CardDescription>Upload a thumbnail/preview image for this {formMode === "research" ? "article" : "visualization"} (optional).</CardDescription>
+                <CardDescription>Upload a thumbnail/preview image for this article (optional).</CardDescription>
               </CardHeader>
               <CardContent>
                 {(formData.preview_image || formData.preview_image_url) ? (
@@ -860,57 +694,55 @@ export default function CRMPage() {
               </CardContent>
             </Card>
 
-            {/* PDF Upload - Research only */}
-            {formMode === "research" && (
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">PDF Attachment</CardTitle>
-                  <CardDescription>Upload a PDF version of the research article (optional).</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="border-2 border-dashed border-border rounded-lg p-8 text-center">
-                    <FileUp className="w-10 h-10 mx-auto text-muted-foreground mb-3" />
-                    <p className="text-sm text-muted-foreground mb-2">
-                      Drop a PDF file here, or click to browse
-                    </p>
-                    <label className="cursor-pointer">
-                      <Button variant="outline" size="sm" asChild>
-                        <span>
-                          <FileUp className="w-4 h-4 mr-2" />
-                          Choose PDF
-                        </span>
+            {/* PDF Upload */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-lg">PDF Attachment</CardTitle>
+                <CardDescription>Upload a PDF version of the research article (optional).</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="border-2 border-dashed border-border rounded-lg p-8 text-center">
+                  <FileUp className="w-10 h-10 mx-auto text-muted-foreground mb-3" />
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Drop a PDF file here, or click to browse
+                  </p>
+                  <label className="cursor-pointer">
+                    <Button variant="outline" size="sm" asChild>
+                      <span>
+                        <FileUp className="w-4 h-4 mr-2" />
+                        Choose PDF
+                      </span>
+                    </Button>
+                    <input
+                      type="file"
+                      className="hidden"
+                      accept=".pdf"
+                      onChange={(e) => {
+                        const file = e.target.files[0];
+                        if (file) {
+                          setFormData({ ...formData, pdf_file: file });
+                        }
+                      }}
+                    />
+                  </label>
+                  {formData.pdf_file && (
+                    <div className="mt-4 flex items-center justify-center gap-2 text-sm">
+                      <FileText className="w-4 h-4 text-primary" />
+                      <span className="text-foreground">{formData.pdf_file.name || formData.pdf_file}</span>
+                      <Button variant="ghost" size="sm" onClick={() => setFormData({ ...formData, pdf_file: null })}>
+                        Remove
                       </Button>
-                      <input
-                        type="file"
-                        className="hidden"
-                        accept=".pdf"
-                        onChange={(e) => {
-                          const file = e.target.files[0];
-                          if (file) {
-                            setFormData({ ...formData, pdf_file: file });
-                          }
-                        }}
-                      />
-                    </label>
-                    {formData.pdf_file && (
-                      <div className="mt-4 flex items-center justify-center gap-2 text-sm">
-                        <FileText className="w-4 h-4 text-primary" />
-                        <span className="text-foreground">{formData.pdf_file.name || formData.pdf_file}</span>
-                        <Button variant="ghost" size="sm" onClick={() => setFormData({ ...formData, pdf_file: null })}>
-                          Remove
-                        </Button>
-                      </div>
-                    )}
-                    {editingItem?.pdf_file && !formData.pdf_file && (
-                      <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                        <FileText className="w-4 h-4" />
-                        <span>Current PDF: {editingItem.pdf_file.split("/").pop()}</span>
-                      </div>
-                    )}
-                  </div>
-                </CardContent>
-              </Card>
-            )}
+                    </div>
+                  )}
+                  {editingItem?.pdf_file && !formData.pdf_file && (
+                    <div className="mt-4 flex items-center justify-center gap-2 text-sm text-muted-foreground">
+                      <FileText className="w-4 h-4" />
+                      <span>Current PDF: {editingItem.pdf_file.split("/").pop()}</span>
+                    </div>
+                  )}
+                </div>
+              </CardContent>
+            </Card>
 
             {/* Geodata Source */}
             <Card>
@@ -1035,7 +867,7 @@ export default function CRMPage() {
 
       <main className="max-w-7xl mx-auto px-4 md:px-6 py-8">
         {/* Stats Overview */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
           <Card>
             <CardContent className="p-6 flex items-center gap-4">
               <div className="w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center">
@@ -1049,33 +881,21 @@ export default function CRMPage() {
           </Card>
           <Card>
             <CardContent className="p-6 flex items-center gap-4">
-              <div className="w-12 h-12 rounded-lg bg-amber-500/10 flex items-center justify-center">
-                <Map className="w-6 h-6 text-amber-500" />
-              </div>
-              <div>
-                <p className="text-2xl font-bold">{visualizations.length}</p>
-                <p className="text-sm text-muted-foreground">Visualizations</p>
-              </div>
-            </CardContent>
-          </Card>
-          <Card>
-            <CardContent className="p-6 flex items-center gap-4">
               <div className="w-12 h-12 rounded-lg bg-purple-500/10 flex items-center justify-center">
                 <BarChart3 className="w-6 h-6 text-purple-500" />
               </div>
               <div>
-                <p className="text-2xl font-bold">{research.length + visualizations.length}</p>
+                <p className="text-2xl font-bold">{research.length}</p>
                 <p className="text-sm text-muted-foreground">Total Content</p>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        {/* Tabs for Research, Visualizations, and Translations */}
+        {/* Tabs for Research and Translations */}
         <Tabs defaultValue="research" className="space-y-6">
-          <TabsList className="grid w-full max-w-lg grid-cols-3">
+          <TabsList className="grid w-full max-w-lg grid-cols-2">
             <TabsTrigger value="research">Research</TabsTrigger>
-            <TabsTrigger value="visualizations">Visualizations</TabsTrigger>
             <TabsTrigger value="translations" onClick={() => { if (!siteTranslations) fetchSiteTranslations(); }}>
               <Languages className="w-4 h-4 mr-1.5" /> Translations
             </TabsTrigger>
@@ -1196,135 +1016,6 @@ export default function CRMPage() {
                                 rows={4}
                                 className="font-mono text-sm"
                                 placeholder={"en: Abstract in English\nnl: Abstract in Dutch\nit: Abstract in Italian\nde: Abstract in German"}
-                              />
-                            </div>
-                          </div>
-                        </div>
-                      )}
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            )}
-          </TabsContent>
-
-          {/* Visualizations Tab */}
-          <TabsContent value="visualizations" className="space-y-4">
-            <div className="flex items-center justify-between">
-              <h2 className="text-xl font-semibold">Visualizations</h2>
-              <div className="flex gap-2">
-                <Button variant="outline" size="sm" onClick={fetchVisualizations} className="bg-transparent">
-                  <RefreshCw className="w-4 h-4 mr-2" />
-                  Refresh
-                </Button>
-                <Button onClick={() => openVisualizationForm()} size="sm">
-                  <Plus className="w-4 h-4 mr-2" />
-                  Add Visualization
-                </Button>
-              </div>
-            </div>
-
-            {loadingVisualizations ? (
-              <div className="flex items-center justify-center py-12">
-                <Loader2 className="w-8 h-8 animate-spin text-primary" />
-              </div>
-            ) : visualizations.length === 0 ? (
-              <Card>
-                <CardContent className="p-12 text-center">
-                  <Map className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground">No visualizations yet</p>
-                  <Button onClick={() => openVisualizationForm()} className="mt-4">Add your first visualization</Button>
-                </CardContent>
-              </Card>
-            ) : (
-              <div className="grid gap-4">
-                {visualizations.map((item) => (
-                  <Card key={item.id} className="overflow-hidden">
-                    <CardContent className="p-4 md:p-6">
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        {item.preview_image && (
-                          <img src={item.preview_image} alt="" className="w-16 h-16 rounded-lg object-cover shrink-0 border border-border" />
-                        )}
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 mb-2">
-                            <Badge variant="secondary">{item.category}</Badge>
-                            <Badge variant={item.status === "published" ? "default" : "outline"} className="text-xs">{item.status}</Badge>
-                            {(item.geojson_data || item.geodataset_id) && (
-                              <Badge variant="outline" className="text-xs gap-1">
-                                <Map className="w-3 h-3" /> Map
-                              </Badge>
-                            )}
-                            {item.translations && (
-                              <Badge variant="outline" className="text-xs gap-1 border-yellow-500/30 text-yellow-600">
-                                <Languages className="w-3 h-3" /> Translated
-                              </Badge>
-                            )}
-                            <span className="text-xs text-muted-foreground flex items-center gap-1">
-                              <MapPin className="w-3 h-3" />{item.region}
-                            </span>
-                          </div>
-                          <h3 className="font-semibold text-foreground truncate">{item.title}</h3>
-                          <p className="text-sm text-muted-foreground mt-1 line-clamp-2">{item.description}</p>
-                          <div className="flex items-center gap-4 mt-2">
-                            {item.data_points && (
-                              <p className="text-xs text-muted-foreground flex items-center gap-1">
-                                <Database className="w-3 h-3" />{item.data_points}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                        <div className="flex items-center gap-2 shrink-0">
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => translatingItem?.item?.id === item.id ? setTranslatingItem(null) : openTranslation("visualization", item)}
-                            className={`bg-transparent ${translatingItem?.item?.id === item.id ? "border-yellow-500 text-yellow-600" : ""}`}
-                            title="Translations"
-                          >
-                            <Languages className="w-4 h-4" />
-                          </Button>
-                          <Button variant="outline" size="sm" onClick={() => openVisualizationForm(item)} className="bg-transparent">
-                            <Pencil className="w-4 h-4" />
-                          </Button>
-                          <Button variant="outline" size="sm" onClick={() => handleDelete("visualization", item)} className="bg-transparent text-destructive hover:text-destructive">
-                            <Trash2 className="w-4 h-4" />
-                          </Button>
-                        </div>
-                      </div>
-                      {/* Inline translation panel */}
-                      {translatingItem?.type === "visualization" && translatingItem?.item?.id === item.id && (
-                        <div className="mt-4 pt-4 border-t border-border space-y-4">
-                          <div className="flex items-center justify-between">
-                            <h4 className="text-sm font-semibold flex items-center gap-2">
-                              <Languages className="w-4 h-4 text-yellow-500" /> Translations (YAML)
-                            </h4>
-                            <div className="flex items-center gap-2">
-                              <Button variant="ghost" size="sm" onClick={() => setTranslatingItem(null)}>Cancel</Button>
-                              <Button size="sm" onClick={saveTranslation} disabled={savingTranslation}>
-                                {savingTranslation ? <Loader2 className="w-4 h-4 mr-2 animate-spin" /> : <Save className="w-4 h-4 mr-2" />}
-                                Save
-                              </Button>
-                            </div>
-                          </div>
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div className="space-y-1.5">
-                              <Label className="text-xs font-medium text-muted-foreground">Title</Label>
-                              <Textarea
-                                value={toYaml("title")}
-                                onChange={(e) => setTranslationData((prev) => ({ ...prev, ...parseYaml(e.target.value, "title") }))}
-                                rows={4}
-                                className="font-mono text-sm"
-                                placeholder={"en: Title in English\nnl: Title in Dutch\nit: Title in Italian\nde: Title in German"}
-                              />
-                            </div>
-                            <div className="space-y-1.5">
-                              <Label className="text-xs font-medium text-muted-foreground">Description</Label>
-                              <Textarea
-                                value={toYaml("description")}
-                                onChange={(e) => setTranslationData((prev) => ({ ...prev, ...parseYaml(e.target.value, "description") }))}
-                                rows={4}
-                                className="font-mono text-sm"
-                                placeholder={"en: Description in English\nnl: Description in Dutch\nit: Description in Italian\nde: Description in German"}
                               />
                             </div>
                           </div>

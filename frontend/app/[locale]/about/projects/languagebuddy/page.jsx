@@ -1,5 +1,3 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import { LanguageBuddyContent } from "@/components/project-languagebuddy";
 
 export const metadata = {
@@ -10,10 +8,8 @@ export const metadata = {
 
 export default function LanguageBuddyPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <LanguageBuddyContent />
-      <Footer />
     </main>
   );
 }

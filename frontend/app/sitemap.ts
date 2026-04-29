@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ianronk.com'
-  const locales = ['en', 'nl', 'it']
+  const locales = ['en', 'nl', 'it', 'de']
 
-  const staticPages = ['', '/research', '/visualizations', '/contact', '/privacy-policy', '/terms-of-service', '/cookie-policy']
+  const staticPages = ['', '/about', '/research', '/thoughts', '/contact', '/privacy-policy', '/terms-of-service', '/cookie-policy']
 
   const staticEntries: MetadataRoute.Sitemap = staticPages.flatMap((page) =>
     locales.map((locale) => ({
@@ -15,10 +15,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }))
   )
 
-  // Fetch research articles for dynamic sitemap entries
+  const djangoUrl = process.env.DJANGO_API_URL || 'http://backend:8001'
+
   let researchEntries: MetadataRoute.Sitemap = []
   try {
-    const djangoUrl = process.env.DJANGO_API_URL || 'http://backend:8001'
     const res = await fetch(`${djangoUrl}/api/research/`, { next: { revalidate: 3600 } })
     if (res.ok) {
       const articles = await res.json()
@@ -35,17 +35,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Backend might not be available during build
   }
 
-  // Fetch visualizations
-  let vizEntries: MetadataRoute.Sitemap = []
+  let blogEntries: MetadataRoute.Sitemap = []
   try {
-    const djangoUrl = process.env.DJANGO_API_URL || 'http://backend:8001'
-    const res = await fetch(`${djangoUrl}/api/research/visualizations/`, { next: { revalidate: 3600 } })
+    const res = await fetch(`${djangoUrl}/api/blog/`, { next: { revalidate: 3600 } })
     if (res.ok) {
-      const vizs = await res.json()
-      vizEntries = (vizs || []).flatMap((viz: any) =>
+      const posts = await res.json()
+      const list = Array.isArray(posts) ? posts : posts.results || []
+      blogEntries = list.flatMap((post: any) =>
         locales.map((locale) => ({
-          url: `${siteUrl}/${locale}/visualizations/${viz.slug}`,
-          lastModified: viz.updated_at ? new Date(viz.updated_at) : new Date(),
+          url: `${siteUrl}/${locale}/thoughts/${post.slug}`,
+          lastModified: post.updated_at ? new Date(post.updated_at) : new Date(),
           changeFrequency: 'monthly' as const,
           priority: 0.7,
         }))
@@ -55,5 +54,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Backend might not be available during build
   }
 
-  return [...staticEntries, ...researchEntries, ...vizEntries]
+  return [...staticEntries, ...researchEntries, ...blogEntries]
 }

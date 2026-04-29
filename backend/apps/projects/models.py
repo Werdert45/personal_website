@@ -17,10 +17,9 @@ class Project(models.Model):
     ]
 
     CATEGORY_CHOICES = [
-        ("web", "Web Development"),
-        ("data", "Data Analysis"),
-        ("gis", "GIS/Mapping"),
-        ("ml", "Machine Learning"),
+        ("webapp", "Web App"),
+        ("simulation", "Simulation"),
+        ("tool", "Tool"),
         ("other", "Other"),
     ]
 

@@ -2,23 +2,30 @@
   "Navigation": {
     "home": "Home",
     "about": "Over Mij",
-    "visualizations": "Visualisaties",
+    "visualizations": "Gedachten",
     "research": "Onderzoek",
     "contact": "Contact",
-    "brand": "Ian Ronk"
+    "work": "Samenwerken",
+    "brand": "Ian Ronk",
+    "letsTalk": "Even praten",
+    "menu": "Menu"
   },
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data @ KR&A",
-    "title": "Geodata Engineer & ",
-    "titleHighlight": "Vastgoed",
-    "titleEnd": " Data Scientist",
-    "description": "Datagedreven inzichten leveren voor vastgoedinvesteringsbeslissingen in Europese markten. Gespecialiseerd in machine learning, geospatiale analyse en alternatieve dataoplossingen voor REITs en fondsen.",
-    "viewProjects": "Bekijk Projecten",
+    "title": "Geodata Engineering & ",
+    "titleHighlight": "AI/ML Automatisering",
+    "titleEnd": " voor ops-zware teams",
+    "description": "Ik ontwerp en lever productie-datasystemen en AI-automatiseringen — pipelines, modellen en interne tools die handmatig werk vervangen. Werk momenteel met teams in geospatial, verzekeringen, logistiek, publieke sector en vastgoed.",
+    "viewProjects": "Over mij",
     "getInTouch": "Neem Contact Op",
+    "workWithMe": "Neem contact op",
     "yearsExperience": "Jaar Ervaring",
     "marketsMapped": "Markten In Kaart",
     "geoProjects": "Geo Projecten Afgerond",
+    "statHoursLabel": "Uur / jr teruggewonnen",
+    "statOnboardingLabel": "Dagen · onboarding herontwerp",
+    "statSectorsLabel": "Sectoren in productie",
     "expertise": "Expertise:",
     "dataEngineering": "Data Engineering",
     "machineLearning": "Machine Learning"
@@ -26,7 +33,7 @@
   "About": {
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kerncompetenties",
-    "expertiseSubtitle": "Gespecialiseerde vaardigheden en technologieën voor enterprise-grade geospatiale oplossingen.",
+    "expertiseSubtitle": "Gespecialiseerde vaardigheden voor productie-datasystemen, AI-automatiseringen en geospatial pipelines — gebouwd om te verschepen en te blijven werken.",
     "educationBadge": "Opleiding",
     "experienceBadge": "Ervaring",
     "academicTitle": "Academische Prestaties",
@@ -35,22 +42,50 @@
     "academic": "Academisch",
     "educationSubtitle": "Sterke basis in AI, data science en business analytics van top Europese instellingen.",
     "experienceSubtitle": "4+ jaar datagedreven inzichten leveren voor vastgoedinvesteringen in Europese markten.",
+    "sectionKicker": "Over — wie, waar, hoe",
+    "heroTitleLine1a": "Head of",
+    "heroTitleLine1aItalic": "Data",
+    "heroTitleLine2": "Vastgoed",
+    "heroTitleLine2Underline": "AI",
+    "heroTitleLine3": "& Analytics.",
+    "lede1": "Gevestigd in Amsterdam leid ik data-initiatieven bij KR&A en lever ik AI-gedreven inzichten voor Europese vastgoedfondsen, REITs en institutionele beleggers. Met expertise in machine learning, geospatiale analyse en alternatieve data help ik complexe data om te zetten in investeringsbeslissingen.",
+    "lede2": "Mijn voorkeur: eigenzinnige interne tools verslaan grote platforms; een geteste pipeline verslaat een slimme; en een kaart moet een vraag beantwoorden, geen complexiteit opvoeren.",
+    "portraitCaption": "IAN · AMS · 2026",
+    "factRole": "Rol",
+    "factRoleValueHighlight": "Head of Data",
+    "factRoleValueRest": "· KR&A, Europa · FinTech",
+    "factBasis": "Basis",
+    "factBasisValue": "Amsterdam, Nederland · EU-breed actief",
+    "factExperience": "Ervaring",
+    "factExperienceValueHighlight": "4+ jaar",
+    "factExperienceValueRest": "in Vastgoed Data Science",
+    "factMarkets": "Markten",
+    "factMarketsValueHighlight": "15+",
+    "factMarketsValueRest": "Europese markten in kaart",
+    "factClients": "Klanten",
+    "factClientsValue": "REITs · fondsen · Eurostat · toonaangevende vastgoedbedrijven",
+    "factStack": "Stack",
+    "factStackValue": "Python · PostGIS · Airflow · Docker · PyTorch · React",
+    "journeyKicker": "Professioneel traject",
+    "journeyTitlePrefixItalic": "Vier",
+    "journeyTitleRest": "jaar datagedreven",
+    "journeyTitleLine2": "inzichten leveren.",
     "expertise": [
       {
-        "title": "Machine Learning",
-        "description": "Ontwikkelen van voorspellende modellen voor vastgoedwaardering, huurvoorspelling, overstromingsrisicobeoordeling (90%+ nauwkeurigheid) en marktvoorspelling met modellen zoals SAM, LVMs en Ensemble Methods."
+        "title": "Machine Learning & AI",
+        "description": "Productie-ML en AI — voorspellende modellen voor waardering, huur en overstromingsrisico (90%+ nauwkeurigheid), plus LLM-pipelines en tool-gebruikende AI-agents die onderzoek, classificatie en rapportage automatiseren."
       },
       {
-        "title": "Data Engineering en Systeemonderhoud",
-        "description": "Bouwen van robuuste datapipelines voor het verwerken van alternatieve databronnen voor Europese REITs, fondsen en institutionele beleggers, variërend van geodata tot ongestructureerde scrape-data, met een gedistribueerd en gedockeriseerd Airflow-systeem."
+        "title": "Data Engineering",
+        "description": "Robuuste datapipelines voor Europese REITs, fondsen en institutionele beleggers — geodata, alternatieve en ongestructureerde inputs op een gedistribueerde, gedockeriseerde Airflow-stack."
       },
       {
-        "title": "Geospatiale Analyse en Ruimtelijke Econometrie",
-        "description": "Geavanceerde ruimtelijke analyses inclusief agent-based modellering voor gentrificatievoorspelling, computer vision op straatniveau-beelden en ruimtelijk significante data science zoals downsampling, wat statistisch robuuste resultaten oplevert."
+        "title": "Geospatiale Analyse",
+        "description": "Geavanceerde ruimtelijke analyses — agent-based gentrificatiemodellering, computer vision op straatniveau en ruimtelijk bewuste data science (downsampling, significantietesten) die statistisch robuuste resultaten oplevert."
       },
       {
-        "title": "Scraping en Data Mining",
-        "description": "Verzamelen en extraheren van inzichten uit ongestructureerde data, met gebruik van geavanceerde tools zoals Captcha Solvers, Proxy Rotation en Selenium. Dit heb ik gedaan voor high-frequency scraping, meerjarige projecten met 20+ miljoen records."
+        "title": "Interne Processen",
+        "description": "De backend van een bedrijf — verkoopsystemen, CRM's en AI-gedreven automatiseringen die handmatig werk vervangen en meegroeien met het team."
       }
     ],
     "experience": [
@@ -102,6 +137,7 @@
     "backToAbout": "Terug naar Over Mij"
   },
   "Research": {
+    "loadingFallback": "Artikelen worden geladen — kom straks terug",
     "badge": "Publicaties",
     "title": "Onderzoek & Artikelen",
     "subtitle": "Diepgaande analyses, casestudies en technische gidsen over geospatiale technologieën en vastgoedanalytics.",
@@ -117,7 +153,24 @@
     "previewBadge": "Onderzoek & Blog",
     "previewTitle": "Laatste Onderzoek & Inzichten",
     "previewSubtitle": "Diepgaande analyses van geospatiale analyse, vastgoedtrends en technische innovaties.",
-    "viewAll": "Bekijk Alles"
+    "viewAll": "Bekijk Alles",
+    "listKicker": "Onderzoek — papers, preprints, methoden",
+    "listTitlePrefix": "Peer-reviewed",
+    "listTitleItalic": "papers",
+    "listTitleAmp": "& working",
+    "listTitleHighlight": "drafts",
+    "listSubtitle": "Academische output over vastgoedeconometrie, geospatiale methoden en alternatieve-datapipelines.",
+    "previewTitlePrefix": "Geselecteerde",
+    "previewTitleItalic": "papers",
+    "previewSubtitleShort": "Recente output over vastgoedeconometrie en geospatiale methoden.",
+    "loadingArticle": "Artikel laden...",
+    "backToResearch": "Terug naar Onderzoek",
+    "articleNotFound": "Artikel niet gevonden",
+    "articleNotFoundBody": "Het gevraagde onderzoeksartikel bestaat niet.",
+    "browseAll": "Bekijk alle artikelen",
+    "byAuthor": "door",
+    "youMightAlsoLike": "Misschien vind je dit ook leuk",
+    "readArticle": "Lees artikel"
   },
   "Contact": {
     "aboutBadge": "Over Mij",
@@ -151,7 +204,17 @@
     "errorSpam": "Uw bericht is als mogelijke spam gemarkeerd. Probeer het opnieuw.",
     "errorShort": "Voer een langer bericht in (minimaal 10 tekens)",
     "errorCaptcha": "Voltooi de captcha-verificatie",
-    "errorGeneric": "Fout bij het verzenden van het bericht. Probeer het opnieuw."
+    "errorGeneric": "Fout bij het verzenden van het bericht. Probeer het opnieuw.",
+    "sectionKicker": "Contact — briefings, introducties, vragen",
+    "letsTalkPrefix": "Even",
+    "letsTalkItalic": "praten",
+    "formHeadRef": "REF",
+    "bandLine1": "Laten we samen",
+    "bandLine2Italic": "iets",
+    "bandLine3": "bouwen.",
+    "linkLinkedIn": "LinkedIn",
+    "linkGitHub": "GitHub",
+    "linkBookCall": "Plan een gesprek"
   },
   "Projects": {
     "badge": "Visualisaties",
@@ -165,13 +228,188 @@
     "crmLogin": "CRM",
     "privacyPolicy": "Privacybeleid",
     "termsOfService": "Servicevoorwaarden",
-    "cookiePolicy": "Cookiebeleid"
+    "cookiePolicy": "Cookiebeleid",
+    "work": "Samenwerken"
   },
   "Common": {
     "language": "Taal",
     "english": "Engels",
     "dutch": "Nederlands",
     "italian": "Italiaans",
-    "german": "Duits"
+    "german": "Duits",
+    "loading": "Laden…"
+  },
+  "Thoughts": {
+    "loadingFallback": "Berichten worden geladen — kom straks terug",
+    "kicker": "Gedachten — essays, updates, notities",
+    "recentTitle": "Recent",
+    "recentItalic": "gedachten",
+    "subtitle": "Korte stukjes over tools, pipelines, ruimtelijke methodes en af en toe een tirade.",
+    "loading": "Laden…",
+    "featuredKicker": "Uitgelicht ·",
+    "readPiece": "Lees het stuk →",
+    "readShort": "Lees →",
+    "viewAll": "Bekijk alles →",
+    "backToList": "← Terug naar gedachten",
+    "notFoundTitle": "Bericht niet",
+    "notFoundItalic": "gevonden",
+    "notFoundBody": "is nog niet gepubliceerd.",
+    "notFoundBodyPrefix": "Het bericht op",
+    "bylinePrefix": "Geschreven door",
+    "bylineSuffix": "· Amsterdam",
+    "minRead": "min lezen",
+    "writingTeaserKicker": "Blog — recente berichten",
+    "writingTeaserSubtitle": "Essays, tutorials en veldnotities.",
+    "endCtaKicker": "§ Meer",
+    "endCtaTitle": "Meer schrijfsels op de",
+    "endCtaTitleItalic": "blog.",
+    "endCtaBody": "Browse andere essays over geodata, AI/ML en operations — of lees meer over wie er achter de schrijfsels zit.",
+    "endCtaButton": "Meer schrijfsels",
+    "endCtaSecondary": "Over mij"
+  },
+  "SkillsGrid": {
+    "kicker": "Expertise — vier kerncompetenties",
+    "titleItalic": "Kern-",
+    "titleRest": "competenties."
+  },
+  "AboutTeaser": {
+    "kicker": "Over mij — wie er achter het werk zit",
+    "titleLine1": "Hoi, ik ben",
+    "titleLine1Italic": "Ian.",
+    "titleLine2": "Ik bouw productie-",
+    "titleLine2Underline": "systemen.",
+    "bio1": "Head of Data bij KR&A in Amsterdam, waar ik AI-initiatieven leid voor Europese vastgoed-, klimaat- en alt-dataklanten. MSc in Data Science & Business Analytics aan Bocconi; BSc in Kunstmatige Intelligentie aan de Universiteit van Amsterdam.",
+    "bio2": "Ik werk op het snijvlak van geospatial analytics, AI/ML en de saaie data-infrastructuur die ze bruikbaar maakt. Op deze site verzamel ik dingen waar ik aan denk, aan bouw of die ik heb gepubliceerd.",
+    "factRoleK": "Rol",
+    "factRoleV": "Head of Data · KR&A",
+    "factBasisK": "Standplaats",
+    "factBasisV": "Amsterdam · werkend EU-breed",
+    "factEduK": "Opleiding",
+    "factEduV": "MSc Bocconi · BSc AI Amsterdam",
+    "factStackK": "Stack",
+    "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
+    "portraitCaption": "IAN · AMS · 2026",
+    "cta": "Lees de volledige bio"
+  },
+  "Sectors": {
+    "kicker": "Domeinen — waar ik me thuis voel",
+    "titlePrefix": "Waar ik",
+    "titleItalic": "meestal",
+    "titleSuffix": "werk.",
+    "subtitle": "Domeinen waar ik tijd in heb gestoken — academisch, professioneel of beide. Elk domein heeft zijn eigen data-eigenaardigheden en zijn eigen idee van \"goed genoeg.\"",
+    "items": [
+      { "name": "Geospatial Analytics", "blurb": "Spatial pipelines, H3-indexing, perceelmodellen, alt-data ingestion." },
+      { "name": "Verzekeringen & Klimaatrisico", "blurb": "Exposure modelling, overstromings- en CV-pipelines, claims-triage automatisering." },
+      { "name": "Logistiek & Mobiliteit", "blurb": "Routing, depot-locatie, last-mile, ops-dashboards die tien handmatige rapporten vervangen." },
+      { "name": "Publieke Sector & Planning", "blurb": "Mobiliteit, klimaatadaptatie, infrastructuur-resilience, perceelanalyse." },
+      { "name": "Vastgoed & Investeringen", "blurb": "Waardering, gentrificatie-ABMs, alt-data voor REITs, fondsen en assetmanagers." }
+    ]
+  },
+  "Projects": {
+    "kicker": "Geselecteerd werk — onderzoek, scripties, eigen projecten",
+    "titlePrefix": "Geselecteerd",
+    "titleItalic": "werk.",
+    "subtitle": "Dingen die ik heb gebouwd of bestudeerd — aan de universiteit, in onderzoek en in mijn eigen tijd. Geen portfolio van klantopdrachten; een portfolio van denken.",
+    "items": [
+      {
+        "image": "",
+        "viz": "abm",
+        "sector": "MSc Scriptie · Bocconi",
+        "title": "Gentrificatie agent-based model",
+        "outcome": "Tienjarige simulatie van wijkverandering in Europese steden, gekalibreerd op Kadaster- en CBS-microdata.",
+        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
+        "link": "/research/gentrification-abm"
+      },
+      {
+        "image": "/projects/flood-paths.png",
+        "viz": "image",
+        "sector": "BSc Scriptie · UvA",
+        "title": "Overstromingsrisico op perceelniveau",
+        "outcome": "Supervised classificatie op LiDAR- en neerslagradar-features op perceelniveau — uitgewerkt als bachelor-scriptie.",
+        "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
+        "link": ""
+      },
+      {
+        "image": "/projects/rent-markers.png",
+        "viz": "image",
+        "sector": "Onderzoek · Geospatial",
+        "title": "Hedonisch huurmodel · 15 EU-metro's",
+        "outcome": "Hedonische huurbenchmarks op perceelniveau, gebouwd op PostGIS en gradient boosting in Europese metropolen.",
+        "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
+        "link": "/research/rent-prediction-hedonic"
+      },
+      {
+        "image": "",
+        "viz": "pipeline",
+        "sector": "Eigen project · Persoonlijk",
+        "title": "LanguageBuddy",
+        "outcome": "Een kleine app voor conversatie-taaloefening: LLM-correctie, spaced repetition en een habit-vriendelijke UI.",
+        "stack": ["FastAPI", "Postgres", "LLMs", "React"],
+        "link": "/about/projects/languagebuddy"
+      },
+      {
+        "image": "",
+        "viz": "intake",
+        "sector": "Onderzoek · Computer Vision",
+        "title": "Gevel- & handelssignalen uit street-view",
+        "outcome": "CNN-extractie van gevel- en handelskenmerken uit ~4M street-view frames in zes EU-steden.",
+        "stack": ["PyTorch", "OpenCV", "GeoPandas", "Postgres"],
+        "link": "/research/street-view-cv"
+      }
+    ],
+    "viewCase": "Lees meer",
+    "viewPaper": "Bekijk paper",
+    "ctaAll": "Bekijk alles"
+  },
+  "Proof": {
+    "kicker": "Bewijs — uitkomsten die zijn gerealiseerd",
+    "titlePrefix": "Wat we hebben",
+    "titleItalic": "gebouwd",
+    "titleSuffix": "en wat is gebleven.",
+    "quote": "Ian leverde precies wat hij beloofde, in de tijd die hij beloofde.",
+    "quoteAttribution": "COO, gereguleerde dienstverlening",
+    "outcomes": [
+      { "value": "2.500+", "unit": "uur / jr teruggewonnen", "context": "Deal-screening tool · 6 weken" },
+      { "value": "11 → 3", "unit": "dagen · onboarding", "context": "Compliance-intake herbouw · 8 weken" },
+      { "value": "18", "unit": "uur / wk besparing geïdentificeerd", "context": "Automatiserings-audit · 2 weken" }
+    ],
+    "ctaPrimary": "Bekijk hoe we samenwerken",
+    "ctaSecondary": "Plan een gesprek van 20 min"
+  },
+  "Consent": {
+    "dialogLabel": "Cookie-toestemming",
+    "title": "Privacyvoorkeuren",
+    "body": "Ik gebruik cookies om sitegebruik te begrijpen en (met jouw toestemming) voor retargeting. Voorkeuren zijn op elk moment via de footer aan te passen.",
+    "policyLink": "Lees het cookiebeleid",
+    "acceptAll": "Alles accepteren",
+    "rejectAll": "Alles weigeren",
+    "customize": "Aanpassen",
+    "hidePrefs": "Voorkeuren verbergen",
+    "savePrefs": "Voorkeuren opslaan",
+    "tierAnalytics": "Analytics",
+    "tierAnalyticsDetail": "Google Analytics, Microsoft Clarity. Paginaweergaven, gedrag, heatmaps.",
+    "tierMarketing": "Marketing",
+    "tierMarketingDetail": "LinkedIn Insight Tag. Geaggregeerde demografie, retargeting.",
+    "cookiePreferences": "Cookievoorkeuren",
+    "accept": "Accepteren",
+    "decline": "Weigeren"
+  },
+  "Share": {
+    "label": "Delen",
+    "linkedin": "LinkedIn",
+    "twitter": "X / Twitter",
+    "copy": "Link kopiëren",
+    "copied": "Gekopieerd"
+  },
+  "Newsletter": {
+    "compactHeading": "Blijf op de hoogte",
+    "compactDescription": "Af en toe een notitie over geospatial, ML en AI.",
+    "inlineHeading": "Krijg de volgende in je inbox",
+    "inlineDescription": "Abonneer — geen spam, je kunt je altijd uitschrijven.",
+    "emailPlaceholder": "jij@domein.com",
+    "submit": "Abonneer",
+    "success": "Dank je — we nemen contact op.",
+    "error": "Er ging iets mis. Probeer opnieuw of mail rechtstreeks.",
+    "privacy": "Je adres wordt niet gedeeld."
   }
 }

@@ -1,6 +1,5 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 import ResearchArticleDetail from "@/components/research-article-detail";
+import { ArticleJsonLd } from "@/components/json-ld";
 
 export async function generateMetadata({ params }) {
   const { slug, locale } = await params;
@@ -51,6 +50,7 @@ export async function generateMetadata({ params }) {
         en: `${siteUrl}/en/research/${slug}`,
         nl: `${siteUrl}/nl/research/${slug}`,
         it: `${siteUrl}/it/research/${slug}`,
+        de: `${siteUrl}/de/research/${slug}`,
       },
     },
     openGraph: {
@@ -70,13 +70,50 @@ export async function generateMetadata({ params }) {
   };
 }
 
+async function fetchArticleForJsonLd(slug) {
+  try {
+    const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
+    const res = await fetch(`${djangoUrl}/api/research/${slug}/`, {
+      next: { revalidate: 3600 },
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch {
+    return null;
+  }
+}
+
 export default async function ResearchArticlePage({ params }) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  const article = await fetchArticleForJsonLd(slug);
+
+  let jsonLdProps = { slug, locale };
+  if (article) {
+    const translation = (article.translations || []).find(
+      (t) => t.language === locale,
+    );
+    const availableLocales = [
+      "en",
+      ...(article.translations || [])
+        .map((t) => t.language)
+        .filter((l) => l !== "en"),
+    ];
+    jsonLdProps = {
+      slug,
+      locale,
+      title: translation?.title || article.title,
+      description: translation?.abstract || article.abstract,
+      datePublished: article.date,
+      dateModified: article.updated_at,
+      image: article.preview_image,
+      availableLocales,
+    };
+  }
+
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
+      <ArticleJsonLd {...jsonLdProps} />
       <ResearchArticleDetail slug={slug} />
-      <Footer />
     </main>
   );
 }

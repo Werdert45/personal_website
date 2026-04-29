@@ -4,15 +4,8 @@ import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { Menu, X, Globe } from "lucide-react";
-import { Logo } from "@/components/logo";
+import { Menu, X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const localeLabels = {
   en: { label: "EN", flag: "🇬🇧" },
@@ -22,7 +15,6 @@ const localeLabels = {
 };
 
 export function Navigation() {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   let t, locale, pathname, router;
@@ -32,9 +24,8 @@ export function Navigation() {
     pathname = usePathname();
     router = useRouter();
   } catch {
-    // Fallback for pages outside locale context (admin, login, etc.)
     t = (key) => {
-      const fallback = { home: "Home", about: "About", visualizations: "Visualizations", research: "Research", contact: "Contact", brand: "Ian Ronk" };
+      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", work: "Work with me", brand: "Ian Ronk", letsTalk: "Let's talk", menu: "Menu" };
       return fallback[key] || key;
     };
     locale = "en";
@@ -42,127 +33,211 @@ export function Navigation() {
     router = null;
   }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const navLinks = [
-    { href: `/${locale}`, label: t("home") },
-    { href: `/${locale}/about`, label: t("about") },
-    { href: `/${locale}/visualizations`, label: t("visualizations") },
-    { href: `/${locale}/research`, label: t("research") },
-    { href: `/${locale}/contact`, label: t("contact") },
+    { href: `/${locale}`, label: t("home"), idx: "01", routeKey: "/" },
+    { href: `/${locale}/about`, label: t("about"), idx: "02", routeKey: "/about" },
+    { href: `/${locale}/thoughts`, label: t("visualizations"), idx: "03", routeKey: "/thoughts" },
+    { href: `/${locale}/research`, label: t("research"), idx: "04", routeKey: "/research" },
+    { href: `/${locale}/contact`, label: t("contact"), idx: "05", routeKey: "/contact" },
   ];
 
+  const activeKey = (() => {
+    if (!pathname) return "/";
+    const stripped = pathname.replace(new RegExp(`^/(${Object.keys(localeLabels).join("|")})`), "") || "/";
+    const match = navLinks.find((l) => (l.routeKey === "/" ? stripped === "/" : stripped.startsWith(l.routeKey)));
+    return match ? match.routeKey : "/";
+  })();
+
   const switchLocale = (newLocale) => {
-    // Replace the current locale prefix in the pathname
     const pathWithoutLocale = pathname.replace(/^\/(en|nl|it|de)/, "") || "/";
     window.location.href = `/${newLocale}${pathWithoutLocale}`;
   };
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? "bg-card/95 backdrop-blur-md border-b border-border shadow-sm"
-          : "bg-transparent"
-      }`}
+    <nav
+      className="site-nav fixed top-0 left-0 right-0 z-50 flex items-center justify-between"
+      style={{
+        height: 72,
+        background: "linear-gradient(var(--paper) 70%, transparent)",
+      }}
     >
-      <nav className="max-w-7xl mx-auto px-4 md:px-6 py-4">
-        <div className="flex items-center justify-between">
-          <Link href={`/${locale}`} className="flex items-center group">
-            <Logo className="h-7 md:h-9 w-auto text-foreground group-hover:opacity-80 transition-opacity" />
-          </Link>
+      <Link href={`/${locale}`} className="flex items-center gap-[14px]" style={{ fontFamily: "var(--font-serif)", fontSize: 28, letterSpacing: "-0.01em" }}>
+        <span
+          aria-hidden
+          style={{
+            width: 10,
+            height: 10,
+            background: "var(--yellow)",
+            borderRadius: "50%",
+            boxShadow: "0 0 0 4px var(--yellow-soft)",
+          }}
+        />
+        <span>Ian <i style={{ fontStyle: "italic" }}>Ronk</i></span>
+      </Link>
 
-          <div className="hidden md:flex items-center gap-8">
+      <div className="hidden md:flex items-center" style={{ gap: 2 }}>
+        {navLinks.map((link) => {
+          const active = activeKey === link.routeKey;
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="nv"
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 12,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                padding: "10px 14px",
+                borderRadius: 2,
+                background: active ? "var(--ink)" : "transparent",
+                color: active ? "var(--yellow)" : "var(--ink)",
+                transition: "background .15s, color .15s",
+              }}
+              onMouseEnter={(e) => {
+                if (!active) {
+                  e.currentTarget.style.background = "var(--ink)";
+                  e.currentTarget.style.color = "var(--paper)";
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!active) {
+                  e.currentTarget.style.background = "transparent";
+                  e.currentTarget.style.color = "var(--ink)";
+                }
+              }}
+            >
+              <span style={{ color: active ? "#8A8676" : "var(--mute)", marginRight: 8 }}>{link.idx}</span>
+              <span>{link.label}</span>
+            </Link>
+          );
+        })}
+
+        <div
+          className="ml-3"
+          style={{
+            display: "flex",
+            border: "1px solid var(--ink)",
+            borderRadius: 2,
+            overflow: "hidden",
+            fontFamily: "var(--font-mono)",
+            fontSize: 11,
+            letterSpacing: "0.1em",
+          }}
+        >
+          {Object.entries(localeLabels).map(([key, { label, flag }]) => (
+            <button
+              key={key}
+              onClick={() => switchLocale(key)}
+              style={{
+                padding: "8px 10px",
+                background: locale === key ? "var(--ink)" : "var(--paper)",
+                border: "none",
+                color: locale === key ? "var(--yellow)" : "var(--ink)",
+              }}
+            >
+              {flag} {label}
+            </button>
+          ))}
+        </div>
+
+        <Link
+          href={`/${locale}/contact`}
+          onClick={() => trackEvent("cta_click", { cta: "lets_talk", location: "nav", source: "nav_primary" })}
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: 12,
+            textTransform: "uppercase",
+            letterSpacing: "0.08em",
+            padding: "10px 14px",
+            border: "1px solid var(--ink)",
+            background: "transparent",
+            color: "var(--ink)",
+            borderRadius: 2,
+            marginLeft: 10,
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = "var(--ink)";
+            e.currentTarget.style.color = "var(--paper)";
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = "transparent";
+            e.currentTarget.style.color = "var(--ink)";
+          }}
+        >
+          {t("letsTalk")}
+        </Link>
+      </div>
+
+      {/* Mobile */}
+      <div className="md:hidden flex items-center gap-2">
+        <button
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label={t("menu")}
+          style={{
+            width: 40, height: 40,
+            border: "1px solid var(--ink)",
+            background: "var(--paper)",
+            display: "flex", alignItems: "center", justifyContent: "center",
+          }}
+        >
+          {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+        </button>
+      </div>
+
+      {isMobileMenuOpen && (
+        <div
+          className="md:hidden"
+          style={{
+            position: "absolute",
+            top: 72, left: 0, right: 0,
+            background: "var(--paper)",
+            borderTop: "1px solid var(--ink)",
+            borderBottom: "1px solid var(--ink)",
+            padding: "16px 24px",
+          }}
+        >
+          <div className="flex flex-col">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm md:text-base text-muted-foreground hover:text-foreground transition-colors font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 13,
+                  textTransform: "uppercase",
+                  letterSpacing: "0.1em",
+                  padding: "14px 0",
+                  borderBottom: "1px solid var(--rule)",
+                }}
               >
+                <span style={{ color: "var(--mute)", marginRight: 12 }}>{link.idx}</span>
                 {link.label}
               </Link>
             ))}
-
-            {/* Language Switcher */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="sm" className="gap-1.5 text-muted-foreground">
-                  <Globe className="w-4 h-4" />
-                  {localeLabels[locale]?.flag} {localeLabels[locale]?.label}
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                {Object.entries(localeLabels).map(([key, { label, flag }]) => (
-                  <DropdownMenuItem
-                    key={key}
-                    onClick={() => switchLocale(key)}
-                    className={locale === key ? "bg-accent" : ""}
-                  >
-                    {flag} {label}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-          </div>
-
-          <div className="flex items-center gap-2 md:hidden">
-            {/* Mobile Language Switcher */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" size="icon" className="text-muted-foreground">
-                  <Globe className="w-4 h-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="end">
-                {Object.entries(localeLabels).map(([key, { label, flag }]) => (
-                  <DropdownMenuItem
-                    key={key}
-                    onClick={() => switchLocale(key)}
-                    className={locale === key ? "bg-accent" : ""}
-                  >
-                    {flag} {label}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
-
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="w-5 h-5" />
-              ) : (
-                <Menu className="w-5 h-5" />
-              )}
-            </Button>
-          </div>
-        </div>
-
-        {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
-            <div className="flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors font-medium py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}
+            <div className="flex gap-2 pt-4">
+              {Object.entries(localeLabels).map(([key, { label, flag }]) => (
+                <button
+                  key={key}
+                  onClick={() => switchLocale(key)}
+                  style={{
+                    padding: "8px 12px",
+                    border: "1px solid var(--ink)",
+                    background: locale === key ? "var(--ink)" : "var(--paper)",
+                    color: locale === key ? "var(--yellow)" : "var(--ink)",
+                    fontFamily: "var(--font-mono)",
+                    fontSize: 11,
+                    letterSpacing: "0.1em",
+                  }}
                 >
-                  {link.label}
-                </Link>
+                  {flag} {label}
+                </button>
               ))}
             </div>
           </div>
-        )}
-      </nav>
-    </header>
+        </div>
+      )}
+    </nav>
   );
 }

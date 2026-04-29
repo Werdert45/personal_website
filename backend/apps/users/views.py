@@ -2,7 +2,6 @@
 Views for user authentication and management.
 """
 
-import secrets
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
@@ -12,7 +11,6 @@ from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework_simplejwt.views import TokenObtainPairView
 
 from .models import NewsletterSubscriber, validate_serious_email
 from .serializers import (
@@ -138,12 +136,14 @@ class MapboxTokenView(APIView):
 
 
 class NewsletterSubscribeView(APIView):
-    """Subscribe to newsletter to gain map access."""
+    """Subscribe to the public newsletter."""
 
     permission_classes = [AllowAny]
 
     def post(self, request):
         email = request.data.get("email", "").lower().strip()
+        locale = request.data.get("locale", "en")
+        source = request.data.get("source", "other")
 
         # Validate email
         try:
@@ -154,51 +154,38 @@ class NewsletterSubscribeView(APIView):
                 status=status.HTTP_400_BAD_REQUEST,
             )
 
-        # Get client info for tracking
+        # Coerce to allowed choices; silently fall back if a bad client sends garbage
+        if locale not in dict(NewsletterSubscriber.LOCALE_CHOICES):
+            locale = "en"
+        if source not in dict(NewsletterSubscriber.SOURCE_CHOICES):
+            source = "other"
+
         ip_address = self.get_client_ip(request)
         user_agent = request.META.get("HTTP_USER_AGENT", "")[:500]
 
-        # Check if already subscribed
         subscriber = NewsletterSubscriber.objects.filter(email=email).first()
 
         if subscriber:
-            if subscriber.is_active:
-                # Already subscribed - generate new access token
-                subscriber.verification_token = secrets.token_urlsafe(32)
-                subscriber.save(update_fields=["verification_token"])
-                return Response({
-                    "message": "Welcome back! You already have access.",
-                    "access_token": subscriber.verification_token,
-                    "is_business_email": subscriber.is_business_email,
-                })
-            else:
-                # Reactivate subscription
+            if not subscriber.is_active:
                 subscriber.is_active = True
                 subscriber.unsubscribed_at = None
-                subscriber.verification_token = secrets.token_urlsafe(32)
-                subscriber.save()
-                return Response({
-                    "message": "Your subscription has been reactivated!",
-                    "access_token": subscriber.verification_token,
-                    "is_business_email": subscriber.is_business_email,
-                })
+                subscriber.save(update_fields=["is_active", "unsubscribed_at"])
+            # Existing subscriber: leave locale/source unchanged (preserve original signup context).
+            # Idempotent 200 — do not reveal existence.
+            return Response({"ok": True}, status=status.HTTP_200_OK)
 
-        # Create new subscriber
-        verification_token = secrets.token_urlsafe(32)
-        subscriber = NewsletterSubscriber.objects.create(
+        # New subscriber
+        NewsletterSubscriber.objects.create(
             email=email,
-            verification_token=verification_token,
+            locale=locale,
+            source=source,
             ip_address=ip_address,
             user_agent=user_agent,
-            is_verified=True,  # Auto-verify for now
+            is_verified=True,  # Auto-verify until double-opt-in is wired
             verified_at=timezone.now(),
         )
 
-        return Response({
-            "message": "Successfully subscribed! You now have access to all maps.",
-            "access_token": subscriber.verification_token,
-            "is_business_email": subscriber.is_business_email,
-        }, status=status.HTTP_201_CREATED)
+        return Response({"ok": True}, status=status.HTTP_201_CREATED)
 
     def get_client_ip(self, request):
         """Get client IP address from request."""
@@ -208,95 +195,23 @@ class NewsletterSubscribeView(APIView):
         return request.META.get("REMOTE_ADDR")
 
 
-class VerifyMapAccessView(APIView):
-    """Verify if a user has map access via their access token."""
+class ValidateEmailView(APIView):
+    """Public stateless email-quality check. No persistence side-effect.
+
+    Accepts {"email": "..."}. Returns 200 {"valid": true} on pass,
+    400 {"valid": false, "reason": "..."} on fail.
+    Used by the Next.js contact route to silently drop spam submissions.
+    """
 
     permission_classes = [AllowAny]
 
     def post(self, request):
-        access_token = request.data.get("access_token", "")
-        email = request.data.get("email", "").lower().strip()
-
-        if not access_token and not email:
+        email = (request.data.get("email") or "").lower().strip()
+        try:
+            validate_serious_email(email)
+            return Response({"valid": True})
+        except ValidationError as e:
             return Response(
-                {"error": "Access token or email required", "has_access": False},
+                {"valid": False, "reason": getattr(e, "message", str(e))},
                 status=status.HTTP_400_BAD_REQUEST,
             )
-
-        # Find subscriber by token or email
-        subscriber = None
-        if access_token:
-            subscriber = NewsletterSubscriber.objects.filter(
-                verification_token=access_token,
-                is_active=True
-            ).first()
-        elif email:
-            subscriber = NewsletterSubscriber.objects.filter(
-                email=email,
-                is_active=True
-            ).first()
-
-        if not subscriber:
-            return Response({
-                "has_access": False,
-                "error": "No active subscription found. Please subscribe to view maps."
-            })
-
-        # Check rate limiting
-        can_access, error_message = subscriber.can_access_map()
-        if not can_access:
-            return Response({
-                "has_access": False,
-                "error": error_message,
-                "rate_limited": True,
-            })
-
-        # Record access and return success
-        subscriber.record_map_access()
-
-        return Response({
-            "has_access": True,
-            "access_token": subscriber.verification_token,
-            "is_business_email": subscriber.is_business_email,
-            "access_count": subscriber.access_count,
-            "hourly_remaining": subscriber.get_hourly_remaining(),
-        })
-
-
-class CheckSubscriptionView(APIView):
-    """Check subscription status without recording access."""
-
-    permission_classes = [AllowAny]
-
-    def get(self, request):
-        email = request.query_params.get("email", "").lower().strip()
-        access_token = request.query_params.get("token", "")
-
-        if not email and not access_token:
-            return Response({
-                "subscribed": False,
-            })
-
-        subscriber = None
-        if access_token:
-            subscriber = NewsletterSubscriber.objects.filter(
-                verification_token=access_token,
-                is_active=True
-            ).first()
-        elif email:
-            subscriber = NewsletterSubscriber.objects.filter(
-                email=email,
-                is_active=True
-            ).first()
-
-        if subscriber:
-            return Response({
-                "subscribed": True,
-                "access_token": subscriber.verification_token,
-                "is_business_email": subscriber.is_business_email,
-                "hourly_remaining": subscriber.get_hourly_remaining(),
-            })
-
-        return Response({
-            "subscribed": False,
-        })

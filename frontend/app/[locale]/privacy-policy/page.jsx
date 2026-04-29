@@ -1,15 +1,29 @@
-import { Navigation } from "@/components/navigation";
-import { Footer } from "@/components/footer";
 
-export const metadata = {
-  title: "Privacy Policy",
-  description: "Privacy policy for Ian Ronk's website.",
-};
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const url = `${siteUrl}/${locale}/privacy-policy`;
+  return {
+    title: "Privacy Policy",
+    description:
+      "Privacy policy: GDPR-compliant handling of contact submissions, newsletter subscriptions, analytics consent, and visitor rights. No data sold or shared.",
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${siteUrl}/en/privacy-policy`,
+        nl: `${siteUrl}/nl/privacy-policy`,
+        it: `${siteUrl}/it/privacy-policy`,
+        de: `${siteUrl}/de/privacy-policy`,
+        "x-default": `${siteUrl}/en/privacy-policy`,
+      },
+    },
+    openGraph: { url, type: "website" },
+  };
+}
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navigation />
+    <main>
       <div className="max-w-3xl mx-auto px-4 md:px-6 py-24 md:py-32">
         <h1 className="text-3xl md:text-4xl font-bold mb-8">Privacy Policy</h1>
         <p className="text-sm text-muted-foreground mb-8">
@@ -181,7 +195,6 @@ export default function PrivacyPolicyPage() {
           </section>
         </div>
       </div>
-      <Footer />
     </main>
   );
 }
