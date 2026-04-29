@@ -59,7 +59,7 @@ export function WebSiteJsonLd() {
       "@type": "Person",
       name: "Ian Ronk",
     },
-    inLanguage: ["en", "nl", "it"],
+    inLanguage: ["en", "nl", "it", "de"],
   };
 
   return (
@@ -70,43 +70,86 @@ export function WebSiteJsonLd() {
   );
 }
 
-export function ArticleJsonLd({ title, description, slug, datePublished, dateModified, image }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+export function ArticleJsonLd({
+  title,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image,
+  locale = "en",
+  availableLocales = ["en"],
+}) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.com";
+  const url = `${siteUrl}/${locale}/research/${slug}`;
 
-  const jsonLd = {
+  const sameAs = availableLocales
+    .filter((l) => l !== locale)
+    .map((l) => `${siteUrl}/${l}/research/${slug}`);
+
+  const data = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: title,
-    description: description,
-    url: `${siteUrl}/en/research/${slug}`,
-    author: {
-      "@type": "Person",
-      name: "Ian Ronk",
-      url: siteUrl,
-    },
-    publisher: {
-      "@type": "Person",
-      name: "Ian Ronk",
-    },
+    description,
+    ...(image && { image }),
     ...(datePublished && { datePublished }),
-    ...(dateModified && { dateModified }),
-    ...(image && {
-      image: {
-        "@type": "ImageObject",
-        url: image,
-      },
-    }),
-    inLanguage: "en",
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `${siteUrl}/en/research/${slug}`,
-    },
+    dateModified: dateModified ?? datePublished,
+    author: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
+    publisher: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
+    inLanguage: locale,
+    isPartOf: { "@type": "WebSite", "@id": `${siteUrl}/${locale}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    ...(sameAs.length > 0 && { sameAs }),
   };
 
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function BlogPostingJsonLd({
+  title,
+  description,
+  slug,
+  datePublished,
+  dateModified,
+  image,
+  locale = "en",
+  availableLocales = ["en"],
+}) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.com";
+  const url = `${siteUrl}/${locale}/thoughts/${slug}`;
+
+  const sameAs = availableLocales
+    .filter((l) => l !== locale)
+    .map((l) => `${siteUrl}/${l}/thoughts/${slug}`);
+
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: title,
+    description,
+    ...(image && { image }),
+    ...(datePublished && { datePublished }),
+    dateModified: dateModified ?? datePublished,
+    author: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
+    publisher: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
+    inLanguage: locale,
+    isPartOf: { "@type": "Blog", "@id": `${siteUrl}/${locale}/thoughts` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    url,
+    ...(sameAs.length > 0 && { sameAs }),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
   );
 }

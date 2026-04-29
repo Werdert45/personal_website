@@ -26,6 +26,7 @@ export const metadata: Metadata = {
       'en': '/en',
       'nl': '/nl',
       'it': '/it',
+      'de': '/de',
     },
   },
   openGraph: {
@@ -35,12 +36,14 @@ export const metadata: Metadata = {
     siteName: 'Ian Ronk',
     title: 'Ian Ronk | Head of Data | Real Estate AI & Analytics',
     description: 'Head of Data delivering AI-powered insights for European real estate investment. Specializing in machine learning, geospatial analysis, and alternative data for REITs and funds.',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Ian Ronk — Geospatial · ML · AI' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Ian Ronk | Head of Data | Real Estate AI & Analytics',
     description: 'Head of Data delivering AI-powered insights for European real estate investment.',
     creator: '@ianronk',
+    images: ['/og.png'],
   },
   robots: {
     index: true,
