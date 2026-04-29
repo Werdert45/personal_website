@@ -10,6 +10,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Loader2, ArrowRight, Clock, FileText } from "lucide-react";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
 function getTranslated(article, field, locale) {
   if (locale === "en" || !article.translations) return article[field];
@@ -267,6 +268,10 @@ export default function ResearchArticleDetail({ slug }) {
             >
               {content}
             </ReactMarkdown>
+          </div>
+
+          <div className="newsletter-inline">
+            <NewsletterSubscribe variant="inline" source="research-end" locale={locale} />
           </div>
 
           {relatedArticles.length > 0 && (

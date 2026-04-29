@@ -1826,3 +1826,34 @@
   white-space: nowrap;
   border: 0;
 }
+
+/* Newsletter subscribe form */
+.newsletter-form { display: flex; flex-direction: column; gap: 8px; }
+.newsletter-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.newsletter-row input[type="email"] {
+  flex: 1 1 240px;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid var(--ink);
+  padding: 10px 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--ink);
+  outline: none;
+}
+.newsletter-compact-heading {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 4px;
+}
+.newsletter-form h3 {
+  font-family: var(--font-serif);
+  font-size: 28px;
+  margin: 0 0 8px;
+}
+.newsletter-success { color: var(--ink); font-style: italic; }
+.newsletter-error { color: #B33A3A; font-size: 13px; }
+.newsletter-inline { margin: 64px 0 24px; padding: 32px; background: var(--paper); border: 1px solid rgba(15,14,11,0.08); }

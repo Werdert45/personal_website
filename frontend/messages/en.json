@@ -387,5 +387,16 @@
     "twitter": "X / Twitter",
     "copy": "Copy link",
     "copied": "Copied"
+  },
+  "Newsletter": {
+    "compactHeading": "Stay in the loop",
+    "compactDescription": "Occasional notes on geospatial, ML, and AI work.",
+    "inlineHeading": "Get the next one in your inbox",
+    "inlineDescription": "Subscribe — no spam, unsubscribe anytime.",
+    "emailPlaceholder": "you@domain.com",
+    "submit": "Subscribe",
+    "success": "Thanks — we'll be in touch.",
+    "error": "Something went wrong. Try again or email directly.",
+    "privacy": "We won't share your address."
   }
 }

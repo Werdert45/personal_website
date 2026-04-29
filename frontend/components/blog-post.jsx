@@ -7,6 +7,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { ShareBar } from "@/components/share-bar";
 import { trackEvent } from "@/lib/analytics";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
 function getField(post, field, locale) {
   if (locale === "en") return post[field];
@@ -86,6 +87,10 @@ export function BlogPost({ slug }) {
       {excerpt && <p className="dek">{excerpt}</p>}
 
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+
+      <div className="newsletter-inline">
+        <NewsletterSubscribe variant="inline" source="post-end" locale={locale} />
+      </div>
 
       <ShareBar slug={slug} title={title} />
 

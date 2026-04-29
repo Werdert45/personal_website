@@ -387,5 +387,16 @@
     "twitter": "X / Twitter",
     "copy": "Link kopieren",
     "copied": "Kopiert"
+  },
+  "Newsletter": {
+    "compactHeading": "Bleib auf dem Laufenden",
+    "compactDescription": "Gelegentliche Notizen zu Geospatial, ML und AI.",
+    "inlineHeading": "Bekomm den nächsten in dein Postfach",
+    "inlineDescription": "Abonniere — kein Spam, jederzeit kündbar.",
+    "emailPlaceholder": "du@domain.com",
+    "submit": "Abonnieren",
+    "success": "Danke — wir melden uns.",
+    "error": "Etwas ist schiefgelaufen. Versuch es nochmal oder schreib direkt.",
+    "privacy": "Deine Adresse wird nicht weitergegeben."
   }
 }

@@ -3,6 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import ObfuscatedEmail from "@/components/obfuscated-email";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
 const CURRENT_YEAR = new Date().getFullYear();
 
@@ -28,6 +29,9 @@ export function Footer() {
 
   return (
     <footer className="site-footer">
+      <div style={{ marginBottom: 24, maxWidth: 480 }}>
+        <NewsletterSubscribe variant="compact" source="footer" locale={locale} />
+      </div>
       <span>© Ian Ronk {CURRENT_YEAR} — {t("copyright", { year: CURRENT_YEAR })}</span>
       <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
         <Link href={`/${locale}/privacy-policy`}>{t("privacyPolicy")}</Link>

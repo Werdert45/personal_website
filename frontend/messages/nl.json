@@ -387,5 +387,16 @@
     "twitter": "X / Twitter",
     "copy": "Link kopiëren",
     "copied": "Gekopieerd"
+  },
+  "Newsletter": {
+    "compactHeading": "Blijf op de hoogte",
+    "compactDescription": "Af en toe een notitie over geospatial, ML en AI.",
+    "inlineHeading": "Krijg de volgende in je inbox",
+    "inlineDescription": "Abonneer — geen spam, je kunt je altijd uitschrijven.",
+    "emailPlaceholder": "jij@domein.com",
+    "submit": "Abonneer",
+    "success": "Dank je — we nemen contact op.",
+    "error": "Er ging iets mis. Probeer opnieuw of mail rechtstreeks.",
+    "privacy": "Je adres wordt niet gedeeld."
   }
 }
