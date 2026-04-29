@@ -378,10 +378,21 @@
   },
   "Consent": {
     "dialogLabel": "Cookie consent",
-    "body": "I use cookies to measure traffic and improve the site. No personal data is sold or shared. You can decline and the site stays fully functional.",
+    "title": "Privacy preferences",
+    "body": "I use cookies to understand site usage and (with your consent) for retargeting. You can change preferences anytime from the footer.",
+    "policyLink": "Read the cookie policy",
+    "acceptAll": "Accept all",
+    "rejectAll": "Reject all",
+    "customize": "Customize",
+    "hidePrefs": "Hide preferences",
+    "savePrefs": "Save preferences",
+    "tierAnalytics": "Analytics",
+    "tierAnalyticsDetail": "Google Analytics, Microsoft Clarity. Pageviews, behavior, heatmaps.",
+    "tierMarketing": "Marketing",
+    "tierMarketingDetail": "LinkedIn Insight Tag. Aggregated audience demographics, retargeting.",
+    "cookiePreferences": "Cookie preferences",
     "accept": "Accept",
-    "decline": "Decline",
-    "policyLink": "Read the cookie policy"
+    "decline": "Decline"
   },
   "Share": {
     "label": "Share",

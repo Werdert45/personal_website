@@ -6,7 +6,9 @@ import { Footer } from "@/components/footer";
 import { PageFrame } from "@/components/page-frame";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { LinkedInInsight } from "@/components/analytics/linkedin-insight";
+import { Clarity } from "@/components/analytics/clarity";
 import { CookieConsent } from "@/components/analytics/cookie-consent";
+import { ConsentProvider } from "@/components/consent-provider";
 
 export default async function LocaleLayout({
   children,
@@ -30,14 +32,17 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider locale={locale} messages={messages}>
-      <PageFrame>
-        <Navigation />
-        {children}
-        <Footer />
-      </PageFrame>
-      <GoogleAnalytics />
-      <LinkedInInsight />
-      <CookieConsent />
+      <ConsentProvider>
+        <PageFrame>
+          <Navigation />
+          {children}
+          <Footer />
+        </PageFrame>
+        <GoogleAnalytics />
+        <Clarity />
+        <LinkedInInsight />
+        <CookieConsent />
+      </ConsentProvider>
     </NextIntlClientProvider>
   );
 }

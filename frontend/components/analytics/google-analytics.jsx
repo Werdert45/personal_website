@@ -3,7 +3,7 @@
 import Script from "next/script";
 import { useEffect, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { getConsent } from "@/lib/analytics";
+import { getConsent, subscribeConsent } from "@/lib/analytics";
 
 const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
@@ -13,14 +13,9 @@ export function GoogleAnalytics() {
   const searchParams = useSearchParams();
 
   useEffect(() => {
-    const sync = () => setEnabled(getConsent() === "accepted");
+    const sync = () => setEnabled(!!getConsent().analytics);
     sync();
-    window.addEventListener("consentchange", sync);
-    window.addEventListener("storage", sync);
-    return () => {
-      window.removeEventListener("consentchange", sync);
-      window.removeEventListener("storage", sync);
-    };
+    return subscribeConsent(sync);
   }, []);
 
   useEffect(() => {
@@ -44,7 +39,7 @@ export function GoogleAnalytics() {
           function gtag(){dataLayer.push(arguments);}
           window.gtag = gtag;
           gtag('js', new Date());
-          gtag('config', '${GA_ID}', { send_page_view: false });
+          gtag('config', '${GA_ID}', { send_page_view: false, anonymize_ip: true });
         `}
       </Script>
     </>

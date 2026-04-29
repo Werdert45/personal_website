@@ -378,10 +378,21 @@
   },
   "Consent": {
     "dialogLabel": "Cookie-Einwilligung",
-    "body": "Ich verwende Cookies, um den Traffic zu messen und die Seite zu verbessern. Es werden keine personenbezogenen Daten verkauft oder geteilt. Sie können ablehnen, die Seite bleibt voll funktionsfähig.",
+    "title": "Datenschutzeinstellungen",
+    "body": "Ich verwende Cookies, um die Nutzung der Seite zu verstehen und (mit Ihrer Einwilligung) für Retargeting. Sie können Ihre Einstellungen jederzeit im Footer ändern.",
+    "policyLink": "Cookie-Richtlinie lesen",
+    "acceptAll": "Alle akzeptieren",
+    "rejectAll": "Alle ablehnen",
+    "customize": "Anpassen",
+    "hidePrefs": "Einstellungen ausblenden",
+    "savePrefs": "Einstellungen speichern",
+    "tierAnalytics": "Analytics",
+    "tierAnalyticsDetail": "Google Analytics, Microsoft Clarity. Seitenaufrufe, Verhalten, Heatmaps.",
+    "tierMarketing": "Marketing",
+    "tierMarketingDetail": "LinkedIn Insight Tag. Aggregierte Demografie, Retargeting.",
+    "cookiePreferences": "Cookie-Einstellungen",
     "accept": "Akzeptieren",
-    "decline": "Ablehnen",
-    "policyLink": "Cookie-Richtlinie lesen"
+    "decline": "Ablehnen"
   },
   "Share": {
     "label": "Teilen",

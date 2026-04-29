@@ -2,7 +2,7 @@
 
 import Script from "next/script";
 import { useEffect, useState } from "react";
-import { getConsent } from "@/lib/analytics";
+import { getConsent, subscribeConsent } from "@/lib/analytics";
 
 const LI_ID = process.env.NEXT_PUBLIC_LINKEDIN_PARTNER_ID || "";
 
@@ -10,10 +10,9 @@ export function LinkedInInsight() {
   const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
-    const sync = () => setEnabled(getConsent() === "accepted");
+    const sync = () => setEnabled(!!getConsent().marketing);
     sync();
-    window.addEventListener("consentchange", sync);
-    return () => window.removeEventListener("consentchange", sync);
+    return subscribeConsent(sync);
   }, []);
 
   if (!LI_ID || !enabled) return null;

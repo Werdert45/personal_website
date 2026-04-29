@@ -378,10 +378,21 @@
   },
   "Consent": {
     "dialogLabel": "Cookie-toestemming",
-    "body": "Ik gebruik cookies om bezoek te meten en de site te verbeteren. Geen persoonlijke data wordt verkocht of gedeeld. Weiger kan, de site blijft volledig werken.",
+    "title": "Privacyvoorkeuren",
+    "body": "Ik gebruik cookies om sitegebruik te begrijpen en (met jouw toestemming) voor retargeting. Voorkeuren zijn op elk moment via de footer aan te passen.",
+    "policyLink": "Lees het cookiebeleid",
+    "acceptAll": "Alles accepteren",
+    "rejectAll": "Alles weigeren",
+    "customize": "Aanpassen",
+    "hidePrefs": "Voorkeuren verbergen",
+    "savePrefs": "Voorkeuren opslaan",
+    "tierAnalytics": "Analytics",
+    "tierAnalyticsDetail": "Google Analytics, Microsoft Clarity. Paginaweergaven, gedrag, heatmaps.",
+    "tierMarketing": "Marketing",
+    "tierMarketingDetail": "LinkedIn Insight Tag. Geaggregeerde demografie, retargeting.",
+    "cookiePreferences": "Cookievoorkeuren",
     "accept": "Accepteren",
-    "decline": "Weigeren",
-    "policyLink": "Lees het cookiebeleid"
+    "decline": "Weigeren"
   },
   "Share": {
     "label": "Delen",

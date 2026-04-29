@@ -378,10 +378,21 @@
   },
   "Consent": {
     "dialogLabel": "Consenso ai cookie",
-    "body": "Uso i cookie per misurare il traffico e migliorare il sito. Nessun dato personale viene venduto o condiviso. Puoi rifiutare e il sito rimane pienamente funzionale.",
+    "title": "Preferenze privacy",
+    "body": "Uso i cookie per capire l'uso del sito e (con il tuo consenso) per il retargeting. Puoi modificare le preferenze in qualsiasi momento dal footer.",
+    "policyLink": "Leggi la cookie policy",
+    "acceptAll": "Accetta tutto",
+    "rejectAll": "Rifiuta tutto",
+    "customize": "Personalizza",
+    "hidePrefs": "Nascondi preferenze",
+    "savePrefs": "Salva preferenze",
+    "tierAnalytics": "Analytics",
+    "tierAnalyticsDetail": "Google Analytics, Microsoft Clarity. Visite, comportamento, heatmap.",
+    "tierMarketing": "Marketing",
+    "tierMarketingDetail": "LinkedIn Insight Tag. Demografia aggregata, retargeting.",
+    "cookiePreferences": "Preferenze cookie",
     "accept": "Accetta",
-    "decline": "Rifiuta",
-    "policyLink": "Leggi la cookie policy"
+    "decline": "Rifiuta"
   },
   "Share": {
     "label": "Condividi",
