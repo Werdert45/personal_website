@@ -1,19 +1,29 @@
 "use client";
 
+import { useId } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 
-function VizIntake() {
+function VizIntake({ titleText }) {
+  const reactId = useId();
+  const gridId = `vizGridA-${reactId}`;
+  const titleId = `vizIntake-${reactId}`;
   return (
-    <svg viewBox="0 0 320 180" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
+    <svg
+      viewBox="0 0 320 180"
+      role="img"
+      aria-labelledby={titleId}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <title id={titleId}>{titleText || "Intake flow: lead → KYC → parse → approved in 3 days"}</title>
       <defs>
-        <pattern id="vizGridA" width="20" height="20" patternUnits="userSpaceOnUse">
+        <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
         </pattern>
       </defs>
-      <rect width="320" height="180" fill="url(#vizGridA)" />
+      <rect width="320" height="180" fill={`url(#${gridId})`} />
       <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
         <rect x="22" y="40" width="62" height="34" fill="#F6F4EE" stroke="#111110" />
         <text x="36" y="60">intake</text>
@@ -39,7 +49,9 @@ function VizIntake() {
   );
 }
 
-function VizABM() {
+function VizABM({ titleText }) {
+  const reactId = useId();
+  const titleId = `vizABM-${reactId}`;
   const cells = [];
   const seed = (r, c) => Math.sin(r * 5.13 + c * 1.7) * 1000;
   for (let r = 0; r < 8; r++) {
@@ -68,7 +80,13 @@ function VizABM() {
     { x1: 250, y1: 130, x2: 210, y2: 80 },
   ];
   return (
-    <svg viewBox="0 0 320 180" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
+    <svg
+      viewBox="0 0 320 180"
+      role="img"
+      aria-labelledby={titleId}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <title id={titleId}>{titleText || "Agent-based grid simulating neighbourhood turnover from t=0 to t=10 years"}</title>
       {cells}
       {arrows.map((a, i) => (
         <g key={i}>
@@ -84,15 +102,24 @@ function VizABM() {
   );
 }
 
-function VizPipeline() {
+function VizPipeline({ titleText }) {
+  const reactId = useId();
+  const gridId = `vizGridB-${reactId}`;
+  const titleId = `vizPipeline-${reactId}`;
   return (
-    <svg viewBox="0 0 320 180" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
+    <svg
+      viewBox="0 0 320 180"
+      role="img"
+      aria-labelledby={titleId}
+      style={{ width: "100%", height: "100%" }}
+    >
+      <title id={titleId}>{titleText || "Sales pipeline: lead → qualify → quote → close, with human-in-the-loop review"}</title>
       <defs>
-        <pattern id="vizGridB" width="20" height="20" patternUnits="userSpaceOnUse">
+        <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
         </pattern>
       </defs>
-      <rect width="320" height="180" fill="url(#vizGridB)" />
+      <rect width="320" height="180" fill={`url(#${gridId})`} />
       <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
         <rect x="14" y="60" width="56" height="32" fill="#F6F4EE" stroke="#111110" />
         <text x="26" y="79">lead</text>

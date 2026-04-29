@@ -1,8 +1,25 @@
 
-export const metadata = {
-  title: "Privacy Policy",
-  description: "Privacy policy for Ian Ronk's website.",
-};
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const url = `${siteUrl}/${locale}/privacy-policy`;
+  return {
+    title: "Privacy Policy",
+    description:
+      "Privacy policy: GDPR-compliant handling of contact submissions, newsletter subscriptions, analytics consent, and visitor rights. No data sold or shared.",
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${siteUrl}/en/privacy-policy`,
+        nl: `${siteUrl}/nl/privacy-policy`,
+        it: `${siteUrl}/it/privacy-policy`,
+        de: `${siteUrl}/de/privacy-policy`,
+        "x-default": `${siteUrl}/en/privacy-policy`,
+      },
+    },
+    openGraph: { url, type: "website" },
+  };
+}
 
 export default function PrivacyPolicyPage() {
   return (

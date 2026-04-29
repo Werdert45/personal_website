@@ -1,8 +1,25 @@
 
-export const metadata = {
-  title: "Terms of Service",
-  description: "Terms of service for Ian Ronk's website.",
-};
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const url = `${siteUrl}/${locale}/terms-of-service`;
+  return {
+    title: "Terms of Service",
+    description:
+      "Terms governing use of the site, intellectual property, liability, and acceptable use. Content licensed for personal reading; contact for commercial reuse.",
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${siteUrl}/en/terms-of-service`,
+        nl: `${siteUrl}/nl/terms-of-service`,
+        it: `${siteUrl}/it/terms-of-service`,
+        de: `${siteUrl}/de/terms-of-service`,
+        "x-default": `${siteUrl}/en/terms-of-service`,
+      },
+    },
+    openGraph: { url, type: "website" },
+  };
+}
 
 export default function TermsOfServicePage() {
   return (

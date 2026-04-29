@@ -28,7 +28,7 @@ const nextConfig = {
       {
         source: `/${locale}/work`,
         destination: `/${locale}/about`,
-        permanent: false,
+        permanent: true,
       },
     ]);
   },

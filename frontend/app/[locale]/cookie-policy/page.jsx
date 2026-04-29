@@ -1,8 +1,25 @@
 
-export const metadata = {
-  title: "Cookie Policy",
-  description: "Cookie policy for Ian Ronk's website.",
-};
+export async function generateMetadata({ params }) {
+  const { locale } = await params;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const url = `${siteUrl}/${locale}/cookie-policy`;
+  return {
+    title: "Cookie Policy",
+    description:
+      "Cookies used on this site: tiered consent for analytics (Google Analytics, Microsoft Clarity) and marketing (LinkedIn Insight). Always-on Vercel Analytics is cookieless.",
+    alternates: {
+      canonical: url,
+      languages: {
+        en: `${siteUrl}/en/cookie-policy`,
+        nl: `${siteUrl}/nl/cookie-policy`,
+        it: `${siteUrl}/it/cookie-policy`,
+        de: `${siteUrl}/de/cookie-policy`,
+        "x-default": `${siteUrl}/en/cookie-policy`,
+      },
+    },
+    openGraph: { url, type: "website" },
+  };
+}
 
 export default function CookiePolicyPage() {
   return (
