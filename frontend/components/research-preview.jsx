@@ -1,8 +1,5 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import { getTranslations } from "next-intl/server";
 
 function getTranslated(item, field, locale) {
   if (locale === "en") return item[field];
@@ -22,35 +19,24 @@ function renderTitle(title) {
   );
 }
 
-const DEFAULT_ITEMS = [
-  { id: 1, slug: "rent-prediction-hedonic", category: "PAPER", date: "2025-11", title: "Hedonic rent prediction across 15 EU metros", abstract: "Parcel-level hedonic model on PostGIS + gradient boosting." },
-  { id: 2, slug: "gentrification-abm", category: "WORKING-PAPER", date: "2024-06", title: "Agent-based simulation of neighbourhood turnover", abstract: "10-year ABM calibrated on Kadaster + CBS microdata." },
-  { id: 3, slug: "flood-risk-parcels", category: "PAPER", date: "2023-09", title: "Parcel-level flood-risk classification for insurers", abstract: "Supervised classification on LiDAR + rainfall radar." },
-  { id: 4, slug: "street-view-cv", category: "PREPRINT", date: "2024-02", title: "Façade and commerce signals from street-view imagery", abstract: "CNN extraction from 4M frames, six EU cities." },
-];
+async function fetchArticles() {
+  const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
+  try {
+    const res = await fetch(`${djangoUrl}/api/research/?status=published&page_size=4`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const results = data.results || data;
+    return Array.isArray(results) ? results.slice(0, 4) : null;
+  } catch {
+    return null;
+  }
+}
 
-export function ResearchPreview() {
-  const [articles, setArticles] = useState([]);
-  const t = useTranslations("Research");
-  const locale = useLocale();
-
-  useEffect(() => {
-    let alive = true;
-    async function fetchArticles() {
-      try {
-        const response = await fetch("/api/django?endpoint=research");
-        if (response.ok) {
-          const data = await response.json();
-          const results = data.results || data;
-          if (alive && Array.isArray(results) && results.length) setArticles(results.slice(0, 4));
-        }
-      } catch {}
-    }
-    fetchArticles();
-    return () => { alive = false; };
-  }, []);
-
-  const list = articles.length ? articles : DEFAULT_ITEMS;
+export async function ResearchPreview({ locale = "en" }) {
+  const t = await getTranslations({ locale, namespace: "Research" });
+  const articles = await fetchArticles();
 
   return (
     <section className="section-pad">
@@ -79,22 +65,28 @@ export function ResearchPreview() {
         </p>
       </div>
 
-      <div className="research-list">
-        {list.map((item, i) => (
-          <Link key={item.id || item.slug} href={`/${locale}/research/${item.slug}`} style={{ display: "block" }}>
-            <div className="research-item">
-              <div className="ri">{String(i + 1).padStart(2, "0")}</div>
-              <div className="ry">{item.date || ""}</div>
-              <div className="rt">
-                {renderTitle(getTranslated(item, "title", locale))}
-                <span className="rm">{getTranslated(item, "abstract", locale)}</span>
+      {!articles || articles.length === 0 ? (
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--mute)" }}>
+          {t("loadingFallback")}
+        </p>
+      ) : (
+        <div className="research-list">
+          {articles.map((item, i) => (
+            <Link key={item.id || item.slug} href={`/${locale}/research/${item.slug}`} style={{ display: "block" }}>
+              <div className="research-item">
+                <div className="ri">{String(i + 1).padStart(2, "0")}</div>
+                <div className="ry">{item.date || ""}</div>
+                <div className="rt">
+                  {renderTitle(getTranslated(item, "title", locale))}
+                  <span className="rm">{getTranslated(item, "abstract", locale)}</span>
+                </div>
+                <div className="rtag">{(item.category || "RESEARCH").toUpperCase()}</div>
+                <div className="rarr">→</div>
               </div>
-              <div className="rtag">{(item.category || "RESEARCH").toUpperCase()}</div>
-              <div className="rarr">→</div>
-            </div>
-          </Link>
-        ))}
-      </div>
+            </Link>
+          ))}
+        </div>
+      )}
     </section>
   );
 }

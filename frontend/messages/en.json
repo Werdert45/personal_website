@@ -137,6 +137,7 @@
     "backToAbout": "Back to About"
   },
   "Research": {
+    "loadingFallback": "Articles loading — check back shortly",
     "badge": "Publications",
     "title": "Research & Articles",
     "subtitle": "In-depth analyses, case studies, and technical guides on geospatial technologies and real estate analytics.",
@@ -239,6 +240,7 @@
     "loading": "Loading…"
   },
   "Thoughts": {
+    "loadingFallback": "Posts loading — check back shortly",
     "kicker": "Thoughts — essays, updates, notes",
     "recentTitle": "Recent",
     "recentItalic": "thoughts",

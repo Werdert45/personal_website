@@ -1,14 +1,5 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-
-const DEFAULT_POSTS = [
-  { slug: "against-dashboards", date: "2026-04", category: "THOUGHT", title: "The case against dashboards", italic: "dashboards" },
-  { slug: "h3-for-real-estate", date: "2026-03", category: "EXPLANATION", title: "Why we switched to H3 for real-estate geoindexing", italic: "H3" },
-  { slug: "internal-tools-beat-dashboards", date: "2026-02", category: "UPDATE", title: "Internal tools that quietly replaced our dashboards", italic: "tools" },
-];
+import { getTranslations } from "next-intl/server";
 
 function renderTitle(title, italicToken) {
   if (!title) return null;
@@ -38,25 +29,24 @@ function getField(post, field, locale) {
   return trans?.[field] || post[field];
 }
 
-export function WritingTeaser() {
-  const [posts, setPosts] = useState([]);
-  const locale = useLocale();
-  const t = useTranslations("Thoughts");
+async function fetchPosts() {
+  const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
+  try {
+    const res = await fetch(`${djangoUrl}/api/blog/?status=published&page_size=3`, {
+      next: { revalidate: 60 },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const results = data.results || data;
+    return Array.isArray(results) ? results.slice(0, 3) : null;
+  } catch {
+    return null;
+  }
+}
 
-  useEffect(() => {
-    let alive = true;
-    fetch("/api/django?endpoint=blog")
-      .then((r) => (r.ok ? r.json() : null))
-      .then((data) => {
-        if (!alive || !data) return;
-        const results = data.results || data;
-        if (Array.isArray(results) && results.length) setPosts(results.slice(0, 3));
-      })
-      .catch(() => {});
-    return () => { alive = false; };
-  }, []);
-
-  const list = posts.length ? posts : DEFAULT_POSTS;
+export async function WritingTeaser({ locale = "en" }) {
+  const t = await getTranslations({ locale, namespace: "Thoughts" });
+  const posts = await fetchPosts();
 
   return (
     <section className="section-pad">
@@ -84,23 +74,29 @@ export function WritingTeaser() {
         </p>
       </div>
 
-      <div className="writing-teaser">
-        {list.map((p) => {
-          const title = getField(p, "title", locale) || p.title;
-          const date = (p.published_at || p.date || "").slice(0, 7);
-          const tag = (getField(p, "category", locale) || p.category || "ARTICLE").toUpperCase();
-          return (
-            <Link href={`/${locale}/thoughts/${p.slug}`} key={p.slug} className="wt-card">
-              <div className="t">
-                <span>{tag}</span>
-                <span>{date}</span>
-              </div>
-              <h4>{renderTitle(title, p.italic)}</h4>
-              <div className="more">{t("readShort")}</div>
-            </Link>
-          );
-        })}
-      </div>
+      {!posts || posts.length === 0 ? (
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--mute)" }}>
+          {t("loadingFallback")}
+        </p>
+      ) : (
+        <div className="writing-teaser">
+          {posts.map((p) => {
+            const title = getField(p, "title", locale) || p.title;
+            const date = (p.published_at || p.date || "").slice(0, 7);
+            const tag = (getField(p, "category", locale) || p.category || "ARTICLE").toUpperCase();
+            return (
+              <Link href={`/${locale}/thoughts/${p.slug}`} key={p.slug} className="wt-card">
+                <div className="t">
+                  <span>{tag}</span>
+                  <span>{date}</span>
+                </div>
+                <h4>{renderTitle(title, p.italic)}</h4>
+                <div className="more">{t("readShort")}</div>
+              </Link>
+            );
+          })}
+        </div>
+      )}
     </section>
   );
 }

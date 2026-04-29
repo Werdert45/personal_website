@@ -137,6 +137,7 @@
     "backToAbout": "Torna a Chi Sono"
   },
   "Research": {
+    "loadingFallback": "Articoli in caricamento — torna fra poco",
     "badge": "Pubblicazioni",
     "title": "Ricerca & Articoli",
     "subtitle": "Analisi approfondite, casi studio e guide tecniche sulle tecnologie geospaziali e analytics immobiliari.",
@@ -239,6 +240,7 @@
     "loading": "Caricamento…"
   },
   "Thoughts": {
+    "loadingFallback": "Articoli in caricamento — torna fra poco",
     "kicker": "Pensieri — saggi, aggiornamenti, note",
     "recentTitle": "Pensieri",
     "recentItalic": "recenti",

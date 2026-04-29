@@ -137,6 +137,7 @@
     "backToAbout": "Terug naar Over Mij"
   },
   "Research": {
+    "loadingFallback": "Artikelen worden geladen — kom straks terug",
     "badge": "Publicaties",
     "title": "Onderzoek & Artikelen",
     "subtitle": "Diepgaande analyses, casestudies en technische gidsen over geospatiale technologieën en vastgoedanalytics.",
@@ -239,6 +240,7 @@
     "loading": "Laden…"
   },
   "Thoughts": {
+    "loadingFallback": "Berichten worden geladen — kom straks terug",
     "kicker": "Gedachten — essays, updates, notities",
     "recentTitle": "Recent",
     "recentItalic": "gedachten",

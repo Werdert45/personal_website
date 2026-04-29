@@ -137,6 +137,7 @@
     "backToAbout": "Zurück zu Über Mich"
   },
   "Research": {
+    "loadingFallback": "Artikel laden — schau gleich nochmal vorbei",
     "badge": "Publikationen",
     "title": "Forschung & Artikel",
     "subtitle": "Tiefgehende Analysen, Fallstudien und technische Leitfäden zu Geodaten-Technologien und Immobilienanalysen.",
@@ -239,6 +240,7 @@
     "loading": "Lädt…"
   },
   "Thoughts": {
+    "loadingFallback": "Beiträge laden — schau gleich nochmal vorbei",
     "kicker": "Gedanken — Essays, Updates, Notizen",
     "recentTitle": "Aktuelle",
     "recentItalic": "Gedanken",

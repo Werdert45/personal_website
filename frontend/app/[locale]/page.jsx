@@ -8,7 +8,8 @@ import { WritingTeaser } from "@/components/writing-teaser";
 import { ResearchPreview } from "@/components/research-preview";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/json-ld";
 
-export default function HomePage() {
+export default async function HomePage({ params }) {
+  const { locale } = await params;
   return (
     <main>
       <PersonJsonLd />
@@ -19,8 +20,8 @@ export default function HomePage() {
       <SkillsGrid />
       <SectorsStrip />
       <ProjectsGallery />
-      <WritingTeaser />
-      <ResearchPreview />
+      <WritingTeaser locale={locale} />
+      <ResearchPreview locale={locale} />
     </main>
   );
 }
