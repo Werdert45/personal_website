@@ -38,7 +38,12 @@ INSTALLED_APPS = [
     "apps.research",
     "apps.geodata",
     "apps.blog",
+    "apps.chat",
 ]
+
+# MiniMax chat API
+MINIMAX_API_KEY = os.getenv("MINIMAX_API_KEY", "")
+MINIMAX_MODEL = os.getenv("MINIMAX_MODEL", "abab6.5s-chat")
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

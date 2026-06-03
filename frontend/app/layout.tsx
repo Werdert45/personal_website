@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter, JetBrains_Mono, Instrument_Serif } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { getLocale } from 'next-intl/server'
+import { ChatWidget } from '@/components/chat-widget'
 import './globals.css'
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -13,11 +14,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ian Ronk | Head of Data | Real Estate AI & Analytics',
+    default: 'Ian Ronk | Geodata Engineer & ML Researcher',
     template: '%s | Ian Ronk',
   },
-  description: 'Head of Data delivering AI-powered insights for European real estate investment. Specializing in machine learning, geospatial analysis, and alternative data for REITs and funds.',
-  keywords: ['Data Science', 'Machine Learning', 'Real Estate', 'AI', 'Geospatial', 'Europe', 'FinTech', 'Alternative Data', 'Amsterdam', 'Ian Ronk', 'Data Engineer', 'Real Estate Analytics'],
+  description: 'Ian Ronk builds production spatial systems and ML pipelines — PostGIS, Airflow, LLM automation — for real estate, climate risk and alternative data. Based in Amsterdam.',
+  keywords: ['Geodata', 'Data Engineering', 'Geospatial Analysis', 'Machine Learning', 'AI Automation', 'PostGIS', 'LLM', 'Amsterdam', 'Ian Ronk', 'Spatial Systems', 'Real Estate Analytics'],
   authors: [{ name: 'Ian Ronk' }],
   creator: 'Ian Ronk',
   metadataBase: new URL(siteUrl),
@@ -26,8 +27,8 @@ export const metadata: Metadata = {
     languages: {
       'en': '/en',
       'nl': '/nl',
-      'it': '/it',
       'de': '/de',
+      'it': '/it',
     },
   },
   openGraph: {
@@ -35,14 +36,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Ian Ronk',
-    title: 'Ian Ronk | Head of Data | Real Estate AI & Analytics',
-    description: 'Head of Data delivering AI-powered insights for European real estate investment. Specializing in machine learning, geospatial analysis, and alternative data for REITs and funds.',
+    title: 'Ian Ronk | Geodata Engineer & ML Researcher',
+    description: 'Ian Ronk builds production spatial systems and ML pipelines — PostGIS, Airflow, LLM automation — for real estate, climate risk and alternative data.',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Ian Ronk — Geospatial · ML · AI' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ian Ronk | Head of Data | Real Estate AI & Analytics',
-    description: 'Head of Data delivering AI-powered insights for European real estate investment.',
+    title: 'Ian Ronk | Geodata Engineer & ML Researcher',
+    description: 'Ian Ronk builds production spatial systems and ML pipelines for real estate, climate risk and alternative data.',
     creator: '@ianronk',
     images: ['/og.png'],
   },
@@ -78,6 +79,7 @@ export default async function RootLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className={`${inter.variable} ${jetbrainsMono.variable} ${instrumentSerif.variable} font-sans antialiased`}>
         {children}
+        <ChatWidget />
         <Analytics />
       </body>
     </html>

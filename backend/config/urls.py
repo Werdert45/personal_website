@@ -16,6 +16,7 @@ urlpatterns = [
     path("api/research/", include("apps.research.urls")),
     path("api/geodata/", include("apps.geodata.urls")),
     path("api/blog/", include("apps.blog.urls")),
+    path("api/chat/", include("apps.chat.urls")),
     # API documentation
     path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
     path("api/docs/", SpectacularSwaggerView.as_view(url_name="schema"), name="swagger-ui"),
