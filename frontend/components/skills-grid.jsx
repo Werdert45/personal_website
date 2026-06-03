@@ -69,32 +69,36 @@ function SkillViz({ index }) {
       </svg>
     );
   }
-  // Internal Processes — sales pipeline / backend automation
+  // Geospatial Visualization — H3 hex grid with layer legend
+  const hexCells = [];
+  const hexData = [
+    [0,0,0.9],[1,0,0.6],[2,0,0.3],[3,0,0.5],[4,0,0.8],
+    [0,1,0.4],[1,1,1.0],[2,1,0.7],[3,1,0.4],[4,1,0.2],
+    [0,2,0.2],[1,2,0.5],[2,2,0.9],[3,2,0.6],[4,2,0.3],
+  ];
+  hexData.forEach(([c, r, v]) => {
+    const w = 36, h = 32;
+    const x = 18 + c * (w * 0.75) + (r % 2 ? w * 0.375 : 0);
+    const y = 18 + r * (h * 0.85);
+    const pts = [
+      `${x+w*0.5},${y}`,`${x+w},${y+h*0.25}`,`${x+w},${y+h*0.75}`,
+      `${x+w*0.5},${y+h}`,`${x},${y+h*0.75}`,`${x},${y+h*0.25}`,
+    ].join(" ");
+    hexCells.push(
+      <polygon key={`${c}-${r}`} points={pts} fill="#FFD60A" fillOpacity={v} stroke="#111110" strokeWidth="0.5" />
+    );
+  });
   return (
     <svg viewBox="0 0 320 100" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
-      <g fontFamily="var(--font-mono)" fontSize="8" fill="#111110">
-        <rect x="12" y="34" width="62" height="30" fill="#F6F4EE" stroke="#111110" />
-        <text x="24" y="53">intake</text>
-
-        <rect x="86" y="34" width="62" height="30" fill="#FFD60A" stroke="#111110" />
-        <text x="96" y="53">qualify</text>
-
-        <rect x="160" y="34" width="62" height="30" fill="#FFD60A" stroke="#111110" />
-        <text x="174" y="53">quote</text>
-
-        <rect x="234" y="34" width="62" height="30" fill="#111110" stroke="#111110" />
-        <text x="252" y="53" fill="#FFD60A">close</text>
-      </g>
-      <g stroke="#111110" strokeWidth="1.2" fill="none">
-        <path d="M74 49 L86 49" />
-        <path d="M148 49 L160 49" />
-        <path d="M222 49 L234 49" />
-        <path d="M80 45 L86 49 L80 53" />
-        <path d="M154 45 L160 49 L154 53" />
-        <path d="M228 45 L234 49 L228 53" />
-      </g>
+      {hexCells}
       <g fontFamily="var(--font-mono)" fontSize="7" fill="#8A8676">
-        <text x="12" y="22">sales backend · automations</text>
+        <text x="222" y="22">H3 · res 9</text>
+        <rect x="222" y="30" width="8" height="8" fill="#FFD60A" fillOpacity="0.9" stroke="#111110" strokeWidth="0.5"/>
+        <text x="234" y="38">high density</text>
+        <rect x="222" y="44" width="8" height="8" fill="#FFD60A" fillOpacity="0.3" stroke="#111110" strokeWidth="0.5"/>
+        <text x="234" y="52">low density</text>
+        <text x="222" y="68">parcel · PostGIS</text>
+        <text x="222" y="80">DeckGL · Mapbox</text>
       </g>
     </svg>
   );
@@ -104,10 +108,10 @@ const stacks = [
   ["SAM", "LVMs", "LangChain", "RAG", "PyTorch", "XGBoost"],
   ["Airflow", "Docker", "Python", "Postgres", "PostGIS", "dbt"],
   ["PostGIS", "GeoPandas", "H3", "CV", "Agent-based"],
-  ["FastAPI", "Postgres", "LLMs", "n8n", "Stripe", "Docker"],
+  ["H3", "DeckGL", "Mapbox", "PostGIS", "Kepler.gl", "QGIS"],
 ];
 
-const shortTags = ["ML", "ENG", "GEO", "OPS"];
+const shortTags = ["ML", "ENG", "GEO", "VIZ"];
 
 function splitTitle(title) {
   const parts = title.split(" ");

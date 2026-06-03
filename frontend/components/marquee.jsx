@@ -3,7 +3,7 @@ export function Marquee({ items }) {
     "AI / ML Automation",
     "Data Engineering",
     "Geospatial Analysis",
-    "Internal Tools",
+    "Spatial Visualization",
     "Insurance · Logistics · Public Sector · Real Estate",
   ];
   const list = items || defaults;

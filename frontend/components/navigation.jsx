@@ -10,8 +10,6 @@ import { trackEvent } from "@/lib/analytics";
 const localeLabels = {
   en: { label: "EN", flag: "🇬🇧" },
   nl: { label: "NL", flag: "🇳🇱" },
-  it: { label: "IT", flag: "🇮🇹" },
-  de: { label: "DE", flag: "🇩🇪" },
 };
 
 export function Navigation() {
@@ -49,7 +47,7 @@ export function Navigation() {
   })();
 
   const switchLocale = (newLocale) => {
-    const pathWithoutLocale = pathname.replace(/^\/(en|nl|it|de)/, "") || "/";
+    const pathWithoutLocale = pathname.replace(/^\/(en|nl)/, "") || "/";
     window.location.href = `/${newLocale}${pathWithoutLocale}`;
   };
 

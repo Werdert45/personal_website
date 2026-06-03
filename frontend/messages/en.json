@@ -16,7 +16,7 @@
     "title": "Geodata Engineering & ",
     "titleHighlight": "AI/ML Automation",
     "titleEnd": " for ops-heavy teams",
-    "description": "I design and ship production data systems and AI automations — pipelines, models and internal tools that replace manual work. Currently working across geospatial analytics, insurance, logistics, public sector and real estate.",
+    "description": "I design and ship production data systems and AI automations — spatial pipelines, ML models and internal tools built on geospatial analytics. The sectors vary; the problem tends not to: too many steps between raw data and a decision.",
     "viewProjects": "About me",
     "getInTouch": "Get in Touch",
     "workWithMe": "Get in touch",
@@ -33,7 +33,7 @@
   "About": {
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Core Competencies",
-    "expertiseSubtitle": "Specialized skills for production data systems, AI automations and geospatial pipelines — built to ship and stay shipped.",
+    "expertiseSubtitle": "Four competencies built around production geospatial systems — each one informed by the constraint that a calibrated pipeline tends to outlast a clever one.",
     "educationBadge": "Education",
     "experienceBadge": "Experience",
     "academicTitle": "Academic Accolades",
@@ -41,14 +41,14 @@
     "professional": "Professional",
     "academic": "Academic",
     "educationSubtitle": "Strong foundation in AI, data science, and business analytics from top European institutions.",
-    "experienceSubtitle": "4+ years delivering data-driven insights for real estate investment across European markets.",
+    "experienceSubtitle": "4+ years building production geospatial systems and ML pipelines across European markets and academic research.",
     "sectionKicker": "About — who, where, how",
     "heroTitleLine1a": "Head of",
     "heroTitleLine1aItalic": "Data",
-    "heroTitleLine2": "Real Estate",
-    "heroTitleLine2Underline": "AI",
-    "heroTitleLine3": "& Analytics.",
-    "lede1": "Based in Amsterdam, I lead data initiatives at KR&A, delivering AI-powered insights for European real estate funds, REITs and institutional investors. With expertise in machine learning, geospatial analysis, and alternative data, I help transform complex data into investment decisions.",
+    "heroTitleLine2": "— Geodata",
+    "heroTitleLine2Underline": "Systems",
+    "heroTitleLine3": "& Research.",
+    "lede1": "Based in Amsterdam, I build production spatial systems for real estate funds, climate-risk teams and alternative-data pipelines. The work ranges from PostGIS schemas and hedonic models to DeckGL maps that turn parcel-level data into a decision. Four-plus years on the production side, and the constraint tends not to change: a calibrated pipeline tends to outlast a clever one.",
     "lede2": "My bias: opinionated internal tools beat big platforms; a tested pipeline beats a clever one; and a map should answer a question, not perform complexity.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Role",
@@ -84,8 +84,8 @@
         "description": "Advanced spatial analytics — agent-based gentrification modelling, street-level computer vision, and spatially-aware data science (downsampling, significance testing) that yields statistically robust results."
       },
       {
-        "title": "Internal Processes",
-        "description": "The backend of a business — sales systems, CRMs and AI-powered automations that replace manual work and scale with the team."
+        "title": "Geospatial Visualization",
+        "description": "Spatial data made legible — H3 hexagonal indexing, DeckGL and Mapbox interactive maps, and PostGIS-powered reporting pipelines that turn parcel-level data into a decision. Although the tooling changes, the goal tends not to: a map should answer a question, not perform complexity."
       }
     ],
     "experience": [
@@ -175,8 +175,8 @@
   "Contact": {
     "aboutBadge": "About Me",
     "name": "Ian Ronk",
-    "roleTitle": "Head of Data | Real Estate AI & Analytics",
-    "bio": "Based in Amsterdam, I lead data initiatives at KR&A, delivering AI-powered insights for European real estate funds, REITs, and institutional investors. With expertise in machine learning, geospatial analysis, and alternative data, I help transform complex data into investment decisions.",
+    "roleTitle": "Head of Data | Geodata & Spatial Systems",
+    "bio": "Based in Amsterdam. I design and ship production spatial systems — PostGIS pipelines, hedonic models, geospatial visualisations. Although the sectors vary (real estate, climate risk, alternative data), the constraint tends not to: too many steps between raw data and a decision.",
     "location": "Amsterdam, Netherlands",
     "company": "Head of Data @ KR&A FinTech",
     "yearsExperience": "4+ years in Real Estate Data Science",
@@ -278,8 +278,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "I ship production",
     "titleLine2Underline": "systems.",
-    "bio1": "Head of Data at KR&A in Amsterdam, leading AI initiatives across European real estate, climate and alt-data work. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam.",
-    "bio2": "I work at the intersection of geospatial analytics, AI/ML and the unglamorous data infrastructure that makes them useful. This site is where I keep the things I'm thinking about, building or have published.",
+    "bio1": "Head of Data at KR&A in Amsterdam, leading AI and geospatial initiatives across European real estate, climate risk and alternative-data pipelines. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam — roughly four years between the two, spent mostly on the production side.",
+    "bio2": "I work at the intersection of geospatial analytics, ML and the data infrastructure that makes both useful — the pipelines, schemas and spatial joins that do not appear in papers but determine whether the model ships. This site collects what is worth writing down: papers, methods, tools and the occasional strong opinion on why dashboards are overrated.",
     "factRoleK": "Role",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Based",
@@ -296,7 +296,7 @@
     "titlePrefix": "Where I",
     "titleItalic": "tend",
     "titleSuffix": "to work.",
-    "subtitle": "Domains I've spent time in — academically, professionally or both. Each has its own data quirks and its own definition of \"good enough.\"",
+    "subtitle": "Domains where I have spent time — academically, professionally or both. Each has its own data quirks and its own definition of what constitutes a shipped result.",
     "items": [
       { "name": "Geospatial Analytics", "blurb": "Spatial pipelines, H3 indexing, parcel-level models, alt-data ingestion." },
       { "name": "Insurance & Climate Risk", "blurb": "Exposure modelling, flood and CV pipelines, claims triage automations." },
@@ -402,10 +402,10 @@
     "copied": "Copied"
   },
   "Newsletter": {
-    "compactHeading": "Stay in the loop",
-    "compactDescription": "Occasional notes on geospatial, ML, and AI work.",
-    "inlineHeading": "Get the next one in your inbox",
-    "inlineDescription": "Subscribe — no spam, unsubscribe anytime.",
+    "compactHeading": "Notes from the field",
+    "compactDescription": "Occasional notes on geospatial methods, ML pipelines and what breaks in production.",
+    "inlineHeading": "Get the next one before it lands on Medium",
+    "inlineDescription": "Occasional. No spam. Unsubscribe any time.",
     "emailPlaceholder": "you@domain.com",
     "submit": "Subscribe",
     "success": "Thanks — we'll be in touch.",

@@ -13,8 +13,6 @@ export async function generateMetadata({ params }) {
       languages: {
         en: `${siteUrl}/en/thoughts`,
         nl: `${siteUrl}/nl/thoughts`,
-        it: `${siteUrl}/it/thoughts`,
-        de: `${siteUrl}/de/thoughts`,
         "x-default": `${siteUrl}/en/thoughts`,
       },
     },

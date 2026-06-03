@@ -41,7 +41,6 @@ export function Footer() {
         <Link href={`/${locale}/privacy-policy`}>{t("privacyPolicy")}</Link>
         <Link href={`/${locale}/terms-of-service`}>{t("termsOfService")}</Link>
         <Link href={`/${locale}/cookie-policy`}>{t("cookiePolicy")}</Link>
-        <Link href="/login">{t("crmLogin")}</Link>
         <button
           type="button"
           onClick={reopenBanner}

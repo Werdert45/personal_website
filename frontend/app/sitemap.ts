@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ianronk.com'
-  const locales = ['en', 'nl', 'it', 'de']
+  const locales = ['en', 'nl']
 
   const staticPages = ['', '/about', '/research', '/thoughts', '/contact', '/privacy-policy', '/terms-of-service', '/cookie-policy']
 
