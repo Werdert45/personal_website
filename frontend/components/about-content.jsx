@@ -63,6 +63,10 @@ export function AboutContent() {
             <span className="v">{t("factClientsValue")}</span>
           </div>
           <div className="fact">
+            <span className="k">{t("factClientsPersonal")}</span>
+            <span className="v">{t("factClientsPersonalValue")}</span>
+          </div>
+          <div className="fact">
             <span className="k">{t("factStack")}</span>
             <span className="v">{t("factStackValue")}</span>
           </div>

@@ -795,7 +795,7 @@
 .blog-feat .cover {
   border-right: 1px solid var(--ink);
   min-height: 360px;
-  background: var(--yellow);
+  background: var(--ink); /* toned down from yellow */
   position: relative;
   overflow: hidden;
   display: flex;
@@ -806,7 +806,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: repeating-linear-gradient(45deg, transparent 0 14px, rgba(0, 0, 0, .05) 14px 15px);
+  background: repeating-linear-gradient(45deg, transparent 0 14px, rgba(255, 255, 255, .03) 14px 15px);
 }
 .blog-feat .cover .kicker {
   position: relative;
