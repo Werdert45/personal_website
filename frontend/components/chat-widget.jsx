@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react";
 
 const INITIAL_MESSAGE = {
   role: "assistant",
-  content: "Hi. Ask me anything about Ian — his work, research, background, or how to get in touch.",
+  content: "Hi. Ask me anything about Ian: his work, research, background, or how to get in touch.",
 };
 
 const STARTER_PROMPTS = [

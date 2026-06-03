@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const DEFAULT_POSTS = [
   { slug: "voronoi-postcode-estimation", category: "EXPLANATION", date: "2026-05", title: "Estimating Italian postcode boundaries with OSM and Voronoi diagrams", excerpt: "Four attempts at the same problem: centroid assignment, OSM address Voronoi, kNN outlier removal, and island consolidation. The fourth worked. Calibrated on Dutch and Danish authoritative data; applied to 4,209 Italian CAP polygons." },
-  { slug: "against-dashboards", category: "THOUGHT", date: "2026-04", title: "The case against dashboards", excerpt: "Why opinionated internal tools outperform generic dashboards for real estate teams — with five examples from the past year." },
+  { slug: "against-dashboards", category: "THOUGHT", date: "2026-04", title: "The case against dashboards", excerpt: "Why opinionated internal tools outperform generic dashboards for real estate teams, with five examples from the past year." },
   { slug: "h3-for-real-estate", category: "EXPLANATION", date: "2026-03", title: "Why we switched to H3 for real-estate geoindexing", excerpt: "Trading quadkeys for hexagons: what changed in query latency, cache hit-rate, and analyst ergonomics." },
   { slug: "postgis-vs-duckdb", category: "EXPLANATION", date: "2026-01", title: "PostGIS vs DuckDB for analyst queries", excerpt: "When each wins, and how we route analyst notebooks to the right backend without them noticing." },
   { slug: "cadastre-as-code", category: "UPDATE", date: "2025-12", title: "Cadastre-as-Code, one year in", excerpt: "Notes from maintaining an MIT-licensed library that normalises cadastral dumps across six EU countries." },

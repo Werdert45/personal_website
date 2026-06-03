@@ -16,7 +16,7 @@
     "title": "Geodata Engineering & ",
     "titleHighlight": "AI/ML Automazione",
     "titleEnd": " per team operativi",
-    "description": "Progetto e realizzo sistemi dati di produzione e automazioni AI — pipeline, modelli e strumenti interni che sostituiscono il lavoro manuale. Attualmente lavoro con team in ambito geospaziale, assicurativo, logistica, settore pubblico e immobiliare.",
+    "description": "Progetto e realizzo sistemi dati di produzione e automazioni AI, pipeline, modelli e strumenti interni che sostituiscono il lavoro manuale. Attualmente lavoro con team in ambito geospaziale, assicurativo, logistica, settore pubblico e immobiliare.",
     "viewProjects": "Chi sono",
     "getInTouch": "Contattami",
     "workWithMe": "Contattami",
@@ -33,7 +33,7 @@
   "About": {
     "expertiseBadge": "Competenze",
     "coreCompetencies": "Competenze Principali",
-    "expertiseSubtitle": "Competenze specializzate per sistemi dati di produzione, automazioni AI e pipeline geospaziali — costruiti per essere rilasciati e restare in produzione.",
+    "expertiseSubtitle": "Competenze specializzate per sistemi dati di produzione, automazioni AI e pipeline geospaziali, costruiti per essere rilasciati e restare in produzione.",
     "educationBadge": "Formazione",
     "experienceBadge": "Esperienza",
     "academicTitle": "Traguardi Accademici",
@@ -42,7 +42,7 @@
     "academic": "Accademico",
     "educationSubtitle": "Solida base in AI, data science e business analytics dalle migliori istituzioni europee.",
     "experienceSubtitle": "4+ anni di approfondimenti basati sui dati per investimenti immobiliari nei mercati europei.",
-    "sectionKicker": "Chi sono — chi, dove, come",
+    "sectionKicker": "Chi sono: chi, dove, come",
     "heroTitleLine1a": "Head of",
     "heroTitleLine1aItalic": "Data",
     "heroTitleLine2": "Immobiliare",
@@ -73,19 +73,19 @@
     "expertise": [
       {
         "title": "Machine Learning & AI",
-        "description": "ML e AI in produzione — modelli predittivi per valutazione, affitti e rischio alluvionale (accuratezza 90%+), oltre a pipeline LLM e AI agent con strumenti che automatizzano ricerca, classificazione e reportistica."
+        "description": "ML e AI in produzione, modelli predittivi per valutazione, affitti e rischio alluvionale (accuratezza 90%+), oltre a pipeline LLM e AI agent con strumenti che automatizzano ricerca, classificazione e reportistica."
       },
       {
         "title": "Data Engineering",
-        "description": "Pipeline dati robuste per REIT europei, fondi e investitori istituzionali — geodati, input alternativi e non strutturati su uno stack Airflow distribuito e dockerizzato."
+        "description": "Pipeline dati robuste per REIT europei, fondi e investitori istituzionali, geodati, input alternativi e non strutturati su uno stack Airflow distribuito e dockerizzato."
       },
       {
         "title": "Analisi Geospaziale",
-        "description": "Analisi spaziali avanzate — modellazione agent-based della gentrificazione, computer vision su immagini stradali e data science spazialmente consapevole (downsampling, test di significatività) che produce risultati statisticamente robusti."
+        "description": "Analisi spaziali avanzate, modellazione agent-based della gentrificazione, computer vision su immagini stradali e data science spazialmente consapevole (downsampling, test di significatività) che produce risultati statisticamente robusti."
       },
       {
         "title": "Processi Interni",
-        "description": "Il backend di un'azienda — sistemi di vendita, CRM e automazioni potenziate dall'AI che sostituiscono il lavoro manuale e scalano con il team."
+        "description": "Il backend di un'azienda, sistemi di vendita, CRM e automazioni potenziate dall'AI che sostituiscono il lavoro manuale e scalano con il team."
       }
     ],
     "experience": [
@@ -137,7 +137,7 @@
     "backToAbout": "Torna a Chi Sono"
   },
   "Research": {
-    "loadingFallback": "Articoli in caricamento — torna fra poco",
+    "loadingFallback": "Articoli in caricamento: torna fra poco",
     "badge": "Pubblicazioni",
     "title": "Ricerca & Articoli",
     "subtitle": "Analisi approfondite, casi studio e guide tecniche sulle tecnologie geospaziali e analytics immobiliari.",
@@ -154,7 +154,7 @@
     "previewTitle": "Ultime Ricerche & Approfondimenti",
     "previewSubtitle": "Approfondimenti su analisi geospaziale, tendenze immobiliari e innovazioni tecniche.",
     "viewAll": "Vedi Tutto",
-    "listKicker": "Ricerca — articoli, preprint, metodi",
+    "listKicker": "Ricerca: articoli, preprint, metodi",
     "listTitlePrefix": "Articoli",
     "listTitleItalic": "peer-reviewed",
     "listTitleAmp": "& bozze in",
@@ -205,7 +205,7 @@
     "errorShort": "Inserisci un messaggio più lungo (almeno 10 caratteri)",
     "errorCaptcha": "Completa la verifica captcha",
     "errorGeneric": "Errore nell'invio del messaggio. Riprova.",
-    "sectionKicker": "Contatto — brief, presentazioni, domande",
+    "sectionKicker": "Contatto: brief, presentazioni, domande",
     "letsTalkPrefix": "Parliamo",
     "letsTalkItalic": "insieme",
     "formHeadRef": "REF",
@@ -217,11 +217,85 @@
     "linkBookCall": "Prenota una chiamata"
   },
   "Projects": {
-    "badge": "Visualizzazioni",
-    "title": "Visualizzazioni Dati in Evidenza",
-    "subtitle": "Esplora analisi interattive basate su mappe con approfondimenti spaziali per il mercato immobiliare europeo.",
-    "viewAll": "Vedi Tutto",
-    "viewProject": "Vedi Progetto"
+    "kicker": "Lavori selezionati: ricerca, tesi, progetti personali",
+    "titlePrefix": "Lavori",
+    "titleItalic": "selezionati.",
+    "subtitle": "Cose che ho costruito o studiato, all'università, nella ricerca e nel mio tempo libero. Non un portfolio di consegne ai clienti; un portfolio di pensiero.",
+    "items": [
+      {
+        "image": "",
+        "viz": "abm",
+        "sector": "Tesi MSc · Bocconi",
+        "title": "Modello agent-based di gentrificazione",
+        "outcome": "Simulazione decennale del ricambio di quartiere nelle città europee, calibrata su microdati Kadaster e CBS.",
+        "stack": [
+          "Python",
+          "Mesa",
+          "GeoPandas",
+          "Postgres"
+        ],
+        "link": "/research/gentrification-abm"
+      },
+      {
+        "image": "/projects/flood-paths.png",
+        "viz": "image",
+        "sector": "Tesi BSc · UvA",
+        "title": "Classificatore di rischio alluvione",
+        "outcome": "Classificazione supervisionata su LiDAR e radar pluviale a livello particella, sviluppata come tesi triennale.",
+        "stack": [
+          "PyTorch",
+          "GeoPandas",
+          "PostGIS",
+          "LiDAR"
+        ],
+        "link": ""
+      },
+      {
+        "image": "/projects/rent-markers.png",
+        "viz": "image",
+        "sector": "Ricerca · Geospatial",
+        "title": "Modello edonico affitti · 15 metropoli UE",
+        "outcome": "Benchmark edonici a livello particella, costruiti su PostGIS e gradient boosting nelle metropoli europee.",
+        "stack": [
+          "PostGIS",
+          "GeoPandas",
+          "XGBoost",
+          "H3"
+        ],
+        "link": "/research/rent-prediction-hedonic"
+      },
+      {
+        "image": "",
+        "viz": "pipeline",
+        "sector": "Progetto personale",
+        "title": "LanguageBuddy",
+        "outcome": "Una piccola app per la pratica conversazionale: correzione guidata da LLM, ripetizione spaziata e UI orientata all'abitudine.",
+        "stack": [
+          "FastAPI",
+          "Postgres",
+          "LLMs",
+          "React"
+        ],
+        "link": "/about/projects/languagebuddy"
+      },
+      {
+        "image": "",
+        "viz": "intake",
+        "sector": "Ricerca · Computer Vision",
+        "title": "Segnali di facciata e commercio da street-view",
+        "outcome": "Estrazione CNN di facciate e segnali commerciali da circa 4M frame street-view in sei città europee.",
+        "stack": [
+          "PyTorch",
+          "OpenCV",
+          "GeoPandas",
+          "Postgres"
+        ],
+        "link": "/research/street-view-cv"
+      }
+    ],
+    "viewCase": "Leggi di più",
+    "viewPaper": "Vedi paper",
+    "ctaAll": "Vedi tutto"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. Tutti i diritti riservati.",
@@ -240,8 +314,8 @@
     "loading": "Caricamento…"
   },
   "Thoughts": {
-    "loadingFallback": "Articoli in caricamento — torna fra poco",
-    "kicker": "Pensieri — saggi, aggiornamenti, note",
+    "loadingFallback": "Articoli in caricamento: torna fra poco",
+    "kicker": "Pensieri: saggi, aggiornamenti, note",
     "recentTitle": "Pensieri",
     "recentItalic": "recenti",
     "subtitle": "Brevi articoli su strumenti, pipeline, metodi spaziali e qualche sfogo.",
@@ -258,22 +332,22 @@
     "bylinePrefix": "Scritto da",
     "bylineSuffix": "· Amsterdam",
     "minRead": "min di lettura",
-    "writingTeaserKicker": "Blog — articoli recenti",
+    "writingTeaserKicker": "Blog: articoli recenti",
     "writingTeaserSubtitle": "Saggi, tutorial e appunti dal campo.",
     "endCtaKicker": "§ Altro",
     "endCtaTitle": "Altri scritti sul",
     "endCtaTitleItalic": "blog.",
-    "endCtaBody": "Sfoglia altri saggi su geodata, AI/ML e operations — oppure scopri di più su chi c'è dietro alla scrittura.",
+    "endCtaBody": "Sfoglia altri saggi su geodata, AI/ML e operations, oppure scopri di più su chi c'è dietro alla scrittura.",
     "endCtaButton": "Altri scritti",
     "endCtaSecondary": "Chi sono"
   },
   "SkillsGrid": {
-    "kicker": "Competenze — quattro competenze chiave",
+    "kicker": "Competenze: quattro competenze chiave",
     "titleItalic": "Competenze",
     "titleRest": "principali."
   },
   "AboutTeaser": {
-    "kicker": "Chi sono — la persona dietro al lavoro",
+    "kicker": "Chi sono: la persona dietro al lavoro",
     "titleLine1": "Ciao, sono",
     "titleLine1Italic": "Ian.",
     "titleLine2": "Costruisco sistemi",
@@ -292,86 +366,57 @@
     "cta": "Leggi la biografia completa"
   },
   "Sectors": {
-    "kicker": "Ambiti — dove tendo a lavorare",
-    "titlePrefix": "Dove",
-    "titleItalic": "tendo",
-    "titleSuffix": "a lavorare.",
-    "subtitle": "Ambiti in cui ho passato tempo — accademicamente, professionalmente o entrambi. Ognuno ha le sue stranezze sui dati e la sua idea di \"abbastanza buono.\"",
+    "kicker": "Ambiti: dove tendo a lavorare",
+    "titlePrefix": "Settori",
+    "titleItalic": "",
+    "titleSuffix": "",
+    "subtitle": "Ambiti in cui ho passato tempo, accademicamente, professionalmente o entrambi. Ognuno ha le sue stranezze sui dati e la sua idea di \"abbastanza buono.\"",
     "items": [
-      { "name": "Geospatial Analytics", "blurb": "Pipeline spaziali, indicizzazione H3, modelli a livello di particella, ingestion alt-data." },
-      { "name": "Assicurazioni & Rischio Climatico", "blurb": "Exposure modelling, pipeline alluvioni e CV, automazione triage sinistri." },
-      { "name": "Logistica & Mobilità", "blurb": "Routing, scelta depositi, last-mile, dashboard operative che sostituiscono dieci report manuali." },
-      { "name": "Settore Pubblico & Pianificazione", "blurb": "Mobilità, adattamento climatico, resilienza infrastrutturale e analisi a livello di particella." },
-      { "name": "Immobiliare & Investimenti", "blurb": "Valutazione, ABM di gentrificazione, alt-data per REIT, fondi e asset manager." }
+      {
+        "name": "Geospatial Analytics",
+        "blurb": "Pipeline spaziali, indicizzazione H3, modelli a livello di particella, ingestion alt-data."
+      },
+      {
+        "name": "Assicurazioni & Rischio Climatico",
+        "blurb": "Exposure modelling, pipeline alluvioni e CV, automazione triage sinistri."
+      },
+      {
+        "name": "Logistica & Mobilità",
+        "blurb": "Routing, scelta depositi, last-mile, dashboard operative che sostituiscono dieci report manuali."
+      },
+      {
+        "name": "Settore Pubblico & Pianificazione",
+        "blurb": "Mobilità, adattamento climatico, resilienza infrastrutturale e analisi a livello di particella."
+      },
+      {
+        "name": "Immobiliare & Investimenti",
+        "blurb": "Valutazione, ABM di gentrificazione, alt-data per REIT, fondi e asset manager."
+      }
     ]
   },
-  "Projects": {
-    "kicker": "Lavori selezionati — ricerca, tesi, progetti personali",
-    "titlePrefix": "Lavori",
-    "titleItalic": "selezionati.",
-    "subtitle": "Cose che ho costruito o studiato — all'università, nella ricerca e nel mio tempo libero. Non un portfolio di consegne ai clienti; un portfolio di pensiero.",
-    "items": [
-      {
-        "image": "",
-        "viz": "abm",
-        "sector": "Tesi MSc · Bocconi",
-        "title": "Modello agent-based di gentrificazione",
-        "outcome": "Simulazione decennale del ricambio di quartiere nelle città europee, calibrata su microdati Kadaster e CBS.",
-        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
-        "link": "/research/gentrification-abm"
-      },
-      {
-        "image": "/projects/flood-paths.png",
-        "viz": "image",
-        "sector": "Tesi BSc · UvA",
-        "title": "Classificatore di rischio alluvione",
-        "outcome": "Classificazione supervisionata su LiDAR e radar pluviale a livello particella — sviluppata come tesi triennale.",
-        "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
-        "link": ""
-      },
-      {
-        "image": "/projects/rent-markers.png",
-        "viz": "image",
-        "sector": "Ricerca · Geospatial",
-        "title": "Modello edonico affitti · 15 metropoli UE",
-        "outcome": "Benchmark edonici a livello particella, costruiti su PostGIS e gradient boosting nelle metropoli europee.",
-        "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
-        "link": "/research/rent-prediction-hedonic"
-      },
-      {
-        "image": "",
-        "viz": "pipeline",
-        "sector": "Progetto personale",
-        "title": "LanguageBuddy",
-        "outcome": "Una piccola app per la pratica conversazionale: correzione guidata da LLM, ripetizione spaziata e UI orientata all'abitudine.",
-        "stack": ["FastAPI", "Postgres", "LLMs", "React"],
-        "link": "/about/projects/languagebuddy"
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Ricerca · Computer Vision",
-        "title": "Segnali di facciata e commercio da street-view",
-        "outcome": "Estrazione CNN di facciate e segnali commerciali da circa 4M frame street-view in sei città europee.",
-        "stack": ["PyTorch", "OpenCV", "GeoPandas", "Postgres"],
-        "link": "/research/street-view-cv"
-      }
-    ],
-    "viewCase": "Leggi di più",
-    "viewPaper": "Vedi paper",
-    "ctaAll": "Vedi tutto"
-  },
   "Proof": {
-    "kicker": "Prove — risultati arrivati in produzione",
+    "kicker": "Prove: risultati arrivati in produzione",
     "titlePrefix": "Cose che",
     "titleItalic": "hanno spedito",
     "titleSuffix": "e sono rimaste.",
     "quote": "Ian ha consegnato quello che aveva detto, nei tempi che aveva detto.",
     "quoteAttribution": "COO, servizi regolamentati",
     "outcomes": [
-      { "value": "2.500+", "unit": "ore / anno recuperate", "context": "Tool di deal-screening · 6 settimane" },
-      { "value": "11 → 3", "unit": "giorni · onboarding", "context": "Ricostruzione intake compliance · 8 settimane" },
-      { "value": "18", "unit": "ore / sett. di risparmio identificate", "context": "Automation audit · 2 settimane" }
+      {
+        "value": "2.500+",
+        "unit": "ore / anno recuperate",
+        "context": "Tool di deal-screening · 6 settimane"
+      },
+      {
+        "value": "11 → 3",
+        "unit": "giorni · onboarding",
+        "context": "Ricostruzione intake compliance · 8 settimane"
+      },
+      {
+        "value": "18",
+        "unit": "ore / sett. di risparmio identificate",
+        "context": "Automation audit · 2 settimane"
+      }
     ],
     "ctaPrimary": "Scopri come lavoriamo insieme",
     "ctaSecondary": "Prenota una chiamata di 20 min"
@@ -405,10 +450,10 @@
     "compactHeading": "Resta aggiornato",
     "compactDescription": "Note occasionali su geospatial, ML e AI.",
     "inlineHeading": "Ricevi il prossimo nella tua casella",
-    "inlineDescription": "Iscriviti — niente spam, puoi disiscriverti in qualsiasi momento.",
+    "inlineDescription": "Iscriviti, niente spam, puoi disiscriverti in qualsiasi momento.",
     "emailPlaceholder": "tu@dominio.com",
     "submit": "Iscriviti",
-    "success": "Grazie — saremo in contatto.",
+    "success": "Grazie, saremo in contatto.",
     "error": "Qualcosa è andato storto. Riprova o scrivi direttamente.",
     "privacy": "Non condivideremo il tuo indirizzo."
   }

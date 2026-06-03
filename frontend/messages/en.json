@@ -16,7 +16,7 @@
     "title": "Geodata Engineering & ",
     "titleHighlight": "AI/ML Automation",
     "titleEnd": " for ops-heavy teams",
-    "description": "I design and ship production data systems and AI automations — spatial pipelines, ML models and internal tools built on geospatial analytics. The sectors vary; the problem tends not to: too many steps between raw data and a decision.",
+    "description": "I design and ship production data systems and AI automations, spatial pipelines, ML models and internal tools built on geospatial analytics. The sectors vary; the problem tends not to: too many steps between raw data and a decision.",
     "viewProjects": "About me",
     "getInTouch": "Get in Touch",
     "workWithMe": "Get in touch",
@@ -33,7 +33,7 @@
   "About": {
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Core Competencies",
-    "expertiseSubtitle": "Four competencies built around production geospatial systems — each one informed by the constraint that a calibrated pipeline tends to outlast a clever one.",
+    "expertiseSubtitle": "Four competencies built around production geospatial systems, each one informed by the constraint that a calibrated pipeline tends to outlast a clever one.",
     "educationBadge": "Education",
     "experienceBadge": "Experience",
     "academicTitle": "Academic Accolades",
@@ -42,7 +42,7 @@
     "academic": "Academic",
     "educationSubtitle": "Strong foundation in AI, data science, and business analytics from top European institutions.",
     "experienceSubtitle": "4+ years building production geospatial systems and ML pipelines across European markets and academic research.",
-    "sectionKicker": "About — who, where, how",
+    "sectionKicker": "About: who, where, how",
     "heroTitleLine1a": "Head of",
     "heroTitleLine1aItalic": "Data",
     "heroTitleLine2": "Geodata",
@@ -139,7 +139,7 @@
     "backToAbout": "Back to About"
   },
   "Research": {
-    "loadingFallback": "Articles loading — check back shortly",
+    "loadingFallback": "Articles loading: check back shortly",
     "badge": "Publications",
     "title": "Research & Articles",
     "subtitle": "In-depth analyses, case studies, and technical guides on geospatial technologies and real estate analytics.",
@@ -156,7 +156,7 @@
     "previewTitle": "Latest Research & Insights",
     "previewSubtitle": "Deep dives into geospatial analysis, real estate trends, and technical innovations.",
     "viewAll": "View All",
-    "listKicker": "Research — papers, preprints, methods",
+    "listKicker": "Research: papers, preprints, methods",
     "listTitlePrefix": "Peer-reviewed",
     "listTitleItalic": "papers",
     "listTitleAmp": "& working",
@@ -178,7 +178,7 @@
     "aboutBadge": "About Me",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data | Geodata & Spatial Systems",
-    "bio": "Based in Amsterdam. I design and ship production spatial systems — PostGIS pipelines, hedonic models, geospatial visualisations. Although the sectors vary (real estate, climate risk, alternative data), the constraint tends not to: too many steps between raw data and a decision.",
+    "bio": "Based in Amsterdam. I design and ship production spatial systems, PostGIS pipelines, hedonic models, geospatial visualisations. Although the sectors vary (real estate, climate risk, alternative data), the constraint tends not to: too many steps between raw data and a decision.",
     "location": "Amsterdam, Netherlands",
     "company": "Head of Data @ KR&A FinTech",
     "yearsExperience": "4+ years in Real Estate Data Science",
@@ -207,7 +207,7 @@
     "errorShort": "Please enter a longer message (at least 10 characters)",
     "errorCaptcha": "Please complete the captcha verification",
     "errorGeneric": "Error sending message. Please try again.",
-    "sectionKicker": "Contact — briefs, introductions, questions",
+    "sectionKicker": "Contact: briefs, introductions, questions",
     "letsTalkPrefix": "Let's",
     "letsTalkItalic": "talk",
     "formHeadRef": "REF",
@@ -219,11 +219,85 @@
     "linkBookCall": "Book a call"
   },
   "Projects": {
-    "badge": "Visualizations",
-    "title": "Featured Data Visualizations",
-    "subtitle": "Explore interactive map-based analyses showcasing spatial insights for the European real estate market.",
-    "viewAll": "View All",
-    "viewProject": "View Project"
+    "kicker": "Selected work: research, theses, side projects",
+    "titlePrefix": "Selected",
+    "titleItalic": "work.",
+    "subtitle": "Things I've built or studied, at university, in research, and in my own time. Not a portfolio of client deliverables; a portfolio of thinking.",
+    "items": [
+      {
+        "image": "",
+        "viz": "abm",
+        "sector": "MSc Thesis · Bocconi",
+        "title": "Gentrification agent-based model",
+        "outcome": "Ten-year simulation of neighbourhood turnover in European cities, calibrated on Kadaster and CBS microdata.",
+        "stack": [
+          "Python",
+          "Mesa",
+          "GeoPandas",
+          "Postgres"
+        ],
+        "link": "/research/gentrification-abm"
+      },
+      {
+        "image": "/projects/flood-paths.png",
+        "viz": "image",
+        "sector": "BSc Thesis · UvA",
+        "title": "Parcel-level flood-risk classifier",
+        "outcome": "Supervised classification on LiDAR and rainfall-radar features at parcel level, written up as the bachelor's thesis.",
+        "stack": [
+          "PyTorch",
+          "GeoPandas",
+          "PostGIS",
+          "LiDAR"
+        ],
+        "link": ""
+      },
+      {
+        "image": "/projects/rent-markers.png",
+        "viz": "image",
+        "sector": "Research · Geospatial",
+        "title": "Hedonic rent model · 15 EU metros",
+        "outcome": "Parcel-level hedonic rent benchmarks built on PostGIS and gradient boosting across European metros.",
+        "stack": [
+          "PostGIS",
+          "GeoPandas",
+          "XGBoost",
+          "H3"
+        ],
+        "link": "/research/rent-prediction-hedonic"
+      },
+      {
+        "image": "",
+        "viz": "pipeline",
+        "sector": "Side project · Personal",
+        "title": "LanguageBuddy",
+        "outcome": "A small conversational language-practice app: LLM-driven correction, spaced repetition, and a habit-friendly UI.",
+        "stack": [
+          "FastAPI",
+          "Postgres",
+          "LLMs",
+          "React"
+        ],
+        "link": "/about/projects/languagebuddy"
+      },
+      {
+        "image": "",
+        "viz": "intake",
+        "sector": "Research · Computer Vision",
+        "title": "Façade & commerce signals from street-view",
+        "outcome": "CNN extraction of façade and commerce features from ~4M street-view frames across six EU cities.",
+        "stack": [
+          "PyTorch",
+          "OpenCV",
+          "GeoPandas",
+          "Postgres"
+        ],
+        "link": "/research/street-view-cv"
+      }
+    ],
+    "viewCase": "Read more",
+    "viewPaper": "View paper",
+    "ctaAll": "See all"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. All rights reserved.",
@@ -242,8 +316,8 @@
     "loading": "Loading…"
   },
   "Thoughts": {
-    "loadingFallback": "Posts loading — check back shortly",
-    "kicker": "Thoughts — essays, updates, notes",
+    "loadingFallback": "Posts loading: check back shortly",
+    "kicker": "Thoughts: essays, updates, notes",
     "recentTitle": "Recent",
     "recentItalic": "thoughts",
     "subtitle": "Short pieces on tools, pipelines, spatial methods and the occasional rant.",
@@ -260,28 +334,28 @@
     "bylinePrefix": "Written by",
     "bylineSuffix": "· Amsterdam",
     "minRead": "min read",
-    "writingTeaserKicker": "Blog — recent posts",
+    "writingTeaserKicker": "Blog: recent posts",
     "writingTeaserSubtitle": "Essays, tutorials and field notes.",
     "endCtaKicker": "§ More",
     "endCtaTitle": "More writing on the",
     "endCtaTitleItalic": "blog.",
-    "endCtaBody": "Browse other essays on geodata, AI/ML and operations — or read more about who's behind the writing.",
+    "endCtaBody": "Browse other essays on geodata, AI/ML and operations, or read more about who's behind the writing.",
     "endCtaButton": "More writing",
     "endCtaSecondary": "About me"
   },
   "SkillsGrid": {
-    "kicker": "Expertise — four core competencies",
+    "kicker": "Expertise: four core competencies",
     "titleItalic": "Core",
     "titleRest": "competencies."
   },
   "AboutTeaser": {
-    "kicker": "About — who's behind the work",
+    "kicker": "About: who's behind the work",
     "titleLine1": "Hi, I'm",
     "titleLine1Italic": "Ian.",
     "titleLine2": "I ship production",
     "titleLine2Underline": "systems.",
-    "bio1": "Head of Data at KR&A in Amsterdam, leading AI and geospatial initiatives across European real estate, climate risk and alternative-data pipelines. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam — roughly four years between the two, spent mostly on the production side.",
-    "bio2": "I work at the intersection of geospatial analytics, ML and the data infrastructure that makes both useful — the pipelines, schemas and spatial joins that do not appear in papers but determine whether the model ships. This site collects what is worth writing down: papers, methods, tools and the occasional strong opinion on why dashboards are overrated.",
+    "bio1": "Head of Data at KR&A in Amsterdam, leading AI and geospatial initiatives across European real estate, climate risk and alternative-data pipelines. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam, roughly four years between the two, spent mostly on the production side.",
+    "bio2": "I work at the intersection of geospatial analytics, ML and the data infrastructure that makes both useful, the pipelines, schemas and spatial joins that do not appear in papers but determine whether the model ships. This site collects what is worth writing down: papers, methods, tools and the occasional strong opinion on why dashboards are overrated.",
     "factRoleK": "Role",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Based",
@@ -295,85 +369,56 @@
   },
   "Sectors": {
     "kicker": "Sectors",
-    "titlePrefix": "Where I",
-    "titleItalic": "tend",
-    "titleSuffix": "to work.",
-    "subtitle": "Domains where I have spent time — academically, professionally or both. Each has its own data quirks and its own definition of what constitutes a shipped result.",
+    "titlePrefix": "Sectors",
+    "titleItalic": "",
+    "titleSuffix": "",
+    "subtitle": "Domains where I have spent time, academically, professionally or both. Each has its own data quirks and its own definition of what constitutes a shipped result.",
     "items": [
-      { "name": "Geospatial Analytics", "blurb": "Spatial pipelines, H3 indexing, parcel-level models, alt-data ingestion." },
-      { "name": "Insurance & Climate Risk", "blurb": "Exposure modelling, flood and CV pipelines, claims triage automations." },
-      { "name": "Logistics & Mobility", "blurb": "Routing, depot siting, last-mile, ops dashboards that replace ten manual reports." },
-      { "name": "Public Sector & Planning", "blurb": "Mobility, climate adaptation, infrastructure resilience and parcel-level analysis." },
-      { "name": "Real Estate & Investment", "blurb": "Valuation, gentrification ABMs, alt-data for REITs, funds and asset managers." }
+      {
+        "name": "Geospatial Analytics",
+        "blurb": "Spatial pipelines, H3 indexing, parcel-level models, alt-data ingestion."
+      },
+      {
+        "name": "Insurance & Climate Risk",
+        "blurb": "Exposure modelling, flood and CV pipelines, claims triage automations."
+      },
+      {
+        "name": "Logistics & Mobility",
+        "blurb": "Routing, depot siting, last-mile, ops dashboards that replace ten manual reports."
+      },
+      {
+        "name": "Public Sector & Planning",
+        "blurb": "Mobility, climate adaptation, infrastructure resilience and parcel-level analysis."
+      },
+      {
+        "name": "Real Estate & Investment",
+        "blurb": "Valuation, gentrification ABMs, alt-data for REITs, funds and asset managers."
+      }
     ]
   },
-  "Projects": {
-    "kicker": "Selected work — research, theses, side projects",
-    "titlePrefix": "Selected",
-    "titleItalic": "work.",
-    "subtitle": "Things I've built or studied — at university, in research, and in my own time. Not a portfolio of client deliverables; a portfolio of thinking.",
-    "items": [
-      {
-        "image": "",
-        "viz": "abm",
-        "sector": "MSc Thesis · Bocconi",
-        "title": "Gentrification agent-based model",
-        "outcome": "Ten-year simulation of neighbourhood turnover in European cities, calibrated on Kadaster and CBS microdata.",
-        "stack": ["Python", "Mesa", "GeoPandas", "Postgres"],
-        "link": "/research/gentrification-abm"
-      },
-      {
-        "image": "/projects/flood-paths.png",
-        "viz": "image",
-        "sector": "BSc Thesis · UvA",
-        "title": "Parcel-level flood-risk classifier",
-        "outcome": "Supervised classification on LiDAR and rainfall-radar features at parcel level — written up as the bachelor's thesis.",
-        "stack": ["PyTorch", "GeoPandas", "PostGIS", "LiDAR"],
-        "link": ""
-      },
-      {
-        "image": "/projects/rent-markers.png",
-        "viz": "image",
-        "sector": "Research · Geospatial",
-        "title": "Hedonic rent model · 15 EU metros",
-        "outcome": "Parcel-level hedonic rent benchmarks built on PostGIS and gradient boosting across European metros.",
-        "stack": ["PostGIS", "GeoPandas", "XGBoost", "H3"],
-        "link": "/research/rent-prediction-hedonic"
-      },
-      {
-        "image": "",
-        "viz": "pipeline",
-        "sector": "Side project · Personal",
-        "title": "LanguageBuddy",
-        "outcome": "A small conversational language-practice app: LLM-driven correction, spaced repetition, and a habit-friendly UI.",
-        "stack": ["FastAPI", "Postgres", "LLMs", "React"],
-        "link": "/about/projects/languagebuddy"
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Research · Computer Vision",
-        "title": "Façade & commerce signals from street-view",
-        "outcome": "CNN extraction of façade and commerce features from ~4M street-view frames across six EU cities.",
-        "stack": ["PyTorch", "OpenCV", "GeoPandas", "Postgres"],
-        "link": "/research/street-view-cv"
-      }
-    ],
-    "viewCase": "Read more",
-    "viewPaper": "View paper",
-    "ctaAll": "See all"
-  },
   "Proof": {
-    "kicker": "Proof — outcomes that shipped",
+    "kicker": "Proof: outcomes that shipped",
     "titlePrefix": "Things that",
     "titleItalic": "shipped",
     "titleSuffix": "and stuck.",
     "quote": "Ian shipped the thing he said he'd ship, in the time he said he'd ship it.",
     "quoteAttribution": "COO, regulated services",
     "outcomes": [
-      { "value": "2,500+", "unit": "hrs / yr reclaimed", "context": "Deal-screening tool · 6 weeks" },
-      { "value": "11 → 3", "unit": "days · onboarding", "context": "Compliance intake rebuild · 8 weeks" },
-      { "value": "18", "unit": "hrs / wk savings identified", "context": "Automation audit · 2 weeks" }
+      {
+        "value": "2,500+",
+        "unit": "hrs / yr reclaimed",
+        "context": "Deal-screening tool · 6 weeks"
+      },
+      {
+        "value": "11 → 3",
+        "unit": "days · onboarding",
+        "context": "Compliance intake rebuild · 8 weeks"
+      },
+      {
+        "value": "18",
+        "unit": "hrs / wk savings identified",
+        "context": "Automation audit · 2 weeks"
+      }
     ],
     "ctaPrimary": "See how we'd work together",
     "ctaSecondary": "Book a 20-minute call"
@@ -410,7 +455,7 @@
     "inlineDescription": "Occasional. No spam. Unsubscribe any time.",
     "emailPlaceholder": "you@domain.com",
     "submit": "Subscribe",
-    "success": "Thanks — we'll be in touch.",
+    "success": "Thanks, we'll be in touch.",
     "error": "Something went wrong. Try again or email directly.",
     "privacy": "We won't share your address."
   }
