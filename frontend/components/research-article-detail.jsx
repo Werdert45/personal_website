@@ -12,6 +12,75 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Loader2, ArrowRight, Clock, FileText } from "lucide-react";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
+const STATIC_PAPERS = {
+  "metro-capitalisation-timing": {
+    slug: "metro-capitalisation-timing",
+    title: "When metro openings capitalise into residential rents: a seven-city European study",
+    abstract: "Staggered difference-in-differences across seven European cities (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma; n = 42,004). The largest price response — a step of roughly +12% — appears at maturity, two or more years after opening. Bootstrap inference on few-cluster data (G = 7 cities). Maturity step positive under every leave-one-city-out check.",
+    category: "WORKING-PAPER",
+    date: "2026-06",
+    author: "Ian Ronk",
+    tags: ["difference-in-differences", "rent", "metro", "urban economics", "bootstrap"],
+    status: "Under review",
+    doi: null,
+    arxiv_id: null,
+    cite_as: 'Ronk, I. (2026). "When metro openings capitalise into residential rents: a seven-city European study." Working paper.',
+    content: `## Design
+
+Staggered difference-in-differences across seven European cities (Amsterdam, Copenhagen, Helsinki, Milano, Paris, Rennes, Roma), treating each metro extension as a separate treatment event. The panel covers transaction-level rent data from 2008 to 2024, yielding 42,004 observations after cleaning.
+
+**Treatment timing.** Each city contributes its own treatment calendar: announcement, ground-break, opening, and maturity (defined as 24+ months post-opening). Event-study coefficients trace the price path relative to four quarters before announcement.
+
+**Bootstrap inference.** With G = 7 cities, conventional cluster-robust standard errors are unreliable. We apply the wild cluster bootstrap (Webb weights, B = 999) and report p-values from the percentile-t distribution.
+
+## Main results
+
+The largest price step appears at maturity, not at announcement or opening. The point estimate is a +12% premium (95% CI: +7% to +18%) relative to never-treated control rings at 1-3 km.
+
+**Robustness.** The maturity step is positive under every leave-one-city-out check and survives re-estimation with alternative bandwidth radii (400 m, 600 m, 1,000 m).
+
+## Data
+
+Rent transactions: national registers (Kadaster NL, DVF FR, OMI IT) supplemented by scraped listing platforms. Station polygons: OpenStreetMap. Treatment calendars hand-compiled from municipal transport authority press releases.`,
+  },
+  "voronoi-postcode-estimation": {
+    slug: "voronoi-postcode-estimation",
+    title: "Postcode boundary estimation from crowdsourced address data: a Voronoi approach",
+    abstract: "OSM address points, kNN outlier removal, point Voronoi, and polygon dissolution, calibrated against authoritative NL and DK postcode layers (5,160 polygons combined). IoU saturates near 0.7 at roughly 300 seeds per postcode. Applied to Italy (4,209 CAP polygons) where no free authoritative layer exists. GeoJSON output ships with per-polygon seed count.",
+    category: "PREPRINT",
+    date: "2026-05",
+    author: "Ian Ronk",
+    tags: ["Voronoi", "OpenStreetMap", "postcode boundaries", "Italy", "geospatial"],
+    status: "Preprint in preparation",
+    doi: null,
+    arxiv_id: null,
+    cite_as: 'Ronk, I. (2026). "Postcode boundary estimation from crowdsourced address data: a Voronoi approach." Preprint.',
+    content: `## Problem
+
+Postcode boundaries are authoritative in some EU countries (NL, DK, DE) and absent or commercially restricted in others (IT). Without polygons, spatial aggregation over postcodes requires a surrogate.
+
+## Pipeline
+
+Four candidate methods were evaluated; the fourth — OSM address Voronoi with kNN outlier removal — achieved consistently acceptable IoU.
+
+**Step 1: address harvest.** OSM Overpass API, tag \`addr:postcode\`, deduplicated on (lat, lon) pairs. Italy yields roughly 18 million address points.
+
+**Step 2: kNN outlier removal.** For each point, compute the five nearest neighbours of a different postcode. Points closer to a foreign-postcode centroid than to their own are labelled outliers and dropped (approximately 4-6% of input).
+
+**Step 3: Voronoi tessellation.** Constrained to the country bounding polygon. One Voronoi cell per seed point.
+
+**Step 4: polygon dissolution.** Merge by \`addr:postcode\`. Islands smaller than 0.01 km² consolidated with the geographically nearest polygon of the same code.
+
+## Calibration
+
+Evaluated on NL (3,898 postcodes, 4-digit PC4) and DK (1,262 postcodes). IoU saturates near 0.70 at roughly 300 seeds per postcode; median IoU is 0.68 for NL and 0.71 for DK.
+
+## Application
+
+Applied to 4,209 Italian CAP polygons. GeoJSON output includes per-polygon seed count and IoU estimate (where computable by intersection with ISTAT municipality boundaries).`,
+  },
+};
+
 function getTranslated(article, field, locale) {
   if (locale === "en" || !article.translations) return article[field];
   const trans = article.translations.find((t) => t.language === locale);
@@ -61,6 +130,8 @@ export default function ResearchArticleDetail({ slug }) {
           } else if (data.geojson_data) {
             setGeojsonData(data.geojson_data);
           }
+        } else if (STATIC_PAPERS[slug]) {
+          setArticle(STATIC_PAPERS[slug]);
         } else {
           setError("Article not found");
         }
@@ -233,6 +304,38 @@ export default function ResearchArticleDetail({ slug }) {
                 {article.tags.map((tag) => (
                   <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>
                 ))}
+              </div>
+            )}
+
+            {(article.status || article.doi !== undefined || article.arxiv_id !== undefined || article.cite_as) && (
+              <div className="mb-2 p-4 rounded-lg border border-border bg-muted/20 font-mono text-xs">
+                <p className="uppercase tracking-widest text-muted-foreground mb-3 text-[10px]">Reference</p>
+                <div className="space-y-2">
+                  {article.status && (
+                    <div className="flex gap-4">
+                      <span className="text-muted-foreground uppercase w-16 shrink-0">Status</span>
+                      <span>{article.status}</span>
+                    </div>
+                  )}
+                  <div className="flex gap-4">
+                    <span className="text-muted-foreground uppercase w-16 shrink-0">DOI</span>
+                    {article.doi
+                      ? <a href={`https://doi.org/${article.doi}`} className="text-primary hover:underline">{article.doi}</a>
+                      : <span className="text-muted-foreground italic">forthcoming</span>}
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="text-muted-foreground uppercase w-16 shrink-0">arXiv</span>
+                    {article.arxiv_id
+                      ? <a href={`https://arxiv.org/abs/${article.arxiv_id}`} className="text-primary hover:underline">arXiv:{article.arxiv_id}</a>
+                      : <span className="text-muted-foreground italic">forthcoming</span>}
+                  </div>
+                  {article.cite_as && (
+                    <div className="flex gap-4">
+                      <span className="text-muted-foreground uppercase w-16 shrink-0">Cite</span>
+                      <span className="text-muted-foreground leading-relaxed">{article.cite_as}</span>
+                    </div>
+                  )}
+                </div>
               </div>
             )}
           </div>
