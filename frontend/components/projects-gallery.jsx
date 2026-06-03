@@ -6,49 +6,6 @@ import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 
-function VizIntake({ titleText }) {
-  const reactId = useId();
-  const gridId = `vizGridA-${reactId}`;
-  const titleId = `vizIntake-${reactId}`;
-  return (
-    <svg
-      viewBox="0 0 320 180"
-      role="img"
-      aria-labelledby={titleId}
-      style={{ width: "100%", height: "100%" }}
-    >
-      <title id={titleId}>{titleText || "Street-view CV pipeline: frame → CNN → classify → spatial join → map output"}</title>
-      <defs>
-        <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
-        </pattern>
-      </defs>
-      <rect width="320" height="180" fill={`url(#${gridId})`} />
-      <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
-        <rect x="22" y="40" width="62" height="34" fill="#F6F4EE" stroke="#111110" />
-        <text x="34" y="60">frame</text>
-        <text x="30" y="72" opacity="0.55" fontSize="7">~4M frames</text>
-
-        <rect x="106" y="40" width="62" height="34" fill="#FFD60A" stroke="#111110" />
-        <text x="118" y="60">CNN</text>
-        <text x="112" y="72" opacity="0.6" fontSize="7">PyTorch</text>
-
-        <rect x="190" y="40" width="62" height="34" fill="#FFD60A" stroke="#111110" />
-        <text x="198" y="60">classify</text>
-        <text x="196" y="72" opacity="0.6" fontSize="7">façade · retail</text>
-
-        <rect x="22" y="108" width="230" height="34" fill="#111110" stroke="#111110" />
-        <text x="60" y="128" fill="#FFD60A">spatial join · PostGIS · 6 cities</text>
-      </g>
-      <g stroke="#111110" strokeWidth="1.2" fill="none">
-        <path d="M84 57 L106 57" />
-        <path d="M168 57 L190 57" />
-        <path d="M221 74 L221 92 L137 92 L137 108" />
-      </g>
-    </svg>
-  );
-}
-
 function VizABM({ titleText }) {
   const reactId = useId();
   const titleId = `vizABM-${reactId}`;
@@ -62,14 +19,10 @@ function VizABM({ titleText }) {
       cells.push(
         <rect
           key={`${r}-${c}`}
-          x={x}
-          y={y}
-          width="14"
-          height="14"
+          x={x} y={y} width="14" height="14"
           fill={v > 0.55 ? "#FFD60A" : "#F6F4EE"}
           fillOpacity={v > 0.55 ? 0.4 + v * 0.6 : 0.4}
-          stroke="#111110"
-          strokeWidth="0.5"
+          stroke="#111110" strokeWidth="0.5"
         />
       );
     }
@@ -80,12 +33,7 @@ function VizABM({ titleText }) {
     { x1: 250, y1: 130, x2: 210, y2: 80 },
   ];
   return (
-    <svg
-      viewBox="0 0 320 180"
-      role="img"
-      aria-labelledby={titleId}
-      style={{ width: "100%", height: "100%" }}
-    >
+    <svg viewBox="0 0 320 180" role="img" aria-labelledby={titleId} style={{ width: "100%", height: "100%" }}>
       <title id={titleId}>{titleText || "Agent-based grid simulating neighbourhood turnover from t=0 to t=10 years"}</title>
       {cells}
       {arrows.map((a, i) => (
@@ -96,63 +44,131 @@ function VizABM({ titleText }) {
       ))}
       <g fontFamily="var(--font-mono)" fontSize="8" fill="#8A8676">
         <text x="14" y="172">t = 0</text>
-        <text x="280" y="172">t = 10y</text>
+        <text x="274" y="172">t = 10y</text>
       </g>
     </svg>
   );
 }
 
-function VizPipeline({ titleText }) {
+function VizHedonic({ titleText }) {
   const reactId = useId();
-  const gridId = `vizGridB-${reactId}`;
-  const titleId = `vizPipeline-${reactId}`;
+  const titleId = `vizHedonic-${reactId}`;
+  // Deterministic EU country input bars
+  const countries = [
+    { label: "NL", w: 34 }, { label: "DE", w: 40 }, { label: "FR", w: 36 },
+    { label: "IT", w: 30 }, { label: "DK", w: 32 }, { label: "ES", w: 38 }, { label: "+7", w: 24 },
+  ];
+  // Monthly HPI sparkline (deterministic, base=100)
+  const spark = [100, 101, 100, 102, 103, 101, 105, 106, 104, 107, 109, 111];
+  const sparkPath = spark.map((v, i) => `${i === 0 ? "M" : "L"}${233 + i * 6},${158 - (v - 100) * 2.5}`).join(" ");
   return (
-    <svg
-      viewBox="0 0 320 180"
-      role="img"
-      aria-labelledby={titleId}
-      style={{ width: "100%", height: "100%" }}
-    >
-      <title id={titleId}>{titleText || "LanguageBuddy: input → LLM correction → spaced repetition → review schedule"}</title>
+    <svg viewBox="0 0 320 180" role="img" aria-labelledby={titleId} style={{ width: "100%", height: "100%" }}>
+      <title id={titleId}>{titleText || "Eurostat HPI pipeline: 13 EU country scrapes to monthly hedonic price index"}</title>
+      {/* Country input bars */}
+      {countries.map((c, i) => (
+        <g key={c.label} fontFamily="var(--font-mono)" fontSize="7">
+          <rect x="14" y={14 + i * 22} width={c.w} height="16"
+            fill={c.label === "+7" ? "#FFD60A" : "#F6F4EE"}
+            stroke="#111110" strokeWidth="0.7" />
+          <text x="18" y={26 + i * 22} fill="#111110">{c.label}</text>
+        </g>
+      ))}
+      {/* Arrow from country stack to pipeline */}
+      <path d="M58 80 L90 42" stroke="#111110" strokeWidth="1" fill="none" markerEnd="url(#arr)" />
+      {/* Pipeline: scrape */}
+      <rect x="90" y="30" width="62" height="26" fill="#F6F4EE" stroke="#111110" strokeWidth="0.8" />
+      <text x="95" y="44" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">scrape</text>
+      <text x="95" y="53" fontFamily="var(--font-mono)" fontSize="6.5" fill="#8A8676">deduplicate</text>
+      {/* Pipeline: enrich */}
+      <rect x="90" y="78" width="62" height="26" fill="#FFD60A" stroke="#111110" strokeWidth="0.8" />
+      <text x="95" y="92" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">enrich</text>
+      <text x="95" y="101" fontFamily="var(--font-mono)" fontSize="6.5" fill="#111110">NUTS3 · lat/lon</text>
+      {/* Pipeline: regress */}
+      <rect x="90" y="128" width="62" height="26" fill="#111110" stroke="#111110" />
+      <text x="95" y="142" fontFamily="var(--font-mono)" fontSize="8" fill="#FFD60A">regress</text>
+      <text x="95" y="151" fontFamily="var(--font-mono)" fontSize="6.5" fill="#F6F4EE">log-price model</text>
+      {/* Vertical connectors */}
+      <path d="M121 56 L121 78" stroke="#111110" strokeWidth="1" fill="none" />
+      <path d="M121 104 L121 128" stroke="#111110" strokeWidth="1" fill="none" />
+      {/* Arrow to index output */}
+      <path d="M152 141 L230 141" stroke="#111110" strokeWidth="1" fill="none" />
+      {/* Index output box */}
+      <rect x="230" y="110" width="78" height="52" fill="#F6F4EE" stroke="#111110" strokeWidth="0.7" />
+      <text x="234" y="124" fontFamily="var(--font-mono)" fontSize="7" fill="#8A8676">monthly HPI</text>
+      <polyline points={spark.map((v, i) => `${233 + i * 6},${158 - (v - 100) * 2.5}`).join(" ")}
+        fill="none" stroke="#111110" strokeWidth="1.4" />
+      <text x="234" y="160" fontFamily="var(--font-mono)" fontSize="6" fill="#8A8676">base = 100</text>
+    </svg>
+  );
+}
+
+function VizLanguageBuddy({ titleText }) {
+  const reactId = useId();
+  const gridId = `vizGridLB-${reactId}`;
+  const titleId = `vizLB-${reactId}`;
+  const langs = ["NL", "IT", "ES"];
+  const levels = ["A1", "A2", "B1", "B2", "C1"];
+  return (
+    <svg viewBox="0 0 320 180" role="img" aria-labelledby={titleId} style={{ width: "100%", height: "100%" }}>
+      <title id={titleId}>{titleText || "LanguageBuddy: conversational AI tutor with spaced repetition and CEFR progression"}</title>
       <defs>
         <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
         </pattern>
       </defs>
       <rect width="320" height="180" fill={`url(#${gridId})`} />
-      <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
-        <rect x="14" y="60" width="56" height="32" fill="#F6F4EE" stroke="#111110" />
-        <text x="24" y="79">input</text>
+      {/* Language × level grid */}
+      {langs.map((lang, li) =>
+        levels.map((lvl, vi) => {
+          const active = (li === 0 && vi < 3) || (li === 1 && vi <= 4) || (li === 2 && vi <= 4);
+          return (
+            <g key={`${lang}-${lvl}`}>
+              <rect x={20 + vi * 36} y={20 + li * 36} width="30" height="24"
+                fill={active ? (vi === 2 && li === 0 ? "#FFD60A" : "#F6F4EE") : "transparent"}
+                stroke={active ? "#111110" : "rgba(15,14,11,.15)"}
+                strokeWidth="0.7" />
+              <text x={24 + vi * 36} y={36 + li * 36}
+                fontFamily="var(--font-mono)" fontSize="8"
+                fill={active ? "#111110" : "rgba(15,14,11,.25)"}>
+                {lvl}
+              </text>
+            </g>
+          );
+        })
+      )}
+      {/* Language labels */}
+      {langs.map((lang, li) => (
+        <text key={lang} x="10" y={34 + li * 36} fontFamily="var(--font-mono)" fontSize="7" fill="#8A8676"
+          textAnchor="middle" transform={`rotate(-90, 10, ${34 + li * 36})`}>{lang}</text>
+      ))}
+      {/* Pipeline below the grid */}
+      <rect x="14" y="130" width="58" height="26" fill="#F6F4EE" stroke="#111110" strokeWidth="0.8" />
+      <text x="18" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">converse</text>
+      <text x="18" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#8A8676">Claude AI</text>
 
-        <rect x="86" y="60" width="56" height="32" fill="#FFD60A" stroke="#111110" />
-        <text x="92" y="79">correct</text>
-        <text x="88" y="50" fontSize="7" opacity="0.55">LLM agent</text>
+      <rect x="90" y="130" width="58" height="26" fill="#FFD60A" stroke="#111110" strokeWidth="0.8" />
+      <text x="94" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">correct</text>
+      <text x="94" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#111110">real-time</text>
 
-        <rect x="158" y="60" width="56" height="32" fill="#FFD60A" stroke="#111110" />
-        <text x="168" y="79">score</text>
-        <text x="160" y="50" fontSize="7" opacity="0.55">spaced rep.</text>
+      <rect x="166" y="130" width="58" height="26" fill="#FFD60A" stroke="#111110" strokeWidth="0.8" />
+      <text x="170" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">review</text>
+      <text x="170" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#111110">SM-2 SRS</text>
 
-        <rect x="230" y="60" width="56" height="32" fill="#111110" stroke="#111110" />
-        <text x="242" y="79" fill="#FFD60A">review</text>
+      <rect x="242" y="130" width="64" height="26" fill="#111110" stroke="#111110" />
+      <text x="246" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#FFD60A">progress</text>
+      <text x="246" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#F6F4EE">XP · streak</text>
 
-        <rect x="86" y="118" width="128" height="26" fill="#F6F4EE" stroke="#111110" strokeDasharray="3 2" />
-        <text x="102" y="135" fontSize="8" opacity="0.7">habit tracker · schedule</text>
-      </g>
-      <g stroke="#111110" strokeWidth="1.2" fill="none">
-        <path d="M70 76 L86 76" />
-        <path d="M142 76 L158 76" />
-        <path d="M214 76 L230 76" />
-        <path d="M114 92 L114 118" />
-        <path d="M186 92 L186 118" />
-      </g>
+      <path d="M72 143 L90 143" stroke="#111110" strokeWidth="1" fill="none" />
+      <path d="M148 143 L166 143" stroke="#111110" strokeWidth="1" fill="none" />
+      <path d="M224 143 L242 143" stroke="#111110" strokeWidth="1" fill="none" />
     </svg>
   );
 }
 
 function ProjectViz({ kind }) {
-  if (kind === "intake") return <VizIntake />;
   if (kind === "abm") return <VizABM />;
-  if (kind === "pipeline") return <VizPipeline />;
+  if (kind === "hedonic") return <VizHedonic />;
+  if (kind === "languagebuddy") return <VizLanguageBuddy />;
   return null;
 }
 

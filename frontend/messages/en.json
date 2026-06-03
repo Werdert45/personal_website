@@ -225,11 +225,10 @@
     "subtitle": "Things I've built or studied, at university, in research, and in my own time. Not a portfolio of client deliverables; a portfolio of thinking.",
     "items": [
       {
-        "image": "",
         "viz": "abm",
         "sector": "MSc Thesis · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "Ten-year simulation of neighbourhood turnover in European cities, calibrated on Kadaster and CBS microdata.",
+        "outcome": "Ten-year ABM of neighbourhood turnover in Amsterdam, calibrated on Kadaster and CBS microdata. Affordability-attractiveness decision rules; agent mobility emergent from price pressure.",
         "stack": [
           "Python",
           "Mesa",
@@ -239,60 +238,32 @@
         "link": "/research/gentrification-abm"
       },
       {
-        "image": "/projects/flood-paths.png",
-        "viz": "image",
-        "sector": "BSc Thesis · UvA",
-        "title": "Parcel-level flood-risk classifier",
-        "outcome": "Supervised classification on LiDAR and rainfall-radar features at parcel level, written up as the bachelor's thesis.",
+        "viz": "hedonic",
+        "sector": "Research · Eurostat",
+        "title": "Monthly house-price index · 13 EU countries",
+        "outcome": "Web-scraping pipeline across 13 EU countries feeding a log-price hedonic regression. Time dummies extracted as monthly indices; tested as disaggregation indicators for Eurostat quarterly HPIs.",
         "stack": [
-          "PyTorch",
-          "GeoPandas",
+          "Python",
+          "Scrapy",
           "PostGIS",
-          "LiDAR"
+          "MongoDB",
+          "XGBoost"
         ],
         "link": ""
       },
       {
-        "image": "/projects/rent-markers.png",
-        "viz": "image",
-        "sector": "Research · Geospatial",
-        "title": "Hedonic rent model · 15 EU metros",
-        "outcome": "Parcel-level hedonic rent benchmarks built on PostGIS and gradient boosting across European metros.",
-        "stack": [
-          "PostGIS",
-          "GeoPandas",
-          "XGBoost",
-          "H3"
-        ],
-        "link": "/research/rent-prediction-hedonic"
-      },
-      {
-        "image": "",
-        "viz": "pipeline",
+        "viz": "languagebuddy",
         "sector": "Side project · Personal",
         "title": "LanguageBuddy",
-        "outcome": "A small conversational language-practice app: LLM-driven correction, spaced repetition, and a habit-friendly UI.",
+        "outcome": "Conversational language-practice platform: Claude-powered real-time correction, SM-2 spaced repetition, TTS voice calls, and CEFR-aligned curriculum for Dutch, Italian and Spanish.",
         "stack": [
           "FastAPI",
-          "Postgres",
-          "LLMs",
-          "React"
+          "SQLite",
+          "Claude",
+          "Docker",
+          "TTS"
         ],
         "link": "/about/projects/languagebuddy"
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Research · Computer Vision",
-        "title": "Façade & commerce signals from street-view",
-        "outcome": "CNN extraction of façade and commerce features from ~4M street-view frames across six EU cities.",
-        "stack": [
-          "PyTorch",
-          "OpenCV",
-          "GeoPandas",
-          "Postgres"
-        ],
-        "link": "/research/street-view-cv"
       }
     ],
     "viewCase": "Read more",

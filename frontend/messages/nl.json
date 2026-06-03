@@ -223,11 +223,10 @@
     "subtitle": "Dingen die ik heb gebouwd of bestudeerd, aan de universiteit, in onderzoek en in mijn eigen tijd. Geen portfolio van klantopdrachten; een portfolio van denken.",
     "items": [
       {
-        "image": "",
         "viz": "abm",
         "sector": "MSc Scriptie · Bocconi",
-        "title": "Gentrificatie agent-based model",
-        "outcome": "Tienjarige simulatie van wijkverandering in Europese steden, gekalibreerd op Kadaster- en CBS-microdata.",
+        "title": "Agent-gebaseerd gentrificatiemodel",
+        "outcome": "Tienjarige ABM-simulatie van buurtverloop in Amsterdam, gekalibreerd op Kadaster- en CBS-microdata. Betaalbaarheids- en aantrekkelijkheidsregels; agentmobiliteit als emergent gedrag.",
         "stack": [
           "Python",
           "Mesa",
@@ -237,60 +236,32 @@
         "link": "/research/gentrification-abm"
       },
       {
-        "image": "/projects/flood-paths.png",
-        "viz": "image",
-        "sector": "BSc Scriptie · UvA",
-        "title": "Overstromingsrisico op perceelniveau",
-        "outcome": "Supervised classificatie op LiDAR- en neerslagradar-features op perceelniveau, uitgewerkt als bachelor-scriptie.",
+        "viz": "hedonic",
+        "sector": "Onderzoek · Eurostat",
+        "title": "Maandelijkse huizenprijsindex · 13 EU-landen",
+        "outcome": "Web-scrapingpipeline voor 13 EU-landen gevoed door een log-prijs hedonische regressie. Tijdsdummies geëxtraheerd als maandelijkse indices voor Eurostat kwartaalreeksen.",
         "stack": [
-          "PyTorch",
-          "GeoPandas",
+          "Python",
+          "Scrapy",
           "PostGIS",
-          "LiDAR"
+          "MongoDB",
+          "XGBoost"
         ],
         "link": ""
       },
       {
-        "image": "/projects/rent-markers.png",
-        "viz": "image",
-        "sector": "Onderzoek · Geospatial",
-        "title": "Hedonisch huurmodel · 15 EU-metro's",
-        "outcome": "Hedonische huurbenchmarks op perceelniveau, gebouwd op PostGIS en gradient boosting in Europese metropolen.",
-        "stack": [
-          "PostGIS",
-          "GeoPandas",
-          "XGBoost",
-          "H3"
-        ],
-        "link": "/research/rent-prediction-hedonic"
-      },
-      {
-        "image": "",
-        "viz": "pipeline",
-        "sector": "Eigen project · Persoonlijk",
+        "viz": "languagebuddy",
+        "sector": "Zijproject · Persoonlijk",
         "title": "LanguageBuddy",
-        "outcome": "Een kleine app voor conversatie-taaloefening: LLM-correctie, spaced repetition en een habit-vriendelijke UI.",
+        "outcome": "Conversationeel taaloefenplatform: Claude-aangedreven realtime correctie, SM-2 herhalingsalgoritme, TTS-gesprekken en CEFR-curriculum voor Nederlands, Italiaans en Spaans.",
         "stack": [
           "FastAPI",
-          "Postgres",
-          "LLMs",
-          "React"
+          "SQLite",
+          "Claude",
+          "Docker",
+          "TTS"
         ],
         "link": "/about/projects/languagebuddy"
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Onderzoek · Computer Vision",
-        "title": "Gevel- & handelssignalen uit street-view",
-        "outcome": "CNN-extractie van gevel- en handelskenmerken uit ~4M street-view frames in zes EU-steden.",
-        "stack": [
-          "PyTorch",
-          "OpenCV",
-          "GeoPandas",
-          "Postgres"
-        ],
-        "link": "/research/street-view-cv"
       }
     ],
     "viewCase": "Lees meer",

@@ -223,11 +223,10 @@
     "subtitle": "Cose che ho costruito o studiato, all'università, nella ricerca e nel mio tempo libero. Non un portfolio di consegne ai clienti; un portfolio di pensiero.",
     "items": [
       {
-        "image": "",
         "viz": "abm",
-        "sector": "Tesi MSc · Bocconi",
+        "sector": "Tesi Magistrale · Bocconi",
         "title": "Modello agent-based di gentrificazione",
-        "outcome": "Simulazione decennale del ricambio di quartiere nelle città europee, calibrata su microdati Kadaster e CBS.",
+        "outcome": "Simulazione ABM decennale del ricambio di quartiere ad Amsterdam, calibrata su microdati Kadaster e CBS.",
         "stack": [
           "Python",
           "Mesa",
@@ -237,60 +236,32 @@
         "link": "/research/gentrification-abm"
       },
       {
-        "image": "/projects/flood-paths.png",
-        "viz": "image",
-        "sector": "Tesi BSc · UvA",
-        "title": "Classificatore di rischio alluvione",
-        "outcome": "Classificazione supervisionata su LiDAR e radar pluviale a livello particella, sviluppata come tesi triennale.",
+        "viz": "hedonic",
+        "sector": "Ricerca · Eurostat",
+        "title": "Indice mensile prezzi abitativi · 13 paesi UE",
+        "outcome": "Pipeline di web scraping per 13 paesi UE alimentata da una regressione edonica log-prezzo. Dummy temporali estratti come indici mensili per le serie trimestrali Eurostat.",
         "stack": [
-          "PyTorch",
-          "GeoPandas",
+          "Python",
+          "Scrapy",
           "PostGIS",
-          "LiDAR"
+          "MongoDB",
+          "XGBoost"
         ],
         "link": ""
       },
       {
-        "image": "/projects/rent-markers.png",
-        "viz": "image",
-        "sector": "Ricerca · Geospatial",
-        "title": "Modello edonico affitti · 15 metropoli UE",
-        "outcome": "Benchmark edonici a livello particella, costruiti su PostGIS e gradient boosting nelle metropoli europee.",
-        "stack": [
-          "PostGIS",
-          "GeoPandas",
-          "XGBoost",
-          "H3"
-        ],
-        "link": "/research/rent-prediction-hedonic"
-      },
-      {
-        "image": "",
-        "viz": "pipeline",
+        "viz": "languagebuddy",
         "sector": "Progetto personale",
         "title": "LanguageBuddy",
-        "outcome": "Una piccola app per la pratica conversazionale: correzione guidata da LLM, ripetizione spaziata e UI orientata all'abitudine.",
+        "outcome": "Piattaforma di pratica linguistica conversazionale: correzione in tempo reale con Claude, ripetizione spaziata SM-2, chiamate vocali TTS e curriculum CEFR per olandese, italiano e spagnolo.",
         "stack": [
           "FastAPI",
-          "Postgres",
-          "LLMs",
-          "React"
+          "SQLite",
+          "Claude",
+          "Docker",
+          "TTS"
         ],
         "link": "/about/projects/languagebuddy"
-      },
-      {
-        "image": "",
-        "viz": "intake",
-        "sector": "Ricerca · Computer Vision",
-        "title": "Segnali di facciata e commercio da street-view",
-        "outcome": "Estrazione CNN di facciate e segnali commerciali da circa 4M frame street-view in sei città europee.",
-        "stack": [
-          "PyTorch",
-          "OpenCV",
-          "GeoPandas",
-          "Postgres"
-        ],
-        "link": "/research/street-view-cv"
       }
     ],
     "viewCase": "Leggi di più",
