@@ -7,7 +7,7 @@ export function PersonJsonLd() {
     name: "Ian Ronk",
     jobTitle: "Head of Data",
     url: siteUrl,
-    sameAs: ["https://www.linkedin.com/in/ian-ronk-7b054a120"],
+    sameAs: ["https://www.linkedin.com/in/ian-ronk-7b054a120/", "https://github.com/Werdert45"],
     worksFor: {
       "@type": "Organization",
       name: "KR&A",

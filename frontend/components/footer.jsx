@@ -49,8 +49,8 @@ export function Footer() {
         >
           {tConsent("cookiePreferences")}
         </button>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">GH</a>
-        <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">LI</a>
+        <a href="https://github.com/Werdert45" target="_blank" rel="noopener noreferrer">GH</a>
+        <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/" target="_blank" rel="noopener noreferrer">LI</a>
         <ObfuscatedEmail>@</ObfuscatedEmail>
       </div>
       <span>AMS · 52.37°N / 4.90°E</span>

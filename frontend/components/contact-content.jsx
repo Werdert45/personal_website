@@ -141,8 +141,8 @@ export function ContactContent() {
             </p>
             <div className="direct">
               <ObfuscatedEmail prefixIcon="✉" />
-              <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">in · /ian-ronk</a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer">gh · /ianronk</a>
+              <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/" target="_blank" rel="noopener noreferrer">in · /ian-ronk</a>
+              <a href="https://github.com/Werdert45" target="_blank" rel="noopener noreferrer">gh · /Werdert45</a>
               <span>◉ {t("location")}</span>
             </div>
           </div>
@@ -229,8 +229,8 @@ export function ContactContent() {
             <ObfuscatedEmail />
           </h3>
           <div className="links">
-            <a href="https://www.linkedin.com/in/ian-ronk-7b054a120" target="_blank" rel="noopener noreferrer">{t("linkLinkedIn")}</a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer">{t("linkGitHub")}</a>
+            <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/" target="_blank" rel="noopener noreferrer">{t("linkLinkedIn")}</a>
+            <a href="https://github.com/Werdert45" target="_blank" rel="noopener noreferrer">{t("linkGitHub")}</a>
             <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">{t("linkBookCall")}</a>
           </div>
         </div>
