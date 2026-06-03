@@ -17,7 +17,7 @@ function VizIntake({ titleText }) {
       aria-labelledby={titleId}
       style={{ width: "100%", height: "100%" }}
     >
-      <title id={titleId}>{titleText || "Intake flow: lead → KYC → parse → approved in 3 days"}</title>
+      <title id={titleId}>{titleText || "Street-view CV pipeline: frame → CNN → classify → spatial join → map output"}</title>
       <defs>
         <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
@@ -26,19 +26,19 @@ function VizIntake({ titleText }) {
       <rect width="320" height="180" fill={`url(#${gridId})`} />
       <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
         <rect x="22" y="40" width="62" height="34" fill="#F6F4EE" stroke="#111110" />
-        <text x="36" y="60">intake</text>
-        <text x="34" y="72" opacity="0.55" fontSize="7">11 days</text>
+        <text x="34" y="60">frame</text>
+        <text x="30" y="72" opacity="0.55" fontSize="7">~4M frames</text>
 
         <rect x="106" y="40" width="62" height="34" fill="#FFD60A" stroke="#111110" />
-        <text x="118" y="60">KYC</text>
-        <text x="114" y="72" opacity="0.6" fontSize="7">automated</text>
+        <text x="118" y="60">CNN</text>
+        <text x="112" y="72" opacity="0.6" fontSize="7">PyTorch</text>
 
         <rect x="190" y="40" width="62" height="34" fill="#FFD60A" stroke="#111110" />
-        <text x="200" y="60">parse</text>
-        <text x="196" y="72" opacity="0.6" fontSize="7">LLM</text>
+        <text x="198" y="60">classify</text>
+        <text x="196" y="72" opacity="0.6" fontSize="7">façade · retail</text>
 
         <rect x="22" y="108" width="230" height="34" fill="#111110" stroke="#111110" />
-        <text x="78" y="128" fill="#FFD60A">approved · 3 days</text>
+        <text x="60" y="128" fill="#FFD60A">spatial join · PostGIS · 6 cities</text>
       </g>
       <g stroke="#111110" strokeWidth="1.2" fill="none">
         <path d="M84 57 L106 57" />
@@ -113,7 +113,7 @@ function VizPipeline({ titleText }) {
       aria-labelledby={titleId}
       style={{ width: "100%", height: "100%" }}
     >
-      <title id={titleId}>{titleText || "Sales pipeline: lead → qualify → quote → close, with human-in-the-loop review"}</title>
+      <title id={titleId}>{titleText || "LanguageBuddy: input → LLM correction → spaced repetition → review schedule"}</title>
       <defs>
         <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
           <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
@@ -122,21 +122,21 @@ function VizPipeline({ titleText }) {
       <rect width="320" height="180" fill={`url(#${gridId})`} />
       <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
         <rect x="14" y="60" width="56" height="32" fill="#F6F4EE" stroke="#111110" />
-        <text x="26" y="79">lead</text>
+        <text x="24" y="79">input</text>
 
         <rect x="86" y="60" width="56" height="32" fill="#FFD60A" stroke="#111110" />
-        <text x="92" y="79">qualify</text>
+        <text x="92" y="79">correct</text>
         <text x="88" y="50" fontSize="7" opacity="0.55">LLM agent</text>
 
         <rect x="158" y="60" width="56" height="32" fill="#FFD60A" stroke="#111110" />
-        <text x="174" y="79">quote</text>
-        <text x="160" y="50" fontSize="7" opacity="0.55">templated</text>
+        <text x="168" y="79">score</text>
+        <text x="160" y="50" fontSize="7" opacity="0.55">spaced rep.</text>
 
         <rect x="230" y="60" width="56" height="32" fill="#111110" stroke="#111110" />
-        <text x="248" y="79" fill="#FFD60A">close</text>
+        <text x="242" y="79" fill="#FFD60A">review</text>
 
         <rect x="86" y="118" width="128" height="26" fill="#F6F4EE" stroke="#111110" strokeDasharray="3 2" />
-        <text x="98" y="135" fontSize="8" opacity="0.7">human-in-the-loop · review</text>
+        <text x="102" y="135" fontSize="8" opacity="0.7">habit tracker · schedule</text>
       </g>
       <g stroke="#111110" strokeWidth="1.2" fill="none">
         <path d="M70 76 L86 76" />

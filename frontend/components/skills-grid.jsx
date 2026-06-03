@@ -69,36 +69,27 @@ function SkillViz({ index }) {
       </svg>
     );
   }
-  // Geospatial Visualization — H3 hex grid with layer legend
-  const hexCells = [];
-  const hexData = [
-    [0,0,0.9],[1,0,0.6],[2,0,0.3],[3,0,0.5],[4,0,0.8],
-    [0,1,0.4],[1,1,1.0],[2,1,0.7],[3,1,0.4],[4,1,0.2],
-    [0,2,0.2],[1,2,0.5],[2,2,0.9],[3,2,0.6],[4,2,0.3],
-  ];
-  hexData.forEach(([c, r, v]) => {
-    const w = 36, h = 32;
-    const x = 18 + c * (w * 0.75) + (r % 2 ? w * 0.375 : 0);
-    const y = 18 + r * (h * 0.85);
-    const pts = [
-      `${x+w*0.5},${y}`,`${x+w},${y+h*0.25}`,`${x+w},${y+h*0.75}`,
-      `${x+w*0.5},${y+h}`,`${x},${y+h*0.75}`,`${x},${y+h*0.25}`,
-    ].join(" ");
-    hexCells.push(
-      <polygon key={`${c}-${r}`} points={pts} fill="#FFD60A" fillOpacity={v} stroke="#111110" strokeWidth="0.5" />
-    );
-  });
+  // AI Automation — LLM workflow: trigger → agent → format → ship, with RAG store
   return (
     <svg viewBox="0 0 320 100" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%" }}>
-      {hexCells}
-      <g fontFamily="var(--font-mono)" fontSize="7" fill="#8A8676">
-        <text x="222" y="22">H3 · res 9</text>
-        <rect x="222" y="30" width="8" height="8" fill="#FFD60A" fillOpacity="0.9" stroke="#111110" strokeWidth="0.5"/>
-        <text x="234" y="38">high density</text>
-        <rect x="222" y="44" width="8" height="8" fill="#FFD60A" fillOpacity="0.3" stroke="#111110" strokeWidth="0.5"/>
-        <text x="234" y="52">low density</text>
-        <text x="222" y="68">parcel · PostGIS</text>
-        <text x="222" y="80">DeckGL · Mapbox</text>
+      <g fontFamily="var(--font-mono)" fontSize="9" fill="#111110">
+        <rect x="10" y="18" width="52" height="26" fill="#F6F4EE" stroke="#111110" />
+        <text x="20" y="34">trigger</text>
+        <rect x="78" y="12" width="56" height="38" fill="#FFD60A" stroke="#111110" />
+        <text x="90" y="29">LLM</text>
+        <text x="88" y="41" fontSize="7" opacity="0.7">agent</text>
+        <rect x="150" y="18" width="52" height="26" fill="#F6F4EE" stroke="#111110" />
+        <text x="160" y="34">format</text>
+        <rect x="218" y="18" width="44" height="26" fill="#111110" stroke="#111110" />
+        <text x="228" y="34" fill="#FFD60A">ship</text>
+        <rect x="86" y="64" width="40" height="22" fill="#F6F4EE" stroke="#111110" strokeDasharray="3 2" />
+        <text x="93" y="78" fontSize="8">RAG</text>
+      </g>
+      <g stroke="#111110" strokeWidth="1" fill="none">
+        <path d="M62 31 L78 31" />
+        <path d="M134 31 L150 31" />
+        <path d="M202 31 L218 31" />
+        <path d="M106 50 L106 64" />
       </g>
     </svg>
   );
@@ -108,10 +99,10 @@ const stacks = [
   ["SAM", "LVMs", "LangChain", "RAG", "PyTorch", "XGBoost"],
   ["Airflow", "Docker", "Python", "Postgres", "PostGIS", "dbt"],
   ["PostGIS", "GeoPandas", "H3", "CV", "Agent-based"],
-  ["H3", "DeckGL", "Mapbox", "PostGIS", "Kepler.gl", "QGIS"],
+  ["PostgreSQL", "RAG", "LLM", "Python", "React", "Docker", "n8n"],
 ];
 
-const shortTags = ["ML", "ENG", "GEO", "VIZ"];
+const shortTags = ["ML", "ENG", "GEO", "AUTO"];
 
 function splitTitle(title) {
   const parts = title.split(" ");

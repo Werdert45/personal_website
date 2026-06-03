@@ -75,19 +75,19 @@
     "expertise": [
       {
         "title": "Machine Learning & AI",
-        "description": "Production ML and AI — predictive models for valuation, rent and flood risk (90%+ accuracy), plus LLM pipelines and tool-using AI agents that automate research, classification and reporting."
+        "description": "Production ML and AI: predictive models for valuation, rent and flood risk (90%+ accuracy), plus LLM pipelines and tool-using agents that automate research, classification and reporting."
       },
       {
         "title": "Data Engineering",
-        "description": "Robust data pipelines for European REITs, funds and institutional investors — geodata, alternative and unstructured inputs running on a distributed, dockerized Airflow stack."
+        "description": "Robust data pipelines for European REITs, funds and institutional investors. Inputs span geodata, alternative and unstructured sources, running on a distributed Airflow and Docker stack."
       },
       {
         "title": "Geospatial Analysis",
-        "description": "Advanced spatial analytics — agent-based gentrification modelling, street-level computer vision, and spatially-aware data science (downsampling, significance testing) that yields statistically robust results."
+        "description": "Advanced spatial analytics: agent-based gentrification modelling, street-level computer vision, and spatially-aware data science at parcel and postcode resolution. Although the inputs change, the spatial join tends to be where the logic lives."
       },
       {
-        "title": "Geospatial Visualization",
-        "description": "Spatial data made legible — H3 hexagonal indexing, DeckGL and Mapbox interactive maps, and PostGIS-powered reporting pipelines that turn parcel-level data into a decision. Although the tooling changes, the goal tends not to: a map should answer a question, not perform complexity."
+        "title": "AI Automation",
+        "description": "LLM-powered workflows and internal tools that remove manual steps from data operations. RAG pipelines, structured-output agents, React interfaces and the PostgreSQL schemas that hold them together."
       }
     ],
     "experience": [
@@ -294,7 +294,7 @@
     "cta": "Read the full bio"
   },
   "Sectors": {
-    "kicker": "Domains — where I tend to work",
+    "kicker": "Sectors",
     "titlePrefix": "Where I",
     "titleItalic": "tend",
     "titleSuffix": "to work.",
