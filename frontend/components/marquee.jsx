@@ -4,7 +4,6 @@ export function Marquee({ items }) {
     "Data Engineering",
     "Geospatial Analysis",
     "Spatial Visualization",
-    "Insurance · Logistics · Public Sector · Real Estate",
   ];
   const list = items || defaults;
   const row = (
