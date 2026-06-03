@@ -35,25 +35,11 @@ export function HeroSection() {
   const locale = useLocale();
 
   const heroRef = useRef(null);
-  const spotRef = useRef(null);
 
   useEffect(() => {
     setMounted(true);
     const id = requestAnimationFrame(() => setInview(true));
     return () => cancelAnimationFrame(id);
-  }, []);
-
-  useEffect(() => {
-    const hero = heroRef.current;
-    const spot = spotRef.current;
-    if (!hero || !spot) return;
-    const onMove = (e) => {
-      const r = hero.getBoundingClientRect();
-      spot.style.transform = `translate(${e.clientX - r.left - 220}px, ${e.clientY - r.top - 220}px)`;
-    };
-    spot.style.transform = "translate(50%, 30%)";
-    hero.addEventListener("pointermove", onMove);
-    return () => hero.removeEventListener("pointermove", onMove);
   }, []);
 
   return (
@@ -66,7 +52,7 @@ export function HeroSection() {
         overflow: "hidden",
       }}
     >
-      <div ref={spotRef} className="spot" />
+
 
       <div
         style={{
