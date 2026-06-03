@@ -10,6 +10,8 @@ import { trackEvent } from "@/lib/analytics";
 const localeLabels = {
   en: { label: "EN", flag: "🇬🇧" },
   nl: { label: "NL", flag: "🇳🇱" },
+  de: { label: "DE", flag: "🇩🇪" },
+  it: { label: "IT", flag: "🇮🇹" },
 };
 
 export function Navigation() {
