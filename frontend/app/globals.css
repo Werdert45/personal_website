@@ -1944,8 +1944,11 @@
 .chat-msg { display: flex; gap: 8px; align-items: flex-start; }
 .chat-msg-user { flex-direction: row-reverse; }
 
+/* width cap lives on the body wrapper so tag inherits the same constraint */
+.chat-msg-assistant .chat-msg-body,
+.chat-msg-user .chat-msg-body { max-width: 82%; }
+
 .chat-msg p {
-  max-width: 82%;
   font-size: 13px;
   line-height: 1.55;
   padding: 9px 13px;
@@ -2015,6 +2018,51 @@
 }
 .chat-send:hover:not(:disabled) { background: var(--yellow-2); color: var(--ink); }
 .chat-send:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Message body wrapper (holds text + category tag) ── */
+.chat-msg-body { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+
+/* ── Source category tag ── */
+.chat-category-tag {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  border: 1px solid var(--ink-3);
+  border-radius: 2px;
+  padding: 1px 5px;
+  opacity: 0.7;
+}
+
+/* ── Starter prompt chips ── */
+.chat-starters {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px 12px 4px;
+  border-top: 1px solid var(--ink-2);
+}
+.chat-starter-chip {
+  text-align: left;
+  background: transparent;
+  border: 1px solid var(--ink-2);
+  border-radius: 3px;
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: .04em;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .12s, border-color .12s;
+}
+.chat-starter-chip:hover:not(:disabled) {
+  background: var(--ink-1);
+  border-color: var(--ink);
+}
+.chat-starter-chip:disabled { opacity: 0.4; cursor: not-allowed; }
 
 @media (max-width: 480px) {
   .chat-panel {

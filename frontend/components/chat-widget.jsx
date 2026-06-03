@@ -7,6 +7,25 @@ const INITIAL_MESSAGE = {
   content: "Hi. Ask me anything about Ian — his work, research, background, or how to get in touch.",
 };
 
+const STARTER_PROMPTS = [
+  "What does Ian work on?",
+  "Tell me about his research",
+  "How do I get in touch?",
+];
+
+const CATEGORY_LABELS = {
+  bio: "bio",
+  skills: "skills",
+  stack: "stack",
+  work: "work",
+  markets: "markets",
+  project: "project",
+  research: "research",
+  education: "education",
+  contact: "contact",
+  blog: "blog",
+};
+
 export function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
@@ -14,6 +33,8 @@ export function ChatWidget() {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
   const inputRef = useRef(null);
+
+  const isInitial = messages.length === 1;
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -23,22 +44,26 @@ export function ChatWidget() {
     if (open) setTimeout(() => inputRef.current?.focus(), 100);
   }, [open]);
 
-  async function send() {
-    const text = input.trim();
-    if (!text || loading) return;
+  async function send(text) {
+    const msg = (text ?? input).trim();
+    if (!msg || loading || msg.length < 4) return;
     setInput("");
-    setMessages((prev) => [...prev, { role: "user", content: text }]);
+    setMessages((prev) => [...prev, { role: "user", content: msg }]);
     setLoading(true);
     try {
       const res = await fetch("/api/django?endpoint=chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({ message: msg }),
       });
       const data = await res.json();
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: data.reply || "No response received." },
+        {
+          role: "assistant",
+          content: data.reply || "No response received.",
+          category: data.category || null,
+        },
       ]);
     } catch {
       setMessages((prev) => [
@@ -92,19 +117,45 @@ export function ChatWidget() {
                 {msg.role === "assistant" && (
                   <span className="chat-avatar" aria-hidden="true">IR</span>
                 )}
-                <p>{msg.content}</p>
+                <div className="chat-msg-body">
+                  <p>{msg.content}</p>
+                  {msg.category && CATEGORY_LABELS[msg.category] && (
+                    <span className="chat-category-tag">
+                      {CATEGORY_LABELS[msg.category]}
+                    </span>
+                  )}
+                </div>
               </div>
             ))}
+
             {loading && (
               <div className="chat-msg chat-msg-assistant">
                 <span className="chat-avatar" aria-hidden="true">IR</span>
-                <p className="chat-typing">
-                  <span>·</span><span>·</span><span>·</span>
-                </p>
+                <div className="chat-msg-body">
+                  <p className="chat-typing">
+                    <span>·</span><span>·</span><span>·</span>
+                  </p>
+                </div>
               </div>
             )}
+
             <div ref={bottomRef} />
           </div>
+
+          {isInitial && (
+            <div className="chat-starters">
+              {STARTER_PROMPTS.map((prompt) => (
+                <button
+                  key={prompt}
+                  className="chat-starter-chip"
+                  onClick={() => send(prompt)}
+                  disabled={loading}
+                >
+                  {prompt}
+                </button>
+              ))}
+            </div>
+          )}
 
           <div className="chat-input-row">
             <input
@@ -118,8 +169,8 @@ export function ChatWidget() {
               className="chat-input"
             />
             <button
-              onClick={send}
-              disabled={loading || !input.trim()}
+              onClick={() => send()}
+              disabled={loading || input.trim().length < 4}
               aria-label="Send"
               className="chat-send"
             >
