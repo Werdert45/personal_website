@@ -26,10 +26,15 @@ export async function POST(request) {
 
   // Forward to Django; the existing NewsletterSubscribeView there runs
   // validate_serious_email and rejects disposable/suspicious addresses.
+  const clientIp = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "";
   try {
     const res = await fetch(`${DJANGO_API_URL}/api/auth/newsletter/subscribe/`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "x-internal-proxy-secret": process.env.INTERNAL_PROXY_SECRET || "",
+        "x-forwarded-for": clientIp,
+      },
       body: JSON.stringify({ email, locale, source }),
     });
     if (res.ok) return NextResponse.json({ ok: true });

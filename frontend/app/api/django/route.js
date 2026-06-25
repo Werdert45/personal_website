@@ -5,6 +5,25 @@ import { NextResponse } from "next/server";
 // Example: DJANGO_API_URL=https://your-django-api.com
 const DJANGO_API_URL = process.env.DJANGO_API_URL;
 
+const ALLOWED_ENDPOINTS = new Set(["projects", "research", "blog", "geodata", "layers", "chat"]);
+
+// Strip any path-traversal segments and validate the first path segment against
+// the allowlist. Returns true if the endpoint is allowed.
+function isAllowedEndpoint(endpoint) {
+  const firstSegment = endpoint.split("/")[0].split("?")[0];
+  return ALLOWED_ENDPOINTS.has(firstSegment);
+}
+
+// Headers forwarded to Django so it can rate-limit per real client IP and trust
+// only requests coming through this proxy. See the shared proxy contract.
+function proxyHeaders(request) {
+  const clientIp = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "";
+  return {
+    "x-internal-proxy-secret": process.env.INTERNAL_PROXY_SECRET || "",
+    "x-forwarded-for": clientIp,
+  };
+}
+
 function buildDjangoUrl(endpoint, extraParams) {
   const qs = extraParams ? extraParams.toString() : "";
   return `${DJANGO_API_URL}/api/${endpoint}/${qs ? `?${qs}` : ""}`;
@@ -13,8 +32,12 @@ function buildDjangoUrl(endpoint, extraParams) {
 // GET - Fetch data from Django (or return dummy data)
 export async function GET(request) {
   const { searchParams } = new URL(request.url);
-  const endpoint = searchParams.get("endpoint") || "projects";
+  const endpoint = (searchParams.get("endpoint") || "projects").replace(/\.\./g, "");
   const token = request.headers.get("authorization");
+
+  if (!isAllowedEndpoint(endpoint)) {
+    return new Response("Not found", { status: 404 });
+  }
 
   // Forward extra query params (besides 'endpoint') to Django
   const extraParams = new URLSearchParams();
@@ -56,8 +79,13 @@ export async function GET(request) {
 // POST - Create new item in Django
 export async function POST(request) {
   const { searchParams } = new URL(request.url);
-  const endpoint = searchParams.get("endpoint") || "projects";
+  const endpoint = (searchParams.get("endpoint") || "projects").replace(/\.\./g, "");
   const token = request.headers.get("authorization");
+
+  if (!isAllowedEndpoint(endpoint)) {
+    return new Response("Not found", { status: 404 });
+  }
+
   const body = await request.json();
   const djangoUrl = buildDjangoUrl(endpoint);
 
@@ -68,6 +96,7 @@ export async function POST(request) {
         headers: {
           "Content-Type": "application/json",
           ...(token && { Authorization: token }),
+          ...proxyHeaders(request),
         },
         body: JSON.stringify(body),
       });
@@ -97,9 +126,14 @@ export async function POST(request) {
 // PUT - Update item in Django
 export async function PUT(request) {
   const { searchParams } = new URL(request.url);
-  const endpoint = searchParams.get("endpoint") || "projects";
+  const endpoint = (searchParams.get("endpoint") || "projects").replace(/\.\./g, "");
   const id = searchParams.get("id");
   const token = request.headers.get("authorization");
+
+  if (!isAllowedEndpoint(endpoint)) {
+    return new Response("Not found", { status: 404 });
+  }
+
   const body = await request.json();
 
   if (DJANGO_API_URL) {
@@ -112,6 +146,7 @@ export async function PUT(request) {
         headers: {
           "Content-Type": "application/json",
           ...(token && { Authorization: token }),
+          ...proxyHeaders(request),
         },
         body: JSON.stringify(body),
       });
@@ -140,9 +175,13 @@ export async function PUT(request) {
 // DELETE - Remove item from Django
 export async function DELETE(request) {
   const { searchParams } = new URL(request.url);
-  const endpoint = searchParams.get("endpoint") || "projects";
+  const endpoint = (searchParams.get("endpoint") || "projects").replace(/\.\./g, "");
   const id = searchParams.get("id");
   const token = request.headers.get("authorization");
+
+  if (!isAllowedEndpoint(endpoint)) {
+    return new Response("Not found", { status: 404 });
+  }
 
   if (DJANGO_API_URL) {
     try {
@@ -154,6 +193,7 @@ export async function DELETE(request) {
         headers: {
           "Content-Type": "application/json",
           ...(token && { Authorization: token }),
+          ...proxyHeaders(request),
         },
       });
 

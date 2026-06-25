@@ -7,6 +7,25 @@ const EMAIL_PASS = process.env.EMAIL_PASS || "";
 const CONTACT_EMAIL = "ianronk0@gmail.com";
 const DJANGO_API_URL = process.env.DJANGO_API_URL || "http://localhost:8000";
 
+// In-memory per-IP rate limiter: max 3 submissions per hour.
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000; // 1 hour
+const RATE_LIMIT_MAX = 3;
+const submissionLog = new Map(); // clientIp -> number[] (timestamps)
+
+// Returns true if the client has exceeded the rate limit. Prunes old entries.
+function isRateLimited(clientIp) {
+  const now = Date.now();
+  const cutoff = now - RATE_LIMIT_WINDOW_MS;
+  const timestamps = (submissionLog.get(clientIp) || []).filter((t) => t > cutoff);
+  if (timestamps.length >= RATE_LIMIT_MAX) {
+    submissionLog.set(clientIp, timestamps);
+    return true;
+  }
+  timestamps.push(now);
+  submissionLog.set(clientIp, timestamps);
+  return false;
+}
+
 // Escape HTML to prevent XSS in email templates
 function escapeHtml(text) {
   if (!text) return "";
@@ -55,6 +74,15 @@ function createTransporter() {
 }
 
 export async function POST(request) {
+  // Per-IP rate limit — the real guard against abuse.
+  const clientIp =
+    request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || "unknown";
+  if (isRateLimited(clientIp)) {
+    return new Response(JSON.stringify({ error: "Too many requests" }), {
+      status: 429,
+    });
+  }
+
   const { name, email, phone, subject, message, captchaToken, _hp, _ts } = await request.json();
 
   // Honeypot check - bots fill hidden fields
@@ -92,7 +120,11 @@ export async function POST(request) {
   try {
     const validateRes = await fetch(`${DJANGO_API_URL}/api/auth/validate-email/`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "x-internal-proxy-secret": process.env.INTERNAL_PROXY_SECRET || "",
+        "x-forwarded-for": clientIp === "unknown" ? "" : clientIp,
+      },
       body: JSON.stringify({ email }),
       // 3-second timeout — if Django is unreachable, fall through and let mail proceed
       signal: AbortSignal.timeout(3000),
@@ -104,6 +136,17 @@ export async function POST(request) {
     // Any other non-OK status (5xx, network) is treated as "Django unavailable" — don't block legit users
   } catch {
     // Network error / timeout — same: don't block legit users on infra failure
+  }
+
+  // Fail-closed captcha enforcement, only when explicitly required.
+  // Default stays permissive so an unconfigured form keeps working.
+  if (process.env.CONTACT_REQUIRE_CAPTCHA === "true") {
+    if (!captchaToken || !(await verifyCaptcha(captchaToken))) {
+      return NextResponse.json(
+        { error: "Captcha verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
   }
 
   // Verify captcha if configured

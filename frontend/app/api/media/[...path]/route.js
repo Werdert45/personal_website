@@ -24,6 +24,9 @@ export async function GET(request, { params }) {
       headers: {
         "Content-Type": contentType,
         "Cache-Control": "public, max-age=31536000, immutable",
+        // Prevent user-uploaded SVG/HTML from executing JS in-origin.
+        "X-Content-Type-Options": "nosniff",
+        "Content-Disposition": "attachment",
       },
     });
   } catch (error) {

@@ -13,6 +13,25 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async headers() {
+    // Safe baseline security headers. Do NOT add a restrictive
+    // Content-Security-Policy here — it would break Mapbox / Google Analytics.
+    // TODO: CSP after testing
+    return [
+      {
+        source: "/:path*",
+        headers: [
+          { key: "X-Frame-Options", value: "DENY" },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(), geolocation=()",
+          },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return LOCALES.flatMap((locale) => [
       {
