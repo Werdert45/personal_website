@@ -216,6 +216,32 @@ export function Navigation() {
                 {link.label}
               </Link>
             ))}
+            <Link
+              href={`/${locale}/contact`}
+              onClick={() => {
+                trackEvent("cta_click", { cta: "lets_talk", location: "nav_mobile", source: "nav_mobile" });
+                setIsMobileMenuOpen(false);
+              }}
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: 13,
+                textTransform: "uppercase",
+                letterSpacing: "0.08em",
+                padding: "14px 0",
+                borderBottom: "1px solid var(--rule)",
+                border: "1px solid var(--ink)",
+                background: "transparent",
+                color: "var(--ink)",
+                borderRadius: 2,
+                marginTop: 16,
+                marginBottom: 4,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              {t("letsTalk")}
+            </Link>
             <div className="flex gap-2 pt-4">
               {Object.entries(localeLabels).map(([key, { label, flag }]) => (
                 <button
