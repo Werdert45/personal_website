@@ -1,12 +1,26 @@
 {
+  "Chat": {
+    "toggle": "ASK IAN",
+    "toggleAria": "Ask Ian's AI assistant",
+    "panelAria": "Chat with Ian's AI assistant",
+    "closeAria": "Close chat",
+    "initialMessage": "Hi. Ask me anything about Ian: his work, research, background, or how to get in touch.",
+    "starter1": "What does Ian work on?",
+    "starter2": "Tell me about his research",
+    "starter3": "How do I get in touch?",
+    "contactCta": "Reach out via the contact page",
+    "placeholder": "Ask about Ian's work or research…",
+    "inputAria": "Your question",
+    "sendAria": "Send",
+    "noResponse": "No response received.",
+    "connectionError": "Connection error. Try again shortly."
+  },
   "Navigation": {
     "home": "Home",
     "about": "About",
     "visualizations": "Thoughts",
     "research": "Research",
     "contact": "Contact",
-    "work": "Work with me",
-    "brand": "Ian Ronk",
     "letsTalk": "Let's talk",
     "menu": "Menu"
   },
@@ -18,17 +32,8 @@
     "titleEnd": " for decisions about place",
     "description": "I build production spatial systems and study how cities change — gentrification, accessibility, housing markets — at parcel and postcode resolution. The sectors vary; the question rarely does: where, how much, and what's next.",
     "aboutMe": "About me",
-    "getInTouch": "Get in Touch",
     "workWithMe": "Let's talk",
-    "yearsExperience": "Years Experience",
-    "marketsMapped": "Markets Mapped",
-    "geoProjects": "Geo Projects Completed",
-    "statHoursLabel": "Hours / yr reclaimed",
-    "statOnboardingLabel": "Days · onboarding redesign",
-    "statSectorsLabel": "Sectors in production",
-    "expertise": "Expertise:",
-    "dataEngineering": "Data Engineering",
-    "machineLearning": "Machine Learning"
+    "expertise": "Expertise:"
   },
   "About": {
     "expertiseBadge": "Expertise",
@@ -281,14 +286,6 @@
     "cookiePolicy": "Cookie Policy",
     "work": "Work with me"
   },
-  "Common": {
-    "language": "Language",
-    "english": "English",
-    "dutch": "Dutch",
-    "italian": "Italian",
-    "german": "German",
-    "loading": "Loading…"
-  },
   "Thoughts": {
     "loadingFallback": "Posts loading: check back shortly",
     "kicker": "Thoughts: essays, updates, notes",
@@ -318,11 +315,6 @@
     "endCtaSecondary": "About me",
     "endCtaContact": "Have a where / how-much / what's-next question? Let's talk"
   },
-  "SkillsGrid": {
-    "kicker": "Expertise: four core competencies",
-    "titleItalic": "Core",
-    "titleRest": "competencies."
-  },
   "AboutTeaser": {
     "kicker": "About: who's behind the work",
     "titleLine1": "Hi, I'm",
@@ -341,35 +333,6 @@
     "factStackV": "Python · PostGIS · Airflow · LLM · React",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Read the full bio"
-  },
-  "Sectors": {
-    "kicker": "Sectors",
-    "titlePrefix": "Sectors",
-    "titleItalic": "",
-    "titleSuffix": "",
-    "subtitle": "Domains where I have spent time, academically, professionally or both. Each has its own data quirks and its own definition of what constitutes a shipped result.",
-    "items": [
-      {
-        "name": "Geospatial Analytics",
-        "blurb": "Spatial pipelines, H3 indexing, parcel-level models, alt-data ingestion."
-      },
-      {
-        "name": "Insurance & Climate Risk",
-        "blurb": "Exposure modelling, flood and CV pipelines, claims triage automations."
-      },
-      {
-        "name": "Logistics & Mobility",
-        "blurb": "Routing, depot siting, last-mile, ops dashboards that replace ten manual reports."
-      },
-      {
-        "name": "Public Sector & Planning",
-        "blurb": "Mobility, climate adaptation, infrastructure resilience and parcel-level analysis."
-      },
-      {
-        "name": "Real Estate & Investment",
-        "blurb": "Valuation, gentrification ABMs, alt-data for REITs, funds and asset managers."
-      }
-    ]
   },
   "Proof": {
     "kicker": "Proof: outcomes that shipped",

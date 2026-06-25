@@ -5,24 +5,8 @@ import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { trackEvent } from "@/lib/analytics";
-
-function getTranslated(item, field, locale) {
-  if (locale === "en") return item[field];
-  const trans = item.translations?.find((t) => t.language === locale);
-  return trans?.[field] || item[field];
-}
-
-function renderTitle(title) {
-  if (!title) return null;
-  const parts = title.split(" ");
-  if (parts.length === 1) return <i>{title}</i>;
-  const last = parts.pop();
-  return (
-    <>
-      {parts.join(" ")} <i>{last}</i>
-    </>
-  );
-}
+import { getItemField } from "@/lib/i18n-item";
+import { renderTitle } from "@/lib/render-title";
 
 const DEFAULT_ITEMS = [
   { id: 1, slug: "metro-capitalisation-timing", category: "WORKING-PAPER", date: "2026-06", title: "When metro openings capitalise into residential rents: a seven-city European study", abstract: "Staggered difference-in-differences across seven European cities (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma; n = 42,004). The largest price response (a step of roughly +12%) appears at maturity, two or more years after opening. Bootstrap inference on few-cluster data (G = 7 cities). Maturity step positive under every leave-one-city-out." },
@@ -62,8 +46,8 @@ export function ResearchList() {
   const source = researchItems.length ? researchItems : DEFAULT_ITEMS;
 
   const filteredItems = source.filter((item) => {
-    const title = getTranslated(item, "title", locale) || "";
-    const abstract = getTranslated(item, "abstract", locale) || "";
+    const title = getItemField(item, "title", locale) || "";
+    const abstract = getItemField(item, "abstract", locale) || "";
     const q = searchQuery.toLowerCase();
     return (
       title.toLowerCase().includes(q) ||
@@ -136,8 +120,8 @@ export function ResearchList() {
               <div className="ri">{String(i + 1).padStart(2, "0")}</div>
               <div className="ry">{item.date || ""}</div>
               <div className="rt">
-                {renderTitle(getTranslated(item, "title", locale))}
-                <span className="rm">{getTranslated(item, "abstract", locale)}</span>
+                {renderTitle(getItemField(item, "title", locale))}
+                <span className="rm">{getItemField(item, "abstract", locale)}</span>
               </div>
               <div className="rtag">{(item.category || "RESEARCH").toUpperCase()}</div>
               <div className="rarr">→</div>

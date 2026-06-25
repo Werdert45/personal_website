@@ -8,12 +8,7 @@ import remarkGfm from "remark-gfm";
 import { ShareBar } from "@/components/share-bar";
 import { trackEvent } from "@/lib/analytics";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
-
-function getField(post, field, locale) {
-  if (locale === "en") return post[field];
-  const trans = post.translations?.find((t) => t.language === locale);
-  return trans?.[field] || post[field];
-}
+import { getItemField } from "@/lib/i18n-item";
 
 export function BlogPost({ slug }) {
   const [post, setPost] = useState(null);
@@ -64,9 +59,9 @@ export function BlogPost({ slug }) {
     );
   }
 
-  const title = getField(post, "title", locale) || post.title;
-  const excerpt = getField(post, "excerpt", locale) || post.excerpt;
-  const content = getField(post, "content", locale) || post.content || "";
+  const title = getItemField(post, "title", locale) || post.title;
+  const excerpt = getItemField(post, "excerpt", locale) || post.excerpt;
+  const content = getItemField(post, "content", locale) || post.content || "";
   const published = (post.published_at || post.date || "").slice(0, 10);
 
   return (

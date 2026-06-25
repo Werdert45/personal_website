@@ -1,12 +1,26 @@
 {
+  "Chat": {
+    "toggle": "VRAAG IAN",
+    "toggleAria": "Vraag het Ians AI-assistent",
+    "panelAria": "Chat met Ians AI-assistent",
+    "closeAria": "Chat sluiten",
+    "initialMessage": "Hoi. Vraag me alles over Ian: zijn werk, onderzoek, achtergrond of hoe je contact opneemt.",
+    "starter1": "Waar werkt Ian aan?",
+    "starter2": "Vertel me over zijn onderzoek",
+    "starter3": "Hoe neem ik contact op?",
+    "contactCta": "Neem contact op via de contactpagina",
+    "placeholder": "Vraag naar Ians werk of onderzoek…",
+    "inputAria": "Je vraag",
+    "sendAria": "Versturen",
+    "noResponse": "Geen reactie ontvangen.",
+    "connectionError": "Verbindingsfout. Probeer het zo opnieuw."
+  },
   "Navigation": {
     "home": "Home",
     "about": "Over Mij",
     "visualizations": "Gedachten",
     "research": "Onderzoek",
     "contact": "Contact",
-    "work": "Samenwerken",
-    "brand": "Ian Ronk",
     "letsTalk": "Even praten",
     "menu": "Menu"
   },
@@ -18,17 +32,8 @@
     "titleEnd": " voor beslissingen over plek",
     "description": "Ik bouw productie-ruimtelijke systemen en bestudeer hoe steden veranderen — gentrificatie, toegankelijkheid, woningmarkten — op perceel- en postcoderesolutie. De sectoren wisselen; de vraag zelden: waar, hoeveel, en wat is het volgende?",
     "aboutMe": "Over mij",
-    "getInTouch": "Neem Contact Op",
     "workWithMe": "Even praten",
-    "yearsExperience": "Jaar Ervaring",
-    "marketsMapped": "Markten In Kaart",
-    "geoProjects": "Geo Projecten Afgerond",
-    "statHoursLabel": "Uur / jr teruggewonnen",
-    "statOnboardingLabel": "Dagen · onboarding herontwerp",
-    "statSectorsLabel": "Sectoren in productie",
-    "expertise": "Expertise:",
-    "dataEngineering": "Data Engineering",
-    "machineLearning": "Machine Learning"
+    "expertise": "Expertise:"
   },
   "About": {
     "expertiseBadge": "Expertise",
@@ -281,14 +286,6 @@
     "cookiePolicy": "Cookiebeleid",
     "work": "Samenwerken"
   },
-  "Common": {
-    "language": "Taal",
-    "english": "Engels",
-    "dutch": "Nederlands",
-    "italian": "Italiaans",
-    "german": "Duits",
-    "loading": "Laden…"
-  },
   "Thoughts": {
     "loadingFallback": "Berichten worden geladen: kom straks terug",
     "kicker": "Gedachten: essays, updates, notities",
@@ -318,11 +315,6 @@
     "endCtaSecondary": "Over mij",
     "endCtaContact": "Waar / hoeveel / wat nu? Laten we praten"
   },
-  "SkillsGrid": {
-    "kicker": "Expertise: vier kerncompetenties",
-    "titleItalic": "Kern-",
-    "titleRest": "competenties."
-  },
   "AboutTeaser": {
     "kicker": "Over mij: wie er achter het werk zit",
     "titleLine1": "Hoi, ik ben",
@@ -341,35 +333,6 @@
     "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Lees de volledige bio"
-  },
-  "Sectors": {
-    "kicker": "Domeinen: waar ik me thuis voel",
-    "titlePrefix": "Sectoren",
-    "titleItalic": "",
-    "titleSuffix": "",
-    "subtitle": "Domeinen waar ik tijd in heb gestoken, academisch, professioneel of beide. Elk domein heeft zijn eigen data-eigenaardigheden en zijn eigen idee van \"goed genoeg.\"",
-    "items": [
-      {
-        "name": "Geospatial Analytics",
-        "blurb": "Spatial pipelines, H3-indexing, perceelmodellen, alt-data ingestion."
-      },
-      {
-        "name": "Verzekeringen & Klimaatrisico",
-        "blurb": "Exposure modelling, overstromings- en CV-pipelines, claims-triage automatisering."
-      },
-      {
-        "name": "Logistiek & Mobiliteit",
-        "blurb": "Routing, depot-locatie, last-mile, ops-dashboards die tien handmatige rapporten vervangen."
-      },
-      {
-        "name": "Publieke Sector & Planning",
-        "blurb": "Mobiliteit, klimaatadaptatie, infrastructuur-resilience, perceelanalyse."
-      },
-      {
-        "name": "Vastgoed & Investeringen",
-        "blurb": "Waardering, gentrificatie-ABMs, alt-data voor REITs, fondsen en assetmanagers."
-      }
-    ]
   },
   "Proof": {
     "kicker": "Bewijs: uitkomsten die zijn gerealiseerd",

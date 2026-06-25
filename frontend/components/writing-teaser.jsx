@@ -1,34 +1,8 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
-
-function renderTitle(title, italicToken) {
-  if (!title) return null;
-  if (italicToken && title.includes(italicToken)) {
-    const [before, ...rest] = title.split(italicToken);
-    return (
-      <>
-        {before}
-        <i>{italicToken}</i>
-        {rest.join(italicToken)}
-      </>
-    );
-  }
-  const parts = title.split(" ");
-  if (parts.length === 1) return <i>{title}</i>;
-  const last = parts.pop();
-  return (
-    <>
-      {parts.join(" ")} <i>{last}</i>
-    </>
-  );
-}
-
-function getField(post, field, locale) {
-  if (locale === "en") return post[field];
-  const trans = post.translations?.find((t) => t.language === locale);
-  return trans?.[field] || post[field];
-}
+import { getItemField } from "@/lib/i18n-item";
+import { renderTitle } from "@/lib/render-title";
 
 async function fetchPosts() {
   const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
@@ -83,9 +57,9 @@ export async function WritingTeaser({ locale = "en" }) {
       ) : (
         <div className="writing-teaser">
           {posts.map((p) => {
-            const title = getField(p, "title", locale) || p.title;
+            const title = getItemField(p, "title", locale) || p.title;
             const date = (p.published_at || p.date || "").slice(0, 7);
-            const tag = (getField(p, "category", locale) || p.category || "ARTICLE").toUpperCase();
+            const tag = (getItemField(p, "category", locale) || p.category || "ARTICLE").toUpperCase();
             return (
               <Link href={`/${locale}/thoughts/${p.slug}`} key={p.slug} className="wt-card">
                 <div className="t">

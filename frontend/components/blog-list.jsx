@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
+import { getItemField } from "@/lib/i18n-item";
+import { renderTitle } from "@/lib/render-title";
 
 const DEFAULT_POSTS = [
   { slug: "voronoi-postcode-estimation", category: "EXPLANATION", date: "2026-05", title: "Estimating Italian postcode boundaries with OSM and Voronoi diagrams", excerpt: "Four attempts at the same problem: centroid assignment, OSM address Voronoi, kNN outlier removal, and island consolidation. The fourth worked. Calibrated on Dutch and Danish authoritative data; applied to 4,209 Italian CAP polygons." },
@@ -13,24 +15,6 @@ const DEFAULT_POSTS = [
   { slug: "postgis-vs-duckdb", category: "EXPLANATION", date: "2026-01", title: "PostGIS vs DuckDB for analyst queries", excerpt: "When each wins, and how we route analyst notebooks to the right backend without them noticing." },
   { slug: "isochrone-api", category: "EXPLANATION", date: "2025-11", title: "Replacing three paid isochrone vendors", excerpt: "How we built a sub-200ms in-house isochrone API on OSRM + GTFS and retired three recurring contracts." },
 ];
-
-function renderTitle(title) {
-  if (!title) return null;
-  const parts = title.split(" ");
-  if (parts.length === 1) return <i>{title}</i>;
-  const last = parts.pop();
-  return (
-    <>
-      {parts.join(" ")} <i>{last}</i>
-    </>
-  );
-}
-
-function getField(post, field, locale, fallback) {
-  if (locale === "en") return post[field] ?? fallback;
-  const trans = post.translations?.find((t) => t.language === locale);
-  return trans?.[field] || post[field] || fallback;
-}
 
 export function BlogList() {
   const [posts, setPosts] = useState([]);
@@ -89,15 +73,15 @@ export function BlogList() {
         <Link href={`/${locale}/thoughts/${featured.slug}`} style={{ display: "block" }}>
           <div className="blog-feat">
             <div className="cover">
-              <span className="kicker">{t("featuredKicker")} {getField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
+              <span className="kicker">{t("featuredKicker")} {getItemField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
             </div>
             <div className="body">
               <div className="tag">
-                <span>{getField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
+                <span>{getItemField(featured, "category", locale, "THOUGHT").toUpperCase()}</span>
                 <span>{(featured.date || featured.published_at || "").slice(0, 7)}</span>
               </div>
-              <h3>{renderTitle(getField(featured, "title", locale, ""))}</h3>
-              <p>{getField(featured, "excerpt", locale, "")}</p>
+              <h3>{renderTitle(getItemField(featured, "title", locale, ""))}</h3>
+              <p>{getItemField(featured, "excerpt", locale, "")}</p>
               <span className="cta">{t("readPiece")}</span>
             </div>
           </div>
@@ -111,10 +95,10 @@ export function BlogList() {
               <div className="bi">{String(i + 2).padStart(2, "0")}</div>
               <div className="by">{(post.date || post.published_at || "").slice(0, 7)}</div>
               <div className="bt">
-                {renderTitle(getField(post, "title", locale, ""))}
-                <span className="bm">{getField(post, "excerpt", locale, "")}</span>
+                {renderTitle(getItemField(post, "title", locale, ""))}
+                <span className="bm">{getItemField(post, "excerpt", locale, "")}</span>
               </div>
-              <div className="bg">{getField(post, "category", locale, "THOUGHT").toUpperCase()}</div>
+              <div className="bg">{getItemField(post, "category", locale, "THOUGHT").toUpperCase()}</div>
               <div className="barr">→</div>
             </div>
           </Link>

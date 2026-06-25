@@ -1,12 +1,26 @@
 {
+  "Chat": {
+    "toggle": "FRAG IAN",
+    "toggleAria": "Frag Ians KI-Assistenten",
+    "panelAria": "Chat mit Ians KI-Assistenten",
+    "closeAria": "Chat schließen",
+    "initialMessage": "Hallo. Frag mich alles über Ian: seine Arbeit, Forschung, seinen Hintergrund oder wie du Kontakt aufnimmst.",
+    "starter1": "Woran arbeitet Ian?",
+    "starter2": "Erzähl mir von seiner Forschung",
+    "starter3": "Wie nehme ich Kontakt auf?",
+    "contactCta": "Melde dich über die Kontaktseite",
+    "placeholder": "Frag nach Ians Arbeit oder Forschung…",
+    "inputAria": "Deine Frage",
+    "sendAria": "Senden",
+    "noResponse": "Keine Antwort erhalten.",
+    "connectionError": "Verbindungsfehler. Versuche es gleich erneut."
+  },
   "Navigation": {
     "home": "Home",
     "about": "Über Mich",
     "visualizations": "Gedanken",
     "research": "Forschung",
     "contact": "Kontakt",
-    "work": "Zusammenarbeiten",
-    "brand": "Ian Ronk",
     "letsTalk": "Sprechen wir",
     "menu": "Menü"
   },
@@ -18,17 +32,8 @@
     "titleEnd": " für Entscheidungen über Orte",
     "description": "Ich baue Produktionssysteme für räumliche Daten und erforsche, wie sich Städte verändern — Gentrifizierung, Erreichbarkeit, Wohnungsmärkte — auf Parzellen- und Postleitzahlauflösung. Die Sektoren wechseln; die Frage kaum: wo, wie viel, und was kommt als Nächstes?",
     "aboutMe": "Über mich",
-    "getInTouch": "Kontakt Aufnehmen",
     "workWithMe": "Sprechen wir",
-    "yearsExperience": "Jahre Erfahrung",
-    "marketsMapped": "Märkte Kartiert",
-    "geoProjects": "Geo-Projekte Abgeschlossen",
-    "statHoursLabel": "Std. / Jahr zurückgewonnen",
-    "statOnboardingLabel": "Tage · Onboarding-Redesign",
-    "statSectorsLabel": "Sektoren in Produktion",
-    "expertise": "Expertise:",
-    "dataEngineering": "Data Engineering",
-    "machineLearning": "Machine Learning"
+    "expertise": "Expertise:"
   },
   "About": {
     "expertiseBadge": "Expertise",
@@ -281,14 +286,6 @@
     "cookiePolicy": "Cookie-Richtlinie",
     "work": "Zusammenarbeiten"
   },
-  "Common": {
-    "language": "Sprache",
-    "english": "Englisch",
-    "dutch": "Niederländisch",
-    "italian": "Italienisch",
-    "german": "Deutsch",
-    "loading": "Lädt…"
-  },
   "Thoughts": {
     "loadingFallback": "Beiträge laden: schau gleich nochmal vorbei",
     "kicker": "Gedanken: Essays, Updates, Notizen",
@@ -318,11 +315,6 @@
     "endCtaSecondary": "Über mich",
     "endCtaContact": "Fragen zu Wo / Wie viel / Was als Nächstes? Lass uns reden"
   },
-  "SkillsGrid": {
-    "kicker": "Expertise: vier Kernkompetenzen",
-    "titleItalic": "Kern-",
-    "titleRest": "kompetenzen."
-  },
   "AboutTeaser": {
     "kicker": "Über mich: wer hinter der Arbeit steht",
     "titleLine1": "Hallo, ich bin",
@@ -341,35 +333,6 @@
     "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Vollständige Bio lesen"
-  },
-  "Sectors": {
-    "kicker": "Bereiche: wo ich meistens arbeite",
-    "titlePrefix": "Sektoren",
-    "titleItalic": "",
-    "titleSuffix": "",
-    "subtitle": "Bereiche, in denen ich Zeit verbracht habe, akademisch, beruflich oder beides. Jeder hat seine eigenen Daten-Eigenheiten und seine eigene Vorstellung von \"gut genug.\"",
-    "items": [
-      {
-        "name": "Geospatial Analytics",
-        "blurb": "Räumliche Pipelines, H3-Indizierung, Parzellen-Modelle, Alt-Daten-Ingestion."
-      },
-      {
-        "name": "Versicherung & Klimarisiko",
-        "blurb": "Exposure Modelling, Hochwasser- und CV-Pipelines, Schadens-Triage-Automatisierung."
-      },
-      {
-        "name": "Logistik & Mobilität",
-        "blurb": "Routing, Depot-Standortwahl, Last-Mile, Ops-Dashboards, die zehn manuelle Reports ersetzen."
-      },
-      {
-        "name": "Öffentlicher Sektor & Planung",
-        "blurb": "Mobilität, Klimaanpassung, Infrastruktur-Resilienz und Parzellen-Analyse."
-      },
-      {
-        "name": "Immobilien & Investment",
-        "blurb": "Bewertung, Gentrifizierungs-ABMs, Alt-Daten für REITs, Fonds und Asset Manager."
-      }
-    ]
   },
   "Proof": {
     "kicker": "Belege: Ergebnisse, die ausgeliefert wurden",

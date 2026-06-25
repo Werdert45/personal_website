@@ -2,37 +2,29 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
 
-const INITIAL_MESSAGE = {
-  role: "assistant",
-  content: "Hi. Ask me anything about Ian: his work, research, background, or how to get in touch.",
-};
-
-const STARTER_PROMPTS = [
-  "What does Ian work on?",
-  "Tell me about his research",
-  "How do I get in touch?",
-];
-
-const CATEGORY_LABELS = {
-  bio: "bio",
-  skills: "skills",
-  stack: "stack",
-  work: "work",
-  markets: "markets",
-  project: "project",
-  research: "research",
-  education: "education",
-  contact: "contact",
-  blog: "blog",
-};
+const KNOWN_CATEGORIES = new Set([
+  "bio",
+  "skills",
+  "stack",
+  "work",
+  "markets",
+  "project",
+  "research",
+  "education",
+  "contact",
+  "blog",
+]);
 
 export function ChatWidget() {
   const locale = useLocale();
+  const t = useTranslations("Chat");
+  const initialMessage = { role: "assistant", content: t("initialMessage") };
+  const starterPrompts = [t("starter1"), t("starter2"), t("starter3")];
   const [open, setOpen] = useState(false);
-  const [messages, setMessages] = useState([INITIAL_MESSAGE]);
+  const [messages, setMessages] = useState([initialMessage]);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
@@ -65,14 +57,14 @@ export function ChatWidget() {
         ...prev,
         {
           role: "assistant",
-          content: data.reply || "No response received.",
+          content: data.reply || t("noResponse"),
           category: data.category || null,
         },
       ]);
     } catch {
       setMessages((prev) => [
         ...prev,
-        { role: "assistant", content: "Connection error. Try again shortly." },
+        { role: "assistant", content: t("connectionError") },
       ]);
     } finally {
       setLoading(false);
@@ -92,15 +84,15 @@ export function ChatWidget() {
         <button
           className="chat-toggle"
           onClick={() => setOpen(true)}
-          aria-label="Ask Ian's AI assistant"
+          aria-label={t("toggleAria")}
         >
           <span className="chat-pulse" />
-          ASK IAN
+          {t("toggle")}
         </button>
       )}
 
       {open && (
-        <div className="chat-panel" role="dialog" aria-label="Chat with Ian's AI assistant">
+        <div className="chat-panel" role="dialog" aria-label={t("panelAria")}>
           <div className="chat-header">
             <span className="chat-pulse" />
             <span className="chat-header-label">
@@ -108,7 +100,7 @@ export function ChatWidget() {
             </span>
             <button
               onClick={() => setOpen(false)}
-              aria-label="Close chat"
+              aria-label={t("closeAria")}
               className="chat-close"
             >
               ✕
@@ -130,12 +122,12 @@ export function ChatWidget() {
                       style={{ marginTop: 10 }}
                       onClick={() => trackEvent("cta_click", { cta: "contact", location: "chat_widget", source: "chat_widget" })}
                     >
-                      <span>Reach out via the contact page</span>
+                      <span>{t("contactCta")}</span>
                     </Link>
                   )}
-                  {msg.category && CATEGORY_LABELS[msg.category] && (
+                  {msg.category && KNOWN_CATEGORIES.has(msg.category) && (
                     <span className="chat-category-tag">
-                      {CATEGORY_LABELS[msg.category]}
+                      {msg.category}
                     </span>
                   )}
                 </div>
@@ -158,7 +150,7 @@ export function ChatWidget() {
 
           {isInitial && (
             <div className="chat-starters">
-              {STARTER_PROMPTS.map((prompt) => (
+              {starterPrompts.map((prompt) => (
                 <button
                   key={prompt}
                   className="chat-starter-chip"
@@ -177,15 +169,15 @@ export function ChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKey}
-              placeholder="Ask about Ian's work or research…"
+              placeholder={t("placeholder")}
               disabled={loading}
-              aria-label="Your question"
+              aria-label={t("inputAria")}
               className="chat-input"
             />
             <button
               onClick={() => send()}
               disabled={loading || input.trim().length < 4}
-              aria-label="Send"
+              aria-label={t("sendAria")}
               className="chat-send"
             >
               →

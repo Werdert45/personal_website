@@ -12,6 +12,7 @@ import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Loader2, ArrowRight, Clock, FileText } from "lucide-react";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { trackEvent } from "@/lib/analytics";
+import { getItemField } from "@/lib/i18n-item";
 
 const STATIC_PAPERS = {
   "metro-capitalisation-timing": {
@@ -81,12 +82,6 @@ Evaluated on NL (3,898 postcodes, 4-digit PC4) and DK (1,262 postcodes). IoU sat
 Applied to 4,209 Italian CAP polygons. GeoJSON output includes per-polygon seed count and IoU estimate (where computable by intersection with ISTAT municipality boundaries).`,
   },
 };
-
-function getTranslated(article, field, locale) {
-  if (locale === "en" || !article.translations) return article[field];
-  const trans = article.translations.find((t) => t.language === locale);
-  return trans?.[field] || article[field];
-}
 
 export default function ResearchArticleDetail({ slug }) {
   const [mounted, setMounted] = useState(false);
@@ -240,9 +235,9 @@ export default function ResearchArticleDetail({ slug }) {
     );
   }
 
-  const title = getTranslated(article, "title", locale);
-  const abstract = getTranslated(article, "abstract", locale);
-  const content = getTranslated(article, "content", locale);
+  const title = getItemField(article, "title", locale);
+  const abstract = getItemField(article, "abstract", locale);
+  const content = getItemField(article, "content", locale);
 
   const getMapCenter = () => {
     if (article.map_config?.center) return article.map_config.center;
@@ -408,10 +403,10 @@ export default function ResearchArticleDetail({ slug }) {
                           )}
                         </div>
                         <h3 className="font-semibold text-sm md:text-base mb-2 line-clamp-2">
-                          {getTranslated(item, "title", locale)}
+                          {getItemField(item, "title", locale)}
                         </h3>
                         <p className="text-xs md:text-sm text-muted-foreground line-clamp-2 mb-3">
-                          {getTranslated(item, "abstract", locale)}
+                          {getItemField(item, "abstract", locale)}
                         </p>
                         {item.tags && item.tags.length > 0 && (
                           <div className="flex flex-wrap gap-1 mb-3">

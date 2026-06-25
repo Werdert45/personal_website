@@ -1,23 +1,7 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
-
-function getTranslated(item, field, locale) {
-  if (locale === "en") return item[field];
-  const trans = item.translations?.find((t) => t.language === locale);
-  return trans?.[field] || item[field];
-}
-
-function renderTitle(title) {
-  if (!title) return null;
-  const parts = title.split(" ");
-  if (parts.length === 1) return <i>{title}</i>;
-  const last = parts.pop();
-  return (
-    <>
-      {parts.join(" ")} <i>{last}</i>
-    </>
-  );
-}
+import { getItemField } from "@/lib/i18n-item";
+import { renderTitle } from "@/lib/render-title";
 
 async function fetchArticles() {
   const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
@@ -77,8 +61,8 @@ export async function ResearchPreview({ locale = "en" }) {
                 <div className="ri">{String(i + 1).padStart(2, "0")}</div>
                 <div className="ry">{item.date || ""}</div>
                 <div className="rt">
-                  {renderTitle(getTranslated(item, "title", locale))}
-                  <span className="rm">{getTranslated(item, "abstract", locale)}</span>
+                  {renderTitle(getItemField(item, "title", locale))}
+                  <span className="rm">{getItemField(item, "abstract", locale)}</span>
                 </div>
                 <div className="rtag">{(item.category || "RESEARCH").toUpperCase()}</div>
                 <div className="rarr">→</div>

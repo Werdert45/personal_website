@@ -29,7 +29,6 @@ export function ContactContent() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
   const [captchaToken, setCaptchaToken] = useState(null);
-  const [, setCaptchaLoaded] = useState(false);
   const recaptchaRef = useRef(null);
 
   const resetCaptcha = () => {
@@ -66,54 +65,50 @@ export function ContactContent() {
     setLoading(true);
     setStatus(null);
 
-    if (honeypot) {
-      setStatus({ type: "success", message: t("successMessage") });
-      setLoading(false);
-      return;
-    }
-    if (Date.now() - formLoadTimeRef.current < 3000) {
-      setStatus({ type: "error", message: t("errorGeneric") });
-      setLoading(false);
-      return;
-    }
-    if (!validateEmail(formData.email)) {
-      setStatus({ type: "error", message: t("errorEmail") });
-      setLoading(false);
-      return;
-    }
-    if (checkSpamPatterns(formData.message + " " + formData.subject)) {
-      setStatus({ type: "error", message: t("errorSpam") });
-      setLoading(false);
-      return;
-    }
-    if (formData.message.length < 10) {
-      setStatus({ type: "error", message: t("errorShort") });
-      setLoading(false);
-      return;
-    }
-    if (RECAPTCHA_SITE_KEY && !captchaToken) {
-      setStatus({ type: "error", message: t("errorCaptcha") });
-      setLoading(false);
-      return;
-    }
-
     try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, captchaToken, _hp: honeypot, _ts: formLoadTimeRef.current }),
-      });
-      const data = await response.json();
-      if (response.ok) {
+      if (honeypot) {
         setStatus({ type: "success", message: t("successMessage") });
-        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
-        resetCaptcha();
-        trackEvent("contact_submit", { form: "contact" });
-      } else {
-        setStatus({ type: "error", message: data.error || t("errorGeneric") });
+        return;
       }
-    } catch {
-      setStatus({ type: "error", message: t("errorGeneric") });
+      if (Date.now() - formLoadTimeRef.current < 3000) {
+        setStatus({ type: "error", message: t("errorGeneric") });
+        return;
+      }
+      if (!validateEmail(formData.email)) {
+        setStatus({ type: "error", message: t("errorEmail") });
+        return;
+      }
+      if (checkSpamPatterns(formData.message + " " + formData.subject)) {
+        setStatus({ type: "error", message: t("errorSpam") });
+        return;
+      }
+      if (formData.message.length < 10) {
+        setStatus({ type: "error", message: t("errorShort") });
+        return;
+      }
+      if (RECAPTCHA_SITE_KEY && !captchaToken) {
+        setStatus({ type: "error", message: t("errorCaptcha") });
+        return;
+      }
+
+      try {
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ ...formData, captchaToken, _hp: honeypot, _ts: formLoadTimeRef.current }),
+        });
+        const data = await response.json();
+        if (response.ok) {
+          setStatus({ type: "success", message: t("successMessage") });
+          setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+          resetCaptcha();
+          trackEvent("contact_submit", { form: "contact" });
+        } else {
+          setStatus({ type: "error", message: data.error || t("errorGeneric") });
+        }
+      } catch {
+        setStatus({ type: "error", message: t("errorGeneric") });
+      }
     } finally {
       setLoading(false);
     }
@@ -122,7 +117,7 @@ export function ContactContent() {
   return (
     <>
       {RECAPTCHA_SITE_KEY && (
-        <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" onLoad={() => setCaptchaLoaded(true)} />
+        <Script src="https://www.google.com/recaptcha/api.js" strategy="lazyOnload" />
       )}
       <section className="section-pad" style={{ paddingTop: 160 }}>
         <div className="section-label">
@@ -153,7 +148,7 @@ export function ContactContent() {
               <span>{t("formHeadRef")} · {new Date().getFullYear()}</span>
             </div>
 
-            <div style={{ position: "fixed", left: "-9999px", top: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true" tabIndex={-1}>
+            <div style={{ position: "absolute", left: "-9999px", top: "-9999px", opacity: 0, height: 0, overflow: "hidden" }} aria-hidden="true" tabIndex={-1}>
               <label htmlFor="website">Website</label>
               <input type="text" id="website" name="website" value={honeypot} onChange={(e) => setHoneypot(e.target.value)} tabIndex={-1} autoComplete="off" />
             </div>
