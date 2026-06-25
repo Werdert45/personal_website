@@ -231,7 +231,7 @@ export function ContactContent() {
           <div className="links">
             <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/" target="_blank" rel="noopener noreferrer">{t("linkLinkedIn")}</a>
             <a href="https://github.com/Werdert45" target="_blank" rel="noopener noreferrer">{t("linkGitHub")}</a>
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">{t("linkBookCall")}</a>
+            <a href="https://cal.com/ianronk/intro" target="_blank" rel="noopener noreferrer" onClick={() => trackEvent("cta_click", { cta: "book_call", location: "contact_page", source: "contact_book_call" })}>{t("linkBookCall")}</a>
           </div>
         </div>
       </section>
