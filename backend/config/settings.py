@@ -183,7 +183,14 @@ MAPBOX_ACCESS_TOKEN = os.getenv("MAPBOX_ACCESS_TOKEN", "")
 # Production security hardening. Gated on `not DEBUG` so local dev is unaffected
 # (local dev keeps DJANGO_DEBUG=True via an untracked backend/.env).
 if not DEBUG:
-    SECURE_SSL_REDIRECT = True
+    # HTTPS redirect is handled at the edge (Dokploy/Traefik terminates TLS and
+    # redirects http->https). We deliberately DO NOT set SECURE_SSL_REDIRECT here:
+    # internal service-to-service calls (the Next frontend fetching
+    # http://backend:8001 during SSR) arrive over plain HTTP with no
+    # X-Forwarded-Proto header, so an app-level redirect would 301 them to an https
+    # port that has no TLS — breaking every server-side fetch and stalling the site.
+    # SECURE_PROXY_SSL_HEADER (below) still lets Django recognize real browser
+    # traffic forwarded by the proxy as secure, so HSTS/secure cookies work.
     SECURE_HSTS_SECONDS = 31536000
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
