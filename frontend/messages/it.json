@@ -429,5 +429,37 @@
     "success": "Grazie, saremo in contatto.",
     "error": "Qualcosa è andato storto. Riprova o scrivi direttamente.",
     "privacy": "Non condivideremo il tuo indirizzo."
+  },
+  "Lanes": {
+    "kicker": "Su cosa lavoro: quattro ambiti",
+    "titleItalic": "Quattro",
+    "titleRest": "ambiti.",
+    "subtitle": "Un toolkit di ingegneria geospaziale, quattro ambiti. La dinamica urbana è il punto di ancoraggio; il settore immobiliare è una applicazione, non la cornice.",
+    "appliedAcross": "Applicato in: pianificazione urbana · immobiliare · rischio climatico · logistica & mobilità · settore pubblico",
+    "automationNote": "Anche dietro le quinte: pipeline LLM/RAG e strumenti interni che automatizzano classificazione, ricerca e reportistica — AI in produzione come ambito ingegneristico, non come titolo principale.",
+    "ctaLabel": "Discuti un progetto",
+    "items": [
+      {
+        "name": "Dinamica urbana & metodi geospaziali",
+        "anchor": true,
+        "blurb": "Modellazione della gentrificazione, accessibilità e connettività, analisi spaziale a livello di parcella e codice postale. Il punto di ancoraggio — dove si concentrano le pubblicazioni e il dottorato.",
+        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "CV"]
+      },
+      {
+        "name": "Immobiliare & investimenti",
+        "blurb": "Modelli di valutazione, affitto e rischio, dati alternativi per REITs e fondi. Un ambito e la rete più solida — non l'identità.",
+        "stack": ["XGBoost", "hedonic", "alt-data"]
+      },
+      {
+        "name": "Supply-chain & previsioni sulle materie prime",
+        "blurb": "La componente di ottimizzazione spaziale della logistica: progettazione di reti, bacino d'utenza e routing, localizzazione di strutture, previsioni sull'offerta di legno e materie prime.",
+        "stack": ["routing", "time-series", "optimisation"]
+      },
+      {
+        "name": "Prodotti di dati spaziali",
+        "blurb": "Punteggi e feed prodottizzati — indici di connettività e percorribilità pedonale, metodi per i primi acquirenti. Validati come licenza prima, finanziati dagli ambiti di consulenza.",
+        "stack": ["APIs", "Python", "React"]
+      }
+    ]
   }
 }

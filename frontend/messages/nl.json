@@ -429,5 +429,37 @@
     "success": "Dank je, we nemen contact op.",
     "error": "Er ging iets mis. Probeer opnieuw of mail rechtstreeks.",
     "privacy": "Je adres wordt niet gedeeld."
+  },
+  "Lanes": {
+    "kicker": "Waar ik aan werk: vier domeinen",
+    "titleItalic": "Vier",
+    "titleRest": "domeinen.",
+    "subtitle": "Één geospatial-engineeringtoolkit, vier domeinen. Stedelijke dynamiek is het ankerpunt; vastgoed is één toepassing, niet het kader.",
+    "appliedAcross": "Toegepast in: stedenbouw · vastgoed · klimaatrisico · logistiek & mobiliteit · publieke sector",
+    "automationNote": "Ook achter de schermen: LLM/RAG-pipelines en interne tools die classificatie, onderzoek en rapportage automatiseren — productie-AI als engineeringbereik, niet als hoofdpunt.",
+    "ctaLabel": "Bespreek een project",
+    "items": [
+      {
+        "name": "Stedelijke dynamiek & geospatiale methoden",
+        "anchor": true,
+        "blurb": "Gentrificatiemodellering, toegankelijkheid en connectiviteit, ruimtelijke analyse op perceel- en postcoderesolutie. Het ankerpunt — waar de publicaties en het PhD-onderzoek op focussen.",
+        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "CV"]
+      },
+      {
+        "name": "Vastgoed & investeringen",
+        "blurb": "Waarderings-, huur- en risicomodellen, alternatieve data voor REITs en fondsen. Één domein en het warmste netwerk — niet de identiteit.",
+        "stack": ["XGBoost", "hedonic", "alt-data"]
+      },
+      {
+        "name": "Supply-chain & grondstoffenprognoses",
+        "blurb": "Het ruimtelijk-optimalisatiegedeelte van logistiek: netwerkontwerp, verzorgingsgebied en routing, locatiekeuze voor faciliteiten, hout- en grondstoffenprognoses.",
+        "stack": ["routing", "time-series", "optimisation"]
+      },
+      {
+        "name": "Ruimtelijke dataproducten",
+        "blurb": "Geproductiseerde scores en feeds — connectiviteits- en loopbaarheidsindices, methoden voor starters op de woningmarkt. Gevalideerd als licentieproduct eerst, gefinancierd door de consultingdomeinen.",
+        "stack": ["APIs", "Python", "React"]
+      }
+    ]
   }
 }

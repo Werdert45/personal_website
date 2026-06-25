@@ -429,5 +429,37 @@
     "success": "Thanks, we'll be in touch.",
     "error": "Something went wrong. Try again or email directly.",
     "privacy": "We won't share your address."
+  },
+  "Lanes": {
+    "kicker": "What I work on: four lanes",
+    "titleItalic": "Four",
+    "titleRest": "lanes.",
+    "subtitle": "One geospatial-engineering toolkit, four lanes. Urban dynamics is the anchor; real estate is one application, not the frame.",
+    "appliedAcross": "Applied across: urban planning · real estate · climate risk · logistics & mobility · public sector",
+    "automationNote": "Also under the hood: LLM/RAG pipelines and internal tools that automate classification, research and reporting — production AI as engineering range, not the headline.",
+    "ctaLabel": "Discuss a project",
+    "items": [
+      {
+        "name": "Urban dynamics & geospatial methods",
+        "anchor": true,
+        "blurb": "Gentrification modelling, accessibility and connectivity, parcel- and postcode-level spatial analysis. The anchor — where the publishing and the PhD concentrate.",
+        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "CV"]
+      },
+      {
+        "name": "Real estate & investment",
+        "blurb": "Valuation, rent and risk models, alternative data for REITs and funds. One lane and the warmest network — not the identity.",
+        "stack": ["XGBoost", "hedonic", "alt-data"]
+      },
+      {
+        "name": "Supply-chain & commodity forecasting",
+        "blurb": "The spatial-optimisation slice of logistics: network design, catchment and routing, facility siting, wood and commodity supply forecasting.",
+        "stack": ["routing", "time-series", "optimisation"]
+      },
+      {
+        "name": "Spatial data products",
+        "blurb": "Productised scores and feeds — connectivity and walkability indices, first-home-buyer methods. Validated as licensing first, funded by the consulting lanes.",
+        "stack": ["APIs", "Python", "React"]
+      }
+    ]
   }
 }

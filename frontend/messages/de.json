@@ -429,5 +429,37 @@
     "success": "Danke, wir melden uns.",
     "error": "Etwas ist schiefgelaufen. Versuch es nochmal oder schreib direkt.",
     "privacy": "Deine Adresse wird nicht weitergegeben."
+  },
+  "Lanes": {
+    "kicker": "Womit ich arbeite: vier Bereiche",
+    "titleItalic": "Vier",
+    "titleRest": "Bereiche.",
+    "subtitle": "Ein geospatiales Engineering-Toolkit, vier Bereiche. Stadtdynamik ist der Anker; Immobilien sind eine Anwendung, nicht der Rahmen.",
+    "appliedAcross": "Angewendet in: Stadtplanung · Immobilien · Klimarisiko · Logistik & Mobilität · öffentlicher Sektor",
+    "automationNote": "Auch im Hintergrund: LLM/RAG-Pipelines und interne Tools, die Klassifizierung, Recherche und Reporting automatisieren — Produktions-KI als Engineering-Bereich, nicht als Schlagzeile.",
+    "ctaLabel": "Projekt besprechen",
+    "items": [
+      {
+        "name": "Stadtdynamik & geospatiale Methoden",
+        "anchor": true,
+        "blurb": "Gentrifizierungsmodellierung, Erreichbarkeit und Konnektivität, räumliche Analyse auf Parzellen- und Postleitzahlebene. Der Anker — wo die Veröffentlichungen und das Promotionsprojekt konzentriert sind.",
+        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "CV"]
+      },
+      {
+        "name": "Immobilien & Investment",
+        "blurb": "Bewertungs-, Miet- und Risikomodelle, alternative Daten für REITs und Fonds. Ein Bereich und das wärmste Netzwerk — nicht die Identität.",
+        "stack": ["XGBoost", "hedonic", "alt-data"]
+      },
+      {
+        "name": "Supply-Chain & Rohstoffprognosen",
+        "blurb": "Der räumliche Optimierungsanteil der Logistik: Netzwerkdesign, Einzugsgebiet und Routing, Standortwahl für Einrichtungen, Holz- und Rohstoffversorgungsprognosen.",
+        "stack": ["routing", "time-series", "optimisation"]
+      },
+      {
+        "name": "Räumliche Datenprodukte",
+        "blurb": "Produktisierte Scores und Feeds — Konnektivitäts- und Walkability-Indizes, Methoden für Erstkäufer. Als Lizenzprodukt validiert, finanziert durch die Beratungsbereiche.",
+        "stack": ["APIs", "Python", "React"]
+      }
+    ]
   }
 }
