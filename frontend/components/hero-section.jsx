@@ -159,19 +159,19 @@ export function HeroSection() {
 
           <div style={{ marginTop: 40, display: "flex", gap: 14, alignItems: "center", flexWrap: "wrap" }}>
             <Link
-              href={`/${locale}/about`}
+              href={`/${locale}/contact`}
               className="btn primary"
-              onClick={() => trackEvent("cta_click", { cta: "about_me", location: "hero", source: "hero_primary" })}
+              onClick={() => trackEvent("cta_click", { cta: "contact", location: "hero", source: "hero_primary" })}
             >
-              <span>{t("viewProjects")}</span>
+              <span>{t("workWithMe")}</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
             </Link>
             <Link
-              href={`/${locale}/contact`}
+              href={`/${locale}/about`}
               className="btn ghost"
-              onClick={() => trackEvent("cta_click", { cta: "contact", location: "hero", source: "hero_secondary" })}
+              onClick={() => trackEvent("cta_click", { cta: "about_me", location: "hero", source: "hero_secondary" })}
             >
-              <span>{t("workWithMe")}</span>
+              <span>{t("aboutMe")}</span>
             </Link>
           </div>
         </div>
