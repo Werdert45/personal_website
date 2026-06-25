@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 
-export default function NewsletterSubscribe({ variant = "compact", source = "other", locale = "en" }) {
+export default function NewsletterSubscribe({ variant = "compact", source = "other", locale = "en", heading, description }) {
   const t = useTranslations("Newsletter");
   const [email, setEmail] = useState("");
   const [hp, setHp] = useState("");
@@ -47,8 +47,8 @@ export default function NewsletterSubscribe({ variant = "compact", source = "oth
     <form onSubmit={onSubmit} className={`newsletter-form newsletter-${variant}`}>
       {isInline && (
         <>
-          <h3>{t("inlineHeading")}</h3>
-          <p>{t("inlineDescription")}</p>
+          <h3>{heading || t("inlineHeading")}</h3>
+          <p>{description || t("inlineDescription")}</p>
         </>
       )}
       {!isInline && (

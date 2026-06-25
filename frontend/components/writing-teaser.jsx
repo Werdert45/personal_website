@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getTranslations } from "next-intl/server";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
 function renderTitle(title, italicToken) {
   if (!title) return null;
@@ -46,6 +47,7 @@ async function fetchPosts() {
 
 export async function WritingTeaser({ locale = "en" }) {
   const t = await getTranslations({ locale, namespace: "Thoughts" });
+  const nl = await getTranslations({ locale, namespace: "Newsletter" });
   const posts = await fetchPosts();
 
   return (
@@ -97,6 +99,16 @@ export async function WritingTeaser({ locale = "en" }) {
           })}
         </div>
       )}
+
+      <div style={{ marginTop: 56 }}>
+        <NewsletterSubscribe
+          variant="inline"
+          source="home-thoughts"
+          locale={locale}
+          heading={nl("homeThoughtsHeading")}
+          description={nl("homeThoughtsDescription")}
+        />
+      </div>
     </section>
   );
 }

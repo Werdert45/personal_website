@@ -428,6 +428,8 @@
     "compactDescription": "Occasional notes on geospatial methods, ML pipelines and what breaks in production.",
     "inlineHeading": "Get the next one before it lands on Medium",
     "inlineDescription": "Occasional. No spam. Unsubscribe any time.",
+    "homeThoughtsHeading": "Not ready to talk? Get the next piece.",
+    "homeThoughtsDescription": "Notes from the field — occasional pieces on urban dynamics, geospatial methods and what breaks in production.",
     "emailPlaceholder": "you@domain.com",
     "submit": "Subscribe",
     "success": "Thanks, we'll be in touch.",
