@@ -1,11 +1,12 @@
 import { HeroSection } from "@/components/hero-section";
 import { Marquee } from "@/components/marquee";
 import { AboutTeaser } from "@/components/about-teaser";
-import { SkillsGrid } from "@/components/skills-grid";
-import { SectorsStrip } from "@/components/sectors-strip";
+import { FourLanes } from "@/components/four-lanes";
 import { ProjectsGallery } from "@/components/projects-gallery";
+import { ProofStrip } from "@/components/proof-strip";
 import { WritingTeaser } from "@/components/writing-teaser";
 import { ResearchPreview } from "@/components/research-preview";
+import { ContactBand } from "@/components/contact-band";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/json-ld";
 
 export async function generateMetadata({ params }) {
@@ -18,6 +19,8 @@ export async function generateMetadata({ params }) {
       languages: {
         en: `${siteUrl}/en`,
         nl: `${siteUrl}/nl`,
+        de: `${siteUrl}/de`,
+        it: `${siteUrl}/it`,
         "x-default": `${siteUrl}/en`,
       },
     },
@@ -33,12 +36,13 @@ export default async function HomePage({ params }) {
       <WebSiteJsonLd />
       <HeroSection />
       <Marquee />
-      <AboutTeaser />
-      <SkillsGrid />
-      <SectorsStrip />
       <ProjectsGallery />
-      <WritingTeaser locale={locale} />
       <ResearchPreview locale={locale} />
+      <FourLanes />
+      <ProofStrip />
+      <AboutTeaser />
+      <WritingTeaser locale={locale} />
+      <ContactBand />
     </main>
   );
 }
