@@ -13,7 +13,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ian Ronk | Geodata Engineer & ML Researcher',
+    default: 'Ian Ronk | Geodata Engineer & Urban-Dynamics Researcher',
     template: '%s | Ian Ronk',
   },
   description: 'Ian Ronk builds production spatial systems and ML pipelines — PostGIS, Airflow, LLM automation — for real estate, climate risk and alternative data. Based in Amsterdam.',
@@ -35,13 +35,13 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Ian Ronk',
-    title: 'Ian Ronk | Geodata Engineer & ML Researcher',
+    title: 'Ian Ronk | Geodata Engineer & Urban-Dynamics Researcher',
     description: 'Ian Ronk builds production spatial systems and ML pipelines — PostGIS, Airflow, LLM automation — for real estate, climate risk and alternative data.',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Ian Ronk — Geospatial · ML · AI' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ian Ronk | Geodata Engineer & ML Researcher',
+    title: 'Ian Ronk | Geodata Engineer & Urban-Dynamics Researcher',
     description: 'Ian Ronk builds production spatial systems and ML pipelines for real estate, climate risk and alternative data.',
     creator: '@ianronk',
     images: ['/og.png'],

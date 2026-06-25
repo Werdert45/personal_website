@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
   return {
     title: "About",
     description:
-      "Ian Ronk — Head of Data at KR&A. Background in AI, geospatial analysis, and real estate data science. Based in Amsterdam.",
+      "Ian Ronk — geodata engineer and urban-dynamics researcher in Amsterdam. Production spatial systems (PostGIS, Airflow, ML) and research into how cities change; real estate is one application among several. Head of Data at KR&A.",
     alternates: {
       canonical: url,
       languages: {

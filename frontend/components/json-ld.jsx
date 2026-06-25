@@ -5,7 +5,7 @@ export function PersonJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ian Ronk",
-    jobTitle: "Head of Data",
+    jobTitle: "Geodata Engineer & Urban-Dynamics Researcher",
     url: siteUrl,
     sameAs: ["https://www.linkedin.com/in/ian-ronk-7b054a120/", "https://github.com/Werdert45"],
     worksFor: {
@@ -13,11 +13,12 @@ export function PersonJsonLd() {
       name: "KR&A",
     },
     knowsAbout: [
-      "Data Science",
+      "Geospatial Engineering",
+      "Urban Dynamics",
+      "Spatial Data Engineering",
+      "PostGIS",
       "Machine Learning",
-      "Real Estate Analytics",
-      "Geospatial Analysis",
-      "Alternative Data",
+      "Accessibility and Housing Markets",
       "Data Engineering",
     ],
     alumniOf: [
@@ -54,7 +55,7 @@ export function WebSiteJsonLd() {
     name: "Ian Ronk",
     url: siteUrl,
     description:
-      "Head of Data delivering AI-powered insights for European real estate investment.",
+      "Geodata engineering and urban-dynamics research — production spatial systems and research into how cities change, across real estate, climate risk and public planning. Based in Amsterdam.",
     author: {
       "@type": "Person",
       name: "Ian Ronk",
