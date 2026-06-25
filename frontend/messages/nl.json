@@ -64,6 +64,8 @@
     "factMarketsValueRest": "Europese markten in kaart",
     "factClients": "Klanten",
     "factClientsValue": "REITs · fondsen · Eurostat · toonaangevende vastgoedbedrijven",
+    "factClientsPersonal": "Persoonlijk",
+    "factClientsPersonalValue": "ingoglia.de",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · Docker · PyTorch · React",
     "journeyKicker": "Professioneel traject",

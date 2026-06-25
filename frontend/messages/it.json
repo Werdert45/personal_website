@@ -64,6 +64,8 @@
     "factMarketsValueRest": "mercati europei mappati",
     "factClients": "Clienti",
     "factClientsValue": "REIT · fondi · Eurostat · principali aziende immobiliari",
+    "factClientsPersonal": "Personale",
+    "factClientsPersonalValue": "ingoglia.de",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · Docker · PyTorch · React",
     "journeyKicker": "Percorso professionale",
