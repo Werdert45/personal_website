@@ -29,8 +29,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy project
 COPY . .
 
-# Collect static files
-RUN python manage.py collectstatic --noinput
+# Collect static files. collectstatic runs at BUILD time, where no runtime env
+# vars exist, so provide throwaway build-only values: DJANGO_DEBUG=True skips the
+# production SECRET_KEY guard in settings.py (collectstatic needs neither a real
+# secret nor the DB). The real DJANGO_SECRET_KEY/DJANGO_DEBUG=False are injected
+# at RUNTIME by docker-compose, where the guard is enforced. Nothing here persists
+# into the image (the env vars are scoped to this single RUN).
+RUN DJANGO_DEBUG=True DJANGO_SECRET_KEY=build-only-not-used-at-runtime \
+    python manage.py collectstatic --noinput
 
 EXPOSE 8001
 

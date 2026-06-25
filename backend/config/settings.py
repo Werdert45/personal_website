@@ -16,8 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 INSECURE_SECRET_KEY = "django-insecure-change-me-in-production"
 SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", INSECURE_SECRET_KEY)
 
-# Default to False so production is secure-by-default. The committed backend/.env
-# sets DJANGO_DEBUG=True, so local dev stays in debug mode.
+# Default to False so production is secure-by-default. Local dev opts in via an
+# untracked backend/.env (DJANGO_DEBUG=True); the Docker build's collectstatic
+# step sets it inline (see backend/Dockerfile); runtime gets it from docker-compose.
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
@@ -180,7 +181,7 @@ SPECTACULAR_SETTINGS = {
 MAPBOX_ACCESS_TOKEN = os.getenv("MAPBOX_ACCESS_TOKEN", "")
 
 # Production security hardening. Gated on `not DEBUG` so local dev is unaffected
-# (the committed backend/.env keeps DJANGO_DEBUG=True).
+# (local dev keeps DJANGO_DEBUG=True via an untracked backend/.env).
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SECURE_HSTS_SECONDS = 31536000
