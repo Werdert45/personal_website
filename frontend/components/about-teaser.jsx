@@ -13,7 +13,7 @@ export function AboutTeaser() {
     <section className="section-pad about-teaser">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 02</span>
+        <span className="num-label">§ 06</span>
         <span>{t("kicker")}</span>
       </div>
 

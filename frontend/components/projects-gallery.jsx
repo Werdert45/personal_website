@@ -181,7 +181,7 @@ export function ProjectsGallery() {
     <section className="section-pad">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 05</span>
+        <span className="num-label">§ 03</span>
         <span>{t("kicker")}</span>
       </div>
 
@@ -226,7 +226,7 @@ export function ProjectsGallery() {
               </div>
               <div className="project-body">
                 <div className="project-kicker">
-                  <span>§ 05.{num}</span>
+                  <span>§ 03.{num}</span>
                   <span>{item.sector}</span>
                 </div>
                 <h3 className="project-title">{item.title}</h3>
