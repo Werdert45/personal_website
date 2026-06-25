@@ -12,6 +12,8 @@ export async function generateMetadata({ params }) {
       languages: {
         en: `${siteUrl}/en/cookie-policy`,
         nl: `${siteUrl}/nl/cookie-policy`,
+        de: `${siteUrl}/de/cookie-policy`,
+        it: `${siteUrl}/it/cookie-policy`,
         "x-default": `${siteUrl}/en/cookie-policy`,
       },
     },

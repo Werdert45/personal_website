@@ -12,6 +12,8 @@ export async function generateMetadata({ params }) {
       languages: {
         en: `${siteUrl}/en/terms-of-service`,
         nl: `${siteUrl}/nl/terms-of-service`,
+        de: `${siteUrl}/de/terms-of-service`,
+        it: `${siteUrl}/it/terms-of-service`,
         "x-default": `${siteUrl}/en/terms-of-service`,
       },
     },
