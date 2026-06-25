@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
+import { trackEvent } from "@/lib/analytics";
 
 function getTranslated(item, field, locale) {
   if (locale === "en") return item[field];
@@ -149,6 +151,19 @@ export function ResearchList() {
           {t("noResults")}
         </p>
       )}
+
+      <div style={{ marginTop: 64 }}>
+        <NewsletterSubscribe variant="inline" source="research-index" locale={locale} />
+      </div>
+
+      <Link
+        href={`/${locale}/contact`}
+        className="btn ghost"
+        style={{ marginTop: 20 }}
+        onClick={() => trackEvent("cta_click", { cta: "contact", location: "research_index", source: "research_index" })}
+      >
+        <span>{t("indexDiscuss")}</span>
+      </Link>
     </section>
   );
 }

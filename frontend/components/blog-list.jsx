@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import NewsletterSubscribe from "@/components/newsletter-subscribe";
 
 const DEFAULT_POSTS = [
   { slug: "voronoi-postcode-estimation", category: "EXPLANATION", date: "2026-05", title: "Estimating Italian postcode boundaries with OSM and Voronoi diagrams", excerpt: "Four attempts at the same problem: centroid assignment, OSM address Voronoi, kNN outlier removal, and island consolidation. The fourth worked. Calibrated on Dutch and Danish authoritative data; applied to 4,209 Italian CAP polygons." },
@@ -118,6 +119,10 @@ export function BlogList() {
             </div>
           </Link>
         ))}
+      </div>
+
+      <div style={{ marginTop: 64 }}>
+        <NewsletterSubscribe variant="inline" source="thoughts-index" locale={locale} />
       </div>
     </section>
   );
