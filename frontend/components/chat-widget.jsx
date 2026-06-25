@@ -1,6 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
+import { useLocale } from "next-intl";
+import { trackEvent } from "@/lib/analytics";
 
 const INITIAL_MESSAGE = {
   role: "assistant",
@@ -27,6 +30,7 @@ const CATEGORY_LABELS = {
 };
 
 export function ChatWidget() {
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [input, setInput] = useState("");
@@ -119,6 +123,16 @@ export function ChatWidget() {
                 )}
                 <div className="chat-msg-body">
                   <p>{msg.content}</p>
+                  {msg.category === "contact" && (
+                    <Link
+                      href={`/${locale}/contact`}
+                      className="btn ghost"
+                      style={{ marginTop: 10 }}
+                      onClick={() => trackEvent("cta_click", { cta: "contact", location: "chat_widget", source: "chat_widget" })}
+                    >
+                      <span>Reach out via the contact page</span>
+                    </Link>
+                  )}
                   {msg.category && CATEGORY_LABELS[msg.category] && (
                     <span className="chat-category-tag">
                       {CATEGORY_LABELS[msg.category]}
