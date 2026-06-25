@@ -16,7 +16,7 @@
     "title": "Ingegneria geodata e ",
     "titleHighlight": "ricerca sulle dinamiche urbane",
     "titleEnd": " per decisioni sui luoghi",
-    "description": "Costruisco sistemi spaziali in produzione e studio come le città cambiano — gentrificazione, accessibilità, mercati abitativi — a risoluzione di parcella e codice postale. I settori variano; la domanda raramente: dove, quanto, e cosa succede dopo?",
+    "description": "Costruisco sistemi spaziali in produzione e studio come le città cambiano — gentrificazione, accessibilità, mercati abitativi — a risoluzione di parcella e codice postale. I settori variano; la domanda raramente cambia: dove, quanto, e cosa succede dopo?",
     "aboutMe": "Chi sono",
     "getInTouch": "Contattami",
     "workWithMe": "Parliamone",
@@ -181,8 +181,8 @@
   "Contact": {
     "aboutBadge": "Su di Me",
     "name": "Ian Ronk",
-    "roleTitle": "Ingegnere Geodati & Ricercatore di Dinamiche Urbane · Head of Data @ KR&A",
-    "bio": "Con sede ad Amsterdam. Sviluppo sistemi spaziali di produzione e ricerco come cambiano le citta — gentrificazione, accessibilita, mercati abitativi — a livello di particella e codice postale. I settori variano (immobiliare, rischio climatico, pianificazione pubblica); la domanda raramente: dove, quanto e cosa succede dopo?",
+    "roleTitle": "Ingegnere Geodata & Ricercatore di Dinamiche Urbane · Head of Data @ KR&A",
+    "bio": "Con sede ad Amsterdam. Sviluppo sistemi spaziali in produzione e ricerco come cambiano le città — gentrificazione, accessibilità, mercati abitativi — a livello di particella e codice postale. I settori variano (immobiliare, rischio climatico, pianificazione pubblica); la domanda raramente cambia: dove, quanto, e cosa succede dopo?",
     "location": "Amsterdam, Paesi Bassi",
     "company": "Head of Data @ KR&A FinTech",
     "yearsExperience": "4+ anni in Data Science Immobiliare",
@@ -385,7 +385,7 @@
         "context": "Indice mensile dei prezzi delle case · Eurostat"
       },
       {
-        "value": "2,500+",
+        "value": "2.500+",
         "unit": "ore / anno recuperate",
         "context": "Tool dati per deal-screening · 6 settimane"
       },
@@ -463,7 +463,7 @@
       },
       {
         "name": "Prodotti di dati spaziali",
-        "blurb": "Punteggi e feed prodottizzati — indici di connettività e percorribilità pedonale, metodi per i primi acquirenti. Validati come licenza prima, finanziati dagli ambiti di consulenza.",
+        "blurb": "Punteggi e feed pronti all'uso — indici di connettività e percorribilità pedonale, metodi per i primi acquirenti. Validati come licenza prima, finanziati dagli ambiti di consulenza.",
         "stack": ["APIs", "Python", "React"]
       }
     ]
