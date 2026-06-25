@@ -376,19 +376,19 @@
     "quoteAttribution": "COO, servizi regolamentati",
     "outcomes": [
       {
-        "value": "2.500+",
+        "value": "13",
+        "unit": "paesi UE · una pipeline",
+        "context": "Indice mensile dei prezzi delle case · Eurostat"
+      },
+      {
+        "value": "2,500+",
         "unit": "ore / anno recuperate",
-        "context": "Tool di deal-screening · 6 settimane"
+        "context": "Tool dati per deal-screening · 6 settimane"
       },
       {
-        "value": "11 → 3",
-        "unit": "giorni · onboarding",
-        "context": "Ricostruzione intake compliance · 8 settimane"
-      },
-      {
-        "value": "18",
-        "unit": "ore / sett. di risparmio identificate",
-        "context": "Automation audit · 2 settimane"
+        "value": "3",
+        "unit": "lingue · tutor AI live",
+        "context": "LanguageBuddy · prodotto AI in produzione"
       }
     ],
     "ctaPrimary": "Scopri come lavoriamo insieme",

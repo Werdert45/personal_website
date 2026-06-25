@@ -376,19 +376,19 @@
     "quoteAttribution": "COO, gereguleerde dienstverlening",
     "outcomes": [
       {
-        "value": "2.500+",
+        "value": "13",
+        "unit": "EU-landen · één pipeline",
+        "context": "Maandelijkse huizenprijsindex · Eurostat"
+      },
+      {
+        "value": "2,500+",
         "unit": "uur / jr teruggewonnen",
-        "context": "Deal-screening tool · 6 weken"
+        "context": "Deal-screening datatool · 6 weken"
       },
       {
-        "value": "11 → 3",
-        "unit": "dagen · onboarding",
-        "context": "Compliance-intake herbouw · 8 weken"
-      },
-      {
-        "value": "18",
-        "unit": "uur / wk besparing geïdentificeerd",
-        "context": "Automatiserings-audit · 2 weken"
+        "value": "3",
+        "unit": "talen · live AI-tutor",
+        "context": "LanguageBuddy · productie-AI-product"
       }
     ],
     "ctaPrimary": "Bekijk hoe we samenwerken",

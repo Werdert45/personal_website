@@ -376,19 +376,19 @@
     "quoteAttribution": "COO, regulierte Dienstleistungen",
     "outcomes": [
       {
-        "value": "2.500+",
+        "value": "13",
+        "unit": "EU-Länder · eine Pipeline",
+        "context": "Monatlicher Hauspreisindex · Eurostat"
+      },
+      {
+        "value": "2,500+",
         "unit": "Std. / Jahr zurückgewonnen",
-        "context": "Deal-Screening-Tool · 6 Wochen"
+        "context": "Deal-Screening-Datentool · 6 Wochen"
       },
       {
-        "value": "11 → 3",
-        "unit": "Tage · Onboarding",
-        "context": "Compliance-Intake Neuaufbau · 8 Wochen"
-      },
-      {
-        "value": "18",
-        "unit": "Std. / Woche identifizierte Einsparung",
-        "context": "Automatisierungs-Audit · 2 Wochen"
+        "value": "3",
+        "unit": "Sprachen · Live-KI-Tutor",
+        "context": "LanguageBuddy · KI-Produkt in Produktion"
       }
     ],
     "ctaPrimary": "So arbeiten wir zusammen",

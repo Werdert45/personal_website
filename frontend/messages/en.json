@@ -376,19 +376,19 @@
     "quoteAttribution": "COO, regulated services",
     "outcomes": [
       {
+        "value": "13",
+        "unit": "EU countries · one pipeline",
+        "context": "Monthly house-price index · Eurostat"
+      },
+      {
         "value": "2,500+",
         "unit": "hrs / yr reclaimed",
-        "context": "Deal-screening tool · 6 weeks"
+        "context": "Deal-screening data tool · 6 weeks"
       },
       {
-        "value": "11 → 3",
-        "unit": "days · onboarding",
-        "context": "Compliance intake rebuild · 8 weeks"
-      },
-      {
-        "value": "18",
-        "unit": "hrs / wk savings identified",
-        "context": "Automation audit · 2 weeks"
+        "value": "3",
+        "unit": "languages · live AI tutor",
+        "context": "LanguageBuddy · production AI product"
       }
     ],
     "ctaPrimary": "See how we'd work together",
