@@ -172,7 +172,10 @@
     "browseAll": "Alle Artikel durchsuchen",
     "byAuthor": "von",
     "youMightAlsoLike": "Das könnte Sie auch interessieren",
-    "readArticle": "Artikel lesen"
+    "readArticle": "Artikel lesen",
+    "endCtaKicker": "§ Weiter",
+    "endCtaHeading": "Arbeiten Sie an etwas Räumlichem? Lassen Sie uns sprechen.",
+    "endCtaButton": "Kontakt aufnehmen"
   },
   "Contact": {
     "aboutBadge": "Über Mich",

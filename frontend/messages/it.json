@@ -172,7 +172,10 @@
     "browseAll": "Sfoglia tutti gli articoli",
     "byAuthor": "di",
     "youMightAlsoLike": "Potrebbe interessarti anche",
-    "readArticle": "Leggi l'articolo"
+    "readArticle": "Leggi l'articolo",
+    "endCtaKicker": "§ Avanti",
+    "endCtaHeading": "Stai lavorando su qualcosa di spaziale? Parliamone.",
+    "endCtaButton": "Scrivimi"
   },
   "Contact": {
     "aboutBadge": "Su di Me",

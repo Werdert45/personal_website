@@ -172,7 +172,10 @@
     "browseAll": "Browse all articles",
     "byAuthor": "by",
     "youMightAlsoLike": "You might also like",
-    "readArticle": "Read article"
+    "readArticle": "Read article",
+    "endCtaKicker": "§ Next",
+    "endCtaHeading": "Working on something spatial? Let's talk.",
+    "endCtaButton": "Get in touch"
   },
   "Contact": {
     "aboutBadge": "About Me",

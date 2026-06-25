@@ -172,7 +172,10 @@
     "browseAll": "Bekijk alle artikelen",
     "byAuthor": "door",
     "youMightAlsoLike": "Misschien vind je dit ook leuk",
-    "readArticle": "Lees artikel"
+    "readArticle": "Lees artikel",
+    "endCtaKicker": "§ Verder",
+    "endCtaHeading": "Werk je aan iets ruimtelijks? Laten we praten.",
+    "endCtaButton": "Neem contact op"
   },
   "Contact": {
     "aboutBadge": "Over Mij",

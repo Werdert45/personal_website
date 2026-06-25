@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowLeft, Loader2, ArrowRight, Clock, FileText } from "lucide-react";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
+import { trackEvent } from "@/lib/analytics";
 
 const STATIC_PAPERS = {
   "metro-capitalisation-timing": {
@@ -376,6 +377,19 @@ export default function ResearchArticleDetail({ slug }) {
           <div className="newsletter-inline">
             <NewsletterSubscribe variant="inline" source="research-end" locale={locale} />
           </div>
+
+          <aside style={{ marginTop: 56, paddingTop: 32, borderTop: "1px solid var(--rule)" }}>
+            <div className="num-label" style={{ color: "var(--mute)" }}>{t("endCtaKicker")}</div>
+            <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(28px, 4vw, 44px)", lineHeight: 1.0, margin: "12px 0 20px" }}>{t("endCtaHeading")}</h3>
+            <Link
+              href={`/${locale}/contact`}
+              className="btn primary"
+              onClick={() => trackEvent("cta_click", { cta: "contact", location: "research_end", source: "research_end", slug })}
+            >
+              <span>{t("endCtaButton")}</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
+            </Link>
+          </aside>
 
           {relatedArticles.length > 0 && (
             <div className="mt-12 md:mt-16 pt-8 border-t border-border">
