@@ -102,73 +102,9 @@ function VizHedonic({ titleText }) {
   );
 }
 
-function VizLanguageBuddy({ titleText }) {
-  const reactId = useId();
-  const gridId = `vizGridLB-${reactId}`;
-  const titleId = `vizLB-${reactId}`;
-  const langs = ["NL", "IT", "ES"];
-  const levels = ["A1", "A2", "B1", "B2", "C1"];
-  return (
-    <svg viewBox="0 0 320 180" role="img" aria-labelledby={titleId} style={{ width: "100%", height: "100%" }}>
-      <title id={titleId}>{titleText || "LanguageBuddy: conversational AI tutor with spaced repetition and CEFR progression"}</title>
-      <defs>
-        <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
-        </pattern>
-      </defs>
-      <rect width="320" height="180" fill={`url(#${gridId})`} />
-      {/* Language × level grid */}
-      {langs.map((lang, li) =>
-        levels.map((lvl, vi) => {
-          const active = (li === 0 && vi < 3) || (li === 1 && vi <= 4) || (li === 2 && vi <= 4);
-          return (
-            <g key={`${lang}-${lvl}`}>
-              <rect x={20 + vi * 36} y={20 + li * 36} width="30" height="24"
-                fill={active ? (vi === 2 && li === 0 ? "#FFD60A" : "#F6F4EE") : "transparent"}
-                stroke={active ? "#111110" : "rgba(15,14,11,.15)"}
-                strokeWidth="0.7" />
-              <text x={24 + vi * 36} y={36 + li * 36}
-                fontFamily="var(--font-mono)" fontSize="8"
-                fill={active ? "#111110" : "rgba(15,14,11,.25)"}>
-                {lvl}
-              </text>
-            </g>
-          );
-        })
-      )}
-      {/* Language labels */}
-      {langs.map((lang, li) => (
-        <text key={lang} x="10" y={34 + li * 36} fontFamily="var(--font-mono)" fontSize="7" fill="#8A8676"
-          textAnchor="middle" transform={`rotate(-90, 10, ${34 + li * 36})`}>{lang}</text>
-      ))}
-      {/* Pipeline below the grid */}
-      <rect x="14" y="130" width="58" height="26" fill="#F6F4EE" stroke="#111110" strokeWidth="0.8" />
-      <text x="18" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">converse</text>
-      <text x="18" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#8A8676">Claude AI</text>
-
-      <rect x="90" y="130" width="58" height="26" fill="#FFD60A" stroke="#111110" strokeWidth="0.8" />
-      <text x="94" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">correct</text>
-      <text x="94" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#111110">real-time</text>
-
-      <rect x="166" y="130" width="58" height="26" fill="#FFD60A" stroke="#111110" strokeWidth="0.8" />
-      <text x="170" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">review</text>
-      <text x="170" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#111110">SM-2 SRS</text>
-
-      <rect x="242" y="130" width="64" height="26" fill="#111110" stroke="#111110" />
-      <text x="246" y="144" fontFamily="var(--font-mono)" fontSize="8" fill="#FFD60A">progress</text>
-      <text x="246" y="153" fontFamily="var(--font-mono)" fontSize="6.5" fill="#F6F4EE">XP · streak</text>
-
-      <path d="M72 143 L90 143" stroke="#111110" strokeWidth="1" fill="none" />
-      <path d="M148 143 L166 143" stroke="#111110" strokeWidth="1" fill="none" />
-      <path d="M224 143 L242 143" stroke="#111110" strokeWidth="1" fill="none" />
-    </svg>
-  );
-}
-
 function ProjectViz({ kind }) {
   if (kind === "abm") return <VizABM />;
   if (kind === "hedonic") return <VizHedonic />;
-  if (kind === "languagebuddy") return <VizLanguageBuddy />;
   return null;
 }
 

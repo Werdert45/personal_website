@@ -25,7 +25,7 @@ export function Navigation() {
     router = useRouter();
   } catch {
     t = (key) => {
-      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", work: "Work with me", brand: "Ian Ronk", letsTalk: "Let's talk", menu: "Menu" };
+      const fallback = { home: "Home", about: "About", visualizations: "Thoughts", research: "Research", contact: "Contact", letsTalk: "Let's talk", menu: "Menu" };
       return fallback[key] || key;
     };
     locale = "en";

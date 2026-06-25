@@ -57,7 +57,7 @@ export function ProofStrip() {
 
       <div className="proof-cta-row">
         <Link
-          href={`/${locale}/work`}
+          href={`/${locale}/contact`}
           className="btn primary"
           onClick={() => trackEvent("cta_click", { cta: "work_with_me", location: "home_proof_strip", source: "home_proof_primary" })}
         >
