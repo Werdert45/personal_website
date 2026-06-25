@@ -219,16 +219,16 @@
     "linkBookCall": "Prenota una chiamata"
   },
   "Projects": {
-    "kicker": "Lavori selezionati: ricerca, tesi, progetti personali",
-    "titlePrefix": "Lavori",
-    "titleItalic": "selezionati.",
-    "subtitle": "Cose che ho costruito o studiato, all'università, nella ricerca e nel mio tempo libero. Non un portfolio di consegne ai clienti; un portfolio di pensiero.",
+    "kicker": "Lavori selezionati & paper: ricerca, metodi, tesi",
+    "titlePrefix": "Lavori selezionati",
+    "titleItalic": "& paper.",
+    "subtitle": "Lavori di livello ricerca su dinamiche urbane e metodi geospaziali. L'immobiliare è una delle applicazioni; il filo conduttore è il metodo.",
     "items": [
       {
         "viz": "abm",
         "sector": "Tesi Magistrale · Bocconi",
         "title": "Modello agent-based di gentrificazione",
-        "outcome": "Simulazione ABM decennale del ricambio di quartiere ad Amsterdam, calibrata su microdati Kadaster e CBS.",
+        "outcome": "Simulazione ABM decennale del ricambio di quartiere ad Amsterdam, calibrata su microdati Kadaster e CBS. Regole decisione su accessibilità economica e attrattività; mobilità degli agenti emergente dalla pressione dei prezzi. La prova più evidente dell'identità nelle dinamiche urbane.",
         "stack": [
           "Python",
           "Mesa",
@@ -241,7 +241,7 @@
         "viz": "hedonic",
         "sector": "Ricerca · Eurostat",
         "title": "Indice mensile prezzi abitativi · 13 paesi UE",
-        "outcome": "Pipeline di web scraping per 13 paesi UE alimentata da una regressione edonica log-prezzo. Dummy temporali estratti come indici mensili per le serie trimestrali Eurostat.",
+        "outcome": "Ingegneria dei dati spaziali europei su larga scala: una pipeline di web scraping su 13 paesi alimentata da una regressione edonica log-prezzo. Indici mensili testati come indicatori di disaggregazione per gli HPI trimestrali Eurostat.",
         "stack": [
           "Python",
           "Scrapy",
@@ -252,23 +252,22 @@
         "link": ""
       },
       {
-        "viz": "languagebuddy",
-        "sector": "Progetto personale",
-        "title": "LanguageBuddy",
-        "outcome": "Piattaforma di pratica linguistica conversazionale: correzione in tempo reale con Claude, ripetizione spaziata SM-2, chiamate vocali TTS e curriculum CEFR per olandese, italiano e spagnolo.",
+        "viz": "hedonic",
+        "sector": "Metodo · sviluppato presso KR&A",
+        "title": "Punteggio connettività & percorribilità pedonale",
+        "outcome": "Un contributo ai metodi geospaziali: un punteggio di connettività/percorribilità pedonale validato a saturazione a risoluzione di parcella. Sviluppato presso KR&A; paper metodologico in uscita nel 2026.",
         "stack": [
-          "FastAPI",
-          "SQLite",
-          "Claude",
-          "Docker",
-          "TTS"
+          "PostGIS",
+          "H3",
+          "GeoPandas",
+          "Python"
         ],
-        "link": "/about/projects/languagebuddy"
+        "link": "/research"
       }
     ],
     "viewCase": "Leggi di più",
     "viewPaper": "Vedi paper",
-    "ctaAll": "Vedi tutto"
+    "ctaAll": "Vedi tutti i paper"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. Tutti i diritti riservati.",

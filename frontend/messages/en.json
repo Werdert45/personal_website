@@ -219,16 +219,16 @@
     "linkBookCall": "Book a call"
   },
   "Projects": {
-    "kicker": "Selected work: research, theses, side projects",
-    "titlePrefix": "Selected",
-    "titleItalic": "work.",
-    "subtitle": "Things I've built or studied, at university, in research, and in my own time. Not a portfolio of client deliverables; a portfolio of thinking.",
+    "kicker": "Selected work & papers: research, methods, theses",
+    "titlePrefix": "Selected work",
+    "titleItalic": "& papers.",
+    "subtitle": "Research-grade work on urban dynamics and geospatial methods. Real estate is one application; the throughline is the method.",
     "items": [
       {
         "viz": "abm",
         "sector": "MSc Thesis · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "Ten-year ABM of neighbourhood turnover in Amsterdam, calibrated on Kadaster and CBS microdata. Affordability-attractiveness decision rules; agent mobility emergent from price pressure.",
+        "outcome": "Ten-year ABM of neighbourhood turnover in Amsterdam, calibrated on Kadaster and CBS microdata. Affordability-attractiveness decision rules; agent mobility emergent from price pressure. The single best evidence of the urban-dynamics identity.",
         "stack": [
           "Python",
           "Mesa",
@@ -241,7 +241,7 @@
         "viz": "hedonic",
         "sector": "Research · Eurostat",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Web-scraping pipeline across 13 EU countries feeding a log-price hedonic regression. Time dummies extracted as monthly indices; tested as disaggregation indicators for Eurostat quarterly HPIs.",
+        "outcome": "Large-scale European spatial-data engineering: a web-scraping pipeline across 13 countries feeding a log-price hedonic regression. Monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs.",
         "stack": [
           "Python",
           "Scrapy",
@@ -252,23 +252,22 @@
         "link": ""
       },
       {
-        "viz": "languagebuddy",
-        "sector": "Side project · Personal",
-        "title": "LanguageBuddy",
-        "outcome": "Conversational language-practice platform: Claude-powered real-time correction, SM-2 spaced repetition, TTS voice calls, and CEFR-aligned curriculum for Dutch, Italian and Spanish.",
+        "viz": "hedonic",
+        "sector": "Method · developed at KR&A",
+        "title": "Connectivity & walkability scoring",
+        "outcome": "A geospatial-methods contribution: a saturation-validated connectivity/walkability score at parcel resolution. Developed at KR&A; method paper forthcoming 2026.",
         "stack": [
-          "FastAPI",
-          "SQLite",
-          "Claude",
-          "Docker",
-          "TTS"
+          "PostGIS",
+          "H3",
+          "GeoPandas",
+          "Python"
         ],
-        "link": "/about/projects/languagebuddy"
+        "link": "/research"
       }
     ],
     "viewCase": "Read more",
     "viewPaper": "View paper",
-    "ctaAll": "See all"
+    "ctaAll": "See all papers"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. All rights reserved.",

@@ -219,16 +219,16 @@
     "linkBookCall": "Plan een gesprek"
   },
   "Projects": {
-    "kicker": "Geselecteerd werk: onderzoek, scripties, eigen projecten",
-    "titlePrefix": "Geselecteerd",
-    "titleItalic": "werk.",
-    "subtitle": "Dingen die ik heb gebouwd of bestudeerd, aan de universiteit, in onderzoek en in mijn eigen tijd. Geen portfolio van klantopdrachten; een portfolio van denken.",
+    "kicker": "Geselecteerd werk & papers: onderzoek, methoden, scripties",
+    "titlePrefix": "Geselecteerd werk",
+    "titleItalic": "& papers.",
+    "subtitle": "Onderzoekswerk over stedelijke dynamiek en geospatiale methoden. Vastgoed is één toepassing; de rode draad is de methode.",
     "items": [
       {
         "viz": "abm",
         "sector": "MSc Scriptie · Bocconi",
         "title": "Agent-gebaseerd gentrificatiemodel",
-        "outcome": "Tienjarige ABM-simulatie van buurtverloop in Amsterdam, gekalibreerd op Kadaster- en CBS-microdata. Betaalbaarheids- en aantrekkelijkheidsregels; agentmobiliteit als emergent gedrag.",
+        "outcome": "Tienjarige ABM-simulatie van buurtverloop in Amsterdam, gekalibreerd op Kadaster- en CBS-microdata. Betaalbaarheids- en aantrekkelijkheidsregels; agentmobiliteit als emergent gedrag. Het sterkste bewijs van de stedelijke-dynamiek-identiteit.",
         "stack": [
           "Python",
           "Mesa",
@@ -241,7 +241,7 @@
         "viz": "hedonic",
         "sector": "Onderzoek · Eurostat",
         "title": "Maandelijkse huizenprijsindex · 13 EU-landen",
-        "outcome": "Web-scrapingpipeline voor 13 EU-landen gevoed door een log-prijs hedonische regressie. Tijdsdummies geëxtraheerd als maandelijkse indices voor Eurostat kwartaalreeksen.",
+        "outcome": "Grootschalige Europese ruimtelijke-data-engineering: een web-scrapingpipeline voor 13 landen gevoed door een log-prijs hedonische regressie. Maandelijkse indices getest als disaggregatie-indicatoren voor Eurostat kwartaal-HPIs.",
         "stack": [
           "Python",
           "Scrapy",
@@ -252,23 +252,22 @@
         "link": ""
       },
       {
-        "viz": "languagebuddy",
-        "sector": "Zijproject · Persoonlijk",
-        "title": "LanguageBuddy",
-        "outcome": "Conversationeel taaloefenplatform: Claude-aangedreven realtime correctie, SM-2 herhalingsalgoritme, TTS-gesprekken en CEFR-curriculum voor Nederlands, Italiaans en Spaans.",
+        "viz": "hedonic",
+        "sector": "Methode · ontwikkeld bij KR&A",
+        "title": "Connectiviteits- en loopbaarheidsscore",
+        "outcome": "Een bijdrage aan geospatiale methoden: een saturatie-gevalideerde connectiviteits-/loopbaarheidsscore op perceelniveau. Ontwikkeld bij KR&A; methodepaper te verwachten in 2026.",
         "stack": [
-          "FastAPI",
-          "SQLite",
-          "Claude",
-          "Docker",
-          "TTS"
+          "PostGIS",
+          "H3",
+          "GeoPandas",
+          "Python"
         ],
-        "link": "/about/projects/languagebuddy"
+        "link": "/research"
       }
     ],
     "viewCase": "Lees meer",
     "viewPaper": "Bekijk paper",
-    "ctaAll": "Bekijk alles"
+    "ctaAll": "Bekijk alle papers"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. Alle rechten voorbehouden.",

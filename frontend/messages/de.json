@@ -219,16 +219,16 @@
     "linkBookCall": "Gespräch buchen"
   },
   "Projects": {
-    "kicker": "Ausgewählte Arbeiten: Forschung, Abschlussarbeiten, Side-Projects",
-    "titlePrefix": "Ausgewählte",
-    "titleItalic": "Arbeiten.",
-    "subtitle": "Was ich gebaut oder studiert habe, an der Universität, in der Forschung und in meiner eigenen Zeit. Kein Portfolio von Kundenprojekten; ein Portfolio des Denkens.",
+    "kicker": "Ausgewählte Arbeiten & Papers: Forschung, Methoden, Abschlussarbeiten",
+    "titlePrefix": "Ausgewählte Arbeiten",
+    "titleItalic": "& Papers.",
+    "subtitle": "Forschungsarbeiten zu Stadtdynamik und Geodaten-Methoden. Immobilien sind eine Anwendung; der rote Faden ist die Methode.",
     "items": [
       {
         "viz": "abm",
         "sector": "MSc-Arbeit · Bocconi",
         "title": "Agentenbasiertes Gentrifizierungsmodell",
-        "outcome": "Zehnjährige ABM-Simulation der Nachbarschaftsentwicklung in Amsterdam, kalibriert auf Kadaster- und CBS-Mikrodaten.",
+        "outcome": "Zehnjährige ABM-Simulation der Nachbarschaftsentwicklung in Amsterdam, kalibriert auf Kadaster- und CBS-Mikrodaten. Erschwinglichkeits- und Attraktivitätsregeln; Agentenmobilität emergent aus Preisdruck. Der stärkste Beleg für die Stadtdynamik-Identität.",
         "stack": [
           "Python",
           "Mesa",
@@ -241,7 +241,7 @@
         "viz": "hedonic",
         "sector": "Forschung · Eurostat",
         "title": "Monatlicher Hauspreisindex · 13 EU-Länder",
-        "outcome": "Web-Scraping-Pipeline für 13 EU-Länder mit hedonischer Log-Preis-Regression. Zeitdummies als monatliche Indizes für Eurostats Quartalsdaten.",
+        "outcome": "Groß angelegtes europäisches Raumdaten-Engineering: eine Web-Scraping-Pipeline über 13 Länder mit hedonischer Log-Preis-Regression. Monatliche Indizes als Disaggregationsindikatoren für Eurostats Quartals-HPIs getestet.",
         "stack": [
           "Python",
           "Scrapy",
@@ -252,23 +252,22 @@
         "link": ""
       },
       {
-        "viz": "languagebuddy",
-        "sector": "Nebenprojekt · Persönlich",
-        "title": "LanguageBuddy",
-        "outcome": "Konversationelle Sprachlernplattform: Claude-gestützte Echtzeitkorrektur, SM-2 Spaced Repetition, TTS-Gespräche und CEFR-Lehrplan für Niederländisch, Italienisch und Spanisch.",
+        "viz": "hedonic",
+        "sector": "Methode · entwickelt bei KR&A",
+        "title": "Konnektivitäts- & Walkability-Scoring",
+        "outcome": "Ein Beitrag zu Geodaten-Methoden: ein sättigungsvalidierter Konnektivitäts-/Walkability-Score auf Parzellen-Auflösung. Entwickelt bei KR&A; Methoden-Paper folgt 2026.",
         "stack": [
-          "FastAPI",
-          "SQLite",
-          "Claude",
-          "Docker",
-          "TTS"
+          "PostGIS",
+          "H3",
+          "GeoPandas",
+          "Python"
         ],
-        "link": "/about/projects/languagebuddy"
+        "link": "/research"
       }
     ],
     "viewCase": "Mehr lesen",
     "viewPaper": "Paper ansehen",
-    "ctaAll": "Alle ansehen"
+    "ctaAll": "Alle Papers ansehen"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. Alle Rechte vorbehalten.",
