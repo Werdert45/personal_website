@@ -314,7 +314,8 @@
     "endCtaTitleItalic": "blog.",
     "endCtaBody": "Browse other essays on geodata, AI/ML and operations, or read more about who's behind the writing.",
     "endCtaButton": "More writing",
-    "endCtaSecondary": "About me"
+    "endCtaSecondary": "About me",
+    "endCtaContact": "Have a where / how-much / what's-next question? Let's talk"
   },
   "SkillsGrid": {
     "kicker": "Expertise: four core competencies",

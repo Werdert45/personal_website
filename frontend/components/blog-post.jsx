@@ -162,6 +162,21 @@ export function BlogPost({ slug }) {
           >
             {t("endCtaSecondary")} →
           </Link>
+          <Link
+            href={`/${locale}/contact`}
+            onClick={() => trackEvent("cta_click", { cta: "contact_from_post", location: "blog_post_end", source: "blog_post_end", slug })}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: 12,
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              color: "var(--ink-2)",
+              borderBottom: "1px solid var(--rule)",
+              paddingBottom: 2,
+            }}
+          >
+            {t("endCtaContact")} →
+          </Link>
         </div>
       </aside>
 
