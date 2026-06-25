@@ -7,9 +7,33 @@ import os
 import sqlite3
 import time
 
+from django.core.cache import cache
+from django.utils import timezone
+
 KB_PATH = os.path.join(os.path.dirname(__file__), "chat_kb.sqlite3")
 
 IP_BLOCK_DURATION = 3600  # 1 hour
+
+# Global daily cap on paid LLM calls. Counter resets each calendar day (UTC).
+CHAT_DAILY_LIMIT = int(os.environ.get("CHAT_DAILY_LIMIT", "500"))
+
+
+def daily_cap_reached() -> bool:
+    """Increment today's global LLM-call counter and report whether the cap is hit.
+
+    Returns True once the number of calls for the current UTC day exceeds
+    CHAT_DAILY_LIMIT, so the caller can short-circuit before the paid API call.
+    Uses Django's cache; survives ~2 days then expires.
+    """
+    today = timezone.now().date().isoformat()
+    key = f"chatspend:{today}"
+    cache.add(key, 0, 60 * 60 * 48)
+    try:
+        count = cache.incr(key)
+    except ValueError:
+        cache.set(key, 1, 60 * 60 * 48)
+        count = 1
+    return count > CHAT_DAILY_LIMIT
 
 CHUNKS = [
     {

@@ -2,15 +2,30 @@ import json
 import os
 
 import requests
+from django.core.cache import cache
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
-from .knowledge import SYSTEM_PROMPT, block_ip, is_ip_blocked, search_kb_with_category
+from .knowledge import (
+    SYSTEM_PROMPT,
+    block_ip,
+    daily_cap_reached,
+    is_ip_blocked,
+    search_kb_with_category,
+)
 
 MINIMAX_API_KEY = os.environ.get("MINIMAX_API_KEY", "")
 MINIMAX_MODEL = os.environ.get("MINIMAX_MODEL", "abab6.5s-chat")
 MINIMAX_URL = "https://api.minimax.chat/v1/text/chatcompletion_v2"
+
+# Shared proxy contract: when set, the Next.js proxy forwards this secret in the
+# x-internal-proxy-secret header and puts the real client IP as the leftmost XFF.
+# Unset/empty => "not configured" => stay permissive (do not reject, do not trust XFF).
+INTERNAL_PROXY_SECRET = os.environ.get("INTERNAL_PROXY_SECRET", "")
+
+# Per-IP rolling-window rate limit (requests per 60s).
+CHAT_RATE_PER_MIN = int(os.environ.get("CHAT_RATE_PER_MIN", "10"))
 
 MIN_MESSAGE_LEN = 4
 MAX_MESSAGE_LEN = 500
@@ -21,10 +36,23 @@ OFF_TOPIC_REPLY = (
 )
 
 
+def _proxy_secret_ok(request) -> bool:
+    """True if the request carries a valid internal-proxy secret header.
+
+    Only meaningful when INTERNAL_PROXY_SECRET is configured (non-empty).
+    """
+    if not INTERNAL_PROXY_SECRET:
+        return False
+    return request.META.get("HTTP_X_INTERNAL_PROXY_SECRET", "") == INTERNAL_PROXY_SECRET
+
+
 def _get_ip(request) -> str:
-    forwarded = request.META.get("HTTP_X_FORWARDED_FOR", "")
-    if forwarded:
-        return forwarded.split(",")[0].strip()
+    # Only trust the proxy-forwarded XFF when the trusted proxy authenticated
+    # itself with the shared secret. Otherwise XFF is attacker-controlled.
+    if _proxy_secret_ok(request):
+        forwarded = request.META.get("HTTP_X_FORWARDED_FOR", "")
+        if forwarded:
+            return forwarded.split(",")[0].strip()
     return request.META.get("REMOTE_ADDR", "unknown")
 
 
@@ -53,6 +81,12 @@ def _call_minimax(context: str, user_message: str) -> str:
 @csrf_exempt
 @require_POST
 def chat(request):
+    # Proxy-secret gate: if INTERNAL_PROXY_SECRET is configured, the request must
+    # carry a matching secret header (i.e. it transited the trusted Next proxy).
+    # Unset/empty => not configured => stay permissive.
+    if INTERNAL_PROXY_SECRET and not _proxy_secret_ok(request):
+        return JsonResponse({"error": "forbidden"}, status=403)
+
     try:
         body = json.loads(request.body)
     except (json.JSONDecodeError, UnicodeDecodeError):
@@ -66,6 +100,19 @@ def chat(request):
     message = message[:MAX_MESSAGE_LEN]
 
     ip = _get_ip(request)
+
+    # Per-IP rate limit (rolling 60s window). Must run BEFORE any FTS/LLM work so
+    # 429s cost nothing. Uses Django's cache (LocMemCache by default).
+    rl_key = f"chatrl:{ip}"
+    cache.add(rl_key, 0, 60)
+    try:
+        count = cache.incr(rl_key)
+    except ValueError:
+        # Key expired between add and incr; treat as first request in a new window.
+        cache.set(rl_key, 1, 60)
+        count = 1
+    if count > CHAT_RATE_PER_MIN:
+        return JsonResponse({"error": "rate_limited"}, status=429)
 
     # IP block gate
     if is_ip_blocked(ip):
@@ -85,6 +132,18 @@ def chat(request):
                 "reply": (
                     "The AI assistant is not yet configured on this server. "
                     "Set MINIMAX_API_KEY in the backend environment to enable it."
+                ),
+                "category": top_category,
+            }
+        )
+
+    # Global daily cost cap — short-circuit before the paid API call.
+    if daily_cap_reached():
+        return JsonResponse(
+            {
+                "reply": (
+                    "The assistant is taking a short break for today. "
+                    "Please try again later, or reach Ian directly at ianronk0@gmail.com."
                 ),
                 "category": top_category,
             }

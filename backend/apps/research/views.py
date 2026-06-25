@@ -136,7 +136,9 @@ class ImageUploadView(APIView):
     parser_classes = [MultiPartParser]
     permission_classes = [IsAuthenticated]
 
-    ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp", ".svg"}
+    # .svg intentionally excluded: SVG is active content (can carry JS) and would
+    # be served same-origin from MEDIA, enabling stored XSS.
+    ALLOWED_EXTENSIONS = {".jpg", ".jpeg", ".png", ".gif", ".webp"}
     MAX_SIZE = 10 * 1024 * 1024  # 10MB
 
     def post(self, request):

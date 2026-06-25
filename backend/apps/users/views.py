@@ -2,6 +2,8 @@
 Views for user authentication and management.
 """
 
+import os
+
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.core.exceptions import ValidationError
@@ -9,6 +11,7 @@ from django.utils import timezone
 from rest_framework import generics, status
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
+from rest_framework.throttling import ScopedRateThrottle
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
 
@@ -16,34 +19,38 @@ from .models import NewsletterSubscriber, validate_serious_email
 from .serializers import (
     ChangePasswordSerializer,
     LoginSerializer,
-    UserCreateSerializer,
     UserSerializer,
 )
 
 User = get_user_model()
 
 
-class RegisterView(generics.CreateAPIView):
-    """Register a new user. Requires authentication (admin only)."""
+def _client_ip(request):
+    """Real client IP, honouring the trusted-proxy contract.
 
-    queryset = User.objects.all()
-    permission_classes = [IsAuthenticated]
-    serializer_class = UserCreateSerializer
+    When INTERNAL_PROXY_SECRET is configured and the request carries the matching
+    x-internal-proxy-secret header, trust the leftmost x-forwarded-for value the
+    proxy forwarded (the real client). Otherwise fall back to REMOTE_ADDR; never
+    trust attacker-supplied XFF without a valid secret.
+    """
+    secret = os.environ.get("INTERNAL_PROXY_SECRET", "")
+    if secret and request.META.get("HTTP_X_INTERNAL_PROXY_SECRET", "") == secret:
+        forwarded = request.META.get("HTTP_X_FORWARDED_FOR", "")
+        if forwarded:
+            return forwarded.split(",")[0].strip()
+    return request.META.get("REMOTE_ADDR")
 
-    def create(self, request, *args, **kwargs):
-        serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_exception=True)
-        user = serializer.save()
 
-        refresh = RefreshToken.for_user(user)
-        return Response(
-            {
-                "user": UserSerializer(user).data,
-                "token": str(refresh.access_token),
-                "refresh": str(refresh),
-            },
-            status=status.HTTP_201_CREATED,
-        )
+class NewsletterRateThrottle(ScopedRateThrottle):
+    """ScopedRateThrottle that buckets by the real client IP (proxy-aware).
+
+    The scope ("newsletter") is taken from the view's `throttle_scope`; this
+    subclass only changes the identity used for bucketing so the rate applies
+    per real client rather than per proxy hop.
+    """
+
+    def get_ident(self, request):
+        return _client_ip(request) or super().get_ident(request)
 
 
 class LoginView(APIView):
@@ -139,6 +146,8 @@ class NewsletterSubscribeView(APIView):
     """Subscribe to the public newsletter."""
 
     permission_classes = [AllowAny]
+    throttle_classes = [NewsletterRateThrottle]
+    throttle_scope = "newsletter"
 
     def post(self, request):
         email = request.data.get("email", "").lower().strip()
@@ -188,11 +197,8 @@ class NewsletterSubscribeView(APIView):
         return Response({"ok": True}, status=status.HTTP_201_CREATED)
 
     def get_client_ip(self, request):
-        """Get client IP address from request."""
-        x_forwarded_for = request.META.get("HTTP_X_FORWARDED_FOR")
-        if x_forwarded_for:
-            return x_forwarded_for.split(",")[0].strip()
-        return request.META.get("REMOTE_ADDR")
+        """Get client IP address from request (proxy-aware, see _client_ip)."""
+        return _client_ip(request)
 
 
 class ValidateEmailView(APIView):

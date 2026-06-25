@@ -6,17 +6,31 @@ import os
 from datetime import timedelta
 from pathlib import Path
 
+from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-change-me-in-production")
+INSECURE_SECRET_KEY = "django-insecure-change-me-in-production"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", INSECURE_SECRET_KEY)
 
-DEBUG = os.getenv("DJANGO_DEBUG", "True").lower() == "true"
+# Default to False so production is secure-by-default. The committed backend/.env
+# sets DJANGO_DEBUG=True, so local dev stays in debug mode.
+DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+
+if not DEBUG and SECRET_KEY == INSECURE_SECRET_KEY:
+    raise ImproperlyConfigured(
+        "DJANGO_SECRET_KEY must be set to a real secret value when DEBUG is False."
+    )
+
+if not DEBUG and ALLOWED_HOSTS == ["*"]:
+    raise ImproperlyConfigured(
+        "DJANGO_ALLOWED_HOSTS must not be '*' when DEBUG is False."
+    )
 
 # Application definition
 INSTALLED_APPS = [
@@ -141,6 +155,7 @@ REST_FRAMEWORK = {
     ],
     "DEFAULT_THROTTLE_RATES": {
         "anon": "60/minute",
+        "newsletter": "5/hour",
     },
 }
 
@@ -163,3 +178,16 @@ SPECTACULAR_SETTINGS = {
 
 # Mapbox token (served via API endpoint)
 MAPBOX_ACCESS_TOKEN = os.getenv("MAPBOX_ACCESS_TOKEN", "")
+
+# Production security hardening. Gated on `not DEBUG` so local dev is unaffected
+# (the committed backend/.env keeps DJANGO_DEBUG=True).
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_REFERRER_POLICY = "strict-origin-when-cross-origin"
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
