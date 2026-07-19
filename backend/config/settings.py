@@ -23,6 +23,8 @@ DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
+CSRF_TRUSTED_ORIGINS = [o for o in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",") if o]
+
 if not DEBUG and SECRET_KEY == INSECURE_SECRET_KEY:
     raise ImproperlyConfigured(
         "DJANGO_SECRET_KEY must be set to a real secret value when DEBUG is False."
