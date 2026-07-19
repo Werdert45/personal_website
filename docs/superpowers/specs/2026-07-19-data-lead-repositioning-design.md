@@ -65,6 +65,14 @@ deita.eu lessons applied: concrete numbers over adjectives; credibility routed *
 - Per-page metadata: /about (resume framing), /thoughts (Work/case studies), /research (Academics/publications).
 - **Canonical sentence** used verbatim in metadata description, Person schema, and About lede: "Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics." (Final wording via ianify pass, then frozen everywhere.)
 
+### 4b. LLM discoverability (GEO/AEO) — target queries like "geodata specialists in the Amsterdam area"
+
+Constraint on the broadening: the niche phrase is what LLM retrieval matches. Headline = breadth (Data Lead), but the exact niche terms **"geodata specialist"**, "geospatial data engineer", and "Amsterdam" must survive verbatim in: About lede, /about metadata description, and Person schema. The canonical sentence gets a niche companion used on /about: "…a geodata specialist based in Amsterdam…".
+- `robots.ts` already allows all crawlers incl. AI bots — keep it that way (do not add GPTBot/ClaudeBot/PerplexityBot blocks).
+- **Person schema enrichment**: add `description` (canonical sentence), `hasOccupation` ({Occupation: "Geodata Specialist / Data Lead", occupationLocation: Amsterdam}); mark /about with `ProfilePage` schema.
+- **`public/llms.txt`**: concise machine-readable entity summary (who, where, competences, key pages, contact) per the emerging llms.txt convention. Cheap, no downside.
+- Content stays SSR (already is) so all claims are crawlable without JS.
+
 ## 5. Content ops (unblocks publishing real posts)
 
 - **Expose Django admin** via Dokploy subdomain `api.ianronk.nl` → backend:8001 (TLS at edge). Code: add host to `DJANGO_ALLOWED_HOSTS` and add `CSRF_TRUSTED_ORIGINS` (env-driven) in settings/compose. WhiteNoise already serves admin static. Interim alternative: SSH tunnel to :8001.
