@@ -37,6 +37,9 @@
     "expertise": "Expertise:"
   },
   "About": {
+    "publicationsKicker": "Publications & papers",
+    "publicationsEmpty": "Papers land here as they publish.",
+    "publicationsViewAll": "All papers →",
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Core Competencies",
     "expertiseSubtitle": "Five competences, one constraint: a calibrated pipeline tends to outlast a clever one.",

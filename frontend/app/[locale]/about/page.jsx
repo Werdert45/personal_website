@@ -1,4 +1,5 @@
 import { AboutContent } from "@/components/about-content";
+import { PublicationsList } from "@/components/publications-list";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
@@ -28,10 +29,13 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function AboutPage() {
+export default async function AboutPage({ params }) {
+  const { locale } = await params;
+
   return (
     <main>
       <AboutContent />
+      <PublicationsList locale={locale} />
     </main>
   );
 }
