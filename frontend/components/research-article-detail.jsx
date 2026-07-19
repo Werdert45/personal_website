@@ -13,6 +13,7 @@ import { ArrowLeft, Loader2, ArrowRight, Clock, FileText } from "lucide-react";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { trackEvent } from "@/lib/analytics";
 import { getItemField } from "@/lib/i18n-item";
+import { AuthorTrailer } from "@/components/author-trailer";
 
 const STATIC_PAPERS = {
   "metro-capitalisation-timing": {
@@ -368,6 +369,8 @@ export default function ResearchArticleDetail({ slug }) {
               {content}
             </ReactMarkdown>
           </div>
+
+          <AuthorTrailer location="research_author" />
 
           <div className="newsletter-inline">
             <NewsletterSubscribe variant="inline" source="research-end" locale={locale} />

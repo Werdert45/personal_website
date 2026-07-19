@@ -321,7 +321,13 @@
     "endCtaBody": "Browse other essays on geodata, AI/ML and operations, or read more about who's behind the writing.",
     "endCtaButton": "More writing",
     "endCtaSecondary": "About me",
-    "endCtaContact": "Have a where / how-much / what's-next question? Let's talk"
+    "endCtaContact": "Have a where / how-much / what's-next question? Let's talk",
+    "relatedKicker": "Related work"
+  },
+  "Author": {
+    "roleLine": "Data Lead & Engineer · Urban-Dynamics Researcher",
+    "bio": "I lead data teams and build production data systems in Amsterdam. This site collects the case studies, papers and field notes.",
+    "cta": "Full resume →"
   },
   "AboutTeaser": {
     "kicker": "About: who's behind the work",

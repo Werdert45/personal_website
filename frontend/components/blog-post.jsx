@@ -9,6 +9,8 @@ import { ShareBar } from "@/components/share-bar";
 import { trackEvent } from "@/lib/analytics";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { getItemField } from "@/lib/i18n-item";
+import { RelatedPosts } from "@/components/related-posts";
+import { AuthorTrailer } from "@/components/author-trailer";
 
 export function BlogPost({ slug }) {
   const [post, setPost] = useState(null);
@@ -82,6 +84,9 @@ export function BlogPost({ slug }) {
       {excerpt && <p className="dek">{excerpt}</p>}
 
       <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+
+      <RelatedPosts slug={slug} category={post.category} tags={post.tags || []} />
+      <AuthorTrailer location="post_author" />
 
       <div className="newsletter-inline">
         <NewsletterSubscribe variant="inline" source="post-end" locale={locale} />
