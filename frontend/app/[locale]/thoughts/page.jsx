@@ -5,9 +5,9 @@ export async function generateMetadata({ params }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
   const url = `${siteUrl}/${locale}/thoughts`;
   return {
-    title: "Thoughts — essays on data engineering & geospatial",
+    title: "Work — case studies & field notes",
     description:
-      "Essays, tutorials and field notes on data engineering, geospatial methods and real-estate analytics by Ian Ronk.",
+      "Case studies and field notes from shipped data projects — pipelines, forecasting, geospatial methods — by Ian Ronk, data lead in Amsterdam.",
     alternates: {
       canonical: url,
       languages: {
@@ -19,9 +19,9 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
-      title: "Thoughts | Ian Ronk",
+      title: "Work — case studies & field notes",
       description:
-        "Essays, tutorials and field notes on data engineering, geospatial methods and real-estate analytics.",
+        "Case studies and field notes from shipped data projects — pipelines, forecasting, geospatial methods — by Ian Ronk, data lead in Amsterdam.",
       url,
       type: "website",
     },

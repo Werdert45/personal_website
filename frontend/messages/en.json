@@ -18,8 +18,8 @@
   "Navigation": {
     "home": "Home",
     "about": "About",
-    "visualizations": "Thoughts",
-    "research": "Research",
+    "visualizations": "Work",
+    "research": "Academics",
     "contact": "Contact",
     "letsTalk": "Let's talk",
     "menu": "Menu"
@@ -182,7 +182,7 @@
     "endCtaKicker": "§ Next",
     "endCtaHeading": "Working on something spatial? Let's talk.",
     "endCtaButton": "Get in touch",
-    "indexDiscuss": "Discuss a project"
+    "indexDiscuss": "Get in touch"
   },
   "Contact": {
     "aboutBadge": "About Me",
@@ -289,16 +289,16 @@
   },
   "Thoughts": {
     "loadingFallback": "Posts loading: check back shortly",
-    "kicker": "Thoughts: essays, updates, notes",
+    "kicker": "Work: case studies & field notes",
     "recentTitle": "Recent",
-    "recentItalic": "thoughts",
-    "subtitle": "Short pieces on tools, pipelines, spatial methods and the occasional rant.",
+    "recentItalic": "work",
+    "subtitle": "Case studies from shipped projects — what got built, what broke, and what it changed.",
     "loading": "Loading…",
     "featuredKicker": "Featured ·",
     "readPiece": "Read the piece →",
     "readShort": "Read →",
     "viewAll": "View all →",
-    "backToList": "← Back to thoughts",
+    "backToList": "← Back to work",
     "notFoundTitle": "Post not",
     "notFoundItalic": "found",
     "notFoundBody": "hasn't been published yet.",
@@ -306,8 +306,8 @@
     "bylinePrefix": "Written by",
     "bylineSuffix": "· Amsterdam",
     "minRead": "min read",
-    "writingTeaserKicker": "Blog: recent posts",
-    "writingTeaserSubtitle": "Essays, tutorials and field notes.",
+    "writingTeaserKicker": "Work: case studies & field notes",
+    "writingTeaserSubtitle": "Case studies from shipped projects, plus field notes on what breaks in production.",
     "endCtaKicker": "§ More",
     "endCtaTitle": "More writing on the",
     "endCtaTitleItalic": "blog.",
