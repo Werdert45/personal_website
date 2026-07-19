@@ -57,22 +57,20 @@ export function ProofStrip() {
 
       <div className="proof-cta-row">
         <Link
-          href={`/${locale}/contact`}
+          href={`/${locale}/about`}
           className="btn primary"
-          onClick={() => trackEvent("cta_click", { cta: "work_with_me", location: "home_proof_strip", source: "home_proof_primary" })}
+          onClick={() => trackEvent("cta_click", { cta: "resume", location: "home_proof_strip", source: "home_proof_primary" })}
         >
           <span>{t("ctaPrimary")}</span>
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
         </Link>
-        <a
-          href="https://cal.com/ianronk/intro"
-          target="_blank"
-          rel="noopener noreferrer"
+        <Link
+          href={`/${locale}/contact`}
           className="btn ghost"
-          onClick={() => trackEvent("cta_click", { cta: "book_call", location: "home_proof_strip", source: "home_proof_secondary" })}
+          onClick={() => trackEvent("cta_click", { cta: "contact", location: "home_proof_strip", source: "home_proof_secondary" })}
         >
           <span>{t("ctaSecondary")}</span>
-        </a>
+        </Link>
       </div>
     </section>
   );

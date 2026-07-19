@@ -26,12 +26,12 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Data & Technical Lead · Urban-Dynamics Researcher",
-    "title": "Geodata engineering",
-    "titleHighlight": "urban-dynamics research",
-    "titleEnd": " for decisions about place",
-    "description": "I answer the questions of: where, how much and what's next in urban systems. For this I build production ready spatial and non-spatial systems and study how cities change: gentrification, accessibility and housing markets using network analysis, spatial econometrics and big data science.",
-    "description2": "I build production spatial systems and study how cities change — gentrification, accessibility, housing markets — at parcel and postcode resolution. The sectors vary; the question rarely does: where, how much, and what's next.",
+    "role": "Data Lead & Engineer · Urban-Dynamics Researcher",
+    "title": "Data engineering",
+    "titleHighlight": "leadership",
+    "titleEnd": ", proven on hard spatial problems",
+    "description": "I lead data teams and build the systems they run: big-data pipelines, forecasting and nowcasting models, network analysis and spatial data products. The research specialization is urban dynamics — gentrification, accessibility, housing markets — because cities are where data problems get hard.",
+    "description2": "I lead data teams and ship production systems — pipelines, forecasts, network models — with a research edge in urban dynamics. The sectors vary; the question rarely does: where, how much, and what's next.",
     "aboutMe": "About me",
     "workWithMe": "Let's talk",
     "expertise": "Expertise:"
@@ -346,21 +346,21 @@
       {
         "value": "13",
         "unit": "EU countries · one pipeline",
-        "context": "Monthly house-price index · Eurostat"
+        "context": "Monthly house-price index · tested with Eurostat"
       },
       {
-        "value": "2,500+",
-        "unit": "hrs / yr reclaimed",
-        "context": "Deal-screening data tool · 6 weeks"
+        "value": "2 wks",
+        "unit": "ahead of plan · on budget",
+        "context": "Connectivity Score · 13-server build"
       },
       {
-        "value": "3",
-        "unit": "languages · live AI tutor",
-        "context": "LanguageBuddy · production AI product"
+        "value": "250k+",
+        "unit": "records · 8 sources · weekly, 3 years",
+        "context": "Institutional-grade scrape · used by statistics bureaus"
       }
     ],
-    "ctaPrimary": "See how we'd work together",
-    "ctaSecondary": "Book a 20-minute call"
+    "ctaPrimary": "See the full resume",
+    "ctaSecondary": "Get in touch"
   },
   "Consent": {
     "dialogLabel": "Cookie consent",
@@ -404,31 +404,31 @@
     "kicker": "What I work on: four lanes",
     "titleItalic": "Four",
     "titleRest": "lanes.",
-    "subtitle": "One geospatial-engineering toolkit, four lanes. Urban dynamics is the anchor; real estate is one application, not the frame.",
+    "subtitle": "One data-engineering and leadership toolkit, four lanes. Urban dynamics is the bread and butter; the rest is proof the toolkit generalises.",
     "appliedAcross": "Applied across: urban planning · real estate · climate risk · logistics & mobility · public sector",
     "automationNote": "Also under the hood: LLM/RAG pipelines and internal tools that automate classification, research and reporting — production AI as engineering range, not the headline.",
-    "ctaLabel": "Discuss a project",
+    "ctaLabel": "Get in touch",
     "items": [
       {
-        "name": "Urban dynamics & geospatial methods",
+        "name": "Urban dynamics & research",
         "anchor": true,
-        "blurb": "Gentrification modelling, accessibility and connectivity, parcel- and postcode-level spatial analysis. The anchor — where the publishing and the PhD concentrate.",
-        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "CV"]
-      },
-      {
-        "name": "Real estate & investment",
-        "blurb": "Valuation, rent and risk models, alternative data for REITs and funds. One lane and the warmest network — not the identity.",
-        "stack": ["XGBoost", "hedonic", "alt-data"]
-      },
-      {
-        "name": "Supply-chain & commodity forecasting",
-        "blurb": "The spatial-optimisation slice of logistics: network design, catchment and routing, facility siting, wood and commodity supply forecasting.",
-        "stack": ["routing", "time-series", "optimisation"]
+        "blurb": "Gentrification modelling, accessibility and connectivity, parcel- and postcode-level spatial analysis. This is what I do — where the papers and the publishing concentrate.",
+        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "network science"]
       },
       {
         "name": "Spatial data products",
-        "blurb": "Productised scores and feeds — connectivity and walkability indices, first-home-buyer methods. Validated as licensing first, funded by the consulting lanes.",
-        "stack": ["APIs", "Python", "React"]
+        "blurb": "Productised scores and feeds — connectivity and walkability indices, valuation inputs — owned end-to-end from method to shipped API.",
+        "stack": ["APIs", "Python", "React", "product ownership"]
+      },
+      {
+        "name": "Forecasting & network analysis",
+        "blurb": "A monthly EU house-price index across 13 countries tested with Eurostat, nowcasting models, and a saturation-validated Connectivity Score.",
+        "stack": ["time-series", "nowcasting", "graphs", "XGBoost"]
+      },
+      {
+        "name": "Data pipelines, built and maintained",
+        "blurb": "Big-data scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 protected sources, 250k+ records — maintained, not just launched.",
+        "stack": ["Airflow", "PostGIS", "big data", "13 servers"]
       }
     ]
   }
