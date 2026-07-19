@@ -18,27 +18,30 @@
   "Navigation": {
     "home": "Home",
     "about": "Chi Sono",
-    "visualizations": "Pensieri",
-    "research": "Ricerca",
+    "visualizations": "Lavori",
+    "research": "Accademia",
     "contact": "Contatto",
     "letsTalk": "Parliamone",
     "menu": "Menu"
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Ingegnere Geodata · Ricercatore di Dinamiche Urbane",
-    "title": "Ingegneria geodata",
-    "titleHighlight": "ricerca sulle dinamiche urbane",
-    "titleEnd": " per decisioni sui luoghi",
-    "description": "Costruisco sistemi spaziali in produzione e studio come le città cambiano — gentrificazione, accessibilità, mercati abitativi — a risoluzione di parcella e codice postale. I settori variano; la domanda raramente cambia: dove, quanto, e cosa succede dopo?",
+    "role": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
+    "title": "Ingegneria dei dati",
+    "titleHighlight": "leadership",
+    "titleEnd": ", collaudata su problemi spaziali complessi",
+    "description": "Guido team dati e costruisco i sistemi che li fanno funzionare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. La specializzazione di ricerca è la dinamica urbana — gentrificazione, accessibilità, mercati abitativi — perché le città sono dove i problemi di dati diventano complessi.",
     "aboutMe": "Chi sono",
     "workWithMe": "Parliamone",
     "expertise": "Competenze:"
   },
   "About": {
+    "publicationsKicker": "Pubblicazioni & paper",
+    "publicationsEmpty": "I paper compaiono qui non appena vengono pubblicati.",
+    "publicationsViewAll": "Tutti i paper →",
     "expertiseBadge": "Competenze",
     "coreCompetencies": "Competenze Principali",
-    "expertiseSubtitle": "Competenze specializzate per sistemi dati di produzione, automazioni AI e pipeline geospaziali, costruiti per essere rilasciati e restare in produzione.",
+    "expertiseSubtitle": "Cinque competenze, un solo vincolo: una pipeline calibrata tende a durare più di una brillante.",
     "educationBadge": "Formazione",
     "experienceBadge": "Esperienza",
     "academicTitle": "Traguardi Accademici",
@@ -46,14 +49,14 @@
     "professional": "Professionale",
     "academic": "Accademico",
     "educationSubtitle": "Solida base in AI, data science e business analytics dalle migliori istituzioni europee.",
-    "experienceSubtitle": "4+ anni di approfondimenti basati sui dati per investimenti immobiliari nei mercati europei.",
+    "experienceSubtitle": "5+ anni nella costruzione e guida di sistemi dati in produzione — pipeline, forecasting, geospaziale — su mercati europei e ricerca accademica.",
     "sectionKicker": "Chi sono: chi, dove, come",
-    "heroTitleLine1a": "Head of",
-    "heroTitleLine1aItalic": "Data",
-    "heroTitleLine2": "Immobiliare",
-    "heroTitleLine2Underline": "AI",
-    "heroTitleLine3": "& Analytics.",
-    "lede1": "Con sede ad Amsterdam, progetto sistemi spaziali in produzione e ricerco come le città cambiano. Il lavoro spazia dagli schemi PostGIS, i modelli edonici e i modelli di gentrificazione agent-based, fino a mappe DeckGL che trasformano dati a livello di particella in una decisione. L'immobiliare è una delle applicazioni — rischio climatico, mobilità, pianificazione pubblica — non il quadro di riferimento. Head of Data presso KR&A è la credenziale; il filo conduttore è l'ingegneria geospaziale con profondità di ricerca nelle dinamiche urbane.",
+    "heroTitleLine1a": "Data",
+    "heroTitleLine1aItalic": "Lead",
+    "heroTitleLine2": "Ingegneria",
+    "heroTitleLine2Underline": "Sistemi",
+    "heroTitleLine3": "& Ricerca.",
+    "lede1": "Con base ad Amsterdam, guido team dati e costruisco ciò che li fa funzionare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. Il lato ricerca resta attivo — dinamica urbana, gentrificazione, accessibilità a risoluzione di parcella — perché le città sono dove i problemi di dati diventano complessi. Per profondità, uno specialista geodata con base ad Amsterdam; di mestiere, un data lead.",
     "lede2": "La mia convinzione: strumenti interni con una visione chiara battono le grandi piattaforme; una pipeline calibrata batte una brillante; e una mappa deve rispondere a una domanda, non ostentare complessità.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Ruolo",
@@ -62,8 +65,8 @@
     "factBasis": "Sede",
     "factBasisValue": "Amsterdam, Paesi Bassi · attivo in tutta Europa",
     "factExperience": "Esperienza",
-    "factExperienceValueHighlight": "4+ anni",
-    "factExperienceValueRest": "in Data Science immobiliare",
+    "factExperienceValueHighlight": "5+ anni",
+    "factExperienceValueRest": "in ingegneria dei dati & analytics spaziale",
     "factMarkets": "Mercati",
     "factMarketsValueHighlight": "15+",
     "factMarketsValueRest": "mercati europei mappati",
@@ -74,25 +77,29 @@
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · Docker · PyTorch · React",
     "journeyKicker": "Percorso professionale",
-    "journeyTitlePrefixItalic": "Quattro",
+    "journeyTitlePrefixItalic": "Cinque",
     "journeyTitleRest": "anni a fornire",
     "journeyTitleLine2": "approfondimenti basati sui dati.",
     "expertise": [
       {
-        "title": "Machine Learning & AI",
-        "description": "ML e AI in produzione, modelli predittivi per valutazione, affitti e rischio alluvionale (accuratezza 90%+), oltre a pipeline LLM e AI agent con strumenti che automatizzano ricerca, classificazione e reportistica."
+        "title": "Big Data & Pipeline",
+        "description": "Infrastruttura di scraping ed ETL che continua a funzionare: tre anni di raccolta settimanale su 8 fonti protette, 250k+ record, con Airflow e PostGIS sotto il cofano."
       },
       {
-        "title": "Data Engineering",
-        "description": "Pipeline dati robuste per REIT europei, fondi e investitori istituzionali, geodati, input alternativi e non strutturati su uno stack Airflow distribuito e dockerizzato."
+        "title": "Scienza delle Reti",
+        "description": "Metodi di teoria dei grafi su geografie reali — un Connectivity Score validato per saturazione a risoluzione di parcella, ricerca su accessibilità e connettività."
       },
       {
-        "title": "Analisi Geospaziale",
-        "description": "Analisi spaziali avanzate, modellazione agent-based della gentrificazione, computer vision su immagini stradali e data science spazialmente consapevole (downsampling, test di significatività) che produce risultati statisticamente robusti."
+        "title": "Serie Storiche & Forecasting",
+        "description": "Un indice mensile dei prezzi delle case su 13 paesi UE testato con Eurostat, oltre a modelli di nowcasting per statistiche ufficiali scarse e lente."
       },
       {
-        "title": "Processi Interni",
-        "description": "Il backend di un'azienda, sistemi di vendita, CRM e automazioni potenziate dall'AI che sostituiscono il lavoro manuale e scalano con il team."
+        "title": "Analisi Spaziale",
+        "description": "Modellazione a livello di parcella e codice postale: modelli di gentrificazione agent-based, pricing edonico, H3 e PostGIS come strumenti quotidiani."
+      },
+      {
+        "title": "Product Ownership & Leadership",
+        "description": "Proprietà end-to-end dal metodo all'API rilasciata — un build su 13 server consegnato due settimane in anticipo sul piano, nel budget, e un team guidato presso KR&A. [NEEDS FACT: team size]"
       }
     ],
     "experience": [
@@ -100,25 +107,25 @@
         "year": "Lug 2025 - Presente",
         "role": "Head of Data",
         "company": "KR&A | Europa | FinTech",
-        "description": "Guida della strategia dati e iniziative AI per FinTech di dati alternativi al servizio di fondi immobiliari europei, asset e REIT. Lavoro sul lancio di un progetto che aggrega, omogeneizza e visualizza dati intracity da città del mondo."
+        "description": "Head of Data: guida della strategia dati, di un team di [NEEDS FACT: team size] e delle iniziative AI per una FinTech di dati alternativi al servizio di fondi immobiliari europei, asset e REIT. Guidata la pipeline di aggregazione che omogeneizza gli annunci in 13 paesi UE e la costruzione del Connectivity Score — 13 server, nel budget, due settimane in anticipo sul piano."
       },
       {
         "year": "Giu 2022 - Lug 2025",
         "role": "Medior Data Scientist",
         "company": "KR&A | Europa | FinTech",
-        "description": "Forniti approfondimenti basati sui dati per decisioni di investimento immobiliare. Costruiti modelli ML per valutazione immobiliare e analisi di mercato in 15+ mercati europei, lavorando su progetti per aziende immobiliari leader, fondi pensione ed Eurostat."
+        "description": "Forniti approfondimenti basati sui dati per decisioni di investimento immobiliare — costruiti modelli ML per valutazione immobiliare e analisi di mercato in 15+ mercati europei, con lavori per aziende immobiliari leader, fondi pensione ed Eurostat."
       },
       {
         "year": "Ott 2021 - Giu 2022",
         "role": "Junior Data Scientist",
         "company": "KR&A",
-        "description": "Tesi sulla previsione delle alluvioni in Europa utilizzando dati alternativi e modelli ML, raggiungendo un'accuratezza del 90%+ nella classificazione del rischio e lavorando su elementi minori, preparazione, aggregazione e visualizzazione dei dati."
+        "description": "Consegnata una tesi sulla previsione delle alluvioni in Europa con dati alternativi e modelli ML, raggiungendo un'accuratezza del 90%+ nella classificazione del rischio, oltre a elementi minori: preparazione, aggregazione e visualizzazione dei dati."
       },
       {
         "year": "Set 2019 - Set 2022",
         "role": "Junior Full Stack Developer",
         "company": "Exact (ex SRXP)",
-        "description": "Sviluppatore Full Stack Part-Time per la manutenzione di software di dichiarazione digitale enterprise-grade, lavorando con tecnologie web come EmberJS, PHP e dati sensibili dei clienti, utilizzando CI/CD e testing."
+        "description": "Manutenzione part-time di software enterprise-grade per dichiarazioni digitali, con funzionalità sviluppate con EmberJS, PHP e dati sensibili dei clienti, con CI/CD e testing."
       }
     ],
     "education": [
@@ -161,12 +168,12 @@
     "previewTitle": "Ultime Ricerche & Approfondimenti",
     "previewSubtitle": "Approfondimenti su analisi geospaziale, tendenze immobiliari e innovazioni tecniche.",
     "viewAll": "Vedi Tutto",
-    "listKicker": "Ricerca: articoli, preprint, metodi",
+    "listKicker": "Accademia: paper, metodi, pubblicazioni",
     "listTitlePrefix": "Articoli",
     "listTitleItalic": "peer-reviewed",
     "listTitleAmp": "& bozze in",
     "listTitleHighlight": "corso",
-    "listSubtitle": "Lavori su dinamiche urbane e metodi geospaziali — gentrificazione, accessibilità, ingegneria dei dati spaziali europei su larga scala e analisi del mercato abitativo.",
+    "listSubtitle": "Paper peer-reviewed, working paper e descrizioni metodologiche su dinamica urbana, analisi di rete e metodi geospaziali.",
     "previewTitlePrefix": "Articoli",
     "previewTitleItalic": "selezionati",
     "previewSubtitleShort": "Lavori recenti su dinamiche urbane, metodi geospaziali e ingegneria dei dati spaziali europei su larga scala.",
@@ -181,7 +188,7 @@
     "endCtaKicker": "§ Avanti",
     "endCtaHeading": "Stai lavorando su qualcosa di spaziale? Parliamone.",
     "endCtaButton": "Scrivimi",
-    "indexDiscuss": "Discuti un progetto"
+    "indexDiscuss": "Scrivimi"
   },
   "Contact": {
     "aboutBadge": "Su di Me",
@@ -190,7 +197,7 @@
     "bio": "Con sede ad Amsterdam. Sviluppo sistemi spaziali in produzione e ricerco come cambiano le città — gentrificazione, accessibilità, mercati abitativi — a livello di particella e codice postale. I settori variano (immobiliare, rischio climatico, pianificazione pubblica); la domanda raramente cambia: dove, quanto, e cosa succede dopo?",
     "location": "Amsterdam, Paesi Bassi",
     "company": "Head of Data @ KR&A FinTech",
-    "yearsExperience": "4+ anni in Data Science Immobiliare",
+    "yearsExperience": "5+ anni in ingegneria dei dati & analytics spaziale",
     "formTitle": "Contattami",
     "formSubtitle": "Hai un progetto in mente? Parliamo di come posso aiutarti con le tue esigenze geospaziali.",
     "nameLabel": "Nome",
@@ -288,16 +295,16 @@
   },
   "Thoughts": {
     "loadingFallback": "Articoli in caricamento: torna fra poco",
-    "kicker": "Pensieri: saggi, aggiornamenti, note",
-    "recentTitle": "Pensieri",
+    "kicker": "Lavori: casi studio & appunti dal campo",
+    "recentTitle": "Lavori",
     "recentItalic": "recenti",
-    "subtitle": "Brevi articoli su strumenti, pipeline, metodi spaziali e qualche sfogo.",
+    "subtitle": "Casi studio da progetti rilasciati in produzione — cosa è stato costruito, cosa si è rotto e cosa è cambiato.",
     "loading": "Caricamento…",
     "featuredKicker": "In evidenza ·",
     "readPiece": "Leggi l'articolo →",
     "readShort": "Leggi →",
     "viewAll": "Vedi tutto →",
-    "backToList": "← Torna ai pensieri",
+    "backToList": "← Torna al lavoro",
     "notFoundTitle": "Articolo non",
     "notFoundItalic": "trovato",
     "notFoundBody": "non è ancora stato pubblicato.",
@@ -305,15 +312,21 @@
     "bylinePrefix": "Scritto da",
     "bylineSuffix": "· Amsterdam",
     "minRead": "min di lettura",
-    "writingTeaserKicker": "Blog: articoli recenti",
-    "writingTeaserSubtitle": "Saggi, tutorial e appunti dal campo.",
+    "writingTeaserKicker": "Lavori: casi studio & appunti dal campo",
+    "writingTeaserSubtitle": "Casi studio da progetti rilasciati in produzione, più appunti dal campo su cosa si rompe in produzione.",
     "endCtaKicker": "§ Altro",
     "endCtaTitle": "Altri scritti sul",
     "endCtaTitleItalic": "blog.",
     "endCtaBody": "Sfoglia altri saggi su geodata, AI/ML e operations, oppure scopri di più su chi c'è dietro alla scrittura.",
     "endCtaButton": "Altri scritti",
     "endCtaSecondary": "Chi sono",
-    "endCtaContact": "Hai domande su dove / quanto / cosa viene dopo? Parliamone"
+    "endCtaContact": "Hai domande su dove / quanto / cosa viene dopo? Parliamone",
+    "relatedKicker": "Lavori correlati"
+  },
+  "Author": {
+    "roleLine": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
+    "bio": "Guido team dati e costruisco sistemi dati in produzione ad Amsterdam. Questo sito raccoglie i casi studio, i paper e gli appunti dal campo.",
+    "cta": "CV completo →"
   },
   "AboutTeaser": {
     "kicker": "Chi sono: la persona dietro al lavoro",
@@ -321,7 +334,7 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Costruisco sistemi",
     "titleLine2Underline": "in produzione.",
-    "bio1": "Ingegnere geodata e ricercatore di dinamiche urbane, con sede ad Amsterdam. Head of Data presso KR&A. MSc in Data Science & Business Analytics alla Bocconi; BSc in Intelligenza Artificiale all'Università di Amsterdam, quattro anni tra i due, trascorsi perlopiù sul lato produttivo.",
+    "bio1": "Ingegnere geodata e ricercatore di dinamiche urbane, con sede ad Amsterdam. Head of Data presso KR&A. MSc in Data Science & Business Analytics alla Bocconi; BSc in Intelligenza Artificiale all'Università di Amsterdam, cinque anni tra i due, trascorsi perlopiù sul lato produttivo.",
     "bio2": "Lavoro all'incrocio tra geospatial analytics, AI/ML e l'infrastruttura dati poco glamour che li rende utili. Su questo sito raccolgo le cose a cui sto pensando, che sto costruendo o che ho pubblicato.",
     "factRoleK": "Ruolo",
     "factRoleV": "Head of Data · KR&A",
@@ -345,21 +358,21 @@
       {
         "value": "13",
         "unit": "paesi UE · una pipeline",
-        "context": "Indice mensile dei prezzi delle case · Eurostat"
+        "context": "Indice mensile dei prezzi delle case · testato con Eurostat"
       },
       {
-        "value": "2.500+",
-        "unit": "ore / anno recuperate",
-        "context": "Tool dati per deal-screening · 6 settimane"
+        "value": "2 sett.",
+        "unit": "in anticipo sul piano · nel budget",
+        "context": "Connectivity Score · build a 13 server"
       },
       {
-        "value": "3",
-        "unit": "lingue · tutor AI live",
-        "context": "LanguageBuddy · prodotto AI in produzione"
+        "value": "250k+",
+        "unit": "record · 8 fonti · settimanale, 3 anni",
+        "context": "Scraping di livello istituzionale · usato da uffici statistici"
       }
     ],
-    "ctaPrimary": "Scopri come lavoriamo insieme",
-    "ctaSecondary": "Prenota una chiamata di 20 min"
+    "ctaPrimary": "Guarda il CV completo",
+    "ctaSecondary": "Scrivimi"
   },
   "Consent": {
     "dialogLabel": "Consenso ai cookie",
@@ -403,31 +416,31 @@
     "kicker": "Su cosa lavoro: quattro ambiti",
     "titleItalic": "Quattro",
     "titleRest": "ambiti.",
-    "subtitle": "Un toolkit di ingegneria geospaziale, quattro ambiti. La dinamica urbana è il punto di ancoraggio; il settore immobiliare è una applicazione, non la cornice.",
+    "subtitle": "Un toolkit di data engineering e leadership, quattro ambiti. La dinamica urbana è il pane quotidiano; il resto dimostra che il toolkit si generalizza.",
     "appliedAcross": "Applicato in: pianificazione urbana · immobiliare · rischio climatico · logistica & mobilità · settore pubblico",
     "automationNote": "Anche dietro le quinte: pipeline LLM/RAG e strumenti interni che automatizzano classificazione, ricerca e reportistica — AI in produzione come ambito ingegneristico, non come titolo principale.",
-    "ctaLabel": "Discuti un progetto",
+    "ctaLabel": "Scrivimi",
     "items": [
       {
-        "name": "Dinamica urbana & metodi geospaziali",
+        "name": "Dinamica urbana & ricerca",
         "anchor": true,
-        "blurb": "Modellazione della gentrificazione, accessibilità e connettività, analisi spaziale a livello di parcella e codice postale. Il punto di ancoraggio — dove si concentrano le pubblicazioni e il dottorato.",
-        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "CV"]
-      },
-      {
-        "name": "Immobiliare & investimenti",
-        "blurb": "Modelli di valutazione, affitto e rischio, dati alternativi per REITs e fondi. Un ambito e la rete più solida — non l'identità.",
-        "stack": ["XGBoost", "hedonic", "alt-data"]
-      },
-      {
-        "name": "Supply-chain & previsioni sulle materie prime",
-        "blurb": "La componente di ottimizzazione spaziale della logistica: progettazione di reti, bacino d'utenza e routing, localizzazione di strutture, previsioni sull'offerta di legno e materie prime.",
-        "stack": ["routing", "time-series", "optimisation"]
+        "blurb": "Modellazione della gentrificazione, accessibilità e connettività, analisi spaziale a livello di parcella e codice postale. Questo è ciò che faccio — dove si concentrano i paper e le pubblicazioni.",
+        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "scienza delle reti"]
       },
       {
         "name": "Prodotti di dati spaziali",
-        "blurb": "Punteggi e feed pronti all'uso — indici di connettività e percorribilità pedonale, metodi per i primi acquirenti. Validati come licenza prima, finanziati dagli ambiti di consulenza.",
-        "stack": ["APIs", "Python", "React"]
+        "blurb": "Punteggi e feed prodottizzati — indici di connettività e percorribilità pedonale, input di valutazione — gestiti end-to-end dal metodo all'API rilasciata.",
+        "stack": ["APIs", "Python", "React", "product ownership"]
+      },
+      {
+        "name": "Forecasting & analisi di rete",
+        "blurb": "Un indice mensile dei prezzi delle case UE su 13 paesi testato con Eurostat, modelli di nowcasting, e un Connectivity Score validato per saturazione.",
+        "stack": ["serie storiche", "nowcasting", "grafi", "XGBoost"]
+      },
+      {
+        "name": "Pipeline dati, costruite e mantenute",
+        "blurb": "Infrastruttura di scraping ed ETL di big data che continua a funzionare: tre anni di raccolta settimanale su 8 fonti protette, 250k+ record — mantenuta, non solo lanciata.",
+        "stack": ["Airflow", "PostGIS", "big data", "13 server"]
       }
     ]
   }
