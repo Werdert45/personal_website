@@ -39,7 +39,7 @@
   "About": {
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Core Competencies",
-    "expertiseSubtitle": "Four competencies built around production geospatial systems, each one informed by the constraint that a calibrated pipeline tends to outlast a clever one.",
+    "expertiseSubtitle": "Five competences, one constraint: a calibrated pipeline tends to outlast a clever one.",
     "educationBadge": "Education",
     "experienceBadge": "Experience",
     "academicTitle": "Academic Accolades",
@@ -47,14 +47,14 @@
     "professional": "Professional",
     "academic": "Academic",
     "educationSubtitle": "Strong foundation in AI, data science, and business analytics from top European institutions.",
-    "experienceSubtitle": "4+ years building production geospatial systems and ML pipelines across European markets and academic research.",
+    "experienceSubtitle": "5+ years building and leading production data systems — pipelines, forecasting, geospatial — across European markets and academic research.",
     "sectionKicker": "About: who, where, how",
-    "heroTitleLine1a": "Head of",
-    "heroTitleLine1aItalic": "Data",
-    "heroTitleLine2": "Geodata",
+    "heroTitleLine1a": "Data",
+    "heroTitleLine1aItalic": "Lead",
+    "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systems",
     "heroTitleLine3": "& Research.",
-    "lede1": "Based in Amsterdam, I engineer production spatial systems and research how cities change. The work runs from PostGIS schemas, hedonic models and agent-based gentrification models to DeckGL maps that turn parcel-level data into a decision. Real estate is one application among several — climate risk, mobility, public planning — not the frame. Head of Data at KR&A is the credential; the throughline is geospatial engineering with research-grade depth in urban dynamics.",
+    "lede1": "Based in Amsterdam, I lead data teams and build what they run: big-data pipelines, forecasting and nowcasting models, network analysis and spatial data products. The research seat stays warm — urban dynamics, gentrification, accessibility at parcel resolution — because cities are where data problems get hard. A geodata specialist based in Amsterdam by depth; a data lead by trade.",
     "lede2": "My bias: opinionated internal tools beat big platforms; a calibrated pipeline beats a clever one; and a map should answer a question, not perform complexity.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Role",
@@ -63,8 +63,8 @@
     "factBasis": "Basis",
     "factBasisValue": "Amsterdam, Netherlands · Dutch, English, German, Italian",
     "factExperience": "Experience",
-    "factExperienceValueHighlight": "4+ years",
-    "factExperienceValueRest": "in Real Estate Data Science",
+    "factExperienceValueHighlight": "5+ years",
+    "factExperienceValueRest": "in data engineering & spatial analytics",
     "factMarkets": "Markets",
     "factMarketsValueHighlight": "NL · DE · UK · IT",
     "factMarketsValueRest": "",
@@ -75,25 +75,29 @@
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
     "journeyKicker": "Professional journey",
-    "journeyTitlePrefixItalic": "Four",
+    "journeyTitlePrefixItalic": "Five",
     "journeyTitleRest": "years delivering",
     "journeyTitleLine2": "data-driven insights.",
     "expertise": [
       {
-        "title": "Machine Learning & AI",
-        "description": "Production ML and AI: predictive models for valuation, rent and flood risk (90%+ accuracy), plus LLM pipelines and tool-using agents that automate research, classification and reporting."
+        "title": "Big Data & Pipelines",
+        "description": "Scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 protected sources, 250k+ records, Airflow and PostGIS underneath."
       },
       {
-        "title": "Data Engineering",
-        "description": "Robust data pipelines for European REITs, funds and institutional investors. Inputs span geodata, alternative and unstructured sources, running on a distributed Airflow and Docker stack."
+        "title": "Network Science",
+        "description": "Graph methods on real geographies — a saturation-validated Connectivity Score at parcel resolution, accessibility and connectivity research."
       },
       {
-        "title": "Geospatial Analysis",
-        "description": "Advanced spatial analytics: agent-based gentrification modelling, street-level computer vision, and spatially-aware data science at parcel and postcode resolution. Although the inputs change, the spatial join tends to be where the logic lives."
+        "title": "Timeseries & Forecasting",
+        "description": "A monthly house-price index across 13 EU countries tested with Eurostat, plus nowcasting models for sparse, slow official statistics."
       },
       {
-        "title": "AI Automation",
-        "description": "LLM-powered workflows and internal tools that remove manual steps from data operations. RAG pipelines, structured-output agents, React interfaces and the PostgreSQL schemas that hold them together."
+        "title": "Spatial Analysis",
+        "description": "Parcel- and postcode-level modelling: agent-based gentrification models, hedonic pricing, H3 and PostGIS as daily tools."
+      },
+      {
+        "title": "Product Ownership & Leadership",
+        "description": "End-to-end ownership from method to shipped API — a 13-server build delivered two weeks ahead of plan, on budget, and a team led at KR&A. [NEEDS FACT: team size]"
       }
     ],
     "experience": [
@@ -101,25 +105,25 @@
         "year": "Jul 2025 - Present",
         "role": "Head of Data",
         "company": "KR&A | Europe | FinTech",
-        "description": "Leading data strategy and AI initiatives for alternative data FinTech serving European real estate funds, assets, and REITs. Working on the rollout of a project aggregating, homogenising and visualising intracity data from world cities."
+        "description": "Head of Data: leading data strategy, the team [NEEDS FACT: team size] and AI initiatives for an alternative-data FinTech serving European real-estate funds and REITs. Led the aggregation pipeline homogenising listings across 13 EU countries and the Connectivity Score build — 13 servers, on budget, two weeks ahead of plan."
       },
       {
         "year": "Jun 2022 - Jul 2025",
         "role": "Medior Data Scientist",
         "company": "KR&A | Europe | FinTech",
-        "description": "Delivered data-driven insights for real estate investment decisions. Built ML models for property valuation and market analysis across 15+ European markets, working on projects for leading real estate companies, pension funds and for Eurostat."
+        "description": "Delivered data-driven insights for real estate investment decisions — built ML models for property valuation and market analysis across 15+ European markets, delivering work for leading real estate companies, pension funds and Eurostat."
       },
       {
         "year": "Oct 2021 - Jun 2022",
         "role": "Junior Data Scientist",
         "company": "KR&A",
-        "description": "Thesis on predicting flooding occurrences in Europe using alternative data and ML models, achieving 90%+ accuracy in risk classification and working on smaller items, preparing, aggregating and visualising data."
+        "description": "Delivered a thesis predicting flooding occurrences in Europe using alternative data and ML models, achieving 90%+ accuracy in risk classification, plus smaller items preparing, aggregating and visualising data."
       },
       {
         "year": "Sep 2019 - Sep 2022",
         "role": "Junior Full Stack Developer",
         "company": "Exact (former SRXP)",
-        "description": "Part-Time Full Stack Developer maintaining enterprise-grade digital declaration software, working with web technologies such as EmberJS, PHP and sensitive customer data, using CI/CD and testing."
+        "description": "Maintained enterprise-grade digital declaration software part-time, delivering features built with EmberJS, PHP and sensitive customer data, under CI/CD and testing."
       }
     ],
     "education": [
@@ -191,7 +195,7 @@
     "bio": "Based in Amsterdam. I engineer production spatial systems and research how cities change — gentrification, accessibility, housing markets — at parcel and postcode resolution. The sectors vary (real estate, climate risk, public planning); the question rarely does: where, how much, and what's next.",
     "location": "Amsterdam, Netherlands",
     "company": "Head of Data @ KR&A FinTech",
-    "yearsExperience": "4+ years in Real Estate Data Science",
+    "yearsExperience": "5+ years in data engineering & spatial analytics",
     "formTitle": "Get in Touch",
     "formSubtitle": "Have a project in mind? Let's discuss how I can help with your geospatial needs.",
     "nameLabel": "Name",
@@ -322,7 +326,7 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "I ship production",
     "titleLine2Underline": "systems.",
-    "bio1": "Geodata engineer and urban-dynamics researcher, based in Amsterdam. Head of Data at KR&A. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam, roughly four years between the two, spent mostly on the production side.",
+    "bio1": "Geodata engineer and urban-dynamics researcher, based in Amsterdam. Head of Data at KR&A. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam, roughly five years between the two, spent mostly on the production side.",
     "bio2": "I work at the intersection of geospatial analytics, ML and the data infrastructure that makes both useful, the pipelines, schemas and spatial joins that do not appear in papers but determine whether the model ships. This site collects what is worth writing down: papers, methods, tools and the occasional strong opinion on why dashboards are overrated.",
     "factRoleK": "Role",
     "factRoleV": "Head of Data · KR&A",

@@ -5,9 +5,9 @@ export async function generateMetadata({ params }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
   const url = `${siteUrl}/${locale}/about`;
   return {
-    title: "About",
+    title: "Resume & competences — Data Lead & Engineer",
     description:
-      "Ian Ronk — geodata engineer and urban-dynamics researcher in Amsterdam. Production spatial systems (PostGIS, Airflow, ML) and research into how cities change; real estate is one application among several. Head of Data at KR&A.",
+      "Resume of Ian Ronk — data lead and geodata specialist based in Amsterdam: competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
     alternates: {
       canonical: url,
       languages: {
@@ -18,7 +18,13 @@ export async function generateMetadata({ params }) {
         "x-default": `${siteUrl}/en/about`,
       },
     },
-    openGraph: { url, type: "website" },
+    openGraph: {
+      title: "Resume & competences — Data Lead & Engineer",
+      description:
+        "Resume of Ian Ronk — data lead and geodata specialist based in Amsterdam: competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
+      url,
+      type: "website",
+    },
   };
 }
 

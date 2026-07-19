@@ -10,6 +10,7 @@ export function AboutContent() {
 
   const experience = t.raw("experience") || [];
   const education = t.raw("education") || [];
+  const expertise = t.raw("expertise") || [];
 
   return (
     <>
@@ -73,10 +74,35 @@ export function AboutContent() {
         </div>
       </section>
 
+      {expertise.length > 0 && (
+        <section className="section-pad">
+          <div className="section-label">
+            <span className="bar" />
+            <span className="num-label">§ 03</span>
+            <span>{t("expertiseBadge")}</span>
+          </div>
+          <p className="lede">{t("expertiseSubtitle")}</p>
+          <div
+            className="expertise-grid"
+            style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24, marginTop: 40 }}
+          >
+            {expertise.map((e, i) => (
+              <div key={e.title} style={{ borderTop: "1px solid var(--ink)", paddingTop: 18 }}>
+                <div className="sector-kicker">
+                  <span>§ 03.{String(i + 1).padStart(2, "0")}</span>
+                </div>
+                <h3 className="sector-name" style={{ marginTop: 12 }}>{e.title}</h3>
+                <p className="sector-blurb">{e.description}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       <section className="xp">
         <div className="section-label">
           <span className="bar" />
-          <span className="num-label">§ 03</span>
+          <span className="num-label">§ 04</span>
           <span>{t("journeyKicker")}</span>
         </div>
         <h2>
