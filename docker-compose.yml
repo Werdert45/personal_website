@@ -32,6 +32,10 @@ services:
       - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
       - CSRF_TRUSTED_ORIGINS=https://api.ianronk.nl
       - SEED_DEMO_DATA=${SEED_DEMO_DATA:-true}
+      - MINIMAX_API_KEY=${MINIMAX_API_KEY:-}
+      - INTERNAL_PROXY_SECRET=${INTERNAL_PROXY_SECRET:-}
+      - CHAT_RATE_PER_MIN=${CHAT_RATE_PER_MIN:-10}
+      - CHAT_DAILY_LIMIT=${CHAT_DAILY_LIMIT:-500}
     ports:
       - "127.0.0.1:8001:8001"
     depends_on:
@@ -40,6 +44,7 @@ services:
     command: >
       sh -c "python manage.py migrate &&
              if [ \"$$SEED_DEMO_DATA\" = \"true\" ]; then python manage.py seed_data; fi &&
+             (python manage.py seed_chat_kb || echo 'seed_chat_kb failed - chat KB unavailable') &&
              gunicorn --bind 0.0.0.0:8001 config.wsgi:application"
     healthcheck:
       test: ["CMD", "python", "-c", "import socket; socket.create_connection(('127.0.0.1', 8001), 3)"]
@@ -57,6 +62,7 @@ services:
       - NODE_ENV=production
       - HOSTNAME=0.0.0.0
       - PORT=3001
+      - INTERNAL_PROXY_SECRET=${INTERNAL_PROXY_SECRET:-}
     ports:
       - "3001:3001"
     depends_on:

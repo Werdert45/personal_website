@@ -172,6 +172,55 @@ export async function PUT(request) {
   });
 }
 
+// PATCH - Partially update item in Django
+export async function PATCH(request) {
+  const { searchParams } = new URL(request.url);
+  const endpoint = (searchParams.get("endpoint") || "projects").replace(/\.\./g, "");
+  const id = searchParams.get("id");
+  const token = request.headers.get("authorization");
+
+  if (!isAllowedEndpoint(endpoint)) {
+    return new Response("Not found", { status: 404 });
+  }
+
+  const body = await request.json();
+
+  if (DJANGO_API_URL) {
+    try {
+      const djangoUrl = id
+        ? `${DJANGO_API_URL}/api/${endpoint}/${id}/`
+        : buildDjangoUrl(endpoint);
+      const response = await fetch(djangoUrl, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+          ...(token && { Authorization: token }),
+          ...proxyHeaders(request),
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        return NextResponse.json(data);
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error(`[Django Proxy] PATCH ${djangoUrl} -> ${response.status}`, errorData);
+        return NextResponse.json(errorData, { status: response.status });
+      }
+    } catch (error) {
+      console.error(`[Django Proxy] PATCH ${djangoUrl} failed:`, error.message);
+      return NextResponse.json({ error: "Failed to update" }, { status: 500 });
+    }
+  }
+
+  // Return success for development with dummy data
+  return NextResponse.json({
+    ...body,
+    updated_at: new Date().toISOString(),
+  });
+}
+
 // DELETE - Remove item from Django
 export async function DELETE(request) {
   const { searchParams } = new URL(request.url);

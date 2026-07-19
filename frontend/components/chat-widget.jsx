@@ -52,6 +52,7 @@ export function ChatWidget() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: msg }),
       });
+      if (!res.ok) throw new Error(`Chat request failed: ${res.status}`);
       const data = await res.json();
       setMessages((prev) => [
         ...prev,

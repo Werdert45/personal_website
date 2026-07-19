@@ -85,7 +85,7 @@ export default function CMSDashboard() {
       const [projectsRes, researchRes, layersRes] = await Promise.all([
         fetch("/api/django?endpoint=projects", { headers }),
         fetch("/api/django?endpoint=research", { headers }),
-        fetch("/api/django?endpoint=layers", { headers }),
+        fetch("/api/django?endpoint=projects/layers", { headers }),
       ]);
 
       setProjects(await projectsRes.json());
