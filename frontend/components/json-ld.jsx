@@ -5,21 +5,28 @@ export function PersonJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ian Ronk",
-    jobTitle: "Geodata Engineer & Urban-Dynamics Researcher",
+    jobTitle: "Data Lead & Engineer",
+    description: "Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.",
     url: siteUrl,
     sameAs: ["https://www.linkedin.com/in/ian-ronk-7b054a120/", "https://github.com/Werdert45"],
+    hasOccupation: [
+      { "@type": "Occupation", name: "Data Lead" },
+      {
+        "@type": "Occupation",
+        name: "Geodata Specialist",
+        occupationLocation: { "@type": "City", name: "Amsterdam" },
+      },
+    ],
     worksFor: {
       "@type": "Organization",
       name: "KR&A",
     },
     knowsAbout: [
-      "Geospatial Engineering",
-      "Urban Dynamics",
-      "Spatial Data Engineering",
-      "PostGIS",
-      "Machine Learning",
-      "Accessibility and Housing Markets",
-      "Data Engineering",
+      "Data Engineering", "Big Data Pipelines", "Network Science",
+      "Time Series Forecasting", "Nowcasting", "Spatial Analysis",
+      "Geospatial Engineering", "Urban Dynamics", "Gentrification",
+      "Housing Markets", "Accessibility", "PostGIS", "Machine Learning",
+      "Product Ownership",
     ],
     alumniOf: [
       {
@@ -55,7 +62,7 @@ export function WebSiteJsonLd() {
     name: "Ian Ronk",
     url: siteUrl,
     description:
-      "Geodata engineering and urban-dynamics research — production spatial systems and research into how cities change, across real estate, climate risk and public planning. Based in Amsterdam.",
+      "Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.",
     author: {
       "@type": "Person",
       name: "Ian Ronk",
@@ -151,6 +158,30 @@ export function BlogPostingJsonLd({
     <script
       type="application/ld+json"
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+export function ProfilePageJsonLd() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    mainEntity: {
+      "@type": "Person",
+      name: "Ian Ronk",
+      jobTitle: "Data Lead & Engineer",
+      description:
+        "Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.",
+      url: siteUrl,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
     />
   );
 }
