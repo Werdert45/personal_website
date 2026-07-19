@@ -26,11 +26,12 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Geodata Engineer · Urban-Dynamics Researcher",
+    "role": "Data & Technical Lead · Urban-Dynamics Researcher",
     "title": "Geodata engineering",
     "titleHighlight": "urban-dynamics research",
     "titleEnd": " for decisions about place",
-    "description": "I build production spatial systems and study how cities change — gentrification, accessibility, housing markets — at parcel and postcode resolution. The sectors vary; the question rarely does: where, how much, and what's next.",
+    "description": "I answer the questions of: where, how much and what's next in urban systems. For this I build production ready spatial and non-spatial systems and study how cities change: gentrification, accessibility and housing markets using network analysis, spatial econometrics and big data science.",
+    "description2": "I build production spatial systems and study how cities change — gentrification, accessibility, housing markets — at parcel and postcode resolution. The sectors vary; the question rarely does: where, how much, and what's next.",
     "aboutMe": "About me",
     "workWithMe": "Let's talk",
     "expertise": "Expertise:"
@@ -70,7 +71,7 @@
     "factClients": "Clients",
     "factClientsValue": "Eurostat · CBS · Institutional RE investors",
     "factClientsPersonal": "Personal",
-    "factClientsPersonalValue": "ingoglia.de",
+    "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
     "journeyKicker": "Professional journey",
