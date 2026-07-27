@@ -99,7 +99,7 @@
       },
       {
         "title": "Product Ownership & Leadership",
-        "description": "Proprietà end-to-end dal metodo all'API rilasciata — un build su 13 server consegnato due settimane in anticipo sul piano, nel budget, e un team guidato presso KR&A. [NEEDS FACT: team size]"
+        "description": "Proprietà end-to-end dal metodo all'API rilasciata — un build su 13 server consegnato due settimane in anticipo sul piano, nel budget, e un team di 4–5 guidato presso KR&A."
       }
     ],
     "experience": [
@@ -107,7 +107,7 @@
         "year": "Lug 2025 - Presente",
         "role": "Head of Data",
         "company": "KR&A | Europa | FinTech",
-        "description": "Head of Data: guida della strategia dati, di un team di [NEEDS FACT: team size] e delle iniziative AI per una FinTech di dati alternativi al servizio di fondi immobiliari europei, asset e REIT. Guidata la pipeline di aggregazione che omogeneizza gli annunci in 13 paesi UE e la costruzione del Connectivity Score — 13 server, nel budget, due settimane in anticipo sul piano."
+        "description": "Head of Data: guida della strategia dati, di un team di 4–5 e delle iniziative AI per una FinTech di dati alternativi al servizio di fondi immobiliari europei, asset e REIT. Guidata la pipeline di aggregazione che omogeneizza gli annunci in 13 paesi UE e la costruzione del Connectivity Score — 13 server, nel budget, due settimane in anticipo sul piano."
       },
       {
         "year": "Giu 2022 - Lug 2025",
@@ -352,8 +352,8 @@
     "titlePrefix": "Cose che",
     "titleItalic": "hanno spedito",
     "titleSuffix": "e sono rimaste.",
-    "quote": "Ian ha consegnato quello che aveva detto, nei tempi che aveva detto.",
-    "quoteAttribution": "COO, servizi regolamentati",
+    "quote": "",
+    "quoteAttribution": "",
     "outcomes": [
       {
         "value": "13",

@@ -8,6 +8,7 @@ export function ProofStrip() {
   const t = useTranslations("Proof");
   const locale = useLocale();
   const outcomes = t.raw("outcomes");
+  const quote = t("quote");
 
   return (
     <section className="section-pad">
@@ -33,15 +34,17 @@ export function ProofStrip() {
       </div>
 
       <div className="proof-strip">
-        <div className="proof-quote">
-          <div>
-            <div className="proof-quote-mark" aria-hidden>
-              &ldquo;
+        {quote ? (
+          <div className="proof-quote">
+            <div>
+              <div className="proof-quote-mark" aria-hidden>
+                &ldquo;
+              </div>
+              <p className="proof-quote-text">{quote}</p>
             </div>
-            <p className="proof-quote-text">{t("quote")}</p>
+            <div className="proof-quote-attribution">— {t("quoteAttribution")}</div>
           </div>
-          <div className="proof-quote-attribution">— {t("quoteAttribution")}</div>
-        </div>
+        ) : null}
         <div className="proof-outcomes">
           {outcomes.map((o, i) => (
             <div key={i} className="proof-outcome">

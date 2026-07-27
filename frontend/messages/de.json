@@ -99,7 +99,7 @@
       },
       {
         "title": "Product Ownership & Führung",
-        "description": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API — ein 13-Server-Build, zwei Wochen vor Plan und im Budget geliefert, sowie ein Team geführt bei KR&A. [NEEDS FACT: team size]"
+        "description": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API — ein 13-Server-Build, zwei Wochen vor Plan und im Budget geliefert, sowie ein Team von 4–5 geführt bei KR&A."
       }
     ],
     "experience": [
@@ -107,7 +107,7 @@
         "year": "Jul 2025 - Heute",
         "role": "Head of Data",
         "company": "KR&A | Europa | FinTech",
-        "description": "Head of Data: Verantwortung für Datenstrategie, ein Team von [NEEDS FACT: team size] und KI-Initiativen für ein Alternative-Data-FinTech, das europäische Immobilienfonds, Vermögenswerte und REITs bedient. Leitung der Aggregationspipeline zur Homogenisierung von Listings in 13 EU-Ländern sowie des Connectivity-Score-Builds — 13 Server, im Budget, zwei Wochen vor Plan."
+        "description": "Head of Data: Verantwortung für Datenstrategie, ein Team von 4–5 und KI-Initiativen für ein Alternative-Data-FinTech, das europäische Immobilienfonds, Vermögenswerte und REITs bedient. Leitung der Aggregationspipeline zur Homogenisierung von Listings in 13 EU-Ländern sowie des Connectivity-Score-Builds — 13 Server, im Budget, zwei Wochen vor Plan."
       },
       {
         "year": "Jun 2022 - Jul 2025",
@@ -352,8 +352,8 @@
     "titlePrefix": "Dinge, die",
     "titleItalic": "live gegangen",
     "titleSuffix": "und geblieben sind.",
-    "quote": "Ian hat geliefert, was er versprochen hat, in der Zeit, die er zugesagt hat.",
-    "quoteAttribution": "COO, regulierte Dienstleistungen",
+    "quote": "",
+    "quoteAttribution": "",
     "outcomes": [
       {
         "value": "13",

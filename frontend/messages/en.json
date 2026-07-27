@@ -99,7 +99,7 @@
       },
       {
         "title": "Product Ownership & Leadership",
-        "description": "End-to-end ownership from method to shipped API — a 13-server build delivered two weeks ahead of plan, on budget, and a team led at KR&A. [NEEDS FACT: team size]"
+        "description": "End-to-end ownership from method to shipped API — a 13-server build delivered two weeks ahead of plan, on budget, and a team of 4–5 led at KR&A."
       }
     ],
     "experience": [
@@ -107,7 +107,7 @@
         "year": "Jul 2025 - Present",
         "role": "Head of Data",
         "company": "KR&A | Europe | FinTech",
-        "description": "Head of Data: leading data strategy, a team of [NEEDS FACT: team size] and AI initiatives for an alternative-data FinTech serving European real-estate funds, assets and REITs. Led the aggregation pipeline homogenising listings across 13 EU countries and the Connectivity Score build — 13 servers, on budget, two weeks ahead of plan."
+        "description": "Head of Data: leading data strategy, a team of 4–5 and AI initiatives for an alternative-data FinTech serving European real-estate funds, assets and REITs. Led the aggregation pipeline homogenising listings across 13 EU countries and the Connectivity Score build — 13 servers, on budget, two weeks ahead of plan."
       },
       {
         "year": "Jun 2022 - Jul 2025",
@@ -352,8 +352,8 @@
     "titlePrefix": "Things that",
     "titleItalic": "shipped",
     "titleSuffix": "and stuck.",
-    "quote": "Ian shipped the thing he said he'd ship, in the time he said he'd ship it.",
-    "quoteAttribution": "COO, regulated services",
+    "quote": "",
+    "quoteAttribution": "",
     "outcomes": [
       {
         "value": "13",

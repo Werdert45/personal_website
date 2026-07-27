@@ -99,7 +99,7 @@
       },
       {
         "title": "Product Ownership & Leiderschap",
-        "description": "End-to-end eigenaarschap van methode tot live API — een build met 13 servers, twee weken voor op schema opgeleverd, binnen budget, met een team geleid bij KR&A. [NEEDS FACT: team size]"
+        "description": "End-to-end eigenaarschap van methode tot live API — een build met 13 servers, twee weken voor op schema opgeleverd, binnen budget, met een team van 4–5 geleid bij KR&A."
       }
     ],
     "experience": [
@@ -107,7 +107,7 @@
         "year": "Jul 2025 - Heden",
         "role": "Head of Data",
         "company": "KR&A | Europa | FinTech",
-        "description": "Head of Data: leiding over datastrategie, een team van [NEEDS FACT: team size] en AI-initiatieven voor een alternative-data-FinTech die Europese vastgoedfondsen, activa en REITs bedient. Leiding gegeven aan de aggregatiepipeline die listings in 13 EU-landen homogeniseert, en aan de bouw van de Connectivity Score — 13 servers, binnen budget, twee weken voor op schema."
+        "description": "Head of Data: leiding over datastrategie, een team van 4–5 en AI-initiatieven voor een alternative-data-FinTech die Europese vastgoedfondsen, activa en REITs bedient. Leiding gegeven aan de aggregatiepipeline die listings in 13 EU-landen homogeniseert, en aan de bouw van de Connectivity Score — 13 servers, binnen budget, twee weken voor op schema."
       },
       {
         "year": "Jun 2022 - Jul 2025",
@@ -352,8 +352,8 @@
     "titlePrefix": "Wat we hebben",
     "titleItalic": "gebouwd",
     "titleSuffix": "en wat is gebleven.",
-    "quote": "Ian leverde precies wat hij beloofde, in de tijd die hij beloofde.",
-    "quoteAttribution": "COO, gereguleerde dienstverlening",
+    "quote": "",
+    "quoteAttribution": "",
     "outcomes": [
       {
         "value": "13",
