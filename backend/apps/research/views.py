@@ -6,6 +6,7 @@ import os
 import uuid
 
 from django.conf import settings
+from django.shortcuts import get_object_or_404
 from rest_framework import generics, status
 from rest_framework.parsers import MultiPartParser
 from rest_framework.permissions import IsAuthenticated, SAFE_METHODS, BasePermission
@@ -47,10 +48,14 @@ class ResearchListCreateView(generics.ListCreateAPIView):
     def get_queryset(self):
         queryset = Research.objects.prefetch_related("translations").all()
 
-        # Filter by status if specified
-        status_filter = self.request.query_params.get("status")
-        if status_filter:
-            queryset = queryset.filter(status=status_filter)
+        # Non-authenticated users only see published articles (drafts must
+        # never leak — in-progress papers live here).
+        if not self.request.user.is_authenticated:
+            queryset = queryset.filter(status="published")
+        else:
+            status_filter = self.request.query_params.get("status")
+            if status_filter:
+                queryset = queryset.filter(status=status_filter)
 
         # Filter by category
         category = self.request.query_params.get("category")
@@ -79,7 +84,10 @@ class ResearchDetailView(generics.RetrieveUpdateDestroyAPIView):
     lookup_field = "slug"
 
     def get_queryset(self):
-        return Research.objects.prefetch_related("translations").all()
+        qs = Research.objects.prefetch_related("translations").all()
+        if not self.request.user.is_authenticated:
+            qs = qs.filter(status="published")
+        return qs
 
 
 
@@ -91,8 +99,7 @@ class ResearchTranslationView(generics.GenericAPIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_research(self):
-        slug = self.kwargs["slug"]
-        return Research.objects.get(slug=slug)
+        return get_object_or_404(Research, slug=self.kwargs["slug"])
 
     def get(self, request, slug):
         """List translations for a research article."""

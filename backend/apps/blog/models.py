@@ -20,6 +20,7 @@ class BlogPost(models.Model):
         ("explanation", "Explanation"),
         ("thought", "Thought"),
         ("note", "Note"),
+        ("case-study", "Case Study"),
     ]
 
     title = models.CharField(max_length=255)

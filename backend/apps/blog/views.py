@@ -2,6 +2,7 @@
 Views for BlogPost and BlogPostTranslation.
 """
 
+from django.shortcuts import get_object_or_404
 from rest_framework import generics, status
 from rest_framework.permissions import SAFE_METHODS, BasePermission
 from rest_framework.response import Response
@@ -78,7 +79,7 @@ class BlogPostTranslationView(generics.GenericAPIView):
     permission_classes = [IsAuthenticatedOrReadOnly]
 
     def get_post(self):
-        return BlogPost.objects.get(slug=self.kwargs["slug"])
+        return get_object_or_404(BlogPost, slug=self.kwargs["slug"])
 
     def get(self, request, slug):
         post = self.get_post()

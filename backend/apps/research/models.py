@@ -23,7 +23,20 @@ class Research(models.Model):
         ("analysis", "Analysis"),
         ("case-study", "Case Study"),
         ("methodology", "Methodology"),
+        ("working-paper", "Working Paper"),
+        ("preprint", "Preprint"),
+        ("thesis", "Thesis"),
         ("other", "Other"),
+    ]
+
+    PUBLICATION_STATUS_CHOICES = [
+        ("", "—"),
+        ("in-preparation", "In preparation"),
+        ("working-paper", "Working paper"),
+        ("preprint", "Preprint (arXiv/SSRN)"),
+        ("under-review", "Under review"),
+        ("published", "Published"),
+        ("thesis", "Thesis"),
     ]
 
     title = models.CharField(max_length=255)
@@ -37,6 +50,18 @@ class Research(models.Model):
     # Article metadata
     read_time = models.CharField(max_length=20, blank=True, help_text="e.g., '15 min'")
     date = models.CharField(max_length=50, blank=True, help_text="Display date, e.g., 'January 2025'")
+
+    # Academic citation metadata (rendered in the Reference block for papers).
+    # publication_status is the honest submission state — distinct from the
+    # workflow `status` (draft/published/archived), which must never render.
+    publication_status = models.CharField(
+        max_length=30, choices=PUBLICATION_STATUS_CHOICES, blank=True, default="",
+        help_text="Honest paper status shown to readers (e.g. working paper, preprint)",
+    )
+    doi = models.CharField(max_length=100, blank=True, default="", help_text="e.g. 10.5281/zenodo.xxxxxxx")
+    arxiv_id = models.CharField(max_length=30, blank=True, default="", help_text="e.g. 2608.01234")
+    repo_url = models.URLField(blank=True, default="", help_text="Code/data repository URL")
+    cite_as = models.TextField(blank=True, default="", help_text="Full citation string readers can copy")
 
     # PDF file upload
     pdf_file = models.FileField(
