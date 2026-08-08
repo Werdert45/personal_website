@@ -59,7 +59,7 @@ CHUNKS = [
         "category": "skills",
         "content": (
             "Ian's four core competencies: (1) Machine Learning & AI — predictive models for "
-            "valuation, rent and flood risk (90%+ accuracy), LLM pipelines and tool-using agents. "
+            "valuation and spatial risk, LLM pipelines and tool-using agents. "
             "(2) Data Engineering — Airflow, Docker, PostGIS, Postgres pipelines for REITs and funds. "
             "(3) Geospatial Analysis — agent-based modelling, street-view CV, H3 indexing, "
             "spatially-aware data science at parcel and postcode resolution. "
@@ -94,26 +94,20 @@ CHUNKS = [
     {
         "category": "project",
         "content": (
-            "Project: Gentrification agent-based model. Ten-year simulation of neighbourhood "
-            "turnover in European cities, calibrated on Kadaster and CBS microdata. MSc thesis "
-            "at Bocconi. Stack: Python, Mesa, GeoPandas, Postgres."
+            "Project: Gentrification agent-based model. MSc thesis (2025): an agent-based "
+            "model of neighbourhood change driven by attractiveness and affordability, "
+            "applied to Amsterdam, Utrecht and Milan on open spatial data. "
+            "Stack: Python, Mesa, GeoPandas, Postgres/PostGIS, Airflow."
         ),
     },
     {
         "category": "project",
         "content": (
-            "Project: Parcel-level flood-risk classifier. Supervised classification on LiDAR "
-            "and rainfall-radar features at parcel level. 90%+ balanced accuracy on held-out "
-            "insurable-loss claims. BSc thesis at University of Amsterdam. "
-            "Stack: PyTorch, GeoPandas, PostGIS, LiDAR."
-        ),
-    },
-    {
-        "category": "project",
-        "content": (
-            "Project: Hedonic rent model across 15 EU metros. Parcel-level hedonic rent "
-            "benchmarks built on PostGIS and gradient boosting across European metros. "
-            "Stack: PostGIS, GeoPandas, XGBoost, H3."
+            "Project: Research data engineering in the open. A public data-orchestration "
+            "repository: Airflow 3 pipelines behind Ian's research projects, with custom "
+            "operators (a DuckDB SQL-ingestion operator, a snapshot-guard operator that "
+            "verifies pinned inputs by SHA-256), tests and CI. Written up as a blog series "
+            "on treating research pipelines as production systems."
         ),
     },
     {
@@ -127,20 +121,21 @@ CHUNKS = [
     {
         "category": "research",
         "content": (
-            "Research: Postcode boundary estimation from crowdsourced address data (Voronoi "
-            "approach). OSM address points, kNN outlier removal, point Voronoi, polygon "
-            "dissolution. Calibrated on NL and DK authoritative data (5,160 polygons combined). "
-            "Applied to Italy (4,209 CAP polygons). Preprint 2026. Target: arXiv + CEUS journal."
+            "Research: Calibrating Free Postcode Boundaries from OpenStreetMap. One "
+            "OSM-Voronoi pipeline calibrated against authoritative NL and DK layers "
+            "(5,160 polygons), a seed-density-to-IoU curve (asymptote ~0.76-0.82 mean "
+            "matched IoU), out-of-sample transfer tested on Belgium, applied to Italy's "
+            "4,209 CAP polygons. Preprint; arXiv planned August 2026."
         ),
     },
     {
         "category": "research",
         "content": (
-            "Research: When metro openings capitalise into residential rents — a seven-city "
-            "European study. Staggered difference-in-differences across Milano, Amsterdam, "
-            "Copenhagen, Paris, Helsinki, Rennes, Roma (n = 42,004). Key finding: +12% price "
-            "step at maturity (2+ years after opening). Bootstrap inference (G=7 cities). "
-            "Working paper 2026."
+            "Research: When Does Metro Infrastructure Capitalize into Property Prices? "
+            "Phase-decomposed difference-in-differences across seven European cities "
+            "(n = 42,004, property prices, wild cluster bootstrap). The pooled average puts "
+            "the largest response at maturity, but the defensible magnitudes are per-city — "
+            "foremost Milano's +167 EUR/m2 (p = 0.004). Working paper, 2026."
         ),
     },
     {
@@ -157,16 +152,18 @@ CHUNKS = [
         "content": (
             "Contact: Ian can be reached at ianronk0@gmail.com. LinkedIn: "
             "linkedin.com/in/ian-ronk-7b054a120/. GitHub: github.com/Werdert45. "
-            "Based in Amsterdam, Netherlands. Available for project work and collaborations."
+            "Based in Amsterdam, Netherlands. Open to conversations about data engineering "
+            "for research, research collaborations, and co-authorship."
         ),
     },
     {
         "category": "blog",
         "content": (
-            "Ian writes about geodata methods, ML pipelines and what breaks in production. "
-            "Recent topics: estimating Italian postcode boundaries with Voronoi diagrams, "
-            "PostGIS vs DuckDB for analyst queries, switching to H3 for real-estate geoindexing, "
-            "replacing paid isochrone vendors with in-house OSRM+GTFS."
+            "Ian writes about geodata methods, research data engineering, and what breaks "
+            "in production. The series starting August 2026: the Airflow stack behind his "
+            "research pipelines (including a multi-machine CeleryExecutor setup), a "
+            "data-engineering case study of the postcode-boundaries paper, case studies of "
+            "the MSc thesis, and the Italian metro capitalization work."
         ),
     },
 ]

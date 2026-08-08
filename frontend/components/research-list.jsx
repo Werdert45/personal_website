@@ -8,13 +8,12 @@ import { trackEvent } from "@/lib/analytics";
 import { getItemField } from "@/lib/i18n-item";
 import { renderTitle } from "@/lib/render-title";
 
+// Fallback shown only when the CMS returns no published research.
+// Every entry here must describe REAL work with a real detail page.
 const DEFAULT_ITEMS = [
-  { id: 1, slug: "metro-capitalisation-timing", category: "WORKING-PAPER", date: "2026-06", title: "When metro openings capitalise into residential rents: a seven-city European study", abstract: "Staggered difference-in-differences across seven European cities (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma; n = 42,004). The largest price response (a step of roughly +12%) appears at maturity, two or more years after opening. Bootstrap inference on few-cluster data (G = 7 cities). Maturity step positive under every leave-one-city-out." },
-  { id: 2, slug: "voronoi-postcode-estimation", category: "PREPRINT", date: "2026-05", title: "Postcode boundary estimation from crowdsourced address data: a Voronoi approach", abstract: "OSM address points, kNN outlier removal, point Voronoi, and polygon dissolution, calibrated against authoritative NL and DK postcode layers (5,160 polygons combined). IoU saturates near 0.7 at ~300 seeds per postcode. Applied to Italy (4,209 CAP polygons) where no free authoritative layer exists. GeoJSON output ships with per-polygon seed count." },
-  { id: 3, slug: "gentrification-abm", category: "WORKING-PAPER", date: "2024-06", title: "Agent-based simulation of neighbourhood turnover", abstract: "Calibrated ABM for 10-year turnover in Amsterdam on Kadaster + CBS microdata. Robustness checks and sensitivity analyses across move-probability priors." },
-  { id: 4, slug: "flood-risk-parcels", category: "PAPER", date: "2023-09", title: "Parcel-level flood-risk classification for insurers", abstract: "Supervised classification on LiDAR, rainfall radar and cadastre features. Reports 90%+ balanced accuracy on held-out insurable-loss claims." },
-  { id: 5, slug: "rent-prediction-hedonic", category: "PAPER", date: "2025-11", title: "Hedonic rent prediction across 15 EU metros", abstract: "A parcel-level hedonic model combining PostGIS spatial joins, gradient boosting and amenity-weighted isochrones. Cross-validated out-of-sample; preprint under review." },
-  { id: 6, slug: "cadastre-review", category: "REVIEW", date: "2024-10", title: "Open cadastre data in the EU: a coverage review", abstract: "Survey of cadastral data access and licensing across NL, DE, BE, FR, IT, ES. Tabulates fields, refresh cadence, and reproducibility gaps." },
+  { id: 1, slug: "voronoi-postcode-estimation", category: "PREPRINT", date: "2026-07", title: "Calibrating free postcode boundaries from OpenStreetMap", abstract: "How many OSM address points does a usable postcode polygon need? A single Voronoi pipeline calibrated against authoritative NL and DK layers (5,160 polygons), a seed-density-to-IoU curve with a robust asymptote (mean matched IoU ≈ 0.76–0.82), out-of-sample transfer to held-out Belgium, and an application to Italy's 4,209 CAP polygons, where no free authoritative layer exists." },
+  { id: 2, slug: "metro-capitalisation-timing", category: "WORKING-PAPER", date: "2026-07", title: "When does metro infrastructure capitalize into property prices?", abstract: "Phase-decomposed staggered difference-in-differences across seven European cities (n = 42,004). The pooled average locates the largest response at maturity, two or more years after opening — but city-by-year fixed effects collapse that pooled step, and the defensible magnitudes are per-city: foremost Milano's +167 EUR/m² (wild-bootstrap p = 0.004)." },
+  { id: 3, slug: "gentrification-abm", category: "THESIS", date: "2025-08", title: "Agent-based modelling of gentrification dynamics", abstract: "MSc thesis (2025). An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data — with an honest account of where the aggregation level limits what the model can claim. Case-study posts land here from August 2026." },
 ];
 
 export function ResearchList() {
@@ -43,7 +42,7 @@ export function ResearchList() {
     return () => { alive = false; };
   }, []);
 
-  const source = researchItems.length ? researchItems : DEFAULT_ITEMS;
+  const source = researchItems.length ? researchItems : loading ? [] : DEFAULT_ITEMS;
 
   const filteredItems = source.filter((item) => {
     const title = getItemField(item, "title", locale) || "";
