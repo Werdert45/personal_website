@@ -5,6 +5,8 @@ import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeHighlight from "rehype-highlight";
+import "highlight.js/styles/atom-one-dark.css";
 import { ShareBar } from "@/components/share-bar";
 import { trackEvent } from "@/lib/analytics";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
@@ -64,7 +66,10 @@ export function BlogPost({ slug }) {
   const title = getItemField(post, "title", locale) || post.title;
   const excerpt = getItemField(post, "excerpt", locale) || post.excerpt;
   const content = getItemField(post, "content", locale) || post.content || "";
-  const published = (post.published_at || post.date || "").slice(0, 10);
+  // Prefer published_at (the backdatable display date). Only slice ISO
+  // strings — free-text dates like "July 2026" render verbatim.
+  const rawDate = post.published_at || post.date || "";
+  const published = /^\d{4}-\d{2}/.test(rawDate) ? rawDate.slice(0, 10) : rawDate;
 
   return (
     <article className="section-pad reader" style={{ paddingTop: 160 }}>
@@ -77,13 +82,40 @@ export function BlogPost({ slug }) {
       <div className="meta" style={{ display: "flex", gap: 24, flexWrap: "wrap", marginBottom: 24 }}>
         <span>{(post.category || "ARTICLE").toUpperCase()}</span>
         <span>{published}</span>
-        {post.reading_time && <span>{post.reading_time} {t("minRead")}</span>}
+        {post.read_time && <span>{post.read_time}</span>}
       </div>
 
       <h1>{title}</h1>
       {excerpt && <p className="dek">{excerpt}</p>}
 
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeHighlight]}
+        components={{
+          pre: ({ node, ...props }) => (
+            <pre style={{ borderRadius: 8, padding: "16px 20px", overflowX: "auto", fontSize: 14, lineHeight: 1.6, margin: "24px 0", background: "#282c34" }} {...props} />
+          ),
+          code: ({ node, inline, ...props }) =>
+            inline
+              ? <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.9em", background: "var(--rule)", padding: "1px 5px", borderRadius: 4 }} {...props} />
+              : <code style={{ fontFamily: "var(--font-mono)" }} {...props} />,
+          h2: ({ node, ...props }) => <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(26px,3vw,36px)", lineHeight: 1.15, margin: "40px 0 16px" }} {...props} />,
+          h3: ({ node, ...props }) => <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px,2.2vw,26px)", lineHeight: 1.2, margin: "32px 0 12px" }} {...props} />,
+          ul: ({ node, ...props }) => <ul style={{ margin: "16px 0", paddingLeft: 28, listStyle: "disc", display: "grid", gap: 8 }} {...props} />,
+          ol: ({ node, ...props }) => <ol style={{ margin: "16px 0", paddingLeft: 28, listStyle: "decimal", display: "grid", gap: 8 }} {...props} />,
+          table: ({ node, ...props }) => (
+            <div style={{ overflowX: "auto", margin: "24px 0" }}>
+              <table style={{ borderCollapse: "collapse", fontSize: 14, minWidth: "100%" }} {...props} />
+            </div>
+          ),
+          th: ({ node, ...props }) => <th style={{ border: "1px solid var(--rule)", padding: "8px 14px", textAlign: "left", fontFamily: "var(--font-mono)", fontSize: 12, textTransform: "uppercase", letterSpacing: "0.06em" }} {...props} />,
+          td: ({ node, ...props }) => <td style={{ border: "1px solid var(--rule)", padding: "8px 14px" }} {...props} />,
+          blockquote: ({ node, ...props }) => <blockquote style={{ borderLeft: "3px solid var(--yellow-2)", margin: "24px 0", padding: "4px 0 4px 20px", color: "var(--ink-2)", fontStyle: "italic" }} {...props} />,
+          img: ({ node, ...props }) => <img style={{ maxWidth: "100%", borderRadius: 8, margin: "24px 0" }} alt="" {...props} />,
+        }}
+      >
+        {content}
+      </ReactMarkdown>
 
       <RelatedPosts slug={slug} category={post.category} tags={post.tags || []} />
       <AuthorTrailer location="post_author" />
