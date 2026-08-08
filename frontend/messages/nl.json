@@ -21,18 +21,18 @@
     "visualizations": "Werk",
     "research": "Academisch",
     "contact": "Contact",
-    "letsTalk": "Even praten",
+    "letsTalk": "Contact",
     "menu": "Menu"
   },
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
     "title": "Data-engineering",
-    "titleHighlight": "leiderschap",
+    "titleHighlight": "voor onderzoek",
     "titleEnd": "— bewezen op complexe ruimtelijke problemen",
-    "description": "Ik leid datateams en bouw de systemen die ze draaien: big-data-pipelines, forecasting- en nowcastingmodellen, netwerkanalyse en ruimtelijke dataproducten. De onderzoeksspecialisatie is stedelijke dynamiek — gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden.",
+    "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. De onderzoeksstoel is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De pipelines achter mijn papers zijn publieke repositories.",
     "aboutMe": "Over mij",
-    "workWithMe": "Even praten",
+    "workWithMe": "Neem contact op",
     "expertise": "Expertise:"
   },
   "About": {
@@ -141,7 +141,8 @@
         "institution": "Universiteit van Amsterdam",
         "description": "Focus op machine learning, NLP en computationele methoden voor data-analyse."
       }
-    ]
+    ],
+    "downloadCv": "Download het cv (pdf)"
   },
   "AboutPage": {
     "projectsBadge": "Uitgelichte Projecten",
@@ -169,11 +170,11 @@
     "previewSubtitle": "Diepgaande analyses van geospatiale analyse, vastgoedtrends en technische innovaties.",
     "viewAll": "Bekijk Alles",
     "listKicker": "Academisch: papers, methoden, publicaties",
-    "listTitlePrefix": "Peer-reviewed",
-    "listTitleItalic": "papers",
-    "listTitleAmp": "& working",
-    "listTitleHighlight": "drafts",
-    "listSubtitle": "Peer-reviewed papers, working papers en methodebeschrijvingen over stedelijke dynamiek, netwerkanalyse en geospatiale methoden.",
+    "listTitlePrefix": "Papers",
+    "listTitleItalic": "en preprints",
+    "listTitleAmp": "& lopende",
+    "listTitleHighlight": "stukken",
+    "listSubtitle": "Working papers, preprints en methodebeschrijvingen over stedelijke dynamiek, netwerkanalyse en geospatiale methoden.",
     "previewTitlePrefix": "Geselecteerde",
     "previewTitleItalic": "papers",
     "previewSubtitleShort": "Recent werk over stedelijke dynamiek, geospatiale methoden en grootschalige Europese ruimtelijke-data-engineering.",
@@ -186,7 +187,7 @@
     "youMightAlsoLike": "Misschien vind je dit ook leuk",
     "readArticle": "Lees artikel",
     "endCtaKicker": "§ Verder",
-    "endCtaHeading": "Werk je aan iets ruimtelijks? Laten we praten.",
+    "endCtaHeading": "Lees je mee, of denk je aan een samenwerking? Neem contact op.",
     "endCtaButton": "Neem contact op",
     "indexDiscuss": "Neem contact op"
   },
@@ -194,27 +195,27 @@
     "aboutBadge": "Over Mij",
     "name": "Ian Ronk",
     "roleTitle": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
-    "bio": "Ik leid datateams en bouw de systemen die ze draaien — big-data-pipelines, forecasting, netwerkanalyse en ruimtelijke dataproducten — met een onderzoeksspecialisatie in stedelijke dynamiek. De sectoren variëren; de vraag zelden: waar, hoeveel, en wat volgt er?",
+    "bio": "Ik bouw en leid productie-datasystemen — pipelines, forecasting, netwerkanalyse en ruimtelijke dataproducten — met een onderzoeksspecialisatie in stedelijke dynamiek. De pipelines achter mijn papers zijn publieke repositories; de papers en casestudy's staan op deze site.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
     "formTitle": "Neem Contact Op",
-    "formSubtitle": "Heeft u een project in gedachten? Laten we bespreken hoe ik kan helpen met uw geospatiale behoeften.",
+    "formSubtitle": "Vragen over het onderzoek, de pipelines, een rol of een samenwerking — mijn inbox staat open.",
     "nameLabel": "Naam",
     "namePlaceholder": "Uw naam",
     "emailLabel": "E-mail",
     "emailPlaceholder": "uw@email.com",
     "phoneLabel": "Telefoon (Optioneel)",
-    "phonePlaceholder": "+31 (0) 6 12345678",
+    "phonePlaceholder": "+31 6 12345678",
     "subjectLabel": "Onderwerp",
     "subjectPlaceholder": "Waar gaat het over?",
     "messageLabel": "Bericht",
-    "messagePlaceholder": "Vertel me over uw project...",
+    "messagePlaceholder": "Waar wil je het over hebben?",
     "captchaLabel": "Verifieer dat u mens bent",
     "captchaHint": "Voltooi de captcha om uw bericht te verzenden",
     "sendButton": "Verstuur Bericht",
     "sending": "Verzenden...",
-    "privacy": "Wij beschermen uw privacy. Uw bericht is versleuteld en wordt alleen gebruikt om op uw vraag te reageren.",
+    "privacy": "Je bericht wordt versleuteld verstuurd en alleen gebruikt om je te antwoorden.",
     "europeanMarkets": "Europese Markten",
     "modelAccuracy": "Model Nauwkeurigheid",
     "successMessage": "Bericht succesvol verzonden! Ik neem spoedig contact met u op.",
@@ -227,9 +228,9 @@
     "letsTalkPrefix": "Even",
     "letsTalkItalic": "praten",
     "formHeadRef": "REF",
-    "bandLine1": "Laten we samen",
-    "bandLine2Italic": "iets",
-    "bandLine3": "bouwen.",
+    "bandLine1": "Vragen,",
+    "bandLine2Italic": "ideeën, rollen?",
+    "bandLine3": "Neem contact op.",
     "linkLinkedIn": "LinkedIn",
     "linkGitHub": "GitHub",
     "linkBookCall": "Plan een gesprek"
@@ -244,7 +245,7 @@
         "viz": "abm",
         "sector": "MSc Scriptie · Bocconi",
         "title": "Agent-gebaseerd gentrificatiemodel",
-        "outcome": "Tienjarige ABM-simulatie van buurtverloop in Amsterdam, gekalibreerd op Kadaster- en CBS-microdata. Betaalbaarheids- en aantrekkelijkheidsregels; agentmobiliteit als emergent gedrag. Het sterkste bewijs van de stedelijke-dynamiek-identiteit.",
+        "outcome": "Een agent-based model van buurtverandering, gedreven door aantrekkelijkheid en betaalbaarheid, toegepast op Amsterdam, Utrecht en Milaan op open ruimtelijke data. Het beste bewijs van de stedelijke-dynamiek-identiteit.",
         "stack": [
           "Python",
           "Mesa",
@@ -279,6 +280,19 @@
           "Python"
         ],
         "link": "/research"
+      },
+      {
+        "viz": "hedonic",
+        "sector": "Open source",
+        "title": "Onderzoekspipelines, openbaar",
+        "outcome": "De data engineering achter de papers, publiek: Airflow 3-pipelines met eigen operators (een DuckDB-SQL-ingestie-operator, een SHA-256-snapshot-guard), tests en CI — beschreven als casestudyreeks op deze site.",
+        "stack": [
+          "Airflow",
+          "DuckDB",
+          "Docker",
+          "CI"
+        ],
+        "link": "https://github.com/Werdert45"
       }
     ],
     "viewCase": "Lees meer",
@@ -291,7 +305,7 @@
     "privacyPolicy": "Privacybeleid",
     "termsOfService": "Servicevoorwaarden",
     "cookiePolicy": "Cookiebeleid",
-    "work": "Samenwerken"
+    "work": "Contact"
   },
   "Thoughts": {
     "loadingFallback": "Berichten worden geladen: kom straks terug",
@@ -321,7 +335,8 @@
     "endCtaButton": "Meer schrijfsels",
     "endCtaSecondary": "Over mij",
     "endCtaContact": "Waar / hoeveel / wat nu? Laten we praten",
-    "relatedKicker": "Gerelateerd werk"
+    "relatedKicker": "Gerelateerd werk",
+    "empty": "De eerste stukken verschijnen in augustus 2026 — casestudy's over de data engineering achter het onderzoek."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
@@ -371,7 +386,7 @@
         "context": "Institutionele-kwaliteit scrape · gebruikt door statistiekbureaus"
       }
     ],
-    "ctaPrimary": "Bekijk het volledige cv",
+    "ctaPrimary": "Download het cv (pdf)",
     "ctaSecondary": "Neem contact op"
   },
   "Consent": {
@@ -402,7 +417,7 @@
   "Newsletter": {
     "compactHeading": "Blijf op de hoogte",
     "compactDescription": "Af en toe een notitie over geospatial, ML en AI.",
-    "inlineHeading": "Krijg de volgende in je inbox",
+    "inlineHeading": "Ontvang het volgende stuk per e-mail",
     "inlineDescription": "Abonneer, geen spam, je kunt je altijd uitschrijven.",
     "homeThoughtsHeading": "Nog niet klaar om te praten? Ontvang het volgende stuk.",
     "homeThoughtsDescription": "Notities uit het veld — af en toe over stadsdynamiek, geospatial methoden en wat er misgaat in productie.",
@@ -425,22 +440,43 @@
         "name": "Stedelijke dynamiek & onderzoek",
         "anchor": true,
         "blurb": "Gentrificatiemodellering, toegankelijkheid en connectiviteit, ruimtelijke analyse op perceel- en postcoderesolutie. Dit is wat ik doe — waar de papers en publicaties zich concentreren.",
-        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "netwerkwetenschap"]
+        "stack": [
+          "PostGIS",
+          "GeoPandas",
+          "H3",
+          "ABM",
+          "netwerkwetenschap"
+        ]
       },
       {
         "name": "Ruimtelijke dataproducten",
         "blurb": "Geproductiseerde scores en feeds — connectiviteits- en loopbaarheidsindices, waarderingsinputs — end-to-end eigenaarschap van methode tot live API.",
-        "stack": ["APIs", "Python", "React", "product ownership"]
+        "stack": [
+          "APIs",
+          "Python",
+          "React",
+          "product ownership"
+        ]
       },
       {
         "name": "Forecasting & netwerkanalyse",
         "blurb": "Een maandelijkse EU-huizenprijsindex voor 13 landen, getest met Eurostat, nowcastingmodellen, en een saturatie-gevalideerde Connectivity Score.",
-        "stack": ["tijdreeksen", "nowcasting", "grafen", "XGBoost"]
+        "stack": [
+          "tijdreeksen",
+          "nowcasting",
+          "grafen",
+          "XGBoost"
+        ]
       },
       {
         "name": "Datapipelines, gebouwd en onderhouden",
         "blurb": "Big-data-scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 250k+ records — onderhouden, niet alleen gelanceerd.",
-        "stack": ["Airflow", "PostGIS", "big data", "13 servers"]
+        "stack": [
+          "Airflow",
+          "PostGIS",
+          "big data",
+          "13 servers"
+        ]
       }
     ]
   }

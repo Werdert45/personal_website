@@ -31,13 +31,13 @@ export function ContactBand() {
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
         </Link>
         <a
-          href="https://cal.com/ianronk/intro"
+          href="https://github.com/Werdert45"
           target="_blank"
           rel="noopener noreferrer"
           className="btn ghost"
-          onClick={() => trackEvent("cta_click", { cta: "book_call", location: "home_contact_band", source: "contact_band_secondary" })}
+          onClick={() => trackEvent("cta_click", { cta: "github", location: "home_contact_band", source: "contact_band_secondary" })}
         >
-          <span>{t("linkBookCall")}</span>
+          <span>{t("linkGitHub")}</span>
         </a>
       </div>
     </section>

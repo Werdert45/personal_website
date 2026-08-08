@@ -36,7 +36,7 @@ export function Footer() {
       <div style={{ marginBottom: 24, maxWidth: 480 }}>
         <NewsletterSubscribe variant="compact" source="footer" locale={locale} />
       </div>
-      <span>© Ian Ronk {CURRENT_YEAR} — {t("copyright", { year: CURRENT_YEAR })}</span>
+      <span>© {t("copyright", { year: CURRENT_YEAR })}</span>
       <div style={{ display: "flex", gap: 24, flexWrap: "wrap" }}>
         <Link href={`/${locale}/privacy-policy`}>{t("privacyPolicy")}</Link>
         <Link href={`/${locale}/terms-of-service`}>{t("termsOfService")}</Link>
@@ -49,8 +49,8 @@ export function Footer() {
         >
           {tConsent("cookiePreferences")}
         </button>
-        <a href="https://github.com/Werdert45" target="_blank" rel="noopener noreferrer">GH</a>
-        <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/" target="_blank" rel="noopener noreferrer">LI</a>
+        <a href="https://github.com/Werdert45" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/ian-ronk-7b054a120/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <ObfuscatedEmail>@</ObfuscatedEmail>
       </div>
       <span>AMS · 52.37°N / 4.90°E</span>

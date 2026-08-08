@@ -22,7 +22,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const res = await fetch(`${djangoUrl}/api/research/`, { next: { revalidate: 3600 } })
     if (res.ok) {
       const articles = await res.json()
-      researchEntries = (articles || []).flatMap((article: any) =>
+      const articleList = Array.isArray(articles) ? articles : articles.results || []
+      researchEntries = articleList.flatMap((article: any) =>
         locales.map((locale) => ({
           url: `${siteUrl}/${locale}/research/${article.slug}`,
           lastModified: article.updated_at ? new Date(article.updated_at) : new Date(),

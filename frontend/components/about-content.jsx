@@ -35,6 +35,15 @@ export function AboutContent() {
             <p className="lede">
               {t("lede2")}
             </p>
+            <a
+              href="/ian-ronk-cv.pdf"
+              download="ian-ronk-cv.pdf"
+              className="btn ghost"
+              style={{ marginTop: 20, display: "inline-flex" }}
+            >
+              <span>{t("downloadCv")}</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" /></svg>
+            </a>
           </div>
           <div className="portrait">
             <Image src="/profile.jpg" alt="Ian Ronk" width={600} height={800} priority sizes="(max-width: 768px) 100vw, 600px" />

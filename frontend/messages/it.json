@@ -21,18 +21,18 @@
     "visualizations": "Lavori",
     "research": "Accademia",
     "contact": "Contatto",
-    "letsTalk": "Parliamone",
+    "letsTalk": "Contatti",
     "menu": "Menu"
   },
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
     "title": "Ingegneria dei dati",
-    "titleHighlight": "leadership",
+    "titleHighlight": "per la ricerca",
     "titleEnd": "— collaudata su problemi spaziali complessi",
-    "description": "Guido team dati e costruisco i sistemi che li fanno funzionare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. La specializzazione di ricerca è la dinamica urbana — gentrificazione, accessibilità, mercati abitativi — perché le città sono dove i problemi di dati diventano complessi.",
+    "description": "Costruisco e guido sistemi dati di produzione; la mia specialità è il data engineering dietro la ricerca — le pipeline Airflow, DuckDB e PostGIS che trasformano dati spaziali aperti in paper. La sede di ricerca è la dinamica urbana: gentrificazione, accessibilità, mercati abitativi — perché le città sono dove i problemi di dati diventano complessi. Le pipeline dietro i miei paper sono repository pubblici.",
     "aboutMe": "Chi sono",
-    "workWithMe": "Parliamone",
+    "workWithMe": "Scrivimi",
     "expertise": "Competenze:"
   },
   "About": {
@@ -83,7 +83,7 @@
     "expertise": [
       {
         "title": "Big Data & Pipeline",
-        "description": "Infrastruttura di scraping ed ETL che continua a funzionare: tre anni di raccolta settimanale su 8 fonti protette, 250k+ record, con Airflow e PostGIS sotto il cofano."
+        "description": "Infrastruttura di scraping ed ETL che continua a funzionare: tre anni di raccolta settimanale su 8 fonti con autenticazione, 250k+ record, con Airflow e PostGIS sotto il cofano."
       },
       {
         "title": "Scienza delle Reti",
@@ -141,7 +141,8 @@
         "institution": "Università di Amsterdam",
         "description": "Focus su machine learning, NLP e metodi computazionali per l'analisi dei dati."
       }
-    ]
+    ],
+    "downloadCv": "Scarica il CV (PDF)"
   },
   "AboutPage": {
     "projectsBadge": "Progetti in Evidenza",
@@ -169,11 +170,11 @@
     "previewSubtitle": "Approfondimenti su analisi geospaziale, tendenze immobiliari e innovazioni tecniche.",
     "viewAll": "Vedi Tutto",
     "listKicker": "Accademia: paper, metodi, pubblicazioni",
-    "listTitlePrefix": "Articoli",
-    "listTitleItalic": "peer-reviewed",
+    "listTitlePrefix": "Paper",
+    "listTitleItalic": "di ricerca",
     "listTitleAmp": "& bozze in",
     "listTitleHighlight": "corso",
-    "listSubtitle": "Paper peer-reviewed, working paper e descrizioni metodologiche su dinamica urbana, analisi di rete e metodi geospaziali.",
+    "listSubtitle": "Working paper, preprint e descrizioni metodologiche su dinamica urbana, analisi di rete e metodi geospaziali.",
     "previewTitlePrefix": "Articoli",
     "previewTitleItalic": "selezionati",
     "previewSubtitleShort": "Lavori recenti su dinamiche urbane, metodi geospaziali e ingegneria dei dati spaziali europei su larga scala.",
@@ -186,7 +187,7 @@
     "youMightAlsoLike": "Potrebbe interessarti anche",
     "readArticle": "Leggi l'articolo",
     "endCtaKicker": "§ Avanti",
-    "endCtaHeading": "Stai lavorando su qualcosa di spaziale? Parliamone.",
+    "endCtaHeading": "Stai leggendo, o pensi a una collaborazione? Scrivimi.",
     "endCtaButton": "Scrivimi",
     "indexDiscuss": "Scrivimi"
   },
@@ -194,27 +195,27 @@
     "aboutBadge": "Su di Me",
     "name": "Ian Ronk",
     "roleTitle": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
-    "bio": "Guido team dati e costruisco i sistemi che li fanno funzionare — pipeline di big data, forecasting, analisi di rete e prodotti di dati spaziali — con una specializzazione di ricerca nella dinamica urbana. I settori variano; la domanda raramente cambia: dove, quanto, e cosa succede dopo?",
+    "bio": "Costruisco e guido sistemi dati di produzione — pipeline, forecasting, analisi di rete e prodotti di dati spaziali — con una specializzazione di ricerca nella dinamica urbana. Le pipeline dietro i miei paper sono repository pubblici; i paper e i casi di studio vivono su questo sito.",
     "location": "Amsterdam, Paesi Bassi",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ anni in ingegneria dei dati & analytics spaziale",
     "formTitle": "Contattami",
-    "formSubtitle": "Hai un progetto in mente? Parliamo di come posso aiutarti con le tue esigenze geospaziali.",
+    "formSubtitle": "Domande sulla ricerca, sulle pipeline, su un ruolo o una collaborazione — la mia casella è aperta.",
     "nameLabel": "Nome",
     "namePlaceholder": "Il tuo nome",
     "emailLabel": "Email",
     "emailPlaceholder": "tua@email.com",
     "phoneLabel": "Telefono (Opzionale)",
-    "phonePlaceholder": "+39 000 000 0000",
+    "phonePlaceholder": "+39 320 1234567",
     "subjectLabel": "Oggetto",
     "subjectPlaceholder": "Di cosa si tratta?",
     "messageLabel": "Messaggio",
-    "messagePlaceholder": "Raccontami del tuo progetto...",
+    "messagePlaceholder": "Di cosa vorresti parlare?",
     "captchaLabel": "Verifica di essere umano",
     "captchaHint": "Completa il captcha per inviare il messaggio",
     "sendButton": "Invia Messaggio",
     "sending": "Invio...",
-    "privacy": "Proteggiamo la tua privacy. Il tuo messaggio è crittografato e verrà utilizzato solo per rispondere alla tua richiesta.",
+    "privacy": "Il tuo messaggio è crittografato e usato solo per risponderti.",
     "europeanMarkets": "Mercati Europei",
     "modelAccuracy": "Accuratezza Modello",
     "successMessage": "Messaggio inviato con successo! Ti risponderò presto.",
@@ -227,9 +228,9 @@
     "letsTalkPrefix": "Parliamo",
     "letsTalkItalic": "insieme",
     "formHeadRef": "REF",
-    "bandLine1": "Costruiamo",
-    "bandLine2Italic": "qualcosa,",
-    "bandLine3": "insieme.",
+    "bandLine1": "Domande,",
+    "bandLine2Italic": "idee, ruoli?",
+    "bandLine3": "Scrivimi.",
     "linkLinkedIn": "LinkedIn",
     "linkGitHub": "GitHub",
     "linkBookCall": "Prenota una chiamata"
@@ -244,7 +245,7 @@
         "viz": "abm",
         "sector": "Tesi Magistrale · Bocconi",
         "title": "Modello agent-based di gentrificazione",
-        "outcome": "Simulazione ABM decennale del ricambio di quartiere ad Amsterdam, calibrata su microdati Kadaster e CBS. Regole decisione su accessibilità economica e attrattività; mobilità degli agenti emergente dalla pressione dei prezzi. La prova più evidente dell'identità nelle dinamiche urbane.",
+        "outcome": "Un modello ad agenti del cambiamento di quartiere, guidato da attrattività e accessibilità economica, applicato ad Amsterdam, Utrecht e Milano su dati spaziali aperti. La prova migliore dell'identità urban-dynamics.",
         "stack": [
           "Python",
           "Mesa",
@@ -279,6 +280,19 @@
           "Python"
         ],
         "link": "/research"
+      },
+      {
+        "viz": "hedonic",
+        "sector": "Open source",
+        "title": "Pipeline di ricerca, aperte",
+        "outcome": "Il data engineering dietro i paper, pubblico: pipeline Airflow 3 con operatori custom (un operatore DuckDB per l'ingestione SQL, uno snapshot-guard SHA-256), test e CI — raccontato in una serie di casi di studio su questo sito.",
+        "stack": [
+          "Airflow",
+          "DuckDB",
+          "Docker",
+          "CI"
+        ],
+        "link": "https://github.com/Werdert45"
       }
     ],
     "viewCase": "Leggi di più",
@@ -291,7 +305,7 @@
     "privacyPolicy": "Informativa sulla Privacy",
     "termsOfService": "Termini di Servizio",
     "cookiePolicy": "Politica sui Cookie",
-    "work": "Lavora con me"
+    "work": "Contatti"
   },
   "Thoughts": {
     "loadingFallback": "Articoli in caricamento: torna fra poco",
@@ -321,7 +335,8 @@
     "endCtaButton": "Altri scritti",
     "endCtaSecondary": "Chi sono",
     "endCtaContact": "Hai domande su dove / quanto / cosa viene dopo? Parliamone",
-    "relatedKicker": "Lavori correlati"
+    "relatedKicker": "Lavori correlati",
+    "empty": "I primi articoli arrivano ad agosto 2026 — casi di studio sul data engineering dietro la ricerca."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
@@ -371,7 +386,7 @@
         "context": "Scraping di livello istituzionale · usato da uffici statistici"
       }
     ],
-    "ctaPrimary": "Guarda il CV completo",
+    "ctaPrimary": "Scarica il CV (PDF)",
     "ctaSecondary": "Scrivimi"
   },
   "Consent": {
@@ -402,7 +417,7 @@
   "Newsletter": {
     "compactHeading": "Resta aggiornato",
     "compactDescription": "Note occasionali su geospatial, ML e AI.",
-    "inlineHeading": "Ricevi il prossimo nella tua casella",
+    "inlineHeading": "Ricevi il prossimo articolo via email",
     "inlineDescription": "Iscriviti, niente spam, puoi disiscriverti in qualsiasi momento.",
     "homeThoughtsHeading": "Non sei ancora pronto a parlare? Ricevi il prossimo pezzo.",
     "homeThoughtsDescription": "Note dal campo — contributi occasionali su dinamiche urbane, metodi geospaziali e cosa si rompe in produzione.",
@@ -425,22 +440,43 @@
         "name": "Dinamica urbana & ricerca",
         "anchor": true,
         "blurb": "Modellazione della gentrificazione, accessibilità e connettività, analisi spaziale a livello di parcella e codice postale. Questo è ciò che faccio — dove si concentrano i paper e le pubblicazioni.",
-        "stack": ["PostGIS", "GeoPandas", "H3", "ABM", "scienza delle reti"]
+        "stack": [
+          "PostGIS",
+          "GeoPandas",
+          "H3",
+          "ABM",
+          "scienza delle reti"
+        ]
       },
       {
         "name": "Prodotti di dati spaziali",
         "blurb": "Punteggi e feed prodottizzati — indici di connettività e percorribilità pedonale, input di valutazione — gestiti end-to-end dal metodo all'API rilasciata.",
-        "stack": ["APIs", "Python", "React", "product ownership"]
+        "stack": [
+          "APIs",
+          "Python",
+          "React",
+          "product ownership"
+        ]
       },
       {
         "name": "Forecasting & analisi di rete",
         "blurb": "Un indice mensile dei prezzi delle case UE su 13 paesi testato con Eurostat, modelli di nowcasting, e un Connectivity Score validato per saturazione.",
-        "stack": ["serie storiche", "nowcasting", "grafi", "XGBoost"]
+        "stack": [
+          "serie storiche",
+          "nowcasting",
+          "grafi",
+          "XGBoost"
+        ]
       },
       {
         "name": "Pipeline dati, costruite e mantenute",
-        "blurb": "Infrastruttura di scraping ed ETL di big data che continua a funzionare: tre anni di raccolta settimanale su 8 fonti protette, 250k+ record — mantenuta, non solo lanciata.",
-        "stack": ["Airflow", "PostGIS", "big data", "13 server"]
+        "blurb": "Infrastruttura di scraping ed ETL di big data che continua a funzionare: tre anni di raccolta settimanale su 8 fonti con autenticazione, 250k+ record — mantenuta, non solo lanciata.",
+        "stack": [
+          "Airflow",
+          "PostGIS",
+          "big data",
+          "13 server"
+        ]
       }
     ]
   }
