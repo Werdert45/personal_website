@@ -142,8 +142,9 @@ export function ProjectsGallery() {
         {items.map((item, i) => {
           const num = String(i + 1).padStart(2, "0");
           const isResearchLink = item.link && item.link.startsWith("/research/");
+          const isExternalLink = item.link && /^https?:\/\//.test(item.link);
           const linkLabel = isResearchLink ? t("viewPaper") : t("viewCase");
-          const localizedHref = item.link ? `/${locale}${item.link}` : null;
+          const localizedHref = item.link ? (isExternalLink ? item.link : `/${locale}${item.link}`) : null;
 
           const cardInner = (
             <>
@@ -187,6 +188,7 @@ export function ProjectsGallery() {
               key={i}
               href={localizedHref}
               className="project-card project-card-linked"
+              {...(isExternalLink ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               onClick={() => trackEvent("cta_click", { cta: "project_open", location: "home_projects", source: "home_projects_card", project: item.title })}
             >
               {cardInner}

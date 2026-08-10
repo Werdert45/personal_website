@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
   return {
     title: "Contact",
     description:
-      "Get in touch with Ian Ronk for data science, GIS development, real estate analytics, and machine learning projects across European markets.",
+      "Contact Ian Ronk — data lead and urban-dynamics researcher based in Amsterdam. Questions about the research, the pipelines, a role or a collaboration.",
     alternates: {
       canonical: url,
       languages: {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: "Contact | Ian Ronk",
       description:
-        "Get in touch for data science, GIS development, and real estate analytics projects.",
+        "Contact Ian Ronk — data lead and urban-dynamics researcher based in Amsterdam. Questions about the research, the pipelines, a role or a collaboration.",
       url,
       type: "website",
     },

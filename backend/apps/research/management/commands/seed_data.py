@@ -8,7 +8,7 @@ import json
 import tempfile
 
 from django.core.files.uploadedfile import SimpleUploadedFile
-from django.core.management.base import BaseCommand
+from django.core.management.base import BaseCommand, CommandError
 
 from apps.blog.models import BlogPost, BlogPostTranslation
 from apps.geodata.models import GeoDataset, GeoFeature, GeoUploadedDataset
@@ -189,8 +189,24 @@ class Command(BaseCommand):
             action="store_true",
             help="Delete all existing data before seeding",
         )
+        parser.add_argument(
+            "--demo",
+            action="store_true",
+            help=(
+                "Required acknowledgement that this command seeds DEMONSTRATION "
+                "content only (sample posts, fake research, demo projects)."
+            ),
+        )
 
     def handle(self, *args, **options):
+        if not options["demo"]:
+            raise CommandError(
+                "Refusing to run: seed_data creates DEMONSTRATION content only "
+                "(sample blog posts, a fabricated research article, and a demo "
+                "project). It must never run against a real/production site. "
+                "Nothing was written. If you really want demo content, re-run "
+                "with the explicit --demo flag: python manage.py seed_data --demo"
+            )
         if options["reset"]:
             self.stdout.write("Resetting existing data...")
             BlogPost.objects.all().delete()
@@ -249,11 +265,9 @@ class Command(BaseCommand):
         self.stdout.write("Creating Research article...")
 
         defaults = {
-            "title": "European Capital Property Markets: A Spatial Comparison",
+            "title": "[SAMPLE] European Capital Property Markets: A Spatial Comparison",
             "abstract": (
-                "A comprehensive spatial analysis comparing residential property markets "
-                "across 12 European capital cities, examining price dynamics, affordability "
-                "ratios, and market trajectories using GIS-based methods."
+                "Demonstration dataset for the geodata map pipeline — not real research."
             ),
             "content": """## Introduction
 
@@ -310,7 +324,7 @@ European capital property markets are diverging rather than converging, with pol
 - OpenStreetMap for spatial features
 - CBS Netherlands, INSEE France, ONS UK, INE Spain""",
             "category": "research",
-            "status": "published",
+            "status": "draft",
             "tags": ["real estate", "spatial analysis", "European markets", "GIS", "PostGIS"],
             "read_time": "15 min",
             "date": "January 2025",
@@ -332,7 +346,7 @@ European capital property markets are diverging rather than converging, with pol
         self.stdout.write("Creating Project...")
 
         defaults = {
-            "title": "European Property Market Dashboard",
+            "title": "[SAMPLE] European Property Market Dashboard",
             "description": (
                 "Interactive dashboard for comparing residential property markets "
                 "across European capitals using PostGIS and Mapbox."
@@ -343,9 +357,9 @@ European capital property markets are diverging rather than converging, with pol
                 "12 European capital cities."
             ),
             "category": "webapp",
-            "status": "published",
+            "status": "draft",
             "technologies": ["Python", "Django", "PostGIS", "Mapbox GL JS", "Next.js"],
-            "featured": True,
+            "featured": False,
             "map_config": {"center": [10, 50], "zoom": 4},
         }
 
@@ -361,11 +375,11 @@ European capital property markets are diverging rather than converging, with pol
         self.stdout.write("Creating Blog posts (all categories)...")
 
         defaults = {
-            "title": "Why PostGIS Beats a Plain Postgres Index for Spatial Queries",
+            "title": "[SAMPLE] Why PostGIS Beats a Plain Postgres Index for Spatial Queries",
             "excerpt": (
                 "If you are storing coordinates in Postgres and querying them with bounding boxes, "
                 "you are probably leaving a lot of performance on the table. Here is what switching "
-                "to PostGIS GiST indexes changed for me."
+                "to PostGIS GiST indexes can change, illustrated with a synthetic benchmark."
             ),
             "content": """## The problem
 
@@ -390,7 +404,9 @@ WHERE ST_Within(location, ST_MakeEnvelope(4.80, 52.30, 5.02, 52.45, 4326));
 
 The GiST index uses R-tree decomposition: it groups geometries into nested bounding boxes, so the planner can prune huge swaths of the table with a single comparison rather than scanning row-by-row.
 
-## Benchmarks on my dataset
+## What the crossover looks like
+
+Illustrative numbers from a synthetic benchmark (2M random points, single bbox query) — your crossover will differ; check with EXPLAIN ANALYZE.
 
 | Rows | B-tree (ms) | GiST (ms) | Speedup |
 |------|-------------|-----------|---------|
@@ -441,10 +457,10 @@ GeoDjango translates the `__within` lookup to `ST_Within` under the hood, using 
 
 ## Takeaway
 
-If you are working with any spatial data at scale — property listings, POIs, vehicle tracks, sensor readings — PostGIS GiST indexes are not a nice-to-have. The 70× speedup at 2M rows is the difference between a usable product and one that needs a caching layer bolted on to hide a broken query plan.
+If you are working with any spatial data at scale — property listings, POIs, vehicle tracks, sensor readings — PostGIS GiST indexes are not a nice-to-have. A speedup of this order at millions of rows is the difference between a usable product and one that needs a caching layer bolted on to hide a broken query plan.
 """,
             "category": "thought",
-            "status": "published",
+            "status": "draft",
             "tags": ["postgis", "django", "spatial", "performance", "database"],
             "read_time": "6 min",
             "date": "March 2026",
@@ -466,14 +482,14 @@ If you are working with any spatial data at scale — property listings, POIs, v
                 post=post,
                 language="nl",
                 defaults={
-                    "title": "Waarom PostGIS beter is dan een gewone Postgres-index voor ruimtelijke queries",
+                    "title": "[SAMPLE] Waarom PostGIS beter is dan een gewone Postgres-index voor ruimtelijke queries",
                     "slug": "postgis-gist-vs-btree-nl",
                     "excerpt": (
                         "Als je coördinaten opslaat in Postgres en queried met bounding boxes, "
-                        "laat je waarschijnlijk veel prestaties liggen. Hier is wat het overstappen "
-                        "naar PostGIS GiST-indexen voor mij veranderde."
+                        "laat je waarschijnlijk veel prestaties liggen. Dit is wat het overstappen "
+                        "naar PostGIS GiST-indexen kan veranderen, geïllustreerd met een "
+                        "synthetische benchmark."
                     ),
-                    "content": "*(Volledige Nederlandse vertaling beschikbaar)*",
                 },
             )
             self.stdout.write("  Created Dutch translation")
@@ -482,7 +498,7 @@ If you are working with any spatial data at scale — property listings, POIs, v
         tutorial, created = BlogPost.objects.get_or_create(
             slug="django-geojson-api-tutorial",
             defaults={
-                "title": "Building a GeoJSON API with Django and GeoDjango",
+                "title": "[SAMPLE] Building a GeoJSON API with Django and GeoDjango",
                 "excerpt": "Step-by-step guide to exposing PostGIS data as a GeoJSON endpoint using Django REST Framework and GeoDjango — ready to consume by Mapbox GL JS.",
                 "content": """## Prerequisites
 
@@ -555,7 +571,7 @@ curl https://yourapp.com/api/properties/geo/ | python -m json.tool
 The response is a valid `FeatureCollection` you can pass directly to `map.addSource()` in Mapbox GL JS.
 """,
                 "category": "explanation",
-                "status": "published",
+                "status": "draft",
                 "tags": ["django", "geojson", "mapbox", "geodjango", "tutorial"],
                 "read_time": "10 min",
                 "date": "February 2026",
@@ -570,7 +586,7 @@ The response is a valid `FeatureCollection` you can pass directly to `map.addSou
         note, created = BlogPost.objects.get_or_create(
             slug="quick-note-srid-4326-vs-3857",
             defaults={
-                "title": "Quick note: SRID 4326 vs 3857 — when it matters",
+                "title": "[SAMPLE] Quick note: SRID 4326 vs 3857 — when it matters",
                 "excerpt": "A two-minute explainer on which coordinate system to use and why mixing them silently gives you wrong distances.",
                 "content": """**SRID 4326** is WGS 84 — degrees of latitude/longitude. It's what GPS gives you and what GeoJSON expects.
 
@@ -596,7 +612,7 @@ Or use `ST_DWithin` with `use_spheroid=true` on geography columns — it works i
 **Rule of thumb**: store in 4326 (universal), transform to 3857 for distance/area calculations, transform back to 4326 for GeoJSON output.
 """,
                 "category": "note",
-                "status": "published",
+                "status": "draft",
                 "tags": ["postgis", "coordinate-systems", "gis"],
                 "read_time": "2 min",
                 "date": "April 2026",
@@ -607,47 +623,17 @@ Or use `ST_DWithin` with `use_spheroid=true` on geography columns — it works i
         )
         self.stdout.write(f"  {'Created' if created else 'Already exists'}: {note.title}")
 
-        # --- Announcement ---
-        announcement, created = BlogPost.objects.get_or_create(
-            slug="new-visualizations-section-live",
-            defaults={
-                "title": "New: Interactive Visualizations Section Now Live",
-                "excerpt": "The visualizations gallery is now live — explore interactive spatial analyses of European property markets built with PostGIS and Mapbox GL JS.",
-                "content": """I've just launched the visualizations section of this site. It's been a few months in the making and I'm happy to finally ship it.
-
-## What's there
-
-- **European Capital Property Prices** — a choropleth map comparing price/m² across 12 capitals
-- **Amsterdam Housing Heatmap** — transaction density across Amsterdam neighbourhoods
-- **Berlin Commercial Growth** — a time-series showing district-level commercial activity 2018–2024
-
-Each visualization is backed by a live PostGIS database and rendered with Mapbox GL JS. Data updates weekly from public cadastral sources.
-
-## What's coming
-
-- Paris rental vs. ownership split (choropleth)
-- Transit accessibility isochrones for Amsterdam
-- Price trajectory forecasts using spatial regression
-
-If there's a market or dataset you'd like to see, [get in touch](/contact).
-""",
-                "category": "update",
-                "status": "published",
-                "tags": ["announcement", "visualizations", "mapbox"],
-                "read_time": "2 min",
-                "date": "April 2026",
-                "author": "Ian Ronk",
-                "featured": True,
-                "published_at": "2026-04-16T07:00:00Z",
-            },
-        )
-        self.stdout.write(f"  {'Created' if created else 'Already exists'}: {announcement.title}")
-
         # --- Visualisation (migrated from Visualization model) ---
+        seeded_prices = [
+            feature["properties"]["avg_price_sqm"]
+            for feature in EUROPEAN_CAPITALS_GEOJSON["features"]
+        ]
+        avg_price_sqm = sum(seeded_prices) / len(seeded_prices)
+
         viz_post, created = BlogPost.objects.get_or_create(
             slug="european-capital-prices",
             defaults={
-                "title": "European Capital Property Price Comparison",
+                "title": "[SAMPLE] European Capital Property Price Comparison",
                 "excerpt": (
                     "Interactive map comparing residential property prices per square metre "
                     "across 12 major European capital cities with market status indicators."
@@ -658,7 +644,7 @@ If there's a market or dataset you'd like to see, [get in touch](/contact).
                     "to ~12.4k in London."
                 ),
                 "category": "visualisation",
-                "status": "published",
+                "status": "draft",
                 "tags": ["mapbox", "postgis", "choropleth"],
                 "meta": {
                     "map_config": {"center": [10, 50], "zoom": 4},
@@ -668,7 +654,7 @@ If there's a market or dataset you'd like to see, [get in touch](/contact).
                     "value_field": "avg_price_sqm",
                     "metrics": [
                         {"label": "Cities", "value": "12"},
-                        {"label": "Avg Price/m2", "value": "5,854"},
+                        {"label": "Avg Price/m2", "value": f"{avg_price_sqm:,.0f}"},
                         {"label": "Top Market", "value": "London"},
                     ],
                 },

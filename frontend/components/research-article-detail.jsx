@@ -15,72 +15,85 @@ import { trackEvent } from "@/lib/analytics";
 import { getItemField } from "@/lib/i18n-item";
 import { AuthorTrailer } from "@/components/author-trailer";
 
+// Static fallbacks describe the REAL manuscripts faithfully. Any number or
+// claim here must match the current paper text — when in doubt, say less and
+// point at the paper. (These render only when the CMS has no row for the slug.)
 const STATIC_PAPERS = {
   "metro-capitalisation-timing": {
     slug: "metro-capitalisation-timing",
-    title: "When metro openings capitalise into residential rents: a seven-city European study",
-    abstract: "Staggered difference-in-differences across seven European cities (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma; n = 42,004). The largest price response — a step of roughly +12% — appears at maturity, two or more years after opening. Bootstrap inference on few-cluster data (G = 7 cities). Maturity step positive under every leave-one-city-out check.",
+    title: "When does metro infrastructure capitalize into property prices?",
+    abstract: "Phase-decomposed difference-in-differences evidence from seven European cities. Seventeen staggered treated cohorts (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma; n = 42,004) pooled into one panel, with the response decomposed into announcement, construction, opening and maturity phases. The pooled cross-city average locates the largest response at maturity — but that step is a pooled average, not a within-city fact: city-by-year fixed effects collapse it to an insignificant −0.5 log points. The defensible magnitudes are per-city, foremost Milano's within-ring +167 EUR/m² (≈ +5.6%, wild-bootstrap p = 0.004).",
     category: "WORKING-PAPER",
-    date: "2026-06",
+    date: "2026-07",
     author: "Ian Ronk",
-    tags: ["difference-in-differences", "rent", "metro", "urban economics", "bootstrap"],
-    status: "Under review",
+    tags: ["difference-in-differences", "property prices", "metro", "urban economics", "wild cluster bootstrap"],
+    publication_status: "Working paper — draft available on request",
     doi: null,
     arxiv_id: null,
-    cite_as: 'Ronk, I. (2026). "When metro openings capitalise into residential rents: a seven-city European study." Working paper.',
-    content: `## Design
+    cite_as: 'Ronk, I. (2026). "When Does Metro Infrastructure Capitalize into Property Prices? Phase-Decomposed Difference-in-Differences Evidence from Seven European Cities." Working paper.',
+    content: `## Question
 
-Staggered difference-in-differences across seven European cities (Amsterdam, Copenhagen, Helsinki, Milano, Paris, Rennes, Roma), treating each metro extension as a separate treatment event. The panel covers transaction-level rent data from 2008 to 2024, yielding 42,004 observations after cleaning.
+Not *whether* new metro lines capitalize into residential property prices, but *when* along the project timeline — announcement, construction, opening, or maturity. Single-snapshot hedonic studies cannot separate those phases; a phase-decomposed staggered design can.
 
-**Treatment timing.** Each city contributes its own treatment calendar: announcement, ground-break, opening, and maturity (defined as 24+ months post-opening). Event-study coefficients trace the price path relative to four quarters before announcement.
+## Design
 
-**Bootstrap inference.** With G = 7 cities, conventional cluster-robust standard errors are unreliable. We apply the wild cluster bootstrap (Webb weights, B = 999) and report p-values from the percentile-t distribution.
+Seventeen staggered treated cohorts across seven European cities in five countries (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma) pool into a single phase-decomposed panel of 42,004 observations. Outcomes are property prices from administrative and register sources (OMI appraisal series for the Italian cities, WOZ/Kadaster for Amsterdam, DVF for France, national registers elsewhere). With only seven city clusters, inference uses the wild cluster bootstrap throughout.
 
-## Main results
+## What the paper actually finds
 
-The largest price step appears at maturity, not at announcement or opening. The point estimate is a +12% premium (95% CI: +7% to +18%) relative to never-treated control rings at 1-3 km.
+The pooled cross-city average locates the largest response at maturity: a construction-to-maturity step of +9 to +12%, two or more years after opening, stable across the control ladder and positive under every leave-one-city-out check. The paper then spends much of its length establishing what that step is *not*: under city-by-year fixed effects it collapses to an insignificant −0.5 log points, and its few-cluster significance depends on the clustering partition and control set. The defensible magnitudes are per-city — foremost Milano's within-ring +167 EUR/m² (≈ +5.6%, wild-bootstrap p = 0.004), the first ex-post difference-in-differences evidence on Milano's M5/M4 openings. The delayed-to-maturity pattern is read as a cross-city hypothesis worth testing on longer panels, not a settled within-city effect.
 
-**Robustness.** The maturity step is positive under every leave-one-city-out check and survives re-estimation with alternative bandwidth radii (400 m, 600 m, 1,000 m).
+## Status and what comes next
 
-## Data
-
-Rent transactions: national registers (Kadaster NL, DVF FR, OMI IT) supplemented by scraped listing platforms. Station polygons: OpenStreetMap. Treatment calendars hand-compiled from municipal transport authority press releases.`,
+Working paper. A Milan case study and a data-engineering write-up of the seven-city pipeline are planned as companion posts here, and the future-work post doubles as an open invitation: extending the phase-decomposed design to more cities is co-author-shaped work.`,
   },
   "voronoi-postcode-estimation": {
     slug: "voronoi-postcode-estimation",
-    title: "Postcode boundary estimation from crowdsourced address data: a Voronoi approach",
-    abstract: "OSM address points, kNN outlier removal, point Voronoi, and polygon dissolution, calibrated against authoritative NL and DK postcode layers (5,160 polygons combined). IoU saturates near 0.7 at roughly 300 seeds per postcode. Applied to Italy (4,209 CAP polygons) where no free authoritative layer exists. GeoJSON output ships with per-polygon seed count.",
+    title: "Calibrating free postcode boundaries from OpenStreetMap",
+    abstract: "Postcode polygons are free and authoritative in some European countries and sold or absent in others. Voronoi tessellation of OSM address points is the natural estimator — but how many address points are needed, and does the answer transfer across countries? One pipeline calibrated against national references in NL and DK (5,160 polygons), a seed-density-to-IoU curve whose asymptote is robust across functional forms (mean matched IoU ≈ 0.76–0.82), out-of-sample transfer tested on held-out Belgium (mean matched IoU 0.618 at 81% coverage), and an application to Italy's 4,209 CAP polygons, where no free authoritative intra-city layer exists.",
     category: "PREPRINT",
-    date: "2026-05",
+    date: "2026-07",
     author: "Ian Ronk",
-    tags: ["Voronoi", "OpenStreetMap", "postcode boundaries", "Italy", "geospatial"],
-    status: "Preprint in preparation",
+    tags: ["Voronoi", "OpenStreetMap", "postcode boundaries", "calibration", "geospatial"],
+    publication_status: "Preprint in preparation — arXiv August 2026",
     doi: null,
     arxiv_id: null,
-    cite_as: 'Ronk, I. (2026). "Postcode boundary estimation from crowdsourced address data: a Voronoi approach." Preprint.',
+    cite_as: 'Ronk, I. (2026). "Calibrating Free Postcode Boundaries from OpenStreetMap." Preprint.',
     content: `## Problem
 
-Postcode boundaries are authoritative in some EU countries (NL, DK, DE) and absent or commercially restricted in others (IT). Without polygons, spatial aggregation over postcodes requires a surrogate.
+Several European countries publish authoritative postcode polygons free of charge (the Netherlands, Denmark, Belgium, Switzerland, Finland, Norway); elsewhere they are sold or simply absent. Italy — the application case — has no free authoritative intra-city postcode layer at all.
 
-## Pipeline
+## Approach
 
-Four candidate methods were evaluated; the fourth — OSM address Voronoi with kNN outlier removal — achieved consistently acceptable IoU.
+One pipeline: OSM address points as seeds, a kNN-based outlier pre-filter, Voronoi tessellation, dissolution by postcode. The contribution is not the tessellation — it is the *calibration*: fitting a seed-density-to-IoU curve against national reference layers in two countries (NL CBS PC4 and DK DAGI postnumre, 5,160 polygons combined) so that the accuracy of an estimated polygon can be predicted from its seed count before anyone uses it.
 
-**Step 1: address harvest.** OSM Overpass API, tag \`addr:postcode\`, deduplicated on (lat, lon) pairs. Italy yields roughly 18 million address points.
+## What the calibration shows
 
-**Step 2: kNN outlier removal.** For each point, compute the five nearest neighbours of a different postcode. Points closer to a foreign-postcode centroid than to their own are labelled outliers and dropped (approximately 4-6% of input).
-
-**Step 3: Voronoi tessellation.** Constrained to the country bounding polygon. One Voronoi cell per seed point.
-
-**Step 4: polygon dissolution.** Merge by \`addr:postcode\`. Islands smaller than 0.01 km² consolidated with the geographically nearest polygon of the same code.
-
-## Calibration
-
-Evaluated on NL (3,898 postcodes, 4-digit PC4) and DK (1,262 postcodes). IoU saturates near 0.70 at roughly 300 seeds per postcode; median IoU is 0.68 for NL and 0.71 for DK.
+The curve's asymptote is robust across functional forms — mean matched IoU saturates around 0.76–0.82 — while the fitted 0.7-IoU seed threshold is form-sensitive, and per-postcode scatter is wide: the curve calibrates the population mean, not individual polygons. The shape transfers out of sample: held-out Belgium reaches mean matched IoU 0.618 at 81% coverage, near the curve, with roughly double the calibration error.
 
 ## Application
 
-Applied to 4,209 Italian CAP polygons. GeoJSON output includes per-polygon seed count and IoU estimate (where computable by intersection with ISTAT municipality boundaries).`,
+Applied to Italy, the pipeline produces 4,209 estimated CAP polygons with per-polygon seed counts, so downstream users can filter by predicted quality. Full method, uncertainty treatment and limitations are in the paper; the GeoJSON and the complete pipeline are released alongside it (repository and archive links land here with the arXiv submission, August 2026).`,
+  },
+  "gentrification-abm": {
+    slug: "gentrification-abm",
+    title: "Agent-based modelling of gentrification dynamics",
+    abstract: "MSc thesis (2025). An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data — including an honest account of where the chosen aggregation level limits what the model can claim.",
+    category: "THESIS",
+    date: "2025-08",
+    author: "Ian Ronk",
+    tags: ["agent-based modelling", "gentrification", "housing", "Amsterdam", "urban dynamics"],
+    publication_status: "MSc thesis (2025)",
+    doi: null,
+    arxiv_id: null,
+    cite_as: 'Ronk, I. (2025). "Agent-based modelling of gentrification dynamics." MSc thesis.',
+    content: `## In one paragraph
+
+The thesis builds an agent-based model of gentrification in which households respond to neighbourhood attractiveness and affordability, and applies it to three European cities — Amsterdam, Utrecht and Milan — on open spatial data. Alongside the simulation results, it documents the data pipeline that fed the model and treats the limits seriously: the spatial aggregation level materially constrains which conclusions the model can support, and the thesis says so rather than smoothing over it.
+
+## What's coming here
+
+From August 2026 this site carries a case-study series on the thesis — the model itself, the pipeline that ran it, a revisit of the hot/cold-spot analysis, and the streetview and simulation work — written now, about 2025 work, and labelled as such. A social-housing extension of the model is the subject of ongoing follow-up research.`,
   },
 };
 
@@ -304,28 +317,41 @@ export default function ResearchArticleDetail({ slug }) {
               </div>
             )}
 
-            {(article.status || article.doi !== undefined || article.arxiv_id !== undefined || article.cite_as) && (
+            {/* Reference block: renders ONLY honest publication metadata.
+                The CMS workflow status (draft/published/archived) must never
+                appear here — publication_status is the reader-facing field. */}
+            {(article.publication_status || article.doi || article.arxiv_id || article.repo_url || article.cite_as) && (
               <div className="mb-2 p-4 rounded-lg border border-border bg-muted/20 font-mono text-xs">
                 <p className="uppercase tracking-widest text-muted-foreground mb-3 text-[10px]">Reference</p>
                 <div className="space-y-2">
-                  {article.status && (
+                  {article.publication_status && (
                     <div className="flex gap-4">
                       <span className="text-muted-foreground uppercase w-16 shrink-0">Status</span>
-                      <span>{article.status}</span>
+                      <span>{article.publication_status}</span>
                     </div>
                   )}
-                  <div className="flex gap-4">
-                    <span className="text-muted-foreground uppercase w-16 shrink-0">DOI</span>
-                    {article.doi
-                      ? <a href={`https://doi.org/${article.doi}`} className="text-primary hover:underline">{article.doi}</a>
-                      : <span className="text-muted-foreground italic">forthcoming</span>}
-                  </div>
-                  <div className="flex gap-4">
-                    <span className="text-muted-foreground uppercase w-16 shrink-0">arXiv</span>
-                    {article.arxiv_id
-                      ? <a href={`https://arxiv.org/abs/${article.arxiv_id}`} className="text-primary hover:underline">arXiv:{article.arxiv_id}</a>
-                      : <span className="text-muted-foreground italic">forthcoming</span>}
-                  </div>
+                  {(article.doi || article.publication_status) && (
+                    <div className="flex gap-4">
+                      <span className="text-muted-foreground uppercase w-16 shrink-0">DOI</span>
+                      {article.doi
+                        ? <a href={`https://doi.org/${article.doi}`} className="text-primary hover:underline">{article.doi}</a>
+                        : <span className="text-muted-foreground italic">forthcoming</span>}
+                    </div>
+                  )}
+                  {(article.arxiv_id || article.publication_status) && (
+                    <div className="flex gap-4">
+                      <span className="text-muted-foreground uppercase w-16 shrink-0">arXiv</span>
+                      {article.arxiv_id
+                        ? <a href={`https://arxiv.org/abs/${article.arxiv_id}`} className="text-primary hover:underline">arXiv:{article.arxiv_id}</a>
+                        : <span className="text-muted-foreground italic">forthcoming</span>}
+                    </div>
+                  )}
+                  {article.repo_url && (
+                    <div className="flex gap-4">
+                      <span className="text-muted-foreground uppercase w-16 shrink-0">Code</span>
+                      <a href={article.repo_url} className="text-primary hover:underline" rel="noopener">{article.repo_url.replace(/^https?:\/\//, "")}</a>
+                    </div>
+                  )}
                   {article.cite_as && (
                     <div className="flex gap-4">
                       <span className="text-muted-foreground uppercase w-16 shrink-0">Cite</span>

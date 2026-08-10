@@ -31,7 +31,9 @@ services:
       - CORS_ALLOWED_ORIGINS=${CORS_ALLOWED_ORIGINS}
       - MAPBOX_ACCESS_TOKEN=${MAPBOX_ACCESS_TOKEN}
       - CSRF_TRUSTED_ORIGINS=https://api.ianronk.nl
-      - SEED_DEMO_DATA=${SEED_DEMO_DATA:-true}
+      # Demo seeding is OPT-IN: the seeded articles/posts are sample content and
+      # must never reach the live site (they publish under the real byline).
+      - SEED_DEMO_DATA=${SEED_DEMO_DATA:-false}
       - MINIMAX_API_KEY=${MINIMAX_API_KEY:-}
       - INTERNAL_PROXY_SECRET=${INTERNAL_PROXY_SECRET:-}
       - CHAT_RATE_PER_MIN=${CHAT_RATE_PER_MIN:-10}
@@ -43,7 +45,7 @@ services:
         condition: service_healthy
     command: >
       sh -c "python manage.py migrate &&
-             if [ \"$$SEED_DEMO_DATA\" = \"true\" ]; then python manage.py seed_data; fi &&
+             if [ \"$$SEED_DEMO_DATA\" = \"true\" ]; then python manage.py seed_data --demo; fi &&
              (python manage.py seed_chat_kb || echo 'seed_chat_kb failed - chat KB unavailable') &&
              gunicorn --bind 0.0.0.0:8001 config.wsgi:application"
     healthcheck:

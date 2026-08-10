@@ -62,6 +62,10 @@ INSTALLED_APPS = [
 MINIMAX_API_KEY = os.getenv("MINIMAX_API_KEY", "")
 MINIMAX_MODEL = os.getenv("MINIMAX_MODEL", "abab6.5s-chat")
 
+# Static service key for programmatic content management (X-API-Key header).
+# Unset = disabled; see config/authentication.py.
+CONTENT_API_KEY = os.getenv("CONTENT_API_KEY", "")
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
@@ -145,6 +149,7 @@ CORS_ALLOW_CREDENTIALS = True
 # REST Framework
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
+        "config.authentication.ContentApiKeyAuthentication",
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
     "DEFAULT_PERMISSION_CLASSES": (
