@@ -56,7 +56,7 @@
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systeme",
     "heroTitleLine3": "& Forschung.",
-    "lede1": "Von Amsterdam aus leite ich Datenteams und baue, was sie betreiben: Big-Data-Pipelines, Forecasting- und Nowcasting-Modelle, Netzwerkanalyse und räumliche Datenprodukte. Die Forschungsseite bleibt aktiv — urbane Dynamik, Gentrifizierung, Erreichbarkeit auf Parzellenauflösung — weil Städte dort sind, wo Datenprobleme hart werden. Der Tiefe nach ein in Amsterdam ansässiger Geodaten-Spezialist; dem Beruf nach ein Data Lead.",
+    "lede1": "Von Amsterdam aus leite ich Datenteams und baue, was sie betreiben: Big-Data-Pipelines, Forecasting- und Nowcasting-Modelle, Netzwerkanalyse und räumliche Datenprodukte. Das Handwerk darunter ist Systemdesign: die Architektur entscheidet, ob eine Pipeline im dritten Jahr noch läuft. Die Forschungsseite bleibt aktiv — urbane Dynamik, Gentrifizierung, Erreichbarkeit auf Parzellenauflösung — weil Städte dort sind, wo Datenprobleme hart werden. Der Tiefe nach ein in Amsterdam ansässiger Geodaten-Spezialist; dem Beruf nach ein Data Lead.",
     "lede2": "Meine Überzeugung: meinungsstarke interne Tools schlagen große Plattformen; eine kalibrierte Pipeline schlägt eine clevere; und eine Karte sollte eine Frage beantworten, nicht Komplexität inszenieren.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Rolle",
@@ -68,22 +68,22 @@
     "factExperienceValueHighlight": "5+ Jahre",
     "factExperienceValueRest": "in Data Engineering & räumlicher Analytik",
     "factMarkets": "Märkte",
-    "factMarketsValueHighlight": "15+",
-    "factMarketsValueRest": "europäische Märkte kartiert",
+    "factMarketsValueHighlight": "NL · DE · UK · IT",
+    "factMarketsValueRest": "",
     "factClients": "Kunden",
-    "factClientsValue": "REITs · Fonds · Eurostat · führende Immobilienunternehmen",
+    "factClientsValue": "Eurostat · CBS · institutionelle Immobilieninvestoren",
     "factClientsPersonal": "Persönlich",
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
-    "factStackValue": "Python · PostGIS · Airflow · Docker · PyTorch · React",
+    "factStackValue": "Python · PostGIS · Airflow · LLM · React",
     "journeyKicker": "Beruflicher Werdegang",
     "journeyTitlePrefixItalic": "Fünf",
     "journeyTitleRest": "Jahre datengestützte",
     "journeyTitleLine2": "Erkenntnisse liefern.",
     "expertise": [
       {
-        "title": "Big Data & Pipelines",
-        "description": "Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 250k+ Datensätze, mit Airflow und PostGIS im Unterbau."
+        "title": "Datenarchitektur & Pipelines",
+        "description": "Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 250k+ Datensätze — Schema, Orchestrierung und Fehlerbehandlung von Anfang an entworfen, mit Airflow und PostGIS im Unterbau."
       },
       {
         "title": "Netzwerkwissenschaft",
@@ -94,8 +94,8 @@
         "description": "Ein monatlicher Hauspreisindex über 13 EU-Länder, getestet mit Eurostat, plus Nowcasting-Modelle für spärliche, träge amtliche Statistiken."
       },
       {
-        "title": "Räumliche Analyse",
-        "description": "Modellierung auf Parzellen- und Postleitzahlebene: agentenbasierte Gentrifizierungsmodelle, hedonische Preisbildung, H3 und PostGIS als tägliche Werkzeuge."
+        "title": "Räumliche Analyse & Simulation",
+        "description": "Modellierung und Simulation auf Parzellen- und Postleitzahlebene: agentenbasierte Gentrifizierungsmodelle, hedonische Preisbildung, H3 und PostGIS als tägliche Werkzeuge."
       },
       {
         "title": "Product Ownership & Führung",
@@ -145,29 +145,17 @@
     "downloadCv": "Lebenslauf herunterladen (PDF)"
   },
   "AboutPage": {
-    "projectsBadge": "Ausgewählte Projekte",
-    "projectsTitle": "Aktuelle Arbeiten",
-    "projectsSubtitle": "Persönliche und akademische Projekte, die meine technischen Fähigkeiten demonstrieren.",
     "readMore": "Weiterlesen",
     "backToAbout": "Zurück zu Über Mich"
   },
   "Research": {
     "loadingFallback": "Artikel laden: schau gleich nochmal vorbei",
-    "badge": "Publikationen",
     "title": "Forschung & Artikel",
-    "subtitle": "Tiefgehende Analysen, Fallstudien und technische Leitfäden zu Geodaten-Technologien und Immobilienanalysen.",
     "searchPlaceholder": "Artikel suchen...",
-    "all": "Alle",
-    "research": "Forschung",
-    "caseStudies": "Fallstudien",
-    "methodology": "Methodik",
-    "interactiveMap": "Interaktive Karte",
     "readMore": "Weiterlesen",
     "noResults": "Keine Artikel gefunden, die Ihren Kriterien entsprechen.",
     "loading": "Forschungsartikel werden geladen...",
     "previewBadge": "Forschung & Blog",
-    "previewTitle": "Neueste Forschung & Einblicke",
-    "previewSubtitle": "Tiefgehende Analysen zu Geodatenanalyse, Immobilientrends und technischen Innovationen.",
     "viewAll": "Alle Ansehen",
     "listKicker": "Akademisches: Papers, Methoden, Publikationen",
     "listTitlePrefix": "Papers",
@@ -216,8 +204,6 @@
     "sendButton": "Nachricht Senden",
     "sending": "Wird gesendet...",
     "privacy": "Ihre Nachricht wird verschlüsselt übertragen und ausschließlich zur Antwort verwendet.",
-    "europeanMarkets": "Europäische Märkte",
-    "modelAccuracy": "Modellgenauigkeit",
     "successMessage": "Nachricht erfolgreich gesendet! Ich melde mich bald bei Ihnen.",
     "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
     "errorSpam": "Ihre Nachricht wurde als möglicher Spam erkannt. Bitte versuchen Sie es erneut.",
@@ -245,7 +231,7 @@
         "viz": "abm",
         "sector": "MSc-Arbeit · Bocconi",
         "title": "Agentenbasiertes Gentrifizierungsmodell",
-        "outcome": "Ein agentenbasiertes Modell von Nachbarschaftswandel, getrieben von Attraktivität und Bezahlbarkeit, angewandt auf Amsterdam, Utrecht und Mailand mit offenen Geodaten. Der beste Beleg für die Urban-Dynamics-Identität.",
+        "outcome": "Ein agentenbasiertes Modell von Nachbarschaftswandel, getrieben von Attraktivität und Bezahlbarkeit, angewandt auf Amsterdam, Utrecht und Mailand mit offenen Geodaten.",
         "stack": [
           "Python",
           "Mesa",

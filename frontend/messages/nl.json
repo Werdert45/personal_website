@@ -29,8 +29,8 @@
     "role": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
     "title": "Data-engineering",
     "titleHighlight": "voor onderzoek",
-    "titleEnd": "— bewezen op complexe ruimtelijke problemen",
-    "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. De onderzoeksstoel is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De pipelines achter mijn papers zijn publieke repositories.",
+    "titleEnd": "— van open geodata naar gepubliceerde papers",
+    "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. Het onderzoeksterrein is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De pipelines achter mijn papers zijn publieke repositories.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
     "expertise": "Expertise:"
@@ -48,7 +48,7 @@
     "professionalTitle": "Professioneel Traject",
     "professional": "Professioneel",
     "academic": "Academisch",
-    "educationSubtitle": "Sterke basis in AI, data science en business analytics van top Europese instellingen.",
+    "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master — de methodenkant van de toolkit. De productiekant kwam uit het werk.",
     "experienceSubtitle": "5+ jaar productie-datasystemen bouwen en leiden — pipelines, forecasting, geospatial — in Europese markten en academisch onderzoek.",
     "sectionKicker": "Over: wie, waar, hoe",
     "heroTitleLine1a": "Data",
@@ -56,34 +56,34 @@
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systemen",
     "heroTitleLine3": "& Onderzoek.",
-    "lede1": "Vanuit Amsterdam leid ik datateams en bouw ik wat ze draaien: big-data-pipelines, forecasting- en nowcastingmodellen, netwerkanalyse en ruimtelijke dataproducten. De onderzoekskant blijft actief — stedelijke dynamiek, gentrificatie, toegankelijkheid op perceelniveau — want steden zijn waar datavraagstukken het lastigst worden. Qua diepgang een in Amsterdam gevestigde geodata-specialist; qua vak een data lead.",
+    "lede1": "Vanuit Amsterdam leid ik datateams en bouw ik wat ze draaien: big-data-pipelines, forecasting- en nowcastingmodellen, netwerkanalyse en ruimtelijke dataproducten. Het vak eronder is systeemontwerp: de architectuur bepaalt of een pipeline in haar derde jaar nog draait. De onderzoekskant blijft actief — stedelijke dynamiek, gentrificatie, toegankelijkheid op perceelniveau — want steden zijn waar datavraagstukken het lastigst worden. Qua diepgang een geodata-specialist; qua vak een data lead.",
     "lede2": "Mijn voorkeur: eigenzinnige interne tools verslaan grote platforms; een gekalibreerde pipeline verslaat een slimme; en een kaart moet een vraag beantwoorden, geen complexiteit opvoeren.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Rol",
     "factRoleValueHighlight": "Head of Data",
     "factRoleValueRest": "· KR&A, Europa · FinTech",
     "factBasis": "Basis",
-    "factBasisValue": "Amsterdam, Nederland · EU-breed actief",
+    "factBasisValue": "Amsterdam, Nederland · Nederlands, Engels, Duits, Italiaans",
     "factExperience": "Ervaring",
     "factExperienceValueHighlight": "5+ jaar",
     "factExperienceValueRest": "in data-engineering & ruimtelijke analytics",
     "factMarkets": "Markten",
-    "factMarketsValueHighlight": "15+",
-    "factMarketsValueRest": "Europese markten in kaart",
+    "factMarketsValueHighlight": "NL · DE · UK · IT",
+    "factMarketsValueRest": "",
     "factClients": "Klanten",
-    "factClientsValue": "REITs · fondsen · Eurostat · toonaangevende vastgoedbedrijven",
+    "factClientsValue": "Eurostat · CBS · institutionele vastgoedbeleggers",
     "factClientsPersonal": "Persoonlijk",
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
-    "factStackValue": "Python · PostGIS · Airflow · Docker · PyTorch · React",
+    "factStackValue": "Python · PostGIS · Airflow · LLM · React",
     "journeyKicker": "Professioneel traject",
     "journeyTitlePrefixItalic": "Vijf",
-    "journeyTitleRest": "jaar datagedreven",
-    "journeyTitleLine2": "inzichten leveren.",
+    "journeyTitleRest": "jaar bouwen aan",
+    "journeyTitleLine2": "productie-datasystemen.",
     "expertise": [
       {
-        "title": "Big Data & Pipelines",
-        "description": "Scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 250k+ records, met Airflow en PostGIS eronder."
+        "title": "Data-architectuur & pipelines",
+        "description": "Scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 250k+ records — schema, orkestratie en foutafhandeling vooraf ontworpen, met Airflow en PostGIS eronder."
       },
       {
         "title": "Netwerkwetenschap",
@@ -94,12 +94,12 @@
         "description": "Een maandelijkse huizenprijsindex voor 13 EU-landen, getest met Eurostat, plus nowcastingmodellen voor schaarse, trage officiële statistieken."
       },
       {
-        "title": "Ruimtelijke Analyse",
-        "description": "Modellering op perceel- en postcodeniveau: agent-based gentrificatiemodellen, hedonische prijsvorming, H3 en PostGIS als dagelijkse tools."
+        "title": "Ruimtelijke Analyse & Simulatie",
+        "description": "Modellering en simulatie op perceel- en postcodeniveau: agent-based gentrificatiemodellen, hedonische prijsvorming, H3 en PostGIS als dagelijkse tools."
       },
       {
         "title": "Product Ownership & Leiderschap",
-        "description": "End-to-end eigenaarschap van methode tot live API — een build met 13 servers, twee weken voor op schema opgeleverd, binnen budget, met een team van 4–5 geleid bij KR&A."
+        "description": "End-to-end eigenaarschap van methode tot live API — een build met 13 servers, en een team van 4–5 geleid bij KR&A."
       }
     ],
     "experience": [
@@ -113,7 +113,7 @@
         "year": "Jun 2022 - Jul 2025",
         "role": "Medior Data Scientist",
         "company": "KR&A | Europa | FinTech",
-        "description": "Datagedreven inzichten geleverd voor vastgoedinvesteringsbeslissingen — ML-modellen gebouwd voor vastgoedwaardering en marktanalyse in 15+ Europese markten, met werk voor toonaangevende vastgoedbedrijven, pensioenfondsen en Eurostat."
+        "description": "ML-modellen gebouwd voor vastgoedwaardering en marktanalyse in 15+ Europese markten; werk opgeleverd voor vastgoedbedrijven, pensioenfondsen en Eurostat. Waaronder een maandelijkse huizenprijsindex voor 13 EU-landen, getest als disaggregatie-indicator voor Eurostat-kwartaal-HPI's."
       },
       {
         "year": "Okt 2021 - Jun 2022",
@@ -145,29 +145,17 @@
     "downloadCv": "Download het cv (pdf)"
   },
   "AboutPage": {
-    "projectsBadge": "Uitgelichte Projecten",
-    "projectsTitle": "Recent Werk",
-    "projectsSubtitle": "Persoonlijke en academische projecten die mijn technische vaardigheden tonen.",
     "readMore": "Lees meer",
     "backToAbout": "Terug naar Over Mij"
   },
   "Research": {
-    "loadingFallback": "Artikelen worden geladen: kom straks terug",
-    "badge": "Publicaties",
+    "loadingFallback": "Paperindex op dit moment niet beschikbaar — de pipeline-repo's op GitHub blijven actueel.",
     "title": "Onderzoek & Artikelen",
-    "subtitle": "Diepgaande analyses, casestudies en technische gidsen over geospatiale technologieën en vastgoedanalytics.",
     "searchPlaceholder": "Zoek artikelen...",
-    "all": "Alle",
-    "research": "Onderzoek",
-    "caseStudies": "Casestudies",
-    "methodology": "Methodologie",
-    "interactiveMap": "Interactieve Kaart",
     "readMore": "Lees meer",
-    "noResults": "Geen artikelen gevonden die aan uw criteria voldoen.",
+    "noResults": "Geen artikelen gevonden die aan je criteria voldoen.",
     "loading": "Onderzoeksartikelen laden...",
     "previewBadge": "Onderzoek & Blog",
-    "previewTitle": "Laatste Onderzoek & Inzichten",
-    "previewSubtitle": "Diepgaande analyses van geospatiale analyse, vastgoedtrends en technische innovaties.",
     "viewAll": "Bekijk Alles",
     "listKicker": "Academisch: papers, methoden, publicaties",
     "listTitlePrefix": "Papers",
@@ -202,25 +190,23 @@
     "formTitle": "Neem Contact Op",
     "formSubtitle": "Vragen over het onderzoek, de pipelines, een rol of een samenwerking — mijn inbox staat open.",
     "nameLabel": "Naam",
-    "namePlaceholder": "Uw naam",
+    "namePlaceholder": "Je naam",
     "emailLabel": "E-mail",
-    "emailPlaceholder": "uw@email.com",
+    "emailPlaceholder": "jij@email.com",
     "phoneLabel": "Telefoon (Optioneel)",
     "phonePlaceholder": "+31 6 12345678",
     "subjectLabel": "Onderwerp",
     "subjectPlaceholder": "Waar gaat het over?",
     "messageLabel": "Bericht",
     "messagePlaceholder": "Waar wil je het over hebben?",
-    "captchaLabel": "Verifieer dat u mens bent",
-    "captchaHint": "Voltooi de captcha om uw bericht te verzenden",
+    "captchaLabel": "Bevestig dat je een mens bent",
+    "captchaHint": "Voltooi de captcha om je bericht te verzenden",
     "sendButton": "Verstuur Bericht",
     "sending": "Verzenden...",
     "privacy": "Je bericht wordt versleuteld verstuurd en alleen gebruikt om je te antwoorden.",
-    "europeanMarkets": "Europese Markten",
-    "modelAccuracy": "Model Nauwkeurigheid",
-    "successMessage": "Bericht succesvol verzonden! Ik neem spoedig contact met u op.",
+    "successMessage": "Bericht verzonden. Ik neem snel contact met je op.",
     "errorEmail": "Voer een geldig e-mailadres in",
-    "errorSpam": "Uw bericht is als mogelijke spam gemarkeerd. Probeer het opnieuw.",
+    "errorSpam": "Je bericht is als mogelijke spam gemarkeerd. Probeer het opnieuw.",
     "errorShort": "Voer een langer bericht in (minimaal 10 tekens)",
     "errorCaptcha": "Voltooi de captcha-verificatie",
     "errorGeneric": "Fout bij het verzenden van het bericht. Probeer het opnieuw.",
@@ -245,7 +231,7 @@
         "viz": "abm",
         "sector": "MSc Scriptie · Bocconi",
         "title": "Agent-gebaseerd gentrificatiemodel",
-        "outcome": "Een agent-based model van buurtverandering, gedreven door aantrekkelijkheid en betaalbaarheid, toegepast op Amsterdam, Utrecht en Milaan op open ruimtelijke data. Het beste bewijs van de stedelijke-dynamiek-identiteit.",
+        "outcome": "Een agent-based model van buurtverandering, gedreven door aantrekkelijkheid en betaalbaarheid, toegepast op Amsterdam, Utrecht en Milaan op open ruimtelijke data.",
         "stack": [
           "Python",
           "Mesa",
@@ -308,7 +294,7 @@
     "work": "Contact"
   },
   "Thoughts": {
-    "loadingFallback": "Berichten worden geladen: kom straks terug",
+    "loadingFallback": "Nog geen stukken — de eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak.",
     "kicker": "Werk: casestudies & veldnotities",
     "recentTitle": "Recent",
     "recentItalic": "werk",
@@ -334,9 +320,9 @@
     "endCtaBody": "Browse andere essays over geodata, AI/ML en operations, of lees meer over wie er achter de schrijfsels zit.",
     "endCtaButton": "Meer schrijfsels",
     "endCtaSecondary": "Over mij",
-    "endCtaContact": "Waar / hoeveel / wat nu? Laten we praten",
+    "endCtaContact": "Werk je aan iets vergelijkbaars? Neem contact op",
     "relatedKicker": "Gerelateerd werk",
-    "empty": "De eerste stukken verschijnen in augustus 2026 — casestudy's over de data engineering achter het onderzoek."
+    "empty": "Nog geen stukken — de eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
@@ -350,23 +336,23 @@
     "titleLine2": "Ik bouw productie-",
     "titleLine2Underline": "systemen.",
     "bio1": "Geodata-engineer en onderzoeker van stadsdynamiek, gevestigd in Amsterdam. Head of Data bij KR&A. MSc in Data Science & Business Analytics aan Bocconi; BSc in Kunstmatige Intelligentie aan de Universiteit van Amsterdam, vijf jaar tussen de twee, grotendeels op de productiekant.",
-    "bio2": "Ik werk op het snijvlak van geospatial analytics, AI/ML en de saaie data-infrastructuur die ze bruikbaar maakt. Op deze site verzamel ik dingen waar ik aan denk, aan bouw of die ik heb gepubliceerd.",
+    "bio2": "Ik werk op het snijvlak van geospatial analytics, ML en de data-infrastructuur die beide bruikbaar maakt — de pipelines, schema's en spatial joins die niet in papers staan maar bepalen of het model in productie komt. Deze site verzamelt wat het opschrijven waard is: papers, methoden, tools en af en toe een uitgesproken mening over waarom dashboards overschat zijn.",
     "factRoleK": "Rol",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Standplaats",
-    "factBasisV": "Amsterdam · werkend EU-breed",
+    "factBasisV": "Amsterdam · NL · EN · DE · IT",
     "factEduK": "Opleiding",
     "factEduV": "MSc Bocconi · BSc AI Amsterdam",
     "factStackK": "Stack",
-    "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
+    "factStackV": "Python · PostGIS · Airflow · LLM · React",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Lees de volledige bio"
   },
   "Proof": {
     "kicker": "Bewijs: uitkomsten die zijn gerealiseerd",
-    "titlePrefix": "Wat we hebben",
-    "titleItalic": "gebouwd",
-    "titleSuffix": "en wat is gebleven.",
+    "titlePrefix": "Wat er is",
+    "titleItalic": "opgeleverd",
+    "titleSuffix": "— en is blijven draaien.",
     "quote": "",
     "quoteAttribution": "",
     "outcomes": [
@@ -376,14 +362,14 @@
         "context": "Maandelijkse huizenprijsindex · getest met Eurostat"
       },
       {
-        "value": "2 wkn",
-        "unit": "voor op schema · binnen budget",
+        "value": "1 score",
+        "unit": "elk perceel · saturatie-gevalideerd",
         "context": "Connectivity Score · build met 13 servers"
       },
       {
         "value": "250k+",
         "unit": "records · 8 bronnen · wekelijks, 3 jaar",
-        "context": "Institutionele-kwaliteit scrape · gebruikt door statistiekbureaus"
+        "context": "Web-scraping-pipeline · voedt de maandelijkse huizenprijsindex"
       }
     ],
     "ctaPrimary": "Download het cv (pdf)",
@@ -419,11 +405,11 @@
     "compactDescription": "Af en toe een notitie over geospatial, ML en AI.",
     "inlineHeading": "Ontvang het volgende stuk per e-mail",
     "inlineDescription": "Abonneer, geen spam, je kunt je altijd uitschrijven.",
-    "homeThoughtsHeading": "Nog niet klaar om te praten? Ontvang het volgende stuk.",
+    "homeThoughtsHeading": "Ontvang het volgende stuk.",
     "homeThoughtsDescription": "Notities uit het veld — af en toe over stadsdynamiek, geospatial methoden en wat er misgaat in productie.",
     "emailPlaceholder": "jij@domein.com",
     "submit": "Abonneer",
-    "success": "Dank je, we nemen contact op.",
+    "success": "Dank je — je staat op de lijst.",
     "error": "Er ging iets mis. Probeer opnieuw of mail rechtstreeks.",
     "privacy": "Je adres wordt niet gedeeld."
   },
@@ -445,6 +431,7 @@
           "GeoPandas",
           "H3",
           "ABM",
+          "simulatie",
           "netwerkwetenschap"
         ]
       },

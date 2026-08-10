@@ -27,6 +27,19 @@ print_error() {
     echo -e "${RED}[✗]${NC} $1"
 }
 
+# Demo seeding is opt-in: only run when SEED_DEMO_DATA is explicitly truthy
+# (same gate as docker-compose.yml, which checks SEED_DEMO_DATA = "true").
+seed_demo_enabled() {
+    case "${SEED_DEMO_DATA:-}" in
+        true|TRUE|True|1|yes|YES|on|ON)
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
+
 # Check for required tools
 check_requirements() {
     echo ""
@@ -96,10 +109,14 @@ start_docker() {
     docker compose exec backend python manage.py create_admin
     print_status "Admin user created (admin@example.com / admin)"
 
-    # Seed data
-    echo "Seeding database with sample data..."
-    docker compose exec backend python manage.py seed_data
-    print_status "Sample data seeded"
+    # Seed data (demo content only, opt-in via SEED_DEMO_DATA)
+    if seed_demo_enabled; then
+        echo "Seeding database with demo sample data (SEED_DEMO_DATA=$SEED_DEMO_DATA)..."
+        docker compose exec backend python manage.py seed_data --demo
+        print_status "Demo sample data seeded"
+    else
+        print_warning "Skipping demo data seeding (set SEED_DEMO_DATA=true to enable)"
+    fi
 }
 
 # Start without Docker (local development)
@@ -144,7 +161,13 @@ start_local() {
 
     python manage.py migrate
     python manage.py create_admin
-    python manage.py seed_data
+    if seed_demo_enabled; then
+        echo "Seeding database with demo sample data (SEED_DEMO_DATA=$SEED_DEMO_DATA)..."
+        python manage.py seed_data --demo
+        print_status "Demo sample data seeded"
+    else
+        print_warning "Skipping demo data seeding (set SEED_DEMO_DATA=true to enable)"
+    fi
     print_status "Database setup complete"
 
     cd ..

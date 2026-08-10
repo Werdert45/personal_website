@@ -45,7 +45,7 @@ services:
         condition: service_healthy
     command: >
       sh -c "python manage.py migrate &&
-             if [ \"$$SEED_DEMO_DATA\" = \"true\" ]; then python manage.py seed_data; fi &&
+             if [ \"$$SEED_DEMO_DATA\" = \"true\" ]; then python manage.py seed_data --demo; fi &&
              (python manage.py seed_chat_kb || echo 'seed_chat_kb failed - chat KB unavailable') &&
              gunicorn --bind 0.0.0.0:8001 config.wsgi:application"
     healthcheck:

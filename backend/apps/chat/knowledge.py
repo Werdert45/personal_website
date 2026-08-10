@@ -39,11 +39,13 @@ CHUNKS = [
     {
         "category": "bio",
         "content": (
-            "Ian Ronk is Head of Data at KR&A in Amsterdam. He builds production spatial "
-            "systems for real estate funds, climate-risk teams and alternative-data pipelines. "
+            "Ian Ronk is Head of Data at KR&A in Amsterdam. He builds and leads production "
+            "data systems; his specialty is the data engineering behind research — Airflow, "
+            "DuckDB and PostGIS pipelines that turn open spatial data into papers. Research "
+            "focus: urban dynamics — gentrification, accessibility, housing markets. "
             "He holds an MSc in Data Science and Business Analytics from Bocconi University "
             "and a BSc in Artificial Intelligence from the University of Amsterdam, roughly "
-            "four years between the two, spent mostly on the production side."
+            "five years between the two, spent mostly on the production side."
         ),
     },
     {
@@ -58,13 +60,20 @@ CHUNKS = [
     {
         "category": "skills",
         "content": (
-            "Ian's four core competencies: (1) Machine Learning & AI — predictive models for "
-            "valuation and spatial risk, LLM pipelines and tool-using agents. "
-            "(2) Data Engineering — Airflow, Docker, PostGIS, Postgres pipelines for REITs and funds. "
-            "(3) Geospatial Analysis — agent-based modelling, street-view CV, H3 indexing, "
-            "spatially-aware data science at parcel and postcode resolution. "
-            "(4) AI Automation — LLM-powered workflows, RAG pipelines, React internal tools, "
-            "PostgreSQL schemas."
+            "Ian's five core competencies: (1) Big Data & Pipelines — scrape and ETL "
+            "infrastructure that keeps running: three years of weekly collection across "
+            "8 authenticated sources, 250k+ records, Airflow and PostGIS underneath. "
+            "(2) Network Science — graph methods on real geographies, including a "
+            "saturation-validated Connectivity Score at parcel resolution. "
+            "(3) Timeseries & Forecasting — a monthly house-price index across 13 EU "
+            "countries tested with Eurostat, plus nowcasting for sparse official statistics. "
+            "(4) Spatial Analysis & Simulation — agent-based models of neighbourhood change, "
+            "hedonic pricing, H3 and PostGIS as daily tools. "
+            "(5) Product Ownership & Leadership — end-to-end from method to shipped API: a "
+            "13-server build delivered two weeks ahead of plan, a team of 4-5 led at KR&A. "
+            "Machine learning sits inside these rather than above them — predictive models "
+            "for valuation and spatial risk, street-view CV — deployed through the same "
+            "pipelines."
         ),
     },
     {
@@ -80,7 +89,7 @@ CHUNKS = [
         "content": (
             "Ian is currently Head of Data at KR&A, an Amsterdam-based FinTech for European "
             "real estate. KR&A clients include Eurostat, CBS and institutional real estate "
-            "investors. He also does personal client work, including ingoglia.de."
+            "investors."
         ),
     },
     {
@@ -88,7 +97,8 @@ CHUNKS = [
         "content": (
             "Ian's market focus is on Dutch (NL), German (DE), UK and Italian (IT) real estate "
             "markets. He works across real estate, climate risk and alternative data sectors. "
-            "He has mapped 15+ European markets."
+            "The house-price index pipeline he leads at KR&A covers 13 EU countries, tested "
+            "with Eurostat."
         ),
     },
     {
@@ -142,8 +152,8 @@ CHUNKS = [
         "category": "education",
         "content": (
             "Education: MSc in Data Science and Business Analytics, Bocconi University, Milan "
-            "(2024-2025). BSc in Artificial Intelligence, University of Amsterdam. "
-            "Ian spent the four years between the two mostly on the production side of "
+            "(2023-2025). BSc in Artificial Intelligence, University of Amsterdam. "
+            "Ian spent the five years between the two mostly on the production side of "
             "spatial analytics."
         ),
     },

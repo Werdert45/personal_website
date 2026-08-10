@@ -29,7 +29,7 @@
     "role": "Data Lead & Engineer · Urban-Dynamics Researcher",
     "title": "Data engineering",
     "titleHighlight": "for research",
-    "titleEnd": "— proven on hard spatial problems",
+    "titleEnd": "— from open spatial data to published papers",
     "description": "I build and lead production data systems, and my specialty is the data engineering behind research — the Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. The research seat is urban dynamics: gentrification, accessibility, housing markets — because cities are where data problems get hard. The pipelines behind my papers are public repositories.",
     "aboutMe": "About me",
     "workWithMe": "Get in touch",
@@ -48,7 +48,7 @@
     "professionalTitle": "Professional Journey",
     "professional": "Professional",
     "academic": "Academic",
-    "educationSubtitle": "Strong foundation in AI, data science, and business analytics from top European institutions.",
+    "educationSubtitle": "AI as an undergraduate, data science and analytics as a graduate — the methods side of the toolkit. The production side came from work.",
     "experienceSubtitle": "5+ years building and leading production data systems — pipelines, forecasting, geospatial — across European markets and academic research.",
     "sectionKicker": "About: who, where, how",
     "heroTitleLine1a": "Data",
@@ -56,7 +56,7 @@
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systems",
     "heroTitleLine3": "& Research.",
-    "lede1": "Based in Amsterdam, I lead data teams and build what they run: big-data pipelines, forecasting and nowcasting models, network analysis and spatial data products. The research seat stays warm — urban dynamics, gentrification, accessibility at parcel resolution — because cities are where data problems get hard. A geodata specialist based in Amsterdam by depth; a data lead by trade.",
+    "lede1": "Based in Amsterdam, I lead data teams and build what they run: big-data pipelines, forecasting and nowcasting models, network analysis and spatial data products. The craft underneath is system design: the architecture is what decides whether a pipeline is still running in its third year. The research seat stays warm — urban dynamics, gentrification, accessibility at parcel resolution — because cities are where data problems get hard. A geodata specialist by depth; a data lead by trade.",
     "lede2": "My bias: opinionated internal tools beat big platforms; a calibrated pipeline beats a clever one; and a map should answer a question, not perform complexity.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Role",
@@ -78,12 +78,12 @@
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
     "journeyKicker": "Professional journey",
     "journeyTitlePrefixItalic": "Five",
-    "journeyTitleRest": "years delivering",
-    "journeyTitleLine2": "data-driven insights.",
+    "journeyTitleRest": "years building",
+    "journeyTitleLine2": "production data systems.",
     "expertise": [
       {
-        "title": "Big Data & Pipelines",
-        "description": "Scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources, 250k+ records, Airflow and PostGIS underneath."
+        "title": "Data Architecture & Pipelines",
+        "description": "Scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources, 250k+ records — schema, orchestration and failure handling designed up front, Airflow and PostGIS underneath."
       },
       {
         "title": "Network Science",
@@ -94,12 +94,12 @@
         "description": "A monthly house-price index across 13 EU countries tested with Eurostat, plus nowcasting models for sparse, slow official statistics."
       },
       {
-        "title": "Spatial Analysis",
-        "description": "Parcel- and postcode-level modelling: agent-based gentrification models, hedonic pricing, H3 and PostGIS as daily tools."
+        "title": "Spatial Analysis & Simulation",
+        "description": "Parcel- and postcode-level modelling and simulation: agent-based gentrification models, hedonic pricing, H3 and PostGIS as daily tools."
       },
       {
         "title": "Product Ownership & Leadership",
-        "description": "End-to-end ownership from method to shipped API — a 13-server build delivered two weeks ahead of plan, on budget, and a team of 4–5 led at KR&A."
+        "description": "End-to-end ownership from method to shipped API — a 13-server build, and a team of 4–5 led at KR&A."
       }
     ],
     "experience": [
@@ -113,7 +113,7 @@
         "year": "Jun 2022 - Jul 2025",
         "role": "Medior Data Scientist",
         "company": "KR&A | Europe | FinTech",
-        "description": "Delivered data-driven insights for real estate investment decisions — built ML models for property valuation and market analysis across 15+ European markets, delivering work for leading real estate companies, pension funds and Eurostat."
+        "description": "Built ML models for property valuation and market analysis across 15+ European markets; work delivered for real-estate companies, pension funds and Eurostat. Includes a monthly house-price index across 13 EU countries, tested as a disaggregation indicator for Eurostat quarterly HPIs."
       },
       {
         "year": "Oct 2021 - Jun 2022",
@@ -145,29 +145,17 @@
     "downloadCv": "Download the CV (PDF)"
   },
   "AboutPage": {
-    "projectsBadge": "Featured Projects",
-    "projectsTitle": "Recent Work",
-    "projectsSubtitle": "Personal and academic projects showcasing my technical capabilities.",
     "readMore": "Read more",
     "backToAbout": "Back to About"
   },
   "Research": {
-    "loadingFallback": "Articles loading: check back shortly",
-    "badge": "Publications",
+    "loadingFallback": "Paper index unavailable right now — the pipeline repos on GitHub stay current.",
     "title": "Research & Articles",
-    "subtitle": "In-depth analyses, case studies, and technical guides on geospatial technologies and real estate analytics.",
     "searchPlaceholder": "Search articles...",
-    "all": "All",
-    "research": "Research",
-    "caseStudies": "Case Studies",
-    "methodology": "Methodology",
-    "interactiveMap": "Interactive Map",
     "readMore": "Read more",
     "noResults": "No articles found matching your criteria.",
     "loading": "Loading research articles...",
     "previewBadge": "Research & Blog",
-    "previewTitle": "Latest Research & Insights",
-    "previewSubtitle": "Deep dives into geospatial analysis, real estate trends, and technical innovations.",
     "viewAll": "View All",
     "listKicker": "Academics: papers, methods, publications",
     "listTitlePrefix": "Research",
@@ -216,8 +204,6 @@
     "sendButton": "Send Message",
     "sending": "Sending...",
     "privacy": "Your message is encrypted and only used to reply to you.",
-    "europeanMarkets": "European Markets",
-    "modelAccuracy": "Model Accuracy",
     "successMessage": "Message sent successfully! I'll get back to you soon.",
     "errorEmail": "Please enter a valid email address",
     "errorSpam": "Your message was flagged as potential spam. Please try again.",
@@ -245,7 +231,7 @@
         "viz": "abm",
         "sector": "MSc Thesis · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data. The single best evidence of the urban-dynamics identity.",
+        "outcome": "An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data.",
         "stack": [
           "Python",
           "Mesa",
@@ -308,7 +294,7 @@
     "work": "Contact"
   },
   "Thoughts": {
-    "loadingFallback": "Posts loading: check back shortly",
+    "loadingFallback": "No posts yet — the first case studies, on the data engineering behind the research, are in the works.",
     "kicker": "Work: case studies & field notes",
     "recentTitle": "Recent",
     "recentItalic": "work",
@@ -334,9 +320,9 @@
     "endCtaBody": "Browse other essays on geodata, AI/ML and operations, or read more about who's behind the writing.",
     "endCtaButton": "More writing",
     "endCtaSecondary": "About me",
-    "endCtaContact": "Have a where / how-much / what's-next question? Let's talk",
+    "endCtaContact": "Working on something similar? Get in touch",
     "relatedKicker": "Related work",
-    "empty": "First posts land August 2026 — case studies on the data engineering behind the research."
+    "empty": "No posts yet — the first case studies, on the data engineering behind the research, are in the works."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Urban-Dynamics Researcher",
@@ -376,14 +362,14 @@
         "context": "Monthly house-price index · tested with Eurostat"
       },
       {
-        "value": "2 wks",
-        "unit": "ahead of plan · on budget",
+        "value": "1 score",
+        "unit": "every parcel · saturation-validated",
         "context": "Connectivity Score · 13-server build"
       },
       {
         "value": "250k+",
         "unit": "records · 8 sources · weekly, 3 years",
-        "context": "Institutional-grade scrape · used by statistics bureaus"
+        "context": "Web-scraping pipeline · feeds the monthly house-price index"
       }
     ],
     "ctaPrimary": "Download the CV (PDF)",
@@ -419,11 +405,11 @@
     "compactDescription": "Occasional notes on geospatial methods, ML pipelines and what breaks in production.",
     "inlineHeading": "Get the next post by email",
     "inlineDescription": "Occasional. No spam. Unsubscribe any time.",
-    "homeThoughtsHeading": "Not ready to talk? Get the next piece.",
+    "homeThoughtsHeading": "Get the next piece.",
     "homeThoughtsDescription": "Notes from the field — occasional pieces on urban dynamics, geospatial methods and what breaks in production.",
     "emailPlaceholder": "you@domain.com",
     "submit": "Subscribe",
-    "success": "Thanks, we'll be in touch.",
+    "success": "Thanks — you're on the list.",
     "error": "Something went wrong. Try again or email directly.",
     "privacy": "We won't share your address."
   },
@@ -445,6 +431,7 @@
           "GeoPandas",
           "H3",
           "ABM",
+          "simulation",
           "network science"
         ]
       },

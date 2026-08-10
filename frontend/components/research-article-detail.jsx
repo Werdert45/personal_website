@@ -93,7 +93,7 @@ The thesis builds an agent-based model of gentrification in which households res
 
 ## What's coming here
 
-This entry is a placeholder for the full write-up. From August 2026 this site carries a case-study series on the thesis — the model itself, the pipeline that ran it, a revisit of the hot/cold-spot analysis, and the streetview and simulation work — written now, about 2025 work, and labelled as such. A social-housing extension of the model is the subject of ongoing follow-up research.`,
+From August 2026 this site carries a case-study series on the thesis — the model itself, the pipeline that ran it, a revisit of the hot/cold-spot analysis, and the streetview and simulation work — written now, about 2025 work, and labelled as such. A social-housing extension of the model is the subject of ongoing follow-up research.`,
   },
 };
 

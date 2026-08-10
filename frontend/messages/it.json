@@ -56,7 +56,7 @@
     "heroTitleLine2": "Ingegneria",
     "heroTitleLine2Underline": "Sistemi",
     "heroTitleLine3": "& Ricerca.",
-    "lede1": "Con base ad Amsterdam, guido team dati e costruisco ciò che li fa funzionare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. Il lato ricerca resta attivo — dinamica urbana, gentrificazione, accessibilità a risoluzione di parcella — perché le città sono dove i problemi di dati diventano complessi. Per profondità, uno specialista geodata con base ad Amsterdam; di mestiere, un data lead.",
+    "lede1": "Con base ad Amsterdam, guido team dati e costruisco ciò che li fa funzionare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. Il mestiere sotto è la progettazione di sistemi: è l'architettura a decidere se una pipeline è ancora in funzione al terzo anno. Il lato ricerca resta attivo — dinamica urbana, gentrificazione, accessibilità a risoluzione di parcella — perché le città sono dove i problemi di dati diventano complessi. Per profondità, uno specialista geodata con base ad Amsterdam; di mestiere, un data lead.",
     "lede2": "La mia convinzione: strumenti interni con una visione chiara battono le grandi piattaforme; una pipeline calibrata batte una brillante; e una mappa deve rispondere a una domanda, non ostentare complessità.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Ruolo",
@@ -68,22 +68,22 @@
     "factExperienceValueHighlight": "5+ anni",
     "factExperienceValueRest": "in ingegneria dei dati & analytics spaziale",
     "factMarkets": "Mercati",
-    "factMarketsValueHighlight": "15+",
-    "factMarketsValueRest": "mercati europei mappati",
+    "factMarketsValueHighlight": "NL · DE · UK · IT",
+    "factMarketsValueRest": "",
     "factClients": "Clienti",
-    "factClientsValue": "REIT · fondi · Eurostat · principali aziende immobiliari",
+    "factClientsValue": "Eurostat · CBS · investitori immobiliari istituzionali",
     "factClientsPersonal": "Personale",
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
-    "factStackValue": "Python · PostGIS · Airflow · Docker · PyTorch · React",
+    "factStackValue": "Python · PostGIS · Airflow · LLM · React",
     "journeyKicker": "Percorso professionale",
     "journeyTitlePrefixItalic": "Cinque",
     "journeyTitleRest": "anni a fornire",
     "journeyTitleLine2": "approfondimenti basati sui dati.",
     "expertise": [
       {
-        "title": "Big Data & Pipeline",
-        "description": "Infrastruttura di scraping ed ETL che continua a funzionare: tre anni di raccolta settimanale su 8 fonti con autenticazione, 250k+ record, con Airflow e PostGIS sotto il cofano."
+        "title": "Architettura Dati & Pipeline",
+        "description": "Infrastruttura di scraping ed ETL che continua a funzionare: tre anni di raccolta settimanale su 8 fonti con autenticazione, 250k+ record — schema, orchestrazione e gestione degli errori progettati fin dall'inizio, con Airflow e PostGIS sotto il cofano."
       },
       {
         "title": "Scienza delle Reti",
@@ -94,8 +94,8 @@
         "description": "Un indice mensile dei prezzi delle case su 13 paesi UE testato con Eurostat, oltre a modelli di nowcasting per statistiche ufficiali scarse e lente."
       },
       {
-        "title": "Analisi Spaziale",
-        "description": "Modellazione a livello di parcella e codice postale: modelli di gentrificazione agent-based, pricing edonico, H3 e PostGIS come strumenti quotidiani."
+        "title": "Analisi Spaziale & Simulazione",
+        "description": "Modellazione e simulazione a livello di parcella e codice postale: modelli di gentrificazione agent-based, pricing edonico, H3 e PostGIS come strumenti quotidiani."
       },
       {
         "title": "Product Ownership & Leadership",
@@ -145,29 +145,17 @@
     "downloadCv": "Scarica il CV (PDF)"
   },
   "AboutPage": {
-    "projectsBadge": "Progetti in Evidenza",
-    "projectsTitle": "Lavori Recenti",
-    "projectsSubtitle": "Progetti personali e accademici che dimostrano le mie competenze tecniche.",
     "readMore": "Leggi di più",
     "backToAbout": "Torna a Chi Sono"
   },
   "Research": {
     "loadingFallback": "Articoli in caricamento: torna fra poco",
-    "badge": "Pubblicazioni",
     "title": "Ricerca & Articoli",
-    "subtitle": "Analisi approfondite, casi studio e guide tecniche sulle tecnologie geospaziali e analytics immobiliari.",
     "searchPlaceholder": "Cerca articoli...",
-    "all": "Tutti",
-    "research": "Ricerca",
-    "caseStudies": "Casi Studio",
-    "methodology": "Metodologia",
-    "interactiveMap": "Mappa Interattiva",
     "readMore": "Leggi di più",
     "noResults": "Nessun articolo trovato corrispondente ai tuoi criteri.",
     "loading": "Caricamento articoli di ricerca...",
     "previewBadge": "Ricerca & Blog",
-    "previewTitle": "Ultime Ricerche & Approfondimenti",
-    "previewSubtitle": "Approfondimenti su analisi geospaziale, tendenze immobiliari e innovazioni tecniche.",
     "viewAll": "Vedi Tutto",
     "listKicker": "Accademia: paper, metodi, pubblicazioni",
     "listTitlePrefix": "Paper",
@@ -216,8 +204,6 @@
     "sendButton": "Invia Messaggio",
     "sending": "Invio...",
     "privacy": "Il tuo messaggio è crittografato e usato solo per risponderti.",
-    "europeanMarkets": "Mercati Europei",
-    "modelAccuracy": "Accuratezza Modello",
     "successMessage": "Messaggio inviato con successo! Ti risponderò presto.",
     "errorEmail": "Inserisci un indirizzo email valido",
     "errorSpam": "Il tuo messaggio è stato segnalato come potenziale spam. Riprova.",
@@ -245,7 +231,7 @@
         "viz": "abm",
         "sector": "Tesi Magistrale · Bocconi",
         "title": "Modello agent-based di gentrificazione",
-        "outcome": "Un modello ad agenti del cambiamento di quartiere, guidato da attrattività e accessibilità economica, applicato ad Amsterdam, Utrecht e Milano su dati spaziali aperti. La prova migliore dell'identità urban-dynamics.",
+        "outcome": "Un modello ad agenti del cambiamento di quartiere, guidato da attrattività e accessibilità economica, applicato ad Amsterdam, Utrecht e Milano su dati spaziali aperti.",
         "stack": [
           "Python",
           "Mesa",
