@@ -138,7 +138,7 @@ Posts are editable via the Django admin at `/admin/` with a `BlogPost` list view
 
 ## Seeding beta content (`seed_beta_content`)
 
-Beta pieces live as markdown files with YAML frontmatter in `backend/seed_content/` (`blog/*.md` → `BlogPost`, `research/*.md` → `Research`; the body becomes `content`, research files also carry `abstract` in the frontmatter). The command is opt-in — it runs only when invoked manually and is wired into no entrypoint, migration, CI step, or startup hook:
+Beta pieces live as markdown files with YAML frontmatter in `backend/seed_content/` (`blog/*.md` → `BlogPost`, `research/*.md` → `Research`; the body becomes `content`, research files also carry `abstract` in the frontmatter). The command runs automatically on every backend startup (docker-compose command chain, after `migrate` and `seed_chat_kb`) and can also be invoked manually:
 
 ```bash
 python manage.py seed_beta_content            # seed everything
@@ -149,9 +149,9 @@ python manage.py seed_beta_content --only when-metro-capitalizes-fixed-effects
 Rules it enforces:
 
 - **Upsert by slug.** The frontmatter `slug` must equal the filename stem; the command errors on mismatch to prevent slug drift.
-- **Always draft on create.** `status` is forced to `draft` for new rows; a `status` key in frontmatter is ignored with a warning. Drafts stay hidden from anonymous readers by the existing API visibility rules.
-- **Never downgrades.** A row whose status was manually changed to `published` or `archived` is skipped entirely with a warning — the command never overwrites it and never flips it back to draft. Rows still in `draft` get all seeded fields refreshed.
-- **`read_time`** is computed as `ceil(wordcount/200)` (e.g. `7 min`) when blank in frontmatter; **`date`** is never invented — it stays blank until set by hand.
+- **Status from frontmatter.** `status: draft` (default) or `status: published` per file — the file can create a published post or promote an existing draft. Drafts stay hidden from anonymous readers by the existing API visibility rules.
+- **Never overwrites a live row.** A row already `published` or `archived` in the database is skipped entirely with a warning — the command never overwrites it and never flips it back to draft, so admin/API edits to live posts always win over the files. Rows still in `draft` get all seeded fields refreshed (the files are the source of truth for drafts).
+- **`published_at`** may be set in frontmatter as an ISO 8601 date or datetime (used to backdate display ordering per the content calendar); **`read_time`** is computed as `ceil(wordcount/200)` (e.g. `7 min`) when blank in frontmatter; **`date`** is never invented — it stays blank until set in the file or by hand.
 - **No new dependencies.** Frontmatter is hand-parsed (scalars, quoted strings, JSON-style lists, booleans, and `key: |` blocks) — no PyYAML required.
 
 Figures and PDFs referenced in the seeded content are `<!-- asset: ... -->` placeholders: upload them via `POST /api/research/upload-image/` (or the admin, for `pdf_file`) and rewrite the paths before publishing.

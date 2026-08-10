@@ -1,16 +1,17 @@
 ---
 title: '"Pinned" should mean bytes-identical: a snapshot-guard operator'
 slug: snapshot-guard-operator-pinned-means-bytes-identical
-status: draft
+status: published
+published_at: 2026-07-28
 category: explanation
 tags: ["data-engineering", "orchestration", "airflow", "reproducibility", "data-integrity", "series"]
 excerpt: "An operator that treats pinned inputs as a contract: if the bytes changed, the pipeline should refuse to pretend otherwise."
 read_time: ""
-date: ""
+date: "July 2026"
 featured: false
 is_premium: false
 author: Ian Ronk
-cover_image: ""
+cover_image: "/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_1_contract.png"
 meta: {"series": "research-pipelines-are-production-systems", "series_part": 4, "series_total": 4}
 ---
 
@@ -30,7 +31,7 @@ done
 
 It checks the wrong thing: "the file exists" is a filename contract, while the reproducibility claim is a contract about content. A re-fetched snapshot with the same name — different Overpass day, different bytes, every downstream IoU moved — sails through an existence check. My project's two worst documented incidents were both of this class: provenance carried in filenames and conventions, nothing machine-checking what the artifact actually was.
 
-![fig: Two files with the same name and different bytes — the existence check passes both, the SHA-256 guard blocks the drifted one](TODO-upload)
+![Two files with the same name and different bytes: the existence check passes both, the SHA-256 guard blocks the drifted one](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_1_contract.png)
 *"The file exists" is a filename contract; reproducibility is a contract about content. (Image by author)*
 
 ## Sidecars carry the hash
@@ -70,17 +71,20 @@ The `execute()` itself is deliberately boring: stream each file through SHA-256,
 
 > HASH MISMATCH — pinned `1779253351f0c41d…` vs on-disk `8a01bc…` (the pinned bytes changed; re-pin deliberately and expect downstream numbers to move)
 
-![fig: Four failure modes mapped to four human actions — pin it, restore it, hash it, stop and think](TODO-upload)
+![Four failure modes mapped to four human actions: pin it, restore it, hash it, stop and think](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_4_quadrant.png)
 *Four failures, four different human actions. (Image by author)*
 
 ## Where it sits in the graph
 
-![fig: The DAG chain — extract, pin, then the guard as a gate before ingestion, QA and parity](TODO-upload)
+![The DAG chain: extract, pin, then the guard as a gate before ingestion, QA and parity](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_3_dag.png)
 *The guard is a gate — retries=0, a fact-check rather than an operation. (Image by author)*
+
+![The real Graph view of the Voronoi DAG: extract, pin and guard_snapshots feeding the sequential DuckDB ingest chain](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/airflow_voronoi_graph.png)
+*The same chain in the running instance — `SnapshotGuardOperator` between acquisition and the `DuckDBOperator` ingest chain. (Screenshot of the local Airflow 3.3 UI)*
 
 Nothing ingests until the guard passes, so every row the warehouse ever holds descends from bytes-verified inputs; the ingest tasks stamp a `batch_id` (the Airflow `run_id`), which closes the chain: a warehouse row → a run → a set of verified hashes → the pinned snapshots the paper cites.
 
-![fig: The provenance chain from pinned snapshot through sidecar hash, guard, DAG run and warehouse row to the number in the paper](TODO-upload)
+![The provenance chain from pinned snapshot through sidecar hash, guard, DAG run and warehouse row to the number in the paper](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_2_provenance.png)
 *Read it right to left: every published number descends from verified bytes. (Image by author)*
 
 ## When to promote a bash line to an operator

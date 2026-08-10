@@ -6,11 +6,11 @@ category: explanation
 tags: ["data-engineering", "orchestration", "airflow", "hetzner", "infrastructure", "series"]
 excerpt: "The same Airflow stack at three scales — local docker-compose, a single server, and a small Hetzner fleet — without forking the architecture."
 read_time: ""
-date: ""
+date: "July 2026"
 featured: false
 is_premium: false
 author: Ian Ronk
-cover_image: ""
+cover_image: "/blog-figures/airflow-stack-laptop-to-hetzner-fleet/f01_1_hero.png"
 meta: {"series": "research-pipelines-are-production-systems", "series_part": 2, "series_total": 4}
 ---
 
@@ -26,14 +26,14 @@ This post is the current answer: the Airflow 3.3 stack that orchestrates every p
 
 Airflow 3 is no longer "webserver + scheduler." The compose file runs the real service split:
 
-![fig: The Airflow 3 service split — apiserver, scheduler, dag-processor, triggerer and one-shot init over Postgres 16](TODO-upload)
+![The Airflow 3 service split: apiserver, scheduler, dag-processor, triggerer and one-shot init over Postgres 16](/blog-figures/airflow-stack-laptop-to-hetzner-fleet/f01_2_topology.png)
 *The real four-service split over Postgres. (Image by author)*
 
 Three of these choices need defending.
 
 **Two executors, one definition.** On the laptop this runs LocalExecutor: one machine, a dozen research DAGs, no burst concurrency requirement, so the scheduler container executes tasks itself and carries the data mounts. The scaled-out configuration — CeleryExecutor across several Hetzner machines — gets its own section below, because it is the same compose definition with the executor swapped and workers added, not a different system. Start with the executor your workload actually needs; keep the definition so the upgrade is a diff, not a rewrite.
 
-![fig: One compose definition deployed three ways — laptop, one hardened Hetzner box, a Celery fleet](TODO-upload)
+![One compose definition deployed three ways: laptop, one hardened Hetzner box, a Celery fleet](/blog-figures/airflow-stack-laptop-to-hetzner-fleet/f01_1_hero.png)
 *Same compose definition, three deployments. (Image by author)*
 
 **The image is `apache/airflow:3.3.0` plus one pip layer.** The Dockerfile is four lines: base image, copy `requirements-docker.txt`, install. Every dependency a DAG imports at parse time must be in that file — this is a contract, not a convenience. I learned this one the embarrassing way: the DuckDB operator worked in my local venv for a day while the Docker dag-processor was failing the same DAG with `ModuleNotFoundError`, because the package existed in one environment and not the other. A committed DagBag test now runs against both.
@@ -47,7 +47,7 @@ PY = os.getenv("PORTFOLIO_PY", "/opt/miniconda3/bin/python3")
 
 Compose sets `BLOGS_ROOT=/opt/blogs` (a bind mount) and `PORTFOLIO_PY=python` (the image interpreter). The same DAG file parses on the host and in the container without edits.
 
-![fig: The same DAG file resolving BLOGS_ROOT and PORTFOLIO_PY differently on the host and in the container](TODO-upload)
+![The same DAG file resolving BLOGS_ROOT and PORTFOLIO_PY differently on the host and in the container](/blog-figures/airflow-stack-laptop-to-hetzner-fleet/f01_3_env_contract.png)
 *No hardcoded paths — the environment supplies the contract. (Image by author)*
 
 External drives are opt-in overlay files (`compose.insar.yaml`) with a guard that refuses to start if the drive isn't mounted — an unconditional bind would let Docker create an empty directory and shadow the real mount point.
@@ -58,6 +58,9 @@ External drives are opt-in overlay files (`compose.insar.yaml`) with a guard tha
 ./run.sh          # compose up -d --build → http://localhost:8080
 ./run.sh --down
 ```
+
+![The Airflow 3.3 DAG list of the local instance, showing the seven portfolio pipelines](/blog-figures/airflow-stack-laptop-to-hetzner-fleet/airflow_dags_list.png)
+*The instance this series runs on — seven project DAGs, almost all `schedule=None` by design. (Screenshot of the local Airflow 3.3 UI)*
 
 Local-dev auth is deliberately loose: `SimpleAuthManager` with `SIMPLE_AUTH_MANAGER_ALL_ADMINS='true'`, a placeholder JWT secret, and `airflow:airflow` Postgres credentials. The compose file says, in a comment, *do not copy this block to anything reachable from a network* — and the rest of this post is what changes when you do reach a network.
 
@@ -115,12 +118,12 @@ One box stops being enough the moment workloads need isolation rather than just 
 
 **The failure mode that only exists in distributed mode.** The bug that taught me the most: a worker would start, log "ready", then go silent while its queues backed up — container running, ping healthcheck failing, restart loop, no errors anywhere. A Celery worker holds *several* broker connections (consume, acknowledge, control), and an overlay network's load balancer was silently dropping TCP connections idle longer than its timeout. The consuming connection stayed busy and healthy; the acknowledgement connection died without a FIN, and the worker waited forever on a socket that would never answer. The fix is layered because no single layer is trustworthy: bypass the virtual-IP layer for broker traffic, set application-level TCP keepalives well under the network's idle timeout via `broker_transport_options`, add broker health checks and socket timeouts so a dead connection is detected in minutes, and enable `worker_cancel_long_running_tasks_on_connection_loss` so a worker that loses the broker fails loudly. None of this exists on one machine, where the broker is a localhost socket that cannot half-die.
 
-![fig: A Celery worker holding consume, acknowledge and control connections through an overlay network; the acknowledge connection dropped without a FIN](TODO-upload)
+![A Celery worker holding consume, acknowledge and control connections through an overlay network; the acknowledge connection dropped without a FIN](/blog-figures/airflow-stack-laptop-to-hetzner-fleet/f01_4_half_dead.png)
 *The consuming connection stays healthy; the acknowledgement connection dies without a FIN. (Image by author)*
 
 **Monitoring at three altitudes.** Distributed Airflow needs monitoring that single-machine Airflow collapses into one layer: infrastructure (node exporters, per-worker healthchecks that ping the *named* worker — an anonymous ping succeeds if any worker answers), orchestrator (StatsD metrics into Prometheus/Grafana, plus a monitoring DAG inside Airflow that checks the expected worker set and long-running tasks and posts to chat when the picture is wrong), and the work itself — a small exporter publishing progress and backlog per workload, because task states say a job ran, not whether it did enough. When a source silently degrades to a tenth of its volume, every Airflow-level signal is green; the backlog gauge is the only thing that notices.
 
-![fig: Three monitoring altitudes — infrastructure, orchestrator, and the work itself](TODO-upload)
+![Three monitoring altitudes — infrastructure, orchestrator, and the work itself](/blog-figures/airflow-stack-laptop-to-hetzner-fleet/f01_5_monitoring.png)
 *Task states say a job ran — not whether it did enough. (Image by author)*
 
 Two smaller stability items earn their place on any multi-machine setup: a connection pooler in front of the metadata Postgres (every scheduler, API server, DAG processor, triggerer and worker opens its own SQLAlchemy pool, and a dozen small pools still swamp a default server), and a pre-push parse suite that forbids top-level imports of worker-only packages — the scheduler parses every DAG file, and one worker-only import breaks DAGs that never touch that code.

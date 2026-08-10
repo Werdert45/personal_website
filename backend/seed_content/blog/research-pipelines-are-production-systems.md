@@ -1,22 +1,23 @@
 ---
 title: "Research pipelines are production systems — a series"
 slug: research-pipelines-are-production-systems
-status: draft
+status: published
+published_at: 2026-07-14
 category: explanation
 tags: ["data-engineering", "orchestration", "airflow", "series"]
 excerpt: "Why research data pipelines deserve production discipline: the series opener."
 read_time: ""
-date: ""
+date: "July 2026"
 featured: false
 is_premium: false
 author: Ian Ronk
-cover_image: ""
+cover_image: "/blog-figures/research-pipelines-are-production-systems/f00_1_hero.png"
 meta: {"series": "research-pipelines-are-production-systems", "series_part": 1, "series_total": 4}
 ---
 
 # Research pipelines are production systems — a series
 
-![fig: The thesis stack in 2025 next to what survived in 2026 — the DAG files and the running system marked lost](TODO-upload)
+![The thesis stack in 2025 next to what survived in 2026 — the DAG files and the running system marked lost](/blog-figures/research-pipelines-are-production-systems/f00_1_hero.png)
 *The results are fine. The system that produced them exists only as evidence to be reconstructed. (Image by author)*
 
 Research code has a short half-life. Mine included. The ingestion stack behind my MSc thesis — a containerised Airflow instance with MinIO and PostGIS on a rented server — worked, produced every panel in the thesis, and then the server was retired and the DAG files went with it. What survived was the callable classes, the SQL, the exported GeoJSONs, and a chapter describing the architecture. The results are fine. The system that produced them exists only as evidence to be reconstructed.
@@ -33,7 +34,7 @@ Each project in my portfolio can be written up three ways, and I try to keep the
 2. **The implementation post** — the model, the algorithm, the code that computes.
 3. **The data-engineering post** — how the bytes moved: acquisition, idempotency, schemas, caches, validation gates, and what broke.
 
-![fig: Three lanes — research, implementation, data engineering — with the third highlighted](TODO-upload)
+![Three lanes — research, implementation, data engineering — with the third highlighted](/blog-figures/research-pipelines-are-production-systems/f00_2_trilogy.png)
 *The third leg is where most of the engineering hours went, and where every near-miss lived. (Image by author)*
 
 Most research writing publishes only the first. Some publishes the second. The third almost never gets written, which is odd, because in my projects it is where most of the engineering hours went and where every near-miss lived. This series is the third leg, told across six real projects, orchestrated as Airflow DAGs in one local instance — one truthful DAG per project, pointing at the real scripts with the real dependencies, not a toy rebuilt for the blog.
@@ -58,7 +59,7 @@ Then one **data-engineering case study per project**, chaptered, with the custom
 
 Amsterdam quays (726 GB in, 1578 rows out) and the Tokyo ODPT build keep their slots further out.
 
-![fig: The series lineup: one setup post, five case studies, two projects further out](TODO-upload)
+![The series lineup: one setup post, five case studies, two projects further out](/blog-figures/research-pipelines-are-production-systems/f00_3_lineup.png)
 *One setup post, then one data-engineering case study per project. (Image by author)*
 
 ## Who this is for
