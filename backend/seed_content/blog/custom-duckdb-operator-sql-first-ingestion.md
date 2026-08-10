@@ -1,16 +1,17 @@
 ---
 title: "A custom DuckDB operator: SQL-first ingestion in Airflow"
 slug: custom-duckdb-operator-sql-first-ingestion
-status: draft
+status: published
+published_at: 2026-07-21
 category: explanation
 tags: ["data-engineering", "orchestration", "airflow", "duckdb", "sql", "series"]
 excerpt: "Building a custom Airflow operator that makes DuckDB the ingestion engine: SQL-first, testable, and cheap."
 read_time: ""
-date: ""
+date: "July 2026"
 featured: false
 is_premium: false
 author: Ian Ronk
-cover_image: ""
+cover_image: "/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_1_before_after.png"
 meta: {"series": "research-pipelines-are-production-systems", "series_part": 3, "series_total": 4}
 ---
 
@@ -22,7 +23,7 @@ The ingestion stage of my postcode-boundaries pipeline used to be pandas loading
 
 The redesign: raw files flow into a DuckDB warehouse through **SQL scripts**, and a ~130-line custom operator is the only glue. This post is the operator — including the three bugs an adversarial review found in my first version, all of which generalize.
 
-![fig: Ingestion before (pandas fused into a 400-line script) and after (operator + SQL script + params into a DuckDB warehouse)](TODO-upload)
+![Ingestion before (pandas fused into a 400-line script) and after (operator + SQL script + params into a DuckDB warehouse)](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_1_before_after.png)
 *The redesign in one frame: what lands in the data becomes readable without reading any python. (Image by author)*
 
 ## The shape
@@ -82,7 +83,7 @@ except Exception:
 
 A committed test proves it: a script whose second statement fails leaves the table exactly as it was.
 
-![fig: Two timelines: autocommit leaves the warehouse empty when INSERT fails; one transaction rolls back to the exact prior state](TODO-upload)
+![Two timelines: autocommit leaves the warehouse empty when INSERT fails; one transaction rolls back to the exact prior state](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_2_transaction.png)
 *The same failure, two very different states left behind. (Image by author)*
 
 **3. The QA gate triggered on the wrong statements.** The operator has a `fail_on_rows=True` mode: point it at a violations-only SQL script and the task fails if the final query returns rows. My first implementation gated on "the last statement that produced a result set" — but DuckDB DML *also* produces a result set (a one-row `Count`), so an ingest script under `fail_on_rows` would always fail on its own INSERT count. The contract is now explicit: **the gate applies only when the final statement is a SELECT** (`stmt.type == duckdb.StatementType.SELECT`), and a unit test pins exactly that behavior.
@@ -102,19 +103,19 @@ SELECT 'parse_rate_out_of_band', ...
 
 The `expectations` table is loaded from a committed CSV holding each pinned snapshot's **exact** row count and a calibrated parse-survival band. Exact counts beat thresholds: they catch double-ingestion (idempotency becomes *observed*, not assumed) and they cost nothing when the inputs are pinned. The band has a floor *and* a ceiling — a parse rate that jumps from 88% to 99% means a rule silently loosened, which no floor-only check would see. And the first QA run failed its own naive 90% floor, because real OSM postcode noise sits at 86–88% in three of my five countries: thresholds come from observed baselines, not intuition.
 
-![fig: Observed parse rates per country against their calibrated floor-and-ceiling bands, with the naive 90 percent floor cutting through the noisy countries](TODO-upload)
+![Observed parse rates per country against their calibrated floor-and-ceiling bands, with the naive 90 percent floor cutting through the noisy countries](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_3_parse_band.png)
 *Real numbers from the warehouse: the naive 90% floor fails IT, CH and BE — the calibrated bands hold. (Image by author)*
 
 ## The one operational constraint
 
 DuckDB allows **one writing process per database file** — a second `connect()` fails on the file lock, immediately. Under Airflow's LocalExecutor, "five parallel ingest tasks" means five OS processes, so my original fan-out `create >> [five ingests] >> qa` was a lock collision wearing a parallelism costume (reproduced with three subprocess writers: two die with `IOException`). The write chain is now sequential and says why in a comment; read-only consumers (`read_only=True`) parallelize freely once the writers are done. If you want the parallel *look* without the collision, a 1-slot Airflow pool serializes execution behind the scenes — I chose the explicit chain because the constraint deserves to be visible in the graph.
 
-![fig: The fan-out DAG with two ingests dying on IOException next to the explicit sequential write chain with read-only consumers fanning out](TODO-upload)
+![The fan-out DAG with two ingests dying on IOException next to the explicit sequential write chain with read-only consumers fanning out](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_4_lock.png)
 *Five parallel writers was a lock collision wearing a parallelism costume. (Image by author)*
 
 ## What I'd tell past me
 
 Custom operators are cheap (subclass `BaseOperator`, implement `execute`) and the temptation is to write them casually. The three bugs above all shipped in a version that "worked" on a happy-path manual test. What made the operator trustworthy wasn't writing it — it was the committed contract tests (semicolon-in-literal, rollback-on-failure, DML-never-gates, empty-gate-passes) and a review pass whose job was to break it. The operator is ~130 lines; the tests are ~90. That ratio feels right.
 
-![fig: Stat strip: about 130 operator lines, about 90 test lines, 3 real bugs found by review, 0 of them typos](TODO-upload)
+![Stat strip: about 130 operator lines, about 90 test lines, 3 real bugs found by review, 0 of them typos](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_5_stats.png)
 *What made it trustworthy was never the operator. (Image by author)*

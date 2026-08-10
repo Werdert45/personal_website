@@ -1,7 +1,9 @@
 ---
 title: 'Seven Cities, 42,000 Observations, and a Headline That Hung on One Modeling Choice'
 slug: when-metro-capitalizes-fixed-effects
-status: draft
+status: published
+published_at: 2026-06-10
+date: "June 2026"
 excerpt: 'A phase-decomposed DiD across seven cities, and how one fixed-effects specification choice moved the headline result.'
 category: explanation
 tags: ["difference-in-differences", "fixed-effects", "econometrics", "housing-markets", "metro", "italy"]
@@ -36,8 +38,6 @@ That sounds innocuous. It is not. With common year effects, a treated neighbourh
 The alternative is city-by-year fixed effects: absorb each city's entire annual price path, and identify the effect only from treated-versus-untreated gaps *within the same city and year*. It costs you statistical power and any effect that operates city-wide. It is also, for the question "did the metro raise prices in the neighbourhoods it touched," clearly the more honest comparison.
 
 Under city-by-year effects, the +9 to +12% maturity step collapses to a precise nothing (−0.5 log points, p = 0.66). What survives instead is a small **+2.5 log-point step at opening**, with partial reversion afterwards — and even that step, once I ran it through the same few-cluster bootstrap discipline as the headline, turned out to be a pattern rather than a significant estimate.
-
-![fig: pooled two-way FE vs city-by-year FE phase estimates, side by side](TODO-upload)
 
 Neither regression is wrong. They answer different questions. The pooled cross-city average says: places that build metros see prices rise late, partly on city-wide tides that common year effects cannot separate from the treatment. The within-city contrast says: the neighbourhood-level premium is smaller and arrives at opening. The mistake — the one I nearly shipped — is letting the first number wear the second number's interpretation. "Metros raise nearby prices 12% at maturity" is precisely the within-city claim, and it is precisely the claim the data rejects.
 

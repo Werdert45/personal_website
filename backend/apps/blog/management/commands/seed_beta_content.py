@@ -8,30 +8,35 @@ becomes BlogPost.content / Research.content; Research additionally takes
 
 Rules:
 - Upsert by slug. The frontmatter slug must equal the filename stem.
-- status is ALWAYS forced to 'draft' on create; any status key in the
-  frontmatter is ignored with a warning.
-- An existing row whose status is still 'draft' is updated in place.
-- An existing row whose status was manually changed (published/archived)
-  is SKIPPED entirely — the command never overwrites it and never flips
-  published back to draft.
+- status comes from the frontmatter ('draft' or 'published'; default
+  'draft'). The file can promote draft -> published but a row that is
+  already published or archived in the database is SKIPPED entirely —
+  the command never overwrites it and never flips published back to
+  draft, so admin/API edits to live posts always win over the files.
+- published_at: optional ISO 8601 date or datetime in the frontmatter,
+  used for display ordering (backdating per the content calendar).
 - read_time: computed as ceil(wordcount/200) when blank in frontmatter.
 - `date` is never invented — it stays blank until set by hand.
 
-Opt-in only: this command runs solely when invoked manually —
+Runs on every backend startup via docker-compose (safe: it is idempotent
+and never touches a row that is already published or archived in the DB),
+and manually —
     python manage.py seed_beta_content [--dry-run] [--only <slug>]
-It is wired into no entrypoint, migration, CI step, or startup hook.
 
 The frontmatter is hand-parsed (no PyYAML dependency): it supports
 `key: value` scalars, quoted strings, JSON-style inline lists, booleans,
 and `key: |` literal blocks indented by two spaces.
 """
 
+import datetime
 import json
 import math
 from pathlib import Path
 
 from django.conf import settings
 from django.core.management.base import BaseCommand, CommandError
+from django.utils import timezone
+from django.utils.dateparse import parse_date, parse_datetime
 
 from apps.blog.models import BlogPost
 from apps.research.models import Research
@@ -51,7 +56,23 @@ RESEARCH_FIELDS = {
 }
 
 # Keys handled specially (never copied verbatim onto the model).
-CONTROL_KEYS = {"slug", "status"}
+CONTROL_KEYS = {"slug", "status", "published_at"}
+
+SEEDABLE_STATUSES = {"draft", "published"}
+
+
+def parse_published_at(value, path):
+    """Accept an ISO 8601 date or datetime; return an aware datetime."""
+    parsed = parse_datetime(str(value))
+    if parsed is None:
+        as_date = parse_date(str(value))
+        if as_date is not None:
+            parsed = datetime.datetime.combine(as_date, datetime.time(9, 0))
+    if parsed is None:
+        raise CommandError(f"{path}: published_at {value!r} is not ISO 8601")
+    if timezone.is_naive(parsed):
+        parsed = timezone.make_aware(parsed, datetime.timezone.utc)
+    return parsed
 
 
 def _parse_scalar(value):
@@ -109,8 +130,9 @@ def compute_read_time(body):
 
 class Command(BaseCommand):
     help = (
-        "Seed beta blog/research content from backend/seed_content/ as drafts. "
-        "Never overwrites rows whose status was manually changed."
+        "Seed beta blog/research content from backend/seed_content/ "
+        "(status per file frontmatter, default draft). "
+        "Never overwrites rows already published or archived in the database."
     )
 
     def add_arguments(self, parser):
@@ -177,11 +199,11 @@ class Command(BaseCommand):
                 f"{path}: frontmatter slug {fm_slug!r} does not match filename stem {slug!r}"
             )
 
-        if "status" in meta:
-            self.stdout.write(self.style.WARNING(
-                f"  [{slug}] frontmatter 'status' key ignored — "
-                f"status is managed by this command (draft on create, never downgraded)"
-            ))
+        file_status = meta.get("status", "draft")
+        if file_status not in SEEDABLE_STATUSES:
+            raise CommandError(
+                f"{path}: status {file_status!r} not allowed — use one of {sorted(SEEDABLE_STATUSES)}"
+            )
 
         for key in meta:
             if key not in allowed and key not in CONTROL_KEYS:
@@ -194,28 +216,30 @@ class Command(BaseCommand):
         if not fields.get("read_time"):
             fields["read_time"] = compute_read_time(body)
         # `date` is never invented: only set if explicitly present in frontmatter.
+        if "published_at" in meta and hasattr(model, "published_at"):
+            fields["published_at"] = parse_published_at(meta["published_at"], path)
 
         existing = model.objects.filter(slug=slug).first()
 
         if existing is None:
-            # status is ALWAYS forced to 'draft' on create.
             if not dry_run:
-                model.objects.create(slug=slug, status="draft", **fields)
-            self.stdout.write(f"  Created (draft): {slug} [{model.__name__}]")
+                model.objects.create(slug=slug, status=file_status, **fields)
+            self.stdout.write(f"  Created ({file_status}): {slug} [{model.__name__}]")
             return "created"
 
         if existing.status != "draft":
-            # Manually published/archived — never overwrite, never flip back.
+            # Already live (or archived) in the database — never overwrite,
+            # never flip back. Admin/API edits to live rows win over files.
             self.stdout.write(self.style.WARNING(
                 f"  SKIPPED {slug}: status is {existing.status!r} "
-                f"(manually changed) — this command never overwrites it"
+                f"— this command never overwrites a live row"
             ))
             return "skipped"
 
         if not dry_run:
             for key, value in fields.items():
                 setattr(existing, key, value)
-            existing.status = "draft"  # explicit: updates keep draft status
+            existing.status = file_status  # may promote draft -> published
             existing.save()
-        self.stdout.write(f"  Updated (draft): {slug} [{model.__name__}]")
+        self.stdout.write(f"  Updated ({file_status}): {slug} [{model.__name__}]")
         return "updated"
