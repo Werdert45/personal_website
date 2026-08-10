@@ -29,8 +29,8 @@
     "role": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
     "title": "Ingegneria dei dati",
     "titleHighlight": "per la ricerca",
-    "titleEnd": "— collaudata su problemi spaziali complessi",
-    "description": "Costruisco e guido sistemi dati di produzione; la mia specialità è il data engineering dietro la ricerca — le pipeline Airflow, DuckDB e PostGIS che trasformano dati spaziali aperti in paper. La sede di ricerca è la dinamica urbana: gentrificazione, accessibilità, mercati abitativi — perché le città sono dove i problemi di dati diventano complessi. Le pipeline dietro i miei paper sono repository pubblici.",
+    "titleEnd": "— dai dati spaziali aperti ai paper pubblicati",
+    "description": "Costruisco e guido sistemi dati di produzione; la mia specialità è il data engineering dietro la ricerca — le pipeline Airflow, DuckDB e PostGIS che trasformano dati spaziali aperti in paper. Il fronte di ricerca è la dinamica urbana: gentrificazione, accessibilità, mercati abitativi — perché le città sono dove i problemi di dati diventano complessi. Le pipeline dietro i miei paper sono repository pubblici.",
     "aboutMe": "Chi sono",
     "workWithMe": "Scrivimi",
     "expertise": "Competenze:"
@@ -48,7 +48,7 @@
     "professionalTitle": "Percorso Professionale",
     "professional": "Professionale",
     "academic": "Accademico",
-    "educationSubtitle": "Solida base in AI, data science e business analytics dalle migliori istituzioni europee.",
+    "educationSubtitle": "AI alla triennale, data science e analytics alla magistrale — il lato metodologico del toolkit. Il lato produzione è arrivato dal lavoro.",
     "experienceSubtitle": "5+ anni nella costruzione e guida di sistemi dati in produzione — pipeline, forecasting, geospaziale — su mercati europei e ricerca accademica.",
     "sectionKicker": "Chi sono: chi, dove, come",
     "heroTitleLine1a": "Data",
@@ -56,14 +56,14 @@
     "heroTitleLine2": "Ingegneria",
     "heroTitleLine2Underline": "Sistemi",
     "heroTitleLine3": "& Ricerca.",
-    "lede1": "Con base ad Amsterdam, guido team dati e costruisco ciò che li fa funzionare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. Il mestiere sotto è la progettazione di sistemi: è l'architettura a decidere se una pipeline è ancora in funzione al terzo anno. Il lato ricerca resta attivo — dinamica urbana, gentrificazione, accessibilità a risoluzione di parcella — perché le città sono dove i problemi di dati diventano complessi. Per profondità, uno specialista geodata con base ad Amsterdam; di mestiere, un data lead.",
+    "lede1": "Con base ad Amsterdam, guido team dati e costruisco quello che fanno girare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. Il mestiere sotto è la progettazione di sistemi: è l'architettura a decidere se una pipeline è ancora in funzione al terzo anno. Il lato ricerca resta attivo — dinamica urbana, gentrificazione, accessibilità a risoluzione di parcella — perché le città sono dove i problemi di dati diventano complessi. Per profondità, uno specialista geodata; di mestiere, un data lead.",
     "lede2": "La mia convinzione: strumenti interni con una visione chiara battono le grandi piattaforme; una pipeline calibrata batte una brillante; e una mappa deve rispondere a una domanda, non ostentare complessità.",
     "portraitCaption": "IAN · AMS · 2026",
     "factRole": "Ruolo",
     "factRoleValueHighlight": "Head of Data",
     "factRoleValueRest": "· KR&A, Europa · FinTech",
     "factBasis": "Sede",
-    "factBasisValue": "Amsterdam, Paesi Bassi · attivo in tutta Europa",
+    "factBasisValue": "Amsterdam, Paesi Bassi · olandese, inglese, tedesco, italiano",
     "factExperience": "Esperienza",
     "factExperienceValueHighlight": "5+ anni",
     "factExperienceValueRest": "in ingegneria dei dati & analytics spaziale",
@@ -78,8 +78,8 @@
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
     "journeyKicker": "Percorso professionale",
     "journeyTitlePrefixItalic": "Cinque",
-    "journeyTitleRest": "anni a fornire",
-    "journeyTitleLine2": "approfondimenti basati sui dati.",
+    "journeyTitleRest": "anni a costruire",
+    "journeyTitleLine2": "sistemi dati in produzione.",
     "expertise": [
       {
         "title": "Architettura Dati & Pipeline",
@@ -99,7 +99,7 @@
       },
       {
         "title": "Product Ownership & Leadership",
-        "description": "Proprietà end-to-end dal metodo all'API rilasciata — un build su 13 server consegnato due settimane in anticipo sul piano, nel budget, e un team di 4–5 guidato presso KR&A."
+        "description": "Proprietà end-to-end dal metodo all'API rilasciata — un build su 13 server e un team di 4–5 guidato presso KR&A."
       }
     ],
     "experience": [
@@ -113,7 +113,7 @@
         "year": "Giu 2022 - Lug 2025",
         "role": "Medior Data Scientist",
         "company": "KR&A | Europa | FinTech",
-        "description": "Forniti approfondimenti basati sui dati per decisioni di investimento immobiliare — costruiti modelli ML per valutazione immobiliare e analisi di mercato in 15+ mercati europei, con lavori per aziende immobiliari leader, fondi pensione ed Eurostat."
+        "description": "Costruiti modelli ML per valutazione immobiliare e analisi di mercato in 15+ mercati europei; lavori consegnati per aziende immobiliari, fondi pensione ed Eurostat. Incluso un indice mensile dei prezzi delle case su 13 paesi UE, testato come indicatore di disaggregazione per gli HPI trimestrali Eurostat."
       },
       {
         "year": "Ott 2021 - Giu 2022",
@@ -149,7 +149,7 @@
     "backToAbout": "Torna a Chi Sono"
   },
   "Research": {
-    "loadingFallback": "Articoli in caricamento: torna fra poco",
+    "loadingFallback": "Indice dei paper non disponibile al momento — i repository delle pipeline su GitHub restano aggiornati.",
     "title": "Ricerca & Articoli",
     "searchPlaceholder": "Cerca articoli...",
     "readMore": "Leggi di più",
@@ -163,7 +163,7 @@
     "listTitleAmp": "& bozze in",
     "listTitleHighlight": "corso",
     "listSubtitle": "Working paper, preprint e descrizioni metodologiche su dinamica urbana, analisi di rete e metodi geospaziali.",
-    "previewTitlePrefix": "Articoli",
+    "previewTitlePrefix": "Paper",
     "previewTitleItalic": "selezionati",
     "previewSubtitleShort": "Lavori recenti su dinamiche urbane, metodi geospaziali e ingegneria dei dati spaziali europei su larga scala.",
     "loadingArticle": "Caricamento articolo...",
@@ -294,7 +294,7 @@
     "work": "Contatti"
   },
   "Thoughts": {
-    "loadingFallback": "Articoli in caricamento: torna fra poco",
+    "loadingFallback": "Ancora nessun articolo — i primi casi studio, sul data engineering dietro la ricerca, sono in preparazione.",
     "kicker": "Lavori: casi studio & appunti dal campo",
     "recentTitle": "Lavori",
     "recentItalic": "recenti",
@@ -304,7 +304,7 @@
     "readPiece": "Leggi l'articolo →",
     "readShort": "Leggi →",
     "viewAll": "Vedi tutto →",
-    "backToList": "← Torna al lavoro",
+    "backToList": "← Torna ai lavori",
     "notFoundTitle": "Articolo non",
     "notFoundItalic": "trovato",
     "notFoundBody": "non è ancora stato pubblicato.",
@@ -313,16 +313,16 @@
     "bylineSuffix": "· Amsterdam",
     "minRead": "min di lettura",
     "writingTeaserKicker": "Lavori: casi studio & appunti dal campo",
-    "writingTeaserSubtitle": "Casi studio da progetti rilasciati in produzione, più appunti dal campo su cosa si rompe in produzione.",
+    "writingTeaserSubtitle": "Casi studio da progetti rilasciati, più appunti dal campo su cosa si rompe in produzione.",
     "endCtaKicker": "§ Altro",
     "endCtaTitle": "Altri scritti sul",
     "endCtaTitleItalic": "blog.",
     "endCtaBody": "Sfoglia altri saggi su geodata, AI/ML e operations, oppure scopri di più su chi c'è dietro alla scrittura.",
     "endCtaButton": "Altri scritti",
     "endCtaSecondary": "Chi sono",
-    "endCtaContact": "Hai domande su dove / quanto / cosa viene dopo? Parliamone",
+    "endCtaContact": "Stai lavorando a qualcosa di simile? Scrivimi",
     "relatedKicker": "Lavori correlati",
-    "empty": "I primi articoli arrivano ad agosto 2026 — casi di studio sul data engineering dietro la ricerca."
+    "empty": "Ancora nessun articolo — i primi casi studio, sul data engineering dietro la ricerca, sono in preparazione."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
@@ -335,24 +335,24 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Costruisco sistemi",
     "titleLine2Underline": "in produzione.",
-    "bio1": "Ingegnere geodata e ricercatore di dinamiche urbane, con sede ad Amsterdam. Head of Data presso KR&A. MSc in Data Science & Business Analytics alla Bocconi; BSc in Intelligenza Artificiale all'Università di Amsterdam, cinque anni tra i due, trascorsi perlopiù sul lato produttivo.",
-    "bio2": "Lavoro all'incrocio tra geospatial analytics, AI/ML e l'infrastruttura dati poco glamour che li rende utili. Su questo sito raccolgo le cose a cui sto pensando, che sto costruendo o che ho pubblicato.",
+    "bio1": "Ingegnere geodata e ricercatore di dinamiche urbane, con sede ad Amsterdam. Head of Data presso KR&A. MSc in Data Science & Business Analytics alla Bocconi; BSc in Intelligenza Artificiale all'Università di Amsterdam, circa cinque anni tra i due, trascorsi perlopiù sul lato produzione.",
+    "bio2": "Lavoro all'incrocio tra geospatial analytics, ML e l'infrastruttura dati che rende utili entrambi: le pipeline, gli schemi e gli spatial join che nei paper non compaiono ma decidono se il modello arriva in produzione. Questo sito raccoglie ciò che vale la pena mettere per iscritto: paper, metodi, strumenti e qualche opinione decisa sul perché le dashboard siano sopravvalutate.",
     "factRoleK": "Ruolo",
     "factRoleV": "Head of Data · KR&A",
     "factBasisK": "Sede",
-    "factBasisV": "Amsterdam · lavoro in tutta l'UE",
+    "factBasisV": "Amsterdam · NL · EN · DE · IT",
     "factEduK": "Formazione",
     "factEduV": "MSc Bocconi · BSc AI Amsterdam",
     "factStackK": "Stack",
-    "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
+    "factStackV": "Python · PostGIS · Airflow · LLM · React",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Leggi la biografia completa"
   },
   "Proof": {
     "kicker": "Prove: risultati arrivati in produzione",
-    "titlePrefix": "Cose che",
-    "titleItalic": "hanno spedito",
-    "titleSuffix": "e sono rimaste.",
+    "titlePrefix": "Cose",
+    "titleItalic": "rilasciate",
+    "titleSuffix": "e rimaste.",
     "quote": "",
     "quoteAttribution": "",
     "outcomes": [
@@ -362,14 +362,14 @@
         "context": "Indice mensile dei prezzi delle case · testato con Eurostat"
       },
       {
-        "value": "2 sett.",
-        "unit": "in anticipo sul piano · nel budget",
+        "value": "1 punteggio",
+        "unit": "ogni parcella · validato per saturazione",
         "context": "Connectivity Score · build a 13 server"
       },
       {
         "value": "250k+",
         "unit": "record · 8 fonti · settimanale, 3 anni",
-        "context": "Scraping di livello istituzionale · usato da uffici statistici"
+        "context": "Pipeline di web scraping · alimenta l'indice mensile dei prezzi delle case"
       }
     ],
     "ctaPrimary": "Scarica il CV (PDF)",
@@ -401,15 +401,15 @@
     "copied": "Copiato"
   },
   "Newsletter": {
-    "compactHeading": "Resta aggiornato",
-    "compactDescription": "Note occasionali su geospatial, ML e AI.",
+    "compactHeading": "Note dal campo",
+    "compactDescription": "Note occasionali su metodi geospaziali, pipeline ML e cosa si rompe in produzione.",
     "inlineHeading": "Ricevi il prossimo articolo via email",
-    "inlineDescription": "Iscriviti, niente spam, puoi disiscriverti in qualsiasi momento.",
-    "homeThoughtsHeading": "Non sei ancora pronto a parlare? Ricevi il prossimo pezzo.",
+    "inlineDescription": "Occasionale. Niente spam. Disiscriviti quando vuoi.",
+    "homeThoughtsHeading": "Ricevi il prossimo pezzo.",
     "homeThoughtsDescription": "Note dal campo — contributi occasionali su dinamiche urbane, metodi geospaziali e cosa si rompe in produzione.",
     "emailPlaceholder": "tu@dominio.com",
     "submit": "Iscriviti",
-    "success": "Grazie, saremo in contatto.",
+    "success": "Grazie — sei in lista.",
     "error": "Qualcosa è andato storto. Riprova o scrivi direttamente.",
     "privacy": "Non condivideremo il tuo indirizzo."
   },
@@ -431,6 +431,7 @@
           "GeoPandas",
           "H3",
           "ABM",
+          "simulazione",
           "scienza delle reti"
         ]
       },
