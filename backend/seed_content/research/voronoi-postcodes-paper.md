@@ -58,6 +58,18 @@ Three readings I would emphasise. First, the shape transfers: Belgium lands near
 
 The pipeline also beats the trivial alternative everywhere: against a one-centroid-per-postcode Voronoi baseline the full pipeline gains +0.28 IoU in NL and +0.30 in DK, with smaller margins on the harder cases (+0.10 BE, +0.06 CH).
 
+```map
+{
+  "dataset": "milan-voronoi-caps",
+  "value_field": "iou_vs_official",
+  "legend": "IoU vs reference CAP",
+  "tooltip": ["postcode", "iou_vs_official", "n_seed_addresses"],
+  "layers": [{ "dataset": "milan-official-caps", "label": "Community-traced CAP boundaries" }],
+  "height": 460,
+  "caption": "Milan's 38 estimated CAP polygons, colored by IoU against the community-traced uMap reference (mean 0.783). Toggle the reference boundaries to compare shapes directly; hover a polygon for its per-CAP IoU and seed-address count."
+}
+```
+
 ## What does not work, and where the claim stops
 
 Two results I want on the record precisely because they are negative. Inverse-density power weighting — giving rural seeds larger Voronoi weights — does not improve on standard Voronoi: at most 0.5–0.6 percentage points in a narrow window, no gain at all on the Italian national run. Below saturation the binding constraint is address density, not the tessellation algorithm.

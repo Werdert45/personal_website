@@ -51,6 +51,17 @@ It is not uniformly good at change, either. Of Amsterdam's top-3 truly gentrifyi
 
 ![fig: Geographic comparison of real and simulated gentrification change, Amsterdam 2011–2022](TODO-upload)
 
+```map
+{
+  "dataset": "ams-gentrification-hotspots",
+  "value_field": "g_diff",
+  "legend": "Score change, 2010 to 2022",
+  "tooltip": ["name", "g_score_2010", "g_score_2022", "g_diff", "gi_star_z"],
+  "height": 440,
+  "caption": "Observed change in composite gentrification score across Amsterdam Buurten, 2010 vs 2022 — the fine-grained target the model was fit against. Most neighborhoods barely move; the concentrated risers are where the ABM earns its keep."
+}
+```
+
 ## Utrecht and Milan: where it broke
 
 Then the same framework went to Utrecht and Milan. Utrecht's data comes in 34 neighborhoods; Milan's in 88 NIL areas (Nuclei di Identità Locale). Both are much coarser than Amsterdam's Buurten.

@@ -1,7 +1,7 @@
 ---
 title: "When Does Metro Infrastructure Capitalize into Property Prices? Phase-Decomposed Difference-in-Differences Evidence from Seven European Cities"
 slug: when-metro-capitalizes-paper
-status: draft
+status: published
 category: working-paper
 publication_status: working-paper
 tags: ["difference-in-differences", "metro", "property-prices", "infrastructure", "urban-economics", "italy"]
@@ -67,6 +67,17 @@ The paper follows a deliberate build: the two cities studied in greatest depth �
 | Amsterdam, NZL (ring-restricted) | DiD, 1.5–3 km donut dropped | **+69,800 EUR** per property (bare TWFE: +31,900) | buurt-clustered *p* < 0.001; in logs the sign flips (−4.3% to −5.5%) — level gain, not proportional capitalization |
 | Pooled maturity step | Seven-city phase decomposition | +9 to +12% (construction → maturity) | *p* = 0.036 city-clustered, level-only controls; *p* = 0.080 full controls; *p* = 0.16 cohort-clustered |
 | Phase decomposition | Joint Wald, entity-clustered | Mature > {Rumour, Construct, Open} | *p* = 2.0×10⁻¹² — ordering evidence only (entity-clustered, anti-conservative); formal inference rests on the few-cluster bootstrap row above |
+
+```map
+{
+  "dataset": "milan-metro-rings",
+  "value_field": "band_effect_eur_m2",
+  "legend": "Distance-band effect (EUR/m2)",
+  "tooltip": ["zone", "ring", "dist_band", "band_effect_eur_m2", "band_effect_p", "effect_eur_m2"],
+  "height": 440,
+  "caption": "Milan OMI zones in the M4/M5 estimation sample, colored by the estimated distance-band effect in EUR/m2 (+769 within 500 m, decaying with distance; descriptive gradient, see inference notes in the paper). Hover a zone for its ring, distance band, and estimates — treated Ring D zones also carry the +167 within-ring estimate. Zones beyond 2 km serve as controls."
+}
+```
 
 One number that does *not* survive into the headline claims: under city-by-year fixed effects the maturity step collapses to an insignificant −0.5 log points, leaving a +2.5 log-point step at opening that is itself not significant under city-clustered bootstrap. The paper reports this prominently rather than burying it — the pooled step is a cross-city pattern, identified through the common-year fixed effects, and the abstract declines the strong causal reading on purpose.
 

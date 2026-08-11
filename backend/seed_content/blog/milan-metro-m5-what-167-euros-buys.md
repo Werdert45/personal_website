@@ -38,6 +38,17 @@ Sort the zones by distance to the nearest new stop instead, and a cleaner pictur
 
 One honest caveat before anyone quotes the +769: it rests on a handful of treated zones, and under the stricter bootstrap inference the paper applies throughout, its p-value is 0.10. I treat the gradient as descriptive — it tells you *where* the effect lives, not a magnitude I would defend on its own.
 
+```map
+{
+  "dataset": "milan-metro-rings",
+  "value_field": "ring",
+  "legend": "OMI ring",
+  "tooltip": ["zone", "ring_name", "dist_band", "band_effect_eur_m2", "effect_eur_m2", "effect_p"],
+  "height": 440,
+  "caption": "The 38 OMI zones behind the analysis, colored by ring (B central through E peripheral). Hover a zone for its distance band and estimated effects — the treated Ring D zones carry the +167 EUR/m2 within-ring estimate this post defends."
+}
+```
+
 ## The confound that nearly poisoned everything
 
 Here is the problem with studying Milan in the 2010s: the M5 was not the only thing happening. Porta Nuova was turning rail yards into the city's new skyline. CityLife was replacing the old fairgrounds with towers by Hadid, Libeskind, and Isozaki. Scalo Farini, Symbiosis, MIND, Cascina Merlata, Scalo Romana — the city ran a decade-long regeneration programme, and several of those sites sit close to new metro stations, on purpose. Lines get routed where cities expect development.

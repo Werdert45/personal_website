@@ -1,7 +1,7 @@
 ---
 slug: gentrification-abm-european-cities
 title: "A Unified Agent-Based Framework for Gentrification in European Cities"
-status: draft
+status: published
 category: thesis
 publication_status: thesis
 tags: ["agent-based-modeling", "gentrification", "urban-research", "amsterdam", "utrecht", "milan"]
@@ -81,6 +81,17 @@ At the level of individual neighborhoods the picture is mixed, and worth stating
 ![fig: top-3 most gentrifying Amsterdam neighborhoods, real vs simulated trajectories](TODO-upload)
 
 ![fig: geographic comparison of real vs simulated gentrification change, Amsterdam 2011-2022](TODO-upload)
+
+```map
+{
+  "dataset": "ams-gentrification-hotspots",
+  "value_field": "gi_star_z",
+  "legend": "Getis-Ord Gi* z-score",
+  "tooltip": ["name", "g_score_2010", "g_score_2022", "g_diff", "gi_star_z"],
+  "height": 460,
+  "caption": "Getis-Ord Gi* on the change between the 2010 and 2022 composite gentrification scores across Amsterdam Buurten. Positive z-scores mark spatial clusters of rising scores, negative z-scores mark cold spots; hover a neighborhood for its scores."
+}
+```
 
 ### Utrecht and Milan
 
