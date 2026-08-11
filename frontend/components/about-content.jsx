@@ -48,36 +48,6 @@ export function AboutContent() {
           </div>
         </div>
 
-        <div className="about-facts">
-          <div className="fact">
-            <span className="k">{t("factRole")}</span>
-            <span className="v"><b>{t("factRoleValueHighlight")}</b> {t("factRoleValueRest")}</span>
-          </div>
-          <div className="fact">
-            <span className="k">{t("factBasis")}</span>
-            <span className="v">{t("factBasisValue")}</span>
-          </div>
-          <div className="fact">
-            <span className="k">{t("factExperience")}</span>
-            <span className="v"><b>{t("factExperienceValueHighlight")}</b> {t("factExperienceValueRest")}</span>
-          </div>
-          <div className="fact">
-            <span className="k">{t("factMarkets")}</span>
-            <span className="v"><b>{t("factMarketsValueHighlight")}</b> {t("factMarketsValueRest")}</span>
-          </div>
-          <div className="fact">
-            <span className="k">{t("factClients")}</span>
-            <span className="v">{t("factClientsValue")}</span>
-          </div>
-          <div className="fact">
-            <span className="k">{t("factClientsPersonal")}</span>
-            <span className="v">{t("factClientsPersonalValue")}</span>
-          </div>
-          <div className="fact">
-            <span className="k">{t("factStack")}</span>
-            <span className="v">{t("factStackValue")}</span>
-          </div>
-        </div>
       </section>
 
       {expertise.length > 0 && (
