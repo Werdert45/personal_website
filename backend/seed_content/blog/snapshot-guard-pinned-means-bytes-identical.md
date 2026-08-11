@@ -1,6 +1,6 @@
 ---
 title: '"Pinned" should mean bytes-identical: a snapshot-guard operator'
-slug: snapshot-guard-operator-pinned-means-bytes-identical
+slug: snapshot-guard-pinned-means-bytes-identical
 status: published
 published_at: 2026-07-28
 category: explanation
