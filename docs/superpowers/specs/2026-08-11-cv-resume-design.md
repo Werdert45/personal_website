@@ -40,10 +40,53 @@ export const resume = {
 }
 ```
 
-Content is ported from the current `About.experience` / `About.education`
-locale keys and the existing `ian-ronk-cv.pdf`, with the corrected role
-line, and the research entries linking to the live `/research/<slug>`
-pages (metro paper, gentrification ABM, voronoi paper).
+Content is the user-approved v6 render (brainstorm session 2026-08-11),
+canonical below — not the old locale keys or the retired PDF. Research
+entries link to the live `/research/<slug>` pages where one exists.
+
+#### Canonical content (approved v6)
+
+- **Role line:** Data Lead & Engineer · Independent Researcher
+- **Summary:** Production data systems and the data engineering behind
+  research: Airflow, DuckDB and PostGIS pipelines that turn open spatial
+  data into papers. Leads a team of 4 as Head of Data; publishes
+  independent research on urban dynamics.
+- **Tools:** Python · SQL · PostGIS · Airflow · DuckDB · PyTorch ·
+  MLflow · Bash · LLM pipelines
+- **Experience** (no em dashes, no parentheticals in KR&A titles):
+  - *Head of Data, KR&A, Amsterdam* (Jul 2025 – present): team of 4 +
+    product-offering transformation for pension funds and leading
+    FinTechs; pipelines (weekly scrape of 300k records) and spatial big
+    data products; global connectivity score, 1TB+ across 13 servers
+    into a production API; client-facing (defending methodology against
+    PhD-level scrutiny, presenting to portfolio managers and senior
+    stakeholders); AI adoption (OCR, LLM document extraction, agentic
+    pipeline monitoring, agent-assisted development).
+  - *Independent Researcher, urban dynamics* (2025 – present): two
+    working papers and a method paper in preparation, each backed by an
+    open, reproducible pipeline.
+  - *Medior Data Scientist, KR&A* (Jun 2022 – Jul 2025): project lead
+    for two multi-year projects incl. the 3-year Eurostat hedonic HPI
+    project; legacy-to-Airflow/Iceberg/FastAPI restructure; client
+    contact with CBS, Eurostat, pension funds.
+  - *Junior Data Scientist, KR&A* (Oct 2021 – Jun 2022): flood
+    prediction thesis, 90%+ accuracy; tenfold API-efficiency
+    improvement via spatial optimisations.
+  - *Junior Full-Stack Developer, Exact (former SRXP), part-time*
+    (Sep 2019 – Sep 2022): EmberJS/PHP under CI/CD and testing.
+- **Research:** Voronoi paper (preprint, arXiv 2026); metro paper
+  (working paper, n = 42,004); connectivity-score method paper (in
+  preparation); gentrification ABM by research title with
+  "(MSc thesis, 8/8)". No data-orchestration repo entry.
+- **Education:** MSc Bocconi · 107/110, focus Finance · Econometrics ·
+  Statistics · NLP; BSc AI UvA with sub-entries Minor in Linguistics
+  (UvA) and Erasmus minor (UNIBO).
+- **Languages & Soft Skills:** Dutch C2 · English C2 · Italian B2/C1 ·
+  German B2 · Spanish A2; Team leadership · Multi-year project
+  management · Client & stakeholder communication · Presenting and
+  defending methodology to technical and senior audiences.
+- Open item (non-blocking): optional performance number for the
+  connectivity-score bullet.
 
 ### 2. About page dual-track section
 
