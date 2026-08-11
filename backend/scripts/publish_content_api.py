@@ -43,6 +43,7 @@ import datetime
 import json
 import math
 import os
+import re
 import sys
 import urllib.error
 import urllib.request
@@ -106,7 +107,9 @@ def upsert(base, api_key, kind, meta, body, force_publish, dry_run):
     slug = meta["slug"]
     endpoint = f"{base}/api/{KIND_ENDPOINT[kind]}/"
     payload = dict(meta)
-    payload["content"] = body
+    # Editorial scaffolding stays in the seed files; the renderer escapes
+    # HTML comments into visible text, so they must never reach the API.
+    payload["content"] = re.sub(r"<!--.*?-->\n?", "", body, flags=re.S)
     if force_publish:
         payload["status"] = "published"
     if not payload.get("read_time"):
