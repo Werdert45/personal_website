@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
@@ -13,6 +14,20 @@ import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { getItemField } from "@/lib/i18n-item";
 import { RelatedPosts } from "@/components/related-posts";
 import { AuthorTrailer } from "@/components/author-trailer";
+import { getMapFenceSource, parseMapFence } from "@/lib/map-fence";
+
+// Loaded lazily so posts without a ```map fence ship no mapbox JS.
+const MapFigure = dynamic(
+  () => import("@/components/map-figure").then((mod) => mod.MapFigure),
+  {
+    ssr: false,
+    loading: () => (
+      <div style={{ border: "1px solid var(--rule, #d4d4d4)", borderRadius: 8, padding: "28px 24px", margin: "24px 0" }}>
+        <p style={{ margin: 0, fontFamily: "var(--font-mono)", fontSize: 12, color: "var(--mute)" }}>Loading map…</p>
+      </div>
+    ),
+  }
+);
 
 export function BlogPost({ slug, initialPost = null }) {
   const [post, setPost] = useState(initialPost);
@@ -93,9 +108,16 @@ export function BlogPost({ slug, initialPost = null }) {
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeHighlight]}
         components={{
-          pre: ({ node, ...props }) => (
-            <pre style={{ borderRadius: 8, padding: "16px 20px", overflowX: "auto", fontSize: 14, lineHeight: 1.6, margin: "24px 0", background: "#282c34" }} {...props} />
-          ),
+          pre: ({ node, ...props }) => {
+            const fence = getMapFenceSource(node);
+            if (fence !== null) {
+              const { config, error } = parseMapFence(fence);
+              return <MapFigure {...(config || {})} configError={error} />;
+            }
+            return (
+              <pre style={{ borderRadius: 8, padding: "16px 20px", overflowX: "auto", fontSize: 14, lineHeight: 1.6, margin: "24px 0", background: "#282c34" }} {...props} />
+            );
+          },
           code: ({ node, inline, ...props }) =>
             inline
               ? <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.9em", background: "var(--rule)", padding: "1px 5px", borderRadius: 4 }} {...props} />

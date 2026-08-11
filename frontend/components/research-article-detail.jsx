@@ -3,9 +3,11 @@
 import { useState, useEffect } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { MapboxWrapper } from "@/components/mapbox-wrapper";
+import { getMapFenceSource, parseMapFence } from "@/lib/map-fence";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +16,19 @@ import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { trackEvent } from "@/lib/analytics";
 import { getItemField } from "@/lib/i18n-item";
 import { AuthorTrailer } from "@/components/author-trailer";
+
+// Loaded lazily so articles without a ```map fence ship no mapbox JS.
+const MapFigure = dynamic(
+  () => import("@/components/map-figure").then((mod) => mod.MapFigure),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="my-6 rounded-lg border border-border p-6">
+        <p className="text-xs font-mono text-muted-foreground">Loading map…</p>
+      </div>
+    ),
+  }
+);
 
 // Static fallbacks describe the REAL manuscripts faithfully. Any number or
 // claim here must match the current paper text — when in doubt, say less and
@@ -385,7 +400,14 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
                   ) : (
                     <code className="block bg-muted p-3 md:p-4 rounded text-xs md:text-sm font-mono overflow-x-auto" {...props} />
                   ),
-                pre: ({ node, ...props }) => <pre className="bg-muted p-3 md:p-4 rounded overflow-x-auto text-xs md:text-sm" {...props} />,
+                pre: ({ node, ...props }) => {
+                  const fence = getMapFenceSource(node);
+                  if (fence !== null) {
+                    const { config, error } = parseMapFence(fence);
+                    return <MapFigure {...(config || {})} configError={error} />;
+                  }
+                  return <pre className="bg-muted p-3 md:p-4 rounded overflow-x-auto text-xs md:text-sm" {...props} />;
+                },
                 table: ({ node, ...props }) => (
                   <div className="overflow-x-auto my-6">
                     <table className="min-w-full border-collapse text-sm border border-border rounded-lg overflow-hidden" {...props} />

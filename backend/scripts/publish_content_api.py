@@ -21,6 +21,17 @@ Options:
     --delete slug [..]    delete these slugs (blog tried first, then research)
     --dry-run             print the plan, send nothing
 
+Geodata mode (mutually exclusive with the content options above):
+    --geojson FILE --slug SLUG [--value-field NAME] [--name NAME]
+                          upsert FILE as the geodata dataset SLUG. The file
+                          must be a GeoJSON FeatureCollection under ~1.5 MB
+                          (simplify geometries first). --value-field is a
+                          pre-upload check that the property exists on the
+                          features (map fences read value_field from their
+                          own config, not from the dataset row). Upsert is
+                          by slug: PATCH api/geodata/<slug>/ when the row
+                          exists, POST api/geodata/ when it does not.
+
 Frontmatter parsing mirrors seed_beta_content: `key: value` scalars,
 quoted strings, JSON inline lists, booleans, and `key: |` blocks indented
 by two spaces. Unknown keys are sent as-is; DRF ignores what it doesn't
@@ -28,6 +39,7 @@ model.
 """
 
 import argparse
+import datetime
 import json
 import math
 import os
@@ -38,6 +50,7 @@ from pathlib import Path
 
 SEED_ROOT = Path(__file__).resolve().parent.parent / "seed_content"
 KIND_ENDPOINT = {"blog": "blog", "research": "research"}
+GEOJSON_MAX_BYTES = int(1.5 * 1024 * 1024)  # spec's ~1.5 MB dataset budget
 
 
 def parse_frontmatter(text, path):
@@ -111,6 +124,66 @@ def upsert(base, api_key, kind, meta, body, force_publish, dry_run):
     return ok
 
 
+def load_feature_collection(path, value_field):
+    """Validate the file is a parseable FeatureCollection within budget."""
+    p = Path(path)
+    if not p.is_file():
+        sys.exit(f"{path}: file not found")
+    size = p.stat().st_size
+    if size > GEOJSON_MAX_BYTES:
+        sys.exit(
+            f"{path}: {size:,} bytes exceeds the {GEOJSON_MAX_BYTES:,} byte "
+            "budget (~1.5 MB) — simplify geometries before uploading"
+        )
+    try:
+        data = json.loads(p.read_text(encoding="utf-8"))
+    except (json.JSONDecodeError, UnicodeDecodeError) as e:
+        sys.exit(f"{path}: not valid JSON ({e})")
+    if (
+        not isinstance(data, dict)
+        or data.get("type") != "FeatureCollection"
+        or not isinstance(data.get("features"), list)
+    ):
+        sys.exit(f"{path}: not a GeoJSON FeatureCollection")
+    if not data["features"]:
+        sys.exit(f"{path}: FeatureCollection has no features")
+    if value_field:
+        missing = sum(
+            1
+            for f in data["features"]
+            if not isinstance(f.get("properties"), dict)
+            or value_field not in f["properties"]
+        )
+        total = len(data["features"])
+        if missing == total:
+            sys.exit(f"{path}: no feature carries property '{value_field}'")
+        if missing:
+            print(f"  warning: {missing}/{total} features lack property '{value_field}'")
+    return data
+
+
+def upsert_geojson(base, api_key, args):
+    data = load_feature_collection(args.geojson, args.value_field)
+    slug = args.slug
+    endpoint = f"{base}/api/geodata/"
+    payload = {
+        "name": args.name or slug.replace("-", " ").replace("_", " ").title(),
+        "slug": slug,
+        "geojson": data,
+        "last_updated": datetime.date.today().isoformat(),
+    }
+
+    exists, _ = request("GET", f"{endpoint}{slug}/", api_key)
+    verb, url = ("PATCH", f"{endpoint}{slug}/") if exists == 200 else ("POST", endpoint)
+    if args.dry_run:
+        print(f"  DRY {verb} {url} features={len(data['features'])}")
+        return True
+    status, out = request(verb, url, api_key, payload)
+    ok = status in (200, 201)
+    print(f"  {verb} geodata/{slug} -> {status}{'' if ok else f' {out}'}")
+    return ok
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--base-url", required=True)
@@ -119,12 +192,24 @@ def main():
     ap.add_argument("--publish", nargs="*", default=[])
     ap.add_argument("--delete", nargs="*", default=[])
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--geojson", help="path to a GeoJSON FeatureCollection to upsert as a geodata dataset")
+    ap.add_argument("--slug", help="geodata dataset slug (required with --geojson)")
+    ap.add_argument("--value-field", help="feature property validated to exist before upload")
+    ap.add_argument("--name", help="geodata dataset display name (default: derived from slug)")
     args = ap.parse_args()
 
     api_key = os.environ.get("CONTENT_API_KEY", "")
     if not api_key:
         sys.exit("CONTENT_API_KEY env var is required")
     base = args.base_url.rstrip("/")
+
+    if args.geojson:
+        if not args.slug:
+            sys.exit("--slug is required with --geojson")
+        if args.all or args.only or args.publish or args.delete:
+            sys.exit("--geojson mode does not combine with content options")
+        print(f"geodata/{args.slug}:")
+        sys.exit(0 if upsert_geojson(base, api_key, args) else 1)
 
     failures = 0
     for slug in args.delete:

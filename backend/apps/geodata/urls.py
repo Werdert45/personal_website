@@ -20,6 +20,9 @@ urlpatterns = [
     path("datasets/", GeoUploadedDatasetListView.as_view(), name="uploaded_dataset_list"),
     path("datasets/<int:pk>/", GeoUploadedDatasetDetailView.as_view(), name="uploaded_dataset_detail"),
     path("datasets/<int:pk>/geojson/", GeoUploadedDatasetGeoJSONView.as_view(), name="uploaded_dataset_geojson"),
+    # Slug-addressed GeoJSON for markdown map figures. Ints are captured by the
+    # pk route above, so numeric-only slugs would be shadowed — don't use them.
+    path("datasets/<slug:slug>/geojson/", GeoJSONView.as_view(), name="geodataset_geojson_by_slug"),
 
     # Original GeoDataset endpoints (JSON-based) - slug patterns last
     path("", GeoDatasetListCreateView.as_view(), name="geodataset_list"),
