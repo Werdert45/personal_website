@@ -16,8 +16,6 @@ preview_image: ""
 is_premium: false
 ---
 
-<!-- DRAFT — hidden from public. Full thesis PDF (main.pdf) to be uploaded as pdf_file asset. -->
-
 ## Abstract
 
 Gentrification is a complex urban process that significantly impacts city health and inhabitants' well-being, yet remains difficult to predict and model accurately across different urban contexts. Current gentrification research predominantly uses econometric models such as linear regression and temporal approaches like ARIMA and boosting algorithms to estimate where and to what degree gentrification will occur, with most studies focusing on single-city analyses. These traditional models fail to capture the behavioral patterns of inhabitants. They cannot be extrapolated across different cities, while existing agent-based models, though capable of modeling human behavior, are not calibrated using real-world data. This thesis introduces a novel agent-based modeling paradigm that uses neighborhood affordability and attractiveness as primary drivers of urban mobility, fitted on historical data from multiple European cities to create a transferable framework. The results demonstrate that the model successfully explains part of the gentrification trends in Amsterdam, while revealing essential boundary conditions for effective modeling, specifically that neighborhood spatial resolution critically determines model performance across other cities. By modeling inhabitant behaviors rather than solely examining potential drivers, this approach adds a crucial behavioral dimension to gentrification modeling, while providing a unified framework applicable across European cities.
@@ -47,7 +45,7 @@ The model is calibrated on real historical data (roughly 2011–2022) for three 
 
 Baselines are two linear regressions on the same data: a pooled model, and a mixed-effects model with time dummies and city-district random effects. Evaluation is in-sample, against three metrics — MSE, a weighted MSE that upweights the top gentrifying neighborhoods, and a Top-N MSE restricted to the most-gentrifying neighborhoods — and every model is compared against a zero-change null measure that simply carries each neighborhood's starting score forward.
 
-![fig: Amsterdam GIS environment showing mean income per neighborhood, generated from the geodata pipeline](TODO-upload)
+<!-- fig placeholder: fig: Amsterdam GIS environment showing mean income per neighborhood, generated from the geodata pipeline -->
 
 ## Results
 
@@ -74,13 +72,13 @@ But gentrification research is not about the average neighborhood — it is abou
 
 At the level of individual neighborhoods the picture is mixed, and worth stating plainly: of Amsterdam's top-3 truly gentrifying neighborhoods, the model captures the trend of Nes e.o., but not De Eenhoorn or Weespertrekvaart.
 
-![fig: hyperparameter grid search for the Amsterdam ABM (rich_move x affordability_ratio, move_if_afford = 0.02)](TODO-upload)
+<!-- fig placeholder: fig: hyperparameter grid search for the Amsterdam ABM (rich_move x affordability_ratio, move_if_afford = 0.02) -->
 
-![fig: boxplot comparison of real vs simulated gentrification score, Amsterdam 2022](TODO-upload)
+<!-- fig placeholder: fig: boxplot comparison of real vs simulated gentrification score, Amsterdam 2022 -->
 
-![fig: top-3 most gentrifying Amsterdam neighborhoods, real vs simulated trajectories](TODO-upload)
+<!-- fig placeholder: fig: top-3 most gentrifying Amsterdam neighborhoods, real vs simulated trajectories -->
 
-![fig: geographic comparison of real vs simulated gentrification change, Amsterdam 2011-2022](TODO-upload)
+<!-- fig placeholder: fig: geographic comparison of real vs simulated gentrification change, Amsterdam 2011-2022 -->
 
 ```map
 {
@@ -99,9 +97,9 @@ These are negative results, and I report them as such. In Utrecht (34 neighborho
 
 I read this as a spatial-resolution failure, not model success or failure per se — the resolution of the administrative units, not the decision rules, is what broke first. That interpretation is developed below.
 
-![fig: geographic comparison of real vs simulated gentrification change, Utrecht 2014-2022](TODO-upload)
+<!-- fig placeholder: fig: geographic comparison of real vs simulated gentrification change, Utrecht 2014-2022 -->
 
-![fig: geographic comparison of real vs simulated gentrification change, Milan 2014-2022](TODO-upload)
+<!-- fig placeholder: fig: geographic comparison of real vs simulated gentrification change, Milan 2014-2022 -->
 
 ## The boundary condition: spatial resolution and leopard spots
 

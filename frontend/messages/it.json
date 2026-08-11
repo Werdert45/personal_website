@@ -27,9 +27,9 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
-    "title": "Ingegneria dei dati",
-    "titleHighlight": "per la ricerca",
-    "titleEnd": "Dati aperti in entrata. Paper in uscita.",
+    "title": "Dati spaziali,",
+    "titleHighlight": "trasformati",
+    "titleEnd": "in conoscenza.",
     "description": "Costruisco e guido sistemi dati di produzione; la mia specialità è il data engineering dietro la ricerca — le pipeline Airflow, DuckDB e PostGIS che trasformano dati spaziali aperti in paper. Il fronte di ricerca è la dinamica urbana: gentrificazione, accessibilità, mercati abitativi — perché le città sono dove i problemi di dati diventano complessi. Le pipeline dietro i miei paper sono repository pubblici.",
     "aboutMe": "Chi sono",
     "workWithMe": "Scrivimi",

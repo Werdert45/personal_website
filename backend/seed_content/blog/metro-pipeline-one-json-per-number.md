@@ -1,7 +1,7 @@
 ---
 title: 'One JSON per Published Number: the Pipeline Contract That Made Adversarial Review Cheap'
 slug: metro-pipeline-one-json-per-number
-status: draft
+status: published
 date: "August 2026"
 excerpt: 'How a one-script, one-JSON, one-figure contract turned a full methodology overhaul of the metro capitalization paper into a single working session instead of a rewrite.'
 category: explanation
@@ -14,7 +14,7 @@ cover_image: ''
 meta: {"series": "research-pipelines-are-production-systems", "related_research_slug": "when-metro-capitalizes-paper"}
 ---
 
-*Part of the [research pipelines are production systems](/blog/research-pipelines-are-production-systems) series: the data-engineering post for the metro capitalization project. The research post about the results themselves is [here](/blog/when-metro-capitalizes-fixed-effects).*
+*Part of the [research pipelines are production systems](/thoughts/research-pipelines-are-production-systems) series: the data-engineering post for the metro capitalization project. The research post about the results themselves is [here](/blog/when-metro-capitalizes-fixed-effects).*
 
 ---
 

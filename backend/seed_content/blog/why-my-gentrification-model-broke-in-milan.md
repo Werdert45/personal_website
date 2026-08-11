@@ -1,7 +1,7 @@
 ---
 title: "The Model Worked in Amsterdam and Broke in Milan — and That Was the Finding"
 slug: why-my-gentrification-model-broke-in-milan
-status: draft
+status: published
 category: case-study
 tags: ["agent-based-modeling", "gentrification", "urban-research", "milan", "simulation"]
 excerpt: "What happens when a gentrification model calibrated on Dutch cities meets Milan — and why the failure mode is the interesting result. Drawn from my MSc thesis."
@@ -39,7 +39,7 @@ The baselines first. A pooled linear regression reaches an Adjusted R² of 0.122
 
 The ABM, with its best hyperparameters from grid search (rich_move 0.04, affordability_ratio 0.25, move_if_afford 0.02) and averaged over 30 runs, reaches an MSE of 0.00276 and a weighted MSE of 0.004178 — roughly 3x lower than the linear regression models.
 
-![fig: Hyperparameter grid search for the Amsterdam ABM](TODO-upload)
+<!-- fig placeholder: fig: Hyperparameter grid search for the Amsterdam ABM -->
 
 Here is the part most write-ups would skip: a naive null measure — predict zero change for every neighborhood — still wins on city-wide MSE, at 0.00117. That is not a scandal; it is a property of the data. Most neighborhoods barely change over a decade, so "nothing happens" is a strong city-wide predictor. It is also a useless one, because nobody needs a model to tell them that most places stay the same.
 
@@ -47,9 +47,9 @@ Where the models are actually asked to earn their keep — the Top-20 fastest-ge
 
 It is not uniformly good at change, either. Of Amsterdam's top-3 truly gentrifying neighborhoods, the model captures the trend of Nes e.o. but misses De Eenhoorn and Weespertrekvaart.
 
-![fig: Real vs simulated gentrification change, top gentrifying Amsterdam neighborhoods](TODO-upload)
+<!-- fig placeholder: fig: Real vs simulated gentrification change, top gentrifying Amsterdam neighborhoods -->
 
-![fig: Geographic comparison of real and simulated gentrification change, Amsterdam 2011–2022](TODO-upload)
+<!-- fig placeholder: fig: Geographic comparison of real and simulated gentrification change, Amsterdam 2011–2022 -->
 
 ```map
 {
@@ -68,7 +68,7 @@ Then the same framework went to Utrecht and Milan. Utrecht's data comes in 34 ne
 
 At that scale, the measured change in gentrification score between 2014 and 2022 is close to zero almost everywhere. And when the ground truth is "nearly nothing changed," no model beats assuming nothing happened. The zero-change null measure matches or beats every model in both cities — regression and ABM alike.
 
-![fig: Real vs simulated gentrification change, Milan NIL areas 2014–2022](TODO-upload)
+<!-- fig placeholder: fig: Real vs simulated gentrification change, Milan NIL areas 2014–2022 -->
 
 The tempting reading is that the model failed to transfer. The more accurate reading is that at 34 and 88 spatial units, there was no signal left for any model to fit. The failure is upstream of the model.
 

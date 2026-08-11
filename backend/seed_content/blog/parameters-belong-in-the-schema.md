@@ -1,7 +1,7 @@
 ---
 title: "Parameters belong in the schema, not the filename"
 slug: parameters-belong-in-the-schema
-status: draft
+status: published
 category: explanation
 tags: ["data-engineering", "orchestration", "reproducibility", "provenance", "series"]
 excerpt: "A pre-arXiv audit found the paper and its artifacts disagreeing about which hyperparameters produced the headline number — and nothing in the data model could settle it."

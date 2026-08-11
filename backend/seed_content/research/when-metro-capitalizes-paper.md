@@ -85,9 +85,9 @@ One number that does *not* survive into the headline claims: under city-by-year 
 
 ## Paper and replication
 
-![fig: paper PDF download — paper1-when/paper.pdf](TODO-upload)
+<!-- fig placeholder: fig: paper PDF download — paper1-when/paper.pdf -->
 
-**PDF:** full working paper — asset to upload (`paper.pdf`).
+**PDF:** full working paper — available on request while the arXiv submission is prepared.
 
 **Replication.** Every number in the paper regenerates from committed scripts: city-level pipelines (`did_analysis.py`, `amsterdam_analysis.py`, `copenhagen_analysis.py`, `paris_analysis.py`), the pooled phase Wald test, Callaway–Sant'Anna + Honest-DiD on Milan, Ring-D leave-one-out, and the appraisal-vs-deed measurement split, then `latexmk -pdf paper.tex`. Figures and JSON results in `output/` are regenerable end-to-end.
 
@@ -97,4 +97,4 @@ One number that does *not* survive into the headline claims: under city-by-year 
 
 A blog post walks through the methods story behind this paper — how a defensible fixed-effects choice erased the headline result, why rank-check overrides produce unidentified coefficients with confident p-values, and why nulls belong in the sample.
 
-[Read the companion post →](TODO-link-companion-blog-post)
+[Read the companion post →](/thoughts/when-metro-capitalizes-fixed-effects)

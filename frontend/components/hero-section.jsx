@@ -12,7 +12,7 @@ function renderTitle(title, highlight, end) {
     <>
       {title}
       <br />
-      <span className="y" style={{ fontStyle: "italic" }}>{highlight}</span>.
+      <span className="y" style={{ fontStyle: "italic" }}>{highlight}</span>
       <br />
       {end}
     </>

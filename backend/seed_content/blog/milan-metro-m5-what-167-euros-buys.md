@@ -1,7 +1,7 @@
 ---
 title: "What €167 per Square Metre Buys: Milan's Lilac Line, Ring by Ring"
 slug: milan-metro-m5-what-167-euros-buys
-status: draft
+status: published
 category: case-study
 tags: ["metro", "milan", "difference-in-differences", "housing-markets", "urban-research", "italy"]
 excerpt: "Milan's M5 raised nearby property prices by about 5.6% — but only after untangling the metro from Porta Nuova, CityLife, and everything else Milan was building at the same time. Rome, on the same data, got nothing."
@@ -18,7 +18,7 @@ Milan's M5 — the Lilla, the lilac line — opened in three instalments: seven 
 
 My best answer is +167 euros per square metre — about 5.6% of the average control-zone price. Getting to that number was not mostly a story about metros. It was a story about everything else Milan was building at the same time, and about how close I came to publishing a number that was really measuring Porta Nuova.
 
-This is the single-city deep read. The cross-city version of this project — seven cities, and a headline that moved with one fixed-effects choice — has [its own post](/blog/when-metro-capitalizes-fixed-effects), and I will not retell the methods story here.
+This is the single-city deep read. The cross-city version of this project — seven cities, and a headline that moved with one fixed-effects choice — has [its own post](/thoughts/when-metro-capitalizes-fixed-effects), and I will not retell the methods story here.
 
 ## The data: 38 zones, 22 years
 

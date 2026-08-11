@@ -27,9 +27,9 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
-    "title": "Data-engineering",
-    "titleHighlight": "voor onderzoek",
-    "titleEnd": "Open data erin. Papers eruit.",
+    "title": "Ruimtelijke data,",
+    "titleHighlight": "omgezet",
+    "titleEnd": "in inzicht.",
     "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. Het onderzoeksterrein is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De pipelines achter mijn papers zijn publieke repositories.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
