@@ -44,8 +44,6 @@
     "expertiseSubtitle": "Fünf Kompetenzen, eine Einschränkung: eine kalibrierte Pipeline überlebt meist eine clevere.",
     "educationBadge": "Ausbildung",
     "experienceBadge": "Erfahrung",
-    "academicTitle": "Akademischer Werdegang",
-    "professionalTitle": "Berufserfahrung",
     "professional": "Beruflich",
     "academic": "Akademisch",
     "educationSubtitle": "Starke Grundlage in KI, Data Science und Business Analytics von führenden europäischen Institutionen.",
@@ -76,7 +74,6 @@
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
-    "journeyKicker": "Berufserfahrung",
     "journeyTitlePrefixItalic": "Fünf",
     "journeyTitleRest": "Jahre datengestützte",
     "journeyTitleLine2": "Erkenntnisse liefern.",
@@ -100,46 +97,6 @@
       {
         "title": "Product Ownership & Führung",
         "description": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API — ein 13-Server-Build, zwei Wochen vor Plan und im Budget geliefert, sowie ein Team von 4–5 geführt bei KR&A."
-      }
-    ],
-    "experience": [
-      {
-        "year": "Jul 2025 - Heute",
-        "role": "Head of Data",
-        "company": "KR&A | Europa | FinTech",
-        "description": "Verantwortung für Datenstrategie, ein Team von 4–5 und KI-Initiativen für ein Alternative-Data-FinTech, das europäische Immobilienfonds, Vermögenswerte und REITs bedient. Leitung der Aggregationspipeline zur Homogenisierung von Listings in 13 EU-Ländern sowie des Connectivity-Score-Builds — 13 Server, im Budget, zwei Wochen vor Plan."
-      },
-      {
-        "year": "Jun 2022 - Jul 2025",
-        "role": "Medior Data Scientist",
-        "company": "KR&A | Europa | FinTech",
-        "description": "Datengestützte Erkenntnisse für Immobilieninvestitionsentscheidungen geliefert — ML-Modelle für Immobilienbewertung und Marktanalyse in 15+ europäischen Märkten gebaut, mit Arbeiten für führende Immobilienunternehmen, Pensionsfonds und Eurostat."
-      },
-      {
-        "year": "Okt 2021 - Jun 2022",
-        "role": "Junior Data Scientist",
-        "company": "KR&A",
-        "description": "Eine Abschlussarbeit zur Vorhersage von Überschwemmungen in Europa mit alternativen Daten und ML-Modellen geliefert — 90%+ Genauigkeit bei der Risikoklassifizierung."
-      },
-      {
-        "year": "Sep 2019 - Sep 2022",
-        "role": "Junior Full Stack Developer",
-        "company": "Exact (ehemals SRXP)",
-        "description": "Teilzeit Enterprise-Grade-Software zur digitalen Deklaration gewartet, mit Features auf Basis von EmberJS, PHP und sensiblen Kundendaten, unter CI/CD und Testing."
-      }
-    ],
-    "education": [
-      {
-        "year": "2023 - 2025",
-        "degree": "M.Sc. Data Science & Business Analytics",
-        "institution": "Bocconi Universität",
-        "description": "Abschlussarbeit: Aufbau eines Agentenbasierten Modells zur Erklärung von Gentrifizierung in Europäischen Städten (Note: 8/8)"
-      },
-      {
-        "year": "2019 - 2023",
-        "degree": "B.Sc. Künstliche Intelligenz",
-        "institution": "Universität Amsterdam",
-        "description": "Schwerpunkt auf maschinellem Lernen, NLP und computergestützten Methoden für die Datenanalyse."
       }
     ],
     "downloadCv": "Lebenslauf herunterladen (PDF)"

@@ -44,8 +44,6 @@
     "expertiseSubtitle": "Vijf competenties, één uitgangspunt: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
     "educationBadge": "Opleiding",
     "experienceBadge": "Ervaring",
-    "academicTitle": "Academische Achtergrond",
-    "professionalTitle": "Werkervaring",
     "professional": "Professioneel",
     "academic": "Academisch",
     "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master — de methodenkant van de toolkit. De productiekant kwam uit het werk.",
@@ -76,7 +74,6 @@
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
-    "journeyKicker": "Werkervaring",
     "journeyTitlePrefixItalic": "Vijf",
     "journeyTitleRest": "jaar bouwen aan",
     "journeyTitleLine2": "productie-datasystemen.",
@@ -100,46 +97,6 @@
       {
         "title": "Product Ownership & Leiderschap",
         "description": "End-to-end eigenaarschap van methode tot live API — een build met 13 servers, en een team van 4–5 geleid bij KR&A."
-      }
-    ],
-    "experience": [
-      {
-        "year": "Jul 2025 - Heden",
-        "role": "Head of Data",
-        "company": "KR&A | Europa | FinTech",
-        "description": "Leiding over datastrategie, een team van 4–5 en AI-initiatieven voor een alternative-data-FinTech die Europese vastgoedfondsen, activa en REITs bedient. Leiding gegeven aan de aggregatiepipeline die listings in 13 EU-landen homogeniseert, en aan de bouw van de Connectivity Score — 13 servers, binnen budget, twee weken voor op schema."
-      },
-      {
-        "year": "Jun 2022 - Jul 2025",
-        "role": "Medior Data Scientist",
-        "company": "KR&A | Europa | FinTech",
-        "description": "ML-modellen gebouwd voor vastgoedwaardering en marktanalyse in 15+ Europese markten; werk opgeleverd voor vastgoedbedrijven, pensioenfondsen en Eurostat. Waaronder een maandelijkse huizenprijsindex voor 13 EU-landen, getest als disaggregatie-indicator voor Eurostat-kwartaal-HPI's."
-      },
-      {
-        "year": "Okt 2021 - Jun 2022",
-        "role": "Junior Data Scientist",
-        "company": "KR&A",
-        "description": "Een scriptie geleverd over het voorspellen van overstromingen in Europa met alternatieve data en ML-modellen — 90%+ nauwkeurigheid in risicoclassificatie."
-      },
-      {
-        "year": "Sep 2019 - Sep 2022",
-        "role": "Junior Full Stack Developer",
-        "company": "Exact (voorheen SRXP)",
-        "description": "Parttime enterprise-grade software voor digitale aangiftes onderhouden, met features gebouwd op EmberJS, PHP en gevoelige klantgegevens, onder CI/CD en testing."
-      }
-    ],
-    "education": [
-      {
-        "year": "2023 - 2025",
-        "degree": "M.Sc. Data Science & Business Analytics",
-        "institution": "Bocconi University",
-        "description": "Scriptie: Een Agent-Based Model Bouwen om Gentrificatie in Europese Steden te Verklaren (Cijfer: 8/8)"
-      },
-      {
-        "year": "2019 - 2023",
-        "degree": "B.Sc. Artificial Intelligence",
-        "institution": "Universiteit van Amsterdam",
-        "description": "Focus op machine learning, NLP en computationele methoden voor data-analyse."
       }
     ],
     "downloadCv": "Download het cv (pdf)"

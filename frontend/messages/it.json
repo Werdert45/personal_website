@@ -44,8 +44,6 @@
     "expertiseSubtitle": "Cinque competenze, un solo vincolo: una pipeline calibrata tende a durare più di una brillante.",
     "educationBadge": "Formazione",
     "experienceBadge": "Esperienza",
-    "academicTitle": "Percorso Accademico",
-    "professionalTitle": "Esperienza Lavorativa",
     "professional": "Professionale",
     "academic": "Accademico",
     "educationSubtitle": "AI alla triennale, data science e analytics alla magistrale — il lato metodologico del toolkit. Il lato produzione è arrivato dal lavoro.",
@@ -76,7 +74,6 @@
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
-    "journeyKicker": "Esperienza lavorativa",
     "journeyTitlePrefixItalic": "Cinque",
     "journeyTitleRest": "anni a costruire",
     "journeyTitleLine2": "sistemi dati in produzione.",
@@ -100,46 +97,6 @@
       {
         "title": "Product Ownership & Leadership",
         "description": "Proprietà end-to-end dal metodo all'API rilasciata — un build su 13 server e un team di 4–5 guidato presso KR&A."
-      }
-    ],
-    "experience": [
-      {
-        "year": "Lug 2025 - Presente",
-        "role": "Head of Data",
-        "company": "KR&A | Europa | FinTech",
-        "description": "Guida della strategia dati, di un team di 4–5 e delle iniziative AI per una FinTech di dati alternativi al servizio di fondi immobiliari europei, asset e REIT. Guidata la pipeline di aggregazione che omogeneizza gli annunci in 13 paesi UE e la costruzione del Connectivity Score — 13 server, nel budget, due settimane in anticipo sul piano."
-      },
-      {
-        "year": "Giu 2022 - Lug 2025",
-        "role": "Medior Data Scientist",
-        "company": "KR&A | Europa | FinTech",
-        "description": "Costruiti modelli ML per valutazione immobiliare e analisi di mercato in 15+ mercati europei; lavori consegnati per aziende immobiliari, fondi pensione ed Eurostat. Incluso un indice mensile dei prezzi delle case su 13 paesi UE, testato come indicatore di disaggregazione per gli HPI trimestrali Eurostat."
-      },
-      {
-        "year": "Ott 2021 - Giu 2022",
-        "role": "Junior Data Scientist",
-        "company": "KR&A",
-        "description": "Consegnata una tesi sulla previsione delle alluvioni in Europa con dati alternativi e modelli ML — accuratezza del 90%+ nella classificazione del rischio."
-      },
-      {
-        "year": "Set 2019 - Set 2022",
-        "role": "Junior Full Stack Developer",
-        "company": "Exact (ex SRXP)",
-        "description": "Manutenzione part-time di software enterprise-grade per dichiarazioni digitali, con funzionalità sviluppate con EmberJS, PHP e dati sensibili dei clienti, con CI/CD e testing."
-      }
-    ],
-    "education": [
-      {
-        "year": "2023 - 2025",
-        "degree": "M.Sc. Data Science & Business Analytics",
-        "institution": "Università Bocconi",
-        "description": "Tesi: Costruzione di un Modello Agent-Based per Spiegare la Gentrificazione nelle Città Europee (Voto: 8/8)"
-      },
-      {
-        "year": "2019 - 2023",
-        "degree": "B.Sc. Intelligenza Artificiale",
-        "institution": "Università di Amsterdam",
-        "description": "Focus su machine learning, NLP e metodi computazionali per l'analisi dei dati."
       }
     ],
     "downloadCv": "Scarica il CV (PDF)"

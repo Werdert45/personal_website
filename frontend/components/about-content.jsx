@@ -1,15 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { ResumeSection } from "@/components/resume-section";
 
 export function AboutContent() {
   const t = useTranslations("About");
-  const [tab, setTab] = useState("pro");
 
-  const experience = t.raw("experience") || [];
-  const education = t.raw("education") || [];
   const expertise = t.raw("expertise") || [];
 
   return (
@@ -108,68 +105,7 @@ export function AboutContent() {
         </section>
       )}
 
-      <section className="xp">
-        <div className="section-label">
-          <span className="bar" />
-          <span className="num-label">§ 04</span>
-          <span>{t("journeyKicker")}</span>
-        </div>
-        <h2>
-          <i>{t("journeyTitlePrefixItalic")}</i> {t("journeyTitleRest")}<br />
-          {t("journeyTitleLine2")}
-        </h2>
-        <p className="lede">{t("experienceSubtitle")}</p>
-
-        <div className="xp-toggle">
-          <button className={tab === "pro" ? "sel" : ""} onClick={() => setTab("pro")}>{t("professional")}</button>
-          <button className={tab === "aca" ? "sel" : ""} onClick={() => setTab("aca")}>{t("academic")}</button>
-        </div>
-
-        {tab === "pro" && (
-          <div className="xp-list">
-            {experience.map((job, i) => (
-              <div className="xp-item" key={i}>
-                <div className="y">{job.year}</div>
-                <div className="n">{String(i + 1).padStart(2, "0")}</div>
-                <div>
-                  <div className="r">{renderRole(job.role)}</div>
-                  <div className="c">{job.company}</div>
-                </div>
-                <div className="d">{job.description}</div>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {tab === "aca" && (
-          <div className="xp-list">
-            {education.map((edu, i) => (
-              <div className="xp-item" key={i}>
-                <div className="y">{edu.year}</div>
-                <div className="n">{String(i + 1).padStart(2, "0")}</div>
-                <div>
-                  <div className="r">{renderRole(edu.degree)}</div>
-                  <div className="c">{edu.institution}</div>
-                </div>
-                <div className="d">{edu.description}</div>
-              </div>
-            ))}
-          </div>
-        )}
-      </section>
-    </>
-  );
-}
-
-function renderRole(role) {
-  if (!role) return null;
-  // Italicize last word by convention
-  const parts = role.split(" ");
-  if (parts.length === 1) return <i>{role}</i>;
-  const last = parts.pop();
-  return (
-    <>
-      {parts.join(" ")} <i>{last}</i>
+      <ResumeSection />
     </>
   );
 }

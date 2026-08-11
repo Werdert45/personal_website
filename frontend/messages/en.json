@@ -44,8 +44,6 @@
     "expertiseSubtitle": "Five competences, one constraint: a calibrated pipeline tends to outlast a clever one.",
     "educationBadge": "Education",
     "experienceBadge": "Experience",
-    "academicTitle": "Academic Record",
-    "professionalTitle": "Work History",
     "professional": "Professional",
     "academic": "Academic",
     "educationSubtitle": "AI as an undergraduate, data science and analytics as a graduate — the methods side of the toolkit. The production side came from work.",
@@ -76,7 +74,6 @@
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
-    "journeyKicker": "Work history",
     "journeyTitlePrefixItalic": "Five",
     "journeyTitleRest": "years building",
     "journeyTitleLine2": "production data systems.",
@@ -100,46 +97,6 @@
       {
         "title": "Product Ownership & Leadership",
         "description": "End-to-end ownership from method to shipped API — a 13-server build, and a team of 4–5 led at KR&A."
-      }
-    ],
-    "experience": [
-      {
-        "year": "Jul 2025 - Present",
-        "role": "Head of Data",
-        "company": "KR&A | Europe | FinTech",
-        "description": "Leading data strategy, a team of 4–5 and AI initiatives for an alternative-data FinTech serving European real-estate funds, assets and REITs. Led the aggregation pipeline homogenising listings across 13 EU countries and the Connectivity Score build — 13 servers, on budget, two weeks ahead of plan."
-      },
-      {
-        "year": "Jun 2022 - Jul 2025",
-        "role": "Medior Data Scientist",
-        "company": "KR&A | Europe | FinTech",
-        "description": "Built ML models for property valuation and market analysis across 15+ European markets; work delivered for real-estate companies, pension funds and Eurostat. Includes a monthly house-price index across 13 EU countries, tested as a disaggregation indicator for Eurostat quarterly HPIs."
-      },
-      {
-        "year": "Oct 2021 - Jun 2022",
-        "role": "Junior Data Scientist",
-        "company": "KR&A",
-        "description": "Delivered a thesis predicting flooding occurrences in Europe using alternative data and ML models — 90%+ accuracy in risk classification."
-      },
-      {
-        "year": "Sep 2019 - Sep 2022",
-        "role": "Junior Full Stack Developer",
-        "company": "Exact (former SRXP)",
-        "description": "Maintained enterprise-grade digital declaration software part-time, delivering features built with EmberJS, PHP and sensitive customer data, under CI/CD and testing."
-      }
-    ],
-    "education": [
-      {
-        "year": "2023 - 2025",
-        "degree": "M.Sc. Data Science & Business Analytics",
-        "institution": "Bocconi University",
-        "description": "Thesis: Building an Agent-Based Model to Explain Gentrification in European Cities (Grade: 8/8)"
-      },
-      {
-        "year": "2019 - 2023",
-        "degree": "B.Sc. Artificial Intelligence",
-        "institution": "University of Amsterdam",
-        "description": "Focus on machine learning, NLP, and computational methods for data analysis."
       }
     ],
     "downloadCv": "Download the CV (PDF)"

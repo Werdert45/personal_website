@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/generate-cv.mjs",
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
@@ -69,6 +70,7 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
+    "@react-pdf/renderer": "^4.6.0",
     "@tailwindcss/postcss": "^4.1.9",
     "@types/node": "^22",
     "@types/react": "^19",
