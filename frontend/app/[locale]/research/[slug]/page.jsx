@@ -1,4 +1,5 @@
-import ResearchArticleDetail from "@/components/research-article-detail";
+import { notFound } from "next/navigation";
+import ResearchArticleDetail, { STATIC_PAPERS } from "@/components/research-article-detail";
 import { ArticleJsonLd } from "@/components/json-ld";
 
 export async function generateMetadata({ params }) {
@@ -31,12 +32,16 @@ export async function generateMetadata({ params }) {
     // Fallback to slug-based title
   }
 
+  if (!title && STATIC_PAPERS[slug]) {
+    title = STATIC_PAPERS[slug].title;
+    description = STATIC_PAPERS[slug].abstract || STATIC_PAPERS[slug].excerpt || "";
+  }
+
   if (!title) {
-    title = slug
-      .split("-")
-      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-      .join(" ");
-    description = `Research article on ${title}`;
+    return {
+      title: "Article not found",
+      robots: { index: false, follow: false },
+    };
   }
 
   const url = `${siteUrl}/${locale}/research/${slug}`;
@@ -87,6 +92,7 @@ async function fetchArticleForJsonLd(slug) {
 export default async function ResearchArticlePage({ params }) {
   const { slug, locale } = await params;
   const article = await fetchArticleForJsonLd(slug);
+  if (!article && !STATIC_PAPERS[slug]) notFound();
 
   let jsonLdProps = { slug, locale };
   if (article) {
@@ -114,7 +120,7 @@ export default async function ResearchArticlePage({ params }) {
   return (
     <main>
       <ArticleJsonLd {...jsonLdProps} />
-      <ResearchArticleDetail slug={slug} />
+      <ResearchArticleDetail slug={slug} initialArticle={article} />
     </main>
   );
 }

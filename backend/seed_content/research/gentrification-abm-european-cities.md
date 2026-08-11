@@ -66,9 +66,11 @@ The ABM (best hyperparameters from grid search: `rich_move` 0.04, `affordability
 
 *All model results, Amsterdam, in-sample. Bold marks the best score per column.*
 
-Two honest readings of this table. First: the ABM's MSE of 0.00276 is roughly 3x lower than either linear regression — the behavioral model comfortably outperforms the econometric baselines. Second: on city-wide MSE, the zero-change null measure beats everything, because most neighborhoods barely change and predicting "nothing happens" is hard to beat on average.
+Two honest readings of this table. First: the ABM's MSE of 0.00276 is roughly 3x lower than either linear regression — the behavioral model outperforms both econometric baselines on this metric. Second: on city-wide MSE, the zero-change null measure beats everything, because most neighborhoods barely change and predicting "nothing happens" is hard to beat on average.
 
-But gentrification research is not about the average neighborhood — it is about the ones that change. On the Top-20 most-gentrifying neighborhoods, the ABM is the best model outright: Top-20 MSE 0.00985, against 0.01308 for the null measure and 0.01492–0.01894 for the regressions. Where gentrification is actually happening, the behavioral model wins.
+But gentrification research is not about the average neighborhood — it is about the ones that change. On the Top-20 most-gentrifying neighborhoods, the ABM is the best model outright: Top-20 MSE 0.00985, against 0.01308 for the null measure and 0.01492–0.01894 for the regressions. On the neighborhoods where gentrification is concentrated, the behavioral model gives the best estimates of the four.
+
+<!-- Editor's note: metrics follow Table tab:all_amsterdam_res and the Discussion in results.tex. The Model Results prose (0.00117/0.00355/0.01307) is a known internal error in the thesis — those are the Null Measure's values. Do not "correct" toward the prose. -->
 
 At the level of individual neighborhoods the picture is mixed, and worth stating plainly: of Amsterdam's top-3 truly gentrifying neighborhoods, the model captures the trend of Nes e.o., but not De Eenhoorn or Weespertrekvaart.
 

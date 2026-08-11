@@ -50,7 +50,7 @@ The paper follows a deliberate build: the two cities studied in greatest depth �
 2. **Data** — OMI zone-level prices for Milano (2004–2025, area-weighted crosswalk from 2011 to 2025 zone boundaries); CBS WOZ buurt-level values for Amsterdam (2013–2022); staged treatment assignment from actual per-stop opening dates.
 3. **Empirical Strategy** — two-way fixed-effects DiD, distance-band DiD, a continuous inverse-distance specification that removes the buffer-choice degree of freedom, Sun–Abraham event studies, placebo tests and rolling windows. Cluster-robust inference throughout.
 4. **Results: Milano** — the cleanest single case: within-ring **+167 EUR/m²** (about +5.6%) after opening, wild-bootstrap *p* = 0.004, robust to every deletion. The within-ring contrast controls for the Porta Nuova / CityLife / Scalo Farini regeneration confound.
-5. **Results: Amsterdam** — Noord-Zuid Lijn: **+36,400 EUR** per property (TWFE, buurt + year FE, *p* < 0.001); +63,500 EUR in the 0–500 m distance band. Also home to an identification lesson: phase *levels* were unidentified because the panel starts eleven years into construction, and PanelOLS with `check_rank=False` returned pseudo-inverse artifacts with p-values of 1e-9 — fixed by estimating phase *contrasts* instead of levels.
+5. **Results: Amsterdam** — Noord-Zuid Lijn: **+69,800 EUR** per property under the ring-restricted DiD (+31,900 bare TWFE, both *p* < 0.001) — with the paper's own caveat that in log units treated buurten appreciated more slowly than the outer control ring (−4.3% to −5.5%), so the euro figure is a level gain from a 1.74× higher base, not proportional capitalization. Also home to an identification lesson: phase *levels* were unidentified because the panel starts eleven years into construction, and PanelOLS with `check_rank=False` returned pseudo-inverse artifacts with p-values of 1e-9 — fixed by estimating phase *contrasts* instead of levels.
 6. **Comparative Discussion: Milano and Amsterdam** — what the two identification environments do and do not share.
 7. **Robustness** — Callaway–Sant'Anna doubly-robust staggered DiD, Honest-DiD pre-trend sensitivity, restricted wild cluster bootstrap (Webb weights), leave-one-city-out, measurement-class split.
 8. **Seven-City Pooled Analysis** — the headline: seventeen cohorts, four phases, the +9 to +12% maturity step, and the fixed-effects stress tests that bound what the pooled average does and does not establish. Roma is a within-city null at every phase — independently corroborated by a Banca d'Italia study using different methods — and disciplines the upper-bound reading.
@@ -64,12 +64,9 @@ The paper follows a deliberate build: the two cities studied in greatest depth �
 | Estimate | Identification | Effect | Inference |
 |---|---|---|---|
 | Milan, Ring D (clean contrast) | Within-ring DiD on M5 | **+167 EUR/m²** (≈ +5.6%) | wild-bootstrap *p* = 0.004 |
-| Amsterdam, NZL | TWFE, buurt + year FE | **+36,400 EUR** per property | *p* < 0.001 |
-| Amsterdam, 0–500 m | Distance-band DiD | +63,500 EUR | *p* < 0.001 |
+| Amsterdam, NZL (ring-restricted) | DiD, 1.5–3 km donut dropped | **+69,800 EUR** per property (bare TWFE: +31,900) | buurt-clustered *p* < 0.001; in logs the sign flips (−4.3% to −5.5%) — level gain, not proportional capitalization |
 | Pooled maturity step | Seven-city phase decomposition | +9 to +12% (construction → maturity) | *p* = 0.036 city-clustered, level-only controls; *p* = 0.080 full controls; *p* = 0.16 cohort-clustered |
-| Phase decomposition | Joint Wald test | Mature > {Rumour, Construct, Open} | *p* < 10⁻⁴ |
-
-The Amsterdam and Wald rows follow the repository's headline table, which predates the seven-city extension (it was compiled on the four-city panel: +0.097 log price pooled, (c,i)-clustered). Where that table and the current abstract disagree — notably on pooled inference — the abstract's seven-city numbers are the ones the paper stands behind.
+| Phase decomposition | Joint Wald, entity-clustered | Mature > {Rumour, Construct, Open} | *p* = 2.0×10⁻¹² — ordering evidence only (entity-clustered, anti-conservative); formal inference rests on the few-cluster bootstrap row above |
 
 One number that does *not* survive into the headline claims: under city-by-year fixed effects the maturity step collapses to an insignificant −0.5 log points, leaving a +2.5 log-point step at opening that is itself not significant under city-clustered bootstrap. The paper reports this prominently rather than burying it — the pooled step is a cross-city pattern, identified through the common-year fixed effects, and the abstract declines the strong causal reading on purpose.
 

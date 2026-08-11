@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { BlogPost } from "@/components/blog-post";
 import { BlogPostingJsonLd } from "@/components/json-ld";
 
@@ -31,11 +32,10 @@ export async function generateMetadata({ params }) {
     image = post.cover_image;
     updatedAt = post.updated_at;
   } else {
-    title = slug
-      .split("-")
-      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-      .join(" ");
-    description = `Blog post: ${title}`;
+    return {
+      title: "Post not found",
+      robots: { index: false, follow: false },
+    };
   }
 
   const url = `${siteUrl}/${locale}/thoughts/${slug}`;
@@ -73,6 +73,7 @@ export async function generateMetadata({ params }) {
 export default async function BlogPostPage({ params }) {
   const { slug, locale } = await params;
   const post = await fetchBlogPost(slug);
+  if (!post) notFound();
 
   let jsonLdProps = { slug, locale };
   if (post) {
@@ -98,7 +99,7 @@ export default async function BlogPostPage({ params }) {
   return (
     <main>
       <BlogPostingJsonLd {...jsonLdProps} />
-      <BlogPost slug={slug} />
+      <BlogPost slug={slug} initialPost={post} />
     </main>
   );
 }

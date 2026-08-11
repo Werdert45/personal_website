@@ -1,12 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import { useLocale, useTranslations } from "next-intl";
-import { trackEvent } from "@/lib/analytics";
+import { useTranslations } from "next-intl";
 
 export function FourLanes() {
   const t = useTranslations("Lanes");
-  const locale = useLocale();
   const items = t.raw("items");
 
   return (
@@ -48,16 +45,6 @@ export function FourLanes() {
       <p style={{ marginTop: 40, fontSize: 14, color: "var(--mute)", maxWidth: "70ch" }}>{t("appliedAcross")}</p>
       <p style={{ marginTop: 12, fontSize: 14, color: "var(--mute)", maxWidth: "70ch" }}>{t("automationNote")}</p>
 
-      <div style={{ marginTop: 40 }}>
-        <Link
-          href={`/${locale}/contact`}
-          className="btn primary"
-          onClick={() => trackEvent("cta_click", { cta: "contact", location: "home_lanes", source: "lanes_cta" })}
-        >
-          <span>{t("ctaLabel")}</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M5 12h14M13 5l7 7-7 7" /></svg>
-        </Link>
-      </div>
     </section>
   );
 }

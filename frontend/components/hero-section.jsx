@@ -8,22 +8,13 @@ import { EUROPE_PATH, europeanCities, dataConnections } from "./europe-map-path"
 import { trackEvent } from "@/lib/analytics";
 
 function renderTitle(title, highlight, end) {
-  const cleanTitle = (title || "").replace(/[&\s]+$/, "").trim();
-  const cleanEnd = (end || "").replace(/^[&\s]+/, "").trim();
-  const titleParts = cleanTitle.split(" ");
-  const lastTitleWord = titleParts.pop();
-  const endParts = cleanEnd.split(" ");
-  const lastEndWord = endParts.pop();
-
   return (
     <>
-      {titleParts.join(" ")}{" "}
-      <i style={{ fontStyle: "italic" }}>{lastTitleWord}</i> &amp;
+      {title}
       <br />
-      <span className="y">{highlight}</span>
+      <span className="y" style={{ fontStyle: "italic" }}>{highlight}</span>.
       <br />
-      {endParts.join(" ")}{" "}
-      <i style={{ fontStyle: "italic" }}>{lastEndWord}</i>.
+      {end}
     </>
   );
 }

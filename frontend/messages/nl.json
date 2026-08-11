@@ -29,7 +29,7 @@
     "role": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
     "title": "Data-engineering",
     "titleHighlight": "voor onderzoek",
-    "titleEnd": "— van open geodata naar gepubliceerde papers",
+    "titleEnd": "Open data erin. Papers eruit.",
     "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. Het onderzoeksterrein is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De pipelines achter mijn papers zijn publieke repositories.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
@@ -44,8 +44,8 @@
     "expertiseSubtitle": "Vijf competenties, één uitgangspunt: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
     "educationBadge": "Opleiding",
     "experienceBadge": "Ervaring",
-    "academicTitle": "Academische Prestaties",
-    "professionalTitle": "Professioneel Traject",
+    "academicTitle": "Academische Achtergrond",
+    "professionalTitle": "Werkervaring",
     "professional": "Professioneel",
     "academic": "Academisch",
     "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master — de methodenkant van de toolkit. De productiekant kwam uit het werk.",
@@ -76,7 +76,7 @@
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
-    "journeyKicker": "Professioneel traject",
+    "journeyKicker": "Werkervaring",
     "journeyTitlePrefixItalic": "Vijf",
     "journeyTitleRest": "jaar bouwen aan",
     "journeyTitleLine2": "productie-datasystemen.",
@@ -107,7 +107,7 @@
         "year": "Jul 2025 - Heden",
         "role": "Head of Data",
         "company": "KR&A | Europa | FinTech",
-        "description": "Head of Data: leiding over datastrategie, een team van 4–5 en AI-initiatieven voor een alternative-data-FinTech die Europese vastgoedfondsen, activa en REITs bedient. Leiding gegeven aan de aggregatiepipeline die listings in 13 EU-landen homogeniseert, en aan de bouw van de Connectivity Score — 13 servers, binnen budget, twee weken voor op schema."
+        "description": "Leiding over datastrategie, een team van 4–5 en AI-initiatieven voor een alternative-data-FinTech die Europese vastgoedfondsen, activa en REITs bedient. Leiding gegeven aan de aggregatiepipeline die listings in 13 EU-landen homogeniseert, en aan de bouw van de Connectivity Score — 13 servers, binnen budget, twee weken voor op schema."
       },
       {
         "year": "Jun 2022 - Jul 2025",
@@ -119,7 +119,7 @@
         "year": "Okt 2021 - Jun 2022",
         "role": "Junior Data Scientist",
         "company": "KR&A",
-        "description": "Een scriptie geleverd over het voorspellen van overstromingen in Europa met alternatieve data en ML-modellen, met 90%+ nauwkeurigheid in risicoclassificatie, plus kleinere taken: data voorbereiden, aggregeren en visualiseren."
+        "description": "Een scriptie geleverd over het voorspellen van overstromingen in Europa met alternatieve data en ML-modellen — 90%+ nauwkeurigheid in risicoclassificatie."
       },
       {
         "year": "Sep 2019 - Sep 2022",
@@ -149,7 +149,7 @@
     "backToAbout": "Terug naar Over Mij"
   },
   "Research": {
-    "loadingFallback": "Paperindex op dit moment niet beschikbaar — de pipeline-repo's op GitHub blijven actueel.",
+    "loadingFallback": "Paperindex tijdelijk niet bereikbaar — de pipeline-repo's op GitHub blijven actueel.",
     "title": "Onderzoek & Artikelen",
     "searchPlaceholder": "Zoek artikelen...",
     "readMore": "Lees meer",
@@ -175,7 +175,7 @@
     "youMightAlsoLike": "Misschien vind je dit ook leuk",
     "readArticle": "Lees artikel",
     "endCtaKicker": "§ Verder",
-    "endCtaHeading": "Lees je mee, of denk je aan een samenwerking? Neem contact op.",
+    "endCtaHeading": "Vragen over een methode, een dataset of een rol — neem contact op.",
     "endCtaButton": "Neem contact op",
     "indexDiscuss": "Neem contact op"
   },
@@ -198,7 +198,7 @@
     "subjectLabel": "Onderwerp",
     "subjectPlaceholder": "Waar gaat het over?",
     "messageLabel": "Bericht",
-    "messagePlaceholder": "Waar wil je het over hebben?",
+    "messagePlaceholder": "Je bericht",
     "captchaLabel": "Bevestig dat je een mens bent",
     "captchaHint": "Voltooi de captcha om je bericht te verzenden",
     "sendButton": "Verstuur Bericht",
@@ -210,7 +210,7 @@
     "errorShort": "Voer een langer bericht in (minimaal 10 tekens)",
     "errorCaptcha": "Voltooi de captcha-verificatie",
     "errorGeneric": "Fout bij het verzenden van het bericht. Probeer het opnieuw.",
-    "sectionKicker": "Contact: briefings, introducties, vragen",
+    "sectionKicker": "Contact: rollen, samenwerkingen, vragen",
     "letsTalkPrefix": "Even",
     "letsTalkItalic": "praten",
     "formHeadRef": "REF",
@@ -271,7 +271,7 @@
         "viz": "hedonic",
         "sector": "Open source",
         "title": "Onderzoekspipelines, openbaar",
-        "outcome": "De data engineering achter de papers, publiek: Airflow 3-pipelines met eigen operators (een DuckDB-SQL-ingestie-operator, een SHA-256-snapshot-guard), tests en CI — beschreven als casestudyreeks op deze site.",
+        "outcome": "De data engineering achter de papers, publiek en reproduceerbaar: Airflow 3-pipelines met eigen operators (een DuckDB-SQL-ingestie-operator, een SHA-256-snapshot-guard), tests en CI — beschreven als casestudyreeks op deze site.",
         "stack": [
           "Airflow",
           "DuckDB",
@@ -320,14 +320,14 @@
     "endCtaBody": "Browse andere essays over geodata, AI/ML en operations, of lees meer over wie er achter de schrijfsels zit.",
     "endCtaButton": "Meer schrijfsels",
     "endCtaSecondary": "Over mij",
-    "endCtaContact": "Werk je aan iets vergelijkbaars? Neem contact op",
+    "endCtaContact": "Vragen over de build — neem contact op",
     "relatedKicker": "Gerelateerd werk",
     "empty": "Nog geen stukken — de eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
     "bio": "Ik leid datateams en bouw productie-datasystemen in Amsterdam. Deze site verzamelt de casestudies, papers en veldnotities.",
-    "cta": "Volledig cv →"
+    "cta": "Volledige bio →"
   },
   "AboutTeaser": {
     "kicker": "Over mij: wie er achter het werk zit",
@@ -420,7 +420,6 @@
     "subtitle": "Eén data-engineering- en leiderschapstoolkit, vier domeinen. Stedelijke dynamiek is het dagelijkse werk; de rest is het bewijs dat de toolkit generaliseert.",
     "appliedAcross": "Toegepast in: stedenbouw · vastgoed · klimaatrisico · logistiek & mobiliteit · publieke sector",
     "automationNote": "Ook achter de schermen: LLM/RAG-pipelines en interne tools die classificatie, onderzoek en rapportage automatiseren — productie-AI als engineeringbereik, niet als hoofdpunt.",
-    "ctaLabel": "Neem contact op",
     "items": [
       {
         "name": "Stedelijke dynamiek & onderzoek",

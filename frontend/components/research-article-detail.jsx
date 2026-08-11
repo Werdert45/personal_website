@@ -18,7 +18,7 @@ import { AuthorTrailer } from "@/components/author-trailer";
 // Static fallbacks describe the REAL manuscripts faithfully. Any number or
 // claim here must match the current paper text — when in doubt, say less and
 // point at the paper. (These render only when the CMS has no row for the slug.)
-const STATIC_PAPERS = {
+export const STATIC_PAPERS = {
   "metro-capitalisation-timing": {
     slug: "metro-capitalisation-timing",
     title: "When does metro infrastructure capitalize into property prices?",
@@ -97,11 +97,11 @@ From August 2026 this site carries a case-study series on the thesis — the mod
   },
 };
 
-export default function ResearchArticleDetail({ slug }) {
+export default function ResearchArticleDetail({ slug, initialArticle = null }) {
   const [mounted, setMounted] = useState(false);
-  const [article, setArticle] = useState(null);
+  const [article, setArticle] = useState(initialArticle);
   const [geojsonData, setGeojsonData] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(!initialArticle);
   const [error, setError] = useState(null);
   const [relatedArticles, setRelatedArticles] = useState([]);
 
@@ -125,7 +125,7 @@ export default function ResearchArticleDetail({ slug }) {
   useEffect(() => {
     async function fetchArticle() {
       try {
-        setLoading(true);
+        if (!initialArticle) setLoading(true);
         const response = await fetch(`/api/django?endpoint=research/${slug}`);
         if (response.ok) {
           const data = await response.json();
@@ -140,14 +140,19 @@ export default function ResearchArticleDetail({ slug }) {
           } else if (data.geojson_data) {
             setGeojsonData(data.geojson_data);
           }
+        } else if (initialArticle) {
+          // Keep the server-provided article; just hydrate the related list.
+          fetchRelatedArticles(initialArticle.category, initialArticle.tags, initialArticle.slug);
         } else if (STATIC_PAPERS[slug]) {
           setArticle(STATIC_PAPERS[slug]);
         } else {
           setError("Article not found");
         }
       } catch (err) {
-        console.error("Error fetching article:", err);
-        setError("Failed to load article");
+        if (!initialArticle) {
+          console.error("Error fetching article:", err);
+          setError("Failed to load article");
+        }
       } finally {
         setLoading(false);
       }

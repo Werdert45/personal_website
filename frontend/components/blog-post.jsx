@@ -14,13 +14,14 @@ import { getItemField } from "@/lib/i18n-item";
 import { RelatedPosts } from "@/components/related-posts";
 import { AuthorTrailer } from "@/components/author-trailer";
 
-export function BlogPost({ slug }) {
-  const [post, setPost] = useState(null);
-  const [status, setStatus] = useState("loading");
+export function BlogPost({ slug, initialPost = null }) {
+  const [post, setPost] = useState(initialPost);
+  const [status, setStatus] = useState(initialPost ? "ok" : "loading");
   const locale = useLocale();
   const t = useTranslations("Thoughts");
 
   useEffect(() => {
+    if (initialPost) return undefined;
     let alive = true;
     fetch(`/api/django?endpoint=blog/${slug}`)
       .then((r) => (r.ok ? r.json() : null))
@@ -35,7 +36,7 @@ export function BlogPost({ slug }) {
       })
       .catch(() => alive && setStatus("missing"));
     return () => { alive = false; };
-  }, [slug]);
+  }, [slug, initialPost]);
 
   if (status === "loading") {
     return (

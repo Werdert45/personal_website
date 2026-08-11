@@ -29,7 +29,7 @@
     "role": "Data Lead & Engineer · Urban-Dynamics Researcher",
     "title": "Data engineering",
     "titleHighlight": "for research",
-    "titleEnd": "— from open spatial data to published papers",
+    "titleEnd": "Open data in. Papers out.",
     "description": "I build and lead production data systems, and my specialty is the data engineering behind research — the Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. The research seat is urban dynamics: gentrification, accessibility, housing markets — because cities are where data problems get hard. The pipelines behind my papers are public repositories.",
     "aboutMe": "About me",
     "workWithMe": "Get in touch",
@@ -44,8 +44,8 @@
     "expertiseSubtitle": "Five competences, one constraint: a calibrated pipeline tends to outlast a clever one.",
     "educationBadge": "Education",
     "experienceBadge": "Experience",
-    "academicTitle": "Academic Accolades",
-    "professionalTitle": "Professional Journey",
+    "academicTitle": "Academic Record",
+    "professionalTitle": "Work History",
     "professional": "Professional",
     "academic": "Academic",
     "educationSubtitle": "AI as an undergraduate, data science and analytics as a graduate — the methods side of the toolkit. The production side came from work.",
@@ -76,7 +76,7 @@
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
-    "journeyKicker": "Professional journey",
+    "journeyKicker": "Work history",
     "journeyTitlePrefixItalic": "Five",
     "journeyTitleRest": "years building",
     "journeyTitleLine2": "production data systems.",
@@ -107,7 +107,7 @@
         "year": "Jul 2025 - Present",
         "role": "Head of Data",
         "company": "KR&A | Europe | FinTech",
-        "description": "Head of Data: leading data strategy, a team of 4–5 and AI initiatives for an alternative-data FinTech serving European real-estate funds, assets and REITs. Led the aggregation pipeline homogenising listings across 13 EU countries and the Connectivity Score build — 13 servers, on budget, two weeks ahead of plan."
+        "description": "Leading data strategy, a team of 4–5 and AI initiatives for an alternative-data FinTech serving European real-estate funds, assets and REITs. Led the aggregation pipeline homogenising listings across 13 EU countries and the Connectivity Score build — 13 servers, on budget, two weeks ahead of plan."
       },
       {
         "year": "Jun 2022 - Jul 2025",
@@ -119,7 +119,7 @@
         "year": "Oct 2021 - Jun 2022",
         "role": "Junior Data Scientist",
         "company": "KR&A",
-        "description": "Delivered a thesis predicting flooding occurrences in Europe using alternative data and ML models, achieving 90%+ accuracy in risk classification, plus smaller items preparing, aggregating and visualising data."
+        "description": "Delivered a thesis predicting flooding occurrences in Europe using alternative data and ML models — 90%+ accuracy in risk classification."
       },
       {
         "year": "Sep 2019 - Sep 2022",
@@ -149,7 +149,7 @@
     "backToAbout": "Back to About"
   },
   "Research": {
-    "loadingFallback": "Paper index unavailable right now — the pipeline repos on GitHub stay current.",
+    "loadingFallback": "Paper index is temporarily unreachable — the pipeline repos on GitHub stay current.",
     "title": "Research & Articles",
     "searchPlaceholder": "Search articles...",
     "readMore": "Read more",
@@ -175,7 +175,7 @@
     "youMightAlsoLike": "You might also like",
     "readArticle": "Read article",
     "endCtaKicker": "§ Next",
-    "endCtaHeading": "Reading along, or thinking about a collaboration? Get in touch.",
+    "endCtaHeading": "Questions about a method, a dataset or a role — get in touch.",
     "endCtaButton": "Get in touch",
     "indexDiscuss": "Get in touch"
   },
@@ -198,19 +198,19 @@
     "subjectLabel": "Subject",
     "subjectPlaceholder": "What's this about?",
     "messageLabel": "Message",
-    "messagePlaceholder": "What would you like to discuss?",
+    "messagePlaceholder": "Your message",
     "captchaLabel": "Verify you're human",
     "captchaHint": "Please complete the captcha to send your message",
     "sendButton": "Send Message",
     "sending": "Sending...",
     "privacy": "Your message is encrypted and only used to reply to you.",
-    "successMessage": "Message sent successfully! I'll get back to you soon.",
+    "successMessage": "Message sent. I'll get back to you soon.",
     "errorEmail": "Please enter a valid email address",
     "errorSpam": "Your message was flagged as potential spam. Please try again.",
     "errorShort": "Please enter a longer message (at least 10 characters)",
     "errorCaptcha": "Please complete the captcha verification",
     "errorGeneric": "Error sending message. Please try again.",
-    "sectionKicker": "Contact: briefs, introductions, questions",
+    "sectionKicker": "Contact: roles, collaborations, questions",
     "letsTalkPrefix": "Let's",
     "letsTalkItalic": "talk",
     "formHeadRef": "REF",
@@ -271,7 +271,7 @@
         "viz": "hedonic",
         "sector": "Open source",
         "title": "Research pipelines, in the open",
-        "outcome": "The data engineering behind the papers, public: Airflow 3 pipelines with custom operators (a DuckDB SQL-ingestion operator, a SHA-256 snapshot guard), tests and CI — written up as a case-study series on this site.",
+        "outcome": "The data engineering behind the papers, public and reproducible: Airflow 3 pipelines with custom operators (a DuckDB SQL-ingestion operator, a SHA-256 snapshot guard), tests and CI — written up as a case-study series on this site.",
         "stack": [
           "Airflow",
           "DuckDB",
@@ -320,14 +320,14 @@
     "endCtaBody": "Browse other essays on geodata, AI/ML and operations, or read more about who's behind the writing.",
     "endCtaButton": "More writing",
     "endCtaSecondary": "About me",
-    "endCtaContact": "Working on something similar? Get in touch",
+    "endCtaContact": "Questions about the build — get in touch",
     "relatedKicker": "Related work",
     "empty": "No posts yet — the first case studies, on the data engineering behind the research, are in the works."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Urban-Dynamics Researcher",
     "bio": "I lead data teams and build production data systems in Amsterdam. This site collects the case studies, papers and field notes.",
-    "cta": "Full resume →"
+    "cta": "Full bio →"
   },
   "AboutTeaser": {
     "kicker": "About: who's behind the work",
@@ -420,7 +420,6 @@
     "subtitle": "One data-engineering and leadership toolkit, four lanes. Urban dynamics is the bread and butter; the rest is proof the toolkit generalises.",
     "appliedAcross": "Applied across: urban planning · real estate · climate risk · logistics & mobility · public sector",
     "automationNote": "Also under the hood: LLM/RAG pipelines and internal tools that automate classification, research and reporting — production AI as engineering range, not the headline.",
-    "ctaLabel": "Get in touch",
     "items": [
       {
         "name": "Urban dynamics & research",

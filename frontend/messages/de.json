@@ -29,7 +29,7 @@
     "role": "Data Lead & Engineer · Forscher Urbaner Dynamik",
     "title": "Data-Engineering",
     "titleHighlight": "für die Forschung",
-    "titleEnd": "— bewährt an anspruchsvollen räumlichen Problemen",
+    "titleEnd": "Offene Daten rein. Papers raus.",
     "description": "Ich baue und leite Produktions-Datensysteme; meine Spezialität ist das Data Engineering hinter der Forschung — die Airflow-, DuckDB- und PostGIS-Pipelines, die offene Geodaten in Papers verwandeln. Der Forschungsschwerpunkt ist urbane Dynamik: Gentrifizierung, Erreichbarkeit, Wohnungsmärkte — weil Städte dort sind, wo Datenprobleme hart werden. Die Pipelines hinter meinen Papers sind öffentliche Repositories.",
     "aboutMe": "Über mich",
     "workWithMe": "Kontakt aufnehmen",
@@ -44,8 +44,8 @@
     "expertiseSubtitle": "Fünf Kompetenzen, eine Einschränkung: eine kalibrierte Pipeline überlebt meist eine clevere.",
     "educationBadge": "Ausbildung",
     "experienceBadge": "Erfahrung",
-    "academicTitle": "Akademische Leistungen",
-    "professionalTitle": "Beruflicher Werdegang",
+    "academicTitle": "Akademischer Werdegang",
+    "professionalTitle": "Berufserfahrung",
     "professional": "Beruflich",
     "academic": "Akademisch",
     "educationSubtitle": "Starke Grundlage in KI, Data Science und Business Analytics von führenden europäischen Institutionen.",
@@ -76,7 +76,7 @@
     "factClientsPersonalValue": "ianronk.nl",
     "factStack": "Stack",
     "factStackValue": "Python · PostGIS · Airflow · LLM · React",
-    "journeyKicker": "Beruflicher Werdegang",
+    "journeyKicker": "Berufserfahrung",
     "journeyTitlePrefixItalic": "Fünf",
     "journeyTitleRest": "Jahre datengestützte",
     "journeyTitleLine2": "Erkenntnisse liefern.",
@@ -107,7 +107,7 @@
         "year": "Jul 2025 - Heute",
         "role": "Head of Data",
         "company": "KR&A | Europa | FinTech",
-        "description": "Head of Data: Verantwortung für Datenstrategie, ein Team von 4–5 und KI-Initiativen für ein Alternative-Data-FinTech, das europäische Immobilienfonds, Vermögenswerte und REITs bedient. Leitung der Aggregationspipeline zur Homogenisierung von Listings in 13 EU-Ländern sowie des Connectivity-Score-Builds — 13 Server, im Budget, zwei Wochen vor Plan."
+        "description": "Verantwortung für Datenstrategie, ein Team von 4–5 und KI-Initiativen für ein Alternative-Data-FinTech, das europäische Immobilienfonds, Vermögenswerte und REITs bedient. Leitung der Aggregationspipeline zur Homogenisierung von Listings in 13 EU-Ländern sowie des Connectivity-Score-Builds — 13 Server, im Budget, zwei Wochen vor Plan."
       },
       {
         "year": "Jun 2022 - Jul 2025",
@@ -119,7 +119,7 @@
         "year": "Okt 2021 - Jun 2022",
         "role": "Junior Data Scientist",
         "company": "KR&A",
-        "description": "Eine Abschlussarbeit zur Vorhersage von Überschwemmungen in Europa mit alternativen Daten und ML-Modellen geliefert, mit 90%+ Genauigkeit bei der Risikoklassifizierung, plus kleineren Aufgaben: Datenvorbereitung, Aggregation und Visualisierung."
+        "description": "Eine Abschlussarbeit zur Vorhersage von Überschwemmungen in Europa mit alternativen Daten und ML-Modellen geliefert — 90%+ Genauigkeit bei der Risikoklassifizierung."
       },
       {
         "year": "Sep 2019 - Sep 2022",
@@ -149,7 +149,7 @@
     "backToAbout": "Zurück zu Über Mich"
   },
   "Research": {
-    "loadingFallback": "Artikel laden: schau gleich nochmal vorbei",
+    "loadingFallback": "Der Paper-Index ist vorübergehend nicht erreichbar — die Pipeline-Repos auf GitHub bleiben aktuell.",
     "title": "Forschung & Artikel",
     "searchPlaceholder": "Artikel suchen...",
     "readMore": "Weiterlesen",
@@ -175,7 +175,7 @@
     "youMightAlsoLike": "Das könnte Sie auch interessieren",
     "readArticle": "Artikel lesen",
     "endCtaKicker": "§ Weiter",
-    "endCtaHeading": "Lesen Sie mit, oder denken Sie über eine Zusammenarbeit nach? Melden Sie sich.",
+    "endCtaHeading": "Fragen zu einer Methode, einem Datensatz oder einer Rolle — melden Sie sich.",
     "endCtaButton": "Kontakt aufnehmen",
     "indexDiscuss": "Kontakt aufnehmen"
   },
@@ -198,19 +198,19 @@
     "subjectLabel": "Betreff",
     "subjectPlaceholder": "Worum geht es?",
     "messageLabel": "Nachricht",
-    "messagePlaceholder": "Worum geht es?",
+    "messagePlaceholder": "Ihre Nachricht",
     "captchaLabel": "Verifizieren Sie, dass Sie ein Mensch sind",
     "captchaHint": "Bitte vervollständigen Sie das Captcha, um Ihre Nachricht zu senden",
     "sendButton": "Nachricht Senden",
     "sending": "Wird gesendet...",
     "privacy": "Ihre Nachricht wird verschlüsselt übertragen und ausschließlich zur Antwort verwendet.",
-    "successMessage": "Nachricht erfolgreich gesendet! Ich melde mich bald bei Ihnen.",
+    "successMessage": "Nachricht gesendet. Ich melde mich bald bei Ihnen.",
     "errorEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
     "errorSpam": "Ihre Nachricht wurde als möglicher Spam erkannt. Bitte versuchen Sie es erneut.",
     "errorShort": "Bitte geben Sie eine längere Nachricht ein (mindestens 10 Zeichen)",
     "errorCaptcha": "Bitte vervollständigen Sie die Captcha-Verifizierung",
     "errorGeneric": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut.",
-    "sectionKicker": "Kontakt: Briefings, Vorstellungen, Fragen",
+    "sectionKicker": "Kontakt: Rollen, Kooperationen, Fragen",
     "letsTalkPrefix": "Sprechen wir",
     "letsTalkItalic": "darüber",
     "formHeadRef": "REF",
@@ -271,7 +271,7 @@
         "viz": "hedonic",
         "sector": "Open Source",
         "title": "Forschungs-Pipelines, offen",
-        "outcome": "Das Data Engineering hinter den Papers, öffentlich: Airflow-3-Pipelines mit eigenen Operatoren (ein DuckDB-SQL-Ingestion-Operator, ein SHA-256-Snapshot-Guard), Tests und CI — als Fallstudienreihe auf dieser Seite beschrieben.",
+        "outcome": "Das Data Engineering hinter den Papers, öffentlich und reproduzierbar: Airflow-3-Pipelines mit eigenen Operatoren (ein DuckDB-SQL-Ingestion-Operator, ein SHA-256-Snapshot-Guard), Tests und CI — als Fallstudienreihe auf dieser Seite beschrieben.",
         "stack": [
           "Airflow",
           "DuckDB",
@@ -320,14 +320,14 @@
     "endCtaBody": "Stöbere durch weitere Essays zu Geodaten, KI/ML und Operations, oder lies mehr über die Person hinter den Texten.",
     "endCtaButton": "Mehr Texte",
     "endCtaSecondary": "Über mich",
-    "endCtaContact": "Fragen zu Wo / Wie viel / Was als Nächstes? Lass uns reden",
+    "endCtaContact": "Fragen zum Build — melden Sie sich",
     "relatedKicker": "Verwandte Arbeiten",
     "empty": "Die ersten Beiträge erscheinen im August 2026 — Fallstudien zum Data Engineering hinter der Forschung."
   },
   "Author": {
     "roleLine": "Data Lead & Engineer · Forscher Urbaner Dynamik",
     "bio": "Ich leite Datenteams und baue produktionsreife Datensysteme in Amsterdam. Diese Seite sammelt die Fallstudien, Papers und Feldnotizen.",
-    "cta": "Vollständiger Lebenslauf →"
+    "cta": "Vollständige Bio →"
   },
   "AboutTeaser": {
     "kicker": "Über mich: wer hinter der Arbeit steht",
@@ -420,7 +420,6 @@
     "subtitle": "Ein Toolkit für Data Engineering und Führung, vier Bereiche. Stadtdynamik ist das Kerngeschäft; der Rest ist der Beweis, dass das Toolkit generalisiert.",
     "appliedAcross": "Angewendet in: Stadtplanung · Immobilien · Klimarisiko · Logistik & Mobilität · öffentlicher Sektor",
     "automationNote": "Auch im Hintergrund: LLM/RAG-Pipelines und interne Tools, die Klassifizierung, Recherche und Reporting automatisieren — Produktions-KI als Engineering-Bereich, nicht als Schlagzeile.",
-    "ctaLabel": "Kontakt aufnehmen",
     "items": [
       {
         "name": "Stadtdynamik & Forschung",

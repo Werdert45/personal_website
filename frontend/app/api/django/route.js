@@ -68,11 +68,13 @@ export async function GET(request) {
       }
     } catch (error) {
       console.error(`[Django Proxy] GET ${djangoUrl} failed:`, error.message);
-      // Fall through to mock data
+      // Never serve mock content when a real backend is configured — clients
+      // handle non-ok responses with honest empty states.
+      return NextResponse.json({ error: "backend unavailable" }, { status: 502 });
     }
   }
 
-  // Return mock/dummy data for development
+  // Mock data only when no backend is configured (local dev without Django)
   return NextResponse.json(getMockData(endpoint));
 }
 

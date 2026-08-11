@@ -84,3 +84,5 @@ The thesis is explicit about its limits, and they belong in this post too. The ~
 The framework is a foundation, not a finished predictor. But it earned one durable result: before you ask whether a model can explain urban change, ask whether your map is drawn finely enough for the change to show up at all.
 
 *The full tables, figures, and the thesis PDF are on the [paper page](/research/gentrification-abm-european-cities).*
+
+<!-- Editor's note: metrics follow Table tab:all_amsterdam_res and the Discussion in results.tex. The Model Results prose (0.00117/0.00355/0.01307) is a known internal error in the thesis — those are the Null Measure's values. Do not "correct" toward the prose. -->
