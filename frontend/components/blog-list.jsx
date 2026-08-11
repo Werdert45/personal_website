@@ -11,13 +11,14 @@ import { renderTitle } from "@/lib/render-title";
 // index shows an honest empty state instead of an invented back catalogue.
 const DEFAULT_POSTS = [];
 
-export function BlogList() {
-  const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(true);
+export function BlogList({ initialPosts = [] }) {
+  const [posts, setPosts] = useState(initialPosts);
+  const [loading, setLoading] = useState(!initialPosts.length);
   const locale = useLocale();
   const t = useTranslations("Thoughts");
 
   useEffect(() => {
+    if (initialPosts.length) return undefined;
     let alive = true;
     fetch("/api/django?endpoint=blog")
       .then((r) => (r.ok ? r.json() : null))

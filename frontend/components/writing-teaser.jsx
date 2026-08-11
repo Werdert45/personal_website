@@ -28,7 +28,7 @@ export async function WritingTeaser({ locale = "en" }) {
     <section className="section-pad">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 07</span>
+        <span className="num-label">§ 06</span>
         <span>{t("writingTeaserKicker")}</span>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 32, gap: 40, flexWrap: "wrap" }}>

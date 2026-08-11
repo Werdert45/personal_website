@@ -1,7 +1,11 @@
 import type { MetadataRoute } from 'next'
 
+// Regenerate at runtime: at Docker build time the backend is unreachable,
+// so a build-frozen sitemap would permanently miss every content slug.
+export const revalidate = 3600
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ianronk.com'
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://ianronk.nl'
   const locales = ['en', 'nl', 'de', 'it']
 
   const staticPages = ['', '/about', '/research', '/thoughts', '/contact', '/privacy-policy', '/terms-of-service', '/cookie-policy']

@@ -30,7 +30,7 @@
     "title": "Transforming",
     "titleHighlight": "spatial data",
     "titleEnd": "into insights.",
-    "description": "I build and lead production data systems, and my specialty is the data engineering behind research — the Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. The research seat is urban dynamics: gentrification, accessibility, housing markets — because cities are where data problems get hard. The pipelines behind my papers are public repositories.",
+    "description": "I build and lead production data systems, and my specialty is the data engineering behind research — the Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. The research seat is urban dynamics: gentrification, accessibility, housing markets — because cities are where data problems get hard. The engineering behind my papers is documented as a case-study series on this site.",
     "aboutMe": "About me",
     "workWithMe": "Get in touch",
     "expertise": "Expertise:"
@@ -63,7 +63,7 @@
     "expertise": [
       {
         "title": "Data Architecture & Pipelines",
-        "description": "Scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources, 250k+ records — schema, orchestration and failure handling designed up front, Airflow and PostGIS underneath."
+        "description": "Scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources, 300k records a week — schema, orchestration and failure handling designed up front, Airflow and PostGIS underneath."
       },
       {
         "title": "Network Science",
@@ -89,7 +89,7 @@
     "backToAbout": "Back to About"
   },
   "Research": {
-    "loadingFallback": "Paper index is temporarily unreachable — the pipeline repos on GitHub stay current.",
+    "loadingFallback": "Paper index is temporarily unreachable — try again in a moment.",
     "title": "Research & Articles",
     "searchPlaceholder": "Search articles...",
     "readMore": "Read more",
@@ -123,7 +123,7 @@
     "aboutBadge": "About Me",
     "name": "Ian Ronk",
     "roleTitle": "Data Lead & Engineer · Urban-Dynamics Researcher",
-    "bio": "I build and lead production data systems — pipelines, forecasting, network analysis and spatial data products — with a research specialization in urban dynamics. The pipelines behind my papers are public repositories; the papers and case studies live on this site.",
+    "bio": "I build and lead production data systems — pipelines, forecasting, network analysis and spatial data products — with a research specialization in urban dynamics. The papers and the engineering case studies behind them live on this site.",
     "location": "Amsterdam, Netherlands",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ years in data engineering & spatial analytics",
@@ -178,7 +178,7 @@
           "GeoPandas",
           "Postgres"
         ],
-        "link": "/research/gentrification-abm"
+        "link": "/research/gentrification-abm-european-cities"
       },
       {
         "viz": "hedonic",
@@ -192,7 +192,7 @@
           "MongoDB",
           "XGBoost"
         ],
-        "link": ""
+        "link": "/about"
       },
       {
         "viz": "hedonic",
@@ -209,16 +209,16 @@
       },
       {
         "viz": "hedonic",
-        "sector": "Open source",
-        "title": "Research pipelines, in the open",
-        "outcome": "The data engineering behind the papers, public and reproducible: Airflow 3 pipelines with custom operators (a DuckDB SQL-ingestion operator, a SHA-256 snapshot guard), tests and CI — written up as a case-study series on this site.",
+        "sector": "Engineering",
+        "title": "Research pipelines as production systems",
+        "outcome": "The data engineering behind the papers: Airflow 3 pipelines with custom operators (a DuckDB SQL-ingestion operator, a SHA-256 snapshot guard), tests and CI — written up as a case-study series on this site.",
         "stack": [
           "Airflow",
           "DuckDB",
           "Docker",
           "CI"
         ],
-        "link": "https://github.com/Werdert45"
+        "link": "/thoughts/research-pipelines-are-production-systems"
       }
     ],
     "viewCase": "Read more",
@@ -307,8 +307,8 @@
         "context": "Connectivity Score · 13-server build"
       },
       {
-        "value": "250k+",
-        "unit": "records · 8 sources · weekly, 3 years",
+        "value": "300k",
+        "unit": "records a week · 8 sources · 3 years",
         "context": "Web-scraping pipeline · feeds the monthly house-price index"
       }
     ],
@@ -396,7 +396,7 @@
       },
       {
         "name": "Data pipelines, built and maintained",
-        "blurb": "Big-data scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources, 250k+ records — maintained, not just launched.",
+        "blurb": "Big-data scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources, 300k records a week — maintained, not just launched.",
         "stack": [
           "Airflow",
           "PostGIS",

@@ -2,7 +2,7 @@ import { ContactContent } from "@/components/contact-content";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/contact`;
   return {
     title: "Contact",

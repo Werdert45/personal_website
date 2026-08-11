@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const jetbrainsMono = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 const instrumentSerif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif" });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
 export const metadata: Metadata = {
   title: {

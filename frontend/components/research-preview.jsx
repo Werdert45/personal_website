@@ -26,7 +26,7 @@ export async function ResearchPreview({ locale = "en" }) {
     <section className="section-pad">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 03</span>
+        <span className="num-label">§ 07</span>
         <span>{t("previewBadge")}</span>
       </div>
 

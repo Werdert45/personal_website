@@ -83,7 +83,7 @@ But the practical lesson does not depend on which explanation is right. Value-ca
 
 Two cities on one instrument is a contrast, not a distribution. The wider project now pools seven European cities, and the binding constraint at every step has been data: long sub-municipal price panels that start well before a metro was announced are rare, and each one added makes both the estimates and the inference honestly stronger.
 
-So: if you work on a city with a recent or imminent metro opening and know its price data — an appraisal series, a deeds register, an assessment panel at neighbourhood grain with a decent pre-period — I would like to hear about it, and there is a co-authorship conversation to be had for the right panel. The pipeline is built; the Milan and Rome results above came out of it unchanged except for the inputs. The working paper and replication code are linked below.
+So: if you work on a city with a recent or imminent metro opening and know its price data — an appraisal series, a deeds register, an assessment panel at neighbourhood grain with a decent pre-period — I would like to hear about it, and there is a co-authorship conversation to be had for the right panel. The pipeline is built; the Milan and Rome results above came out of it unchanged except for the inputs. The methodology and full results are in [the working paper](/research/when-metro-capitalizes-paper); if you know such a panel, [get in touch](/contact).
 
 <!-- Links to the working paper and replication repo come from the related research entry (when-metro-capitalizes-paper); do not hardcode URLs before publishing. -->
 

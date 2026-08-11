@@ -1,7 +1,7 @@
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/cookie-policy`;
   return {
     title: "Cookie Policy",
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
         "x-default": `${siteUrl}/en/cookie-policy`,
       },
     },
-    openGraph: { url, type: "website" },
+    openGraph: { url, type: "website", images: ["/og.png"] },
   };
 }
 

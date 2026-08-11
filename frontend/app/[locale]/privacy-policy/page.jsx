@@ -1,7 +1,7 @@
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/privacy-policy`;
   return {
     title: "Privacy Policy",
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
         "x-default": `${siteUrl}/en/privacy-policy`,
       },
     },
-    openGraph: { url, type: "website" },
+    openGraph: { url, type: "website", images: ["/og.png"] },
   };
 }
 
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
               1. Introduction
             </h2>
             <p>
-              Welcome to ianronk.com (&quot;the Website&quot;), operated by Ian Ronk
+              Welcome to ianronk.nl (&quot;the Website&quot;), operated by Ian Ronk
               (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;). We are committed to
               protecting your privacy and personal data in accordance with the General
               Data Protection Regulation (GDPR) and other applicable data protection

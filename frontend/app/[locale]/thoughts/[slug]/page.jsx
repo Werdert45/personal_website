@@ -2,11 +2,13 @@ import { notFound } from "next/navigation";
 import { BlogPost } from "@/components/blog-post";
 import { BlogPostingJsonLd } from "@/components/json-ld";
 
+export const revalidate = 300;
+
 async function fetchBlogPost(slug) {
   try {
     const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
     const res = await fetch(`${djangoUrl}/api/blog/${slug}/`, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 300 },
     });
     if (!res.ok) return null;
     return await res.json();
@@ -17,7 +19,7 @@ async function fetchBlogPost(slug) {
 
 export async function generateMetadata({ params }) {
   const { slug, locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const post = await fetchBlogPost(slug);
 
   let title;

@@ -76,6 +76,6 @@ And the meta-result, the one I keep relearning: across this project, the right-h
 - **Identification failures do not announce themselves.** Estimators with rank-check overrides return confident numbers for parameters the data cannot speak to. If a coefficient's identification depends on your panel window, check the rank by hand.
 - **Let nulls into the sample and keep them there.** Rome joined the panel after its outcome was knowable, which is exactly why dropping it later would have been selection on the dependent variable. It stayed; it reshaped the paper; the paper is more credible for it.
 
-The working paper and full replication code are linked below. If you work on transit capitalization — or you have been burned by a fixed-effects choice of your own — I would like to hear which specification you would have led with.
+The full estimates, robustness checks and inference details are in [the working paper](/research/when-metro-capitalizes-paper). If you work on transit capitalization — or you have been burned by a fixed-effects choice of your own — I would like to hear which specification you would have led with.
 
 <!-- Links to the working paper and replication repo come from the related research entry (when-metro-capitalizes-paper); do not hardcode URLs before publishing. -->

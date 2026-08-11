@@ -1,10 +1,15 @@
 import { notFound } from "next/navigation";
-import ResearchArticleDetail, { STATIC_PAPERS } from "@/components/research-article-detail";
+import ResearchArticleDetail from "@/components/research-article-detail";
+// Imported from a plain module (not the "use client" component) so the server
+// page sees the real object rather than a client-reference proxy.
+import { STATIC_PAPERS } from "@/components/research-static-papers";
 import { ArticleJsonLd } from "@/components/json-ld";
+
+export const revalidate = 300;
 
 export async function generateMetadata({ params }) {
   const { slug, locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
   // Try to fetch actual article data for rich metadata
   let title, description, image, updatedAt;
@@ -80,7 +85,7 @@ async function fetchArticleForJsonLd(slug) {
   try {
     const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
     const res = await fetch(`${djangoUrl}/api/research/${slug}/`, {
-      next: { revalidate: 3600 },
+      next: { revalidate: 300 },
     });
     if (!res.ok) return null;
     return await res.json();

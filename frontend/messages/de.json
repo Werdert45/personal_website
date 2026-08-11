@@ -30,7 +30,7 @@
     "title": "Geodaten,",
     "titleHighlight": "transformiert",
     "titleEnd": "zu Erkenntnissen.",
-    "description": "Ich baue und leite Produktions-Datensysteme; meine Spezialität ist das Data Engineering hinter der Forschung — die Airflow-, DuckDB- und PostGIS-Pipelines, die offene Geodaten in Papers verwandeln. Der Forschungsschwerpunkt ist urbane Dynamik: Gentrifizierung, Erreichbarkeit, Wohnungsmärkte — weil Städte dort sind, wo Datenprobleme hart werden. Die Pipelines hinter meinen Papers sind öffentliche Repositories.",
+    "description": "Ich baue und leite Produktions-Datensysteme; meine Spezialität ist das Data Engineering hinter der Forschung — die Airflow-, DuckDB- und PostGIS-Pipelines, die offene Geodaten in Papers verwandeln. Der Forschungsschwerpunkt ist urbane Dynamik: Gentrifizierung, Erreichbarkeit, Wohnungsmärkte — weil Städte dort sind, wo Datenprobleme hart werden. Das Engineering hinter meinen Papers ist als Fallstudien-Serie auf dieser Website dokumentiert.",
     "aboutMe": "Über mich",
     "workWithMe": "Kontakt aufnehmen",
     "expertise": "Expertise:"
@@ -63,7 +63,7 @@
     "expertise": [
       {
         "title": "Datenarchitektur & Pipelines",
-        "description": "Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 250k+ Datensätze — Schema, Orchestrierung und Fehlerbehandlung von Anfang an entworfen, mit Airflow und PostGIS im Unterbau."
+        "description": "Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 300k Datensätze pro Woche — Schema, Orchestrierung und Fehlerbehandlung von Anfang an entworfen, mit Airflow und PostGIS im Unterbau."
       },
       {
         "title": "Netzwerkwissenschaft",
@@ -89,7 +89,7 @@
     "backToAbout": "Zurück zu Über Mich"
   },
   "Research": {
-    "loadingFallback": "Der Paper-Index ist vorübergehend nicht erreichbar — die Pipeline-Repos auf GitHub bleiben aktuell.",
+    "loadingFallback": "Der Paper-Index ist vorübergehend nicht erreichbar — gleich erneut versuchen.",
     "title": "Forschung & Artikel",
     "searchPlaceholder": "Artikel suchen...",
     "readMore": "Weiterlesen",
@@ -123,7 +123,7 @@
     "aboutBadge": "Über Mich",
     "name": "Ian Ronk",
     "roleTitle": "Data Lead & Engineer · Forscher Urbaner Dynamik",
-    "bio": "Ich baue und leite Produktions-Datensysteme — Pipelines, Forecasting, Netzwerkanalyse und räumliche Datenprodukte — mit einem Forschungsschwerpunkt auf urbaner Dynamik. Die Pipelines hinter meinen Papers sind öffentliche Repositories; die Papers und Fallstudien finden Sie auf dieser Seite.",
+    "bio": "Ich baue und leite Produktions-Datensysteme — Pipelines, Forecasting, Netzwerkanalyse und räumliche Datenprodukte — mit einem Forschungsschwerpunkt auf urbaner Dynamik. Die Papers und die Engineering-Fallstudien dahinter finden Sie auf dieser Seite.",
     "location": "Amsterdam, Niederlande",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ Jahre in Data Engineering & räumlicher Analytik",
@@ -178,7 +178,7 @@
           "GeoPandas",
           "Postgres"
         ],
-        "link": "/research/gentrification-abm"
+        "link": "/research/gentrification-abm-european-cities"
       },
       {
         "viz": "hedonic",
@@ -192,7 +192,7 @@
           "MongoDB",
           "XGBoost"
         ],
-        "link": ""
+        "link": "/about"
       },
       {
         "viz": "hedonic",
@@ -209,16 +209,16 @@
       },
       {
         "viz": "hedonic",
-        "sector": "Open Source",
-        "title": "Forschungs-Pipelines, offen",
-        "outcome": "Das Data Engineering hinter den Papers, öffentlich und reproduzierbar: Airflow-3-Pipelines mit eigenen Operatoren (ein DuckDB-SQL-Ingestion-Operator, ein SHA-256-Snapshot-Guard), Tests und CI — als Fallstudienreihe auf dieser Seite beschrieben.",
+        "sector": "Engineering",
+        "title": "Research-Pipelines als Produktionssysteme",
+        "outcome": "Das Data Engineering hinter den Papers: Airflow-3-Pipelines mit Custom Operators (ein DuckDB-SQL-Ingestion-Operator, ein SHA-256-Snapshot-Guard), Tests und CI — dokumentiert als Fallstudien-Serie auf dieser Website.",
         "stack": [
           "Airflow",
           "DuckDB",
           "Docker",
           "CI"
         ],
-        "link": "https://github.com/Werdert45"
+        "link": "/thoughts/research-pipelines-are-production-systems"
       }
     ],
     "viewCase": "Mehr lesen",
@@ -307,8 +307,8 @@
         "context": "Connectivity Score · 13-Server-Build"
       },
       {
-        "value": "250k+",
-        "unit": "Datensätze · 8 Quellen · wöchentlich, 3 Jahre",
+        "value": "300k",
+        "unit": "Datensätze pro Woche · 8 Quellen · 3 Jahre",
         "context": "Scrape auf institutionellem Niveau · genutzt von Statistikbehörden"
       }
     ],
@@ -395,7 +395,7 @@
       },
       {
         "name": "Datenpipelines, gebaut und gepflegt",
-        "blurb": "Big-Data-Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 250k+ Datensätze — gepflegt, nicht nur gestartet.",
+        "blurb": "Big-Data-Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 300k Datensätze pro Woche — gepflegt, nicht nur gestartet.",
         "stack": [
           "Airflow",
           "PostGIS",

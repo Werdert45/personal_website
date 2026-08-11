@@ -1,5 +1,5 @@
 export function PersonJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -54,7 +54,7 @@ export function PersonJsonLd() {
 }
 
 export function WebSiteJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -88,7 +88,7 @@ export function ArticleJsonLd({
   locale = "en",
   availableLocales = ["en"],
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/research/${slug}`;
 
   const sameAs = availableLocales
@@ -130,7 +130,7 @@ export function BlogPostingJsonLd({
   locale = "en",
   availableLocales = ["en"],
 }) {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/thoughts/${slug}`;
 
   const sameAs = availableLocales
@@ -163,7 +163,7 @@ export function BlogPostingJsonLd({
 }
 
 export function ProfilePageJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
   const jsonLd = {
     "@context": "https://schema.org",

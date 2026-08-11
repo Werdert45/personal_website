@@ -1,7 +1,7 @@
 import { renderPostOg } from "@/lib/og/post-template";
 
 export const runtime = "edge";
-export const alt = "Post on ianronk.com";
+export const alt = "Post on ianronk.nl";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -21,6 +21,6 @@ export default async function OgImage({ params }: { params: Promise<{ slug: stri
 
     return renderPostOg({ title, category, date });
   } catch {
-    return renderPostOg({ title: "New post on ianronk.com", category: "Thoughts" });
+    return renderPostOg({ title: "New post on ianronk.nl", category: "Thoughts" });
   }
 }

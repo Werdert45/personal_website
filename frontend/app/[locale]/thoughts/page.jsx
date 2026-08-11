@@ -1,8 +1,25 @@
 import { BlogList } from "@/components/blog-list";
 
+export const revalidate = 300;
+
+async function fetchBlogList() {
+  try {
+    const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
+    const res = await fetch(`${djangoUrl}/api/blog/`, {
+      next: { revalidate: 300 },
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    const results = data.results || data;
+    return Array.isArray(results) && results.length ? results : null;
+  } catch {
+    return null;
+  }
+}
+
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/thoughts`;
   return {
     title: "Work — case studies & field notes",
@@ -28,10 +45,11 @@ export async function generateMetadata({ params }) {
   };
 }
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await fetchBlogList();
   return (
     <main>
-      <BlogList />
+      <BlogList initialPosts={posts || []} />
     </main>
   );
 }

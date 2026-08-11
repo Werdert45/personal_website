@@ -30,7 +30,7 @@
     "title": "Ruimtelijke data,",
     "titleHighlight": "omgezet",
     "titleEnd": "in inzicht.",
-    "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. Het onderzoeksterrein is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De pipelines achter mijn papers zijn publieke repositories.",
+    "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. Het onderzoeksterrein is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De engineering achter mijn papers is gedocumenteerd als case-study-serie op deze site.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
     "expertise": "Expertise:"
@@ -63,7 +63,7 @@
     "expertise": [
       {
         "title": "Data-architectuur & pipelines",
-        "description": "Scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 250k+ records — schema, orkestratie en foutafhandeling vooraf ontworpen, met Airflow en PostGIS eronder."
+        "description": "Scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 300k records per week — schema, orkestratie en foutafhandeling vooraf ontworpen, met Airflow en PostGIS eronder."
       },
       {
         "title": "Netwerkwetenschap",
@@ -89,7 +89,7 @@
     "backToAbout": "Terug naar Over Mij"
   },
   "Research": {
-    "loadingFallback": "Paperindex tijdelijk niet bereikbaar — de pipeline-repo's op GitHub blijven actueel.",
+    "loadingFallback": "Paperindex is tijdelijk onbereikbaar — probeer het zo opnieuw.",
     "title": "Onderzoek & Artikelen",
     "searchPlaceholder": "Zoek artikelen...",
     "readMore": "Lees meer",
@@ -123,7 +123,7 @@
     "aboutBadge": "Over Mij",
     "name": "Ian Ronk",
     "roleTitle": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
-    "bio": "Ik bouw en leid productie-datasystemen — pipelines, forecasting, netwerkanalyse en ruimtelijke dataproducten — met een onderzoeksspecialisatie in stedelijke dynamiek. De pipelines achter mijn papers zijn publieke repositories; de papers en casestudy's staan op deze site.",
+    "bio": "Ik bouw en leid productie-datasystemen — pipelines, forecasting, netwerkanalyse en ruimtelijke dataproducten — met een onderzoeksspecialisatie in stedelijke dynamiek. De papers en de engineering-casestudy's erachter staan op deze site.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
@@ -178,7 +178,7 @@
           "GeoPandas",
           "Postgres"
         ],
-        "link": "/research/gentrification-abm"
+        "link": "/research/gentrification-abm-european-cities"
       },
       {
         "viz": "hedonic",
@@ -192,7 +192,7 @@
           "MongoDB",
           "XGBoost"
         ],
-        "link": ""
+        "link": "/about"
       },
       {
         "viz": "hedonic",
@@ -209,16 +209,16 @@
       },
       {
         "viz": "hedonic",
-        "sector": "Open source",
-        "title": "Onderzoekspipelines, openbaar",
-        "outcome": "De data engineering achter de papers, publiek en reproduceerbaar: Airflow 3-pipelines met eigen operators (een DuckDB-SQL-ingestie-operator, een SHA-256-snapshot-guard), tests en CI — beschreven als casestudyreeks op deze site.",
+        "sector": "Engineering",
+        "title": "Researchpipelines als productiesystemen",
+        "outcome": "De data-engineering achter de papers: Airflow 3-pipelines met custom operators (een DuckDB SQL-ingestion-operator, een SHA-256 snapshot guard), tests en CI — beschreven in een case-study-serie op deze site.",
         "stack": [
           "Airflow",
           "DuckDB",
           "Docker",
           "CI"
         ],
-        "link": "https://github.com/Werdert45"
+        "link": "/thoughts/research-pipelines-are-production-systems"
       }
     ],
     "viewCase": "Lees meer",
@@ -307,8 +307,8 @@
         "context": "Connectivity Score · build met 13 servers"
       },
       {
-        "value": "250k+",
-        "unit": "records · 8 bronnen · wekelijks, 3 jaar",
+        "value": "300k",
+        "unit": "records per week · 8 bronnen · 3 jaar",
         "context": "Web-scraping-pipeline · voedt de maandelijkse huizenprijsindex"
       }
     ],
@@ -396,7 +396,7 @@
       },
       {
         "name": "Datapipelines, gebouwd en onderhouden",
-        "blurb": "Big-data-scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 250k+ records — onderhouden, niet alleen gelanceerd.",
+        "blurb": "Big-data-scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 300k records per week — onderhouden, niet alleen gelanceerd.",
         "stack": [
           "Airflow",
           "PostGIS",

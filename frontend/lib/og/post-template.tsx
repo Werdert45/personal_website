@@ -52,7 +52,7 @@ export function renderPostOg({ title, category, date }: OgPostProps) {
               fontFamily: "monospace",
             }}
           >
-            ianronk.com
+            ianronk.nl
           </div>
         </div>
       </div>

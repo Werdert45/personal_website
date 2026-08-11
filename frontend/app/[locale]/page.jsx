@@ -11,7 +11,7 @@ import { PersonJsonLd, WebSiteJsonLd } from "@/components/json-ld";
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}`;
   return {
     alternates: {
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
         "x-default": `${siteUrl}/en`,
       },
     },
-    openGraph: { url, type: "website" },
+    openGraph: { url, type: "website", images: ["/og.png"] },
   };
 }
 

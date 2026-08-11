@@ -1,7 +1,7 @@
 
 export async function generateMetadata({ params }) {
   const { locale } = await params;
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/terms-of-service`;
   return {
     title: "Terms of Service",
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }) {
         "x-default": `${siteUrl}/en/terms-of-service`,
       },
     },
-    openGraph: { url, type: "website" },
+    openGraph: { url, type: "website", images: ["/og.png"] },
   };
 }
 
@@ -36,7 +36,7 @@ export default function TermsOfServicePage() {
               1. Acceptance of Terms
             </h2>
             <p>
-              By accessing and using ianronk.com (&quot;the Website&quot;), you accept
+              By accessing and using ianronk.nl (&quot;the Website&quot;), you accept
               and agree to be bound by these Terms of Service. If you do not agree to
               these terms, please do not use the Website.
             </p>

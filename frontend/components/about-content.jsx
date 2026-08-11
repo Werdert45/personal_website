@@ -18,7 +18,7 @@ export function AboutContent() {
           <span>{t("sectionKicker")}</span>
         </div>
 
-        <div className="about-top">
+        <div className="about-top" style={{ paddingBottom: 0, borderBottom: "none" }}>
           <div>
             <h2>
               {t("heroTitleLine1a")} <i>{t("heroTitleLine1aItalic")}</i> —<br />

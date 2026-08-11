@@ -64,6 +64,6 @@ Amsterdam quays (726 GB in, 1578 rows out) and the Tokyo ODPT build keep their s
 
 ## Who this is for
 
-If you write research code and have ever lost an afternoon to a cache you forgot existed, this series is for you. If you hire data engineers to serve researchers, it is also a portfolio: six pipelines, 1.5 GB to 726 GB, each of which produced a thesis chapter, a paper, or a submission, run as systems that can be re-run, audited, and handed over. The DAGs and the instance are public in the repo; every post links to the scripts it describes.
+If you write research code and have ever lost an afternoon to a cache you forgot existed, this series is for you. If you hire data engineers to serve researchers, it is also a portfolio: six pipelines, 1.5 GB to 726 GB, each of which produced a thesis chapter, a paper, or a submission, run as systems that can be re-run, audited, and handed over. Each post names the DAGs, operators and guards it describes, with the configuration decisions and the failure modes that motivated them.
 
 Research doesn't need more infrastructure than it can operate. It needs the small set of production habits — idempotency, pinned inputs, schema contracts, honest failure — applied where a wrong number becomes a published wrong number. That is the series.

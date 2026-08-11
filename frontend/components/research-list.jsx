@@ -16,14 +16,15 @@ const DEFAULT_ITEMS = [
   { id: 3, slug: "gentrification-abm", category: "THESIS", date: "2025-08", title: "Agent-based modelling of gentrification dynamics", abstract: "MSc thesis (2025). An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data — with an honest account of where the aggregation level limits what the model can claim. Case-study posts land here from August 2026." },
 ];
 
-export function ResearchList() {
+export function ResearchList({ initialItems = [] }) {
   const [searchQuery, setSearchQuery] = useState("");
-  const [researchItems, setResearchItems] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [researchItems, setResearchItems] = useState(initialItems);
+  const [loading, setLoading] = useState(!initialItems.length);
   const t = useTranslations("Research");
   const locale = useLocale();
 
   useEffect(() => {
+    if (initialItems.length) return undefined;
     let alive = true;
     async function fetchResearch() {
       try {
