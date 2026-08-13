@@ -42,6 +42,9 @@ class Research(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(unique=True)
     abstract = models.TextField(blank=True)
+    excerpt = models.TextField(
+        blank=True, help_text="Plain-language dek shown in list rows (abstract stays on the detail page)"
+    )
     content = models.TextField(blank=True, help_text="Markdown content for the article")
     category = models.CharField(max_length=50, choices=CATEGORY_CHOICES, default="research")
     status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="draft")

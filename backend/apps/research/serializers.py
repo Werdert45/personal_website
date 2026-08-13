@@ -44,6 +44,7 @@ class ResearchSerializer(serializers.ModelSerializer):
             "title",
             "slug",
             "abstract",
+            "excerpt",
             "content",
             "category",
             "status",

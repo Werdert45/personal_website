@@ -1,5 +1,6 @@
 ---
 slug: gentrification-abm-european-cities
+excerpt: "An agent-based model of gentrification calibrated on real data from Amsterdam, Utrecht and Milan. It beats the regressions where change actually concentrates — and shows that spatial resolution decides whether the signal exists at all."
 title: "A Unified Agent-Based Framework for Gentrification in European Cities"
 status: published
 category: thesis

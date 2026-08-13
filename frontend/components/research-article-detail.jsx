@@ -11,7 +11,7 @@ import { getMapFenceSource, parseMapFence } from "@/lib/map-fence";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, Loader2, ArrowRight, Clock, FileText } from "lucide-react";
+import { ArrowLeft, Loader2, ArrowRight, Clock } from "lucide-react";
 import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { trackEvent } from "@/lib/analytics";
 import { getItemField } from "@/lib/i18n-item";
@@ -205,24 +205,6 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
         </Button>
 
         <div className="max-w-4xl">
-          {/* Preview image or placeholder */}
-          <div className="mb-8 rounded-lg overflow-hidden border border-border">
-            {article.preview_image ? (
-              <img
-                src={article.preview_image}
-                alt={title}
-                className="w-full h-48 md:h-72 object-cover"
-              />
-            ) : (
-              <div className="w-full h-48 md:h-72 bg-muted flex items-center justify-center">
-                <div className="flex flex-col items-center gap-3 text-muted-foreground">
-                  <FileText className="w-12 h-12" />
-                  <p className="text-sm font-medium">{article.category}</p>
-                </div>
-              </div>
-            )}
-          </div>
-
           {geojsonData && (
             <Card className="mb-8 overflow-hidden border-border">
               <CardContent className="p-0">

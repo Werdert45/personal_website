@@ -1,6 +1,7 @@
 ---
 title: "Calibrating Free Postcode Boundaries from OpenStreetMap: A Transferable Seed-Density Accuracy Curve"
 slug: voronoi-postcodes-paper
+excerpt: "Free postcode boundaries built from OpenStreetMap addresses, with a calibrated accuracy curve that predicts how good they are before any reference map exists. Tested across five countries, deployed on all of Italy."
 status: draft
 category: working-paper
 publication_status: working-paper

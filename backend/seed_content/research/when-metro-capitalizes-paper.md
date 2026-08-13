@@ -1,6 +1,7 @@
 ---
 title: "When Does Metro Infrastructure Capitalize into Property Prices? Phase-Decomposed Difference-in-Differences Evidence from Seven European Cities"
 slug: when-metro-capitalizes-paper
+excerpt: "When do new metro lines show up in house prices? Across 42,000 observations from seven European cities, the market pays on delivery, not on promises — and the number worth defending is Milan's +167 EUR/m² within Ring D."
 status: published
 category: working-paper
 publication_status: working-paper

@@ -121,7 +121,7 @@ export function ResearchList({ initialItems = [] }) {
               <div className="ry">{item.date || ""}</div>
               <div className="rt">
                 {renderTitle(getItemField(item, "title", locale))}
-                <span className="rm">{getItemField(item, "abstract", locale)}</span>
+                <span className="rm">{getItemField(item, "excerpt", locale) || getItemField(item, "abstract", locale)}</span>
               </div>
               <div className="rtag">{(item.category || "RESEARCH").toUpperCase()}</div>
               <div className="rarr">→</div>
