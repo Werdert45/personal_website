@@ -96,6 +96,7 @@ class ResearchListSerializer(serializers.ModelSerializer):
             "title",
             "slug",
             "abstract",
+            "excerpt",
             "category",
             "status",
             "tags",

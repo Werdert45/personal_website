@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/research`;
   return {
-    title: "Academics — papers & publications",
+    title: "Research — papers & publications",
     description:
       "Papers and publications on urban dynamics, network analysis and geospatial methods by Ian Ronk — gentrification, accessibility, housing markets.",
     alternates: {
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
-      title: "Academics — papers & publications",
+      title: "Research — papers & publications",
       description:
         "Papers and publications on urban dynamics, network analysis and geospatial methods by Ian Ronk — gentrification, accessibility, housing markets.",
       url,
