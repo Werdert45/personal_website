@@ -4,7 +4,7 @@ export function Marquee({ items }) {
     "Geospatial methods",
     "Spatial forecasting",
     "Data engineering",
-    "Production AI tools",
+    "AI Engineering",
   ];
   const list = items || defaults;
   const row = (

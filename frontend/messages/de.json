@@ -18,11 +18,11 @@
   "Navigation": {
     "home": "Home",
     "about": "Über Mich",
-    "visualizations": "Artikel",
-    "research": "Forschung",
+    "visualizations": "Blog",
     "contact": "Kontakt",
     "letsTalk": "Kontakt",
-    "menu": "Menü"
+    "menu": "Menü",
+    "projects": "Projekte & Paper"
   },
   "Hero": {
     "location": "Amsterdam, NL",
