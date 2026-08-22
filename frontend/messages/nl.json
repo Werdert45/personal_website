@@ -35,10 +35,10 @@
     "workWithMe": "Neem contact op",
     "expertise": "Expertise:",
     "expertiseAreas": [
-      "Systeeminfrastructuur",
-      "Cloud",
-      "Complexe dataverwerking",
-      "Analytics"
+      "Data engineering",
+      "Systeemarchitectuur",
+      "Complexe dataproducten",
+      "Analytics & ML"
     ]
   },
   "About": {

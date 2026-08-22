@@ -35,10 +35,10 @@
     "workWithMe": "Kontakt aufnehmen",
     "expertise": "Expertise:",
     "expertiseAreas": [
-      "Systeminfrastruktur",
-      "Cloud",
-      "Komplexe Datenverarbeitung",
-      "Analytics"
+      "Data Engineering",
+      "Systemarchitektur",
+      "Komplexe Datenprodukte",
+      "Analytics & ML"
     ]
   },
   "About": {

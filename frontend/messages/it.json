@@ -35,10 +35,10 @@
     "workWithMe": "Scrivimi",
     "expertise": "Competenze:",
     "expertiseAreas": [
-      "Infrastruttura di sistema",
-      "Cloud",
-      "Elaborazione di dati complessi",
-      "Analytics"
+      "Data engineering",
+      "Architettura di sistema",
+      "Prodotti dati complessi",
+      "Analytics & ML"
     ]
   },
   "About": {
