@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <defs>
+    <pattern id="g" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M20 0 H0 V20" fill="none" stroke="rgba(15,14,11,.06)" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="320" fill="#FCFBF7"/>
+  <rect width="900" height="320" fill="url(#g)"/>
+
+  <!-- ============ 1. Phone / camera ============ -->
+  <g transform="translate(60,35)">
+    <rect x="0" y="0" width="130" height="240" rx="14" fill="#F6F4EE" stroke="#111110" stroke-width="1.4"/>
+    <rect x="10" y="26" width="110" height="188" fill="#FCFBF7" stroke="#111110" stroke-width="0.7"/>
+    <circle cx="65" cy="14" r="3" fill="none" stroke="#111110" stroke-width="1"/>
+    <line x1="50" y1="226" x2="80" y2="226" stroke="#111110" stroke-width="2" stroke-linecap="round"/>
+
+    <!-- viewfinder brackets -->
+    <g stroke="#111110" stroke-width="1.6" fill="none">
+      <path d="M20 44 v-8 h8"/>
+      <path d="M110 36 h8 v8"/>
+      <path d="M20 196 v8 h8"/>
+      <path d="M118 196 v8 h-8"/>
+    </g>
+
+    <!-- fish silhouette in the viewfinder -->
+    <g transform="translate(24,92)">
+      <path d="M6 28 C16 12, 46 8, 62 20 C68 14, 76 10, 82 8 L78 22 L82 36 C76 34, 68 30, 62 28 C46 44, 16 40, 6 28 Z" fill="#111110" opacity="0.8"/>
+      <circle cx="16" cy="24" r="2.4" fill="#FCFBF7"/>
+    </g>
+
+    <!-- scan line -->
+    <rect x="10" y="26" width="110" height="4" fill="#FFD60A" opacity="0.85">
+      <animate attributeName="y" values="26;210;26" dur="3.6s" repeatCount="indefinite"/>
+    </rect>
+
+    <text x="0" y="266" font-size="11" fill="#111110">CAMERA</text>
+    <text x="0" y="281" font-size="9" fill="#8A8676">one codebase · iOS + Android</text>
+  </g>
+
+  <!-- arrow 1 -->
+  <g>
+    <path d="M205 155 H320" fill="none" stroke="#111110" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M316 149 l8 6 -8 6" fill="none" stroke="#111110" stroke-width="1.2" opacity="0.6"/>
+  </g>
+
+  <!-- ============ 2. On-device model ============ -->
+  <g transform="translate(335,95)">
+    <!-- crossed-out cloud -->
+    <g transform="translate(60,-58)">
+      <path d="M18 22 a10 10 0 0 1 4 -19 a13 13 0 0 1 25 -3 a9 9 0 0 1 3 22 Z" fill="#F6F4EE" stroke="#8A8676" stroke-width="1.1"/>
+      <line x1="-2" y1="26" x2="56" y2="-8" stroke="#111110" stroke-width="1.6"/>
+      <text x="62" y="14" font-size="9" fill="#8A8676">no cloud,</text>
+      <text x="62" y="25" font-size="9" fill="#8A8676">no signal needed</text>
+    </g>
+
+    <!-- chip -->
+    <rect x="0" y="0" width="180" height="120" rx="6" fill="#111110"/>
+    <rect x="14" y="14" width="152" height="92" rx="3" fill="none" stroke="#FFD60A" stroke-width="1" opacity="0.9"/>
+    <text x="30" y="52" font-size="15" fill="#FCFBF7">ResNet50</text>
+    <text x="30" y="72" font-size="11" fill="#FFD60A">TFLite · 8.8 MB</text>
+    <text x="30" y="92" font-size="9" fill="#8A8676">runs on the phone</text>
+    <!-- chip pins -->
+    <g stroke="#111110" stroke-width="2">
+      <line x1="24" y1="-8" x2="24" y2="0"/><line x1="60" y1="-8" x2="60" y2="0"/><line x1="96" y1="-8" x2="96" y2="0"/><line x1="132" y1="-8" x2="132" y2="0"/><line x1="156" y1="-8" x2="156" y2="0"/>
+      <line x1="24" y1="120" x2="24" y2="128"/><line x1="60" y1="120" x2="60" y2="128"/><line x1="96" y1="120" x2="96" y2="128"/><line x1="132" y1="120" x2="132" y2="128"/><line x1="156" y1="120" x2="156" y2="128"/>
+    </g>
+    <text x="0" y="171" font-size="11" fill="#111110">ON-DEVICE MODEL</text>
+    <text x="0" y="186" font-size="9" fill="#8A8676">63 species classifier</text>
+  </g>
+
+  <!-- arrow 2 -->
+  <g>
+    <path d="M530 155 H645" fill="none" stroke="#111110" stroke-width="1.2" stroke-dasharray="5 4" opacity="0.6">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M641 149 l8 6 -8 6" fill="none" stroke="#111110" stroke-width="1.2" opacity="0.6"/>
+  </g>
+
+  <!-- ============ 3. Species result + FishDex ============ -->
+  <g transform="translate(660,45)">
+    <!-- result card -->
+    <rect x="0" y="0" width="180" height="102" fill="#FCFBF7" stroke="#111110" stroke-width="1.2"/>
+    <rect x="0" y="0" width="180" height="26" fill="#F6F4EE" stroke="#111110" stroke-width="0.7"/>
+    <text x="10" y="17" font-size="12" fill="#111110">brasem</text>
+    <text x="10" y="44" font-size="9" fill="#8A8676" font-style="italic">Abramis brama</text>
+    <text x="10" y="60" font-size="9" fill="#8A8676">30–70 cm · Dec–Aug</text>
+    <!-- confidence bar -->
+    <rect x="10" y="72" width="160" height="10" fill="#F6F4EE" stroke="#111110" stroke-width="0.7"/>
+    <rect x="10" y="72" width="0" height="10" fill="#FFD60A">
+      <animate attributeName="width" values="0;138;138" keyTimes="0;0.4;1" dur="3.6s" repeatCount="indefinite"/>
+    </rect>
+    <text x="10" y="96" font-size="8.5" fill="#8A8676">confidence</text>
+
+    <!-- FishDex grid -->
+    <text x="0" y="132" font-size="11" fill="#111110">FISHDEX</text>
+    <text x="60" y="132" font-size="9" fill="#8A8676">· 63 species</text>
+    <g transform="translate(0,140)">
+      <!-- 7x3 cells, some caught (dark), one unlocking (yellow blink) -->
+      <g fill="#F6F4EE" stroke="#111110" stroke-width="0.7">
+        <rect x="0" y="0" width="22" height="22"/><rect x="26" y="0" width="22" height="22"/><rect x="52" y="0" width="22" height="22"/><rect x="78" y="0" width="22" height="22"/><rect x="104" y="0" width="22" height="22"/><rect x="130" y="0" width="22" height="22"/><rect x="156" y="0" width="22" height="22"/>
+        <rect x="0" y="26" width="22" height="22"/><rect x="26" y="26" width="22" height="22"/><rect x="52" y="26" width="22" height="22"/><rect x="78" y="26" width="22" height="22"/><rect x="104" y="26" width="22" height="22"/><rect x="130" y="26" width="22" height="22"/><rect x="156" y="26" width="22" height="22"/>
+        <rect x="0" y="52" width="22" height="22"/><rect x="26" y="52" width="22" height="22"/><rect x="52" y="52" width="22" height="22"/><rect x="78" y="52" width="22" height="22"/><rect x="104" y="52" width="22" height="22"/><rect x="130" y="52" width="22" height="22"/><rect x="156" y="52" width="22" height="22"/>
+      </g>
+      <!-- caught species -->
+      <g fill="#111110" opacity="0.75">
+        <rect x="3" y="3" width="16" height="16"/><rect x="55" y="3" width="16" height="16"/><rect x="107" y="3" width="16" height="16"/><rect x="29" y="29" width="16" height="16"/><rect x="133" y="29" width="16" height="16"/><rect x="3" y="55" width="16" height="16"/><rect x="81" y="55" width="16" height="16"/>
+      </g>
+      <!-- the new catch unlocking -->
+      <rect x="81" y="29" width="16" height="16" fill="#FFD60A" stroke="#E6BE00" stroke-width="1">
+        <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.45;0.55;1" dur="3.6s" repeatCount="indefinite"/>
+      </rect>
+      <text x="0" y="92" font-size="9" fill="#8A8676">catch it, unlock it</text>
+    </g>
+  </g>
+</svg>
