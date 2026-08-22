@@ -279,16 +279,16 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Costruisco sistemi",
     "titleLine2Underline": "in produzione.",
-    "bio1": "Ingegnere geodata e ricercatore di dinamiche urbane, con sede ad Amsterdam. Head of Data presso KR&A. MSc in Data Science & Business Analytics alla Bocconi; BSc in Intelligenza Artificiale all'Università di Amsterdam, circa cinque anni tra i due, trascorsi perlopiù sul lato produzione.",
-    "bio2": "Lavoro all'incrocio tra geospatial analytics, ML e l'infrastruttura dati che rende utili entrambi: le pipeline, gli schemi e gli spatial join che nei paper non compaiono ma decidono se il modello arriva in produzione. Questo sito raccoglie ciò che vale la pena mettere per iscritto: paper, metodi, strumenti e qualche opinione decisa sul perché le dashboard siano sopravvalutate.",
+    "bio1": "Lavoro come Head of Data: costruisco e guido i sistemi che raccolgono, conservano e servono dati su larga scala — e l'analisi che ci sta sopra. Dati di mercato da scraping a 300k record a settimana, statistiche ufficiali e serie storiche lente, pipeline documentali su LLM e OCR, e dati spaziali e di rete.",
+    "bio2": "Quest'ultimo è il posto della ricerca: dinamiche urbane, mercati immobiliari, accessibilità — da lì arrivano i paper di questo sito.",
     "factRoleK": "Ruolo",
-    "factRoleV": "Head of Data · KR&A",
-    "factBasisK": "Sede",
-    "factBasisV": "Amsterdam · NL · EN · DE · IT",
+    "factRoleV": "Head of Data · Engineer & Researcher",
+    "factBasisK": "Base",
+    "factBasisV": "Amsterdam, NL",
     "factEduK": "Formazione",
-    "factEduV": "MSc Bocconi · BSc AI Amsterdam",
+    "factEduV": "MSc Bocconi · BSc AI, UvA",
     "factStackK": "Stack",
-    "factStackV": "Python · PostGIS · Airflow · LLM · React",
+    "factStackV": "Python · SQL · Airflow · PostGIS · cloud",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Leggi la biografia completa"
   },
@@ -358,54 +358,54 @@
     "privacy": "Non condivideremo il tuo indirizzo."
   },
   "Lanes": {
-    "kicker": "Su cosa lavoro: quattro ambiti",
+    "kicker": "Competenze: quattro corsie",
     "titleItalic": "Quattro",
-    "titleRest": "ambiti.",
-    "subtitle": "Un toolkit di data engineering e leadership, quattro ambiti. La dinamica urbana è il pane quotidiano; il resto dimostra che il toolkit si generalizza.",
+    "titleRest": "corsie.",
+    "subtitle": "Un unico toolkit di dati e sistemi, quattro corsie: costruire le pipeline, progettare le piattaforme su cui girano, dare forma di prodotto ai dati difficili e fare l'analisi sopra.",
     "appliedAcross": "Applicato in: pianificazione urbana · immobiliare · rischio climatico · logistica & mobilità · settore pubblico",
-    "automationNote": "Anche dietro le quinte: pipeline LLM/RAG e strumenti interni che automatizzano classificazione, ricerca e reportistica — AI in produzione come ambito ingegneristico, non come titolo principale.",
+    "automationNote": "Sotto il cofano anche: pipeline LLM/RAG e strumenti interni che automatizzano classificazione, ricerca e reporting — AI di produzione come estensione, non come titolo.",
     "items": [
       {
-        "name": "Dinamica urbana & ricerca",
-        "anchor": true,
-        "blurb": "Modellazione della gentrificazione, accessibilità e connettività, analisi spaziale a livello di parcella e codice postale. Questo è ciò che faccio — dove si concentrano i paper e le pubblicazioni.",
-        "stack": [
-          "PostGIS",
-          "GeoPandas",
-          "H3",
-          "ABM",
-          "simulazione",
-          "scienza delle reti"
-        ]
-      },
-      {
-        "name": "Prodotti di dati spaziali",
-        "blurb": "Punteggi e feed prodottizzati — indici di connettività e percorribilità pedonale, input di valutazione — gestiti end-to-end dal metodo all'API rilasciata.",
-        "stack": [
-          "APIs",
-          "Python",
-          "React",
-          "product ownership"
-        ]
-      },
-      {
-        "name": "Forecasting & analisi di rete",
-        "blurb": "Un indice mensile dei prezzi delle case UE su 13 paesi testato con Eurostat, modelli di nowcasting, e un Connectivity Score validato per saturazione.",
-        "stack": [
-          "serie storiche",
-          "nowcasting",
-          "grafi",
-          "XGBoost"
-        ]
-      },
-      {
-        "name": "Pipeline dati, costruite e mantenute",
-        "blurb": "Infrastruttura di scraping ed ETL di big data che continua a funzionare: tre anni di raccolta settimanale su 8 fonti con autenticazione, 300k record a settimana — mantenuta, non solo lanciata.",
+        "name": "Data engineering",
+        "blurb": "Pipeline e storage, costruiti e mantenuti: tre anni di raccolta settimanale da 8 fonti autenticate a 300k record a settimana, storage in stile lakehouse e orchestrazione con test e CI.",
         "stack": [
           "Airflow",
+          "DuckDB",
+          "lakehouse",
+          "ETL",
+          "CI"
+        ]
+      },
+      {
+        "name": "Architettura di sistema",
+        "blurb": "Le piattaforme sottostanti: cloud e bare-metal, PostGIS, calcolo distribuito, Linux, networking, API e sicurezza — 13 server gestiti come infrastruttura di produzione.",
+        "stack": [
+          "cloud",
           "PostGIS",
-          "big data",
-          "13 server"
+          "distributed compute",
+          "Linux",
+          "APIs",
+          "security"
+        ]
+      },
+      {
+        "name": "Prodotti dati complessi",
+        "blurb": "Trasformare tipi di dati difficili in prodotti: dati spaziali e di rete, pipeline documentali su LLM e OCR, grafi e serie storiche — end-to-end dal metodo all'API consegnata.",
+        "stack": [
+          "spatial",
+          "graphs",
+          "documents · LLM/OCR",
+          "time series"
+        ]
+      },
+      {
+        "name": "Analytics & ML",
+        "blurb": "Lo strato di analisi: modelli di serie storiche e nowcasting, regressioni e disegni causali, e ML applicato che arriva in produzione — dai modelli edonici dei prezzi ai sequence tagger.",
+        "stack": [
+          "time series",
+          "nowcasting",
+          "regression",
+          "XGBoost"
         ]
       }
     ]

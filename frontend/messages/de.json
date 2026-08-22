@@ -279,16 +279,16 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ich baue Produktiv-",
     "titleLine2Underline": "systeme.",
-    "bio1": "Geodaten-Ingenieur und Forscher für Stadtdynamik, ansässig in Amsterdam. Head of Data bei KR&A. MSc in Data Science & Business Analytics an der Bocconi; BSc in Künstlicher Intelligenz an der Universität Amsterdam, fünf Jahre dazwischen, größtenteils auf der Produktionsseite.",
-    "bio2": "Ich arbeite an der Schnittstelle von Geospatial-Analytik, KI/ML und der unspektakulären Dateninfrastruktur, die sie nutzbar macht. Auf dieser Seite sammle ich, worüber ich nachdenke, was ich baue oder veröffentlicht habe.",
+    "bio1": "Ich arbeite als Head of Data: Ich baue und führe die Systeme, die Daten in großem Maßstab sammeln, speichern und bereitstellen — und die Analytik darauf. Gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistik und langsame Zeitreihen, Dokumentenpipelines auf LLMs und OCR sowie räumliche und Netzwerkdaten.",
+    "bio2": "Letzteres ist der Forschungssitz: urbane Dynamik, Wohnungsmärkte, Erreichbarkeit — daher stammen die Paper auf dieser Seite.",
     "factRoleK": "Rolle",
-    "factRoleV": "Head of Data · KR&A",
+    "factRoleV": "Head of Data · Engineer & Researcher",
     "factBasisK": "Standort",
-    "factBasisV": "Amsterdam · EU-weit tätig",
+    "factBasisV": "Amsterdam, NL",
     "factEduK": "Ausbildung",
-    "factEduV": "MSc Bocconi · BSc KI Amsterdam",
+    "factEduV": "MSc Bocconi · BSc AI, UvA",
     "factStackK": "Stack",
-    "factStackV": "Python · PostGIS · Airflow · LLM/RAG · PyTorch",
+    "factStackV": "Python · SQL · Airflow · PostGIS · cloud",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Vollständige Bio lesen"
   },
@@ -358,53 +358,54 @@
     "privacy": "Deine Adresse wird nicht weitergegeben."
   },
   "Lanes": {
-    "kicker": "Womit ich arbeite: vier Bereiche",
+    "kicker": "Expertise: vier Spuren",
     "titleItalic": "Vier",
-    "titleRest": "Bereiche.",
-    "subtitle": "Ein Toolkit für Data Engineering und Führung, vier Bereiche. Stadtdynamik ist das Kerngeschäft; der Rest ist der Beweis, dass das Toolkit generalisiert.",
-    "appliedAcross": "Angewendet in: Stadtplanung · Immobilien · Klimarisiko · Logistik & Mobilität · öffentlicher Sektor",
-    "automationNote": "Auch im Hintergrund: LLM/RAG-Pipelines und interne Tools, die Klassifizierung, Recherche und Reporting automatisieren — Produktions-KI als Engineering-Bereich, nicht als Schlagzeile.",
+    "titleRest": "Spuren.",
+    "subtitle": "Ein Daten- und System-Toolkit, vier Spuren: Pipelines bauen, die Plattformen darunter entwerfen, schwierige Datentypen zu Produkten formen und die Analytik obendrauf.",
+    "appliedAcross": "Eingesetzt in: Stadtplanung · Immobilien · Klimarisiko · Logistik & Mobilität · öffentlicher Sektor",
+    "automationNote": "Außerdem unter der Haube: LLM/RAG-Pipelines und interne Tools, die Klassifikation, Recherche und Reporting automatisieren — Produktions-KI als Spannweite, nicht als Schlagzeile.",
     "items": [
       {
-        "name": "Stadtdynamik & Forschung",
-        "anchor": true,
-        "blurb": "Gentrifizierungsmodellierung, Erreichbarkeit und Konnektivität, räumliche Analyse auf Parzellen- und Postleitzahlebene. Das ist, was ich tue — hier konzentrieren sich die Papers und Veröffentlichungen.",
-        "stack": [
-          "PostGIS",
-          "GeoPandas",
-          "H3",
-          "ABM",
-          "Netzwerkwissenschaft"
-        ]
-      },
-      {
-        "name": "Räumliche Datenprodukte",
-        "blurb": "Produktisierte Scores und Feeds — Konnektivitäts- und Walkability-Indizes, Bewertungs-Inputs — End-to-End verantwortet von der Methode bis zur ausgelieferten API.",
-        "stack": [
-          "APIs",
-          "Python",
-          "React",
-          "Product Ownership"
-        ]
-      },
-      {
-        "name": "Forecasting & Netzwerkanalyse",
-        "blurb": "Ein monatlicher EU-Hauspreisindex über 13 Länder, getestet mit Eurostat, Nowcasting-Modelle und ein sättigungsvalidierter Connectivity Score.",
-        "stack": [
-          "Zeitreihen",
-          "Nowcasting",
-          "Graphen",
-          "XGBoost"
-        ]
-      },
-      {
-        "name": "Datenpipelines, gebaut und gepflegt",
-        "blurb": "Big-Data-Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 300k Datensätze pro Woche — gepflegt, nicht nur gestartet.",
+        "name": "Data Engineering",
+        "blurb": "Datenpipelines und Speicher, gebaut und gewartet: drei Jahre wöchentliche Erhebung aus 8 authentifizierten Quellen mit 300k Datensätzen pro Woche, Lakehouse-artige Speicherung und Orchestrierung mit Tests und CI.",
         "stack": [
           "Airflow",
+          "DuckDB",
+          "lakehouse",
+          "ETL",
+          "CI"
+        ]
+      },
+      {
+        "name": "Systemarchitektur",
+        "blurb": "Die Plattformen darunter: Cloud und Bare-Metal, PostGIS, verteiltes Rechnen, Linux, Netzwerke, APIs und Security — 13 Server als Produktionsinfrastruktur betrieben.",
+        "stack": [
+          "cloud",
           "PostGIS",
-          "Big Data",
-          "13 Server"
+          "distributed compute",
+          "Linux",
+          "APIs",
+          "security"
+        ]
+      },
+      {
+        "name": "Komplexe Datenprodukte",
+        "blurb": "Schwierige Datentypen zu Produkten machen: räumliche und Netzwerkdaten, Dokumentenpipelines auf LLMs und OCR, Graphen und Zeitreihen — end-to-end von der Methode bis zur ausgelieferten API.",
+        "stack": [
+          "spatial",
+          "graphs",
+          "documents · LLM/OCR",
+          "time series"
+        ]
+      },
+      {
+        "name": "Analytics & ML",
+        "blurb": "Die Analyseschicht darüber: Zeitreihenmodelle und Nowcasting, Regressionen und kausale Designs und angewandtes ML, das wirklich in Produktion geht — von hedonischen Preismodellen bis zu Sequence-Taggern.",
+        "stack": [
+          "time series",
+          "nowcasting",
+          "regression",
+          "XGBoost"
         ]
       }
     ]

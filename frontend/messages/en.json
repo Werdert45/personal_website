@@ -279,16 +279,16 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "I ship production",
     "titleLine2Underline": "systems.",
-    "bio1": "Geodata engineer and urban-dynamics researcher, based in Amsterdam. Head of Data at KR&A. MSc in Data Science & Business Analytics from Bocconi; BSc in Artificial Intelligence from the University of Amsterdam, roughly five years between the two, spent mostly on the production side.",
-    "bio2": "I work at the intersection of geospatial analytics, ML and the data infrastructure that makes both useful, the pipelines, schemas and spatial joins that do not appear in papers but determine whether the model ships. This site collects what is worth writing down: papers, methods, tools and the occasional strong opinion on why dashboards are overrated.",
+    "bio1": "I work as a Head of Data: building and leading the systems that collect, store and serve data at scale — and the analytics on top. Web-scraped market data at 300k records a week, official statistics and slow time series, document pipelines on LLMs and OCR, and spatial and network data.",
+    "bio2": "That last one is the research seat: urban dynamics, housing markets, accessibility — where the papers on this site come from.",
     "factRoleK": "Role",
-    "factRoleV": "Head of Data · KR&A",
+    "factRoleV": "Head of Data · Engineer & Researcher",
     "factBasisK": "Based",
-    "factBasisV": "Amsterdam · NL · EN · DE · IT",
+    "factBasisV": "Amsterdam, NL",
     "factEduK": "Education",
-    "factEduV": "MSc Bocconi · BSc AI Amsterdam",
+    "factEduV": "MSc Bocconi · BSc AI, UvA",
     "factStackK": "Stack",
-    "factStackV": "Python · PostGIS · Airflow · LLM · React",
+    "factStackV": "Python · SQL · Airflow · PostGIS · cloud",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Read the full bio"
   },
@@ -358,54 +358,54 @@
     "privacy": "We won't share your address."
   },
   "Lanes": {
-    "kicker": "What I work on: four lanes",
+    "kicker": "Expertise: four lanes",
     "titleItalic": "Four",
     "titleRest": "lanes.",
-    "subtitle": "One data-engineering and leadership toolkit, four lanes. Urban dynamics is the bread and butter; the rest is proof the toolkit generalises.",
+    "subtitle": "One data-and-systems toolkit, four lanes: engineering the pipelines, architecting the platforms they run on, shaping hard data types into products, and the analytics on top.",
     "appliedAcross": "Applied across: urban planning · real estate · climate risk · logistics & mobility · public sector",
     "automationNote": "Also under the hood: LLM/RAG pipelines and internal tools that automate classification, research and reporting — production AI as engineering range, not the headline.",
     "items": [
       {
-        "name": "Urban dynamics & research",
-        "anchor": true,
-        "blurb": "Gentrification modelling, accessibility and connectivity, parcel- and postcode-level spatial analysis. This is what I do — where the papers and the publishing concentrate.",
-        "stack": [
-          "PostGIS",
-          "GeoPandas",
-          "H3",
-          "ABM",
-          "simulation",
-          "network science"
-        ]
-      },
-      {
-        "name": "Spatial data products",
-        "blurb": "Productised scores and feeds — connectivity and walkability indices, valuation inputs — owned end-to-end from method to shipped API.",
-        "stack": [
-          "APIs",
-          "Python",
-          "React",
-          "product ownership"
-        ]
-      },
-      {
-        "name": "Forecasting & network analysis",
-        "blurb": "A monthly EU house-price index across 13 countries tested with Eurostat, nowcasting models, and a saturation-validated Connectivity Score.",
-        "stack": [
-          "time-series",
-          "nowcasting",
-          "graphs",
-          "XGBoost"
-        ]
-      },
-      {
-        "name": "Data pipelines, built and maintained",
-        "blurb": "Big-data scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources, 300k records a week — maintained, not just launched.",
+        "name": "Data Engineering",
+        "blurb": "Data pipelines and storage, built and maintained: three years of weekly collection across 8 authenticated sources at 300k records a week, lakehouse-style warehousing, and orchestration with tests and CI.",
         "stack": [
           "Airflow",
+          "DuckDB",
+          "lakehouse",
+          "ETL",
+          "CI"
+        ]
+      },
+      {
+        "name": "System Architecture",
+        "blurb": "The platforms underneath: cloud and bare-metal, PostGIS, distributed compute, Linux, networking, APIs and security — 13 servers run as production infrastructure, not pet machines.",
+        "stack": [
+          "cloud",
           "PostGIS",
-          "big data",
-          "13 servers"
+          "distributed compute",
+          "Linux",
+          "APIs",
+          "security"
+        ]
+      },
+      {
+        "name": "Complex Data Products",
+        "blurb": "Turning hard data types into products people use: spatial and network data, document pipelines on LLMs and OCR, graphs, and time series — owned end-to-end from method to shipped API.",
+        "stack": [
+          "spatial",
+          "graphs",
+          "documents · LLM/OCR",
+          "time series"
+        ]
+      },
+      {
+        "name": "Analytics & ML",
+        "blurb": "The analysis layer on top: time-series models and nowcasting, regressions and causal designs, and applied ML that ships — from hedonic price models to sequence taggers.",
+        "stack": [
+          "time series",
+          "nowcasting",
+          "regression",
+          "XGBoost"
         ]
       }
     ]

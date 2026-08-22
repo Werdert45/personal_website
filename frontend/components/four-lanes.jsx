@@ -24,7 +24,7 @@ export function FourLanes() {
         {items.map((lane, i) => (
           <div key={lane.name} className="lane-tile" style={{ borderTop: "1px solid var(--ink)", paddingTop: 18 }}>
             <div className="sector-kicker" style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-              <span>§ 04.{String(i + 1).padStart(2, "0")}</span>
+              <span>§ 03.{String(i + 1).padStart(2, "0")}</span>
               {lane.anchor ? (
                 <span style={{ fontFamily: "var(--font-mono)", fontSize: 11, color: "var(--ink)", background: "var(--yellow)", padding: "2px 8px", borderRadius: 2 }}>ANCHOR</span>
               ) : (
