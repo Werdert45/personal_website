@@ -13,7 +13,7 @@ export function ContactBand() {
     <section className="section-pad" style={{ background: "var(--ink)", color: "var(--paper-2)" }}>
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 08</span>
+        <span className="num-label">§ 06</span>
         <span>{t("sectionKicker")}</span>
       </div>
       <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(48px, 8vw, 120px)", lineHeight: 0.95, letterSpacing: "-0.02em", marginTop: 24, color: "var(--paper-2)" }}>

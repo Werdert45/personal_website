@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { EUROPE_PATH, europeanCities, dataConnections } from "./europe-map-path";
+import { HeroVisual } from "./hero-visual";
 import { trackEvent } from "@/lib/analytics";
 
 function renderTitle(title, highlight, end) {
@@ -44,29 +44,6 @@ export function HeroSection() {
       }}
     >
 
-
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "flex-end",
-          marginBottom: 40,
-          fontFamily: "var(--font-mono)",
-          fontSize: 11,
-          color: "var(--mute)",
-          letterSpacing: "0.12em",
-          textTransform: "uppercase",
-          flexWrap: "wrap",
-          gap: 16,
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
-        <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
-          <span><span style={{ color: "var(--ink)" }}>◎</span> {t("location")}</span>
-        </div>
-        <div>§ 01 · Portfolio / 2026</div>
-      </div>
 
       <div
         className="hero-grid"
@@ -117,6 +94,7 @@ export function HeroSection() {
             >
               <div style={{ color: "var(--ink)" }}>Ian Ronk</div>
               <div>{t("role")}</div>
+              <div><span style={{ color: "var(--ink)" }}>◎</span> {t("location")}</div>
             </div>
           </div>
 
@@ -164,6 +142,13 @@ export function HeroSection() {
               <span>{t("aboutMe")}</span>
             </Link>
           </div>
+
+          <div style={{ marginTop: 28, display: "flex", flexWrap: "wrap", alignItems: "center", gap: 10 }}>
+            <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginRight: 8 }}>{t("expertise")}</span>
+            {(t.raw("expertiseAreas") || []).map((area) => (
+              <span key={area} className="chip">{area}</span>
+            ))}
+          </div>
         </div>
 
         <div
@@ -175,92 +160,8 @@ export function HeroSection() {
             width: "100%",
           }}
         >
-          <svg viewBox="200 80 760 560" aria-hidden="true" focusable="false" style={{ width: "100%", height: "100%", display: "block" }}>
-            <defs>
-              <pattern id="gridp" width="30" height="30" patternUnits="userSpaceOnUse">
-                <path d="M30 0 L0 0 0 30" fill="none" stroke="rgba(15,14,11,.06)" strokeWidth="1" />
-              </pattern>
-              <radialGradient id="amsGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#FFD60A" stopOpacity="0.55" />
-                <stop offset="70%" stopColor="#FFD60A" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-
-            <rect x="200" y="80" width="760" height="560" fill="url(#gridp)" />
-
-            <g fill="var(--paper-2)" stroke="var(--ink)" strokeWidth="0.7" strokeOpacity="0.45">
-              <path d={EUROPE_PATH} />
-            </g>
-
-            {mounted && (
-              <circle cx={europeanCities[0].x} cy={europeanCities[0].y} r="60" fill="url(#amsGlow)">
-                <animate attributeName="r" values="50;70;50" dur="4s" repeatCount="indefinite" />
-              </circle>
-            )}
-
-            {mounted && dataConnections.map((c, i) => {
-              const a = europeanCities[c.from];
-              const b = europeanCities[c.to];
-              return (
-                <line
-                  key={`ln-${i}`}
-                  x1={a.x} y1={a.y} x2={b.x} y2={b.y}
-                  stroke="var(--ink)" strokeWidth="0.8" strokeDasharray="3 3" opacity="0.5"
-                >
-                  <animate attributeName="stroke-dashoffset" from="0" to="-12" dur={`${2 + i * 0.4}s`} repeatCount="indefinite" />
-                </line>
-              );
-            })}
-
-            {europeanCities.map((city) => (
-              <g key={city.name}>
-                {city.primary && (
-                  <circle cx={city.x} cy={city.y} r={city.size + 6} fill="none" stroke="var(--yellow-2)" strokeWidth="1" opacity="0.5">
-                    <animate attributeName="r" values={`${city.size + 4};${city.size + 10};${city.size + 4}`} dur="2.2s" repeatCount="indefinite" />
-                  </circle>
-                )}
-                <circle cx={city.x} cy={city.y} r={city.size} fill="var(--yellow)" stroke="var(--ink)" strokeWidth={city.primary ? 1.4 : 1} />
-                <text
-                  x={city.x + city.size + 6}
-                  y={city.y + 3}
-                  fontFamily="var(--font-mono)"
-                  fontSize="11"
-                  fill="var(--ink)"
-                  opacity="0.9"
-                >
-                  {city.code}
-                </text>
-              </g>
-            ))}
-
-            <g transform="translate(240,610)">
-              <rect x="0" y="0" width="30" height="4" fill="var(--ink)" />
-              <rect x="30" y="0" width="30" height="4" fill="none" stroke="var(--ink)" />
-              <rect x="60" y="0" width="30" height="4" fill="var(--ink)" />
-              <text x="0" y="18" fontFamily="var(--font-mono)" fontSize="9" fill="var(--ink)">0</text>
-              <text x="78" y="18" fontFamily="var(--font-mono)" fontSize="9" fill="var(--ink)">500 km</text>
-            </g>
-          </svg>
+          <HeroVisual mounted={mounted} />
         </div>
-      </div>
-
-      <div
-        style={{
-          marginTop: 64,
-          paddingTop: 24,
-          borderTop: "1px solid var(--ink)",
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          gap: 10,
-          position: "relative",
-          zIndex: 2,
-        }}
-      >
-        <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginRight: 8 }}>{t("expertise")}</span>
-        {(t.raw("expertiseAreas") || []).map((area) => (
-          <span key={area} className="chip">{area}</span>
-        ))}
       </div>
 
     </section>

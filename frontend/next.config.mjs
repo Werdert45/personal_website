@@ -49,6 +49,11 @@ const nextConfig = {
         destination: `/${locale}/about`,
         permanent: true,
       },
+      {
+        source: `/${locale}/research`,
+        destination: `/${locale}/projects`,
+        permanent: true,
+      },
     ]);
   },
 };

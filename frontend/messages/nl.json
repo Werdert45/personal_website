@@ -18,11 +18,11 @@
   "Navigation": {
     "home": "Home",
     "about": "Over Mij",
-    "visualizations": "Artikelen",
-    "research": "Onderzoek",
+    "visualizations": "Blogs",
     "contact": "Contact",
     "letsTalk": "Contact",
-    "menu": "Menu"
+    "menu": "Menu",
+    "projects": "Projecten & papers"
   },
   "Hero": {
     "location": "Amsterdam, NL",
@@ -35,10 +35,10 @@
     "workWithMe": "Neem contact op",
     "expertise": "Expertise:",
     "expertiseAreas": [
-      "Systeeminfrastructuur",
-      "Cloud",
-      "Complexe dataverwerking",
-      "Analytics"
+      "Data engineering",
+      "Systeemarchitectuur",
+      "Complexe dataproducten",
+      "Analytics & ML"
     ]
   },
   "About": {
@@ -166,16 +166,36 @@
     "linkBookCall": "Plan een gesprek"
   },
   "Projects": {
-    "kicker": "Geselecteerd werk & papers: onderzoek, methoden, scripties",
-    "titlePrefix": "Geselecteerd werk",
+    "kicker": "Projecten & papers: systemen, producten, onderzoek",
+    "titlePrefix": "Projecten",
     "titleItalic": "& papers.",
-    "subtitle": "Onderzoekswerk over stedelijke dynamiek en geospatiale methoden. Vastgoed is één toepassing; de rode draad is de methode.",
+    "subtitle": "Negen stukken werk over de vier sporen — productiesystemen, geleverde producten, en het onderzoek dat ze mogelijk maken.",
     "items": [
       {
+        "viz": "stat",
+        "stat": {
+          "value": "6,200+",
+          "label": "vocab entries · 3 languages"
+        },
+        "badge": "PROJECT",
+        "sector": "AI-product",
+        "title": "LanguageBuddy — AI language tutor",
+        "outcome": "Een zelf-gehoste AI-taaltutor voor Nederlands, Italiaans en Spaans: chat of bel met een LLM-tutor, en elke fout wordt vastgelegd in een spaced-repetition-wachtrij die de oefeningen van de volgende dag, leesteksten uit echt nieuws en printbare werkboeken aanstuurt. Adaptieve CEFR-plaatsing, 6.200+ samengestelde woordenschat-items, een suite van 336 tests.",
+        "stack": [
+          "FastAPI",
+          "LLM",
+          "TTS",
+          "SQLite",
+          "Docker"
+        ],
+        "link": "/research/languagebuddy-ai-language-tutor"
+      },
+      {
         "viz": "abm",
-        "sector": "MSc Scriptie · Bocconi",
-        "title": "Agent-gebaseerd gentrificatiemodel",
-        "outcome": "Een agent-based model van buurtverandering, gedreven door aantrekkelijkheid en betaalbaarheid, toegepast op Amsterdam, Utrecht en Milaan op open ruimtelijke data.",
+        "badge": "RESEARCH",
+        "sector": "MSc-thesis · Bocconi",
+        "title": "Gentrification agent-based model",
+        "outcome": "Een agent-based model van buurtverandering: huishoudens en verhuurders die interacteren op echte perceeldata voor Amsterdam, Utrecht en Milaan, en gentrificatiegolven reproduceren uit feedback tussen aantrekkelijkheid en betaalbaarheid — met een uitbreiding voor sociale huur in de maak.",
         "stack": [
           "Python",
           "Mesa",
@@ -185,10 +205,29 @@
         "link": "/research/gentrification-abm-european-cities"
       },
       {
+        "viz": "stat",
+        "stat": {
+          "value": "38",
+          "label": "markets · parcel resolution"
+        },
+        "badge": "KR&A",
+        "sector": "Ontwikkeld bij KR&A",
+        "title": "Connectivity & walkability scoring",
+        "outcome": "Een op verzadiging gevalideerde connectiviteits- en loopbaarheidsscore op perceelniveau, uitgerold over 38 markten in EU/NA/APAC. Methodepaper verschijnt in 2026.",
+        "stack": [
+          "PostGIS",
+          "H3",
+          "GeoPandas",
+          "Python"
+        ],
+        "link": "https://connectivityscore.krafin.tech"
+      },
+      {
         "viz": "hedonic",
+        "badge": "RESEARCH",
         "sector": "Onderzoek · Eurostat",
-        "title": "Maandelijkse huizenprijsindex · 13 EU-landen",
-        "outcome": "Grootschalige Europese ruimtelijke-data-engineering: een web-scrapingpipeline voor 13 landen gevoed door een log-prijs hedonische regressie. Maandelijkse indices getest als disaggregatie-indicatoren voor Eurostat kwartaal-HPIs.",
+        "title": "Monthly house-price index · 13 EU countries",
+        "outcome": "Een webscraping-pijplijn over 13 landen die een hedonische log-prijsregressie voedt; maandelijkse indices getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat — en de prijsdata achter het metro-kapitalisatiepaper.",
         "stack": [
           "Python",
           "Scrapy",
@@ -196,33 +235,100 @@
           "MongoDB",
           "XGBoost"
         ],
-        "link": "/about"
+        "link": "/research/metro-capitalisation-timing"
       },
       {
-        "viz": "hedonic",
-        "sector": "Methode · ontwikkeld bij KR&A",
-        "title": "Connectiviteits- en loopbaarheidsscore",
-        "outcome": "Een bijdrage aan geospatiale methoden: een saturatie-gevalideerde connectiviteits-/loopbaarheidsscore op perceelniveau. Ontwikkeld bij KR&A; methodepaper te verwachten in 2026.",
-        "stack": [
-          "PostGIS",
-          "H3",
-          "GeoPandas",
-          "Python"
-        ],
-        "link": "/research"
-      },
-      {
-        "viz": "hedonic",
+        "viz": "stat",
+        "stat": {
+          "value": "726 GB",
+          "label": "largest DAG input · 6 pipelines"
+        },
+        "badge": "PROJECT",
         "sector": "Engineering",
-        "title": "Researchpipelines als productiesystemen",
-        "outcome": "De data-engineering achter de papers: Airflow 3-pipelines met custom operators (een DuckDB SQL-ingestion-operator, een SHA-256 snapshot guard), tests en CI — beschreven in een case-study-serie op deze site.",
+        "title": "Research pipelines as production systems",
+        "outcome": "Elk onderzoeksproject op deze site herbouwd als een waarheidsgetrouwe Airflow 3-DAG — echte scripts, echte idempotentie-guards, custom operators, tests en CI — schaalbaar van laptop tot multi-machine CeleryExecutor-cluster. Uitgeschreven als case-study-serie.",
         "stack": [
           "Airflow",
+          "Celery",
           "DuckDB",
           "Docker",
           "CI"
         ],
         "link": "/thoughts/research-pipelines-are-production-systems"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "+0.001",
+          "label": "mAP from US data on EU streets"
+        },
+        "badge": "RESEARCH",
+        "sector": "Computer vision · Bocconi",
+        "title": "US vs EU transfer for autonomous driving",
+        "outcome": "Werkt een detector die op Amerikaanse dashcamdata is getraind ook op Europese straten? Een gecontroleerde 2×3 fine-tuningstudie (YOLOv3/YOLOv8, Udacity vs KITTI) die de confounds van een eerder vakproject corrigeert: Amerikaanse fine-tuning draagt vrijwel niets over naar Europese straten, terwijl in-domein fine-tuning +0,15 mAP oplevert.",
+        "stack": [
+          "PyTorch",
+          "YOLOv8",
+          "KITTI",
+          "Udacity"
+        ],
+        "link": "/research/us-vs-eu-transfer-autonomous-driving"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "86%",
+          "label": "macro F1 · 38,600 videos"
+        },
+        "badge": "PROJECT",
+        "sector": "NLP · live demo",
+        "title": "SponsoredBye — sponsor-segment detection",
+        "outcome": "Een sponsor-skipper voor YouTube op basis van alleen tekst, gebouwd vóórdat YouTube Premium er een uitbracht: sentence-T5-embeddings voeden een BiLSTM-sequence-tagger die gesponsorde zinnen markeert en terugkoppelt naar tijdstempels. Live demo op Hugging Face Spaces.",
+        "stack": [
+          "TensorFlow",
+          "BiLSTM",
+          "sentence-T5",
+          "MongoDB",
+          "Gradio"
+        ],
+        "link": "https://huggingface.co/spaces/sponsored-bye/sponsoredbye"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "63",
+          "label": "species · fully on-device"
+        },
+        "badge": "PROJECT",
+        "sector": "Mobile ML",
+        "title": "FishFinder — photo-to-species ID",
+        "outcome": "Een Flutter-app die 63 Nederlandse vissoorten herkent van een foto, volledig on-device, en een Pokédex-achtige FishDex vult bij elke vangst. De trainingspijplijn: ~3.000 handmatig geannoteerde foto's gemaskeerd met Segment Anything, daarna een gefinetunede ResNet50 gecomprimeerd tot een TFLite-model van 8,8 MB.",
+        "stack": [
+          "Flutter",
+          "TFLite",
+          "ResNet50",
+          "Segment Anything",
+          "Firebase"
+        ],
+        "link": "/research/fishfinder-on-device-fish-id"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "97.5%",
+          "label": "binary flood accuracy · RF"
+        },
+        "badge": "RESEARCH",
+        "sector": "BSc-thesis · UvA",
+        "title": "Predicting flooding risk from local features",
+        "outcome": "Kan overstromingsrisico worden verklaard uit lokale kenmerken in plaats van een black-box hydrodynamische simulatie? 33 kenmerken over ~45.000 Europese locaties; een Random Forest haalt 97,5% op de binaire 20-jaarsvraag, met omliggende verharding en relatieve hoogte als belangrijkste voorspellers.",
+        "stack": [
+          "scikit-learn",
+          "Random Forest",
+          "raster data",
+          "GIS"
+        ],
+        "link": "/research/predicting-flooding-risk-local-features"
       }
     ],
     "viewCase": "Lees meer",
@@ -279,16 +385,16 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ik bouw productie-",
     "titleLine2Underline": "systemen.",
-    "bio1": "Geodata-engineer en onderzoeker van stadsdynamiek, gevestigd in Amsterdam. Head of Data bij KR&A. MSc in Data Science & Business Analytics aan Bocconi; BSc in Kunstmatige Intelligentie aan de Universiteit van Amsterdam, vijf jaar tussen de twee, grotendeels op de productiekant.",
-    "bio2": "Ik werk op het snijvlak van geospatial analytics, ML en de data-infrastructuur die beide bruikbaar maakt — de pipelines, schema's en spatial joins die niet in papers staan maar bepalen of het model in productie komt. Deze site verzamelt wat het opschrijven waard is: papers, methoden, tools en af en toe een uitgesproken mening over waarom dashboards overschat zijn.",
+    "bio1": "Ik werk als Head of Data: ik bouw en leid de systemen die data op schaal verzamelen, opslaan en serveren — en de analytics erbovenop. Gescrapete marktdata met 300k records per week, officiële statistiek en trage tijdreeksen, documentpijplijnen op LLM's en OCR, en ruimtelijke en netwerkdata.",
+    "bio2": "Die laatste is de onderzoeksstoel: stedelijke dynamiek, woningmarkten, bereikbaarheid — daar komen de papers op deze site vandaan.",
     "factRoleK": "Rol",
-    "factRoleV": "Head of Data · KR&A",
-    "factBasisK": "Standplaats",
-    "factBasisV": "Amsterdam · NL · EN · DE · IT",
+    "factRoleV": "Head of Data · Engineer & Researcher",
+    "factBasisK": "Basis",
+    "factBasisV": "Amsterdam, NL",
     "factEduK": "Opleiding",
-    "factEduV": "MSc Bocconi · BSc AI Amsterdam",
+    "factEduV": "MSc Bocconi · BSc AI, UvA",
     "factStackK": "Stack",
-    "factStackV": "Python · PostGIS · Airflow · LLM · React",
+    "factStackV": "Python · SQL · Airflow · PostGIS · cloud",
     "portraitCaption": "IAN · AMS · 2026",
     "cta": "Lees de volledige bio"
   },
@@ -358,54 +464,54 @@
     "privacy": "Je adres wordt niet gedeeld."
   },
   "Lanes": {
-    "kicker": "Waar ik aan werk: vier domeinen",
+    "kicker": "Expertise: vier sporen",
     "titleItalic": "Vier",
-    "titleRest": "domeinen.",
-    "subtitle": "Eén data-engineering- en leiderschapstoolkit, vier domeinen. Stedelijke dynamiek is het dagelijkse werk; de rest is het bewijs dat de toolkit generaliseert.",
-    "appliedAcross": "Toegepast in: stedenbouw · vastgoed · klimaatrisico · logistiek & mobiliteit · publieke sector",
-    "automationNote": "Ook achter de schermen: LLM/RAG-pipelines en interne tools die classificatie, onderzoek en rapportage automatiseren — productie-AI als engineeringbereik, niet als hoofdpunt.",
+    "titleRest": "sporen.",
+    "subtitle": "Eén data- en systeemtoolkit, vier sporen: pijplijnen bouwen, de platformen eronder ontwerpen, lastige datatypes tot producten vormen, en de analytics erbovenop.",
+    "appliedAcross": "Toegepast in: stedelijke planning · vastgoed · klimaatrisico · logistiek & mobiliteit · publieke sector",
+    "automationNote": "Ook onder de motorkap: LLM/RAG-pijplijnen en interne tools die classificatie, onderzoek en rapportage automatiseren — productie-AI als bereik, niet als kop.",
     "items": [
       {
-        "name": "Stedelijke dynamiek & onderzoek",
-        "anchor": true,
-        "blurb": "Gentrificatiemodellering, toegankelijkheid en connectiviteit, ruimtelijke analyse op perceel- en postcoderesolutie. Dit is wat ik doe — waar de papers en publicaties zich concentreren.",
-        "stack": [
-          "PostGIS",
-          "GeoPandas",
-          "H3",
-          "ABM",
-          "simulatie",
-          "netwerkwetenschap"
-        ]
-      },
-      {
-        "name": "Ruimtelijke dataproducten",
-        "blurb": "Geproductiseerde scores en feeds — connectiviteits- en loopbaarheidsindices, waarderingsinputs — end-to-end eigenaarschap van methode tot live API.",
-        "stack": [
-          "APIs",
-          "Python",
-          "React",
-          "product ownership"
-        ]
-      },
-      {
-        "name": "Forecasting & netwerkanalyse",
-        "blurb": "Een maandelijkse EU-huizenprijsindex voor 13 landen, getest met Eurostat, nowcastingmodellen, en een saturatie-gevalideerde Connectivity Score.",
-        "stack": [
-          "tijdreeksen",
-          "nowcasting",
-          "grafen",
-          "XGBoost"
-        ]
-      },
-      {
-        "name": "Datapipelines, gebouwd en onderhouden",
-        "blurb": "Big-data-scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 300k records per week — onderhouden, niet alleen gelanceerd.",
+        "name": "Data engineering",
+        "blurb": "Datapijplijnen en opslag, gebouwd én onderhouden: drie jaar wekelijkse collectie uit 8 geauthenticeerde bronnen met 300k records per week, lakehouse-achtige opslag, en orkestratie met tests en CI.",
         "stack": [
           "Airflow",
+          "DuckDB",
+          "lakehouse",
+          "ETL",
+          "CI"
+        ]
+      },
+      {
+        "name": "Systeemarchitectuur",
+        "blurb": "De platformen eronder: cloud en bare-metal, PostGIS, gedistribueerd rekenen, Linux, netwerken, API's en security — 13 servers gerund als productie-infrastructuur, geen hobbyprojecten.",
+        "stack": [
+          "cloud",
           "PostGIS",
-          "big data",
-          "13 servers"
+          "distributed compute",
+          "Linux",
+          "APIs",
+          "security"
+        ]
+      },
+      {
+        "name": "Complexe dataproducten",
+        "blurb": "Lastige datatypes omzetten in producten die gebruikt worden: ruimtelijke en netwerkdata, documentpijplijnen op LLM's en OCR, grafen en tijdreeksen — end-to-end van methode tot geleverde API.",
+        "stack": [
+          "spatial",
+          "graphs",
+          "documents · LLM/OCR",
+          "time series"
+        ]
+      },
+      {
+        "name": "Analytics & ML",
+        "blurb": "De analyselaag erbovenop: tijdreeksmodellen en nowcasting, regressies en causale designs, en toegepaste ML die daadwerkelijk shipt — van hedonische prijsmodellen tot sequence taggers.",
+        "stack": [
+          "time series",
+          "nowcasting",
+          "regression",
+          "XGBoost"
         ]
       }
     ]

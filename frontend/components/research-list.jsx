@@ -43,7 +43,10 @@ export function ResearchList({ initialItems = [] }) {
     return () => { alive = false; };
   }, []);
 
-  const source = researchItems.length ? researchItems : loading ? [] : DEFAULT_ITEMS;
+  // Project detail pages live under /research/<slug> too, but belong to the
+  // Projects grid — keep them out of the papers list.
+  const source = (researchItems.length ? researchItems : loading ? [] : DEFAULT_ITEMS)
+    .filter((item) => (item.category || "").toLowerCase() !== "project");
 
   const filteredItems = source.filter((item) => {
     const title = getItemField(item, "title", locale) || "";

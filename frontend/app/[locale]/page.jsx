@@ -3,9 +3,7 @@ import { Marquee } from "@/components/marquee";
 import { AboutTeaser } from "@/components/about-teaser";
 import { FourLanes } from "@/components/four-lanes";
 import { ProjectsGallery } from "@/components/projects-gallery";
-import { ProofStrip } from "@/components/proof-strip";
 import { WritingTeaser } from "@/components/writing-teaser";
-import { ResearchPreview } from "@/components/research-preview";
 import { ContactBand } from "@/components/contact-band";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/json-ld";
 
@@ -36,11 +34,9 @@ export default async function HomePage({ params }) {
       <WebSiteJsonLd />
       <HeroSection />
       <Marquee />
-      <ProjectsGallery />
-      <ResearchPreview locale={locale} />
-      <FourLanes />
-      <ProofStrip />
       <AboutTeaser />
+      <FourLanes />
+      <ProjectsGallery />
       <WritingTeaser locale={locale} />
       <ContactBand />
     </main>
