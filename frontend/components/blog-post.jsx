@@ -118,10 +118,14 @@ export function BlogPost({ slug, initialPost = null }) {
               <pre style={{ borderRadius: 8, padding: "16px 20px", overflowX: "auto", fontSize: 14, lineHeight: 1.6, margin: "24px 0", background: "#282c34" }} {...props} />
             );
           },
-          code: ({ node, inline, ...props }) =>
-            inline
-              ? <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.9em", background: "var(--rule)", padding: "1px 5px", borderRadius: 4 }} {...props} />
-              : <code style={{ fontFamily: "var(--font-mono)" }} {...props} />,
+          code: ({ node, className, children, ...props }) => {
+            // react-markdown v9+ dropped the `inline` prop: detect block code
+            // by a language- class or embedded newlines instead.
+            const isBlock = /language-/.test(className || "") || /\n/.test(String(children));
+            return isBlock
+              ? <code className={className} style={{ fontFamily: "var(--font-mono)" }} {...props}>{children}</code>
+              : <code style={{ fontFamily: "var(--font-mono)", fontSize: "0.9em", background: "var(--rule)", padding: "1px 5px", borderRadius: 4 }} {...props}>{children}</code>;
+          },
           h2: ({ node, ...props }) => <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(26px,3vw,36px)", lineHeight: 1.15, margin: "40px 0 16px" }} {...props} />,
           h3: ({ node, ...props }) => <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(20px,2.2vw,26px)", lineHeight: 1.2, margin: "32px 0 12px" }} {...props} />,
           ul: ({ node, ...props }) => <ul style={{ margin: "16px 0", paddingLeft: 28, listStyle: "disc", display: "grid", gap: 8 }} {...props} />,

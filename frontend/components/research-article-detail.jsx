@@ -293,12 +293,16 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
                   // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
                   <img className="w-full rounded border border-border my-6" loading="lazy" {...props} />
                 ),
-                code: ({ node, inline, ...props }) =>
-                  inline ? (
-                    <code className="bg-muted/50 px-1.5 py-0.5 rounded text-xs md:text-sm font-mono text-primary" {...props} />
+                code: ({ node, className, children, ...props }) => {
+                  // react-markdown v9+ dropped the `inline` prop: detect block
+                  // code by a language- class or embedded newlines instead.
+                  const isBlock = /language-/.test(className || "") || /\n/.test(String(children));
+                  return isBlock ? (
+                    <code className={`block bg-muted p-3 md:p-4 rounded text-xs md:text-sm font-mono overflow-x-auto ${className || ""}`} {...props}>{children}</code>
                   ) : (
-                    <code className="block bg-muted p-3 md:p-4 rounded text-xs md:text-sm font-mono overflow-x-auto" {...props} />
-                  ),
+                    <code className="bg-muted/50 px-1.5 py-0.5 rounded text-xs md:text-sm font-mono text-primary" {...props}>{children}</code>
+                  );
+                },
                 pre: ({ node, ...props }) => {
                   const fence = getMapFenceSource(node);
                   if (fence !== null) {
