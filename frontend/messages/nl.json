@@ -166,16 +166,36 @@
     "linkBookCall": "Plan een gesprek"
   },
   "Projects": {
-    "kicker": "Geselecteerd werk & papers: onderzoek, methoden, scripties",
-    "titlePrefix": "Geselecteerd werk",
+    "kicker": "Projecten & papers: systemen, producten, onderzoek",
+    "titlePrefix": "Projecten",
     "titleItalic": "& papers.",
-    "subtitle": "Onderzoekswerk over stedelijke dynamiek en geospatiale methoden. Vastgoed is één toepassing; de rode draad is de methode.",
+    "subtitle": "Negen stukken werk over de vier sporen — productiesystemen, geleverde producten, en het onderzoek dat ze mogelijk maken.",
     "items": [
       {
+        "viz": "stat",
+        "stat": {
+          "value": "6,200+",
+          "label": "vocab entries · 3 languages"
+        },
+        "badge": "PROJECT",
+        "sector": "AI-product",
+        "title": "LanguageBuddy — AI language tutor",
+        "outcome": "Een zelf-gehoste AI-taaltutor voor Nederlands, Italiaans en Spaans: chat of bel met een LLM-tutor, en elke fout wordt vastgelegd in een spaced-repetition-wachtrij die de oefeningen van de volgende dag, leesteksten uit echt nieuws en printbare werkboeken aanstuurt. Adaptieve CEFR-plaatsing, 6.200+ samengestelde woordenschat-items, een suite van 336 tests.",
+        "stack": [
+          "FastAPI",
+          "LLM",
+          "TTS",
+          "SQLite",
+          "Docker"
+        ],
+        "link": "/research/languagebuddy-ai-language-tutor"
+      },
+      {
         "viz": "abm",
-        "sector": "MSc Scriptie · Bocconi",
-        "title": "Agent-gebaseerd gentrificatiemodel",
-        "outcome": "Een agent-based model van buurtverandering, gedreven door aantrekkelijkheid en betaalbaarheid, toegepast op Amsterdam, Utrecht en Milaan op open ruimtelijke data.",
+        "badge": "RESEARCH",
+        "sector": "MSc-thesis · Bocconi",
+        "title": "Gentrification agent-based model",
+        "outcome": "Een agent-based model van buurtverandering: huishoudens en verhuurders die interacteren op echte perceeldata voor Amsterdam, Utrecht en Milaan, en gentrificatiegolven reproduceren uit feedback tussen aantrekkelijkheid en betaalbaarheid — met een uitbreiding voor sociale huur in de maak.",
         "stack": [
           "Python",
           "Mesa",
@@ -185,10 +205,29 @@
         "link": "/research/gentrification-abm-european-cities"
       },
       {
+        "viz": "stat",
+        "stat": {
+          "value": "38",
+          "label": "markets · parcel resolution"
+        },
+        "badge": "KR&A",
+        "sector": "Ontwikkeld bij KR&A",
+        "title": "Connectivity & walkability scoring",
+        "outcome": "Een op verzadiging gevalideerde connectiviteits- en loopbaarheidsscore op perceelniveau, uitgerold over 38 markten in EU/NA/APAC. Methodepaper verschijnt in 2026.",
+        "stack": [
+          "PostGIS",
+          "H3",
+          "GeoPandas",
+          "Python"
+        ],
+        "link": "https://connectivityscore.krafin.tech"
+      },
+      {
         "viz": "hedonic",
+        "badge": "RESEARCH",
         "sector": "Onderzoek · Eurostat",
-        "title": "Maandelijkse huizenprijsindex · 13 EU-landen",
-        "outcome": "Grootschalige Europese ruimtelijke-data-engineering: een web-scrapingpipeline voor 13 landen gevoed door een log-prijs hedonische regressie. Maandelijkse indices getest als disaggregatie-indicatoren voor Eurostat kwartaal-HPIs.",
+        "title": "Monthly house-price index · 13 EU countries",
+        "outcome": "Een webscraping-pijplijn over 13 landen die een hedonische log-prijsregressie voedt; maandelijkse indices getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat — en de prijsdata achter het metro-kapitalisatiepaper.",
         "stack": [
           "Python",
           "Scrapy",
@@ -196,33 +235,100 @@
           "MongoDB",
           "XGBoost"
         ],
-        "link": "/about"
+        "link": "/research/metro-capitalisation-timing"
       },
       {
-        "viz": "hedonic",
-        "sector": "Methode · ontwikkeld bij KR&A",
-        "title": "Connectiviteits- en loopbaarheidsscore",
-        "outcome": "Een bijdrage aan geospatiale methoden: een saturatie-gevalideerde connectiviteits-/loopbaarheidsscore op perceelniveau. Ontwikkeld bij KR&A; methodepaper te verwachten in 2026.",
-        "stack": [
-          "PostGIS",
-          "H3",
-          "GeoPandas",
-          "Python"
-        ],
-        "link": "/research"
-      },
-      {
-        "viz": "hedonic",
+        "viz": "stat",
+        "stat": {
+          "value": "726 GB",
+          "label": "largest DAG input · 6 pipelines"
+        },
+        "badge": "PROJECT",
         "sector": "Engineering",
-        "title": "Researchpipelines als productiesystemen",
-        "outcome": "De data-engineering achter de papers: Airflow 3-pipelines met custom operators (een DuckDB SQL-ingestion-operator, een SHA-256 snapshot guard), tests en CI — beschreven in een case-study-serie op deze site.",
+        "title": "Research pipelines as production systems",
+        "outcome": "Elk onderzoeksproject op deze site herbouwd als een waarheidsgetrouwe Airflow 3-DAG — echte scripts, echte idempotentie-guards, custom operators, tests en CI — schaalbaar van laptop tot multi-machine CeleryExecutor-cluster. Uitgeschreven als case-study-serie.",
         "stack": [
           "Airflow",
+          "Celery",
           "DuckDB",
           "Docker",
           "CI"
         ],
         "link": "/thoughts/research-pipelines-are-production-systems"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "+0.001",
+          "label": "mAP from US data on EU streets"
+        },
+        "badge": "RESEARCH",
+        "sector": "Computer vision · Bocconi",
+        "title": "US vs EU transfer for autonomous driving",
+        "outcome": "Werkt een detector die op Amerikaanse dashcamdata is getraind ook op Europese straten? Een gecontroleerde 2×3 fine-tuningstudie (YOLOv3/YOLOv8, Udacity vs KITTI) die de confounds van een eerder vakproject corrigeert: Amerikaanse fine-tuning draagt vrijwel niets over naar Europese straten, terwijl in-domein fine-tuning +0,15 mAP oplevert.",
+        "stack": [
+          "PyTorch",
+          "YOLOv8",
+          "KITTI",
+          "Udacity"
+        ],
+        "link": "/research/us-vs-eu-transfer-autonomous-driving"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "86%",
+          "label": "macro F1 · 38,600 videos"
+        },
+        "badge": "PROJECT",
+        "sector": "NLP · live demo",
+        "title": "SponsoredBye — sponsor-segment detection",
+        "outcome": "Een sponsor-skipper voor YouTube op basis van alleen tekst, gebouwd vóórdat YouTube Premium er een uitbracht: sentence-T5-embeddings voeden een BiLSTM-sequence-tagger die gesponsorde zinnen markeert en terugkoppelt naar tijdstempels. Live demo op Hugging Face Spaces.",
+        "stack": [
+          "TensorFlow",
+          "BiLSTM",
+          "sentence-T5",
+          "MongoDB",
+          "Gradio"
+        ],
+        "link": "https://huggingface.co/spaces/sponsored-bye/sponsoredbye"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "63",
+          "label": "species · fully on-device"
+        },
+        "badge": "PROJECT",
+        "sector": "Mobile ML",
+        "title": "FishFinder — photo-to-species ID",
+        "outcome": "Een Flutter-app die 63 Nederlandse vissoorten herkent van een foto, volledig on-device, en een Pokédex-achtige FishDex vult bij elke vangst. De trainingspijplijn: ~3.000 handmatig geannoteerde foto's gemaskeerd met Segment Anything, daarna een gefinetunede ResNet50 gecomprimeerd tot een TFLite-model van 8,8 MB.",
+        "stack": [
+          "Flutter",
+          "TFLite",
+          "ResNet50",
+          "Segment Anything",
+          "Firebase"
+        ],
+        "link": "/research/fishfinder-on-device-fish-id"
+      },
+      {
+        "viz": "stat",
+        "stat": {
+          "value": "97.5%",
+          "label": "binary flood accuracy · RF"
+        },
+        "badge": "RESEARCH",
+        "sector": "BSc-thesis · UvA",
+        "title": "Predicting flooding risk from local features",
+        "outcome": "Kan overstromingsrisico worden verklaard uit lokale kenmerken in plaats van een black-box hydrodynamische simulatie? 33 kenmerken over ~45.000 Europese locaties; een Random Forest haalt 97,5% op de binaire 20-jaarsvraag, met omliggende verharding en relatieve hoogte als belangrijkste voorspellers.",
+        "stack": [
+          "scikit-learn",
+          "Random Forest",
+          "raster data",
+          "GIS"
+        ],
+        "link": "/research/predicting-flooding-risk-local-features"
       }
     ],
     "viewCase": "Lees meer",

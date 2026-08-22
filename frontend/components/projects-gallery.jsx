@@ -102,9 +102,28 @@ function VizHedonic({ titleText }) {
   );
 }
 
-function ProjectViz({ kind }) {
+function VizStat({ value, label }) {
+  const reactId = useId();
+  const gridId = `sg-${reactId}`;
+  return (
+    <svg viewBox="0 0 320 180" role="img" aria-label={`${value} — ${label}`} style={{ width: "100%", height: "100%" }}>
+      <defs>
+        <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
+          <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.07)" strokeWidth="1" />
+        </pattern>
+      </defs>
+      <rect width="320" height="180" fill={`url(#${gridId})`} />
+      <rect x="14" y="14" width="34" height="5" fill="#FFD60A" />
+      <text x="14" y="98" fontFamily="var(--font-serif)" fontSize="52" fill="#111110" letterSpacing="-0.02em">{value}</text>
+      <text x="14" y="126" fontFamily="var(--font-mono)" fontSize="10" fill="#8A8676" letterSpacing="0.08em">{(label || "").toUpperCase()}</text>
+    </svg>
+  );
+}
+
+function ProjectViz({ kind, stat }) {
   if (kind === "abm") return <VizABM />;
   if (kind === "hedonic") return <VizHedonic />;
+  if (kind === "stat") return <VizStat value={stat?.value} label={stat?.label} />;
   return null;
 }
 
@@ -158,13 +177,16 @@ export function ProjectsGallery() {
                     style={{ objectFit: "cover" }}
                   />
                 ) : (
-                  <ProjectViz kind={item.viz} />
+                  <ProjectViz kind={item.viz} stat={item.stat} />
                 )}
               </div>
               <div className="project-body">
                 <div className="project-kicker">
-                  <span>§ 03.{num}</span>
+                  <span>§ 04.{num}</span>
                   <span>{item.sector}</span>
+                  {item.badge && (
+                    <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, background: item.badge === "KR&A" ? "var(--ink)" : "var(--yellow)", color: item.badge === "KR&A" ? "var(--yellow)" : "var(--ink)", padding: "2px 8px", borderRadius: 2, letterSpacing: "0.08em" }}>{item.badge}</span>
+                  )}
                 </div>
                 <h3 className="project-title">{item.title}</h3>
                 <p className="project-outcome">{item.outcome}</p>
