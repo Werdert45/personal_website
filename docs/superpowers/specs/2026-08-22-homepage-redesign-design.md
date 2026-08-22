@@ -1,8 +1,9 @@
 # Homepage redesign — design spec
 
 Date: 2026-08-22
-Status: decisions approved in discussion (hero visual, chips, nav target,
-card links via AskUserQuestion); spec pending user review
+Status: approved by user 2026-08-22 ("the rest is a go ahead"), with one
+amendment: About Me is framed around having experience **as a Head of
+Data** — role-centric, not employer-centric ("not AT KR&A")
 
 ## Goal
 
@@ -47,8 +48,10 @@ Home · About · Projects & Papers · Blogs · Contact.
 
 1. Navbar
 2. Jumbotron (§ 1)
-3. **About Me** — states what Ian does without naming KR&A (copy to be
-   workshopped separately), plus a quick-fire row of 4 bullets:
+3. **About Me** — framed around Ian's experience *as a Head of Data*
+   (the role and what it entails: leading data systems and analytics),
+   not around any employer; KR&A is not named (copy to be workshopped
+   separately), plus a quick-fire row of 4 bullets:
    Role · Based · Education · Stack.
 4. **Four expertise lanes**:
    - Data Engineering — data pipelines and storage (lakehouse), tooling
