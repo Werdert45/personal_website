@@ -81,7 +81,9 @@ export function BlogPost({ slug, initialPost = null }) {
 
   const title = getItemField(post, "title", locale) || post.title;
   const excerpt = getItemField(post, "excerpt", locale) || post.excerpt;
-  const content = getItemField(post, "content", locale) || post.content || "";
+  // The page header already renders the title; drop a leading H1 so it
+  // doesn't appear twice.
+  const content = (getItemField(post, "content", locale) || post.content || "").replace(/^\s*#\s[^\n]*\n+/, "");
   // Prefer published_at (the backdatable display date). Only slice ISO
   // strings — free-text dates like "July 2026" render verbatim.
   const rawDate = post.published_at || post.date || "";

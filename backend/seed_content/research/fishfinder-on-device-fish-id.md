@@ -30,6 +30,9 @@ FishFinder is a **cross-platform app**, one Flutter codebase covering iOS and An
 ![Diagram of the FishFinder flow: the camera frames a fish, an on-device ResNet50 in TFLite classifies it with no cloud involved, and the result unlocks a cell in the FishDex](/projects/fishfinder-on-device-fish-id/app-flow-diagram.svg)
 *The whole loop runs on the phone: camera → local model → species page → FishDex unlock.*
 
+![Three FishFinder screens side by side: a scan result ranking blankvoorn at 94%, the hand-written blankvoorn species page, and the FishDex collection with caught and uncaught species](/projects/fishfinder-on-device-fish-id/app-screens-triptych.jpg)
+*That loop in the refreshed UI: the classifier's ranked result, the species page behind it, and the FishDex it unlocks into. One Flutter codebase, iOS and Android.*
+
 That was a deliberate reversal. The v1 classifier was MobileNetV2 transfer learning served over Flask: fine on WiFi, useless on the water. Retiring the server and going fully offline was the single best product decision in the project. Firebase sits underneath for auth, storage and the social layer. And because catching fish is collecting fish, the app wraps the classifier in a **FishDex**, a Pokédex-style gallery where every species you catch unlocks, with friends and a dashboard of recent catches. Catch a zeelt, unlock the zeelt. It's exactly as addictive as it sounds.
 
 ## One click per fish
@@ -48,4 +51,4 @@ A pretrained **ResNet50** is fine-tuned on the result. Early accuracy on the sma
 
 ## Where it stands
 
-Functional end-to-end: photo in, species out, FishDex fills up. A UI refresh is planned before broader release. App screenshots will land here once it ships. The pipeline is the part I'd defend in any review: one click per image, Segment Anything doing the heavy lifting, and a model small enough to live in your pocket.
+Functional end-to-end: photo in, species out, FishDex fills up. The UI refresh shown above is rolling in ahead of a broader release. The pipeline is the part I'd defend in any review: one click per image, Segment Anything doing the heavy lifting, and a model small enough to live in your pocket.

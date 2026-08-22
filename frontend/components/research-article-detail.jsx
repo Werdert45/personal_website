@@ -184,7 +184,9 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
 
   const title = getItemField(article, "title", locale);
   const abstract = getItemField(article, "abstract", locale);
-  const content = getItemField(article, "content", locale);
+  // The page header already renders the title; drop a leading H1 so it
+  // doesn't appear twice.
+  const content = (getItemField(article, "content", locale) || "").replace(/^\s*#\s[^\n]*\n+/, "");
 
   const getMapCenter = () => {
     if (article.map_config?.center) return article.map_config.center;
