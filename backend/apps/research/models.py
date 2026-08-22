@@ -26,6 +26,7 @@ class Research(models.Model):
         ("working-paper", "Working Paper"),
         ("preprint", "Preprint"),
         ("thesis", "Thesis"),
+        ("project", "Project"),
         ("other", "Other"),
     ]
 
