@@ -14,14 +14,14 @@ export function AboutContent() {
       <section className="section-pad" style={{ paddingTop: 160 }}>
         <div className="section-label">
           <span className="bar" />
-          <span className="num-label">§ 02</span>
           <span>{t("sectionKicker")}</span>
         </div>
 
         <div className="about-top" style={{ paddingBottom: 0, borderBottom: "none" }}>
           <div>
             <h2>
-              {t("heroTitleLine1a")} <i>{t("heroTitleLine1aItalic")}</i> —<br />
+              {t("heroTitleLine1a")} <i>{t("heroTitleLine1aItalic")}</i>
+              <br />
               {t("heroTitleLine2")} <span className="u">{t("heroTitleLine2Underline")}</span>
               <br />
               {t("heroTitleLine3")}
@@ -33,13 +33,12 @@ export function AboutContent() {
               {t("lede2")}
             </p>
             <a
-              href="/ian-ronk-cv.pdf"
-              download="ian-ronk-cv.pdf"
+              href="#resume"
               className="btn ghost"
               style={{ marginTop: 20, display: "inline-flex" }}
             >
-              <span>{t("downloadCv")}</span>
-              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" /></svg>
+              <span>{t("cvBelow")}</span>
+              <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" focusable="false"><path d="M12 5v14m0 0l-5-5m5 5l5-5" /></svg>
             </a>
           </div>
           <div className="portrait">
@@ -51,10 +50,9 @@ export function AboutContent() {
       </section>
 
       {expertise.length > 0 && (
-        <section className="section-pad">
+        <section className="section-pad" style={{ paddingTop: 0 }}>
           <div className="section-label">
             <span className="bar" />
-            <span className="num-label">§ 03</span>
             <span>{t("expertiseBadge")}</span>
           </div>
           <p className="lede">{t("expertiseSubtitle")}</p>
@@ -64,9 +62,6 @@ export function AboutContent() {
           >
             {expertise.map((e, i) => (
               <div key={e.title} style={{ borderTop: "1px solid var(--ink)", paddingTop: 18 }}>
-                <div className="sector-kicker">
-                  <span>§ 03.{String(i + 1).padStart(2, "0")}</span>
-                </div>
                 <h3 className="sector-name" style={{ marginTop: 12 }}>{e.title}</h3>
                 <p className="sector-blurb">{e.description}</p>
               </div>

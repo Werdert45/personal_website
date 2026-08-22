@@ -1,5 +1,5 @@
 ---
-title: "LanguageBuddy — an AI language tutor that turns conversation into curriculum"
+title: "LanguageBuddy: an AI language tutor that turns conversation into curriculum"
 slug: languagebuddy-ai-language-tutor
 excerpt: "A self-hosted AI tutor for Dutch, Italian and Spanish: chat or voice-call an LLM tutor, and every word you stumble on gets lemmatized, scheduled by SM-2 spaced repetition, and served back as tomorrow's exercises and a printable workbook."
 status: published

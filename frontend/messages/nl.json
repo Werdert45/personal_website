@@ -30,7 +30,7 @@
     "title": "Complexe data,",
     "titleHighlight": "omgezet",
     "titleEnd": "in inzicht.",
-    "description": "Ik bouw en leid productiedatasystemen en de analytics erbovenop: gescrapete marktdata met 300k records per week, officiële statistieken en trage tijdreeksen, documentpipelines op LLM's en OCR, en ruimtelijke en netwerkdata. Die laatste is de onderzoeksstoel — stedelijke dynamiek, woningmarkten, bereikbaarheid — waar de papers op deze site vandaan komen.",
+    "description": "Ik bouw en leid productiedatasystemen en de analytics erbovenop: gescrapete marktdata met 300k records per week, officiële statistieken en trage tijdreeksen, documentpipelines op LLM's en OCR, en ruimtelijke en netwerkdata. Die laatste is de onderzoeksstoel: stedelijke dynamiek, woningmarkten, bereikbaarheid. Daar komen de papers op deze site vandaan.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
     "expertise": "Expertise:",
@@ -42,7 +42,7 @@
     ]
   },
   "About": {
-    "publicationsKicker": "Publicaties & papers",
+    "publicationsKicker": "Papers",
     "publicationsEmpty": "Papers verschijnen hier zodra ze gepubliceerd zijn.",
     "publicationsViewAll": "Alle papers →",
     "expertiseBadge": "Expertise",
@@ -50,15 +50,15 @@
     "expertiseSubtitle": "Vijf competenties, één uitgangspunt: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
     "educationBadge": "Opleiding",
     "experienceBadge": "Ervaring",
-    "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master — de methodenkant van de toolkit. De productiekant kwam uit het werk.",
-    "experienceSubtitle": "5+ jaar productie-datasystemen bouwen en leiden — pipelines, forecasting, geospatial — in Europese markten en academisch onderzoek.",
+    "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master: de methodenkant van de toolkit. De productiekant kwam uit het werk.",
+    "experienceSubtitle": "5+ jaar productie-datasystemen bouwen en leiden (pipelines, forecasting, geospatial) in Europese markten en academisch onderzoek.",
     "sectionKicker": "Over: wie, waar, hoe",
     "heroTitleLine1a": "Data",
     "heroTitleLine1aItalic": "Lead",
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systemen",
     "heroTitleLine3": "& Onderzoek.",
-    "lede1": "Vanuit Amsterdam leid ik datateams en bouw ik wat ze draaien: webscraping-pipelines met 300k records per week, forecasting en nowcasting op officiële statistieken, documentpipelines op LLM's en OCR, en ruimtelijke dataproducten. Het vak eronder is systeemontwerp: de architectuur bepaalt of een pipeline in het derde jaar nog draait. De onderzoeksstoel blijft warm — stedelijke dynamiek, gentrificatie, bereikbaarheid op perceelniveau — omdat steden zijn waar datavraagstukken lastig worden. Data lead van beroep; geodataspecialist in de diepte.",
+    "lede1": "Vanuit Amsterdam leid ik datateams en bouw ik wat ze draaien: webscraping-pipelines met 300k records per week, forecasting en nowcasting op officiële statistieken, documentpipelines op LLM's en OCR, en ruimtelijke dataproducten. Het vak eronder is systeemontwerp: de architectuur bepaalt of een pipeline in het derde jaar nog draait. De onderzoeksstoel blijft warm, met stedelijke dynamiek, gentrificatie en bereikbaarheid op perceelniveau, omdat steden zijn waar datavraagstukken lastig worden. Data lead van beroep; geodataspecialist in de diepte.",
     "lede2": "Mijn voorkeur: eigenzinnige interne tools verslaan grote platforms; een gekalibreerde pipeline verslaat een slimme; en een kaart moet een vraag beantwoorden, geen complexiteit opvoeren.",
     "portraitCaption": "IAN · AMS · 2026",
     "journeyTitlePrefixItalic": "Vijf",
@@ -67,11 +67,11 @@
     "expertise": [
       {
         "title": "Data-architectuur & pipelines",
-        "description": "Scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 300k records per week — schema, orkestratie en foutafhandeling vooraf ontworpen, met Airflow en PostGIS eronder."
+        "description": "Scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 300k records per week, met schema, orkestratie en foutafhandeling vooraf ontworpen en Airflow en PostGIS eronder."
       },
       {
         "title": "Netwerkwetenschap",
-        "description": "Grafentheorie toegepast op echte geografieën — een saturatie-gevalideerde Connectivity Score op perceelniveau, onderzoek naar toegankelijkheid en connectiviteit."
+        "description": "Grafentheorie toegepast op echte geografieën: een saturatie-gevalideerde Connectivity Score op perceelniveau, onderzoek naar toegankelijkheid en connectiviteit."
       },
       {
         "title": "Tijdreeksen & Forecasting",
@@ -83,17 +83,18 @@
       },
       {
         "title": "Product Ownership & Leiderschap",
-        "description": "End-to-end eigenaarschap van methode tot live API — een build met 13 servers, en een team van 4–5 geleid bij KR&A."
+        "description": "End-to-end eigenaarschap van methode tot live API: een build met 13 servers, en een team van 4–5 geleid bij KR&A."
       }
     ],
-    "downloadCv": "Download het cv (pdf)"
+    "downloadCv": "Download het cv (pdf)",
+    "cvBelow": "Volledig cv hieronder ↓"
   },
   "AboutPage": {
     "readMore": "Lees meer",
     "backToAbout": "Terug naar Over Mij"
   },
   "Research": {
-    "loadingFallback": "Paperindex is tijdelijk onbereikbaar — probeer het zo opnieuw.",
+    "loadingFallback": "Paperindex is tijdelijk onbereikbaar. Probeer het zo opnieuw.",
     "title": "Onderzoek & Artikelen",
     "searchPlaceholder": "Zoek artikelen...",
     "readMore": "Lees meer",
@@ -101,7 +102,7 @@
     "loading": "Onderzoeksartikelen laden...",
     "previewBadge": "Onderzoek & Blog",
     "viewAll": "Bekijk Alles",
-    "listKicker": "Onderzoek: papers, methodes, publicaties",
+    "listKicker": "Onderzoek: papers & methodes",
     "listTitlePrefix": "Papers",
     "listTitleItalic": "en preprints",
     "listTitleAmp": "& lopende",
@@ -119,7 +120,7 @@
     "youMightAlsoLike": "Misschien vind je dit ook leuk",
     "readArticle": "Lees artikel",
     "endCtaKicker": "§ Verder",
-    "endCtaHeading": "Vragen over een methode, een dataset of een rol — neem contact op.",
+    "endCtaHeading": "Vragen over een methode, een dataset of een rol? Neem contact op.",
     "endCtaButton": "Neem contact op",
     "indexDiscuss": "Neem contact op"
   },
@@ -127,12 +128,12 @@
     "aboutBadge": "Over Mij",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data · Engineer & onderzoeker",
-    "bio": "Ik bouw en leid productiedatasystemen en de analytics erbovenop — gescrapete marktdata, officiële statistieken en tijdreeksen, documentpipelines op LLM's en OCR, en ruimtelijke en netwerkdata — met een onderzoeksspecialisatie in stedelijke dynamiek. De papers en de engineering-casestudy's erachter staan op deze site.",
+    "bio": "Ik bouw en leid productiedatasystemen en de analytics erbovenop: gescrapete marktdata, officiële statistieken en tijdreeksen, documentpipelines op LLM's en OCR, en ruimtelijke en netwerkdata, met een onderzoeksspecialisatie in stedelijke dynamiek. De papers en de engineering-casestudy's erachter staan op deze site.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
     "formTitle": "Neem Contact Op",
-    "formSubtitle": "Vragen over het onderzoek, de pipelines, een rol of een samenwerking — mijn inbox staat open.",
+    "formSubtitle": "Vragen over het onderzoek, de pipelines, een rol of een samenwerking? Mijn inbox staat open.",
     "nameLabel": "Naam",
     "namePlaceholder": "Je naam",
     "emailLabel": "E-mail",
@@ -169,13 +170,13 @@
     "kicker": "Projecten & papers: systemen, producten, onderzoek",
     "titlePrefix": "Projecten",
     "titleItalic": "& papers.",
-    "subtitle": "Negen stukken werk over de vier sporen — productiesystemen, geleverde producten, en het onderzoek dat ze mogelijk maken.",
+    "subtitle": "Negen stukken werk over de vier sporen: productiesystemen, geleverde producten, en het onderzoek dat ze mogelijk maken.",
     "items": [
       {
         "viz": "language",
         "badge": "PROJECT",
         "sector": "AI-product",
-        "title": "LanguageBuddy — AI language tutor",
+        "title": "LanguageBuddy: AI language tutor",
         "outcome": "Een zelf-gehoste AI-taaltutor voor Nederlands, Italiaans en Spaans: chat of bel met een LLM-tutor, en elke fout wordt vastgelegd in een spaced-repetition-wachtrij die de oefeningen van de volgende dag, leesteksten uit echt nieuws en printbare werkboeken aanstuurt. Adaptieve CEFR-plaatsing, 6.200+ samengestelde woordenschat-items, een suite van 336 tests.",
         "stack": [
           "FastAPI",
@@ -191,7 +192,7 @@
         "badge": "RESEARCH",
         "sector": "MSc-thesis · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "Een agent-based model van buurtverandering: huishoudens en verhuurders die interacteren op echte perceeldata voor Amsterdam, Utrecht en Milaan, en gentrificatiegolven reproduceren uit feedback tussen aantrekkelijkheid en betaalbaarheid — met een uitbreiding voor sociale huur in de maak.",
+        "outcome": "Een agent-based model van buurtverandering: huishoudens en verhuurders die interacteren op echte perceeldata voor Amsterdam, Utrecht en Milaan, en gentrificatiegolven reproduceren uit feedback tussen aantrekkelijkheid en betaalbaarheid, met een uitbreiding voor sociale huur in de maak.",
         "stack": [
           "Python",
           "Mesa",
@@ -219,7 +220,7 @@
         "badge": "KR&A",
         "sector": "Ontwikkeld bij KR&A",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Een webscraping-pijplijn over 13 landen die een hedonische log-prijsregressie voedt; maandelijkse indices getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat — en de prijsdata achter het metro-kapitalisatiepaper.",
+        "outcome": "Een webscraping-pijplijn over 13 landen die een hedonische log-prijsregressie voedt; maandelijkse indices getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat. Het is ook de prijsdata achter het metro-kapitalisatiepaper.",
         "stack": [
           "Python",
           "Scrapy",
@@ -234,7 +235,7 @@
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Elk onderzoeksproject op deze site herbouwd als een waarheidsgetrouwe Airflow 3-DAG — echte scripts, echte idempotentie-guards, custom operators, tests en CI — schaalbaar van laptop tot multi-machine CeleryExecutor-cluster. Uitgeschreven als case-study-serie.",
+        "outcome": "Elk onderzoeksproject op deze site herbouwd als een waarheidsgetrouwe Airflow 3-DAG (echte scripts, echte idempotentie-guards, custom operators, tests en CI), schaalbaar van laptop tot multi-machine CeleryExecutor-cluster. Uitgeschreven als case-study-serie.",
         "stack": [
           "Airflow",
           "Celery",
@@ -261,9 +262,9 @@
       {
         "viz": "sponsor",
         "badge": "PROJECT",
-        "sector": "NLP · live demo",
-        "title": "SponsoredBye — sponsor-segment detection",
-        "outcome": "Een sponsor-skipper voor YouTube op basis van alleen tekst, gebouwd vóórdat YouTube Premium er een uitbracht: sentence-T5-embeddings voeden een BiLSTM-sequence-tagger die gesponsorde zinnen markeert en terugkoppelt naar tijdstempels. Live demo op Hugging Face Spaces.",
+        "sector": "NLP · sequence tagging",
+        "title": "SponsoredBye: sponsor-segment detection",
+        "outcome": "Een sponsor-skipper voor YouTube op basis van alleen tekst, gebouwd vóórdat YouTube Premium er een uitbracht: sentence-T5-embeddings voeden een BiLSTM-sequence-tagger die gesponsorde zinnen markeert en terugkoppelt naar tijdstempels, met een segmentatiefout die daalt van 99% naar 16% WindowDiff.",
         "stack": [
           "TensorFlow",
           "BiLSTM",
@@ -271,13 +272,13 @@
           "MongoDB",
           "Gradio"
         ],
-        "link": "https://huggingface.co/spaces/sponsored-bye/sponsoredbye"
+        "link": "/research/sponsoredbye-sponsored-segment-detection"
       },
       {
         "viz": "fish",
         "badge": "PROJECT",
         "sector": "Mobile ML",
-        "title": "FishFinder — photo-to-species ID",
+        "title": "FishFinder: photo-to-species ID",
         "outcome": "Een Flutter-app die 63 Nederlandse vissoorten herkent van een foto, volledig on-device, en een Pokédex-achtige FishDex vult bij elke vangst. De trainingspijplijn: ~3.000 handmatig geannoteerde foto's gemaskeerd met Segment Anything, daarna een gefinetunede ResNet50 gecomprimeerd tot een TFLite-model van 8,8 MB.",
         "stack": [
           "Flutter",
@@ -316,11 +317,11 @@
     "work": "Contact"
   },
   "Thoughts": {
-    "loadingFallback": "Nog geen stukken — de eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak.",
+    "loadingFallback": "Nog geen stukken. De eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak.",
     "kicker": "Werk: casestudies & veldnotities",
     "recentTitle": "Recent",
     "recentItalic": "werk",
-    "subtitle": "Casestudies van opgeleverde projecten — wat er gebouwd is, wat er kapotging, en wat het veranderde.",
+    "subtitle": "Casestudies van opgeleverde projecten: wat er gebouwd is, wat er kapotging, en wat het veranderde.",
     "loading": "Laden…",
     "featuredKicker": "Uitgelicht ·",
     "readPiece": "Lees het stuk →",
@@ -342,9 +343,9 @@
     "endCtaBody": "Browse andere essays over geodata, AI/ML en operations, of lees meer over wie er achter de schrijfsels zit.",
     "endCtaButton": "Meer schrijfsels",
     "endCtaSecondary": "Over mij",
-    "endCtaContact": "Vragen over de build — neem contact op",
+    "endCtaContact": "Vragen over de build? Neem contact op",
     "relatedKicker": "Gerelateerd werk",
-    "empty": "Nog geen stukken — de eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak."
+    "empty": "Nog geen stukken. De eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak."
   },
   "Author": {
     "roleLine": "Head of Data · Engineer & onderzoeker",
@@ -357,8 +358,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ik bouw productie-",
     "titleLine2Underline": "systemen.",
-    "bio1": "Ik werk als Head of Data: ik bouw en leid de systemen die data op schaal verzamelen, opslaan en serveren — en de analytics erbovenop. Gescrapete marktdata met 300k records per week, officiële statistiek en trage tijdreeksen, documentpijplijnen op LLM's en OCR, en ruimtelijke en netwerkdata.",
-    "bio2": "Die laatste is de onderzoeksstoel: stedelijke dynamiek, woningmarkten, bereikbaarheid — daar komen de papers op deze site vandaan.",
+    "bio1": "Ik werk als Head of Data: ik bouw en leid de systemen die data op schaal verzamelen, opslaan en serveren, en de analytics erbovenop. Gescrapete marktdata met 300k records per week, officiële statistiek en trage tijdreeksen, documentpijplijnen op LLM's en OCR, en ruimtelijke en netwerkdata.",
+    "bio2": "Die laatste is de onderzoeksstoel: stedelijke dynamiek, woningmarkten, bereikbaarheid. Daar komen de papers op deze site vandaan.",
     "factRoleK": "Rol",
     "factRoleV": "Head of Data · Engineer & Researcher",
     "factBasisK": "Basis",
@@ -374,7 +375,7 @@
     "kicker": "Bewijs: uitkomsten die zijn gerealiseerd",
     "titlePrefix": "Wat er is",
     "titleItalic": "opgeleverd",
-    "titleSuffix": "— en is blijven draaien.",
+    "titleSuffix": "en is blijven draaien.",
     "quote": "",
     "quoteAttribution": "",
     "outcomes": [
@@ -428,10 +429,10 @@
     "inlineHeading": "Ontvang het volgende stuk per e-mail",
     "inlineDescription": "Abonneer, geen spam, je kunt je altijd uitschrijven.",
     "homeThoughtsHeading": "Ontvang het volgende stuk.",
-    "homeThoughtsDescription": "Notities uit het veld — af en toe over stadsdynamiek, geospatial methoden en wat er misgaat in productie.",
+    "homeThoughtsDescription": "Notities uit het veld: af en toe over stadsdynamiek, geospatial methoden en wat er misgaat in productie.",
     "emailPlaceholder": "jij@domein.com",
     "submit": "Abonneer",
-    "success": "Dank je — je staat op de lijst.",
+    "success": "Dank je, je staat op de lijst.",
     "error": "Er ging iets mis. Probeer opnieuw of mail rechtstreeks.",
     "privacy": "Je adres wordt niet gedeeld."
   },
@@ -441,7 +442,7 @@
     "titleRest": "sporen.",
     "subtitle": "Eén data- en systeemtoolkit, vier sporen: pijplijnen bouwen, de platformen eronder ontwerpen, lastige datatypes tot producten vormen, en de analytics erbovenop.",
     "appliedAcross": "Toegepast in: stedelijke planning · vastgoed · klimaatrisico · logistiek & mobiliteit · publieke sector",
-    "automationNote": "Ook onder de motorkap: LLM/RAG-pijplijnen en interne tools die classificatie, onderzoek en rapportage automatiseren — productie-AI als bereik, niet als kop.",
+    "automationNote": "Ook onder de motorkap: LLM/RAG-pijplijnen en interne tools die classificatie, onderzoek en rapportage automatiseren. Productie-AI als bereik, niet als kop.",
     "items": [
       {
         "name": "Data engineering",
@@ -456,7 +457,7 @@
       },
       {
         "name": "Systeemarchitectuur",
-        "blurb": "De platformen eronder: cloud en bare-metal, PostGIS, gedistribueerd rekenen, Linux, netwerken, API's en security — 13 servers gerund als productie-infrastructuur, geen hobbyprojecten.",
+        "blurb": "De platformen eronder: cloud en bare-metal, PostGIS, gedistribueerd rekenen, Linux, netwerken, API's en security. 13 servers gerund als productie-infrastructuur, geen hobbyprojecten.",
         "stack": [
           "cloud",
           "PostGIS",
@@ -468,7 +469,7 @@
       },
       {
         "name": "Complexe dataproducten",
-        "blurb": "Lastige datatypes omzetten in producten die gebruikt worden: ruimtelijke en netwerkdata, documentpijplijnen op LLM's en OCR, grafen en tijdreeksen — end-to-end van methode tot geleverde API.",
+        "blurb": "Lastige datatypes omzetten in producten die gebruikt worden: ruimtelijke en netwerkdata, documentpijplijnen op LLM's en OCR, grafen en tijdreeksen, end-to-end van methode tot geleverde API.",
         "stack": [
           "spatial",
           "graphs",
@@ -478,7 +479,7 @@
       },
       {
         "name": "Analytics & ML",
-        "blurb": "De analyselaag erbovenop: tijdreeksmodellen en nowcasting, regressies en causale designs, en toegepaste ML die daadwerkelijk shipt — van hedonische prijsmodellen tot sequence taggers.",
+        "blurb": "De analyselaag erbovenop: tijdreeksmodellen en nowcasting, regressies en causale designs, en toegepaste ML die daadwerkelijk shipt, van hedonische prijsmodellen tot sequence taggers.",
         "stack": [
           "time series",
           "nowcasting",

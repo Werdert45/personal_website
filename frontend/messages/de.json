@@ -30,7 +30,7 @@
     "title": "Komplexe Daten,",
     "titleHighlight": "transformiert",
     "titleEnd": "zu Erkenntnissen.",
-    "description": "Ich baue und leite Produktionsdatensysteme und die Analytik darauf: gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistiken und träge Zeitreihen, Dokumentpipelines auf LLMs und OCR sowie Geo- und Netzwerkdaten. Letzteres ist der Forschungssitz — urbane Dynamik, Wohnungsmärkte, Erreichbarkeit — aus dem die Papers auf dieser Website stammen.",
+    "description": "Ich baue und leite Produktionsdatensysteme und die Analytik darauf: gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistiken und träge Zeitreihen, Dokumentpipelines auf LLMs und OCR sowie Geo- und Netzwerkdaten. Letzteres ist der Forschungssitz: urbane Dynamik, Wohnungsmärkte, Erreichbarkeit. Von dort stammen die Papers auf dieser Website.",
     "aboutMe": "Über mich",
     "workWithMe": "Kontakt aufnehmen",
     "expertise": "Expertise:",
@@ -42,7 +42,7 @@
     ]
   },
   "About": {
-    "publicationsKicker": "Publikationen & Papers",
+    "publicationsKicker": "Papers",
     "publicationsEmpty": "Papers erscheinen hier, sobald sie veröffentlicht sind.",
     "publicationsViewAll": "Alle Papers →",
     "expertiseBadge": "Expertise",
@@ -51,14 +51,14 @@
     "educationBadge": "Ausbildung",
     "experienceBadge": "Erfahrung",
     "educationSubtitle": "Starke Grundlage in KI, Data Science und Business Analytics von führenden europäischen Institutionen.",
-    "experienceSubtitle": "5+ Jahre produktionsreife Datensysteme gebaut und geleitet — Pipelines, Forecasting, Geodaten — über europäische Märkte und akademische Forschung hinweg.",
+    "experienceSubtitle": "5+ Jahre produktionsreife Datensysteme gebaut und geleitet (Pipelines, Forecasting, Geodaten), über europäische Märkte und akademische Forschung hinweg.",
     "sectionKicker": "Über: wer, wo, wie",
     "heroTitleLine1a": "Data",
     "heroTitleLine1aItalic": "Lead",
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systeme",
     "heroTitleLine3": "& Forschung.",
-    "lede1": "Von Amsterdam aus leite ich Datenteams und baue, was sie betreiben: Webscraping-Pipelines mit 300k Datensätzen pro Woche, Forecasting und Nowcasting auf amtlichen Statistiken, Dokumentpipelines auf LLMs und OCR sowie Geodatenprodukte. Das Handwerk darunter ist Systemdesign: Die Architektur entscheidet, ob eine Pipeline im dritten Jahr noch läuft. Der Forschungssitz bleibt warm — urbane Dynamik, Gentrifizierung, Erreichbarkeit auf Parzellenebene — weil Städte dort sind, wo Datenprobleme hart werden. Data Lead von Beruf; Geodatenspezialist in der Tiefe.",
+    "lede1": "Von Amsterdam aus leite ich Datenteams und baue, was sie betreiben: Webscraping-Pipelines mit 300k Datensätzen pro Woche, Forecasting und Nowcasting auf amtlichen Statistiken, Dokumentpipelines auf LLMs und OCR sowie Geodatenprodukte. Das Handwerk darunter ist Systemdesign: Die Architektur entscheidet, ob eine Pipeline im dritten Jahr noch läuft. Der Forschungssitz bleibt warm, mit urbaner Dynamik, Gentrifizierung und Erreichbarkeit auf Parzellenebene, weil Städte dort sind, wo Datenprobleme hart werden. Data Lead von Beruf; Geodatenspezialist in der Tiefe.",
     "lede2": "Meine Überzeugung: meinungsstarke interne Tools schlagen große Plattformen; eine kalibrierte Pipeline schlägt eine clevere; und eine Karte sollte eine Frage beantworten, nicht Komplexität inszenieren.",
     "portraitCaption": "IAN · AMS · 2026",
     "journeyTitlePrefixItalic": "Fünf",
@@ -67,11 +67,11 @@
     "expertise": [
       {
         "title": "Datenarchitektur & Pipelines",
-        "description": "Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 300k Datensätze pro Woche — Schema, Orchestrierung und Fehlerbehandlung von Anfang an entworfen, mit Airflow und PostGIS im Unterbau."
+        "description": "Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 300k Datensätze pro Woche. Schema, Orchestrierung und Fehlerbehandlung von Anfang an entworfen, mit Airflow und PostGIS im Unterbau."
       },
       {
         "title": "Netzwerkwissenschaft",
-        "description": "Graphmethoden auf realen Geografien — ein sättigungsvalidierter Connectivity Score auf Parzellenauflösung, Forschung zu Erreichbarkeit und Konnektivität."
+        "description": "Graphmethoden auf realen Geografien: ein sättigungsvalidierter Connectivity Score auf Parzellenauflösung, Forschung zu Erreichbarkeit und Konnektivität."
       },
       {
         "title": "Zeitreihen & Forecasting",
@@ -83,17 +83,18 @@
       },
       {
         "title": "Product Ownership & Führung",
-        "description": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API — ein 13-Server-Build, zwei Wochen vor Plan und im Budget geliefert, sowie ein Team von 4–5 geführt bei KR&A."
+        "description": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API: ein 13-Server-Build, zwei Wochen vor Plan und im Budget geliefert, sowie ein Team von 4–5 geführt bei KR&A."
       }
     ],
-    "downloadCv": "Lebenslauf herunterladen (PDF)"
+    "downloadCv": "Lebenslauf herunterladen (PDF)",
+    "cvBelow": "Vollständiger Lebenslauf unten ↓"
   },
   "AboutPage": {
     "readMore": "Weiterlesen",
     "backToAbout": "Zurück zu Über Mich"
   },
   "Research": {
-    "loadingFallback": "Der Paper-Index ist vorübergehend nicht erreichbar — gleich erneut versuchen.",
+    "loadingFallback": "Der Paper-Index ist vorübergehend nicht erreichbar. Gleich erneut versuchen.",
     "title": "Forschung & Artikel",
     "searchPlaceholder": "Artikel suchen...",
     "readMore": "Weiterlesen",
@@ -101,7 +102,7 @@
     "loading": "Forschungsartikel werden geladen...",
     "previewBadge": "Forschung & Blog",
     "viewAll": "Alle Ansehen",
-    "listKicker": "Forschung: Papers, Methoden, Publikationen",
+    "listKicker": "Forschung: Papers & Methoden",
     "listTitlePrefix": "Papers",
     "listTitleItalic": "und Preprints",
     "listTitleAmp": "& laufende",
@@ -119,7 +120,7 @@
     "youMightAlsoLike": "Das könnte Sie auch interessieren",
     "readArticle": "Artikel lesen",
     "endCtaKicker": "§ Weiter",
-    "endCtaHeading": "Fragen zu einer Methode, einem Datensatz oder einer Rolle — melden Sie sich.",
+    "endCtaHeading": "Fragen zu einer Methode, einem Datensatz oder einer Rolle? Melden Sie sich.",
     "endCtaButton": "Kontakt aufnehmen",
     "indexDiscuss": "Kontakt aufnehmen"
   },
@@ -127,12 +128,12 @@
     "aboutBadge": "Über Mich",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data · Engineer & Forscher",
-    "bio": "Ich baue und leite Produktionsdatensysteme und die Analytik darauf — gescrapte Marktdaten, amtliche Statistiken und Zeitreihen, Dokumentpipelines auf LLMs und OCR sowie Geo- und Netzwerkdaten — mit einer Forschungsspezialisierung in urbaner Dynamik. Die Papers und die Engineering-Fallstudien dahinter finden Sie auf dieser Seite.",
+    "bio": "Ich baue und leite Produktionsdatensysteme und die Analytik darauf: gescrapte Marktdaten, amtliche Statistiken und Zeitreihen, Dokumentpipelines auf LLMs und OCR sowie Geo- und Netzwerkdaten, mit einer Forschungsspezialisierung in urbaner Dynamik. Die Papers und die Engineering-Fallstudien dahinter finden Sie auf dieser Seite.",
     "location": "Amsterdam, Niederlande",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ Jahre in Data Engineering & räumlicher Analytik",
     "formTitle": "Kontakt Aufnehmen",
-    "formSubtitle": "Fragen zur Forschung, zu den Pipelines, zu einer Rolle oder einer Zusammenarbeit — schreiben Sie mir gern.",
+    "formSubtitle": "Fragen zur Forschung, zu den Pipelines, zu einer Rolle oder einer Zusammenarbeit? Schreiben Sie mir gern.",
     "nameLabel": "Name",
     "namePlaceholder": "Ihr Name",
     "emailLabel": "E-Mail",
@@ -169,13 +170,13 @@
     "kicker": "Projekte & Paper: Systeme, Produkte, Forschung",
     "titlePrefix": "Projekte",
     "titleItalic": "& Paper.",
-    "subtitle": "Neun Arbeiten über die vier Spuren — Produktionssysteme, ausgelieferte Produkte und die Forschung, die sie möglich machen.",
+    "subtitle": "Neun Arbeiten über die vier Spuren: Produktionssysteme, ausgelieferte Produkte und die Forschung, die sie möglich machen.",
     "items": [
       {
         "viz": "language",
         "badge": "PROJECT",
         "sector": "KI-Produkt",
-        "title": "LanguageBuddy — AI language tutor",
+        "title": "LanguageBuddy: AI language tutor",
         "outcome": "Ein selbst gehosteter KI-Sprachtutor für Niederländisch, Italienisch und Spanisch: mit einem LLM-Tutor chatten oder telefonieren, und jeder Fehler landet in einer Spaced-Repetition-Warteschlange, die die Übungen des nächsten Tages, Lesetexte aus echten Nachrichten und druckbare Arbeitshefte speist. Adaptive CEFR-Einstufung, 6.200+ kuratierte Vokabeleinträge, eine Suite mit 336 Tests.",
         "stack": [
           "FastAPI",
@@ -191,7 +192,7 @@
         "badge": "RESEARCH",
         "sector": "MSc-Arbeit · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "Ein agentenbasiertes Modell von Nachbarschaftswandel: Haushalte und Vermieter interagieren auf echten Parzellendaten für Amsterdam, Utrecht und Mailand und reproduzieren Gentrifizierungswellen aus dem Wechselspiel von Attraktivität und Leistbarkeit — mit einer Erweiterung für sozialen Wohnbau in Arbeit.",
+        "outcome": "Ein agentenbasiertes Modell von Nachbarschaftswandel: Haushalte und Vermieter interagieren auf echten Parzellendaten für Amsterdam, Utrecht und Mailand und reproduzieren Gentrifizierungswellen aus dem Wechselspiel von Attraktivität und Leistbarkeit, mit einer Erweiterung für sozialen Wohnbau in Arbeit.",
         "stack": [
           "Python",
           "Mesa",
@@ -219,7 +220,7 @@
         "badge": "KR&A",
         "sector": "Entwickelt bei KR&A",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Eine Web-Scraping-Pipeline über 13 Länder, die eine hedonische Log-Preis-Regression speist; monatliche Indizes getestet als Disaggregationsindikatoren für die Quartals-HPIs von Eurostat — und die Preisdaten hinter dem Metro-Kapitalisierungspaper.",
+        "outcome": "Eine Web-Scraping-Pipeline über 13 Länder, die eine hedonische Log-Preis-Regression speist; monatliche Indizes getestet als Disaggregationsindikatoren für die Quartals-HPIs von Eurostat. Sie liefert zudem die Preisdaten hinter dem Metro-Kapitalisierungspaper.",
         "stack": [
           "Python",
           "Scrapy",
@@ -234,7 +235,7 @@
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Jedes Forschungsprojekt dieser Seite als wahrheitsgetreue Airflow-3-DAG neu gebaut — echte Skripte, echte Idempotenz-Guards, eigene Operatoren, Tests und CI — skalierend vom Laptop bis zum Multi-Maschinen-CeleryExecutor-Cluster. Als Fallstudienserie aufgeschrieben.",
+        "outcome": "Jedes Forschungsprojekt dieser Seite als wahrheitsgetreue Airflow-3-DAG neu gebaut (echte Skripte, echte Idempotenz-Guards, eigene Operatoren, Tests und CI), skalierend vom Laptop bis zum Multi-Maschinen-CeleryExecutor-Cluster. Als Fallstudienserie aufgeschrieben.",
         "stack": [
           "Airflow",
           "Celery",
@@ -261,9 +262,9 @@
       {
         "viz": "sponsor",
         "badge": "PROJECT",
-        "sector": "NLP · Live-Demo",
-        "title": "SponsoredBye — sponsor-segment detection",
-        "outcome": "Ein rein textbasierter Sponsor-Skipper für YouTube, gebaut bevor YouTube Premium einen auslieferte: sentence-T5-Embeddings speisen einen BiLSTM-Sequence-Tagger, der gesponserte Sätze markiert und auf Zeitstempel zurückrechnet. Live-Demo auf Hugging Face Spaces.",
+        "sector": "NLP · Sequence-Tagging",
+        "title": "SponsoredBye: sponsor-segment detection",
+        "outcome": "Ein rein textbasierter Sponsor-Skipper für YouTube, gebaut bevor YouTube Premium einen auslieferte: sentence-T5-Embeddings speisen einen BiLSTM-Sequence-Tagger, der gesponserte Sätze markiert und auf Zeitstempel zurückrechnet. Der Segmentierungsfehler sinkt von 99% auf 16% WindowDiff.",
         "stack": [
           "TensorFlow",
           "BiLSTM",
@@ -271,13 +272,13 @@
           "MongoDB",
           "Gradio"
         ],
-        "link": "https://huggingface.co/spaces/sponsored-bye/sponsoredbye"
+        "link": "/research/sponsoredbye-sponsored-segment-detection"
       },
       {
         "viz": "fish",
         "badge": "PROJECT",
         "sector": "Mobile ML",
-        "title": "FishFinder — photo-to-species ID",
+        "title": "FishFinder: photo-to-species ID",
         "outcome": "Eine Flutter-App, die 63 niederländische Fischarten vom Foto erkennt, vollständig on-device, und mit jedem Fang eine Pokédex-artige FishDex füllt. Die Trainingspipeline: ~3.000 handannotierte Fotos mit Segment Anything maskiert, dann ein feingetuntes ResNet50, komprimiert auf ein 8,8-MB-TFLite-Modell.",
         "stack": [
           "Flutter",
@@ -320,7 +321,7 @@
     "kicker": "Arbeiten: Fallstudien & Feldnotizen",
     "recentTitle": "Aktuelle",
     "recentItalic": "Arbeiten",
-    "subtitle": "Fallstudien aus ausgelieferten Projekten — was gebaut wurde, was kaputtging und was sich dadurch verändert hat.",
+    "subtitle": "Fallstudien aus ausgelieferten Projekten: was gebaut wurde, was kaputtging und was sich dadurch verändert hat.",
     "loading": "Lädt…",
     "featuredKicker": "Hervorgehoben ·",
     "readPiece": "Beitrag lesen →",
@@ -342,9 +343,9 @@
     "endCtaBody": "Stöbere durch weitere Essays zu Geodaten, KI/ML und Operations, oder lies mehr über die Person hinter den Texten.",
     "endCtaButton": "Mehr Texte",
     "endCtaSecondary": "Über mich",
-    "endCtaContact": "Fragen zum Build — melden Sie sich",
+    "endCtaContact": "Fragen zum Build? Melden Sie sich",
     "relatedKicker": "Verwandte Arbeiten",
-    "empty": "Die ersten Beiträge erscheinen im August 2026 — Fallstudien zum Data Engineering hinter der Forschung."
+    "empty": "Die ersten Beiträge, Fallstudien zum Data Engineering hinter der Forschung, erscheinen im August 2026."
   },
   "Author": {
     "roleLine": "Head of Data · Engineer & Forscher",
@@ -357,8 +358,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ich baue Produktiv-",
     "titleLine2Underline": "systeme.",
-    "bio1": "Ich arbeite als Head of Data: Ich baue und führe die Systeme, die Daten in großem Maßstab sammeln, speichern und bereitstellen — und die Analytik darauf. Gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistik und langsame Zeitreihen, Dokumentenpipelines auf LLMs und OCR sowie räumliche und Netzwerkdaten.",
-    "bio2": "Letzteres ist der Forschungssitz: urbane Dynamik, Wohnungsmärkte, Erreichbarkeit — daher stammen die Paper auf dieser Seite.",
+    "bio1": "Ich arbeite als Head of Data: Ich baue und führe die Systeme, die Daten in großem Maßstab sammeln, speichern und bereitstellen, und die Analytik darauf. Gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistik und langsame Zeitreihen, Dokumentenpipelines auf LLMs und OCR sowie räumliche und Netzwerkdaten.",
+    "bio2": "Letzteres ist der Forschungssitz: urbane Dynamik, Wohnungsmärkte, Erreichbarkeit. Daher stammen die Paper auf dieser Seite.",
     "factRoleK": "Rolle",
     "factRoleV": "Head of Data · Engineer & Researcher",
     "factBasisK": "Standort",
@@ -428,7 +429,7 @@
     "inlineHeading": "Den nächsten Beitrag per E-Mail erhalten",
     "inlineDescription": "Abonniere, kein Spam, jederzeit kündbar.",
     "homeThoughtsHeading": "Noch nicht bereit zu reden? Hol dir den nächsten Beitrag.",
-    "homeThoughtsDescription": "Notizen aus dem Feld — gelegentliche Beiträge zu Stadtdynamik, Geospatial-Methoden und was in der Produktion schief geht.",
+    "homeThoughtsDescription": "Notizen aus dem Feld: gelegentliche Beiträge zu Stadtdynamik, Geospatial-Methoden und was in der Produktion schief geht.",
     "emailPlaceholder": "du@domain.com",
     "submit": "Abonnieren",
     "success": "Danke, wir melden uns.",
@@ -441,7 +442,7 @@
     "titleRest": "Spuren.",
     "subtitle": "Ein Daten- und System-Toolkit, vier Spuren: Pipelines bauen, die Plattformen darunter entwerfen, schwierige Datentypen zu Produkten formen und die Analytik obendrauf.",
     "appliedAcross": "Eingesetzt in: Stadtplanung · Immobilien · Klimarisiko · Logistik & Mobilität · öffentlicher Sektor",
-    "automationNote": "Außerdem unter der Haube: LLM/RAG-Pipelines und interne Tools, die Klassifikation, Recherche und Reporting automatisieren — Produktions-KI als Spannweite, nicht als Schlagzeile.",
+    "automationNote": "Außerdem unter der Haube: LLM/RAG-Pipelines und interne Tools, die Klassifikation, Recherche und Reporting automatisieren. Produktions-KI als Spannweite, nicht als Schlagzeile.",
     "items": [
       {
         "name": "Data Engineering",
@@ -456,7 +457,7 @@
       },
       {
         "name": "Systemarchitektur",
-        "blurb": "Die Plattformen darunter: Cloud und Bare-Metal, PostGIS, verteiltes Rechnen, Linux, Netzwerke, APIs und Security — 13 Server als Produktionsinfrastruktur betrieben.",
+        "blurb": "Die Plattformen darunter: Cloud und Bare-Metal, PostGIS, verteiltes Rechnen, Linux, Netzwerke, APIs und Security. 13 Server als Produktionsinfrastruktur betrieben.",
         "stack": [
           "cloud",
           "PostGIS",
@@ -468,7 +469,7 @@
       },
       {
         "name": "Komplexe Datenprodukte",
-        "blurb": "Schwierige Datentypen zu Produkten machen: räumliche und Netzwerkdaten, Dokumentenpipelines auf LLMs und OCR, Graphen und Zeitreihen — end-to-end von der Methode bis zur ausgelieferten API.",
+        "blurb": "Schwierige Datentypen zu Produkten machen: räumliche und Netzwerkdaten, Dokumentenpipelines auf LLMs und OCR, Graphen und Zeitreihen, end-to-end von der Methode bis zur ausgelieferten API.",
         "stack": [
           "spatial",
           "graphs",
@@ -478,7 +479,7 @@
       },
       {
         "name": "Analytics & ML",
-        "blurb": "Die Analyseschicht darüber: Zeitreihenmodelle und Nowcasting, Regressionen und kausale Designs und angewandtes ML, das wirklich in Produktion geht — von hedonischen Preismodellen bis zu Sequence-Taggern.",
+        "blurb": "Die Analyseschicht darüber: Zeitreihenmodelle und Nowcasting, Regressionen und kausale Designs und angewandtes ML, das wirklich in Produktion geht, von hedonischen Preismodellen bis zu Sequence-Taggern.",
         "stack": [
           "time series",
           "nowcasting",

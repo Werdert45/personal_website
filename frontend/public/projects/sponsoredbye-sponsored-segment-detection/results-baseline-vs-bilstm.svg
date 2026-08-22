@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 400" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <rect width="760" height="400" fill="#FCFBF7"/>
+  <text x="40" y="34" font-size="12" fill="#111110" letter-spacing="1">BASELINE (LOGISTIC) VS BILSTM SEQUENCE TAGGER</text>
+  <text x="40" y="50" font-size="8" fill="#8A8676">HELD-OUT YOUTUBE TRANSCRIPTS · SENTENCE-LEVEL SPONSOR TAGS</text>
+
+  <!-- Panel A: segmentation error, lower is better -->
+  <g transform="translate(40,80)">
+    <text x="0" y="0" font-size="9" fill="#111110">SEGMENTATION ERROR</text>
+    <text x="0" y="12" font-size="7" fill="#8A8676">LOWER IS BETTER</text>
+    <line x1="0" y1="230" x2="300" y2="230" stroke="#111110" stroke-width="1"/>
+    <line x1="0" y1="30" x2="0" y2="230" stroke="#111110" stroke-width="1"/>
+    <g stroke="#E5E2D9" stroke-width="0.6">
+      <line x1="0" y1="130" x2="300" y2="130"/>
+      <line x1="0" y1="80" x2="300" y2="80"/>
+      <line x1="0" y1="180" x2="300" y2="180"/>
+    </g>
+    <text x="-6" y="233" font-size="7" fill="#8A8676" text-anchor="end">0</text>
+    <text x="-6" y="133" font-size="7" fill="#8A8676" text-anchor="end">50</text>
+    <text x="-6" y="33" font-size="7" fill="#8A8676" text-anchor="end">100%</text>
+
+    <!-- WindowDiff: baseline 99.14, lstm 15.59 (scale: 2px per %) -->
+    <rect x="30" y="31.7" width="40" height="198.3" fill="#111110" opacity="0.85"/>
+    <rect x="76" y="198.8" width="40" height="31.2" fill="#FFD60A" stroke="#111110" stroke-width="0.8"/>
+    <text x="50" y="26" font-size="8" fill="#111110" text-anchor="middle">99.1</text>
+    <text x="96" y="193" font-size="8" fill="#111110" text-anchor="middle">15.6</text>
+    <text x="73" y="245" font-size="8" fill="#111110" text-anchor="middle">WINDOWDIFF</text>
+
+    <!-- Pk: baseline 76.00, lstm 12.05 -->
+    <rect x="170" y="78" width="40" height="152" fill="#111110" opacity="0.85"/>
+    <rect x="216" y="205.9" width="40" height="24.1" fill="#FFD60A" stroke="#111110" stroke-width="0.8"/>
+    <text x="190" y="72" font-size="8" fill="#111110" text-anchor="middle">76.0</text>
+    <text x="236" y="200" font-size="8" fill="#111110" text-anchor="middle">12.1</text>
+    <text x="213" y="245" font-size="8" fill="#111110" text-anchor="middle">PK</text>
+  </g>
+
+  <!-- Panel B: F1, higher is better -->
+  <g transform="translate(420,80)">
+    <text x="0" y="0" font-size="9" fill="#111110">CLASSIFICATION F1</text>
+    <text x="0" y="12" font-size="7" fill="#8A8676">HIGHER IS BETTER</text>
+    <line x1="0" y1="230" x2="300" y2="230" stroke="#111110" stroke-width="1"/>
+    <line x1="0" y1="30" x2="0" y2="230" stroke="#111110" stroke-width="1"/>
+    <g stroke="#E5E2D9" stroke-width="0.6">
+      <line x1="0" y1="130" x2="300" y2="130"/>
+      <line x1="0" y1="80" x2="300" y2="80"/>
+      <line x1="0" y1="180" x2="300" y2="180"/>
+    </g>
+    <text x="-6" y="233" font-size="7" fill="#8A8676" text-anchor="end">0</text>
+    <text x="-6" y="133" font-size="7" fill="#8A8676" text-anchor="end">50</text>
+    <text x="-6" y="33" font-size="7" fill="#8A8676" text-anchor="end">100%</text>
+
+    <!-- macro F1: baseline 56.61, lstm 86.15 -->
+    <rect x="30" y="116.8" width="40" height="113.2" fill="#111110" opacity="0.85"/>
+    <rect x="76" y="57.7" width="40" height="172.3" fill="#FFD60A" stroke="#111110" stroke-width="0.8"/>
+    <text x="50" y="111" font-size="8" fill="#111110" text-anchor="middle">56.6</text>
+    <text x="96" y="52" font-size="8" fill="#111110" text-anchor="middle">86.2</text>
+    <text x="73" y="245" font-size="8" fill="#111110" text-anchor="middle">MACRO F1</text>
+
+    <!-- micro F1: baseline 68.91, lstm 89.36 -->
+    <rect x="170" y="92.2" width="40" height="137.8" fill="#111110" opacity="0.85"/>
+    <rect x="216" y="51.3" width="40" height="178.7" fill="#FFD60A" stroke="#111110" stroke-width="0.8"/>
+    <text x="190" y="86" font-size="8" fill="#111110" text-anchor="middle">68.9</text>
+    <text x="236" y="46" font-size="8" fill="#111110" text-anchor="middle">89.4</text>
+    <text x="213" y="245" font-size="8" fill="#111110" text-anchor="middle">MICRO F1</text>
+  </g>
+
+  <!-- legend -->
+  <g transform="translate(40,370)" font-size="8">
+    <rect x="0" y="-8" width="10" height="10" fill="#111110" opacity="0.85"/>
+    <text x="16" y="0" fill="#111110">LOGISTIC BASELINE</text>
+    <rect x="130" y="-8" width="10" height="10" fill="#FFD60A" stroke="#111110" stroke-width="0.8"/>
+    <text x="146" y="0" fill="#111110">T5 EMBEDDINGS + BILSTM</text>
+  </g>
+</svg>

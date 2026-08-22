@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/projects`;
   const description =
-    "Projects and papers by Ian Ronk — production data systems, shipped products, and research on urban dynamics, housing markets and geospatial methods.";
+    "Projects and papers by Ian Ronk: production data systems, shipped products, and research on urban dynamics, housing markets and geospatial methods.";
   return {
     title: "Projects & Papers",
     description,

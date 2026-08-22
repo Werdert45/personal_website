@@ -14,7 +14,7 @@ export const resumeSections = {
 export const resume = {
   header: {
     name: "Ian Ronk",
-    roleLine: "Data Lead & Engineer · Independent Researcher",
+    roleLine: "Head of Data · Engineer & Researcher",
     location: "Amsterdam, NL",
     email: "ianronk0@gmail.com",
     links: [

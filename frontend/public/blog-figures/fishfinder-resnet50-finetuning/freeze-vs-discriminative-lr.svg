@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 420" font-family="ui-monospace, SFMono-Regular, Menlo, monospace">
+  <rect width="760" height="420" fill="#FCFBF7"/>
+  <text x="40" y="34" font-size="12" fill="#111110" letter-spacing="1">TWO WAYS TO FINE-TUNE A PRETRAINED BACKBONE</text>
+
+  <!-- shared block layout: conv1, layer1..layer4, fc -->
+  <!-- Row 1: hard freezing -->
+  <g transform="translate(40,70)">
+    <text x="0" y="0" font-size="9" fill="#111110">A · HARD FREEZING (FISHFINDER V1, MOBILENETV2)</text>
+    <text x="0" y="13" font-size="7" fill="#8A8676">BACKBONE LOCKED · ONLY THE NEW HEAD LEARNS</text>
+    <g transform="translate(0,26)">
+      <!-- frozen blocks -->
+      <g>
+        <rect x="0" y="0" width="88" height="52" fill="#F6F4EE" stroke="#111110" stroke-width="0.8"/>
+        <rect x="96" y="0" width="110" height="52" fill="#F6F4EE" stroke="#111110" stroke-width="0.8"/>
+        <rect x="214" y="0" width="110" height="52" fill="#F6F4EE" stroke="#111110" stroke-width="0.8"/>
+        <rect x="332" y="0" width="110" height="52" fill="#F6F4EE" stroke="#111110" stroke-width="0.8"/>
+        <rect x="450" y="0" width="110" height="52" fill="#F6F4EE" stroke="#111110" stroke-width="0.8"/>
+        <text x="44" y="24" font-size="7.5" fill="#111110" text-anchor="middle">STEM</text>
+        <text x="151" y="24" font-size="7.5" fill="#111110" text-anchor="middle">EARLY BLOCKS</text>
+        <text x="269" y="24" font-size="7.5" fill="#111110" text-anchor="middle">MID BLOCKS</text>
+        <text x="387" y="24" font-size="7.5" fill="#111110" text-anchor="middle">MID BLOCKS</text>
+        <text x="505" y="24" font-size="7.5" fill="#111110" text-anchor="middle">LATE BLOCKS</text>
+        <!-- lock glyphs -->
+        <g fill="none" stroke="#8A8676" stroke-width="1">
+          <rect x="38" y="32" width="12" height="9" rx="1"/><path d="M41 32v-3a3 3 0 0 1 6 0v3"/>
+          <rect x="145" y="32" width="12" height="9" rx="1"/><path d="M148 32v-3a3 3 0 0 1 6 0v3"/>
+          <rect x="263" y="32" width="12" height="9" rx="1"/><path d="M266 32v-3a3 3 0 0 1 6 0v3"/>
+          <rect x="381" y="32" width="12" height="9" rx="1"/><path d="M384 32v-3a3 3 0 0 1 6 0v3"/>
+          <rect x="499" y="32" width="12" height="9" rx="1"/><path d="M502 32v-3a3 3 0 0 1 6 0v3"/>
+        </g>
+      </g>
+      <!-- trainable head -->
+      <rect x="568" y="0" width="92" height="52" fill="#FFD60A" stroke="#111110" stroke-width="1"/>
+      <text x="614" y="24" font-size="7.5" fill="#111110" text-anchor="middle">NEW HEAD</text>
+      <text x="614" y="36" font-size="7" fill="#111110" text-anchor="middle">SOFTMAX</text>
+      <!-- lr labels -->
+      <text x="280" y="72" font-size="8" fill="#8A8676">LEARNING RATE = 0 EVERYWHERE IN THE BACKBONE</text>
+      <text x="568" y="72" font-size="8" fill="#111110">HEAD: FULL LR</text>
+    </g>
+  </g>
+
+  <!-- Row 2: discriminative LRs -->
+  <g transform="translate(40,230)">
+    <text x="0" y="0" font-size="9" fill="#111110">B · DISCRIMINATIVE LEARNING RATES (FISHFINDER V2, RESNET50)</text>
+    <text x="0" y="13" font-size="7" fill="#8A8676">EVERY LAYER LEARNS · EARLY LAYERS MOVE SLOWEST</text>
+    <g transform="translate(0,26)">
+      <!-- blocks shaded by LR (opacity ramp), yellow head -->
+      <rect x="0" y="0" width="88" height="52" fill="#FFD60A" opacity="0.12" stroke="#111110" stroke-width="0.8"/>
+      <rect x="96" y="0" width="110" height="52" fill="#FFD60A" opacity="0.22" stroke="#111110" stroke-width="0.8"/>
+      <rect x="214" y="0" width="110" height="52" fill="#FFD60A" opacity="0.35" stroke="#111110" stroke-width="0.8"/>
+      <rect x="332" y="0" width="110" height="52" fill="#FFD60A" opacity="0.5" stroke="#111110" stroke-width="0.8"/>
+      <rect x="450" y="0" width="110" height="52" fill="#FFD60A" opacity="0.72" stroke="#111110" stroke-width="0.8"/>
+      <rect x="568" y="0" width="92" height="52" fill="#FFD60A" stroke="#111110" stroke-width="1"/>
+      <text x="44" y="24" font-size="7.5" fill="#111110" text-anchor="middle">CONV1 · BN1</text>
+      <text x="151" y="24" font-size="7.5" fill="#111110" text-anchor="middle">LAYER1</text>
+      <text x="269" y="24" font-size="7.5" fill="#111110" text-anchor="middle">LAYER2</text>
+      <text x="387" y="24" font-size="7.5" fill="#111110" text-anchor="middle">LAYER3</text>
+      <text x="505" y="24" font-size="7.5" fill="#111110" text-anchor="middle">LAYER4</text>
+      <text x="614" y="24" font-size="7.5" fill="#111110" text-anchor="middle">FC</text>
+      <text x="44" y="40" font-size="7" fill="#111110" text-anchor="middle">LR / 10</text>
+      <text x="151" y="40" font-size="7" fill="#111110" text-anchor="middle">LR / 8</text>
+      <text x="269" y="40" font-size="7" fill="#111110" text-anchor="middle">LR / 6</text>
+      <text x="387" y="40" font-size="7" fill="#111110" text-anchor="middle">LR / 4</text>
+      <text x="505" y="40" font-size="7" fill="#111110" text-anchor="middle">LR / 2</text>
+      <text x="614" y="40" font-size="7" fill="#111110" text-anchor="middle">FULL LR</text>
+      <!-- gradient arrow -->
+      <line x1="0" y1="72" x2="660" y2="72" stroke="#111110" stroke-width="0.8" marker-end="url(#arr)"/>
+      <text x="0" y="86" font-size="7" fill="#8A8676">GENERAL FEATURES (EDGES, TEXTURES)</text>
+      <text x="660" y="86" font-size="7" fill="#8A8676" text-anchor="end">TASK-SPECIFIC FEATURES (FISH)</text>
+    </g>
+  </g>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#111110"/>
+    </marker>
+  </defs>
+</svg>

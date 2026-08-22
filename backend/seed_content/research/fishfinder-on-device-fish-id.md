@@ -1,5 +1,5 @@
 ---
-title: "FishFinder — photo-to-species identification for 63 Dutch fish, fully on-device"
+title: "FishFinder: photo-to-species identification for 63 Dutch fish, fully on-device"
 slug: fishfinder-on-device-fish-id
 excerpt: "Photograph a fish, get the species. On-device, no signal needed. A cross-platform app with a locally hosted classifier and a Pokédex-style FishDex, built on a training pipeline where one click per photo drives Segment Anything masking of ~3,000 self-collected images."
 status: published

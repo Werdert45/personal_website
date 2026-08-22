@@ -41,10 +41,9 @@ export function ResumeSection() {
   const { languages, softSkills } = resume.header || {};
 
   return (
-    <section className="xp">
+    <section className="xp" id="resume">
       <div className="section-label">
         <span className="bar" />
-        <span className="num-label">§ 04</span>
         <span>{resumeSections.kicker}</span>
       </div>
       <h2>
