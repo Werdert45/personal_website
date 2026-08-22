@@ -1,130 +1,36 @@
 "use client";
 
-import { useId } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { useLocale, useTranslations } from "next-intl";
 import { trackEvent } from "@/lib/analytics";
+import {
+  VizLanguage,
+  VizABM,
+  VizConnectivity,
+  VizHedonic,
+  VizPipelines,
+  VizTransfer,
+  VizSponsor,
+  VizFish,
+  VizFlood,
+} from "./project-viz";
 
-function VizABM({ titleText }) {
-  const reactId = useId();
-  const titleId = `vizABM-${reactId}`;
-  const cells = [];
-  const seed = (r, c) => Math.sin(r * 5.13 + c * 1.7) * 1000;
-  for (let r = 0; r < 8; r++) {
-    for (let c = 0; c < 16; c++) {
-      const v = (Math.abs(seed(r, c)) % 100) / 100;
-      const x = 14 + c * 18;
-      const y = 16 + r * 18;
-      cells.push(
-        <rect
-          key={`${r}-${c}`}
-          x={x} y={y} width="14" height="14"
-          fill={v > 0.55 ? "#FFD60A" : "#F6F4EE"}
-          fillOpacity={v > 0.55 ? 0.4 + v * 0.6 : 0.4}
-          stroke="#111110" strokeWidth="0.5"
-        />
-      );
-    }
-  }
-  const arrows = [
-    { x1: 70, y1: 60, x2: 110, y2: 100 },
-    { x1: 200, y1: 50, x2: 160, y2: 110 },
-    { x1: 250, y1: 130, x2: 210, y2: 80 },
-  ];
-  return (
-    <svg viewBox="0 0 320 180" role="img" aria-labelledby={titleId} style={{ width: "100%", height: "100%" }}>
-      <title id={titleId}>{titleText || "Agent-based grid simulating neighbourhood turnover from t=0 to t=10 years"}</title>
-      {cells}
-      {arrows.map((a, i) => (
-        <g key={i}>
-          <line x1={a.x1} y1={a.y1} x2={a.x2} y2={a.y2} stroke="#111110" strokeWidth="1.2" strokeDasharray="3 2" />
-          <circle cx={a.x2} cy={a.y2} r="3" fill="#111110" />
-        </g>
-      ))}
-      <g fontFamily="var(--font-mono)" fontSize="8" fill="#8A8676">
-        <text x="14" y="172">t = 0</text>
-        <text x="274" y="172">t = 10y</text>
-      </g>
-    </svg>
-  );
-}
+const VIZ = {
+  language: VizLanguage,
+  abm: VizABM,
+  connectivity: VizConnectivity,
+  hedonic: VizHedonic,
+  pipelines: VizPipelines,
+  transfer: VizTransfer,
+  sponsor: VizSponsor,
+  fish: VizFish,
+  flood: VizFlood,
+};
 
-function VizHedonic({ titleText }) {
-  const reactId = useId();
-  const titleId = `vizHedonic-${reactId}`;
-  // Deterministic EU country input bars
-  const countries = [
-    { label: "NL", w: 34 }, { label: "DE", w: 40 }, { label: "FR", w: 36 },
-    { label: "IT", w: 30 }, { label: "DK", w: 32 }, { label: "ES", w: 38 }, { label: "+7", w: 24 },
-  ];
-  // Monthly HPI sparkline (deterministic, base=100)
-  const spark = [100, 101, 100, 102, 103, 101, 105, 106, 104, 107, 109, 111];
-  const sparkPath = spark.map((v, i) => `${i === 0 ? "M" : "L"}${233 + i * 6},${158 - (v - 100) * 2.5}`).join(" ");
-  return (
-    <svg viewBox="0 0 320 180" role="img" aria-labelledby={titleId} style={{ width: "100%", height: "100%" }}>
-      <title id={titleId}>{titleText || "Eurostat HPI pipeline: 13 EU country scrapes to monthly hedonic price index"}</title>
-      {/* Country input bars */}
-      {countries.map((c, i) => (
-        <g key={c.label} fontFamily="var(--font-mono)" fontSize="7">
-          <rect x="14" y={14 + i * 22} width={c.w} height="16"
-            fill={c.label === "+7" ? "#FFD60A" : "#F6F4EE"}
-            stroke="#111110" strokeWidth="0.7" />
-          <text x="18" y={26 + i * 22} fill="#111110">{c.label}</text>
-        </g>
-      ))}
-      {/* Arrow from country stack to pipeline */}
-      <path d="M58 80 L90 42" stroke="#111110" strokeWidth="1" fill="none" markerEnd="url(#arr)" />
-      {/* Pipeline: scrape */}
-      <rect x="90" y="30" width="62" height="26" fill="#F6F4EE" stroke="#111110" strokeWidth="0.8" />
-      <text x="95" y="44" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">scrape</text>
-      <text x="95" y="53" fontFamily="var(--font-mono)" fontSize="6.5" fill="#8A8676">deduplicate</text>
-      {/* Pipeline: enrich */}
-      <rect x="90" y="78" width="62" height="26" fill="#FFD60A" stroke="#111110" strokeWidth="0.8" />
-      <text x="95" y="92" fontFamily="var(--font-mono)" fontSize="8" fill="#111110">enrich</text>
-      <text x="95" y="101" fontFamily="var(--font-mono)" fontSize="6.5" fill="#111110">NUTS3 · lat/lon</text>
-      {/* Pipeline: regress */}
-      <rect x="90" y="128" width="62" height="26" fill="#111110" stroke="#111110" />
-      <text x="95" y="142" fontFamily="var(--font-mono)" fontSize="8" fill="#FFD60A">regress</text>
-      <text x="95" y="151" fontFamily="var(--font-mono)" fontSize="6.5" fill="#F6F4EE">log-price model</text>
-      {/* Vertical connectors */}
-      <path d="M121 56 L121 78" stroke="#111110" strokeWidth="1" fill="none" />
-      <path d="M121 104 L121 128" stroke="#111110" strokeWidth="1" fill="none" />
-      {/* Arrow to index output */}
-      <path d="M152 141 L230 141" stroke="#111110" strokeWidth="1" fill="none" />
-      {/* Index output box */}
-      <rect x="230" y="110" width="78" height="52" fill="#F6F4EE" stroke="#111110" strokeWidth="0.7" />
-      <text x="234" y="124" fontFamily="var(--font-mono)" fontSize="7" fill="#8A8676">monthly HPI</text>
-      <polyline points={spark.map((v, i) => `${233 + i * 6},${158 - (v - 100) * 2.5}`).join(" ")}
-        fill="none" stroke="#111110" strokeWidth="1.4" />
-      <text x="234" y="160" fontFamily="var(--font-mono)" fontSize="6" fill="#8A8676">base = 100</text>
-    </svg>
-  );
-}
-
-function VizStat({ value, label }) {
-  const reactId = useId();
-  const gridId = `sg-${reactId}`;
-  return (
-    <svg viewBox="0 0 320 180" role="img" aria-label={`${value} — ${label}`} style={{ width: "100%", height: "100%" }}>
-      <defs>
-        <pattern id={gridId} width="20" height="20" patternUnits="userSpaceOnUse">
-          <path d="M20 0 L0 0 0 20" fill="none" stroke="rgba(15,14,11,.07)" strokeWidth="1" />
-        </pattern>
-      </defs>
-      <rect width="320" height="180" fill={`url(#${gridId})`} />
-      <rect x="14" y="14" width="34" height="5" fill="#FFD60A" />
-      <text x="14" y="98" fontFamily="var(--font-serif)" fontSize="52" fill="#111110" letterSpacing="-0.02em">{value}</text>
-      <text x="14" y="126" fontFamily="var(--font-mono)" fontSize="10" fill="#8A8676" letterSpacing="0.08em">{(label || "").toUpperCase()}</text>
-    </svg>
-  );
-}
-
-function ProjectViz({ kind, stat }) {
-  if (kind === "abm") return <VizABM />;
-  if (kind === "hedonic") return <VizHedonic />;
-  if (kind === "stat") return <VizStat value={stat?.value} label={stat?.label} />;
-  return null;
+function ProjectViz({ kind }) {
+  const C = VIZ[kind];
+  return C ? <C /> : null;
 }
 
 export function ProjectsGallery() {
@@ -177,7 +83,7 @@ export function ProjectsGallery() {
                     style={{ objectFit: "cover" }}
                   />
                 ) : (
-                  <ProjectViz kind={item.viz} stat={item.stat} />
+                  <ProjectViz kind={item.viz} />
                 )}
               </div>
               <div className="project-body">

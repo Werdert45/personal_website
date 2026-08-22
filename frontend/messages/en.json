@@ -172,11 +172,7 @@
     "subtitle": "Nine pieces of work across the four lanes — production systems, shipped products, and the research they make possible.",
     "items": [
       {
-        "viz": "stat",
-        "stat": {
-          "value": "6,200+",
-          "label": "vocab entries · 3 languages"
-        },
+        "viz": "language",
         "badge": "PROJECT",
         "sector": "AI product",
         "title": "LanguageBuddy — AI language tutor",
@@ -205,11 +201,7 @@
         "link": "/research/gentrification-abm-european-cities"
       },
       {
-        "viz": "stat",
-        "stat": {
-          "value": "38",
-          "label": "markets · parcel resolution"
-        },
+        "viz": "connectivity",
         "badge": "KR&A",
         "sector": "Developed at KR&A",
         "title": "Connectivity & walkability scoring",
@@ -224,8 +216,8 @@
       },
       {
         "viz": "hedonic",
-        "badge": "RESEARCH",
-        "sector": "Research · Eurostat",
+        "badge": "KR&A",
+        "sector": "Developed at KR&A",
         "title": "Monthly house-price index · 13 EU countries",
         "outcome": "A web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs — and the price data behind the metro-capitalisation paper.",
         "stack": [
@@ -238,11 +230,7 @@
         "link": "/research/metro-capitalisation-timing"
       },
       {
-        "viz": "stat",
-        "stat": {
-          "value": "726 GB",
-          "label": "largest DAG input · 6 pipelines"
-        },
+        "viz": "pipelines",
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
@@ -257,11 +245,7 @@
         "link": "/thoughts/research-pipelines-are-production-systems"
       },
       {
-        "viz": "stat",
-        "stat": {
-          "value": "+0.001",
-          "label": "mAP from US data on EU streets"
-        },
+        "viz": "transfer",
         "badge": "RESEARCH",
         "sector": "Computer vision · Bocconi",
         "title": "US vs EU transfer for autonomous driving",
@@ -275,11 +259,7 @@
         "link": "/research/us-vs-eu-transfer-autonomous-driving"
       },
       {
-        "viz": "stat",
-        "stat": {
-          "value": "86%",
-          "label": "macro F1 · 38,600 videos"
-        },
+        "viz": "sponsor",
         "badge": "PROJECT",
         "sector": "NLP · live demo",
         "title": "SponsoredBye — sponsor-segment detection",
@@ -294,11 +274,7 @@
         "link": "https://huggingface.co/spaces/sponsored-bye/sponsoredbye"
       },
       {
-        "viz": "stat",
-        "stat": {
-          "value": "63",
-          "label": "species · fully on-device"
-        },
+        "viz": "fish",
         "badge": "PROJECT",
         "sector": "Mobile ML",
         "title": "FishFinder — photo-to-species ID",
@@ -313,11 +289,7 @@
         "link": "/research/fishfinder-on-device-fish-id"
       },
       {
-        "viz": "stat",
-        "stat": {
-          "value": "97.5%",
-          "label": "binary flood accuracy · RF"
-        },
+        "viz": "flood",
         "badge": "RESEARCH",
         "sector": "BSc Thesis · UvA",
         "title": "Predicting flooding risk from local features",
