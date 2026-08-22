@@ -1,7 +1,7 @@
 ---
 title: "LanguageBuddy — an AI language tutor that turns conversation into curriculum"
 slug: languagebuddy-ai-language-tutor
-excerpt: "A self-hosted AI tutor for Dutch, Italian and Spanish: chat or voice-call an LLM tutor, and every word you stumble on is scheduled into spaced repetition, next-day exercises and printable workbooks."
+excerpt: "A self-hosted AI tutor for Dutch, Italian and Spanish: chat or voice-call an LLM tutor, and every word you stumble on gets lemmatized, scheduled by SM-2 spaced repetition, and served back as tomorrow's exercises and a printable workbook."
 status: published
 category: project
 publication_status: ""
@@ -13,33 +13,53 @@ doi: ""
 arxiv_id: ""
 repo_url: ""
 cite_as: ""
-preview_image: ""
+preview_image: "/projects/languagebuddy-ai-language-tutor/home-dashboard.png"
 is_premium: false
 ---
 
 # LanguageBuddy
 
-## What it is
+## The premise
 
-LanguageBuddy is a self-hosted AI language tutor for Dutch, Italian and Spanish, covering CEFR levels A1 through C1. The premise: the most useful moments in language learning happen in free conversation, and most apps throw those moments away. LanguageBuddy keeps them — every word you stumble on while chatting or voice-calling the tutor becomes tomorrow's study material.
+The best moments in language learning happen mid-conversation — the word you reach for and don't have, the article you get wrong, the verb you conjugate on vibes. Most apps let those moments evaporate. LanguageBuddy is my answer: a self-hosted AI tutor for Dutch, Italian and Spanish (CEFR A1–C1) where nothing you stumble on is ever thrown away. Every mistake becomes tomorrow's study material.
 
-## How it works
+![LanguageBuddy home dashboard showing streak, words learned, accuracy, daily XP, A1-to-A2 progress and the daily practice checklist](/projects/languagebuddy-ai-language-tutor/home-dashboard.png)
+*The daily loop: streak, accuracy, XP, level progress, and a four-part practice checklist — real data from my own account.*
 
-A learner starts with an **adaptive CEFR placement exam** that scores vocabulary, reading, listening, writing and speaking as five independent skills, with branching difficulty. From there the system builds a personalized daily lesson plan:
+## Talk first, drill later
 
-- cloze, grammar, translation and matching drills;
-- listening items generated with neural text-to-speech;
-- reading comprehension built from **that day's real news articles** (NOS, ANSA, EFE), scraped, cleaned and levelled;
-- writing prompts graded by an LLM against a CEFR rubric.
+You start with an adaptive CEFR placement exam that scores vocabulary, reading, listening, writing and speaking as five independent skills, branching difficulty as it goes. Your overall level is your weakest skill — no hiding behind a strong reading score.
 
-The heart of the system is the **closed learning loop**. Free-form chat with a level-adapted LLM tutor — including a hands-free voice-call mode using in-browser speech recognition plus TTS — is monitored for mistakes. Each one is extracted, lemmatized, and scheduled by an SM-2 spaced-repetition engine, then resurfaces in the next day's exercises and in a personalized, printable PDF workbook for offline study. Duolingo-style gamification (XP with combo multipliers, streaks, hearts, milestones) keeps the daily loop sticky.
+Then you talk. The core of the app is free conversation with a level-adapted LLM tutor: 177 role-play scenarios — ordering at the bakker, arguing with the huisarts, small talk with the buren — in text, or fully hands-free voice calls using in-browser speech recognition plus neural TTS.
 
-## Engineering
+![Chat view with a sidebar of Dutch role-play scenarios: Supermarkt, Restaurant, Huisarts, Openbaar vervoer and more](/projects/languagebuddy-ai-language-tutor/chat-scenarios.png)
+*Pick a scenario, type or call. The tutor stays in character and at your level.*
 
-The backend is FastAPI on Python 3.12 with a 35-table SQLite schema tracking sessions, transcripts, per-skill CEFR levels, vocabulary evidence and progression. The LLM and TTS providers sit behind an abstraction so the whole AI backend swaps via configuration. The frontend is an installable PWA with push notifications. Everything runs as a small Docker Compose stack with hardened containers: read-only root filesystem, dropped Linux capabilities, tmpfs-only scratch space, health checks on every service.
+While you chat, the system is quietly listening for mistakes. Each one gets extracted, lemmatized and fed into an SM-2 spaced-repetition engine — the same algorithm family Anki uses. Those words resurface in the next day's exercises and in a personalized, printable PDF workbook for offline study. Conversation in, curriculum out. That's the closed loop.
 
-The content layer is hand-curated at unusual scale for a personal project: **6,200+ vocabulary entries** across A1–C1 in multiple languages, 177 conversation scenarios, grammar topic sets and verb conjugation tables — about 2 MB of curated language data. The codebase is ~20,000 lines of Python behind a **336-test suite**, including per-language end-to-end tests and dedicated CEFR-assessment tests.
+## The daily grind, made sticky
+
+Each morning the system assembles a lesson plan: cloze, grammar, translation and matching drills; listening items generated with neural text-to-speech; reading comprehension built from that day's actual news (NOS, ANSA, EFE — scraped, cleaned and levelled); and writing prompts graded by an LLM against a CEFR rubric. Duolingo-style gamification — XP with combo multipliers, streaks, hearts, milestones — keeps me coming back.
+
+![Vocabulary translate exercise asking for the Dutch word for 'underwear', with progress dots and a Check Answer button](/projects/languagebuddy-ai-language-tutor/practice-exercise.png)
+*A vocab drill mid-session. Yesterday's conversational stumbles become today's questions.*
+
+None of the scheduling is improvised. I wrote up the learning methodology as a proper document — forgetting curves, retrieval practice, and the full SM-2 interval and easiness-factor math the engine runs on.
+
+![Page from the learning methodology document explaining the SM-2 spaced repetition algorithm, its parameters and interval schedule](/projects/languagebuddy-ai-language-tutor/methodology-page.png)
+*From the methodology doc (written under the app's Dutch working name, Taalmaatje): the SM-2 parameters and interval schedule behind every review.*
+
+## Under the hood
+
+The backend is FastAPI on Python 3.12 with a 35-table SQLite schema tracking sessions, transcripts, per-skill CEFR levels, vocabulary evidence and progression. LLM and TTS providers sit behind an abstraction layer, so the entire AI backend swaps via configuration. The frontend is an installable PWA with push notifications for daily nudges.
+
+The content layer is hand-curated at a scale I'm a little proud of: 6,200+ vocabulary entries across A1–C1 in multiple languages, the 177 scenarios, grammar topic sets and verb conjugation tables — about 2 MB of curated language data. All of it sits behind ~20,000 lines of Python and a 336-test suite, including per-language end-to-end tests and dedicated CEFR-assessment tests.
+
+It ships as a small Docker Compose stack with hardened containers: read-only root filesystem, dropped Linux capabilities, tmpfs-only scratch space, health checks on every service.
+
+![Progress page with overall CEFR level, words tracked, exercises done, per-skill breakdown and milestone timeline](/projects/languagebuddy-ai-language-tutor/progress-page.png)
+*Progress is per-skill, with milestones logged along the way — your level is only as good as your weakest skill.*
 
 ## Status
 
-In active development and self-hosted. A cost analysis keeps the conversational loop economical (a 15-exchange tutoring session costs a few cents in API calls), which is what makes a personal-infrastructure deployment realistic.
+In active development, self-hosted, and in daily use — by me. A cost analysis keeps the conversational loop economical: a 15-exchange tutoring session costs a few cents in API calls, which is exactly what makes running your own tutor on personal infrastructure realistic.

@@ -289,6 +289,10 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
                 ol: ({ node, ...props }) => <ol className="space-y-1 md:space-y-2 ml-4 md:ml-6 list-decimal" {...props} />,
                 li: ({ node, ...props }) => <li className="text-sm md:text-base text-muted-foreground" {...props} />,
                 strong: ({ node, ...props }) => <strong className="font-semibold text-foreground" {...props} />,
+                img: ({ node, ...props }) => (
+                  // eslint-disable-next-line @next/next/no-img-element, jsx-a11y/alt-text
+                  <img className="w-full rounded border border-border my-6" loading="lazy" {...props} />
+                ),
                 code: ({ node, inline, ...props }) =>
                   inline ? (
                     <code className="bg-muted/50 px-1.5 py-0.5 rounded text-xs md:text-sm font-mono text-primary" {...props} />
