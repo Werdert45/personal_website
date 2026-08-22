@@ -8,7 +8,7 @@ publication_status: ""
 tags: ["mobile-ml", "flutter", "tflite", "segment-anything", "resnet", "computer-vision"]
 abstract: "A mobile fish-identification app plus its own ML training pipeline. Photograph a fish and the app classifies it on-device against 63 Dutch freshwater and coastal species, returning a hand-written Dutch species profile — size, edibility, conservation status, season. Around the classifier sits a gamified FishDex: a Pokédex-style collection where caught species unlock, with accounts, friends and a catch dashboard. The 2024 training pipeline rebuilds the classifier with a point-prompted Segment Anything masking step over ~3,000 self-collected photos, feeding a fine-tuned ResNet50 that ships compressed into the app."
 read_time: "5 min"
-date: "2020–2024"
+date: "2022"
 doi: ""
 arxiv_id: ""
 repo_url: ""

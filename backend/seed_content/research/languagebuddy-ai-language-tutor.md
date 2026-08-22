@@ -53,7 +53,9 @@ None of the scheduling is improvised. I wrote up the learning methodology as a p
 
 The backend is FastAPI on Python 3.12 with a 35-table SQLite schema tracking sessions, transcripts, per-skill CEFR levels, vocabulary evidence and progression. LLM and TTS providers sit behind an abstraction layer, so the entire AI backend swaps via configuration. The frontend is an installable PWA with push notifications for daily nudges.
 
-The content layer is hand-curated at a scale I'm a little proud of: 6,200+ vocabulary entries across A1–C1 in multiple languages, the 177 scenarios, grammar topic sets and verb conjugation tables — about 2 MB of curated language data. All of it sits behind ~20,000 lines of Python and a 336-test suite, including per-language end-to-end tests and dedicated CEFR-assessment tests.
+The content layer is hand-curated at a scale I'm a little proud of: 6,200+ vocabulary entries across A1–C1 in multiple languages, the 177 scenarios, grammar topic sets and verb conjugation tables — about 2 MB of curated language data.
+
+The ~20,000 lines of Python behind it were built with **agentic coding** — AI agents writing most of the code, with me directing. What keeps that from being vibe-coding is the harness the agents work inside: a written blueprint that pins down behaviour before any code is generated, a **336-test suite** — per-language end-to-end tests and dedicated CEFR-assessment tests — that every change has to pass before it lands, and adversarial review passes where a second agent's job is to break what the first one wrote. The agents type; the spec and the tests decide.
 
 It ships as a small Docker Compose stack with hardened containers: read-only root filesystem, dropped Linux capabilities, tmpfs-only scratch space, health checks on every service.
 
@@ -62,4 +64,4 @@ It ships as a small Docker Compose stack with hardened containers: read-only roo
 
 ## Status
 
-In active development, self-hosted, and in daily use — by me. A cost analysis keeps the conversational loop economical: a 15-exchange tutoring session costs a few cents in API calls, which is exactly what makes running your own tutor on personal infrastructure realistic.
+In active development, self-hosted, and in daily use by its first three users — friends learning alongside me. A cost analysis keeps the conversational loop economical: a 15-exchange tutoring session costs a few cents in API calls, which is exactly what makes running your own tutor on personal infrastructure realistic.
