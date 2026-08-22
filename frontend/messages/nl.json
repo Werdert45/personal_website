@@ -26,14 +26,20 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
-    "title": "Ruimtelijke data,",
+    "role": "Head of Data · Engineer & onderzoeker",
+    "title": "Complexe data,",
     "titleHighlight": "omgezet",
     "titleEnd": "in inzicht.",
-    "description": "Ik bouw en leid productie-datasystemen, met als specialiteit de data engineering achter onderzoek — de Airflow-, DuckDB- en PostGIS-pipelines die open ruimtelijke data omzetten in papers. Het onderzoeksterrein is stedelijke dynamiek: gentrificatie, toegankelijkheid, woningmarkten — want steden zijn waar datavraagstukken lastig worden. De engineering achter mijn papers is gedocumenteerd als case-study-serie op deze site.",
+    "description": "Ik bouw en leid productiedatasystemen en de analytics erbovenop: gescrapete marktdata met 300k records per week, officiële statistieken en trage tijdreeksen, documentpipelines op LLM's en OCR, en ruimtelijke en netwerkdata. Die laatste is de onderzoeksstoel — stedelijke dynamiek, woningmarkten, bereikbaarheid — waar de papers op deze site vandaan komen.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
-    "expertise": "Expertise:"
+    "expertise": "Expertise:",
+    "expertiseAreas": [
+      "Systeeminfrastructuur",
+      "Cloud",
+      "Complexe dataverwerking",
+      "Analytics"
+    ]
   },
   "About": {
     "publicationsKicker": "Publicaties & papers",
@@ -52,7 +58,7 @@
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systemen",
     "heroTitleLine3": "& Onderzoek.",
-    "lede1": "Vanuit Amsterdam leid ik datateams en bouw ik wat ze draaien: big-data-pipelines, forecasting- en nowcastingmodellen, netwerkanalyse en ruimtelijke dataproducten. Het vak eronder is systeemontwerp: de architectuur bepaalt of een pipeline in haar derde jaar nog draait. De onderzoekskant blijft actief — stedelijke dynamiek, gentrificatie, toegankelijkheid op perceelniveau — want steden zijn waar datavraagstukken het lastigst worden. Qua diepgang een geodata-specialist; qua vak een data lead.",
+    "lede1": "Vanuit Amsterdam leid ik datateams en bouw ik wat ze draaien: webscraping-pipelines met 300k records per week, forecasting en nowcasting op officiële statistieken, documentpipelines op LLM's en OCR, en ruimtelijke dataproducten. Het vak eronder is systeemontwerp: de architectuur bepaalt of een pipeline in het derde jaar nog draait. De onderzoeksstoel blijft warm — stedelijke dynamiek, gentrificatie, bereikbaarheid op perceelniveau — omdat steden zijn waar datavraagstukken lastig worden. Data lead van beroep; geodataspecialist in de diepte.",
     "lede2": "Mijn voorkeur: eigenzinnige interne tools verslaan grote platforms; een gekalibreerde pipeline verslaat een slimme; en een kaart moet een vraag beantwoorden, geen complexiteit opvoeren.",
     "portraitCaption": "IAN · AMS · 2026",
     "journeyTitlePrefixItalic": "Vijf",
@@ -120,8 +126,8 @@
   "Contact": {
     "aboutBadge": "Over Mij",
     "name": "Ian Ronk",
-    "roleTitle": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
-    "bio": "Ik bouw en leid productie-datasystemen — pipelines, forecasting, netwerkanalyse en ruimtelijke dataproducten — met een onderzoeksspecialisatie in stedelijke dynamiek. De papers en de engineering-casestudy's erachter staan op deze site.",
+    "roleTitle": "Head of Data · Engineer & onderzoeker",
+    "bio": "Ik bouw en leid productiedatasystemen en de analytics erbovenop — gescrapete marktdata, officiële statistieken en tijdreeksen, documentpipelines op LLM's en OCR, en ruimtelijke en netwerkdata — met een onderzoeksspecialisatie in stedelijke dynamiek. De papers en de engineering-casestudy's erachter staan op deze site.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
@@ -263,7 +269,7 @@
     "empty": "Nog geen stukken — de eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak."
   },
   "Author": {
-    "roleLine": "Data Lead & Engineer · Onderzoeker Stedelijke Dynamiek",
+    "roleLine": "Head of Data · Engineer & onderzoeker",
     "bio": "Ik leid datateams en bouw productie-datasystemen in Amsterdam. Deze site verzamelt de casestudies, papers en veldnotities.",
     "cta": "Volledige bio →"
   },

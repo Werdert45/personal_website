@@ -5,8 +5,8 @@ export function PersonJsonLd() {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Ian Ronk",
-    jobTitle: "Data Lead & Engineer",
-    description: "Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.",
+    jobTitle: "Head of Data — data systems, analytics, and urban-dynamics research",
+    description: "Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics.",
     url: siteUrl,
     sameAs: ["https://www.linkedin.com/in/ian-ronk-7b054a120/", "https://github.com/Werdert45"],
     hasOccupation: [
@@ -62,7 +62,7 @@ export function WebSiteJsonLd() {
     name: "Ian Ronk",
     url: siteUrl,
     description:
-      "Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.",
+      "Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics.",
     author: {
       "@type": "Person",
       name: "Ian Ronk",
@@ -171,9 +171,9 @@ export function ProfilePageJsonLd() {
     mainEntity: {
       "@type": "Person",
       name: "Ian Ronk",
-      jobTitle: "Data Lead & Engineer",
+      jobTitle: "Head of Data — data systems, analytics, and urban-dynamics research",
       description:
-        "Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.",
+        "Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics.",
       url: siteUrl,
     },
   };

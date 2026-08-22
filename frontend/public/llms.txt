@@ -1,6 +1,6 @@
 # Ian Ronk — ianronk.nl
 
-> Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics. A geodata specialist based in Amsterdam. Head of Data at KR&A; MSc Data Science (Bocconi), BSc Artificial Intelligence (University of Amsterdam).
+> Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics. Head of Data at KR&A; MSc Data Science (Bocconi), BSc Artificial Intelligence (University of Amsterdam).
 
 ## Key pages
 - About / resume: https://ianronk.nl/en/about — competences, experience, education, publications

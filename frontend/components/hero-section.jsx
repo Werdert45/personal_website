@@ -64,7 +64,6 @@ export function HeroSection() {
       >
         <div style={{ display: "flex", gap: 28, flexWrap: "wrap" }}>
           <span><span style={{ color: "var(--ink)" }}>◎</span> {t("location")}</span>
-          <span><span style={{ color: "var(--ink)" }}>◆</span> {t("role")}</span>
         </div>
         <div>§ 01 · Portfolio / 2026</div>
       </div>
@@ -259,11 +258,9 @@ export function HeroSection() {
         }}
       >
         <span style={{ fontFamily: "var(--font-mono)", fontSize: 10, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--mute)", marginRight: 8 }}>{t("expertise")}</span>
-        <span className="chip">Python</span>
-        <span className="chip">PostGIS</span>
-        <span className="chip">Airflow</span>
-        <span className="chip">LLM/RAG</span>
-        <span className="chip">PyTorch</span>
+        {(t.raw("expertiseAreas") || []).map((area) => (
+          <span key={area} className="chip">{area}</span>
+        ))}
       </div>
 
     </section>

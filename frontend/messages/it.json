@@ -26,14 +26,20 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
-    "title": "Dati spaziali,",
+    "role": "Head of Data · Engineer e ricercatore",
+    "title": "Dati complessi,",
     "titleHighlight": "trasformati",
     "titleEnd": "in conoscenza.",
-    "description": "Costruisco e guido sistemi dati di produzione; la mia specialità è il data engineering dietro la ricerca — le pipeline Airflow, DuckDB e PostGIS che trasformano dati spaziali aperti in paper. Il fronte di ricerca è la dinamica urbana: gentrificazione, accessibilità, mercati abitativi — perché le città sono dove i problemi di dati diventano complessi. L'ingegneria dietro i miei paper è documentata in una serie di case study su questo sito.",
+    "description": "Costruisco e guido sistemi di dati in produzione e l'analytics sopra di essi: dati di mercato raccolti via scraping a 300k record a settimana, statistiche ufficiali e serie storiche lente, pipeline documentali su LLM e OCR, e dati spaziali e di rete. Quest'ultimo è il posto della ricerca — dinamiche urbane, mercati immobiliari, accessibilità — da cui nascono i paper su questo sito.",
     "aboutMe": "Chi sono",
     "workWithMe": "Scrivimi",
-    "expertise": "Competenze:"
+    "expertise": "Competenze:",
+    "expertiseAreas": [
+      "Infrastruttura di sistema",
+      "Cloud",
+      "Elaborazione di dati complessi",
+      "Analytics"
+    ]
   },
   "About": {
     "publicationsKicker": "Pubblicazioni & paper",
@@ -52,7 +58,7 @@
     "heroTitleLine2": "Ingegneria",
     "heroTitleLine2Underline": "Sistemi",
     "heroTitleLine3": "& Ricerca.",
-    "lede1": "Con base ad Amsterdam, guido team dati e costruisco quello che fanno girare: pipeline di big data, modelli di forecasting e nowcasting, analisi di rete e prodotti di dati spaziali. Il mestiere sotto è la progettazione di sistemi: è l'architettura a decidere se una pipeline è ancora in funzione al terzo anno. Il lato ricerca resta attivo — dinamica urbana, gentrificazione, accessibilità a risoluzione di parcella — perché le città sono dove i problemi di dati diventano complessi. Per profondità, uno specialista geodata; di mestiere, un data lead.",
+    "lede1": "Da Amsterdam guido team di dati e costruisco ciò che fanno girare: pipeline di scraping con 300k record a settimana, forecasting e nowcasting su statistiche ufficiali, pipeline documentali su LLM e OCR, e prodotti di dati spaziali. Il mestiere sottostante è il system design: è l'architettura a decidere se una pipeline gira ancora al terzo anno. Il posto della ricerca resta caldo — dinamiche urbane, gentrificazione, accessibilità a livello di particella — perché le città sono dove i problemi di dati diventano complessi. Data lead di mestiere; specialista di geodati in profondità.",
     "lede2": "La mia convinzione: strumenti interni con una visione chiara battono le grandi piattaforme; una pipeline calibrata batte una brillante; e una mappa deve rispondere a una domanda, non ostentare complessità.",
     "portraitCaption": "IAN · AMS · 2026",
     "journeyTitlePrefixItalic": "Cinque",
@@ -120,8 +126,8 @@
   "Contact": {
     "aboutBadge": "Su di Me",
     "name": "Ian Ronk",
-    "roleTitle": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
-    "bio": "Costruisco e guido sistemi dati di produzione — pipeline, forecasting, analisi di rete e prodotti di dati spaziali — con una specializzazione di ricerca nella dinamica urbana. I paper e i case study di ingegneria che li sostengono vivono su questo sito.",
+    "roleTitle": "Head of Data · Engineer e ricercatore",
+    "bio": "Costruisco e guido sistemi di dati in produzione e l'analytics sopra di essi — dati di mercato via scraping, statistiche ufficiali e serie storiche, pipeline documentali su LLM e OCR, e dati spaziali e di rete — con una specializzazione di ricerca nelle dinamiche urbane. I paper e i case study di ingegneria che li sostengono vivono su questo sito.",
     "location": "Amsterdam, Paesi Bassi",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ anni in ingegneria dei dati & analytics spaziale",
@@ -263,7 +269,7 @@
     "empty": "Ancora nessun articolo — i primi casi studio, sul data engineering dietro la ricerca, sono in preparazione."
   },
   "Author": {
-    "roleLine": "Data Lead & Engineer · Ricercatore di Dinamiche Urbane",
+    "roleLine": "Head of Data · Engineer e ricercatore",
     "bio": "Guido team dati e costruisco sistemi dati in produzione ad Amsterdam. Questo sito raccoglie i casi studio, i paper e gli appunti dal campo.",
     "cta": "Bio completa →"
   },

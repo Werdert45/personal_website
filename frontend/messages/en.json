@@ -26,14 +26,20 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Data Lead & Engineer · Urban-Dynamics Researcher",
+    "role": "Head of Data · Engineer & Researcher",
     "title": "Transforming",
-    "titleHighlight": "spatial data",
+    "titleHighlight": "complex data",
     "titleEnd": "into insights.",
-    "description": "I build and lead production data systems, and my specialty is the data engineering behind research — the Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. The research seat is urban dynamics: gentrification, accessibility, housing markets — because cities are where data problems get hard. The engineering behind my papers is documented as a case-study series on this site.",
+    "description": "I build and lead production data systems and the analytics on top: web-scraped market data at 300k records a week, official statistics and slow time series, document pipelines built on LLMs and OCR, and spatial and network data. That last one is the research seat — urban dynamics, housing markets, accessibility — where the papers on this site come from.",
     "aboutMe": "About me",
     "workWithMe": "Get in touch",
-    "expertise": "Expertise:"
+    "expertise": "Expertise:",
+    "expertiseAreas": [
+      "System Infrastructure",
+      "Cloud",
+      "Complex Data Processing",
+      "Analytics"
+    ]
   },
   "About": {
     "publicationsKicker": "Publications & papers",
@@ -52,7 +58,7 @@
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systems",
     "heroTitleLine3": "& Research.",
-    "lede1": "Based in Amsterdam, I lead data teams and build what they run: big-data pipelines, forecasting and nowcasting models, network analysis and spatial data products. The craft underneath is system design: the architecture is what decides whether a pipeline is still running in its third year. The research seat stays warm — urban dynamics, gentrification, accessibility at parcel resolution — because cities are where data problems get hard. A geodata specialist by depth; a data lead by trade.",
+    "lede1": "Based in Amsterdam, I lead data teams and build what they run: web-scraping pipelines moving 300k records a week, forecasting and nowcasting on official statistics, document pipelines built on LLMs and OCR, and spatial data products. The craft underneath is system design: the architecture is what decides whether a pipeline is still running in its third year. The research seat stays warm — urban dynamics, gentrification, accessibility at parcel resolution — because cities are where data problems get hard. A data lead by trade; a geodata specialist by depth.",
     "lede2": "My bias: opinionated internal tools beat big platforms; a calibrated pipeline beats a clever one; and a map should answer a question, not perform complexity.",
     "portraitCaption": "IAN · AMS · 2026",
     "journeyTitlePrefixItalic": "Five",
@@ -120,8 +126,8 @@
   "Contact": {
     "aboutBadge": "About Me",
     "name": "Ian Ronk",
-    "roleTitle": "Data Lead & Engineer · Urban-Dynamics Researcher",
-    "bio": "I build and lead production data systems — pipelines, forecasting, network analysis and spatial data products — with a research specialization in urban dynamics. The papers and the engineering case studies behind them live on this site.",
+    "roleTitle": "Head of Data · Engineer & Researcher",
+    "bio": "I build and lead production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics. The papers and the engineering case studies behind them live on this site.",
     "location": "Amsterdam, Netherlands",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ years in data engineering & spatial analytics",
@@ -263,7 +269,7 @@
     "empty": "No posts yet — the first case studies, on the data engineering behind the research, are in the works."
   },
   "Author": {
-    "roleLine": "Data Lead & Engineer · Urban-Dynamics Researcher",
+    "roleLine": "Head of Data · Engineer & Researcher",
     "bio": "I lead data teams and build production data systems in Amsterdam. This site collects the case studies, papers and field notes.",
     "cta": "Full bio →"
   },

@@ -7,7 +7,7 @@ export async function generateMetadata({ params }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}/about`;
   return {
-    title: "Resume & competences — Data Lead & Engineer",
+    title: "Resume & competences — Head of Data",
     description:
       "Resume of Ian Ronk — data lead and geodata specialist based in Amsterdam: competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
     alternates: {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
       },
     },
     openGraph: {
-      title: "Resume & competences — Data Lead & Engineer",
+      title: "Resume & competences — Head of Data",
       description:
         "Resume of Ian Ronk — data lead and geodata specialist based in Amsterdam: competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
       url,

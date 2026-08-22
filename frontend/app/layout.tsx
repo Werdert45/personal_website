@@ -13,10 +13,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
 export const metadata: Metadata = {
   title: {
-    default: 'Ian Ronk | Data Lead & Engineer · Urban-Dynamics Researcher',
+    default: 'Ian Ronk | Head of Data — data systems, analytics, and urban-dynamics research',
     template: '%s | Ian Ronk',
   },
-  description: 'Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.',
+  description: 'Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics.',
   keywords: ['Data Lead', 'Data Engineering', 'Big Data', 'Network Science', 'Time Series Forecasting', 'Product Ownership', 'Geodata', 'Geospatial Analysis', 'Geodata Specialist Amsterdam', 'Machine Learning', 'PostGIS', 'Urban Dynamics', 'Amsterdam', 'Ian Ronk'],
   authors: [{ name: 'Ian Ronk' }],
   creator: 'Ian Ronk',
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: siteUrl,
     siteName: 'Ian Ronk',
-    title: 'Ian Ronk | Data Lead & Engineer · Urban-Dynamics Researcher',
-    description: 'Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.',
-    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Ian Ronk — Data Lead · Geospatial · ML' }],
+    title: 'Ian Ronk | Head of Data — data systems, analytics, and urban-dynamics research',
+    description: 'Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics.',
+    images: [{ url: '/og.png', width: 1200, height: 630, alt: 'Ian Ronk — Head of Data · Systems · Analytics' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Ian Ronk | Data Lead & Engineer · Urban-Dynamics Researcher',
-    description: 'Ian Ronk is a data lead and engineer in Amsterdam who builds and runs production data systems — big data pipelines, forecasting, network analysis — with a research specialization in urban dynamics.',
+    title: 'Ian Ronk | Head of Data — data systems, analytics, and urban-dynamics research',
+    description: 'Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top — web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data — with a research specialization in urban dynamics.',
     creator: '@ianronk',
     images: ['/og.png'],
   },

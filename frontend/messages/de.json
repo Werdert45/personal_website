@@ -26,14 +26,20 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Data Lead & Engineer · Forscher Urbaner Dynamik",
-    "title": "Geodaten,",
+    "role": "Head of Data · Engineer & Forscher",
+    "title": "Komplexe Daten,",
     "titleHighlight": "transformiert",
     "titleEnd": "zu Erkenntnissen.",
-    "description": "Ich baue und leite Produktions-Datensysteme; meine Spezialität ist das Data Engineering hinter der Forschung — die Airflow-, DuckDB- und PostGIS-Pipelines, die offene Geodaten in Papers verwandeln. Der Forschungsschwerpunkt ist urbane Dynamik: Gentrifizierung, Erreichbarkeit, Wohnungsmärkte — weil Städte dort sind, wo Datenprobleme hart werden. Das Engineering hinter meinen Papers ist als Fallstudien-Serie auf dieser Website dokumentiert.",
+    "description": "Ich baue und leite Produktionsdatensysteme und die Analytik darauf: gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistiken und träge Zeitreihen, Dokumentpipelines auf LLMs und OCR sowie Geo- und Netzwerkdaten. Letzteres ist der Forschungssitz — urbane Dynamik, Wohnungsmärkte, Erreichbarkeit — aus dem die Papers auf dieser Website stammen.",
     "aboutMe": "Über mich",
     "workWithMe": "Kontakt aufnehmen",
-    "expertise": "Expertise:"
+    "expertise": "Expertise:",
+    "expertiseAreas": [
+      "Systeminfrastruktur",
+      "Cloud",
+      "Komplexe Datenverarbeitung",
+      "Analytics"
+    ]
   },
   "About": {
     "publicationsKicker": "Publikationen & Papers",
@@ -52,7 +58,7 @@
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systeme",
     "heroTitleLine3": "& Forschung.",
-    "lede1": "Von Amsterdam aus leite ich Datenteams und baue, was sie betreiben: Big-Data-Pipelines, Forecasting- und Nowcasting-Modelle, Netzwerkanalyse und räumliche Datenprodukte. Das Handwerk darunter ist Systemdesign: die Architektur entscheidet, ob eine Pipeline im dritten Jahr noch läuft. Die Forschungsseite bleibt aktiv — urbane Dynamik, Gentrifizierung, Erreichbarkeit auf Parzellenauflösung — weil Städte dort sind, wo Datenprobleme hart werden. Der Tiefe nach ein in Amsterdam ansässiger Geodaten-Spezialist; dem Beruf nach ein Data Lead.",
+    "lede1": "Von Amsterdam aus leite ich Datenteams und baue, was sie betreiben: Webscraping-Pipelines mit 300k Datensätzen pro Woche, Forecasting und Nowcasting auf amtlichen Statistiken, Dokumentpipelines auf LLMs und OCR sowie Geodatenprodukte. Das Handwerk darunter ist Systemdesign: Die Architektur entscheidet, ob eine Pipeline im dritten Jahr noch läuft. Der Forschungssitz bleibt warm — urbane Dynamik, Gentrifizierung, Erreichbarkeit auf Parzellenebene — weil Städte dort sind, wo Datenprobleme hart werden. Data Lead von Beruf; Geodatenspezialist in der Tiefe.",
     "lede2": "Meine Überzeugung: meinungsstarke interne Tools schlagen große Plattformen; eine kalibrierte Pipeline schlägt eine clevere; und eine Karte sollte eine Frage beantworten, nicht Komplexität inszenieren.",
     "portraitCaption": "IAN · AMS · 2026",
     "journeyTitlePrefixItalic": "Fünf",
@@ -120,8 +126,8 @@
   "Contact": {
     "aboutBadge": "Über Mich",
     "name": "Ian Ronk",
-    "roleTitle": "Data Lead & Engineer · Forscher Urbaner Dynamik",
-    "bio": "Ich baue und leite Produktions-Datensysteme — Pipelines, Forecasting, Netzwerkanalyse und räumliche Datenprodukte — mit einem Forschungsschwerpunkt auf urbaner Dynamik. Die Papers und die Engineering-Fallstudien dahinter finden Sie auf dieser Seite.",
+    "roleTitle": "Head of Data · Engineer & Forscher",
+    "bio": "Ich baue und leite Produktionsdatensysteme und die Analytik darauf — gescrapte Marktdaten, amtliche Statistiken und Zeitreihen, Dokumentpipelines auf LLMs und OCR sowie Geo- und Netzwerkdaten — mit einer Forschungsspezialisierung in urbaner Dynamik. Die Papers und die Engineering-Fallstudien dahinter finden Sie auf dieser Seite.",
     "location": "Amsterdam, Niederlande",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ Jahre in Data Engineering & räumlicher Analytik",
@@ -263,7 +269,7 @@
     "empty": "Die ersten Beiträge erscheinen im August 2026 — Fallstudien zum Data Engineering hinter der Forschung."
   },
   "Author": {
-    "roleLine": "Data Lead & Engineer · Forscher Urbaner Dynamik",
+    "roleLine": "Head of Data · Engineer & Forscher",
     "bio": "Ich leite Datenteams und baue produktionsreife Datensysteme in Amsterdam. Diese Seite sammelt die Fallstudien, Papers und Feldnotizen.",
     "cta": "Vollständige Bio →"
   },
