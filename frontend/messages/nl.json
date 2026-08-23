@@ -47,7 +47,7 @@
     "publicationsViewAll": "Alle papers →",
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kerncompetenties",
-    "expertiseSubtitle": "Vijf competenties, één uitgangspunt: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
+    "expertiseSubtitle": "Vier competenties, één uitgangspunt: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
     "educationBadge": "Opleiding",
     "experienceBadge": "Ervaring",
     "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master: de methodenkant van de toolkit. De productiekant kwam uit het werk.",
@@ -66,28 +66,50 @@
     "journeyTitleLine2": "productie-datasystemen.",
     "expertise": [
       {
-        "title": "Data-architectuur & pipelines",
-        "description": "Scrape- en ETL-infrastructuur die blijft draaien: drie jaar wekelijkse verzameling over 8 beveiligde bronnen, 300k records per week, met schema, orkestratie en foutafhandeling vooraf ontworpen en Airflow en PostGIS eronder."
+        "name": "Data Engineering",
+        "blurb": "Pipelines en efficiënte opslag bouwen en onderhouden: drie jaar wekelijkse collectie uit 8 geauthenticeerde bronnen met 300k records per week, met schema, orkestratie en foutafhandeling vooraf ontworpen.",
+        "stack": [
+          "Airflow",
+          "Python",
+          "ETL",
+          "Monitoring",
+          "Iceberg"
+        ]
       },
       {
-        "title": "Netwerkwetenschap",
-        "description": "Grafentheorie toegepast op echte geografieën: een saturatie-gevalideerde Connectivity Score op perceelniveau, onderzoek naar toegankelijkheid en connectiviteit."
+        "name": "Analytics & ML",
+        "blurb": "De analyselaag erbovenop: nowcasting op schaarse officiële statistieken, een maandelijkse huizenprijsindex voor 13 EU-landen, regressies en hedonische prijsmodellen, en simulaties zoals agent-based gentrificatiemodellen.",
+        "stack": [
+          "Regression",
+          "Time Series",
+          "ABM Simulations",
+          "Applied ML"
+        ]
       },
       {
-        "title": "Tijdreeksen & Forecasting",
-        "description": "Een maandelijkse huizenprijsindex voor 13 EU-landen, getest met Eurostat, plus nowcastingmodellen voor schaarse, trage officiële statistieken."
+        "name": "System Architecture",
+        "blurb": "Het platform eronder: serverinstances, PostGIS, gedistribueerde Iceberg-compute, netwerken/VPN, APIs en security. 13 verschillende services draaien als productie-infrastructuur.",
+        "stack": [
+          "Linux/Bash",
+          "Networking & APIs",
+          "Docker",
+          "Distributed Compute",
+          "S3"
+        ]
       },
       {
-        "title": "Ruimtelijke Analyse & Simulatie",
-        "description": "Modellering en simulatie op perceel- en postcodeniveau: agent-based gentrificatiemodellen, hedonische prijsvorming, H3 en PostGIS als dagelijkse tools."
-      },
-      {
-        "title": "Product Ownership & Leiderschap",
-        "description": "End-to-end eigenaarschap van methode tot live API: een build met 13 servers, en een team van 4–5 geleid bij KR&A."
+        "name": "Product Ownership",
+        "blurb": "End-to-end eigenaarschap van methode tot geleverde API: een build over 13 servers, klantstakeholders van pensioenfondsen tot statistiekbureaus, en een team van 4–5 geleid bij KR&A.",
+        "stack": [
+          "Team van 4–5",
+          "Stakeholders",
+          "Roadmap",
+          "Shipped APIs"
+        ]
       }
     ],
     "downloadCv": "Download het cv (pdf)",
-    "cvBelow": "Volledig cv hieronder ↓"
+    "cvBelow": "Volledig cv hieronder"
   },
   "AboutPage": {
     "readMore": "Lees meer",

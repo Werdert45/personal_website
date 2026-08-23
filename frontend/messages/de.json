@@ -47,7 +47,7 @@
     "publicationsViewAll": "Alle Papers →",
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kernkompetenzen",
-    "expertiseSubtitle": "Fünf Kompetenzen, eine Einschränkung: eine kalibrierte Pipeline überlebt meist eine clevere.",
+    "expertiseSubtitle": "Vier Kompetenzen, eine Einschränkung: eine kalibrierte Pipeline überlebt meist eine clevere.",
     "educationBadge": "Ausbildung",
     "experienceBadge": "Erfahrung",
     "educationSubtitle": "Starke Grundlage in KI, Data Science und Business Analytics von führenden europäischen Institutionen.",
@@ -66,28 +66,50 @@
     "journeyTitleLine2": "Erkenntnisse liefern.",
     "expertise": [
       {
-        "title": "Datenarchitektur & Pipelines",
-        "description": "Scrape- und ETL-Infrastruktur, die zuverlässig läuft: drei Jahre wöchentliche Erfassung über 8 geschützte Quellen, 300k Datensätze pro Woche. Schema, Orchestrierung und Fehlerbehandlung von Anfang an entworfen, mit Airflow und PostGIS im Unterbau."
+        "name": "Data Engineering",
+        "blurb": "Pipelines und effiziente Speicherung bauen und betreiben: drei Jahre wöchentliche Erfassung aus 8 authentifizierten Quellen mit 300k Datensätzen pro Woche, mit vorab entworfenem Schema, Orchestrierung und Fehlerbehandlung.",
+        "stack": [
+          "Airflow",
+          "Python",
+          "ETL",
+          "Monitoring",
+          "Iceberg"
+        ]
       },
       {
-        "title": "Netzwerkwissenschaft",
-        "description": "Graphmethoden auf realen Geografien: ein sättigungsvalidierter Connectivity Score auf Parzellenauflösung, Forschung zu Erreichbarkeit und Konnektivität."
+        "name": "Analytics & ML",
+        "blurb": "Die Analyseschicht darüber: Nowcasting auf dünnen amtlichen Statistiken, ein monatlicher Hauspreisindex für 13 EU-Länder, Regressionen und hedonische Preismodelle sowie Simulationen wie agentenbasierte Gentrifizierungsmodelle.",
+        "stack": [
+          "Regression",
+          "Time Series",
+          "ABM Simulations",
+          "Applied ML"
+        ]
       },
       {
-        "title": "Zeitreihen & Forecasting",
-        "description": "Ein monatlicher Hauspreisindex über 13 EU-Länder, getestet mit Eurostat, plus Nowcasting-Modelle für spärliche, träge amtliche Statistiken."
+        "name": "System Architecture",
+        "blurb": "Die Plattform darunter: Serverinstanzen, PostGIS, verteiltes Iceberg-Compute, Netzwerk/VPN, APIs und Security. 13 verschiedene Services laufen als Produktionsinfrastruktur.",
+        "stack": [
+          "Linux/Bash",
+          "Networking & APIs",
+          "Docker",
+          "Distributed Compute",
+          "S3"
+        ]
       },
       {
-        "title": "Räumliche Analyse & Simulation",
-        "description": "Modellierung und Simulation auf Parzellen- und Postleitzahlebene: agentenbasierte Gentrifizierungsmodelle, hedonische Preisbildung, H3 und PostGIS als tägliche Werkzeuge."
-      },
-      {
-        "title": "Product Ownership & Führung",
-        "description": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API: ein 13-Server-Build, zwei Wochen vor Plan und im Budget geliefert, sowie ein Team von 4–5 geführt bei KR&A."
+        "name": "Product Ownership",
+        "blurb": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API: ein Build über 13 Server, Kunden-Stakeholder von Pensionsfonds bis Statistikämtern und ein Team von 4–5 bei KR&A.",
+        "stack": [
+          "Team von 4–5",
+          "Stakeholder",
+          "Roadmap",
+          "Shipped APIs"
+        ]
       }
     ],
     "downloadCv": "Lebenslauf herunterladen (PDF)",
-    "cvBelow": "Vollständiger Lebenslauf unten ↓"
+    "cvBelow": "Vollständiger Lebenslauf unten"
   },
   "AboutPage": {
     "readMore": "Weiterlesen",

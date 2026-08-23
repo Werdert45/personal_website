@@ -50,20 +50,26 @@ export function AboutContent() {
       </section>
 
       {expertise.length > 0 && (
-        <section className="section-pad" style={{ paddingTop: 0 }}>
+        <section className="section-pad" style={{ paddingTop: 72 }}>
           <div className="section-label">
             <span className="bar" />
             <span>{t("expertiseBadge")}</span>
           </div>
           <p className="lede">{t("expertiseSubtitle")}</p>
-          <div
-            className="expertise-grid"
-            style={{ display: "grid", gap: "40px 32px", marginTop: 40 }}
-          >
-            {expertise.map((e, i) => (
-              <div key={e.title} style={{ borderTop: "1px solid var(--ink)", paddingTop: 18 }}>
-                <h3 className="sector-name" style={{ marginTop: 12 }}>{e.title}</h3>
-                <p className="sector-blurb">{e.description}</p>
+          {/* Same tile styling as the homepage Focus Areas section */}
+          <div className="lanes-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 24, marginTop: 40 }}>
+            {expertise.map((e) => (
+              <div key={e.name} className="lane-tile" style={{ borderTop: "1px solid var(--ink)", paddingTop: 18 }}>
+                <div className="sector-kicker" style={{ display: "flex", justifyContent: "flex-end", alignItems: "center" }}>
+                  <span className="sector-dot" />
+                </div>
+                <h3 className="sector-name" style={{ marginTop: 12 }}>{e.name}</h3>
+                <p className="sector-blurb">{e.blurb}</p>
+                <div className="stack" style={{ marginTop: 12, display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {(e.stack || []).map((s) => (
+                    <span key={s} className="chip">{s}</span>
+                  ))}
+                </div>
               </div>
             ))}
           </div>

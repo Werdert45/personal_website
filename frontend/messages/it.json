@@ -47,7 +47,7 @@
     "publicationsViewAll": "Tutti i paper →",
     "expertiseBadge": "Competenze",
     "coreCompetencies": "Competenze Principali",
-    "expertiseSubtitle": "Cinque competenze, un solo vincolo: una pipeline calibrata tende a durare più di una brillante.",
+    "expertiseSubtitle": "Quattro competenze, un solo vincolo: una pipeline calibrata tende a durare più di una brillante.",
     "educationBadge": "Formazione",
     "experienceBadge": "Esperienza",
     "educationSubtitle": "AI alla triennale, data science e analytics alla magistrale: il lato metodologico del toolkit. Il lato produzione è arrivato dal lavoro.",
@@ -66,28 +66,50 @@
     "journeyTitleLine2": "sistemi dati in produzione.",
     "expertise": [
       {
-        "title": "Architettura Dati & Pipeline",
-        "description": "Infrastruttura di scraping ed ETL che continua a funzionare: tre anni di raccolta settimanale su 8 fonti con autenticazione, 300k record a settimana, con schema, orchestrazione e gestione degli errori progettati fin dall'inizio e Airflow e PostGIS sotto il cofano."
+        "name": "Data Engineering",
+        "blurb": "Costruire e mantenere pipeline e storage efficiente: tre anni di raccolta settimanale da 8 fonti autenticate con 300k record a settimana, con schema, orchestrazione e gestione degli errori progettati in anticipo.",
+        "stack": [
+          "Airflow",
+          "Python",
+          "ETL",
+          "Monitoring",
+          "Iceberg"
+        ]
       },
       {
-        "title": "Scienza delle Reti",
-        "description": "Metodi di teoria dei grafi su geografie reali: un Connectivity Score validato per saturazione a risoluzione di parcella, ricerca su accessibilità e connettività."
+        "name": "Analytics & ML",
+        "blurb": "Lo strato di analisi sopra: nowcasting su statistiche ufficiali scarse, un indice mensile dei prezzi delle case in 13 paesi UE, regressioni e modelli edonici, e simulazioni come i modelli agent-based di gentrificazione.",
+        "stack": [
+          "Regression",
+          "Time Series",
+          "ABM Simulations",
+          "Applied ML"
+        ]
       },
       {
-        "title": "Serie Storiche & Forecasting",
-        "description": "Un indice mensile dei prezzi delle case su 13 paesi UE testato con Eurostat, oltre a modelli di nowcasting per statistiche ufficiali scarse e lente."
+        "name": "System Architecture",
+        "blurb": "La piattaforma sottostante: istanze server, PostGIS, compute Iceberg distribuito, networking/VPN, API e sicurezza. 13 servizi diversi in esecuzione come infrastruttura di produzione.",
+        "stack": [
+          "Linux/Bash",
+          "Networking & APIs",
+          "Docker",
+          "Distributed Compute",
+          "S3"
+        ]
       },
       {
-        "title": "Analisi Spaziale & Simulazione",
-        "description": "Modellazione e simulazione a livello di parcella e codice postale: modelli di gentrificazione agent-based, pricing edonico, H3 e PostGIS come strumenti quotidiani."
-      },
-      {
-        "title": "Product Ownership & Leadership",
-        "description": "Proprietà end-to-end dal metodo all'API rilasciata: un build su 13 server e un team di 4–5 guidato presso KR&A."
+        "name": "Product Ownership",
+        "blurb": "Ownership end-to-end dal metodo all'API consegnata: un build su 13 server, stakeholder che vanno dai fondi pensione agli uffici di statistica, e un team di 4–5 guidato in KR&A.",
+        "stack": [
+          "Team di 4–5",
+          "Stakeholder",
+          "Roadmap",
+          "Shipped APIs"
+        ]
       }
     ],
     "downloadCv": "Scarica il CV (PDF)",
-    "cvBelow": "CV completo qui sotto ↓"
+    "cvBelow": "CV completo qui sotto"
   },
   "AboutPage": {
     "readMore": "Leggi di più",

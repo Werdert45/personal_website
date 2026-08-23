@@ -47,7 +47,7 @@
     "publicationsViewAll": "All papers →",
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Core Competencies",
-    "expertiseSubtitle": "Five competences, one constraint: a calibrated pipeline tends to outlast a clever one.",
+    "expertiseSubtitle": "Four competences, one constraint: a calibrated pipeline tends to outlast a clever one.",
     "educationBadge": "Education",
     "experienceBadge": "Experience",
     "educationSubtitle": "AI as an undergraduate, data science and analytics as a graduate: the methods side of the toolkit. The production side came from work.",
@@ -66,28 +66,50 @@
     "journeyTitleLine2": "production data systems.",
     "expertise": [
       {
-        "title": "Data Architecture & Pipelines",
-        "description": "Scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources at 300k records a week, with schema, orchestration and failure handling designed up front and Airflow and PostGIS underneath."
+        "name": "Data Engineering",
+        "blurb": "Building and maintaining pipelines and efficient storage: three years of weekly collection across 8 authenticated sources at 300k records a week, with schema, orchestration and failure handling designed up front.",
+        "stack": [
+          "Airflow",
+          "Python",
+          "ETL",
+          "Monitoring",
+          "Iceberg"
+        ]
       },
       {
-        "title": "Network Science",
-        "description": "Graph methods on real geographies: a saturation-validated Connectivity Score at parcel resolution, accessibility and connectivity research."
+        "name": "Analytics & ML",
+        "blurb": "The analysis layer on top: nowcasting on sparse official statistics, a monthly house-price index across 13 EU countries, regressions and hedonic pricing, and simulations such as agent-based gentrification models.",
+        "stack": [
+          "Regression",
+          "Time Series",
+          "ABM Simulations",
+          "Applied ML"
+        ]
       },
       {
-        "title": "Timeseries & Forecasting",
-        "description": "A monthly house-price index across 13 EU countries tested with Eurostat, plus nowcasting models for sparse, slow official statistics."
+        "name": "System Architecture",
+        "blurb": "The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 13 different services run as production infrastructure.",
+        "stack": [
+          "Linux/Bash",
+          "Networking & APIs",
+          "Docker",
+          "Distributed Compute",
+          "S3"
+        ]
       },
       {
-        "title": "Spatial Analysis & Simulation",
-        "description": "Parcel- and postcode-level modelling and simulation: agent-based gentrification models, hedonic pricing, H3 and PostGIS as daily tools."
-      },
-      {
-        "title": "Product Ownership & Leadership",
-        "description": "End-to-end ownership from method to shipped API: a 13-server build, and a team of 4–5 led at KR&A."
+        "name": "Product Ownership",
+        "blurb": "End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a team of 4–5 led at KR&A.",
+        "stack": [
+          "Team of 4–5",
+          "Stakeholders",
+          "Roadmap",
+          "Shipped APIs"
+        ]
       }
     ],
     "downloadCv": "Download the CV (PDF)",
-    "cvBelow": "Full CV below ↓"
+    "cvBelow": "Full CV below"
   },
   "AboutPage": {
     "readMore": "Read more",
