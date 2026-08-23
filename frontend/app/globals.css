@@ -142,18 +142,16 @@
     linear-gradient(to left,  transparent 0, transparent calc(50px - 1px), var(--rule) calc(50px - 1px), var(--rule) 50px, transparent 50px),
     var(--paper);
 }
-.page-frame::before,
-.page-frame::after {
+.page-frame::before {
   content: "";
   position: fixed;
   left: 0; right: 0;
+  top: 72px;
   height: 1px;
   background: var(--rule);
   z-index: 5;
   pointer-events: none;
 }
-.page-frame::before { top: 72px; }
-.page-frame::after  { bottom: 72px; }
 
 /* ---------- Side coordinates ---------- */
 .coords {
