@@ -868,6 +868,8 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   Head of Data · KR&A, Amsterdam
 - `Contact.yearsExperience`  
   5+ years in data engineering & spatial analytics
+- `Contact.formSubtitle`  
+  Questions about a role, research or collaboration? The inbox is open.
 - `Contact.formTitle`  
   Get in Touch
 - `Contact.nameLabel`  
