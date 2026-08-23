@@ -487,7 +487,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.heroTitleLine3`  
   & Data.
 - `About.lede1`  
-  Based in Amsterdam, I lead a small data team, maintaining and building from scratch: web-scraping pipelines collecting, processing and deduplicating 300k+ records per week, working on data consultancy jobs for pension funds and real estate firms and building data products using cutting edge technology and research. Data products include a world-wide production-grade network analysis tool for reachability, house price indices and more.
+  I lead a small data team in Amsterdam, maintaining systems and building new ones from scratch. Day to day that means web-scraping pipelines that collect, process and deduplicate 300k+ records a week, consultancy work for pension funds and real estate firms, and data products built on current technology and research. Among those products: a world-wide, production-grade network analysis tool for reachability, and house price indices.
 - `About.lede2`  
   My skillset: translating stakeholder requirements into sustainable business solutions that work.
 - `About.journeyTitlePrefixItalic`  
@@ -577,13 +577,13 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.header.email`  
   ian@ronk.org
 - `resume.header.links[0].label`  
-  linkedin.com/in/ian-ronk-7b054a120
+  LinkedIn
 - `resume.header.links[0].url`  
-  https://linkedin.com/in/ian-ronk-7b054a120
+  https://LinkedIn
 - `resume.header.links[1].label`  
-  github.com/Werdert45
+  GitHub
 - `resume.header.links[1].url`  
-  https://github.com/Werdert45
+  https://GitHub
 - `resume.header.links[2].label`  
   ianronk.nl
 - `resume.header.links[2].url`  
