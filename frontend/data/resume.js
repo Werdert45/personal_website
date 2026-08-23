@@ -14,7 +14,7 @@ export const resumeSections = {
 export const resume = {
   header: {
     name: "Ian Ronk",
-    roleLine: "Head of Data · Engineer & Researcher",
+    roleLine: "Head of Data · Data Engineer",
     location: "Amsterdam, NL",
     email: "ian@ronk.org",
     links: [
@@ -24,7 +24,7 @@ export const resume = {
     ],
     languages: "Dutch C2 · English C2 · Italian B2/C1 · German B2 · Spanish A2",
     softSkills:
-      "Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Reliability",
+      "Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Dependable",
     summary:
       "Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads a team of 4 as Head of Data; interest in research on urban dynamics.",
   },
@@ -95,12 +95,12 @@ export const resume = {
       href: "/research/voronoi-postcodes-paper",
     },
     {
-      title: "When Does Metro Infrastructure Capitalize into Property Prices?",
-      venue: "Release September 2026",
-      year: "2026",
+      title: "US vs EU: Does Training-Data Geography Matter for Autonomous-Driving Object Detection?",
+      venue: "preprint",
+      year: "2025",
       result:
-        "Phase-decomposed DiD across seven European cities, n = 42,004; wild-cluster-bootstrap inference. Found some correlation, but not strong.",
-      href: "/research/when-metro-capitalizes-paper",
+        "Controlled 2×3 fine-tuning study (YOLOv3/YOLOv8): US fine-tuning transfers roughly nothing to European streets (+0.001 vs +0.153 mAP in-domain).",
+      href: "/research/us-vs-eu-transfer-autonomous-driving",
     },
     {
       title: "Building an Agent-Based Model to Explain Gentrification in European Cities",
@@ -142,11 +142,6 @@ export const resume = {
       stack: "FastAPI · LLM · TTS · SQLite · Docker",
     },
     {
-      name: "Gentrification agent-based model",
-      line: "MSc thesis: an agent-based model of neighbourhood change for Amsterdam, Utrecht and Milan, driven by income, affordability and attractiveness (streetview 'beauty' classification, GTFS connectivity, greenery, neighborhood sentiment). A two-tenure social-housing extension is in progress.",
-      stack: "Python/GeoPandas · Large Vision Model · PostGIS · Agent-based Modeling",
-    },
-    {
       name: "Connectivity & walkability scoring (KR&A)",
       line: "Led a saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets from TBs of data and 100s of sources.",
       stack: "PostGIS · S3 · Dijkstra & Network Science · Distributed Compute",
@@ -183,10 +178,10 @@ export const resume = {
     "SQL",
     "PostGIS",
     "Airflow",
+    "Iceberg",
     "DuckDB",
+    "Docker",
     "PyTorch",
-    "MLflow",
     "Bash",
-    "LLM pipelines",
   ],
 };
