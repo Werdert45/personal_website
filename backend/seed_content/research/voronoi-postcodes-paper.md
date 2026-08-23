@@ -2,13 +2,13 @@
 title: "Calibrating Free Postcode Boundaries from OpenStreetMap: A Transferable Seed-Density Accuracy Curve"
 slug: voronoi-postcodes-paper
 excerpt: "Free postcode boundaries built from OpenStreetMap addresses, with a calibrated accuracy curve that predicts how good they are before any reference map exists. Tested across five countries, deployed on all of Italy."
-status: draft
+status: published
 category: working-paper
 publication_status: working-paper
 tags: ["voronoi", "openstreetmap", "postcodes", "geospatial", "iou", "italy", "spatial-data"]
 abstract: "Postcode boundary polygons are unavailable free of charge for much of Europe: some countries publish authoritative layers, elsewhere they are sold or absent. Voronoi tessellation of OpenStreetMap address points is the natural estimator, but how many address points are needed, and whether the answer transfers across countries, has not been established. I calibrate a single OSM-Voronoi pipeline against national references in the Netherlands and Denmark (5,160 reference polygons), fit a seed-density-to-IoU curve, and test out-of-sample transfer to held-out Belgium (1,188 polygons). The asymptote is robust across functional forms (mean matched IoU saturates at 0.76–0.82), while the fitted 0.7-IoU threshold is form-sensitive (roughly 40–110 seeds); per-postcode scatter is wide (point-level R² of about 0.26), so the curve calibrates the population mean, not individual polygons. Belgium reaches mean matched IoU 0.618 at 81% coverage, near the curve. Applied to Italy, where no free authoritative intra-city postcode layer exists, the pipeline produces 4,209 estimated CAP polygons; Milan reaches mean IoU 0.783 against the community uMap reference (an earlier pipeline configuration), and the 2,903 matched single-CAP municipalities at median 19 seeds land where the curve predicts (mean IoU 0.500). A Swiss evaluation, where the asymptote falls to 0.644, marks the boundary of the regime."
 read_time: ""
-date: ""
+date: "2026-08"
 doi: ""
 arxiv_id: ""
 repo_url: ""

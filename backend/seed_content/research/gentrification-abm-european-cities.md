@@ -8,7 +8,7 @@ publication_status: thesis
 tags: ["agent-based-modeling", "gentrification", "urban-research", "amsterdam", "utrecht", "milan"]
 abstract: "Gentrification is a complex urban process that significantly impacts city health and inhabitants' well-being, yet remains difficult to predict and model accurately across different urban contexts. Current gentrification research predominantly uses econometric models such as linear regression and temporal approaches like ARIMA and boosting algorithms to estimate where and to what degree gentrification will occur, with most studies focusing on single-city analyses. These traditional models fail to capture the behavioral patterns of inhabitants. They cannot be extrapolated across different cities, while existing agent-based models, though capable of modeling human behavior, are not calibrated using real-world data. This thesis introduces a novel agent-based modeling paradigm that uses neighborhood affordability and attractiveness as primary drivers of urban mobility, fitted on historical data from multiple European cities to create a transferable framework. The results demonstrate that the model successfully explains part of the gentrification trends in Amsterdam, while revealing essential boundary conditions for effective modeling, specifically that neighborhood spatial resolution critically determines model performance across other cities. By modeling inhabitant behaviors rather than solely examining potential drivers, this approach adds a crucial behavioral dimension to gentrification modeling, while providing a unified framework applicable across European cities."
 read_time: ""
-date: ""
+date: "2025-08"
 doi: ""
 arxiv_id: ""
 repo_url: ""
