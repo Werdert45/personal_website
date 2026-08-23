@@ -17,8 +17,6 @@ meta: {}
 
 # Could a free satellite have called Amsterdam's quay-replacement schedule?
 
-## The thing nobody really talks about
-
 If you walk along the Prinsengracht in spring you would swear the city has stood there forever.
 Brick and stone, three storeys above the water, a row of houseboats, the polished wood of the
 bridges. Things that look that solid have a way of feeling permanent.
@@ -30,6 +28,8 @@ centuries is a quietly precarious one: as long as the piles stay submerged, anae
 stop them rotting. Lower the groundwater by a metre, expose the pile tops to oxygen, and the whole
 arrangement is on a clock.
 
+## Why the question was worth asking
+
 This is not hypothetical. In September 2020 a stretch of the Grimburgwal, in the middle of the old
 centre, gave way into the canal. Nobody was hurt (the cars went into the water, the buildings
 behind held), but it was not the first near-miss, and the city took the hint. Amsterdam has
@@ -37,7 +37,7 @@ roughly **200 km of quay walls** and some 850 bridges, and it has committed to i
 repairing or replacing all of them under the *Programma Bruggen en Kademuren*, a multi-billion-euro
 programme running out to 2040.
 
-## How the city decides which quay goes next
+### How the city decides which quay goes next
 
 The decision is made the way these things usually are: by people. Engineers commission inspections;
 divers go down to see what is left of the piles; drone photogrammetry surveys the masonry above the
@@ -47,7 +47,7 @@ next to which annual events. The output is a rolling priority list.
 This works. It is also expensive: a single quay inspection runs into the tens of thousands of euros,
 and there are several thousand segments to get through.
 
-## Meanwhile, free of charge, somewhere over the North Sea
+### Meanwhile, free of charge, somewhere over the North Sea
 
 Since late 2014 a satellite called Sentinel-1 has overflown the Netherlands every six to twelve days
 (six while both Sentinel-1A and -1B flew, roughly 2016–2021; twelve otherwise), painting the
@@ -70,7 +70,9 @@ free CSV the whole time. If it did not (if the satellite misses the things the e
 then the more interesting question is *what* it misses, and whether that gap could be characterised
 cheaply enough to triage where to send the divers. Either answer is worth writing down.
 
-## A short primer: what InSAR actually measures
+## How I put the free signal on trial
+
+### What InSAR actually measures
 
 Before the prediction, a few paragraphs of radar, because the whole result hangs on what this
 measurement can and cannot physically see, and almost every way of being wrong about quay walls
@@ -119,6 +121,8 @@ pocket: when the radar fails to call the schedule later, it will not be because 
 too small to measure; it will be because the walls the city worked on and the ones it has not barely
 differ.
 
+### The finished product on trial, not my reprocessing
+
 One honesty note before the result. I did not only consume a free CSV; I also rebuilt the entire chain
 from raw Sentinel-1 radar myself, 158 acquisitions and 726 GB of imagery, and held my home-made version
 up against the national product. Point by point it is noisy; it agrees with the national product only at
@@ -126,19 +130,21 @@ neighbourhood scale. That calibration is a story in its own right, and it is the
 product on trial directly, exactly as the city could have. It is the mature, validated tool for this
 job; nothing in the result below rests on my own reprocessing.
 
-## The prediction, and the number that replaced it
+### The pre-registered prediction
 
 Before any data hit the disk, I wrote down a prediction so I could be embarrassed by it later:
 
 > InSAR alone will explain **roughly 65–75% of the city's priority list**, in cross-validated AUC
 > terms.
 
-Here is the number that replaced it. On the in-scope quays, with proper spatial cross-validation and
-the decision rule fixed before I looked, free InSAR alone predicts which segments the city has
-intervened on at an **AUC of 0.49–0.50**, no better than chance at this sample size. Against the city's
-own asset register (material, management district, segment length), the InSAR adds nothing: the
-incremental AUC is roughly zero (+0.002 with a logistic model, −0.014 with boosted trees), slightly
-negative on some folds.
+## What came out
+
+Here is the number that replaced the prediction. On the in-scope quays, with proper spatial
+cross-validation and the decision rule fixed before I looked, free InSAR alone predicts which segments
+the city has intervened on at an **AUC of 0.49–0.50**, no better than chance at this sample size.
+Against the city's own asset register (material, management district, segment length), the InSAR adds
+nothing: the incremental AUC is roughly zero (+0.002 with a logistic model, −0.014 with boosted trees),
+slightly negative on some folds.
 
 So the prediction was not a little optimistic. It was wrong in the way that matters: the cheap signal
 did *not* already know what the divers and engineers concluded. The rest of this post is the *why*,
@@ -151,8 +157,7 @@ for how well the free radar can even see each wall.
 
 ![The verdict map: 1,578 quay segments drawn from their own geometry. Warm colours are the 192 segments the city has worked on (2020–2026); grey is in-programme-but-not-yet; line width is radar visibility (persistent-scatterer density). The intervention cluster in the old centre and the radar's coverage do not line up; the geography itself is the null.](/blog-figures/insar-quay-walls-amsterdam/quay-verdict-map.png)
 
-
-## I gave it every direction to hide in
+### I gave it every direction to hide in
 
 A null is only worth reading if the person reporting it tried to break it. Quay failure is mostly
 *horizontal* (the wall rotates toward the canal as the piles rot and the soil behind washes out), so
@@ -274,7 +279,7 @@ own detection method), but it is a different research question, and I am keeping
 a separate piece rather than bending this one around it. Here it does one job: it tells you the silence
 on the quays is real.
 
-## How this could actually be solved, and everything I tried
+## Limitations, and what would actually crack it
 
 I did not accept the free product's null at face value. Here is the ladder I climbed, and where each
 rung stopped.

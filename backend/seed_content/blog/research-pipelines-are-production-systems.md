@@ -22,13 +22,11 @@ meta: {"series": "research-pipelines-are-production-systems", "series_part": 1, 
 
 Research code has a short half-life. Mine included. The ingestion stack behind my MSc thesis (a containerised Airflow instance with MinIO and PostGIS on a rented server) worked, produced every panel in the thesis, and then the server was retired and the DAG files went with it. What survived was the callable classes, the SQL, the exported GeoJSONs, and a chapter describing the architecture. The results are fine. The system that produced them exists only as evidence to be reconstructed.
 
+## Why this series was needed
+
 That pattern is not an accident of one thesis. Research computing selects for it: the deliverable is the paper, the deadline is the defence or the submission, and the pipeline is whatever got the numbers out in time. Nobody budgets for the second run. But the second run always comes: a reviewer asks for a robustness check, a co-author wants a different specification, you want to reuse the accessibility routing on a new city. That is the moment ad hoc pipelines die. Not dramatically. They die as a working directory nobody can reproduce, an environment variable nobody documented, a cache that silently serves stale data, a hyperparameter that lives in a filename suffix instead of the data model.
 
-This series is about treating research pipelines as what they actually are: small production systems, with the same failure modes and the same remedies.
-
-## The trilogy idea
-
-Each project in my portfolio can be written up three ways, and I try to keep the three apart:
+There is also a writing gap. Each project in my portfolio can be written up three ways, and I try to keep the three apart:
 
 1. **The research post**: the question, the identification strategy, the result.
 2. **The implementation post**: the model, the algorithm, the code that computes.
@@ -37,11 +35,15 @@ Each project in my portfolio can be written up three ways, and I try to keep the
 ![Three lanes (research, implementation, data engineering) with the third highlighted](/blog-figures/research-pipelines-are-production-systems/f00_2_trilogy.png)
 *The third leg is where most of the engineering hours went, and where every near-miss lived. (Image by author)*
 
-Most research writing publishes only the first. Some publishes the second. The third almost never gets written, which is odd, because in my projects it is where most of the engineering hours went and where every near-miss lived. This series is the third leg, told across six real projects, orchestrated as Airflow DAGs in one local instance: one truthful DAG per project, pointing at the real scripts with the real dependencies, not a toy rebuilt for the blog.
+Most research writing publishes only the first. Some publishes the second. The third almost never gets written, which is odd, because in my projects it is where most of the engineering hours went and where every near-miss lived. This series is that third leg: treating research pipelines as what they actually are, small production systems, with the same failure modes and the same remedies.
+
+## How the series is built
+
+The series is told across six real projects, orchestrated as Airflow DAGs in one local instance: one truthful DAG per project, pointing at the real scripts with the real dependencies, not a toy rebuilt for the blog.
 
 "Truthful" carries weight there. Almost every DAG is `schedule=None`, because almost every input is a pinned snapshot or an annual statistical release, and a cron re-fetch would silently drift numbers already cited in papers. A scheduler that runs nothing on a schedule sounds like a joke until you have watched a rolling-window upstream quietly rewrite your treatment period.
 
-## The lineup
+### The lineup
 
 The series runs as tracks, not numbered installments. First **the setup post**: the Airflow 3.3 stack every pipeline here runs on. The real four-service split over Postgres, one four-line Dockerfile, env-var path/interpreter contracts so the same DAG files parse on host and in container, the hardening deltas for a rented Hetzner box, and the scale-out configuration: CeleryExecutor across multiple Hetzner machines, with the broker, queue-pinning, network-keepalive and monitoring lessons that make it stable.
 
@@ -62,7 +64,7 @@ Amsterdam quays (726 GB in, 1578 rows out) and the Tokyo ODPT build keep their s
 ![The series lineup: one setup post, five case studies, two projects further out](/blog-figures/research-pipelines-are-production-systems/f00_3_lineup.png)
 *One setup post, then one data-engineering case study per project. (Image by author)*
 
-## Who this is for
+## What this gets you
 
 If you write research code and have ever lost an afternoon to a cache you forgot existed, this series is for you. If you hire data engineers to serve researchers, it is also a portfolio: six pipelines, 1.5 GB to 726 GB, each of which produced a thesis chapter, a paper, or a submission, run as systems that can be re-run, audited, and handed over. Each post names the DAGs, operators and guards it describes, with the configuration decisions and the failure modes that motivated them.
 

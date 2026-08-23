@@ -21,6 +21,8 @@ meta: {"series": "research-pipelines-are-production-systems", "series_part": 4, 
 
 Every pipeline in this series runs on **pinned inputs**: OSM snapshots fetched once, dated, and never silently refreshed, because the published numbers downstream are only reproducible against those exact bytes. The DAGs therefore *assert* their inputs rather than fetch them: acquisition is a guard, not a download.
 
+## Why this was needed
+
 My first version of that guard was a bash task:
 
 ```bash
@@ -34,7 +36,9 @@ It checks the wrong thing: "the file exists" is a filename contract, while the r
 ![Two files with the same name and different bytes: the existence check passes both, the SHA-256 guard blocks the drifted one](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_1_contract.png)
 *"The file exists" is a filename contract; reproducibility is a contract about content. (Image by author)*
 
-## Sidecars carry the hash
+## How it was implemented
+
+### Sidecars carry the hash
 
 Each snapshot already had a `.meta.json` sidecar (source, fetch time, feature count, bbox). The fix adds one field:
 
@@ -49,7 +53,7 @@ Each snapshot already had a `.meta.json` sidecar (source, fetch time, feature co
 
 A small script writes hashes once (`hash_snapshots.py --write`, refusing to overwrite a *differing* hash without `--force`, because that means the pinned bytes changed and you should know). Honesty note that survives in the sidecar: the fetch timestamp is a file mtime, not the Overpass DB timestamp. Sidecars should record their own limitations.
 
-## The operator
+### The operator
 
 Verification then becomes a reusable task instead of a per-DAG bash snippet:
 
@@ -74,7 +78,7 @@ The `execute()` itself is deliberately boring: stream each file through SHA-256,
 ![Four failure modes mapped to four human actions: pin it, restore it, hash it, stop and think](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_4_quadrant.png)
 *Four failures, four different human actions. (Image by author)*
 
-## Where it sits in the graph
+### Where it sits in the graph
 
 ![The DAG chain: extract, pin, then the guard as a gate before ingestion, QA and parity](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_3_dag.png)
 *The guard is a gate: retries=0, a fact-check rather than an operation. (Image by author)*
@@ -87,8 +91,8 @@ Nothing ingests until the guard passes, so every row the warehouse ever holds de
 ![The provenance chain from pinned snapshot through sidecar hash, guard, DAG run and warehouse row to the number in the paper](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_2_provenance.png)
 *Read it right to left: every published number descends from verified bytes. (Image by author)*
 
-## When to promote a bash line to an operator
+## What improved
 
-This operator replaced two bash tasks and net-deleted DAG code, but that's not the argument. The argument is that a *contract you rely on in several DAGs* deserves a tested implementation: the guard has six unit tests (pass, byte-drift, missing file, missing sidecar, unpinned hash, multi-violation reporting) that run in CI in under a second, coverage a heredoc in a `bash_command` will never have. My rule of thumb after this: bash tasks are for *running things*; the moment a task's job is to *decide* something (verify, gate, compare), it wants to be an operator with tests.
+The operator replaced two bash tasks and net-deleted DAG code, but that's not the argument. The argument is that a *contract you rely on in several DAGs* now has a tested implementation: the guard has six unit tests (pass, byte-drift, missing file, missing sidecar, unpinned hash, multi-violation reporting) that run in CI in under a second, coverage a heredoc in a `bash_command` will never have. My rule of thumb after this: bash tasks are for *running things*; the moment a task's job is to *decide* something (verify, gate, compare), it wants to be an operator with tests.
 
 The same rule produced the DuckDB operator's `fail_on_rows` mode in the previous chapter. Between the two of them, every decision point in the ingestion path (are the inputs the pinned ones? did the load land exactly what was expected? does the SQL parse equal the python parse?) is now a tested, reusable component rather than a convention someone has to remember.
