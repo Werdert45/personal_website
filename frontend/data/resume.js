@@ -103,13 +103,6 @@ export const resume = {
       href: "/research/when-metro-capitalizes-paper",
     },
     {
-      title: "A Multi-Modal Accessibility Score for NA, EU and APAC: Construction, Decomposition, and Compute",
-      venue: "Research by KR&A",
-      year: "2026",
-      result: "",
-      href: "https://connectivityscore.krafin.tech",
-    },
-    {
       title: "Building an Agent-Based Model to Explain Gentrification in European Cities",
       venue: "(MSc thesis, 8/8)",
       year: "2025",
@@ -138,6 +131,50 @@ export const resume = {
         "Minor in Linguistics, University of Amsterdam",
         "Erasmus minor, Università di Bologna (UNIBO)",
       ],
+    },
+  ],
+
+  // Page 2 of the CV PDF; condensed from the site's Projects cards.
+  projects: [
+    {
+      name: "LanguageBuddy: AI language tutor",
+      line: "Self-hosted AI language tutor for Dutch, Italian and Spanish: chat or voice-call LLM tutor with SM-2 spaced repetition; every mistake feeds the next day's exercises, with a real-news reader and 6,200+ CEFR-aligned vocabulary entries.",
+      stack: "FastAPI · LLM · TTS · SQLite · Docker",
+    },
+    {
+      name: "Gentrification agent-based model",
+      line: "MSc thesis: an agent-based model of neighbourhood change for Amsterdam, Utrecht and Milan, driven by income, affordability and attractiveness (streetview 'beauty' classification, GTFS connectivity, greenery, neighborhood sentiment). A two-tenure social-housing extension is in progress.",
+      stack: "Python/GeoPandas · Large Vision Model · PostGIS · Agent-based Modeling",
+    },
+    {
+      name: "Connectivity & walkability scoring (KR&A)",
+      line: "Led a saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets from TBs of data and 100s of sources.",
+      stack: "PostGIS · S3 · Dijkstra & Network Science · Distributed Compute",
+    },
+    {
+      name: "Monthly house-price index, 13 EU countries (KR&A)",
+      line: "Web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs.",
+      stack: "Python · Scrapy/Selenium · PostGIS · MongoDB · R",
+    },
+    {
+      name: "Research pipelines as production systems",
+      line: "Airflow 3 pipelines hosting every personal research project, scaling from a laptop to a multi-machine CeleryExecutor cluster; idempotency guards, custom operators and agentic monitoring.",
+      stack: "Airflow · Celery · Docker · CI · DuckDB",
+    },
+    {
+      name: "SponsoredBye: sponsor-segment detection",
+      line: "Text-only sponsor-skipper for YouTube: sentence-T5 embeddings feed a BiLSTM sequence tagger that maps sponsored sentences back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.",
+      stack: "TensorFlow · BiLSTM · sentence-T5 · MongoDB · Huggingface",
+    },
+    {
+      name: "FishFinder: photo-to-species ID",
+      line: "Flutter app identifying 63 Dutch fish species from a photo, fully on-device: ~3,000 hand-annotated photos masked with Segment Anything, a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model.",
+      stack: "Flutter/Dart · TFLite · ResNet50 · Segment Anything Model (SAM) · Firebase",
+    },
+    {
+      name: "Predicting flooding risk from local features",
+      line: "BSc thesis: explaining flood risk from 33 local features across ~45,000 European locations (100GB+ of data); a Random Forest reaches 97.5% on the binary 20-year flood question.",
+      stack: "scikit-learn · Random Forest · raster data · GIS",
     },
   ],
 

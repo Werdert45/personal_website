@@ -12,7 +12,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import React from "react";
 import { Document, Page, Text, View, Link, renderToBuffer } from "@react-pdf/renderer";
-import { resume } from "../data/resume.js";
+import { resume, resumeSections } from "../data/resume.js";
 
 const h = React.createElement;
 const OUT_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../public/ian-ronk-cv.pdf");
@@ -50,6 +50,11 @@ function validateResume(r) {
   });
 
   need(Array.isArray(r?.stack) && r.stack.length > 0, "stack (non-empty array)");
+
+  need(Array.isArray(r?.projects) && r.projects.length > 0, "projects (non-empty array)");
+  (r?.projects || []).forEach((p, i) => {
+    for (const k of ["name", "line", "stack"]) need(typeof p?.[k] === "string" && p[k].trim(), `projects[${i}].${k}`);
+  });
 
   if (missing.length) {
     console.error("generate-cv: resume.js failed shape validation. Missing/invalid fields:");
@@ -190,7 +195,7 @@ function CvDocument(r) {
       h(Text, { style: st.toolsLine }, r.stack.join(" · ")),
 
       // Experience
-      SectionLabel("Experience", { marginBottom: 6 }),
+      SectionLabel(resumeSections.engineering, { marginBottom: 6 }),
       ...r.engineering.map((job, i) =>
         h(
           View,
@@ -206,7 +211,7 @@ function CvDocument(r) {
       ),
 
       // Research
-      SectionLabel("Research", { marginBottom: 6 }),
+      SectionLabel(resumeSections.research, { marginBottom: 6 }),
       h(
         View,
         { style: { marginBottom: 9 } },
@@ -239,6 +244,28 @@ function CvDocument(r) {
       SectionLabel("Languages & Soft Skills"),
       h(Text, { style: { color: "#222222", marginBottom: 2 } }, hd.languages),
       h(Text, { style: { color: "#222222" } }, hd.softSkills)
+    ),
+
+    // Page 2: Projects (condensed from the site's Projects cards)
+    h(
+      Page,
+      { size: "A4", style: st.page },
+      h(
+        View,
+        { style: [st.headerRow, { marginBottom: 8 }] },
+        h(Text, { style: [st.name, { fontSize: 13 }] }, hd.name),
+        h(Text, { style: st.contact }, `${hd.location} · ${hd.email}`)
+      ),
+      SectionLabel("Projects", { marginBottom: 6 }),
+      ...r.projects.map((p, i) =>
+        h(
+          View,
+          { key: `proj-${i}`, style: { marginBottom: 8 } },
+          h(Text, { style: st.jobTitle }, p.name),
+          h(Text, { style: { color: "#222222", marginTop: 1 } }, p.line),
+          h(Text, { style: [st.grey, { fontSize: 8.4, marginTop: 1.5 }] }, p.stack)
+        )
+      )
     )
   );
 }
@@ -262,9 +289,9 @@ async function main() {
     console.log(`generate-cv: debug copy written to ${process.env.CV_DEBUG_OUT} (${pages} page(s))`);
   }
 
-  if (pages !== 1) {
+  if (pages !== 2) {
     console.error(
-      `generate-cv: rendered CV is ${pages} page(s), but the budget is exactly 1. ` +
+      `generate-cv: rendered CV is ${pages} page(s), but the budget is exactly 2 (resume + projects). ` +
         "Trim content in frontend/data/resume.js (or adjust styles in frontend/scripts/generate-cv.mjs)."
     );
     process.exit(1);
@@ -272,7 +299,7 @@ async function main() {
 
   fs.mkdirSync(path.dirname(OUT_PATH), { recursive: true });
   fs.writeFileSync(OUT_PATH, buffer);
-  console.log(`generate-cv: wrote ${path.relative(process.cwd(), OUT_PATH)} (1 page, ${(buffer.length / 1024).toFixed(1)} kB)`);
+  console.log(`generate-cv: wrote ${path.relative(process.cwd(), OUT_PATH)} (${pages} pages, ${(buffer.length / 1024).toFixed(1)} kB)`);
 }
 
 main().catch((err) => {
