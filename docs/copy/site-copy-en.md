@@ -480,7 +480,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.coreCompetencies`  
   Core Competencies
 - `About.expertiseSubtitle`  
-  Five competences, one constraint: a calibrated pipeline tends to outlast a clever one.
+  Four competences, one constraint: a calibrated pipeline tends to outlast a clever one.
 - `About.educationBadge`  
   Education
 - `About.experienceBadge`  
@@ -513,30 +513,62 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   years building
 - `About.journeyTitleLine2`  
   production data systems.
-- `About.expertise[0].title`  
-  Data Architecture & Pipelines
-- `About.expertise[0].description`  
-  Scrape and ETL infrastructure that keeps running: three years of weekly collection across 8 authenticated sources at 300k records a week, with schema, orchestration and failure handling designed up front and Airflow and PostGIS underneath.
-- `About.expertise[1].title`  
-  Network Science
-- `About.expertise[1].description`  
-  Graph methods on real geographies: a saturation-validated Connectivity Score at parcel resolution, accessibility and connectivity research.
-- `About.expertise[2].title`  
-  Timeseries & Forecasting
-- `About.expertise[2].description`  
-  A monthly house-price index across 13 EU countries tested with Eurostat, plus nowcasting models for sparse, slow official statistics.
-- `About.expertise[3].title`  
-  Spatial Analysis & Simulation
-- `About.expertise[3].description`  
-  Parcel- and postcode-level modelling and simulation: agent-based gentrification models, hedonic pricing, H3 and PostGIS as daily tools.
-- `About.expertise[4].title`  
-  Product Ownership & Leadership
-- `About.expertise[4].description`  
-  End-to-end ownership from method to shipped API: a 13-server build, and a team of 4–5 led at KR&A.
+- `About.expertise[0].name`  
+  Data Engineering
+- `About.expertise[0].blurb`  
+  Building and maintaining pipelines and efficient storage: three years of weekly collection across 8 authenticated sources at 300k records a week, with schema, orchestration and failure handling designed up front.
+- `About.expertise[0].stack[0]`  
+  Airflow
+- `About.expertise[0].stack[1]`  
+  Python
+- `About.expertise[0].stack[2]`  
+  ETL
+- `About.expertise[0].stack[3]`  
+  Monitoring
+- `About.expertise[0].stack[4]`  
+  Iceberg
+- `About.expertise[1].name`  
+  Analytics & ML
+- `About.expertise[1].blurb`  
+  The analysis layer on top: nowcasting on sparse official statistics, a monthly house-price index across 13 EU countries, regressions and hedonic pricing, and simulations such as agent-based gentrification models.
+- `About.expertise[1].stack[0]`  
+  Regression
+- `About.expertise[1].stack[1]`  
+  Time Series
+- `About.expertise[1].stack[2]`  
+  ABM Simulations
+- `About.expertise[1].stack[3]`  
+  Applied ML
+- `About.expertise[2].name`  
+  System Architecture
+- `About.expertise[2].blurb`  
+  The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 13 different services run as production infrastructure.
+- `About.expertise[2].stack[0]`  
+  Linux/Bash
+- `About.expertise[2].stack[1]`  
+  Networking & APIs
+- `About.expertise[2].stack[2]`  
+  Docker
+- `About.expertise[2].stack[3]`  
+  Distributed Compute
+- `About.expertise[2].stack[4]`  
+  S3
+- `About.expertise[3].name`  
+  Product Ownership
+- `About.expertise[3].blurb`  
+  End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a team of 4–5 led at KR&A.
+- `About.expertise[3].stack[0]`  
+  Team of 4–5
+- `About.expertise[3].stack[1]`  
+  Stakeholders
+- `About.expertise[3].stack[2]`  
+  Roadmap
+- `About.expertise[3].stack[3]`  
+  Shipped APIs
 - `About.downloadCv`  
   Download the CV (PDF)
 - `About.cvBelow`  
-  Full CV below ↓
+  Full CV below
 
 ### Resume content
 *Lives in `frontend/data/resume.js` (EN-only by design); also renders the downloadable CV PDF.*
@@ -1028,4 +1060,4 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ---
-**Total: 2,688 words.**
+**Total: 2,706 words.**
