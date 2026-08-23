@@ -214,12 +214,12 @@ function CvDocument(r) {
         )
       ),
 
-      // Research
+      // Research (entries flagged cvExclude stay on the About page only)
       SectionLabel(resumeSections.research, { marginBottom: 6 }),
       h(
         View,
         { style: { marginBottom: 9 } },
-        ...r.research.map((p, i) => h(View, { key: i, style: { marginBottom: 2.5 } }, Bullet(researchLine(p))))
+        ...r.research.filter((p) => !p.cvExclude).map((p, i) => h(View, { key: i, style: { marginBottom: 2.5 } }, Bullet(researchLine(p))))
       ),
 
       // Education
