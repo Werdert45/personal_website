@@ -401,49 +401,6 @@
 .viz-card .meta .foot .op { color: var(--ink); }
 .viz-card .meta .foot .op:hover { color: var(--yellow-2); }
 
-/* ---------- Writing teaser ---------- */
-.writing-teaser {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 20px;
-}
-.wt-card {
-  border: 1px solid var(--ink);
-  padding: 24px;
-  background: var(--paper);
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  min-height: 220px;
-  transition: background .2s;
-}
-.wt-card:hover { background: var(--yellow); }
-.wt-card .t {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--mute);
-  display: flex;
-  justify-content: space-between;
-}
-.wt-card h4 {
-  font-family: var(--font-serif);
-  font-size: 26px;
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-}
-.wt-card h4 i { font-style: italic; }
-.wt-card .more {
-  margin-top: auto;
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-}
-
 /* ---------- Experience (dark timeline) ---------- */
 .xp {
   background: var(--ink);
@@ -1027,7 +984,6 @@
     padding-left: 24px; padding-right: 24px;
   }
   .coords { display: none; }
-  .writing-teaser { grid-template-columns: 1fr; }
   .blog-feat { grid-template-columns: 1fr; }
   .blog-feat .cover { border-right: none; border-bottom: 1px solid var(--ink); min-height: 200px; }
   .blog-row { grid-template-columns: 40px 1fr 44px; grid-template-rows: auto auto auto; gap: 8px; }

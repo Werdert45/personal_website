@@ -42,9 +42,6 @@
     ]
   },
   "About": {
-    "publicationsKicker": "Papers",
-    "publicationsEmpty": "Papers erscheinen hier, sobald sie veröffentlicht sind.",
-    "publicationsViewAll": "Alle Papers →",
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kernkompetenzen",
     "expertiseSubtitle": "Vier Kompetenzen, eine Einschränkung: eine kalibrierte Pipeline überlebt meist eine clevere.",
@@ -356,8 +353,6 @@
     "bylinePrefix": "Geschrieben von",
     "bylineSuffix": "· Amsterdam",
     "minRead": "Min. Lesedauer",
-    "writingTeaserKicker": "Arbeiten: Fallstudien & Feldnotizen",
-    "writingTeaserSubtitle": "Fallstudien aus ausgelieferten Projekten, plus Feldnotizen darüber, was in der Produktion schiefgeht.",
     "endCtaKicker": "§ Mehr",
     "endCtaTitle": "Mehr Texte im",
     "endCtaTitleItalic": "Blog.",
@@ -510,5 +505,13 @@
         ]
       }
     ]
+  },
+  "Papers": {
+    "kicker": "Papers",
+    "titlePrefix": "Working",
+    "titleItalic": "Papers",
+    "subtitle": "Methoden, Daten und Ergebnisse hinter den Projekten.",
+    "viewAll": "Alle Papers →",
+    "empty": "Papers erscheinen hier, sobald sie veröffentlicht sind."
   }
 }

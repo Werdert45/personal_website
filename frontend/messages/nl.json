@@ -42,9 +42,6 @@
     ]
   },
   "About": {
-    "publicationsKicker": "Papers",
-    "publicationsEmpty": "Papers verschijnen hier zodra ze gepubliceerd zijn.",
-    "publicationsViewAll": "Alle papers →",
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kerncompetenties",
     "expertiseSubtitle": "Vier competenties, één uitgangspunt: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
@@ -356,8 +353,6 @@
     "bylinePrefix": "Geschreven door",
     "bylineSuffix": "· Amsterdam",
     "minRead": "min lezen",
-    "writingTeaserKicker": "Werk: casestudies & veldnotities",
-    "writingTeaserSubtitle": "Casestudies van opgeleverde projecten, plus veldnotities over wat er misgaat in productie.",
     "endCtaKicker": "§ Meer",
     "endCtaTitle": "Meer schrijfsels op de",
     "endCtaTitleItalic": "blog.",
@@ -510,5 +505,13 @@
         ]
       }
     ]
+  },
+  "Papers": {
+    "kicker": "Papers",
+    "titlePrefix": "Working",
+    "titleItalic": "papers",
+    "subtitle": "Methoden, data en resultaten achter de projecten.",
+    "viewAll": "Alle papers →",
+    "empty": "Papers verschijnen hier zodra ze gepubliceerd zijn."
   }
 }

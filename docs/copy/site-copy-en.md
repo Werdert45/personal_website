@@ -464,17 +464,26 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.ctaAll`  
   See all papers
 
+### Papers section (§ 05, list of published papers; replaced the Recent work chapter)
+
+- `Papers.kicker`  
+  Papers
+- `Papers.titlePrefix`  
+  Working
+- `Papers.titleItalic`  
+  papers
+- `Papers.subtitle`  
+  Methods, data and results behind the projects.
+- `Papers.viewAll`  
+  All papers →
+- `Papers.empty`  
+  Papers land here as they publish.
+
 
 ## About page (/about)
 
 ### Page copy
 
-- `About.publicationsKicker`  
-  Papers
-- `About.publicationsEmpty`  
-  Papers land here as they publish.
-- `About.publicationsViewAll`  
-  All papers →
 - `About.expertiseBadge`  
   Expertise
 - `About.coreCompetencies`  
@@ -847,10 +856,6 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   · Amsterdam
 - `Thoughts.minRead`  
   min read
-- `Thoughts.writingTeaserKicker`  
-  Work: case studies & field notes
-- `Thoughts.writingTeaserSubtitle`  
-  Case studies from shipped projects, plus field notes on what breaks in production.
 - `Thoughts.endCtaKicker`  
   § More
 - `Thoughts.endCtaTitle`  
@@ -1060,4 +1065,4 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ---
-**Total: 2,706 words.**
+**Total: 2,696 words.**

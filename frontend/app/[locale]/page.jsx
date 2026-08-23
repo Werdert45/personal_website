@@ -3,7 +3,7 @@ import { Marquee } from "@/components/marquee";
 import { AboutTeaser } from "@/components/about-teaser";
 import { FourLanes } from "@/components/four-lanes";
 import { ProjectsGallery } from "@/components/projects-gallery";
-import { WritingTeaser } from "@/components/writing-teaser";
+import { PapersSection } from "@/components/papers-section";
 import { ContactBand } from "@/components/contact-band";
 import { PersonJsonLd, WebSiteJsonLd } from "@/components/json-ld";
 
@@ -37,7 +37,7 @@ export default async function HomePage({ params }) {
       <AboutTeaser />
       <FourLanes />
       <ProjectsGallery />
-      <WritingTeaser locale={locale} />
+      <PapersSection locale={locale} />
       <ContactBand />
     </main>
   );

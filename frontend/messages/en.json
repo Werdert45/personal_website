@@ -42,9 +42,6 @@
     ]
   },
   "About": {
-    "publicationsKicker": "Papers",
-    "publicationsEmpty": "Papers land here as they publish.",
-    "publicationsViewAll": "All papers →",
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Core Competencies",
     "expertiseSubtitle": "Four competences, one constraint: a calibrated pipeline tends to outlast a clever one.",
@@ -356,8 +353,6 @@
     "bylinePrefix": "Written by",
     "bylineSuffix": "· Amsterdam",
     "minRead": "min read",
-    "writingTeaserKicker": "Work: case studies & field notes",
-    "writingTeaserSubtitle": "Case studies from shipped projects, plus field notes on what breaks in production.",
     "endCtaKicker": "§ More",
     "endCtaTitle": "More writing on the",
     "endCtaTitleItalic": "blog.",
@@ -510,5 +505,13 @@
         ]
       }
     ]
+  },
+  "Papers": {
+    "kicker": "Papers",
+    "titlePrefix": "Working",
+    "titleItalic": "papers",
+    "subtitle": "Methods, data and results behind the projects.",
+    "viewAll": "All papers →",
+    "empty": "Papers land here as they publish."
   }
 }

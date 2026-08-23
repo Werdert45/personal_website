@@ -4,32 +4,36 @@ import NewsletterSubscribe from "@/components/newsletter-subscribe";
 import { getItemField } from "@/lib/i18n-item";
 import { renderTitle } from "@/lib/render-title";
 
-async function fetchPosts() {
+async function fetchPapers() {
   const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
   try {
-    const res = await fetch(`${djangoUrl}/api/blog/?status=published&page_size=3`, {
+    const res = await fetch(`${djangoUrl}/api/research/?status=published`, {
       next: { revalidate: 60 },
     });
-    if (!res.ok) return null;
+    if (!res.ok) return [];
     const data = await res.json();
     const results = data.results || data;
-    return Array.isArray(results) ? results.slice(0, 3) : null;
+    if (!Array.isArray(results)) return [];
+    // Dates are mixed-precision strings ("2026-08", "2022"); string sort is enough.
+    return results
+      .sort((a, b) => String(b.published_at || b.date || "").localeCompare(String(a.published_at || a.date || "")))
+      .slice(0, 6);
   } catch {
-    return null;
+    return [];
   }
 }
 
-export async function WritingTeaser({ locale = "en" }) {
-  const t = await getTranslations({ locale, namespace: "Thoughts" });
+export async function PapersSection({ locale = "en" }) {
+  const t = await getTranslations({ locale, namespace: "Papers" });
   const nl = await getTranslations({ locale, namespace: "Newsletter" });
-  const posts = await fetchPosts();
+  const papers = await fetchPapers();
 
   return (
     <section className="section-pad">
       <div className="section-label">
         <span className="bar" />
         <span className="num-label">§ 05</span>
-        <span>{t("writingTeaserKicker")}</span>
+        <span>{t("kicker")}</span>
       </div>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 32, gap: 40, flexWrap: "wrap" }}>
         <h2
@@ -40,44 +44,43 @@ export async function WritingTeaser({ locale = "en" }) {
             letterSpacing: "-0.02em",
           }}
         >
-          {t("recentTitle")} <i style={{ fontStyle: "italic" }}>{t("recentItalic")}</i>.
+          {t("titlePrefix")} <i style={{ fontStyle: "italic" }}>{t("titleItalic")}</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "34ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
-          {t("writingTeaserSubtitle")}{" "}
-          <Link href={`/${locale}/thoughts`} style={{ borderBottom: "1px solid" }}>
+          {t("subtitle")}{" "}
+          <Link href={`/${locale}/projects`} style={{ borderBottom: "1px solid" }}>
             {t("viewAll")}
           </Link>
         </p>
       </div>
 
-      {!posts || posts.length === 0 ? (
+      {papers.length === 0 ? (
         <p style={{ fontFamily: "var(--font-mono)", fontSize: 13, color: "var(--mute)" }}>
-          {t("loadingFallback")}
+          {t("empty")}
         </p>
       ) : (
-        <div className="writing-teaser">
-          {posts.map((p) => {
-            const title = getItemField(p, "title", locale) || p.title;
-            const date = (p.published_at || p.date || "").slice(0, 7);
-            const tag = (getItemField(p, "category", locale) || p.category || "ARTICLE").toUpperCase();
-            return (
-              <Link href={`/${locale}/thoughts/${p.slug}`} key={p.slug} className="wt-card">
-                <div className="t">
-                  <span>{tag}</span>
-                  <span>{date}</span>
+        <div className="blog-list">
+          {papers.map((p, i) => (
+            <Link href={`/${locale}/research/${p.slug}`} key={p.slug} style={{ display: "block" }}>
+              <div className="blog-row">
+                <div className="bi">{String(i + 1).padStart(2, "0")}</div>
+                <div className="by">{(p.published_at || p.date || "").slice(0, 7)}</div>
+                <div className="bt">
+                  {renderTitle(getItemField(p, "title", locale) || p.title, p.italic)}
+                  <span className="bm">{getItemField(p, "excerpt", locale, "") || getItemField(p, "abstract", locale, "")}</span>
                 </div>
-                <h4>{renderTitle(title, p.italic)}</h4>
-                <div className="more">{t("readShort")}</div>
-              </Link>
-            );
-          })}
+                <div className="bg">{(p.category || "PAPER").toUpperCase()}</div>
+                <div className="barr">→</div>
+              </div>
+            </Link>
+          ))}
         </div>
       )}
 
       <div style={{ marginTop: 56 }}>
         <NewsletterSubscribe
           variant="inline"
-          source="home-thoughts"
+          source="home-papers"
           locale={locale}
           heading={nl("homeThoughtsHeading")}
           description={nl("homeThoughtsDescription")}

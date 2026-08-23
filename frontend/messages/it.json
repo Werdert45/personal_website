@@ -42,9 +42,6 @@
     ]
   },
   "About": {
-    "publicationsKicker": "Papers",
-    "publicationsEmpty": "I paper compaiono qui non appena vengono pubblicati.",
-    "publicationsViewAll": "Tutti i paper →",
     "expertiseBadge": "Competenze",
     "coreCompetencies": "Competenze Principali",
     "expertiseSubtitle": "Quattro competenze, un solo vincolo: una pipeline calibrata tende a durare più di una brillante.",
@@ -356,8 +353,6 @@
     "bylinePrefix": "Scritto da",
     "bylineSuffix": "· Amsterdam",
     "minRead": "min di lettura",
-    "writingTeaserKicker": "Lavori: casi studio & appunti dal campo",
-    "writingTeaserSubtitle": "Casi studio da progetti rilasciati, più appunti dal campo su cosa si rompe in produzione.",
     "endCtaKicker": "§ Altro",
     "endCtaTitle": "Altri scritti sul",
     "endCtaTitleItalic": "blog.",
@@ -510,5 +505,13 @@
         ]
       }
     ]
+  },
+  "Papers": {
+    "kicker": "Paper",
+    "titlePrefix": "Working",
+    "titleItalic": "paper",
+    "subtitle": "Metodi, dati e risultati dietro i progetti.",
+    "viewAll": "Tutti i paper →",
+    "empty": "I paper appariranno qui non appena pubblicati."
   }
 }
