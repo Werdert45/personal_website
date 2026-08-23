@@ -41,7 +41,7 @@ export function renderPostOg({ title, category, date }: OgPostProps) {
               fontFamily: "monospace",
             }}
           >
-            {category ?? "Post"}{date ? ` · ${date}` : ""}
+            {`${category ?? "Post"}${date ? ` · ${date}` : ""}`}
           </div>
           <div style={{ fontSize, lineHeight: 1.05 }}>{title}</div>
           <div

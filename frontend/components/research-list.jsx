@@ -16,6 +16,12 @@ const DEFAULT_ITEMS = [
   { id: 3, slug: "gentrification-abm", category: "THESIS", date: "2025-08", title: "Agent-based modelling of gentrification dynamics", abstract: "MSc thesis (2025). An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data, with an honest account of where the aggregation level limits what the model can claim. Case-study posts land here from August 2026." },
 ];
 
+// Announced but unpublished work, shown after the published papers.
+const IN_PROGRESS = [
+  { title: "Social housing impact on the gentrification ABM" },
+  { title: "Urban heat island research" },
+];
+
 export function ResearchList({ initialItems = [] }) {
   const [searchQuery, setSearchQuery] = useState("");
   const [researchItems, setResearchItems] = useState(initialItems);
@@ -76,8 +82,7 @@ export function ResearchList({ initialItems = [] }) {
             letterSpacing: "-0.02em",
           }}
         >
-          {t("listTitlePrefix")} <i style={{ fontStyle: "italic" }}>{t("listTitleItalic")}</i><br />
-          {t("listTitleAmp")} <span style={{ color: "var(--yellow-2)" }}>{t("listTitleHighlight")}</span>.
+          {t("listTitlePrefix")} <i style={{ fontStyle: "italic" }}>{t("listTitleItalic")}</i>.
         </h2>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "38ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
           {t("listSubtitle")}
@@ -130,6 +135,15 @@ export function ResearchList({ initialItems = [] }) {
               <div className="rarr">→</div>
             </div>
           </Link>
+        ))}
+        {!searchQuery && IN_PROGRESS.map((item, i) => (
+          <div key={item.title} className="research-item" style={{ cursor: "default", opacity: 0.65 }}>
+            <div className="ri">{String(filteredItems.length + i + 1).padStart(2, "0")}</div>
+            <div className="ry" />
+            <div className="rt">{item.title}</div>
+            <div className="rtag">IN PROGRESS</div>
+            <div className="rarr" />
+          </div>
         ))}
       </div>
 

@@ -3,7 +3,7 @@ title: "US vs EU: does training-data geography matter for autonomous-driving obj
 slug: us-vs-eu-transfer-autonomous-driving
 excerpt: "A controlled 2×3 fine-tuning study on YOLOv3/YOLOv8: US dashcam data transfers roughly nothing to European streets (+0.001 mAP vs +0.153 for in-domain data), and bicycle detection collapses without EU ground truth."
 status: published
-category: project
+category: working-paper
 publication_status: ""
 tags: ["computer-vision", "autonomous-driving", "domain-transfer", "yolo", "kitti"]
 abstract: "Does an object detector trained on US dashcam data still work on European streets? An original 2024 course project suggested catastrophic transfer failure, but was confounded: precision-only metrics, no held-out test set, a resolution mismatch between datasets, and models never trained in-domain. This controlled redo runs a 2×3 design ({zero-shot COCO, US-fine-tuned, EU-fine-tuned} × {US-test, EU-test}) with YOLOv3u and YOLOv8s on Udacity/CrowdAI (US) and KITTI (EU). On EU test data, EU fine-tuning gains +0.153 mAP@0.5:0.95 over zero-shot while US fine-tuning gains +0.001; the difference-in-differences gap is +0.077 ± 0.007 across three seeds. The pattern is mirror-symmetric, so the honest conclusion is narrow fine-tune specialisation rather than a US-specific geographic bias, with one asymmetry that is genuinely geographic: bicycle detection collapses without European training data."

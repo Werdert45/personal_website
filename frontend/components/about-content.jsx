@@ -12,11 +12,6 @@ export function AboutContent() {
   return (
     <>
       <section className="section-pad" style={{ paddingTop: 160 }}>
-        <div className="section-label">
-          <span className="bar" />
-          <span>{t("sectionKicker")}</span>
-        </div>
-
         <div className="about-top" style={{ paddingBottom: 0, borderBottom: "none" }}>
           <div>
             <h1>
@@ -43,7 +38,6 @@ export function AboutContent() {
           </div>
           <div className="portrait">
             <Image src="/profile.jpg" alt="Ian Ronk" width={800} height={800} priority sizes="(max-width: 768px) 100vw, 600px" />
-            <span className="cap">{t("portraitCaption")}</span>
           </div>
         </div>
 

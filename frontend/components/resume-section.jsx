@@ -117,7 +117,9 @@ export function ResumeSection() {
             );
             return (
               <div key={i} style={{ marginBottom: i === research.length - 1 ? 0 : 32 }}>
-                {paper.href ? (
+                {paper.href && /^https?:\/\//.test(paper.href) ? (
+                  <a href={paper.href} target="_blank" rel="noopener noreferrer">{title}</a>
+                ) : paper.href ? (
                   <Link href={`/${locale}${paper.href}`}>{title}</Link>
                 ) : (
                   title

@@ -4,8 +4,8 @@
 
 export const resumeSections = {
   kicker: "Resume",
-  engineering: "Engineering & Leadership",
-  research: "Research & Publications",
+  engineering: "Professional Experience",
+  research: "Research Topics",
   education: "Education",
   stack: "Stack",
   languages: "Languages & Soft Skills",
@@ -24,9 +24,9 @@ export const resume = {
     ],
     languages: "Dutch C2 · English C2 · Italian B2/C1 · German B2 · Spanish A2",
     softSkills:
-      "Team leadership · Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences",
+      "Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Reliability",
     summary:
-      "Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads a team of 4 as Head of Data; publishes independent research on urban dynamics.",
+      "Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads a team of 4 as Head of Data; interest in research on urban dynamics.",
   },
 
   engineering: [
@@ -70,7 +70,7 @@ export const resume = {
       period: "Oct 2021 – Jun 2022",
       bullets: [
         "Flood-occurrence prediction from alternative data (BSc-thesis project); 90%+ accuracy in risk classification.",
-        "Improved API efficiency tenfold through spatial optimisations.",
+        "Improved API efficiency tenfold through spatial optimisations, resulting in promotion.",
       ],
     },
     {
@@ -80,6 +80,7 @@ export const resume = {
       period: "Sep 2019 – Sep 2022",
       bullets: [
         "Enterprise expense-declaration software (EmberJS, PHP) under CI/CD and testing.",
+        "Maintained a client-facing webapp, working on business logic and styling.",
       ],
     },
   ],
@@ -87,7 +88,7 @@ export const resume = {
   research: [
     {
       title: "Calibrating Free Postcode Boundaries from OpenStreetMap",
-      venue: "preprint (arXiv 2026)",
+      venue: "Release August 2026",
       year: "2026",
       result:
         "Seed-density-to-IoU calibration of an OSM-Voronoi pipeline; NL/DK references, transfer to BE, applied to Italy's 4,209 CAP polygons.",
@@ -95,23 +96,23 @@ export const resume = {
     },
     {
       title: "When Does Metro Infrastructure Capitalize into Property Prices?",
-      venue: "working paper",
+      venue: "Release September 2026",
       year: "2026",
       result:
-        "Phase-decomposed DiD across seven European cities, n = 42,004; wild-cluster-bootstrap inference.",
+        "Phase-decomposed DiD across seven European cities, n = 42,004; wild-cluster-bootstrap inference. Found some correlation, but not strong.",
       href: "/research/when-metro-capitalizes-paper",
     },
     {
-      title: "A Saturation-Validated Connectivity Score at Parcel Resolution",
-      venue: "method paper in preparation",
+      title: "A Multi-Modal Accessibility Score for NA, EU and APAC: Construction, Decomposition, and Compute",
+      venue: "Research by KR&A",
       year: "2026",
       result: "",
-      href: null,
+      href: "https://connectivityscore.krafin.tech",
     },
     {
       title: "Building an Agent-Based Model to Explain Gentrification in European Cities",
       venue: "(MSc thesis, 8/8)",
-      year: "2023",
+      year: "2025",
       result: "Amsterdam · Utrecht · Milan.",
       href: "/research/gentrification-abm-european-cities",
     },
@@ -123,12 +124,15 @@ export const resume = {
       institution: "Bocconi University",
       grade: "107/110",
       period: "2023 – 2025",
-      note: "Focus: Finance · Econometrics · Statistics · NLP",
+      note: [
+        "Focus: Finance · Econometrics · Statistics · NLP",
+        "Thesis: Building an Agent-Based Model to Explain Gentrification in European Cities",
+      ],
     },
     {
       degree: "BSc Artificial Intelligence",
       institution: "University of Amsterdam",
-      grade: "",
+      grade: "7.6/10",
       period: "2019 – 2023",
       note: [
         "Minor in Linguistics, University of Amsterdam",

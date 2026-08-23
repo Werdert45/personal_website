@@ -65,12 +65,12 @@ const YELLOW = "#FFD60A";
 
 const st = {
   page: {
-    paddingTop: 28,
-    paddingBottom: 28,
+    paddingTop: 24,
+    paddingBottom: 24,
     paddingHorizontal: 42,
     fontFamily: "Helvetica",
-    fontSize: 9.4,
-    lineHeight: 1.45,
+    fontSize: 9.1,
+    lineHeight: 1.38,
     color: "#111111",
     backgroundColor: "#ffffff",
   },
@@ -102,7 +102,7 @@ const st = {
     lineHeight: 1.3,
   },
   toolsLine: { marginBottom: 9, color: "#222222" },
-  job: { marginBottom: 6.5 },
+  job: { marginBottom: 5.5 },
   jobRow: { flexDirection: "row", justifyContent: "space-between" },
   jobTitle: { fontFamily: "Helvetica-Bold" },
   jobPeriod: { color: "#666666", fontSize: 8.6 },
