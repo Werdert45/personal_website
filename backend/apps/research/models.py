@@ -34,6 +34,7 @@ class Research(models.Model):
         ("", "—"),
         ("in-preparation", "In preparation"),
         ("working-paper", "Working paper"),
+        ("first-version", "First version"),
         ("preprint", "Preprint (arXiv/SSRN)"),
         ("under-review", "Under review"),
         ("published", "Published"),

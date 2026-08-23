@@ -263,7 +263,7 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
                   {article.publication_status && (
                     <div className="flex gap-4">
                       <span className="text-muted-foreground uppercase w-16 shrink-0">Status</span>
-                      <span>{article.publication_status}</span>
+                      <span className="capitalize">{article.publication_status.replace(/-/g, " ")}</span>
                     </div>
                   )}
                   {(article.doi || article.publication_status) && (
