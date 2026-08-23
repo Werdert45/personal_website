@@ -26,14 +26,14 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Head of Data · Engineer & Forscher",
+    "role": "Data Lead · Data Engineer & System Architecture",
     "title": "Komplexe Daten,",
     "titleHighlight": "transformiert",
     "titleEnd": "zu Erkenntnissen.",
-    "description": "Ich baue und leite Produktionsdatensysteme und die Analytik darauf: gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistiken und träge Zeitreihen, Dokumentpipelines auf LLMs und OCR sowie Geo- und Netzwerkdaten. Letzteres ist der Forschungssitz: urbane Dynamik, Wohnungsmärkte, Erreichbarkeit. Von dort stammen die Papers auf dieser Website.",
+    "description": "Ich bin Ian und ich baue und betreibe Produktionsdatensysteme und die Analytik darauf, aus jedem komplexen Datentyp: wöchentlich gescrapte Daten in hohem Volumen, Geodaten, Graph- oder Tabellendaten. Mit diesen Daten beantworte ich die Fragen von Stakeholdern.",
     "aboutMe": "Über mich",
     "workWithMe": "Kontakt aufnehmen",
-    "expertise": "Expertise:",
+    "expertise": "Schwerpunkte",
     "expertiseAreas": [
       "Data Engineering",
       "Systemarchitektur",
@@ -177,7 +177,7 @@
         "badge": "PROJECT",
         "sector": "KI-Produkt",
         "title": "LanguageBuddy: AI language tutor",
-        "outcome": "Ein selbst gehosteter KI-Sprachtutor für Niederländisch, Italienisch und Spanisch: mit einem LLM-Tutor chatten oder telefonieren, und jeder Fehler landet in einer Spaced-Repetition-Warteschlange, die die Übungen des nächsten Tages, Lesetexte aus echten Nachrichten und druckbare Arbeitshefte speist. Adaptive CEFR-Einstufung, 6.200+ kuratierte Vokabeleinträge, eine Suite mit 336 Tests.",
+        "outcome": "Ein selbst gehosteter KI-Sprachtutor für Niederländisch, Italienisch und Spanisch, gebaut auf Spracherwerbsforschung, mit einem LLM-Tutor zum Chatten oder Telefonieren und SM-2-Wiederholung. Jeder Fehler landet in einer Spaced-Repetition-Warteschlange, die die Übungen des nächsten Tages steuert, und ein Scraper für echte Nachrichten liefert Lesetexte. Folgt dem CEFR-Rahmen mit 6.200+ Vokabeleinträgen und bringt Nutzer schneller auf ihr CEFR-Niveau.",
         "stack": [
           "FastAPI",
           "LLM",
@@ -192,56 +192,27 @@
         "badge": "RESEARCH",
         "sector": "MSc-Arbeit · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "Ein agentenbasiertes Modell von Nachbarschaftswandel: Haushalte und Vermieter interagieren auf echten Parzellendaten für Amsterdam, Utrecht und Mailand und reproduzieren Gentrifizierungswellen aus dem Wechselspiel von Attraktivität und Leistbarkeit, mit einer Erweiterung für sozialen Wohnbau in Arbeit.",
+        "outcome": "Meine MSc-Arbeit zu Gentrifizierung: ein agentenbasiertes Modell von Nachbarschaftswandel. Haushalte interagieren mit Nachbarschaften in den untersuchten Städten Amsterdam, Utrecht und Mailand, auf Basis ihres eigenen Einkommens, der Leistbarkeit der Nachbarschaft und ihrer Attraktivität, gespeist aus Elementen wie einer 'Beauty'-Klassifikation von Streetview-Bildern, GTFS-Konnektivität, Begrünung und der Online-Stimmung zur Nachbarschaft. Eine Erweiterung um sozialen Wohnbau mit zwei Mietformen ist in Arbeit.",
         "stack": [
-          "Python",
-          "Mesa",
-          "GeoPandas",
-          "Postgres"
+          "Python/GeoPandas",
+          "Large Vision Model",
+          "PostGIS",
+          "Agent-based Modeling"
         ],
         "link": "/research/gentrification-abm-european-cities"
-      },
-      {
-        "viz": "connectivity",
-        "badge": "KR&A",
-        "sector": "Entwickelt bei KR&A",
-        "title": "Connectivity & walkability scoring",
-        "outcome": "Ein sättigungsvalidierter Konnektivitäts- und Walkability-Score auf Parzellenebene, ausgerollt über 38 Märkte in EU/NA/APAC. Methodenpaper erscheint 2026.",
-        "stack": [
-          "PostGIS",
-          "H3",
-          "GeoPandas",
-          "Python"
-        ],
-        "link": "https://connectivityscore.krafin.tech"
-      },
-      {
-        "viz": "hedonic",
-        "badge": "KR&A",
-        "sector": "Entwickelt bei KR&A",
-        "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Eine Web-Scraping-Pipeline über 13 Länder, die eine hedonische Log-Preis-Regression speist; monatliche Indizes getestet als Disaggregationsindikatoren für die Quartals-HPIs von Eurostat. Sie liefert zudem die Preisdaten hinter dem Metro-Kapitalisierungspaper.",
-        "stack": [
-          "Python",
-          "Scrapy",
-          "PostGIS",
-          "MongoDB",
-          "XGBoost"
-        ],
-        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
       },
       {
         "viz": "pipelines",
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Jedes Forschungsprojekt dieser Seite als wahrheitsgetreue Airflow-3-DAG neu gebaut (echte Skripte, echte Idempotenz-Guards, eigene Operatoren, Tests und CI), skalierend vom Laptop bis zum Multi-Maschinen-CeleryExecutor-Cluster. Als Fallstudienserie aufgeschrieben.",
+        "outcome": "Jedes persönliche Forschungsprojekt, das ich angehe, nutzt Airflow-3-Datenpipelines, die in diesem Projekt gehostet sind. Es skaliert vom Laptop bis zum Multi-Maschinen-CeleryExecutor-Cluster. Gebaut mit Idempotenz-Guards, eigenen Operatoren und agentischem Monitoring.",
         "stack": [
           "Airflow",
           "Celery",
-          "DuckDB",
           "Docker",
-          "CI"
+          "CI",
+          "DuckDB"
         ],
         "link": "/thoughts/research-pipelines-are-production-systems"
       },
@@ -250,12 +221,12 @@
         "badge": "RESEARCH",
         "sector": "Computer Vision · Bocconi",
         "title": "US vs EU transfer for autonomous driving",
-        "outcome": "Funktioniert ein auf US-Dashcam-Daten trainierter Detektor auf europäischen Straßen? Eine kontrollierte 2×3-Fine-Tuning-Studie (YOLOv3/YOLOv8, Udacity vs. KITTI), die die Confounds eines früheren Kursprojekts korrigiert: US-Fine-Tuning überträgt praktisch nichts auf europäische Straßen, während In-Domain-Fine-Tuning +0,15 mAP bringt.",
+        "outcome": "Forschungsprojekt zur Frage, ob ein auf US-Dashcam-Daten trainierter Objektdetektor für autonomes Fahren auf europäischen Straßen funktioniert. Eine kontrollierte Fine-Tuning-Studie von YOLOv3 vs. YOLOv8 mit PyTorch und proprietären Datensätzen. Ergebnis: US-Fine-Tuning überträgt praktisch nichts auf europäische Straßen.",
         "stack": [
           "PyTorch",
           "YOLOv8",
-          "KITTI",
-          "Udacity"
+          "Computer Vision",
+          "Transfer Learning/Finetuning"
         ],
         "link": "/research/us-vs-eu-transfer-autonomous-driving"
       },
@@ -270,7 +241,7 @@
           "BiLSTM",
           "sentence-T5",
           "MongoDB",
-          "Gradio"
+          "Huggingface"
         ],
         "link": "/research/sponsoredbye-sponsored-segment-detection"
       },
@@ -279,12 +250,12 @@
         "badge": "PROJECT",
         "sector": "Mobile ML",
         "title": "FishFinder: photo-to-species ID",
-        "outcome": "Eine Flutter-App, die 63 niederländische Fischarten vom Foto erkennt, vollständig on-device, und mit jedem Fang eine Pokédex-artige FishDex füllt. Die Trainingspipeline: ~3.000 handannotierte Fotos mit Segment Anything maskiert, dann ein feingetuntes ResNet50, komprimiert auf ein 8,8-MB-TFLite-Modell.",
+        "outcome": "Eine Flutter-App, die 63 niederländische Fischarten vom Foto erkennt, vollständig on-device, und mit jedem Fang eine Pokédex-artige FishDex füllt. Die Trainingspipeline: ~3.000 handannotierte Fotos, maskiert mit dem Segment Anything Model, dann ein feingetuntes ResNet50, komprimiert auf ein 8,8-MB-TFLite-Modell für den Einsatz on-device.",
         "stack": [
-          "Flutter",
+          "Flutter/Dart",
           "TFLite",
           "ResNet50",
-          "Segment Anything",
+          "Segment Anything Model (SAM)",
           "Firebase"
         ],
         "link": "/research/fishfinder-on-device-fish-id"
@@ -294,7 +265,7 @@
         "badge": "RESEARCH",
         "sector": "BSc-Arbeit · UvA",
         "title": "Predicting flooding risk from local features",
-        "outcome": "Lässt sich Hochwasserrisiko aus lokalen Merkmalen erklären statt aus einer Black-Box-Hydrodynamiksimulation? 33 Merkmale über ~45.000 europäische Standorte; ein Random Forest erreicht 97,5 % auf der binären 20-Jahres-Frage, mit umliegender Versiegelung und relativer Höhe als wichtigsten Prädiktoren.",
+        "outcome": "Meine BSc-Arbeit zur Frage, ob sich Hochwasserrisiko aus lokalen Merkmalen erklären lässt statt aus einer Black-Box-Hydrodynamiksimulation. 33 Merkmale über ~45.000 europäische Standorte gesammelt, etwa Bodenversiegelung, Bodentyp und Entfernung zum Fluss, über 100GB+ an Daten, und ein Random Forest auf den Zusammenhang angesetzt. Ergebnis: 97,5% auf der binären 20-Jahres-Frage, wobei umliegende Versiegelung und relative Höhe die meiste Arbeit leisten.",
         "stack": [
           "scikit-learn",
           "Random Forest",
@@ -302,10 +273,38 @@
           "GIS"
         ],
         "link": "/research/predicting-flooding-risk-local-features"
+      },
+      {
+        "viz": "connectivity",
+        "badge": "KR&A",
+        "sector": "Entwickelt bei KR&A",
+        "title": "Connectivity & walkability scoring",
+        "outcome": "Ein Projekt, das ich bei KR&A geleitet und durchgeführt habe: ein sättigungsvalidierter Konnektivitäts- und Walkability-Score auf Parzellenebene, ausgerollt über 38 Märkte in EU/NA/APAC, mit Terabytes an Daten und Hunderten von Datenquellen.",
+        "stack": [
+          "PostGIS",
+          "S3",
+          "Dijkstra & Network Science",
+          "Distributed Compute"
+        ],
+        "link": "https://connectivityscore.krafin.tech"
+      },
+      {
+        "viz": "hedonic",
+        "badge": "KR&A",
+        "sector": "Entwickelt bei KR&A",
+        "title": "Monthly house-price index · 13 EU countries",
+        "outcome": "Ein Projekt aus meiner Zeit bei KR&A: eine Web-Scraping-Pipeline über 13 Länder, die eine hedonische Log-Preis-Regression speist; monatliche Indizes getestet als Disaggregationsindikatoren für die Quartals-HPIs von Eurostat.",
+        "stack": [
+          "Python",
+          "Scrapy/Selenium",
+          "PostGIS",
+          "MongoDB",
+          "R"
+        ],
+        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
       }
     ],
     "viewCase": "Mehr lesen",
-    "viewPaper": "Paper ansehen",
     "ctaAll": "Alle Papers ansehen"
   },
   "Footer": {
@@ -353,22 +352,22 @@
     "cta": "Vollständige Bio →"
   },
   "AboutTeaser": {
-    "kicker": "Über mich: wer hinter der Arbeit steht",
+    "kicker": "Über mich: wer ich bin",
     "titleLine1": "Hallo, ich bin",
     "titleLine1Italic": "Ian.",
-    "titleLine2": "Ich baue Produktiv-",
-    "titleLine2Underline": "systeme.",
-    "bio1": "Ich arbeite als Head of Data: Ich baue und führe die Systeme, die Daten in großem Maßstab sammeln, speichern und bereitstellen, und die Analytik darauf. Gescrapte Marktdaten mit 300k Datensätzen pro Woche, amtliche Statistik und langsame Zeitreihen, Dokumentenpipelines auf LLMs und OCR sowie räumliche und Netzwerkdaten.",
-    "bio2": "Letzteres ist der Forschungssitz: urbane Dynamik, Wohnungsmärkte, Erreichbarkeit. Daher stammen die Paper auf dieser Seite.",
+    "titleLine2": "Ich gewinne Erkenntnisse aus",
+    "titleLine2Underline": "Daten",
+    "bio1": "Ich arbeite als Head of Data und baue und betreibe Datensysteme: Daten sammeln, verarbeiten und strukturieren für verschiedene Datenprodukte, genutzt von Pensionsfonds, Statistikämtern und Immobilieninvestoren mit 10B AuM.",
+    "bio2": "Im Laufe meiner Karriere habe ich mit vielen verschiedenen Datentypen und Tools gearbeitet, maßgeschneiderte Systeme für das jeweilige Datenproblem gebaut, mit Stakeholdern auf Kundenseite gesprochen und innovative Lösungen entwickelt.",
     "factRoleK": "Rolle",
-    "factRoleV": "Head of Data · Engineer & Researcher",
+    "factRoleV": "Data Lead · Data Engineer",
     "factBasisK": "Standort",
     "factBasisV": "Amsterdam, NL",
     "factEduK": "Ausbildung",
     "factEduV": "MSc Bocconi · BSc AI, UvA",
     "factStackK": "Stack",
-    "factStackV": "Python · SQL · Airflow · PostGIS · cloud",
-    "portraitCaption": "IAN · AMS · 2026",
+    "factStackV": "Bash · Python · PostGIS/SQL · Airflow · Iceberg",
+    "portraitCaption": "",
     "cta": "Vollständige Bio lesen"
   },
   "Proof": {
@@ -437,54 +436,55 @@
     "privacy": "Deine Adresse wird nicht weitergegeben."
   },
   "Lanes": {
-    "kicker": "Expertise: vier Spuren",
+    "kicker": "Schwerpunkte",
     "titleItalic": "Vier",
-    "titleRest": "Spuren.",
-    "subtitle": "Ein Daten- und System-Toolkit, vier Spuren: Pipelines bauen, die Plattformen darunter entwerfen, schwierige Datentypen zu Produkten formen und die Analytik obendrauf.",
-    "appliedAcross": "Eingesetzt in: Stadtplanung · Immobilien · Klimarisiko · Logistik & Mobilität · öffentlicher Sektor",
-    "automationNote": "Außerdem unter der Haube: LLM/RAG-Pipelines und interne Tools, die Klassifikation, Recherche und Reporting automatisieren. Produktions-KI als Spannweite, nicht als Schlagzeile.",
+    "titleRest": "Schwerpunkte",
+    "subtitle": "Als Head of Data trage ich viele Hüte. Meine vier Schwerpunkte: die Dateninfrastruktur bauen, die Systeme selbst aufsetzen, verschiedene Datentypen handhaben und die Analytik obendrauf betreiben.",
+    "appliedAcross": "",
+    "automationNote": "",
     "items": [
       {
         "name": "Data Engineering",
-        "blurb": "Datenpipelines und Speicher, gebaut und gewartet: drei Jahre wöchentliche Erhebung aus 8 authentifizierten Quellen mit 300k Datensätzen pro Woche, Lakehouse-artige Speicherung und Orchestrierung mit Tests und CI.",
+        "blurb": "Datenpipelines und effiziente Speicherung bauen und warten, etwa drei Jahre wöchentliche Erhebung/Scraping aus 8 verschiedenen Quellen für einen Immobilienfonds mit 10B AuM, und diese Daten dann automatisch strukturieren, bereinigen und deduplizieren.",
         "stack": [
           "Airflow",
-          "DuckDB",
-          "lakehouse",
+          "Python",
           "ETL",
-          "CI"
+          "Monitoring",
+          "Iceberg"
         ]
       },
       {
         "name": "Systemarchitektur",
-        "blurb": "Die Plattformen darunter: Cloud und Bare-Metal, PostGIS, verteiltes Rechnen, Linux, Netzwerke, APIs und Security. 13 Server als Produktionsinfrastruktur betrieben.",
+        "blurb": "Die Plattform darunter aufsetzen: Serverinstanzen, PostGIS, verteiltes Iceberg-Compute und Datenverarbeitungsserver, Netzwerk/VPN, APIs und Security. Beispiel: 13 verschiedene Services laufen als Produktionsinfrastruktur für eine Menge komplexer Datenprodukte.",
         "stack": [
-          "cloud",
-          "PostGIS",
-          "distributed compute",
-          "Linux",
-          "APIs",
-          "security"
+          "Linux/Bash",
+          "Resource Management & S3",
+          "Networking & APIs",
+          "Docker",
+          "Distributed Compute"
         ]
       },
       {
         "name": "Komplexe Datenprodukte",
-        "blurb": "Schwierige Datentypen zu Produkten machen: räumliche und Netzwerkdaten, Dokumentenpipelines auf LLMs und OCR, Graphen und Zeitreihen, end-to-end von der Methode bis zur ausgelieferten API.",
+        "blurb": "Komplexe und unkonventionelle Datentypen in nutzbare Daten für die Analytik verwandeln: räumliche und Netzwerkdaten, Dokumentdaten und Zeitreihen, end-to-end verantwortet von den Rohdaten bis zu den Erkenntnissen.",
         "stack": [
-          "spatial",
-          "graphs",
-          "documents · LLM/OCR",
-          "time series"
+          "Spatial",
+          "Graph",
+          "NoSQL/MongoDB",
+          "OCR",
+          "Data Validation"
         ]
       },
       {
         "name": "Analytics & ML",
-        "blurb": "Die Analyseschicht darüber: Zeitreihenmodelle und Nowcasting, Regressionen und kausale Designs und angewandtes ML, das wirklich in Produktion geht, von hedonischen Preismodellen bis zu Sequence-Taggern.",
+        "blurb": "Die Analyseschicht obendrauf: Nowcasting, ABM-Simulationen, Regressionen, statistische Methoden und angewandtes ML, das in Produktion geht: von hedonischen Preismodellen über Bildklassifikation bis zu statistisch sauberen Zeitreihenanalysen.",
         "stack": [
-          "time series",
-          "nowcasting",
-          "regression",
-          "XGBoost"
+          "Regression",
+          "Time Series",
+          "Simulations",
+          "Insights",
+          "Statistical Analysis"
         ]
       }
     ]

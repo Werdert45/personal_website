@@ -66,9 +66,8 @@ export function ProjectsGallery() {
       <div className="projects-grid">
         {items.map((item, i) => {
           const num = String(i + 1).padStart(2, "0");
-          const isResearchLink = item.link && item.link.startsWith("/research/");
-          const isExternalLink = item.link && /^https?:\/\//.test(item.link);
-          const linkLabel = isResearchLink ? t("viewPaper") : t("viewCase");
+                    const isExternalLink = item.link && /^https?:\/\//.test(item.link);
+          const linkLabel = t("viewCase");
           const localizedHref = item.link ? (isExternalLink ? item.link : `/${locale}${item.link}`) : null;
 
           const cardInner = (

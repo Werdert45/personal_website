@@ -79,6 +79,11 @@ export function ChatWidget() {
     }
   }
 
+  // Ask Ian launcher hidden for now (2026-08-23, per Ian); flip HIDE_LAUNCHER
+  // to false to bring it back.
+  const HIDE_LAUNCHER = true;
+  if (HIDE_LAUNCHER && !open) return null;
+
   return (
     <>
       {!open && (

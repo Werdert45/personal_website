@@ -26,14 +26,14 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Head of Data · Engineer e ricercatore",
+    "role": "Data Lead · Data Engineer & System Architecture",
     "title": "Dati complessi,",
     "titleHighlight": "trasformati",
     "titleEnd": "in conoscenza.",
-    "description": "Costruisco e guido sistemi di dati in produzione e l'analytics sopra di essi: dati di mercato raccolti via scraping a 300k record a settimana, statistiche ufficiali e serie storiche lente, pipeline documentali su LLM e OCR, e dati spaziali e di rete. Quest'ultimo è il posto della ricerca: dinamiche urbane, mercati immobiliari, accessibilità. Da lì nascono i paper su questo sito.",
+    "description": "Sono Ian e costruisco e mantengo sistemi di dati in produzione e l'analytics che ci sta sopra, a partire da qualsiasi tipo di dato complesso: dati web-scraped settimanali ad alto volume, dati geospaziali, a grafo o tabellari. Con questi dati rispondo alle domande degli stakeholder.",
     "aboutMe": "Chi sono",
     "workWithMe": "Scrivimi",
-    "expertise": "Competenze:",
+    "expertise": "Aree di focus",
     "expertiseAreas": [
       "Data engineering",
       "Architettura di sistema",
@@ -177,7 +177,7 @@
         "badge": "PROJECT",
         "sector": "Prodotto AI",
         "title": "LanguageBuddy: AI language tutor",
-        "outcome": "Un tutor linguistico AI self-hosted per olandese, italiano e spagnolo: chatta o telefona con un tutor LLM, e ogni errore viene catturato in una coda di ripetizione dilazionata che alimenta gli esercizi del giorno dopo, letture da notizie reali e quaderni stampabili. Collocamento CEFR adattivo, 6.200+ voci di vocabolario curate, una suite di 336 test.",
+        "outcome": "Un tutor linguistico AI self-hosted per olandese, italiano e spagnolo, costruito sulla ricerca sull'apprendimento delle lingue, con un tutor LLM via chat o chiamata vocale e ripetizione SM-2. Ogni errore finisce in una coda di ripetizione dilazionata che guida gli esercizi del giorno dopo, e uno scraper di notizie reali alimenta l'apprendimento della lettura. Segue il framework CEFR con oltre 6.200 voci di vocabolario e aiuta gli utenti a raggiungere più in fretta l'allineamento CEFR.",
         "stack": [
           "FastAPI",
           "LLM",
@@ -192,56 +192,27 @@
         "badge": "RESEARCH",
         "sector": "Tesi MSc · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "Un modello ad agenti del cambiamento di quartiere: famiglie e proprietari interagiscono su dati catastali reali di Amsterdam, Utrecht e Milano, riproducendo ondate di gentrificazione dal feedback tra attrattività e accessibilità economica, con un'estensione per l'edilizia sociale in corso.",
+        "outcome": "La ricerca della mia tesi magistrale sulla gentrificazione, dove ho costruito un modello ad agenti del cambiamento di quartiere: le famiglie interagiscono con i quartieri delle città trattate, Amsterdam, Utrecht e Milano, in base al proprio reddito, all'accessibilità economica del quartiere e alla sua attrattività, calcolata da elementi come la classificazione di 'bellezza' delle immagini streetview, la connettività GTFS, il verde e il sentiment online del quartiere. Un'estensione a due regimi abitativi per l'edilizia sociale è in corso.",
         "stack": [
-          "Python",
-          "Mesa",
-          "GeoPandas",
-          "Postgres"
+          "Python/GeoPandas",
+          "Large Vision Model",
+          "PostGIS",
+          "Agent-based Modeling"
         ],
         "link": "/research/gentrification-abm-european-cities"
-      },
-      {
-        "viz": "connectivity",
-        "badge": "KR&A",
-        "sector": "Sviluppato in KR&A",
-        "title": "Connectivity & walkability scoring",
-        "outcome": "Un punteggio di connettività e pedonabilità validato a saturazione, a risoluzione di particella, distribuito su 38 mercati EU/NA/APAC. Paper metodologico in uscita nel 2026.",
-        "stack": [
-          "PostGIS",
-          "H3",
-          "GeoPandas",
-          "Python"
-        ],
-        "link": "https://connectivityscore.krafin.tech"
-      },
-      {
-        "viz": "hedonic",
-        "badge": "KR&A",
-        "sector": "Sviluppato in KR&A",
-        "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Una pipeline di web scraping su 13 paesi che alimenta una regressione edonica log-prezzo; indici mensili testati come indicatori di disaggregazione per gli HPI trimestrali di Eurostat. È anche la fonte dei dati di prezzo dietro il paper sulla capitalizzazione delle metropolitane.",
-        "stack": [
-          "Python",
-          "Scrapy",
-          "PostGIS",
-          "MongoDB",
-          "XGBoost"
-        ],
-        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
       },
       {
         "viz": "pipelines",
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Ogni progetto di ricerca di questo sito ricostruito come una DAG Airflow 3 fedele (script veri, guardie di idempotenza vere, operatori custom, test e CI), scalando dal laptop a un cluster CeleryExecutor multi-macchina. Raccontato in una serie di casi di studio.",
+        "outcome": "Ogni mio progetto di ricerca personale usa pipeline di dati Airflow 3 ospitate in questo progetto, che scala dal laptop a un cluster CeleryExecutor multi-macchina. È costruito con guardie di idempotenza, operatori custom e monitoraggio agentico.",
         "stack": [
           "Airflow",
           "Celery",
-          "DuckDB",
           "Docker",
-          "CI"
+          "CI",
+          "DuckDB"
         ],
         "link": "/thoughts/research-pipelines-are-production-systems"
       },
@@ -250,12 +221,12 @@
         "badge": "RESEARCH",
         "sector": "Computer vision · Bocconi",
         "title": "US vs EU transfer for autonomous driving",
-        "outcome": "Un detector addestrato su dashcam americane funziona sulle strade europee? Uno studio controllato di fine-tuning 2×3 (YOLOv3/YOLOv8, Udacity vs KITTI) che corregge i confondimenti di un precedente progetto di corso: il fine-tuning americano non trasferisce quasi nulla alle strade europee, mentre quello in-domain guadagna +0,15 mAP.",
+        "outcome": "Un progetto di ricerca per rispondere alla domanda se un object detector per la guida autonoma, addestrato su dati dashcam americani, funzioni sulle strade europee. Uno studio controllato di fine-tuning di YOLOv3 contro YOLOv8 con PyTorch e dataset proprietari. Il risultato: il fine-tuning americano non trasferisce quasi nulla alle strade europee.",
         "stack": [
           "PyTorch",
           "YOLOv8",
-          "KITTI",
-          "Udacity"
+          "Computer Vision",
+          "Transfer Learning/Finetuning"
         ],
         "link": "/research/us-vs-eu-transfer-autonomous-driving"
       },
@@ -264,13 +235,13 @@
         "badge": "PROJECT",
         "sector": "NLP · sequence tagging",
         "title": "SponsoredBye: sponsor-segment detection",
-        "outcome": "Uno skipper di sponsor per YouTube basato solo sul testo, costruito prima che YouTube Premium ne lanciasse uno: embedding sentence-T5 alimentano un sequence tagger BiLSTM che segnala le frasi sponsorizzate e le riporta ai timestamp, riducendo l'errore di segmentazione dal 99% al 16% di WindowDiff.",
+        "outcome": "Uno skipper di sponsor per YouTube basato solo sul testo, costruito prima che YouTube Premium ne lanciasse uno: embedding sentence-T5 alimentano un sequence tagger BiLSTM che segnala le frasi sponsorizzate e le riporta ai timestamp, riducendo l'errore di segmentazione dal 99% al 16% WindowDiff.",
         "stack": [
           "TensorFlow",
           "BiLSTM",
           "sentence-T5",
           "MongoDB",
-          "Gradio"
+          "Huggingface"
         ],
         "link": "/research/sponsoredbye-sponsored-segment-detection"
       },
@@ -279,12 +250,12 @@
         "badge": "PROJECT",
         "sector": "Mobile ML",
         "title": "FishFinder: photo-to-species ID",
-        "outcome": "Un'app Flutter che identifica 63 specie ittiche olandesi da una foto, interamente on-device, e riempie una FishDex in stile Pokédex a ogni cattura. La pipeline di training: ~3.000 foto annotate a mano mascherate con Segment Anything, poi un ResNet50 rifinito e compresso in un modello TFLite da 8,8 MB.",
+        "outcome": "Un'app Flutter che identifica 63 specie ittiche olandesi da una foto, interamente on-device, e riempie una FishDex in stile Pokédex a ogni cattura. La pipeline di training: ~3.000 foto annotate a mano mascherate con Segment Anything Model, poi un ResNet50 rifinito con fine-tuning e compresso in un modello TFLite da 8,8 MB per l'uso on-device.",
         "stack": [
-          "Flutter",
+          "Flutter/Dart",
           "TFLite",
           "ResNet50",
-          "Segment Anything",
+          "Segment Anything Model (SAM)",
           "Firebase"
         ],
         "link": "/research/fishfinder-on-device-fish-id"
@@ -294,7 +265,7 @@
         "badge": "RESEARCH",
         "sector": "Tesi BSc · UvA",
         "title": "Predicting flooding risk from local features",
-        "outcome": "Il rischio di alluvione si può spiegare con caratteristiche locali invece che con una simulazione idrodinamica black-box? 33 caratteristiche su ~45.000 località europee; una Random Forest raggiunge il 97,5% sulla domanda binaria a 20 anni, con impermeabilizzazione circostante e altezza relativa come predittori dominanti.",
+        "outcome": "La mia tesi triennale, che chiede se il rischio di alluvione si possa spiegare con caratteristiche locali invece che con una simulazione idrodinamica black-box. Ho raccolto 33 caratteristiche su ~45.000 località europee, come impermeabilizzazione del suolo, tipo di terreno e distanza dal fiume, su oltre 100GB di dati, e ho usato una Random Forest per trovarne la relazione. Il risultato: 97,5% sulla domanda binaria dell'alluvione ventennale, con impermeabilizzazione circostante e altezza relativa a fare la maggior parte del lavoro.",
         "stack": [
           "scikit-learn",
           "Random Forest",
@@ -302,10 +273,38 @@
           "GIS"
         ],
         "link": "/research/predicting-flooding-risk-local-features"
+      },
+      {
+        "viz": "connectivity",
+        "badge": "KR&A",
+        "sector": "Sviluppato in KR&A",
+        "title": "Connectivity & walkability scoring",
+        "outcome": "Un progetto guidato e condotto durante il mio lavoro in KR&A: un punteggio di connettività e pedonabilità validato per saturazione a risoluzione di particella, distribuito su 38 mercati EU/NA/APAC, lavorando con TB di dati e centinaia di fonti.",
+        "stack": [
+          "PostGIS",
+          "S3",
+          "Dijkstra & Network Science",
+          "Distributed Compute"
+        ],
+        "link": "https://connectivityscore.krafin.tech"
+      },
+      {
+        "viz": "hedonic",
+        "badge": "KR&A",
+        "sector": "Sviluppato in KR&A",
+        "title": "Monthly house-price index · 13 EU countries",
+        "outcome": "Un progetto condotto durante il mio lavoro in KR&A: una pipeline di web scraping su 13 paesi che alimenta una regressione edonica log-prezzo; indici mensili testati come indicatori di disaggregazione per gli HPI trimestrali di Eurostat.",
+        "stack": [
+          "Python",
+          "Scrapy/Selenium",
+          "PostGIS",
+          "MongoDB",
+          "R"
+        ],
+        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
       }
     ],
     "viewCase": "Leggi di più",
-    "viewPaper": "Vedi paper",
     "ctaAll": "Vedi tutti i paper"
   },
   "Footer": {
@@ -353,22 +352,22 @@
     "cta": "Bio completa →"
   },
   "AboutTeaser": {
-    "kicker": "Chi sono: la persona dietro al lavoro",
+    "kicker": "Chi sono: mi presento",
     "titleLine1": "Ciao, sono",
     "titleLine1Italic": "Ian.",
-    "titleLine2": "Costruisco sistemi",
-    "titleLine2Underline": "in produzione.",
-    "bio1": "Lavoro come Head of Data: costruisco e guido i sistemi che raccolgono, conservano e servono dati su larga scala, e l'analisi che ci sta sopra. Dati di mercato da scraping a 300k record a settimana, statistiche ufficiali e serie storiche lente, pipeline documentali su LLM e OCR, e dati spaziali e di rete.",
-    "bio2": "Quest'ultimo è il posto della ricerca: dinamiche urbane, mercati immobiliari, accessibilità. Da lì arrivano i paper di questo sito.",
+    "titleLine2": "Creo insight dai",
+    "titleLine2Underline": "dati",
+    "bio1": "Lavoro come Head of Data: costruisco e mantengo sistemi di dati che raccolgono, elaborano e strutturano dati per diversi prodotti, usati da fondi pensione, istituti di statistica e investitori immobiliari con 10B AuM.",
+    "bio2": "Nel corso della mia carriera ho lavorato con molti tipi di dati e strumenti diversi, creando sistemi su misura per i problemi di dati del momento, parlando con gli stakeholder dei clienti e costruendo soluzioni innovative.",
     "factRoleK": "Ruolo",
-    "factRoleV": "Head of Data · Engineer & Researcher",
+    "factRoleV": "Data Lead · Data Engineer",
     "factBasisK": "Base",
     "factBasisV": "Amsterdam, NL",
     "factEduK": "Formazione",
     "factEduV": "MSc Bocconi · BSc AI, UvA",
     "factStackK": "Stack",
-    "factStackV": "Python · SQL · Airflow · PostGIS · cloud",
-    "portraitCaption": "IAN · AMS · 2026",
+    "factStackV": "Bash · Python · PostGIS/SQL · Airflow · Iceberg",
+    "portraitCaption": "",
     "cta": "Leggi la biografia completa"
   },
   "Proof": {
@@ -437,54 +436,55 @@
     "privacy": "Non condivideremo il tuo indirizzo."
   },
   "Lanes": {
-    "kicker": "Competenze: quattro corsie",
-    "titleItalic": "Quattro",
-    "titleRest": "corsie.",
-    "subtitle": "Un unico toolkit di dati e sistemi, quattro corsie: costruire le pipeline, progettare le piattaforme su cui girano, dare forma di prodotto ai dati difficili e fare l'analisi sopra.",
-    "appliedAcross": "Applicato in: pianificazione urbana · immobiliare · rischio climatico · logistica & mobilità · settore pubblico",
-    "automationNote": "Sotto il cofano anche: pipeline LLM/RAG e strumenti interni che automatizzano classificazione, ricerca e reporting. AI di produzione come estensione, non come titolo.",
+    "kicker": "Aree di focus",
+    "titleItalic": "Aree",
+    "titleRest": "di focus",
+    "subtitle": "Come Head of Data indosso molti cappelli. Le mie quattro aree di focus sono costruire l'infrastruttura dati, mettere in piedi i sistemi stessi, gestire tipi di dati diversi e fare analytics sopra.",
+    "appliedAcross": "",
+    "automationNote": "",
     "items": [
       {
         "name": "Data engineering",
-        "blurb": "Pipeline e storage, costruiti e mantenuti: tre anni di raccolta settimanale da 8 fonti autenticate a 300k record a settimana, storage in stile lakehouse e orchestrazione con test e CI.",
+        "blurb": "Costruisco e mantengo pipeline di dati e storage efficiente: per esempio tre anni di raccolta e scraping settimanale da 8 fonti diverse per un fondo immobiliare con 10B AuM, con strutturazione, pulizia e deduplica automatiche dei dati.",
         "stack": [
           "Airflow",
-          "DuckDB",
-          "lakehouse",
+          "Python",
           "ETL",
-          "CI"
+          "Monitoring",
+          "Iceberg"
         ]
       },
       {
         "name": "Architettura di sistema",
-        "blurb": "Le piattaforme sottostanti: cloud e bare-metal, PostGIS, calcolo distribuito, Linux, networking, API e sicurezza. 13 server gestiti come infrastruttura di produzione.",
+        "blurb": "Metto in piedi la piattaforma sottostante: istanze server, PostGIS, calcolo distribuito su Iceberg e server di elaborazione dati, networking/VPN, API e sicurezza. Un esempio: 13 servizi diversi girano come infrastruttura di produzione per sostenere prodotti dati complessi.",
         "stack": [
-          "cloud",
-          "PostGIS",
-          "distributed compute",
-          "Linux",
-          "APIs",
-          "security"
+          "Linux/Bash",
+          "Resource Management & S3",
+          "Networking & APIs",
+          "Docker",
+          "Distributed Compute"
         ]
       },
       {
         "name": "Prodotti dati complessi",
-        "blurb": "Trasformare tipi di dati difficili in prodotti: dati spaziali e di rete, pipeline documentali su LLM e OCR, grafi e serie storiche, end-to-end dal metodo all'API consegnata.",
+        "blurb": "Trasformo tipi di dati complessi e non convenzionali in dati utilizzabili per l'analytics: dati spaziali e di rete, dati documentali e serie storiche, con ownership end-to-end dal dato grezzo agli insight.",
         "stack": [
-          "spatial",
-          "graphs",
-          "documents · LLM/OCR",
-          "time series"
+          "Spatial",
+          "Graph",
+          "NoSQL/MongoDB",
+          "OCR",
+          "Data Validation"
         ]
       },
       {
         "name": "Analytics & ML",
-        "blurb": "Lo strato di analisi: modelli di serie storiche e nowcasting, regressioni e disegni causali, e ML applicato che arriva in produzione, dai modelli edonici dei prezzi ai sequence tagger.",
+        "blurb": "Lo strato di analisi sopra: nowcasting, simulazioni ABM, regressioni, metodi statistici e ML applicato che arriva in produzione: dai modelli edonici dei prezzi, alla classificazione di immagini, fino ad analisi di serie storiche statisticamente solide.",
         "stack": [
-          "time series",
-          "nowcasting",
-          "regression",
-          "XGBoost"
+          "Regression",
+          "Time Series",
+          "Simulations",
+          "Insights",
+          "Statistical Analysis"
         ]
       }
     ]

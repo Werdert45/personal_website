@@ -1,10 +1,9 @@
 export function Marquee({ items }) {
   const defaults = [
-    "Urban dynamics",
-    "Geospatial methods",
-    "Spatial forecasting",
     "Data engineering",
-    "AI Engineering",
+    "System Architecture & Networking",
+    "Geospatial & Network Data",
+    "AI, LLM & OCR",
   ];
   const list = items || defaults;
   const row = (

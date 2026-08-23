@@ -4,7 +4,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ## Global chrome (every page)
-*Navigation bar, footer, cookie consent, chat widget*
+*Navigation bar, footer, cookie consent, chat widget (Ask Ian launcher currently hidden)*
 
 ### Navigation
 
@@ -121,7 +121,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Hero.location`  
   Amsterdam, NL
 - `Hero.role`  
-  Head of Data · Engineer & Researcher
+  Data Lead · Data Engineer & System Architecture
 - `Hero.title`  
   Transforming
 - `Hero.titleHighlight`  
@@ -129,13 +129,13 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Hero.titleEnd`  
   into insights.
 - `Hero.description`  
-  I build and lead production data systems and the analytics on top: web-scraped market data at 300k records a week, official statistics and slow time series, document pipelines built on LLMs and OCR, and spatial and network data. That last one is the research seat: urban dynamics, housing markets, accessibility. It's where the papers on this site come from.
+  I am Ian and I build and maintain production data systems and the analytics on top, from any complex data type: weekly high-volume web-scraped data, geospatial, graph or tabular data. I answer stakeholder questions using this data.
 - `Hero.aboutMe`  
   About me
 - `Hero.workWithMe`  
   Get in touch
 - `Hero.expertise`  
-  Expertise:
+  Focus areas
 - `Hero.expertiseAreas[0]`  
   Data Engineering
 - `Hero.expertiseAreas[1]`  
@@ -149,36 +149,34 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 *Hardcoded in `frontend/components/marquee.jsx`*
 
 - `marquee[0]`  
-  Urban dynamics
-- `marquee[1]`  
-  Geospatial methods
-- `marquee[2]`  
-  Spatial forecasting
-- `marquee[3]`  
   Data engineering
-- `marquee[4]`  
-  AI Engineering
+- `marquee[1]`  
+  System Architecture & Networking
+- `marquee[2]`  
+  Geospatial & Network Data
+- `marquee[3]`  
+  AI, LLM & OCR
 
 ### About teaser (section 2)
 
 - `AboutTeaser.kicker`  
-  About: who's behind the work
+  About: who am I
 - `AboutTeaser.titleLine1`  
   Hi, I'm
 - `AboutTeaser.titleLine1Italic`  
   Ian.
 - `AboutTeaser.titleLine2`  
-  I ship production
+  I create insights using
 - `AboutTeaser.titleLine2Underline`  
-  systems.
+  data
 - `AboutTeaser.bio1`  
-  I work as a Head of Data: building and leading the systems that collect, store and serve data at scale, and the analytics on top. Web-scraped market data at 300k records a week, official statistics and slow time series, document pipelines on LLMs and OCR, and spatial and network data.
+  I work as a Head of Data, where I build and maintain data systems, collecting, processing and structuring data for different data products, used by pension funds, bureaus of statistics and real estate investors with 10B AuM.
 - `AboutTeaser.bio2`  
-  That last one is the research seat: urban dynamics, housing markets, accessibility. It's where the papers on this site come from.
+  Over the course of my career I worked with many different types of data and tools, creating custom systems for the data problems at hand, talking to client stakeholders and creating innovative solutions.
 - `AboutTeaser.factRoleK`  
   Role
 - `AboutTeaser.factRoleV`  
-  Head of Data · Engineer & Researcher
+  Data Lead · Data Engineer
 - `AboutTeaser.factBasisK`  
   Based
 - `AboutTeaser.factBasisV`  
@@ -190,82 +188,78 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `AboutTeaser.factStackK`  
   Stack
 - `AboutTeaser.factStackV`  
-  Python · SQL · Airflow · PostGIS · cloud
-- `AboutTeaser.portraitCaption`  
-  IAN · AMS · 2026
+  Bash · Python · PostGIS/SQL · Airflow · Iceberg
 - `AboutTeaser.cta`  
   Read the full bio
 
-### Four expertise lanes
+### Focus areas
 
 - `Lanes.kicker`  
-  Expertise: four lanes
+  Focus Areas
 - `Lanes.titleItalic`  
-  Four
+  Focus
 - `Lanes.titleRest`  
-  lanes.
+  Areas
 - `Lanes.subtitle`  
-  One data-and-systems toolkit, four lanes: engineering the pipelines, architecting the platforms they run on, shaping hard data types into products, and the analytics on top.
-- `Lanes.appliedAcross`  
-  Applied across: urban planning · real estate · climate risk · logistics & mobility · public sector
-- `Lanes.automationNote`  
-  Also under the hood: LLM/RAG pipelines and internal tools that automate classification, research and reporting. Production AI as engineering range, not the headline.
+  Working as Head of Data I wear many hats. My four focus areas are building the data infrastructure, setting up the systems itself, handling different types of data and running analytics on top.
 - `Lanes.items[0].name`  
   Data Engineering
 - `Lanes.items[0].blurb`  
-  Data pipelines and storage, built and maintained: three years of weekly collection across 8 authenticated sources at 300k records a week, lakehouse-style warehousing, and orchestration with tests and CI.
+  Building and maintaining data pipelines and efficient storage, such as three years of weekly collection/scraping across 8 different sources for a real estate fund with 10B AuM and then structuring, cleaning and deduplicating this data automatically.
 - `Lanes.items[0].stack[0]`  
   Airflow
 - `Lanes.items[0].stack[1]`  
-  DuckDB
+  Python
 - `Lanes.items[0].stack[2]`  
-  lakehouse
-- `Lanes.items[0].stack[3]`  
   ETL
+- `Lanes.items[0].stack[3]`  
+  Monitoring
 - `Lanes.items[0].stack[4]`  
-  CI
+  Iceberg
 - `Lanes.items[1].name`  
   System Architecture
 - `Lanes.items[1].blurb`  
-  The platforms underneath: cloud and bare-metal, PostGIS, distributed compute, Linux, networking, APIs and security. 13 servers run as production infrastructure, not pet machines.
+  Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 13 different services run as production infrastructure to handle loads of complex data products.
 - `Lanes.items[1].stack[0]`  
-  cloud
+  Linux/Bash
 - `Lanes.items[1].stack[1]`  
-  PostGIS
+  Resource Management & S3
 - `Lanes.items[1].stack[2]`  
-  distributed compute
+  Networking & APIs
 - `Lanes.items[1].stack[3]`  
-  Linux
+  Docker
 - `Lanes.items[1].stack[4]`  
-  APIs
-- `Lanes.items[1].stack[5]`  
-  security
+  Distributed Compute
 - `Lanes.items[2].name`  
   Complex Data Products
 - `Lanes.items[2].blurb`  
-  Turning hard data types into products people use: spatial and network data, document pipelines on LLMs and OCR, graphs, and time series, owned end-to-end from method to shipped API.
+  Turning complex and unconventional data types into usable data for analytics: spatial and network data, document data and time series, owned end-to-end from raw data to insights.
 - `Lanes.items[2].stack[0]`  
-  spatial
+  Spatial
 - `Lanes.items[2].stack[1]`  
-  graphs
+  Graph
 - `Lanes.items[2].stack[2]`  
-  documents · LLM/OCR
+  NoSQL/MongoDB
 - `Lanes.items[2].stack[3]`  
-  time series
+  OCR
+- `Lanes.items[2].stack[4]`  
+  Data Validation
 - `Lanes.items[3].name`  
   Analytics & ML
 - `Lanes.items[3].blurb`  
-  The analysis layer on top: time-series models and nowcasting, regressions and causal designs, and applied ML that ships, from hedonic price models to sequence taggers.
+  The analysis layer on top: nowcasting, ABM simulations, regressions, statistical methods and applied ML that ships: from hedonic price models, to image classification to statistically sound time series analyses.
 - `Lanes.items[3].stack[0]`  
-  time series
+  Regression
 - `Lanes.items[3].stack[1]`  
-  nowcasting
+  Time Series
 - `Lanes.items[3].stack[2]`  
-  regression
+  Simulations
 - `Lanes.items[3].stack[3]`  
-  XGBoost
+  Insights
+- `Lanes.items[3].stack[4]`  
+  Statistical Analysis
 
-### Projects & Papers cards (also on /projects)
+### Projects & Papers cards (also on /projects; the 2 KR&A cards sit last)
 
 - `Projects.kicker`  
   Projects & papers: systems, products, research
@@ -284,7 +278,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[0].title`  
   LanguageBuddy: AI language tutor
 - `Projects.items[0].outcome`  
-  A self-hosted AI language tutor for Dutch, Italian and Spanish: chat or voice-call an LLM tutor, and every mistake is captured into a spaced-repetition queue that drives the next day's exercises, real-news reading and printable workbooks. Adaptive CEFR placement, 6,200+ curated vocabulary entries, a 336-test suite.
+  A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries and helps users reach CEFR alignment faster.
 - `Projects.items[0].stack[0]`  
   FastAPI
 - `Projects.items[0].stack[1]`  
@@ -306,169 +300,167 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[1].title`  
   Gentrification agent-based model
 - `Projects.items[1].outcome`  
-  An agent-based model of neighbourhood change: households and landlords interacting on real parcel data for Amsterdam, Utrecht and Milan, reproducing gentrification waves from attractiveness and affordability feedback, with a two-tenure social-housing extension in progress.
+  My MSc Thesis research on gentrification, where I built an agent-based model of neighbourhood change: households interact with neighborhoods in the treated cities Amsterdam, Utrecht and Milan based on their own income, the affordability of the neighborhood and the attractiveness, based on elements such as streetview imagery 'beauty' classification, GTFS connectivity, greenery and neighborhood sentiment online. A two-tenure social-housing extension is in progress.
 - `Projects.items[1].stack[0]`  
-  Python
+  Python/GeoPandas
 - `Projects.items[1].stack[1]`  
-  Mesa
+  Large Vision Model
 - `Projects.items[1].stack[2]`  
-  GeoPandas
+  PostGIS
 - `Projects.items[1].stack[3]`  
-  Postgres
+  Agent-based Modeling
 - `Projects.items[1].link`  
   /research/gentrification-abm-european-cities
 - `Projects.items[2].viz`  
-  connectivity
-- `Projects.items[2].badge`  
-  KR&A
-- `Projects.items[2].sector`  
-  Developed at KR&A
-- `Projects.items[2].title`  
-  Connectivity & walkability scoring
-- `Projects.items[2].outcome`  
-  A saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets. Method paper forthcoming 2026.
-- `Projects.items[2].stack[0]`  
-  PostGIS
-- `Projects.items[2].stack[1]`  
-  H3
-- `Projects.items[2].stack[2]`  
-  GeoPandas
-- `Projects.items[2].stack[3]`  
-  Python
-- `Projects.items[2].link`  
-  https://connectivityscore.krafin.tech
-- `Projects.items[3].viz`  
-  hedonic
-- `Projects.items[3].badge`  
-  KR&A
-- `Projects.items[3].sector`  
-  Developed at KR&A
-- `Projects.items[3].title`  
-  Monthly house-price index · 13 EU countries
-- `Projects.items[3].outcome`  
-  A web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs. It is also the price data behind the metro-capitalisation paper.
-- `Projects.items[3].stack[0]`  
-  Python
-- `Projects.items[3].stack[1]`  
-  Scrapy
-- `Projects.items[3].stack[2]`  
-  PostGIS
-- `Projects.items[3].stack[3]`  
-  MongoDB
-- `Projects.items[3].stack[4]`  
-  XGBoost
-- `Projects.items[3].link`  
-  https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025
-- `Projects.items[4].viz`  
   pipelines
+- `Projects.items[2].badge`  
+  PROJECT
+- `Projects.items[2].sector`  
+  Engineering
+- `Projects.items[2].title`  
+  Research pipelines as production systems
+- `Projects.items[2].outcome`  
+  Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.
+- `Projects.items[2].stack[0]`  
+  Airflow
+- `Projects.items[2].stack[1]`  
+  Celery
+- `Projects.items[2].stack[2]`  
+  Docker
+- `Projects.items[2].stack[3]`  
+  CI
+- `Projects.items[2].stack[4]`  
+  DuckDB
+- `Projects.items[2].link`  
+  /thoughts/research-pipelines-are-production-systems
+- `Projects.items[3].viz`  
+  transfer
+- `Projects.items[3].badge`  
+  RESEARCH
+- `Projects.items[3].sector`  
+  Computer vision · Bocconi
+- `Projects.items[3].title`  
+  US vs EU transfer for autonomous driving
+- `Projects.items[3].outcome`  
+  Research project to answer the question whether an object detector for autonomous driving, trained on US dashcam data, would work on European streets. A controlled fine-tuning study of YOLOv3 vs YOLOv8 using PyTorch and proprietary datasets. Finding: US fine-tuning transfers roughly nothing to EU streets.
+- `Projects.items[3].stack[0]`  
+  PyTorch
+- `Projects.items[3].stack[1]`  
+  YOLOv8
+- `Projects.items[3].stack[2]`  
+  Computer Vision
+- `Projects.items[3].stack[3]`  
+  Transfer Learning/Finetuning
+- `Projects.items[3].link`  
+  /research/us-vs-eu-transfer-autonomous-driving
+- `Projects.items[4].viz`  
+  sponsor
 - `Projects.items[4].badge`  
   PROJECT
 - `Projects.items[4].sector`  
-  Engineering
-- `Projects.items[4].title`  
-  Research pipelines as production systems
-- `Projects.items[4].outcome`  
-  Every research project on this site rebuilt as a truthful Airflow 3 DAG (real scripts, real idempotency guards, custom operators, tests and CI), scaling from a laptop to a multi-machine CeleryExecutor cluster. Written up as a case-study series.
-- `Projects.items[4].stack[0]`  
-  Airflow
-- `Projects.items[4].stack[1]`  
-  Celery
-- `Projects.items[4].stack[2]`  
-  DuckDB
-- `Projects.items[4].stack[3]`  
-  Docker
-- `Projects.items[4].stack[4]`  
-  CI
-- `Projects.items[4].link`  
-  /thoughts/research-pipelines-are-production-systems
-- `Projects.items[5].viz`  
-  transfer
-- `Projects.items[5].badge`  
-  RESEARCH
-- `Projects.items[5].sector`  
-  Computer vision · Bocconi
-- `Projects.items[5].title`  
-  US vs EU transfer for autonomous driving
-- `Projects.items[5].outcome`  
-  Does a detector trained on US dashcam data work on European streets? A controlled 2×3 fine-tuning study (YOLOv3/YOLOv8, Udacity vs KITTI) correcting an earlier course project's confounds: US fine-tuning transfers roughly nothing to EU streets, while in-domain fine-tuning gains +0.15 mAP.
-- `Projects.items[5].stack[0]`  
-  PyTorch
-- `Projects.items[5].stack[1]`  
-  YOLOv8
-- `Projects.items[5].stack[2]`  
-  KITTI
-- `Projects.items[5].stack[3]`  
-  Udacity
-- `Projects.items[5].link`  
-  /research/us-vs-eu-transfer-autonomous-driving
-- `Projects.items[6].viz`  
-  sponsor
-- `Projects.items[6].badge`  
-  PROJECT
-- `Projects.items[6].sector`  
   NLP · sequence tagging
-- `Projects.items[6].title`  
+- `Projects.items[4].title`  
   SponsoredBye: sponsor-segment detection
-- `Projects.items[6].outcome`  
+- `Projects.items[4].outcome`  
   A text-only sponsor-skipper for YouTube, built before YouTube Premium shipped one: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.
-- `Projects.items[6].stack[0]`  
+- `Projects.items[4].stack[0]`  
   TensorFlow
-- `Projects.items[6].stack[1]`  
+- `Projects.items[4].stack[1]`  
   BiLSTM
-- `Projects.items[6].stack[2]`  
+- `Projects.items[4].stack[2]`  
   sentence-T5
-- `Projects.items[6].stack[3]`  
+- `Projects.items[4].stack[3]`  
   MongoDB
-- `Projects.items[6].stack[4]`  
-  Gradio
-- `Projects.items[6].link`  
+- `Projects.items[4].stack[4]`  
+  Huggingface
+- `Projects.items[4].link`  
   /research/sponsoredbye-sponsored-segment-detection
-- `Projects.items[7].viz`  
+- `Projects.items[5].viz`  
   fish
-- `Projects.items[7].badge`  
+- `Projects.items[5].badge`  
   PROJECT
-- `Projects.items[7].sector`  
+- `Projects.items[5].sector`  
   Mobile ML
-- `Projects.items[7].title`  
+- `Projects.items[5].title`  
   FishFinder: photo-to-species ID
-- `Projects.items[7].outcome`  
-  A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model.
-- `Projects.items[7].stack[0]`  
-  Flutter
-- `Projects.items[7].stack[1]`  
+- `Projects.items[5].outcome`  
+  A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model for on-device use.
+- `Projects.items[5].stack[0]`  
+  Flutter/Dart
+- `Projects.items[5].stack[1]`  
   TFLite
-- `Projects.items[7].stack[2]`  
+- `Projects.items[5].stack[2]`  
   ResNet50
-- `Projects.items[7].stack[3]`  
-  Segment Anything
-- `Projects.items[7].stack[4]`  
+- `Projects.items[5].stack[3]`  
+  Segment Anything Model (SAM)
+- `Projects.items[5].stack[4]`  
   Firebase
-- `Projects.items[7].link`  
+- `Projects.items[5].link`  
   /research/fishfinder-on-device-fish-id
-- `Projects.items[8].viz`  
+- `Projects.items[6].viz`  
   flood
-- `Projects.items[8].badge`  
+- `Projects.items[6].badge`  
   RESEARCH
-- `Projects.items[8].sector`  
+- `Projects.items[6].sector`  
   BSc Thesis · UvA
-- `Projects.items[8].title`  
+- `Projects.items[6].title`  
   Predicting flooding risk from local features
-- `Projects.items[8].outcome`  
-  Can flood risk be explained by local features instead of a black-box hydrodynamic simulation? 33 features across ~45,000 European locations; a Random Forest hits 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.
-- `Projects.items[8].stack[0]`  
+- `Projects.items[6].outcome`  
+  My BSc thesis, looking at whether flood risk can be explained by local features instead of a black-box hydrodynamic simulation. Collected 33 features across ~45,000 European locations, such as ground imperviousness, ground type and distance to river, across 100GB+ of data and ran a Random Forest to find their relation. Findings: 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.
+- `Projects.items[6].stack[0]`  
   scikit-learn
-- `Projects.items[8].stack[1]`  
+- `Projects.items[6].stack[1]`  
   Random Forest
-- `Projects.items[8].stack[2]`  
+- `Projects.items[6].stack[2]`  
   raster data
-- `Projects.items[8].stack[3]`  
+- `Projects.items[6].stack[3]`  
   GIS
-- `Projects.items[8].link`  
+- `Projects.items[6].link`  
   /research/predicting-flooding-risk-local-features
+- `Projects.items[7].viz`  
+  connectivity
+- `Projects.items[7].badge`  
+  KR&A
+- `Projects.items[7].sector`  
+  Developed at KR&A
+- `Projects.items[7].title`  
+  Connectivity & walkability scoring
+- `Projects.items[7].outcome`  
+  A project led and conducted while working at KR&A: a saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets, working with TBs of data and 100s of data sources.
+- `Projects.items[7].stack[0]`  
+  PostGIS
+- `Projects.items[7].stack[1]`  
+  S3
+- `Projects.items[7].stack[2]`  
+  Dijkstra & Network Science
+- `Projects.items[7].stack[3]`  
+  Distributed Compute
+- `Projects.items[7].link`  
+  https://connectivityscore.krafin.tech
+- `Projects.items[8].viz`  
+  hedonic
+- `Projects.items[8].badge`  
+  KR&A
+- `Projects.items[8].sector`  
+  Developed at KR&A
+- `Projects.items[8].title`  
+  Monthly house-price index · 13 EU countries
+- `Projects.items[8].outcome`  
+  A project conducted while working at KR&A: a web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs.
+- `Projects.items[8].stack[0]`  
+  Python
+- `Projects.items[8].stack[1]`  
+  Scrapy/Selenium
+- `Projects.items[8].stack[2]`  
+  PostGIS
+- `Projects.items[8].stack[3]`  
+  MongoDB
+- `Projects.items[8].stack[4]`  
+  R
+- `Projects.items[8].link`  
+  https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025
 - `Projects.viewCase`  
   Read more
-- `Projects.viewPaper`  
-  View paper
 - `Projects.ctaAll`  
   See all papers
 
@@ -785,7 +777,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ## Blogs page (/thoughts)
-*Now a single list of entries: case studies AND papers, newest first.*
+*A single list of entries: case studies AND papers, newest first.*
 
 - `Thoughts.loadingFallback`  
   No posts yet. The first case studies, on the data engineering behind the research, are in the works.
@@ -992,7 +984,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ## Currently unused (kept for reference)
-*These namespaces are not rendered anywhere right now; skip unless you want them revived.*
+*Not rendered anywhere right now; skip unless you want them revived.*
 
 ### Proof
 
@@ -1036,4 +1028,4 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ---
-**Total: 2,616 words.**
+**Total: 2,688 words.**

@@ -42,8 +42,12 @@ export function FourLanes() {
         ))}
       </div>
 
-      <p style={{ marginTop: 40, fontSize: 14, color: "var(--mute)", maxWidth: "70ch" }}>{t("appliedAcross")}</p>
-      <p style={{ marginTop: 12, fontSize: 14, color: "var(--mute)", maxWidth: "70ch" }}>{t("automationNote")}</p>
+      {t("appliedAcross") ? (
+        <p style={{ marginTop: 40, fontSize: 14, color: "var(--mute)", maxWidth: "70ch" }}>{t("appliedAcross")}</p>
+      ) : null}
+      {t("automationNote") ? (
+        <p style={{ marginTop: 12, fontSize: 14, color: "var(--mute)", maxWidth: "70ch" }}>{t("automationNote")}</p>
+      ) : null}
 
     </section>
   );

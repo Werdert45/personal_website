@@ -26,14 +26,14 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Head of Data · Engineer & Researcher",
+    "role": "Data Lead · Data Engineer & System Architecture",
     "title": "Transforming",
     "titleHighlight": "complex data",
     "titleEnd": "into insights.",
-    "description": "I build and lead production data systems and the analytics on top: web-scraped market data at 300k records a week, official statistics and slow time series, document pipelines built on LLMs and OCR, and spatial and network data. That last one is the research seat: urban dynamics, housing markets, accessibility. It's where the papers on this site come from.",
+    "description": "I am Ian and I build and maintain production data systems and the analytics on top, from any complex data type: weekly high-volume web-scraped data, geospatial, graph or tabular data. I answer stakeholder questions using this data.",
     "aboutMe": "About me",
     "workWithMe": "Get in touch",
-    "expertise": "Expertise:",
+    "expertise": "Focus areas",
     "expertiseAreas": [
       "Data Engineering",
       "System Architecture",
@@ -177,7 +177,7 @@
         "badge": "PROJECT",
         "sector": "AI product",
         "title": "LanguageBuddy: AI language tutor",
-        "outcome": "A self-hosted AI language tutor for Dutch, Italian and Spanish: chat or voice-call an LLM tutor, and every mistake is captured into a spaced-repetition queue that drives the next day's exercises, real-news reading and printable workbooks. Adaptive CEFR placement, 6,200+ curated vocabulary entries, a 336-test suite.",
+        "outcome": "A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries and helps users reach CEFR alignment faster.",
         "stack": [
           "FastAPI",
           "LLM",
@@ -192,56 +192,27 @@
         "badge": "RESEARCH",
         "sector": "MSc Thesis · Bocconi",
         "title": "Gentrification agent-based model",
-        "outcome": "An agent-based model of neighbourhood change: households and landlords interacting on real parcel data for Amsterdam, Utrecht and Milan, reproducing gentrification waves from attractiveness and affordability feedback, with a two-tenure social-housing extension in progress.",
+        "outcome": "My MSc Thesis research on gentrification, where I built an agent-based model of neighbourhood change: households interact with neighborhoods in the treated cities Amsterdam, Utrecht and Milan based on their own income, the affordability of the neighborhood and the attractiveness, based on elements such as streetview imagery 'beauty' classification, GTFS connectivity, greenery and neighborhood sentiment online. A two-tenure social-housing extension is in progress.",
         "stack": [
-          "Python",
-          "Mesa",
-          "GeoPandas",
-          "Postgres"
+          "Python/GeoPandas",
+          "Large Vision Model",
+          "PostGIS",
+          "Agent-based Modeling"
         ],
         "link": "/research/gentrification-abm-european-cities"
-      },
-      {
-        "viz": "connectivity",
-        "badge": "KR&A",
-        "sector": "Developed at KR&A",
-        "title": "Connectivity & walkability scoring",
-        "outcome": "A saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets. Method paper forthcoming 2026.",
-        "stack": [
-          "PostGIS",
-          "H3",
-          "GeoPandas",
-          "Python"
-        ],
-        "link": "https://connectivityscore.krafin.tech"
-      },
-      {
-        "viz": "hedonic",
-        "badge": "KR&A",
-        "sector": "Developed at KR&A",
-        "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "A web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs. It is also the price data behind the metro-capitalisation paper.",
-        "stack": [
-          "Python",
-          "Scrapy",
-          "PostGIS",
-          "MongoDB",
-          "XGBoost"
-        ],
-        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
       },
       {
         "viz": "pipelines",
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Every research project on this site rebuilt as a truthful Airflow 3 DAG (real scripts, real idempotency guards, custom operators, tests and CI), scaling from a laptop to a multi-machine CeleryExecutor cluster. Written up as a case-study series.",
+        "outcome": "Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.",
         "stack": [
           "Airflow",
           "Celery",
-          "DuckDB",
           "Docker",
-          "CI"
+          "CI",
+          "DuckDB"
         ],
         "link": "/thoughts/research-pipelines-are-production-systems"
       },
@@ -250,12 +221,12 @@
         "badge": "RESEARCH",
         "sector": "Computer vision · Bocconi",
         "title": "US vs EU transfer for autonomous driving",
-        "outcome": "Does a detector trained on US dashcam data work on European streets? A controlled 2×3 fine-tuning study (YOLOv3/YOLOv8, Udacity vs KITTI) correcting an earlier course project's confounds: US fine-tuning transfers roughly nothing to EU streets, while in-domain fine-tuning gains +0.15 mAP.",
+        "outcome": "Research project to answer the question whether an object detector for autonomous driving, trained on US dashcam data, would work on European streets. A controlled fine-tuning study of YOLOv3 vs YOLOv8 using PyTorch and proprietary datasets. Finding: US fine-tuning transfers roughly nothing to EU streets.",
         "stack": [
           "PyTorch",
           "YOLOv8",
-          "KITTI",
-          "Udacity"
+          "Computer Vision",
+          "Transfer Learning/Finetuning"
         ],
         "link": "/research/us-vs-eu-transfer-autonomous-driving"
       },
@@ -270,7 +241,7 @@
           "BiLSTM",
           "sentence-T5",
           "MongoDB",
-          "Gradio"
+          "Huggingface"
         ],
         "link": "/research/sponsoredbye-sponsored-segment-detection"
       },
@@ -279,12 +250,12 @@
         "badge": "PROJECT",
         "sector": "Mobile ML",
         "title": "FishFinder: photo-to-species ID",
-        "outcome": "A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model.",
+        "outcome": "A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model for on-device use.",
         "stack": [
-          "Flutter",
+          "Flutter/Dart",
           "TFLite",
           "ResNet50",
-          "Segment Anything",
+          "Segment Anything Model (SAM)",
           "Firebase"
         ],
         "link": "/research/fishfinder-on-device-fish-id"
@@ -294,7 +265,7 @@
         "badge": "RESEARCH",
         "sector": "BSc Thesis · UvA",
         "title": "Predicting flooding risk from local features",
-        "outcome": "Can flood risk be explained by local features instead of a black-box hydrodynamic simulation? 33 features across ~45,000 European locations; a Random Forest hits 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.",
+        "outcome": "My BSc thesis, looking at whether flood risk can be explained by local features instead of a black-box hydrodynamic simulation. Collected 33 features across ~45,000 European locations, such as ground imperviousness, ground type and distance to river, across 100GB+ of data and ran a Random Forest to find their relation. Findings: 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.",
         "stack": [
           "scikit-learn",
           "Random Forest",
@@ -302,10 +273,38 @@
           "GIS"
         ],
         "link": "/research/predicting-flooding-risk-local-features"
+      },
+      {
+        "viz": "connectivity",
+        "badge": "KR&A",
+        "sector": "Developed at KR&A",
+        "title": "Connectivity & walkability scoring",
+        "outcome": "A project led and conducted while working at KR&A: a saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets, working with TBs of data and 100s of data sources.",
+        "stack": [
+          "PostGIS",
+          "S3",
+          "Dijkstra & Network Science",
+          "Distributed Compute"
+        ],
+        "link": "https://connectivityscore.krafin.tech"
+      },
+      {
+        "viz": "hedonic",
+        "badge": "KR&A",
+        "sector": "Developed at KR&A",
+        "title": "Monthly house-price index · 13 EU countries",
+        "outcome": "A project conducted while working at KR&A: a web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs.",
+        "stack": [
+          "Python",
+          "Scrapy/Selenium",
+          "PostGIS",
+          "MongoDB",
+          "R"
+        ],
+        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
       }
     ],
     "viewCase": "Read more",
-    "viewPaper": "View paper",
     "ctaAll": "See all papers"
   },
   "Footer": {
@@ -353,22 +352,22 @@
     "cta": "Full bio →"
   },
   "AboutTeaser": {
-    "kicker": "About: who's behind the work",
+    "kicker": "About: who am I",
     "titleLine1": "Hi, I'm",
     "titleLine1Italic": "Ian.",
-    "titleLine2": "I ship production",
-    "titleLine2Underline": "systems.",
-    "bio1": "I work as a Head of Data: building and leading the systems that collect, store and serve data at scale, and the analytics on top. Web-scraped market data at 300k records a week, official statistics and slow time series, document pipelines on LLMs and OCR, and spatial and network data.",
-    "bio2": "That last one is the research seat: urban dynamics, housing markets, accessibility. It's where the papers on this site come from.",
+    "titleLine2": "I create insights using",
+    "titleLine2Underline": "data",
+    "bio1": "I work as a Head of Data, where I build and maintain data systems, collecting, processing and structuring data for different data products, used by pension funds, bureaus of statistics and real estate investors with 10B AuM.",
+    "bio2": "Over the course of my career I worked with many different types of data and tools, creating custom systems for the data problems at hand, talking to client stakeholders and creating innovative solutions.",
     "factRoleK": "Role",
-    "factRoleV": "Head of Data · Engineer & Researcher",
+    "factRoleV": "Data Lead · Data Engineer",
     "factBasisK": "Based",
     "factBasisV": "Amsterdam, NL",
     "factEduK": "Education",
     "factEduV": "MSc Bocconi · BSc AI, UvA",
     "factStackK": "Stack",
-    "factStackV": "Python · SQL · Airflow · PostGIS · cloud",
-    "portraitCaption": "IAN · AMS · 2026",
+    "factStackV": "Bash · Python · PostGIS/SQL · Airflow · Iceberg",
+    "portraitCaption": "",
     "cta": "Read the full bio"
   },
   "Proof": {
@@ -437,54 +436,55 @@
     "privacy": "We won't share your address."
   },
   "Lanes": {
-    "kicker": "Expertise: four lanes",
-    "titleItalic": "Four",
-    "titleRest": "lanes.",
-    "subtitle": "One data-and-systems toolkit, four lanes: engineering the pipelines, architecting the platforms they run on, shaping hard data types into products, and the analytics on top.",
-    "appliedAcross": "Applied across: urban planning · real estate · climate risk · logistics & mobility · public sector",
-    "automationNote": "Also under the hood: LLM/RAG pipelines and internal tools that automate classification, research and reporting. Production AI as engineering range, not the headline.",
+    "kicker": "Focus Areas",
+    "titleItalic": "Focus",
+    "titleRest": "Areas",
+    "subtitle": "Working as Head of Data I wear many hats. My four focus areas are building the data infrastructure, setting up the systems itself, handling different types of data and running analytics on top.",
+    "appliedAcross": "",
+    "automationNote": "",
     "items": [
       {
         "name": "Data Engineering",
-        "blurb": "Data pipelines and storage, built and maintained: three years of weekly collection across 8 authenticated sources at 300k records a week, lakehouse-style warehousing, and orchestration with tests and CI.",
+        "blurb": "Building and maintaining data pipelines and efficient storage, such as three years of weekly collection/scraping across 8 different sources for a real estate fund with 10B AuM and then structuring, cleaning and deduplicating this data automatically.",
         "stack": [
           "Airflow",
-          "DuckDB",
-          "lakehouse",
+          "Python",
           "ETL",
-          "CI"
+          "Monitoring",
+          "Iceberg"
         ]
       },
       {
         "name": "System Architecture",
-        "blurb": "The platforms underneath: cloud and bare-metal, PostGIS, distributed compute, Linux, networking, APIs and security. 13 servers run as production infrastructure, not pet machines.",
+        "blurb": "Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 13 different services run as production infrastructure to handle loads of complex data products.",
         "stack": [
-          "cloud",
-          "PostGIS",
-          "distributed compute",
-          "Linux",
-          "APIs",
-          "security"
+          "Linux/Bash",
+          "Resource Management & S3",
+          "Networking & APIs",
+          "Docker",
+          "Distributed Compute"
         ]
       },
       {
         "name": "Complex Data Products",
-        "blurb": "Turning hard data types into products people use: spatial and network data, document pipelines on LLMs and OCR, graphs, and time series, owned end-to-end from method to shipped API.",
+        "blurb": "Turning complex and unconventional data types into usable data for analytics: spatial and network data, document data and time series, owned end-to-end from raw data to insights.",
         "stack": [
-          "spatial",
-          "graphs",
-          "documents · LLM/OCR",
-          "time series"
+          "Spatial",
+          "Graph",
+          "NoSQL/MongoDB",
+          "OCR",
+          "Data Validation"
         ]
       },
       {
         "name": "Analytics & ML",
-        "blurb": "The analysis layer on top: time-series models and nowcasting, regressions and causal designs, and applied ML that ships, from hedonic price models to sequence taggers.",
+        "blurb": "The analysis layer on top: nowcasting, ABM simulations, regressions, statistical methods and applied ML that ships: from hedonic price models, to image classification to statistically sound time series analyses.",
         "stack": [
-          "time series",
-          "nowcasting",
-          "regression",
-          "XGBoost"
+          "Regression",
+          "Time Series",
+          "Simulations",
+          "Insights",
+          "Statistical Analysis"
         ]
       }
     ]

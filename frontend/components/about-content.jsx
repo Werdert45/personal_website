@@ -42,7 +42,7 @@ export function AboutContent() {
             </a>
           </div>
           <div className="portrait">
-            <Image src="/profile.jpg" alt="Ian Ronk" width={600} height={800} priority sizes="(max-width: 768px) 100vw, 600px" />
+            <Image src="/profile.jpg" alt="Ian Ronk" width={800} height={800} priority sizes="(max-width: 768px) 100vw, 600px" />
             <span className="cap">{t("portraitCaption")}</span>
           </div>
         </div>
@@ -58,7 +58,7 @@ export function AboutContent() {
           <p className="lede">{t("expertiseSubtitle")}</p>
           <div
             className="expertise-grid"
-            style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: 24, marginTop: 40 }}
+            style={{ display: "grid", gap: "40px 32px", marginTop: 40 }}
           >
             {expertise.map((e, i) => (
               <div key={e.title} style={{ borderTop: "1px solid var(--ink)", paddingTop: 18 }}>

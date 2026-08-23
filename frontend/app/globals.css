@@ -584,13 +584,20 @@
   max-width: 58ch;
 }
 .portrait {
-  aspect-ratio: 3/4;
+  /* profile.jpg is square; matching the box ratio shows the whole photo */
+  aspect-ratio: 1/1;
   background: var(--paper-2);
   border: 1px solid var(--ink);
   position: relative;
   overflow: hidden;
 }
 .portrait img, .portrait svg { width: 100%; height: 100%; object-fit: cover; }
+/* Expertise grid: never wider than 3 columns, so five entries read as 3 + 2
+   instead of one cramped full-width row on large screens. */
+.expertise-grid { grid-template-columns: 1fr; }
+@media (min-width: 700px) { .expertise-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1100px) { .expertise-grid { grid-template-columns: repeat(3, 1fr); } }
+
 .portrait .cap {
   position: absolute;
   left: 16px; bottom: 16px;
