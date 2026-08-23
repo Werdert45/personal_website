@@ -19,3 +19,7 @@ Locale JSON files must only be edited via python scripts (`json.dump(..., ensure
 ## Content publishing
 
 Blog/research content lives in `backend/seed_content/`; publish changed slugs to production via `scripts/publish_content_api.py` inside the backend container (see memory: project-content-api-publishing). Deploy = push to master (Dokploy).
+
+Ian also edits content bodies in `/Users/ianronk/Brain/Brain/`: `site-projects-texts.md`, `site-papers-texts.md`, `site-blogs-texts.md` (slug-labeled dumps of the published seed files). When asked to apply content edits: diff those files against `backend/seed_content/`, write edits back to the seed files, regenerate the dumps, deploy and republish the changed slugs.
+
+Content taxonomy (Aug 2026): research entries with `category: project` are project write-ups (theses included) and appear only as project cards; `working-paper`/`preprint` etc. are Papers and appear in the papers lists (/projects list + homepage § 05).

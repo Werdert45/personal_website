@@ -334,144 +334,122 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[2].link`  
   /thoughts/research-pipelines-are-production-systems
 - `Projects.items[3].viz`  
-  transfer
-- `Projects.items[3].badge`  
-  RESEARCH
-- `Projects.items[3].sector`  
-  Computer vision · Bocconi
-- `Projects.items[3].title`  
-  US vs EU transfer for autonomous driving
-- `Projects.items[3].outcome`  
-  Research project to answer the question whether an object detector for autonomous driving, trained on US dashcam data, would work on European streets. A controlled fine-tuning study of YOLOv3 vs YOLOv8 using PyTorch and proprietary datasets. Finding: US fine-tuning transfers roughly nothing to EU streets.
-- `Projects.items[3].stack[0]`  
-  PyTorch
-- `Projects.items[3].stack[1]`  
-  YOLOv8
-- `Projects.items[3].stack[2]`  
-  Computer Vision
-- `Projects.items[3].stack[3]`  
-  Transfer Learning/Finetuning
-- `Projects.items[3].link`  
-  /research/us-vs-eu-transfer-autonomous-driving
-- `Projects.items[4].viz`  
   sponsor
+- `Projects.items[3].badge`  
+  PROJECT
+- `Projects.items[3].sector`  
+  NLP · sequence tagging
+- `Projects.items[3].title`  
+  SponsoredBye: sponsor-segment detection
+- `Projects.items[3].outcome`  
+  A text-only sponsor-skipper for YouTube, built before YouTube Premium shipped one: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.
+- `Projects.items[3].stack[0]`  
+  TensorFlow
+- `Projects.items[3].stack[1]`  
+  BiLSTM
+- `Projects.items[3].stack[2]`  
+  sentence-T5
+- `Projects.items[3].stack[3]`  
+  MongoDB
+- `Projects.items[3].stack[4]`  
+  Huggingface
+- `Projects.items[3].link`  
+  /research/sponsoredbye-sponsored-segment-detection
+- `Projects.items[4].viz`  
+  fish
 - `Projects.items[4].badge`  
   PROJECT
 - `Projects.items[4].sector`  
-  NLP · sequence tagging
-- `Projects.items[4].title`  
-  SponsoredBye: sponsor-segment detection
-- `Projects.items[4].outcome`  
-  A text-only sponsor-skipper for YouTube, built before YouTube Premium shipped one: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.
-- `Projects.items[4].stack[0]`  
-  TensorFlow
-- `Projects.items[4].stack[1]`  
-  BiLSTM
-- `Projects.items[4].stack[2]`  
-  sentence-T5
-- `Projects.items[4].stack[3]`  
-  MongoDB
-- `Projects.items[4].stack[4]`  
-  Huggingface
-- `Projects.items[4].link`  
-  /research/sponsoredbye-sponsored-segment-detection
-- `Projects.items[5].viz`  
-  fish
-- `Projects.items[5].badge`  
-  PROJECT
-- `Projects.items[5].sector`  
   Mobile ML
-- `Projects.items[5].title`  
+- `Projects.items[4].title`  
   FishFinder: photo-to-species ID
-- `Projects.items[5].outcome`  
+- `Projects.items[4].outcome`  
   A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model for on-device use.
-- `Projects.items[5].stack[0]`  
+- `Projects.items[4].stack[0]`  
   Flutter/Dart
-- `Projects.items[5].stack[1]`  
+- `Projects.items[4].stack[1]`  
   TFLite
-- `Projects.items[5].stack[2]`  
+- `Projects.items[4].stack[2]`  
   ResNet50
-- `Projects.items[5].stack[3]`  
+- `Projects.items[4].stack[3]`  
   Segment Anything Model (SAM)
-- `Projects.items[5].stack[4]`  
+- `Projects.items[4].stack[4]`  
   Firebase
-- `Projects.items[5].link`  
+- `Projects.items[4].link`  
   /research/fishfinder-on-device-fish-id
-- `Projects.items[6].viz`  
+- `Projects.items[5].viz`  
   flood
-- `Projects.items[6].badge`  
+- `Projects.items[5].badge`  
   RESEARCH
-- `Projects.items[6].sector`  
+- `Projects.items[5].sector`  
   BSc Thesis · UvA
-- `Projects.items[6].title`  
+- `Projects.items[5].title`  
   Predicting flooding risk from local features
-- `Projects.items[6].outcome`  
+- `Projects.items[5].outcome`  
   My BSc thesis, looking at whether flood risk can be explained by local features instead of a black-box hydrodynamic simulation. Collected 33 features across ~45,000 European locations, such as ground imperviousness, ground type and distance to river, across 100GB+ of data and ran a Random Forest to find their relation. Findings: 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.
-- `Projects.items[6].stack[0]`  
+- `Projects.items[5].stack[0]`  
   scikit-learn
-- `Projects.items[6].stack[1]`  
+- `Projects.items[5].stack[1]`  
   Random Forest
-- `Projects.items[6].stack[2]`  
+- `Projects.items[5].stack[2]`  
   raster data
-- `Projects.items[6].stack[3]`  
+- `Projects.items[5].stack[3]`  
   GIS
-- `Projects.items[6].link`  
+- `Projects.items[5].link`  
   /research/predicting-flooding-risk-local-features
-- `Projects.items[7].viz`  
+- `Projects.items[6].viz`  
   connectivity
+- `Projects.items[6].badge`  
+  KR&A
+- `Projects.items[6].sector`  
+  Developed at KR&A
+- `Projects.items[6].title`  
+  Connectivity & walkability scoring
+- `Projects.items[6].outcome`  
+  A project led and conducted while working at KR&A: a saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets, working with TBs of data and 100s of data sources.
+- `Projects.items[6].stack[0]`  
+  PostGIS
+- `Projects.items[6].stack[1]`  
+  S3
+- `Projects.items[6].stack[2]`  
+  Dijkstra & Network Science
+- `Projects.items[6].stack[3]`  
+  Distributed Compute
+- `Projects.items[6].link`  
+  https://connectivityscore.krafin.tech
+- `Projects.items[7].viz`  
+  hedonic
 - `Projects.items[7].badge`  
   KR&A
 - `Projects.items[7].sector`  
   Developed at KR&A
 - `Projects.items[7].title`  
-  Connectivity & walkability scoring
-- `Projects.items[7].outcome`  
-  A project led and conducted while working at KR&A: a saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets, working with TBs of data and 100s of data sources.
-- `Projects.items[7].stack[0]`  
-  PostGIS
-- `Projects.items[7].stack[1]`  
-  S3
-- `Projects.items[7].stack[2]`  
-  Dijkstra & Network Science
-- `Projects.items[7].stack[3]`  
-  Distributed Compute
-- `Projects.items[7].link`  
-  https://connectivityscore.krafin.tech
-- `Projects.items[8].viz`  
-  hedonic
-- `Projects.items[8].badge`  
-  KR&A
-- `Projects.items[8].sector`  
-  Developed at KR&A
-- `Projects.items[8].title`  
   Monthly house-price index · 13 EU countries
-- `Projects.items[8].outcome`  
+- `Projects.items[7].outcome`  
   A project conducted while working at KR&A: a web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs.
-- `Projects.items[8].stack[0]`  
+- `Projects.items[7].stack[0]`  
   Python
-- `Projects.items[8].stack[1]`  
+- `Projects.items[7].stack[1]`  
   Scrapy/Selenium
-- `Projects.items[8].stack[2]`  
+- `Projects.items[7].stack[2]`  
   PostGIS
-- `Projects.items[8].stack[3]`  
+- `Projects.items[7].stack[3]`  
   MongoDB
-- `Projects.items[8].stack[4]`  
+- `Projects.items[7].stack[4]`  
   R
-- `Projects.items[8].link`  
+- `Projects.items[7].link`  
   https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025
 - `Projects.viewCase`  
   Read more
 - `Projects.ctaAll`  
   See all papers
 
-### Papers section (§ 05, list of published papers; replaced the Recent work chapter)
+### Papers section (§ 05, list of published papers)
 
 - `Papers.kicker`  
   Papers
-- `Papers.titlePrefix`  
-  Working
 - `Papers.titleItalic`  
-  papers
+  Papers
 - `Papers.subtitle`  
   Methods, data and results behind the projects.
 - `Papers.viewAll`  
@@ -498,8 +476,6 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   AI as an undergraduate, data science and analytics as a graduate: the methods side of the toolkit. The production side came from work.
 - `About.experienceSubtitle`  
   5+ years building and leading production data systems (pipelines, forecasting, geospatial) across European markets and academic research.
-- `About.sectionKicker`  
-  About: who, where, how
 - `About.heroTitleLine1a`  
   Data
 - `About.heroTitleLine1aItalic`  
@@ -509,13 +485,11 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.heroTitleLine2Underline`  
   Systems
 - `About.heroTitleLine3`  
-  & Research.
+  & Data.
 - `About.lede1`  
-  Based in Amsterdam, I lead data teams and build what they run: web-scraping pipelines moving 300k records a week, forecasting and nowcasting on official statistics, document pipelines built on LLMs and OCR, and spatial data products. The craft underneath is system design: the architecture is what decides whether a pipeline is still running in its third year. The research seat stays warm, with urban dynamics, gentrification and accessibility at parcel resolution, because cities are where data problems get hard. A data lead by trade; a geodata specialist by depth.
+  Based in Amsterdam, I lead a small data team, maintaining and building from scratch: web-scraping pipelines collecting, processing and deduplicating 300k+ records per week, working on data consultancy jobs for pension funds and real estate firms and building data products using cutting edge technology and research. Data products include a world-wide production-grade network analysis tool for reachability, house price indices and more.
 - `About.lede2`  
-  My bias: opinionated internal tools beat big platforms; a calibrated pipeline beats a clever one; and a map should answer a question, not perform complexity.
-- `About.portraitCaption`  
-  IAN · AMS · 2026
+  My skillset: translating stakeholder requirements into sustainable business solutions that work.
 - `About.journeyTitlePrefixItalic`  
   Five
 - `About.journeyTitleRest`  
@@ -585,9 +559,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resumeSections.kicker`  
   Resume
 - `resumeSections.engineering`  
-  Engineering & Leadership
+  Professional Experience
 - `resumeSections.research`  
-  Research & Publications
+  Research Topics
 - `resumeSections.education`  
   Education
 - `resumeSections.stack`  
@@ -601,7 +575,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.header.location`  
   Amsterdam, NL
 - `resume.header.email`  
-  ianronk0@gmail.com
+  ian@ronk.org
 - `resume.header.links[0].label`  
   linkedin.com/in/ian-ronk-7b054a120
 - `resume.header.links[0].url`  
@@ -617,9 +591,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.header.languages`  
   Dutch C2 · English C2 · Italian B2/C1 · German B2 · Spanish A2
 - `resume.header.softSkills`  
-  Team leadership · Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences
+  Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Reliability
 - `resume.header.summary`  
-  Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads a team of 4 as Head of Data; publishes independent research on urban dynamics.
+  Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads a team of 4 as Head of Data; interest in research on urban dynamics.
 - `resume.engineering[0].role`  
   Head of Data
 - `resume.engineering[0].org`  
@@ -667,7 +641,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.engineering[3].bullets[0]`  
   Flood-occurrence prediction from alternative data (BSc-thesis project); 90%+ accuracy in risk classification.
 - `resume.engineering[3].bullets[1]`  
-  Improved API efficiency tenfold through spatial optimisations.
+  Improved API efficiency tenfold through spatial optimisations, resulting in promotion.
 - `resume.engineering[4].role`  
   Junior Full-Stack Developer
 - `resume.engineering[4].org`  
@@ -678,10 +652,12 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   Sep 2019 – Sep 2022
 - `resume.engineering[4].bullets[0]`  
   Enterprise expense-declaration software (EmberJS, PHP) under CI/CD and testing.
+- `resume.engineering[4].bullets[1]`  
+  Maintained a client-facing webapp, working on business logic and styling.
 - `resume.research[0].title`  
   Calibrating Free Postcode Boundaries from OpenStreetMap
 - `resume.research[0].venue`  
-  preprint (arXiv 2026)
+  Release August 2026
 - `resume.research[0].year`  
   2026
 - `resume.research[0].result`  
@@ -691,25 +667,27 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.research[1].title`  
   When Does Metro Infrastructure Capitalize into Property Prices?
 - `resume.research[1].venue`  
-  working paper
+  Release September 2026
 - `resume.research[1].year`  
   2026
 - `resume.research[1].result`  
-  Phase-decomposed DiD across seven European cities, n = 42,004; wild-cluster-bootstrap inference.
+  Phase-decomposed DiD across seven European cities, n = 42,004; wild-cluster-bootstrap inference. Found some correlation, but not strong.
 - `resume.research[1].href`  
   /research/when-metro-capitalizes-paper
 - `resume.research[2].title`  
-  A Saturation-Validated Connectivity Score at Parcel Resolution
+  A Multi-Modal Accessibility Score for NA, EU and APAC: Construction, Decomposition, and Compute
 - `resume.research[2].venue`  
-  method paper in preparation
+  Research by KR&A
 - `resume.research[2].year`  
   2026
+- `resume.research[2].href`  
+  https://connectivityscore.krafin.tech
 - `resume.research[3].title`  
   Building an Agent-Based Model to Explain Gentrification in European Cities
 - `resume.research[3].venue`  
   (MSc thesis, 8/8)
 - `resume.research[3].year`  
-  2023
+  2025
 - `resume.research[3].result`  
   Amsterdam · Utrecht · Milan.
 - `resume.research[3].href`  
@@ -722,12 +700,16 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   107/110
 - `resume.education[0].period`  
   2023 – 2025
-- `resume.education[0].note`  
+- `resume.education[0].note[0]`  
   Focus: Finance · Econometrics · Statistics · NLP
+- `resume.education[0].note[1]`  
+  Thesis: Building an Agent-Based Model to Explain Gentrification in European Cities
 - `resume.education[1].degree`  
   BSc Artificial Intelligence
 - `resume.education[1].institution`  
   University of Amsterdam
+- `resume.education[1].grade`  
+  7.6/10
 - `resume.education[1].period`  
   2019 – 2023
 - `resume.education[1].note[0]`  
@@ -775,16 +757,10 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   View All
 - `Research.listKicker`  
   Research: papers & methods
-- `Research.listTitlePrefix`  
-  Research
 - `Research.listTitleItalic`  
-  papers
-- `Research.listTitleAmp`  
-  & working
-- `Research.listTitleHighlight`  
-  drafts
+  Papers
 - `Research.listSubtitle`  
-  Working papers, preprints and method write-ups on urban dynamics, network analysis and geospatial methods.
+  Working papers, preprints and method write-ups on research in urban dynamics, network analysis, geospatial methods and data science.
 - `Research.previewTitlePrefix`  
   Selected
 - `Research.previewTitleItalic`  
@@ -885,7 +861,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Contact.roleTitle`  
   Head of Data · Engineer & Researcher
 - `Contact.bio`  
-  I build and lead production data systems and the analytics on top: web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data, with a research specialization in urban dynamics. The papers and the engineering case studies behind them live on this site.
+  I am Ian and I build and maintain production data systems and the analytics on top, from any complex data type: weekly high-volume web-scraped data, geospatial, graph or tabular data. I answer stakeholder questions using this data.
 - `Contact.location`  
   Amsterdam, Netherlands
 - `Contact.company`  
@@ -894,8 +870,6 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   5+ years in data engineering & spatial analytics
 - `Contact.formTitle`  
   Get in Touch
-- `Contact.formSubtitle`  
-  Questions about the research, the pipelines, a role or a collaboration? The inbox is open.
 - `Contact.nameLabel`  
   Name
 - `Contact.namePlaceholder`  
@@ -1065,4 +1039,4 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ---
-**Total: 2,696 words.**
+**Total: 2,586 words.**
