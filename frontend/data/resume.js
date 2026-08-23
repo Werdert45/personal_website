@@ -18,8 +18,8 @@ export const resume = {
     location: "Amsterdam, NL",
     email: "ian@ronk.org",
     links: [
-      { label: "linkedin.com/in/ian-ronk-7b054a120", url: "https://linkedin.com/in/ian-ronk-7b054a120" },
-      { label: "github.com/Werdert45", url: "https://github.com/Werdert45" },
+      { label: "LinkedIn", url: "https://linkedin.com/in/ian-ronk-7b054a120" },
+      { label: "GitHub", url: "https://github.com/Werdert45" },
       { label: "ianronk.nl", url: "https://ianronk.nl" },
     ],
     languages: "Dutch C2 · English C2 · Italian B2/C1 · German B2 · Spanish A2",

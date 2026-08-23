@@ -179,10 +179,14 @@ function CvDocument(r) {
           View,
           { style: st.contact },
           h(Text, null, `${hd.location} · ${hd.email}`),
-          // One link per line: the joined single line wrapped mid-URL and
-          // read as clutter next to the name block.
-          ...hd.links.map((l, i) =>
-            h(Text, { key: `link-${i}` }, h(Link, { src: l.url, style: st.contactLink }, l.label))
+          // Short labels fit on one line; each stays clickable.
+          h(
+            Text,
+            null,
+            ...hd.links.flatMap((l, i) => [
+              i > 0 ? " · " : null,
+              h(Link, { key: `link-${i}`, src: l.url, style: st.contactLink }, l.label),
+            ]).filter(Boolean)
           )
         )
       ),
