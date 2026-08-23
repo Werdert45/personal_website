@@ -62,21 +62,24 @@ export async function PapersSection({ locale = "en" }) {
       ) : (
         <div className="blog-list">
           {papers.map((p, i) => {
-            // First-version papers stay listed but read as in progress.
+            // First-version papers stay listed but read as in progress and are not clickable.
             const inProgress = p.slug === "when-metro-capitalizes-paper";
-            return (
-              <Link href={`/${locale}/research/${p.slug}`} key={p.slug} style={{ display: "block", opacity: inProgress ? 0.65 : 1 }}>
-                <div className="blog-row">
-                  <div className="bi">{String(i + 1).padStart(2, "0")}</div>
-                  <div className="by">{(p.published_at || p.date || "").slice(0, 10)}</div>
-                  <div className="bt">
-                    {renderTitle(getItemField(p, "title", locale) || p.title, p.italic)}
-                    <span className="bm">{getItemField(p, "excerpt", locale, "") || getItemField(p, "abstract", locale, "")}</span>
-                  </div>
-                  <div className="bg">{inProgress ? "IN PROGRESS" : (p.category || "PAPER").toUpperCase()}</div>
-                  <div className="barr">→</div>
+            const row = (
+              <div className="blog-row">
+                <div className="bi">{String(i + 1).padStart(2, "0")}</div>
+                <div className="by">{(p.published_at || p.date || "").slice(0, 10)}</div>
+                <div className="bt">
+                  {renderTitle(getItemField(p, "title", locale) || p.title, p.italic)}
+                  <span className="bm">{getItemField(p, "excerpt", locale, "") || getItemField(p, "abstract", locale, "")}</span>
                 </div>
-              </Link>
+                <div className="bg">{inProgress ? "IN PROGRESS" : (p.category || "PAPER").toUpperCase()}</div>
+                <div className="barr">{inProgress ? "" : "→"}</div>
+              </div>
+            );
+            return inProgress ? (
+              <div key={p.slug} style={{ opacity: 0.65, cursor: "default" }}>{row}</div>
+            ) : (
+              <Link href={`/${locale}/research/${p.slug}`} key={p.slug} style={{ display: "block" }}>{row}</Link>
             );
           })}
         </div>

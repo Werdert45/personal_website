@@ -136,31 +136,35 @@ export function ResearchList({ initialItems = [] }) {
         {filteredItems.map((item, i) => {
           const inProgress = IN_PROGRESS_SLUGS.has(item.slug);
           const pdf = PAPER_PDFS[item.slug];
-          return (
-            <Link key={item.id || item.slug} href={`/${locale}/research/${item.slug}`} style={{ display: "block", opacity: inProgress ? 0.65 : 1 }}>
-              <div className="research-item">
-                <div className="ri">{String(i + 1).padStart(2, "0")}</div>
-                <div className="ry">{item.date || ""}</div>
-                <div className="rt">
-                  {renderTitle(getItemField(item, "title", locale))}
-                  <span className="rm">{getItemField(item, "excerpt", locale) || getItemField(item, "abstract", locale)}</span>
-                  {pdf && (
-                    <span
-                      className="rm"
-                      role="link"
-                      tabIndex={0}
-                      style={{ display: "inline-block", marginTop: 8, borderBottom: "1px solid var(--ink)", color: "var(--ink)", width: "fit-content" }}
-                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(pdf, "_blank"); }}
-                      onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); window.open(pdf, "_blank"); } }}
-                    >
-                      {t("downloadPdf")}
-                    </span>
-                  )}
-                </div>
-                <div className="rtag">{inProgress ? "IN PROGRESS" : (item.category || "RESEARCH").toUpperCase()}</div>
-                <div className="rarr">→</div>
+          const row = (
+            <div className="research-item">
+              <div className="ri">{String(i + 1).padStart(2, "0")}</div>
+              <div className="ry">{item.date || ""}</div>
+              <div className="rt">
+                {renderTitle(getItemField(item, "title", locale))}
+                <span className="rm">{getItemField(item, "excerpt", locale) || getItemField(item, "abstract", locale)}</span>
+                {pdf && (
+                  <span
+                    className="rm"
+                    role="link"
+                    tabIndex={0}
+                    style={{ display: "inline-block", marginTop: 8, borderBottom: "1px solid var(--ink)", color: "var(--ink)", width: "fit-content", cursor: "pointer" }}
+                    onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(pdf, "_blank"); }}
+                    onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); window.open(pdf, "_blank"); } }}
+                  >
+                    {t("downloadPdf")}
+                  </span>
+                )}
               </div>
-            </Link>
+              <div className="rtag">{inProgress ? "IN PROGRESS" : (item.category || "RESEARCH").toUpperCase()}</div>
+              <div className="rarr">{inProgress ? "" : "→"}</div>
+            </div>
+          );
+          // In-progress papers are listed but not clickable; only the PDF chip acts.
+          return inProgress ? (
+            <div key={item.id || item.slug} style={{ opacity: 0.65, cursor: "default" }}>{row}</div>
+          ) : (
+            <Link key={item.id || item.slug} href={`/${locale}/research/${item.slug}`} style={{ display: "block" }}>{row}</Link>
           );
         })}
         {!searchQuery && IN_PROGRESS.map((item, i) => (
