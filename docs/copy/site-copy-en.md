@@ -783,6 +783,10 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   You might also like
 - `Research.readArticle`  
   Read article
+- `Research.aiNote`  
+  Written with AI, checked by me.
+- `Research.downloadPdf`  
+  Download PDF ↓
 - `Research.endCtaKicker`  
   § Next
 - `Research.endCtaHeading`  
@@ -850,6 +854,8 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   Related work
 - `Thoughts.empty`  
   No posts yet. The first case studies, on the data engineering behind the research, are in the works.
+- `Thoughts.aiNote`  
+  Written with AI, checked by me.
 
 
 ## Contact page (/contact) + homepage contact band
