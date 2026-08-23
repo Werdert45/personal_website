@@ -19,13 +19,13 @@ export function AboutContent() {
 
         <div className="about-top" style={{ paddingBottom: 0, borderBottom: "none" }}>
           <div>
-            <h2>
+            <h1>
               {t("heroTitleLine1a")} <i>{t("heroTitleLine1aItalic")}</i>
               <br />
               {t("heroTitleLine2")} <span className="u">{t("heroTitleLine2Underline")}</span>
               <br />
               {t("heroTitleLine3")}
-            </h2>
+            </h1>
             <p className="lede">
               {t("lede1")}
             </p>

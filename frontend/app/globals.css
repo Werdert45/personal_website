@@ -523,15 +523,15 @@
   padding-bottom: 80px;
   border-bottom: 1px solid var(--rule);
 }
-.about-top h2 {
+.about-top h1, .about-top h2 {
   font-family: var(--font-serif);
   font-size: clamp(48px, 7vw, 96px);
   line-height: 1;
   letter-spacing: -0.02em;
   font-weight: 400;
 }
-.about-top h2 i { font-style: italic; color: var(--yellow-2); }
-.about-top h2 .u { border-bottom: 3px solid var(--yellow); padding-bottom: 4px; }
+.about-top h1 i, .about-top h2 i { font-style: italic; color: var(--yellow-2); }
+.about-top h1 .u, .about-top h2 .u { border-bottom: 3px solid var(--yellow); padding-bottom: 4px; }
 .about-top .lede {
   font-size: 18px;
   color: var(--ink-2);
@@ -596,13 +596,13 @@
   gap: 80px;
   align-items: start;
 }
-.contact-copy h2 {
+.contact-copy h1, .contact-copy h2 {
   font-family: var(--font-serif);
   font-size: clamp(56px, 8vw, 128px);
   line-height: 0.95;
   letter-spacing: -0.03em;
 }
-.contact-copy h2 i { font-style: italic; color: var(--yellow-2); }
+.contact-copy h1 i, .contact-copy h2 i { font-style: italic; color: var(--yellow-2); }
 .contact-copy p { margin-top: 32px; font-size: 17px; color: var(--ink-2); max-width: 48ch; }
 .contact-copy .direct {
   margin-top: 40px;
@@ -826,7 +826,7 @@
 .blog-row:hover .barr { background: var(--yellow); border-color: var(--yellow); color: var(--ink); transform: rotate(-45deg); }
 .blog-row .bi { font-family: var(--font-mono); font-size: 12px; color: var(--mute); letter-spacing: 0.08em; }
 .blog-row .by { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; }
-.blog-row .bt { font-family: var(--font-serif); font-size: 26px; line-height: 1.08; letter-spacing: -0.01em; }
+.blog-row .bt { font-family: var(--font-serif); font-size: 26px; line-height: 1.08; letter-spacing: -0.01em; margin: 0; font-weight: inherit; }
 .blog-row .bt i { font-style: italic; }
 .blog-row .bt .bm {
   display: block;

@@ -128,9 +128,9 @@ export function ContactContent() {
 
         <div className="contact-wrap">
           <div className="contact-copy">
-            <h2>
+            <h1>
               {t("letsTalkPrefix")} <i>{t("letsTalkItalic")}</i>.
-            </h2>
+            </h1>
             <p>
               {t("bio")}
             </p>

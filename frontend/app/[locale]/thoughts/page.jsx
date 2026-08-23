@@ -41,6 +41,7 @@ export async function generateMetadata({ params }) {
         "Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.",
       url,
       type: "website",
+      images: ["/og.png"],
     },
   };
 }

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { BlogPost } from "@/components/blog-post";
-import { BlogPostingJsonLd } from "@/components/json-ld";
+import { BlogPostingJsonLd, BreadcrumbListJsonLd, toIsoDate } from "@/components/json-ld";
 
 export const revalidate = 300;
 
@@ -25,6 +25,7 @@ export async function generateMetadata({ params }) {
   let title;
   let description;
   let image;
+  let publishedAt;
   let updatedAt;
 
   if (post) {
@@ -32,6 +33,7 @@ export async function generateMetadata({ params }) {
     title = translation?.title || post.title;
     description = translation?.excerpt || post.excerpt || `Blog post: ${title}`;
     image = post.cover_image;
+    publishedAt = post.published_at || post.date;
     updatedAt = post.updated_at;
   } else {
     return {
@@ -41,6 +43,8 @@ export async function generateMetadata({ params }) {
   }
 
   const url = `${siteUrl}/${locale}/thoughts/${slug}`;
+  const publishedTime = toIsoDate(publishedAt);
+  const modifiedTime = toIsoDate(updatedAt);
 
   return {
     title,
@@ -61,7 +65,8 @@ export async function generateMetadata({ params }) {
       url,
       type: "article",
       ...(image && { images: [{ url: image }] }),
-      ...(updatedAt && { modifiedTime: updatedAt }),
+      ...(publishedTime && { publishedTime }),
+      ...(modifiedTime && { modifiedTime }),
     },
     twitter: {
       card: "summary_large_image",
@@ -77,30 +82,37 @@ export default async function BlogPostPage({ params }) {
   const post = await fetchBlogPost(slug);
   if (!post) notFound();
 
-  let jsonLdProps = { slug, locale };
-  if (post) {
-    const translation = (post.translations || []).find((t) => t.language === locale);
-    const availableLocales = [
-      "en",
-      ...(post.translations || [])
-        .map((t) => t.language)
-        .filter((l) => l !== "en"),
-    ];
-    jsonLdProps = {
-      slug,
-      locale,
-      title: translation?.title || post.title,
-      description: translation?.excerpt || post.excerpt,
-      datePublished: post.published_at || post.date,
-      dateModified: post.updated_at,
-      image: post.cover_image,
-      availableLocales,
-    };
-  }
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
+  const translation = (post.translations || []).find((t) => t.language === locale);
+  const availableLocales = [
+    "en",
+    ...(post.translations || [])
+      .map((t) => t.language)
+      .filter((l) => l !== "en"),
+  ];
+  const title = translation?.title || post.title;
+  const jsonLdProps = {
+    slug,
+    locale,
+    title,
+    description: translation?.excerpt || post.excerpt,
+    datePublished: post.published_at || post.date,
+    dateModified: post.updated_at,
+    image: post.cover_image,
+    availableLocales,
+    inLanguage: locale === "en" || translation ? locale : "en",
+  };
 
   return (
     <main>
       <BlogPostingJsonLd {...jsonLdProps} />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: "Home", url: `${siteUrl}/${locale}` },
+          { name: "Blogs", url: `${siteUrl}/${locale}/thoughts` },
+          { name: title, url: `${siteUrl}/${locale}/thoughts/${slug}` },
+        ]}
+      />
       <BlogPost slug={slug} initialPost={post} />
     </main>
   );

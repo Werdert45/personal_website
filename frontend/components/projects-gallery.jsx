@@ -47,7 +47,7 @@ export function ProjectsGallery() {
       </div>
 
       <div className="section-head" style={{ alignItems: "end", marginBottom: 56 }}>
-        <h2
+        <h1
           style={{
             fontFamily: "var(--font-serif)",
             fontSize: "clamp(40px, 5.6vw, 84px)",
@@ -57,7 +57,7 @@ export function ProjectsGallery() {
         >
           {t("titlePrefix")}{" "}
           <i style={{ fontStyle: "italic", color: "var(--yellow-2)" }}>{t("titleItalic")}</i>
-        </h2>
+        </h1>
         <p style={{ fontSize: 16, lineHeight: 1.55, color: "var(--ink-2)", maxWidth: "52ch" }}>
           {t("subtitle")}
         </p>

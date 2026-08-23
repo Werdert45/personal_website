@@ -3,7 +3,12 @@ import ResearchArticleDetail from "@/components/research-article-detail";
 // Imported from a plain module (not the "use client" component) so the server
 // page sees the real object rather than a client-reference proxy.
 import { STATIC_PAPERS } from "@/components/research-static-papers";
-import { ArticleJsonLd } from "@/components/json-ld";
+import {
+  ArticleJsonLd,
+  BreadcrumbListJsonLd,
+  isScholarlyCategory,
+  toIsoDate,
+} from "@/components/json-ld";
 
 export const revalidate = 300;
 
@@ -12,7 +17,7 @@ export async function generateMetadata({ params }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
   // Try to fetch actual article data for rich metadata
-  let title, description, image, updatedAt;
+  let title, description, image, updatedAt, category, date;
   try {
     const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
     const res = await fetch(`${djangoUrl}/api/research/${slug}/`, {
@@ -32,6 +37,8 @@ export async function generateMetadata({ params }) {
         `Research article on ${title}`;
       image = article.preview_image;
       updatedAt = article.updated_at;
+      category = article.category;
+      date = article.date;
     }
   } catch {
     // Fallback to slug-based title
@@ -40,6 +47,8 @@ export async function generateMetadata({ params }) {
   if (!title && STATIC_PAPERS[slug]) {
     title = STATIC_PAPERS[slug].title;
     description = STATIC_PAPERS[slug].abstract || STATIC_PAPERS[slug].excerpt || "";
+    category = STATIC_PAPERS[slug].category;
+    date = STATIC_PAPERS[slug].date;
   }
 
   if (!title) {
@@ -50,6 +59,9 @@ export async function generateMetadata({ params }) {
   }
 
   const url = `${siteUrl}/${locale}/research/${slug}`;
+  const publishedTime = toIsoDate(date);
+  const modifiedTime = toIsoDate(updatedAt);
+  const scholarly = isScholarlyCategory(category);
 
   return {
     title,
@@ -70,7 +82,8 @@ export async function generateMetadata({ params }) {
       url,
       type: "article",
       ...(image && { images: [{ url: image }] }),
-      ...(updatedAt && { modifiedTime: updatedAt }),
+      ...(publishedTime && { publishedTime }),
+      ...(modifiedTime && { modifiedTime }),
     },
     twitter: {
       card: "summary_large_image",
@@ -78,6 +91,16 @@ export async function generateMetadata({ params }) {
       description,
       ...(image && { images: [image] }),
     },
+    ...(scholarly && {
+      other: {
+        citation_title: title,
+        citation_author: "Ian Ronk",
+        ...(publishedTime && {
+          citation_publication_date: publishedTime.slice(0, 10).replace(/-/g, "/"),
+        }),
+        citation_public_url: `${siteUrl}/en/research/${slug}`,
+      },
+    }),
   };
 }
 
@@ -99,7 +122,8 @@ export default async function ResearchArticlePage({ params }) {
   const article = await fetchArticleForJsonLd(slug);
   if (!article && !STATIC_PAPERS[slug]) notFound();
 
-  let jsonLdProps = { slug, locale };
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
+  let jsonLdProps;
   if (article) {
     const translation = (article.translations || []).find(
       (t) => t.language === locale,
@@ -118,13 +142,33 @@ export default async function ResearchArticlePage({ params }) {
       datePublished: article.date,
       dateModified: article.updated_at,
       image: article.preview_image,
+      category: article.category,
       availableLocales,
+      inLanguage: locale === "en" || translation ? locale : "en",
+    };
+  } else {
+    const paper = STATIC_PAPERS[slug];
+    jsonLdProps = {
+      slug,
+      locale,
+      title: paper.title,
+      description: paper.abstract || paper.excerpt,
+      datePublished: paper.date,
+      category: paper.category,
+      inLanguage: "en",
     };
   }
 
   return (
     <main>
       <ArticleJsonLd {...jsonLdProps} />
+      <BreadcrumbListJsonLd
+        items={[
+          { name: "Home", url: `${siteUrl}/${locale}` },
+          { name: "Projects & Papers", url: `${siteUrl}/${locale}/projects` },
+          { name: jsonLdProps.title, url: `${siteUrl}/${locale}/research/${slug}` },
+        ]}
+      />
       <ResearchArticleDetail slug={slug} initialArticle={article} />
     </main>
   );

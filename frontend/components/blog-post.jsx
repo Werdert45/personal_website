@@ -29,6 +29,24 @@ const MapFigure = dynamic(
   }
 );
 
+const MONTHS = {
+  january: "01", february: "02", march: "03", april: "04", may: "05", june: "06",
+  july: "07", august: "08", september: "09", october: "10", november: "11", december: "12",
+};
+
+// ISO dateTime for <time>: "2026-08-23", "2026-07", "July 2026" → "2026-07",
+// "2022" → "2022"; null when the string can't be parsed.
+function dateTimeAttr(raw) {
+  const s = String(raw || "").trim();
+  const iso = s.match(/^(\d{4}-\d{2}(-\d{2})?)/);
+  if (iso) return iso[1];
+  const name = s.toLowerCase().match(/[a-z]+/);
+  const year = s.match(/\d{4}/);
+  if (name && year && MONTHS[name[0]]) return `${year[0]}-${MONTHS[name[0]]}`;
+  if (/^\d{4}$/.test(s)) return s;
+  return null;
+}
+
 export function BlogPost({ slug, initialPost = null }) {
   const [post, setPost] = useState(initialPost);
   const [status, setStatus] = useState(initialPost ? "ok" : "loading");
@@ -88,6 +106,7 @@ export function BlogPost({ slug, initialPost = null }) {
   // strings — free-text dates like "July 2026" render verbatim.
   const rawDate = post.published_at || post.date || "";
   const published = /^\d{4}-\d{2}/.test(rawDate) ? rawDate.slice(0, 10) : rawDate;
+  const publishedDateTime = dateTimeAttr(rawDate);
 
   return (
     <article className="section-pad reader" style={{ paddingTop: 160 }}>
@@ -99,7 +118,7 @@ export function BlogPost({ slug, initialPost = null }) {
 
       <div className="meta" style={{ display: "flex", gap: 24, flexWrap: "wrap", marginBottom: 24 }}>
         <span>{(post.category || "ARTICLE").toUpperCase()}</span>
-        <span>{published}</span>
+        <span>{publishedDateTime ? <time dateTime={publishedDateTime}>{published}</time> : published}</span>
         {post.read_time && <span>{post.read_time}</span>}
       </div>
 

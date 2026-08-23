@@ -37,7 +37,7 @@ export async function generateMetadata({ params }) {
         "x-default": `${siteUrl}/en/projects`,
       },
     },
-    openGraph: { title: "Projects & Papers", description, url, type: "website" },
+    openGraph: { title: "Projects & Papers", description, url, type: "website", images: ["/og.png"] },
   };
 }
 

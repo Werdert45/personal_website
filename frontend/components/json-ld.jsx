@@ -1,14 +1,69 @@
-export function PersonJsonLd() {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
+const PERSON_SAME_AS = [
+  "https://www.linkedin.com/in/ian-ronk-7b054a120/",
+  "https://github.com/Werdert45",
+];
 
-  const jsonLd = {
-    "@context": "https://schema.org",
+const SCHOLARLY_CATEGORIES = ["working-paper", "preprint", "thesis", "paper"];
+
+const MONTH_NUMBERS = {
+  january: "01",
+  february: "02",
+  march: "03",
+  april: "04",
+  may: "05",
+  june: "06",
+  july: "07",
+  august: "08",
+  september: "09",
+  october: "10",
+  november: "11",
+  december: "12",
+};
+
+export function toIsoDate(value) {
+  if (!value) return undefined;
+  const s = String(value).trim();
+  if (/^\d{4}-\d{2}-\d{2}/.test(s)) return s;
+  if (/^\d{4}-\d{2}$/.test(s)) return `${s}-01`;
+  if (/^\d{4}$/.test(s)) return `${s}-01-01`;
+  const named = s.match(/^([A-Za-z]+)\s+(\d{4})$/);
+  if (named) {
+    const month = MONTH_NUMBERS[named[1].toLowerCase()];
+    if (month) return `${named[2]}-${month}-01`;
+  }
+  return undefined;
+}
+
+export function isScholarlyCategory(category) {
+  return SCHOLARLY_CATEGORIES.includes(String(category || "").toLowerCase());
+}
+
+function firstSentences(text, count = 2) {
+  if (!text) return text;
+  const sentences = text.split(/(?<=[.!?][)\]"”']*)\s+(?=[A-Z])/);
+  return sentences.slice(0, count).join(" ");
+}
+
+function personRef(siteUrl) {
+  return {
     "@type": "Person",
+    "@id": `${siteUrl}/#person`,
+    name: "Ian Ronk",
+    url: siteUrl,
+    sameAs: PERSON_SAME_AS,
+  };
+}
+
+function fullPersonNode(siteUrl) {
+  return {
+    "@type": "Person",
+    "@id": `${siteUrl}/#person`,
     name: "Ian Ronk",
     jobTitle: "Head of Data: data systems, analytics, and urban-dynamics research",
     description: "Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top: web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data, with a research specialization in urban dynamics.",
     url: siteUrl,
-    sameAs: ["https://www.linkedin.com/in/ian-ronk-7b054a120/", "https://github.com/Werdert45"],
+    image: `${siteUrl}/profile.jpg`,
+    sameAs: PERSON_SAME_AS,
     hasOccupation: [
       { "@type": "Occupation", name: "Data Lead" },
       {
@@ -44,6 +99,15 @@ export function PersonJsonLd() {
       addressCountry: "NL",
     },
   };
+}
+
+export function PersonJsonLd() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    ...fullPersonNode(siteUrl),
+  };
 
   return (
     <script
@@ -59,14 +123,12 @@ export function WebSiteJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
     name: "Ian Ronk",
     url: siteUrl,
     description:
       "Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top: web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data, with a research specialization in urban dynamics.",
-    author: {
-      "@type": "Person",
-      name: "Ian Ronk",
-    },
+    author: { "@id": `${siteUrl}/#person` },
     inLanguage: ["en", "nl", "it", "de"],
   };
 
@@ -85,7 +147,9 @@ export function ArticleJsonLd({
   datePublished,
   dateModified,
   image,
+  category,
   locale = "en",
+  inLanguage,
   availableLocales = ["en"],
 }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.nl";
@@ -95,18 +159,23 @@ export function ArticleJsonLd({
     .filter((l) => l !== locale)
     .map((l) => `${siteUrl}/${l}/research/${slug}`);
 
+  const scholarly = isScholarlyCategory(category);
+  const published = toIsoDate(datePublished);
+  const modified = toIsoDate(dateModified) ?? published;
+
   const data = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": scholarly ? "ScholarlyArticle" : "Article",
     headline: title,
-    description,
+    description: scholarly ? firstSentences(description) : description,
+    ...(scholarly && description && { abstract: description }),
     ...(image && { image }),
-    ...(datePublished && { datePublished }),
-    dateModified: dateModified ?? datePublished,
-    author: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
-    publisher: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
-    inLanguage: locale,
-    isPartOf: { "@type": "WebSite", "@id": `${siteUrl}/${locale}` },
+    ...(published && { datePublished: published }),
+    ...(modified && { dateModified: modified }),
+    author: personRef(siteUrl),
+    publisher: personRef(siteUrl),
+    inLanguage: inLanguage ?? locale,
+    isPartOf: { "@id": `${siteUrl}/#website` },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
     ...(sameAs.length > 0 && { sameAs }),
@@ -128,6 +197,7 @@ export function BlogPostingJsonLd({
   dateModified,
   image,
   locale = "en",
+  inLanguage,
   availableLocales = ["en"],
 }) {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://ianronk.nl";
@@ -137,17 +207,20 @@ export function BlogPostingJsonLd({
     .filter((l) => l !== locale)
     .map((l) => `${siteUrl}/${l}/thoughts/${slug}`);
 
+  const published = toIsoDate(datePublished);
+  const modified = toIsoDate(dateModified) ?? published;
+
   const data = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: title,
     description,
     ...(image && { image }),
-    ...(datePublished && { datePublished }),
-    dateModified: dateModified ?? datePublished,
-    author: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
-    publisher: { "@type": "Person", name: "Ian Ronk", url: siteUrl },
-    inLanguage: locale,
+    ...(published && { datePublished: published }),
+    ...(modified && { dateModified: modified }),
+    author: personRef(siteUrl),
+    publisher: personRef(siteUrl),
+    inLanguage: inLanguage ?? locale,
     isPartOf: { "@type": "Blog", "@id": `${siteUrl}/${locale}/thoughts` },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     url,
@@ -162,20 +235,33 @@ export function BlogPostingJsonLd({
   );
 }
 
+export function BreadcrumbListJsonLd({ items }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      ...(item.url && { item: item.url }),
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+    />
+  );
+}
+
 export function ProfilePageJsonLd() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
-    mainEntity: {
-      "@type": "Person",
-      name: "Ian Ronk",
-      jobTitle: "Head of Data: data systems, analytics, and urban-dynamics research",
-      description:
-        "Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top: web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data, with a research specialization in urban dynamics.",
-      url: siteUrl,
-    },
+    mainEntity: fullPersonNode(siteUrl),
   };
 
   return (

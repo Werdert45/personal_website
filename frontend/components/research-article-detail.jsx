@@ -31,6 +31,24 @@ const MapFigure = dynamic(
   }
 );
 
+const MONTHS = {
+  january: "01", february: "02", march: "03", april: "04", may: "05", june: "06",
+  july: "07", august: "08", september: "09", october: "10", november: "11", december: "12",
+};
+
+// ISO dateTime for <time>: "2026-08-23", "2026-07", "July 2026" → "2026-07",
+// "2022" → "2022"; null when the string can't be parsed.
+function dateTimeAttr(raw) {
+  const s = String(raw || "").trim();
+  const iso = s.match(/^(\d{4}-\d{2}(-\d{2})?)/);
+  if (iso) return iso[1];
+  const name = s.toLowerCase().match(/[a-z]+/);
+  const year = s.match(/\d{4}/);
+  if (name && year && MONTHS[name[0]]) return `${year[0]}-${MONTHS[name[0]]}`;
+  if (/^\d{4}$/.test(s)) return s;
+  return null;
+}
+
 export default function ResearchArticleDetail({ slug, initialArticle = null }) {
   // Server-provided article, or the static manuscript fallback, renders
   // synchronously on the server — no mounted gate, or crawlers see nothing.
@@ -184,6 +202,7 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
 
   const title = getItemField(article, "title", locale);
   const abstract = getItemField(article, "abstract", locale);
+  const articleDateTime = dateTimeAttr(article.date);
   // The page header already renders the title; drop a leading H1 so it
   // doesn't appear twice.
   const content = (getItemField(article, "content", locale) || "").replace(/^\s*#\s[^\n]*\n+/, "");
@@ -220,7 +239,7 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <Badge>{article.category}</Badge>
-              <span className="text-sm text-muted-foreground">{article.date}</span>
+              <span className="text-sm text-muted-foreground">{articleDateTime ? <time dateTime={articleDateTime}>{article.date}</time> : article.date}</span>
             </div>
             <h1 className="text-4xl font-bold mb-4">{title}</h1>
             {article.author && <p className="text-lg text-muted-foreground mb-4">{t("byAuthor")} {article.author}</p>}

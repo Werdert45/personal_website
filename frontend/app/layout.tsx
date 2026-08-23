@@ -29,6 +29,9 @@ export const metadata: Metadata = {
       'de': '/de',
       'it': '/it',
     },
+    types: {
+      'application/rss+xml': '/feed.xml',
+    },
   },
   openGraph: {
     type: 'website',

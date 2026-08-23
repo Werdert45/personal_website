@@ -32,6 +32,19 @@ function displayDate(raw) {
   return /^\d{4}-\d{2}/.test(s) ? s.slice(0, 7) : s;
 }
 
+// ISO dateTime for <time>: "2026-08-23", "2026-07", "July 2026" → "2026-07",
+// "2022" → "2022"; null when the string can't be parsed.
+function dateTimeAttr(raw) {
+  const s = String(raw || "").trim();
+  const iso = s.match(/^(\d{4}-\d{2}(-\d{2})?)/);
+  if (iso) return iso[1];
+  const name = s.toLowerCase().match(/[a-z]+/);
+  const year = s.match(/\d{4}/);
+  if (name && year && MONTHS[name[0]]) return `${year[0]}-${String(MONTHS[name[0]]).padStart(2, "0")}`;
+  if (/^\d{4}$/.test(s)) return s;
+  return null;
+}
+
 export function BlogList({ initialPosts = [], initialPapers = [] }) {
   const [posts, setPosts] = useState(initialPosts);
   const [papers, setPapers] = useState(initialPapers);
@@ -91,7 +104,7 @@ export function BlogList({ initialPosts = [], initialPapers = [] }) {
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "end", marginBottom: 48, gap: 64, flexWrap: "wrap" }}>
-        <h2
+        <h1
           style={{
             fontFamily: "var(--font-serif)",
             fontSize: "clamp(48px, 7vw, 104px)",
@@ -100,7 +113,7 @@ export function BlogList({ initialPosts = [], initialPapers = [] }) {
           }}
         >
           {t("recentTitle")} <i style={{ fontStyle: "italic" }}>{t("recentItalic")}</i>.
-        </h2>
+        </h1>
         <p style={{ fontSize: 15, color: "var(--mute)", maxWidth: "38ch", fontFamily: "var(--font-mono)", textTransform: "uppercase", letterSpacing: "0.08em" }}>
           {t("subtitle")}
         </p>
@@ -119,20 +132,23 @@ export function BlogList({ initialPosts = [], initialPapers = [] }) {
       )}
 
       <div className="blog-list">
-        {entries.map((entry, i) => (
+        {entries.map((entry, i) => {
+          const dt = dateTimeAttr(entry.date);
+          return (
           <Link key={entry.key} href={entry.href} style={{ display: "block" }}>
             <div className="blog-row">
               <div className="bi">{String(i + 1).padStart(2, "0")}</div>
-              <div className="by">{displayDate(entry.date)}</div>
-              <div className="bt">
+              <div className="by">{dt ? <time dateTime={dt}>{displayDate(entry.date)}</time> : displayDate(entry.date)}</div>
+              <h2 className="bt">
                 {renderTitle(entry.title)}
                 <span className="bm">{entry.excerpt}</span>
-              </div>
+              </h2>
               <div className="bg">{entry.tag}</div>
               <div className="barr">→</div>
             </div>
           </Link>
-        ))}
+          );
+        })}
       </div>
 
       <div style={{ marginTop: 64 }}>

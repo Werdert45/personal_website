@@ -1,6 +1,6 @@
 import { renderPostOg } from "@/lib/og/post-template";
 
-export const runtime = "edge";
+export const runtime = "nodejs";
 export const alt = "Post on ianronk.nl";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";

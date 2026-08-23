@@ -16,6 +16,7 @@ async function fetchPapers() {
     if (!Array.isArray(results)) return [];
     // Dates are mixed-precision strings ("2026-08", "2022"); string sort is enough.
     return results
+      .filter((item) => (item.category || "").toLowerCase() !== "project")
       .sort((a, b) => String(b.published_at || b.date || "").localeCompare(String(a.published_at || a.date || "")))
       .slice(0, 6);
   } catch {

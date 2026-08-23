@@ -24,6 +24,7 @@ export async function generateMetadata({ params }) {
         "Contact Ian Ronk, data lead and urban-dynamics researcher based in Amsterdam. Questions about the research, the pipelines, a role or a collaboration.",
       url,
       type: "website",
+      images: ["/og.png"],
     },
   };
 }
