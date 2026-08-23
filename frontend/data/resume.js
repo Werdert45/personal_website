@@ -16,7 +16,7 @@ export const resume = {
     name: "Ian Ronk",
     roleLine: "Head of Data · Engineer & Researcher",
     location: "Amsterdam, NL",
-    email: "ianronk0@gmail.com",
+    email: "ian@ronk.org",
     links: [
       { label: "linkedin.com/in/ian-ronk-7b054a120", url: "https://linkedin.com/in/ian-ronk-7b054a120" },
       { label: "github.com/Werdert45", url: "https://github.com/Werdert45" },

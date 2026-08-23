@@ -160,7 +160,7 @@ CHUNKS = [
     {
         "category": "contact",
         "content": (
-            "Contact: Ian can be reached at ianronk0@gmail.com. LinkedIn: "
+            "Contact: Ian can be reached at ian@ronk.org. LinkedIn: "
             "linkedin.com/in/ian-ronk-7b054a120/. GitHub: github.com/Werdert45. "
             "Based in Amsterdam, Netherlands. Open to conversations about data engineering "
             "for research, research collaborations, and co-authorship."

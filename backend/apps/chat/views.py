@@ -143,7 +143,7 @@ def chat(request):
             {
                 "reply": (
                     "The assistant is taking a short break for today. "
-                    "Please try again later, or reach Ian directly at ianronk0@gmail.com."
+                    "Please try again later, or reach Ian directly at ian@ronk.org."
                 ),
                 "category": top_category,
             }

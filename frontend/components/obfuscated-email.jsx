@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-const USER = "ianronk0";
-const DOMAIN = "gmail.com";
+const USER = "ian";
+const DOMAIN = "ronk.org";
 
 function entityEncode(s) {
   return s

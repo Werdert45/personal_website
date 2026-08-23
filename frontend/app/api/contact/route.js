@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 const RECAPTCHA_SECRET_KEY = process.env.RECAPTCHA_SECRET_KEY || "";
 const EMAIL_USER = process.env.EMAIL_USER || "";
 const EMAIL_PASS = process.env.EMAIL_PASS || "";
-const CONTACT_EMAIL = "ianronk0@gmail.com";
+const CONTACT_EMAIL = "ian@ronk.org";
 const DJANGO_API_URL = process.env.DJANGO_API_URL || "http://localhost:8000";
 
 // In-memory per-IP rate limiter: max 3 submissions per hour.
