@@ -3,7 +3,7 @@ title: 'Seven Cities, 42,000 Observations, and a Headline That Hung on One Model
 slug: when-metro-capitalizes-fixed-effects
 status: published
 published_at: 2026-06-10
-date: "June 2026"
+date: "2026-06-10"
 excerpt: 'A phase-decomposed DiD across seven cities, and how one fixed-effects specification choice moved the headline result.'
 category: explanation
 tags: ["difference-in-differences", "fixed-effects", "econometrics", "housing-markets", "metro", "italy"]

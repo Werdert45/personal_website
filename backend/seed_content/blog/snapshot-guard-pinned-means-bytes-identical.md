@@ -7,7 +7,7 @@ category: explanation
 tags: ["data-engineering", "orchestration", "airflow", "reproducibility", "data-integrity", "series"]
 excerpt: "An operator that treats pinned inputs as a contract: if the bytes changed, the pipeline should refuse to pretend otherwise."
 read_time: ""
-date: "July 2026"
+date: "2026-07-28"
 featured: false
 is_premium: false
 author: Ian Ronk

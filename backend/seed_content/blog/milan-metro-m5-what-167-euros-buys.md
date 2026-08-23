@@ -1,7 +1,7 @@
 ---
 title: "What €167 per Square Metre Buys: Milan's Lilac Line, Ring by Ring"
 slug: milan-metro-m5-what-167-euros-buys
-status: published
+status: draft
 category: case-study
 tags: ["metro", "milan", "difference-in-differences", "housing-markets", "urban-research", "italy"]
 excerpt: "Milan's M5 raised nearby property prices by about 5.6%, but only after untangling the metro from Porta Nuova, CityLife, and everything else Milan was building at the same time. Rome, on the same data, got nothing."

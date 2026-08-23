@@ -27,13 +27,13 @@ is_premium: false
 
 ---
 
-## Why this exists
+## Motivation
 
 The gentrification modelling work on this site needed postcode-level geometries for Italian cities, and it turns out you cannot have them. Italy's 41 officially-zoned cities are divided into multiple CAP zones, but the boundary layer is sold by Poste Italiane under a per-city commercial licence; no free authoritative source exists. The same applies, with variations, to Spain, Ireland and intra-city France. Meanwhile the address *points* are abundant (OSM `addr:postcode` tags carry them in the millions), and Voronoi tessellation of those points is the established estimator for the missing polygons: it is the documented production method behind Ordnance Survey's commercial Code-Point with Polygons product; it has been run end-to-end on OSM addresses for German postcode areas with reference validation; and open implementations exist for Great Britain and Switzerland.
 
 So the pipeline is not the contribution. What none of the prior work establishes is the question a user of such a layer actually faces: **how many address points a given accuracy requires, and whether the answer transfers across countries.** That calibration is the paper.
 
-## What the paper does
+## Methods
 
 The pipeline itself is four steps: a kNN outlier filter on the address points (flag a point whose neighbours mostly carry a different postcode), a point-level Voronoi tessellation, consolidation of cells into one polygon per postcode with fragment reassignment, and tiled country-scale runs. Each OSM address is a seed; 17.3M addresses across five countries, May 2026 snapshots.
 
@@ -44,7 +44,7 @@ The calibration works like this:
 3. **Transfer.** Belgium (bpost reference, 1,188 polygons) is held out from the curve fitting, though one Belgian tile entered the preprocessing parameter sweep, so the transfer is blind on the curve but not on the operating point. It matters that Belgium's OSM addresses are mapper-mediated rather than bulk-imported: the Dutch layer is a systematic BAG import at ~96–99% completeness, so NL is partly a test on quasi-authoritative input, and Belgium is the more demanding case.
 4. **Apply.** Run the pipeline on a national Italian snapshot (3.05M addresses) and use the curve to bound expected accuracy where no reference exists.
 
-## Headline results
+## Results
 
 | Test | Reference | Result |
 |---|---|---|
@@ -71,7 +71,7 @@ The pipeline also beats the trivial alternative everywhere: against a one-centro
 }
 ```
 
-## What does not work, and where the claim stops
+## Limitations
 
 Two results I want on the record precisely because they are negative. Inverse-density power weighting (giving rural seeds larger Voronoi weights) does not improve on standard Voronoi: at most 0.5–0.6 percentage points in a narrow window, no gain at all on the Italian national run. Below saturation the binding constraint is address density, not the tessellation algorithm.
 
@@ -79,8 +79,12 @@ And the transferability claim is scoped, not universal. A Swiss evaluation with 
 
 The honest per-polygon caveat: the curve's point-level R² is only 0.26. It predicts the population-mean reliability of an estimate, not any individual polygon, which is why every released polygon carries its seed count as a fitness-for-use flag.
 
-## Released layers and reproducibility
+## Data and code availability
 
 Estimated postcode polygons for NL, DK, IT and CH are released as GeoJSON (ODbL 1.0, © OpenStreetMap contributors), each polygon carrying its `n_seeds` quality flag; the canonical Italian layer has 4,209 CAP polygons. Every number in the paper regenerates from committed scripts (country pipeline, curve fit with bootstrap uncertainty, Belgian hold-out, centroid baselines) against pinned May 2026 OSM snapshots. The calibration curve itself refits from a committed CSV without the ~4 GB raw archive. A Zenodo DOI and the arXiv identifier will be added here on submission.
 
 <!-- Source notes: all numbers from paper/paper.tex (abstract, §1–§6, Tables 1–5, §Reproducibility). Discrepancy vs brief: the brief says "calibrated against official geometries in NL/DK/BE". Per paper.tex Belgium is held out from calibration (transfer test), not a calibration country; presented per the source. Brief's headline 0.783 matches paper.tex Milan mean IoU. repo_url left empty: README.md names no public repo URL (paper.tex carries "[repository URL]" placeholder). CH mean: paper Discussion also quotes 0.486 (all-evaluated); the table value 0.549 (matched mean, Table 3) is used here and labelled matched. Fact-check pass 2026-08-10: added paper's own hedges (Milan 0.783 = earlier (5,0.5) configuration tuned on Milan, not tuning-blind, per abstract + §5.4; BE partial-blindness on operating point per §3/§4.1); corrected Germany from "open implementation" to end-to-end OSM study per §1; "almost entirely" -> "predominantly" saturated per §5.1; "~4 GB" per README. -->
+
+## Full paper
+
+[Download the paper (PDF)](/papers/voronoi-postcodes-paper.pdf)

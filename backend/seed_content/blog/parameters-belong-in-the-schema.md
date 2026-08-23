@@ -6,7 +6,8 @@ category: explanation
 tags: ["data-engineering", "orchestration", "reproducibility", "provenance", "series"]
 excerpt: "A pre-arXiv audit found the paper and its artifacts disagreeing about which hyperparameters produced the headline number, and nothing in the data model could settle it."
 read_time: ""
-date: "July 2026"
+date: "2026-07-08"
+published_at: "2026-07-08"
 featured: false
 is_premium: false
 author: Ian Ronk

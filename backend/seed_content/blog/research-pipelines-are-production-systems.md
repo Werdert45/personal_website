@@ -7,7 +7,7 @@ category: explanation
 tags: ["data-engineering", "orchestration", "airflow", "series"]
 excerpt: "Why research data pipelines deserve production discipline: the series opener."
 read_time: ""
-date: "July 2026"
+date: "2026-07-14"
 featured: false
 is_premium: false
 author: Ian Ronk

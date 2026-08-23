@@ -7,7 +7,7 @@ category: case-study
 tags: ["insar", "sentinel-1", "amsterdam", "geospatial", "remote-sensing", "quay-walls", "null-result"]
 excerpt: "Amsterdam is replacing 200 km of historic quay walls, guided by divers and engineers. The Netherlands publishes a free millimetre-precision InSAR subsidence map. I put the free signal on trial: pre-registered prediction, four failure directions tested, and a mechanism-tested null (AUC 0.49) that turned out to be the interesting answer."
 read_time: ""
-date: "August 2026"
+date: "2026-08-23"
 featured: false
 is_premium: false
 author: Ian Ronk

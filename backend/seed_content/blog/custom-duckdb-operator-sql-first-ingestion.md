@@ -7,7 +7,7 @@ category: explanation
 tags: ["data-engineering", "orchestration", "airflow", "duckdb", "sql", "series"]
 excerpt: "Building a custom Airflow operator that makes DuckDB the ingestion engine: SQL-first, testable, and cheap."
 read_time: ""
-date: "July 2026"
+date: "2026-07-21"
 featured: false
 is_premium: false
 author: Ian Ronk

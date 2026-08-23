@@ -7,7 +7,7 @@ category: explanation
 tags: ["computer-vision", "transfer-learning", "resnet", "fine-tuning", "mobile-ml", "pytorch"]
 excerpt: "FishFinder classifies 63 Dutch fish species from ~3,000 photos. That only works because the model doesn't start from zero: a pretrained ResNet50, fine-tuned with layer-wise learning rates. Here is how transfer learning, freezing and discriminative LRs actually work, with the real numbers."
 read_time: ""
-date: "August 2026"
+date: "2026-08-22"
 featured: false
 is_premium: false
 author: Ian Ronk

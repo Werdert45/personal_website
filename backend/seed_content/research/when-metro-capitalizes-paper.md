@@ -4,7 +4,7 @@ slug: when-metro-capitalizes-paper
 excerpt: "When do new metro lines show up in house prices? Across 42,000 observations from seven European cities, the market pays on delivery, not on promises, and the number worth defending is Milan's +167 EUR/m² within Ring D."
 status: published
 category: working-paper
-publication_status: working-paper
+publication_status: First version
 tags: ["difference-in-differences", "metro", "property-prices", "infrastructure", "urban-economics", "italy"]
 abstract: "We study when, not merely whether, new metro lines capitalize into residential property prices. Seventeen staggered treated cohorts across seven European cities in five countries (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma) pool into a single phase-decomposed panel (n = 42,004), with the response decomposed into announcement, construction, opening, and maturity phases. The pooled cross-city average locates the largest response at maturity: prices step up by +9 to +12% (drop-Roma to full-sample, measured as the construction-to-maturity contrast) two or more years after opening, a step that is stable across the control ladder and positive under every leave-one-city-out. The step is a pooled average, however, not a within-city fact. City-by-year fixed effects collapse it to an insignificant -0.5 log points while leaving a +2.5 log-point step at opening, a within-city contrast that is itself entity-clustered ordering evidence, not significant under city-clustered bootstrap. Few-cluster significance of the maturity step is partition- and control-set-dependent: a restricted wild cluster bootstrap gives p = 0.036 clustered on the seven cities (level-only controls; p = 0.080 with the full control set) but p = 0.16 on the twenty-four cohorts. Roma, priced through the same OMI appraisal series as Milano, is itself a within-city null whose pooled contribution runs entirely through the common-year fixed effects, and it disciplines the upper-bound reading throughout. The defensible magnitudes are per-city: foremost Milano's within-ring +167 EUR/m² (≈ +5.6%, wild-bootstrap p = 0.004). We read the delayed-to-maturity step as a cross-city pattern worth testing on longer panels, not as a settled within-city effect."
 read_time: ""
@@ -43,7 +43,7 @@ The defensible magnitudes are per-city: foremost Milano's within-ring **+167 EUR
 
 ---
 
-## What the paper covers
+## Scope and data
 
 The paper follows a deliberate build: the two cities studied in greatest depth (Milano and Amsterdam) are established as identified single-city groundwork first, and the seven-city pooled timing answer is assembled on top of them.
 
@@ -60,7 +60,7 @@ The paper follows a deliberate build: the two cities studied in greatest depth (
 
 ---
 
-## Headline results
+## Results
 
 | Estimate | Identification | Effect | Inference |
 |---|---|---|---|
@@ -84,9 +84,9 @@ One number that does *not* survive into the headline claims: under city-by-year 
 
 ---
 
-## Paper and replication
+## Replication and availability
 
-<!-- fig placeholder: fig: paper PDF download (paper1-when/paper.pdf) -->
+[Download the paper (PDF)](/papers/when-metro-capitalizes-paper.pdf)
 
 **PDF:** full working paper, available on request while the arXiv submission is prepared.
 

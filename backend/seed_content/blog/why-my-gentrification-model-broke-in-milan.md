@@ -1,7 +1,7 @@
 ---
 title: "The Model Worked in Amsterdam and Broke in Milan, and That Was the Finding"
 slug: why-my-gentrification-model-broke-in-milan
-status: published
+status: draft
 category: case-study
 tags: ["agent-based-modeling", "gentrification", "urban-research", "milan", "simulation"]
 excerpt: "What happens when a gentrification model calibrated on Dutch cities meets Milan, and why the failure mode is the interesting result. Drawn from my MSc thesis."

@@ -2,7 +2,8 @@
 title: 'One JSON per Published Number: the Pipeline Contract That Made Adversarial Review Cheap'
 slug: metro-pipeline-one-json-per-number
 status: published
-date: "August 2026"
+date: "2026-08-11"
+published_at: "2026-08-11"
 excerpt: 'How a one-script, one-JSON, one-figure contract turned a full methodology overhaul of the metro capitalization paper into a single working session instead of a rewrite.'
 category: explanation
 tags: ["data-engineering", "reproducibility", "difference-in-differences", "metro", "pipelines", "series"]

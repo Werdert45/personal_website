@@ -8,7 +8,7 @@ publication_status: ""
 tags: ["computer-vision", "autonomous-driving", "domain-transfer", "yolo", "kitti"]
 abstract: "Does an object detector trained on US dashcam data still work on European streets? An original 2024 course project suggested catastrophic transfer failure, but was confounded: precision-only metrics, no held-out test set, a resolution mismatch between datasets, and models never trained in-domain. This controlled redo runs a 2×3 design ({zero-shot COCO, US-fine-tuned, EU-fine-tuned} × {US-test, EU-test}) with YOLOv3u and YOLOv8s on Udacity/CrowdAI (US) and KITTI (EU). On EU test data, EU fine-tuning gains +0.153 mAP@0.5:0.95 over zero-shot while US fine-tuning gains +0.001; the difference-in-differences gap is +0.077 ± 0.007 across three seeds. The pattern is mirror-symmetric, so the honest conclusion is narrow fine-tune specialisation rather than a US-specific geographic bias, with one asymmetry that is genuinely geographic: bicycle detection collapses without European training data."
 read_time: "7 min"
-date: "2024–2025"
+date: "2025"
 doi: ""
 arxiv_id: ""
 repo_url: ""
@@ -19,18 +19,18 @@ is_premium: false
 
 # US vs EU transfer for autonomous driving
 
-## The question
+## Introduction
 
 Most self-driving perception stacks learn to see on American roads, because that's where the dashcam data is. So what happens when that detector lands in Europe, where bicycles share the lane, traffic lights hang on the near side of the intersection, and the streets were laid out centuries before cars? Does US training data transfer? Worse: does fine-tuning on US data actively *hurt* you on European streets?
 
 ![US validation frames with predicted bounding boxes: FedEx trucks, palm trees, wide Mountain View roads](/projects/us-vs-eu-transfer-autonomous-driving/us-udacity-detections.jpg)
 *The American side of the experiment: US-fine-tuned YOLOv8s predictions on Udacity dashcam frames. Wide lanes, palm trees, a FedEx truck.*
 
-## Attempt one: a satisfying answer that was wrong
+## Background: the 2024 study and its confounds
 
 The 2024 version of this project (a Bocconi computer-vision course) trained a YOLOv3 from a Darknet-53 backbone and found what looked like catastrophic transfer failure. Great headline. Also confounded five ways: precision-only evaluation, no held-out test set, a resolution mismatch between the two datasets, no in-domain baseline to compare against, and far too little training. The project's own conclusion admitted as much. I couldn't leave it there.
 
-## Attempt two: kill the confounds
+## Methods: a controlled 2×3 design
 
 The 2025 redo is a controlled **2×3 design**: three training conditions (zero-shot COCO-pretrained, US-fine-tuned, EU-fine-tuned), each evaluated on a US test set and an EU test set that no model ever touches during training or selection. Two architectures (YOLOv3u and YOLOv8s) cross-check each other. Both datasets get identical 416-pixel letterboxing. Fine-tuning gets a fixed 12-epoch budget. US data is Udacity/CrowdAI dashcam footage; EU data is KITTI, which means Karlsruhe. So every "EU" result honestly reads "German driving", not Europe at large.
 
@@ -39,7 +39,7 @@ The two datasets don't just differ in scenery; the annotations live in different
 ![Bounding-box centre heatmaps comparing US and EU datasets per class](/projects/us-vs-eu-transfer-autonomous-driving/box-center-heatmaps-us-vs-eu.png)
 *Where the boxes are: US annotations hug a tight horizontal band, KITTI's spread wider and lower, and KITTI has no traffic-light ground truth at all.*
 
-## The result
+## Results
 
 On the EU test set, fine-tuning on EU data buys YOLOv8s **+0.153 mAP@0.5:0.95** over the zero-shot baseline. Fine-tuning on US data buys **+0.001**. A full fine-tuning run on American streets moves European performance by a rounding error. The mirror experiment fails symmetrically, and the difference-in-differences estimate lands at **Δ = +0.077 ± 0.007**, stable across three seeds and both architectures, surviving a class-remapping correction and a threshold-free evaluation check.
 
@@ -51,10 +51,14 @@ Because the effect is mirror-symmetric (each side loses roughly equally on the o
 ![EU validation frames with predicted bounding boxes from the EU-fine-tuned model](/projects/us-vs-eu-transfer-autonomous-driving/eu-kitti-detections.jpg)
 *What in-domain fine-tuning buys: the EU-fine-tuned YOLOv8s on KITTI streets. Cars, pedestrians, and yes, a bicycle.*
 
-## Except for the bicycles
+## Discussion: the bicycle asymmetry
 
 One failure *is* genuinely geographic. US driving data contains roughly 30× fewer bicycles per image than European data, and it shows: bicycle AP sits at essentially zero in every US-trained condition and only recovers when the model sees European ground truth. If you're deploying a US-trained perception stack in a European city, the class it silently can't see is the cyclist next to your fender. That's the safety-relevant headline.
 
-## What this is, honestly
+## Scope and limitations
 
 By its own audit this is a reproducibility-tier result. The contribution is the controlled correction of an earlier "catastrophic transfer" claim (proper holdouts, both-direction fine-tuning, seed-stable statistics), not a novel domain-adaptation method. I find that more useful than the original headline. The first version told a thrilling story; this one tells a true one.
+
+## Full paper
+
+[Download the paper (PDF)](/papers/us-vs-eu-transfer-autonomous-driving.pdf)
