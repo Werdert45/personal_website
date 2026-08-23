@@ -137,7 +137,9 @@
     "endCtaKicker": "§ Weiter",
     "endCtaHeading": "Fragen zu einer Methode, einem Datensatz oder einer Rolle? Melden Sie sich.",
     "endCtaButton": "Kontakt aufnehmen",
-    "indexDiscuss": "Kontakt aufnehmen"
+    "indexDiscuss": "Kontakt aufnehmen",
+    "aiNote": "Mit KI geschrieben, von mir geprüft.",
+    "downloadPdf": "PDF herunterladen ↓"
   },
   "Contact": {
     "aboutBadge": "Über Mich",
@@ -343,7 +345,8 @@
     "endCtaSecondary": "Über mich",
     "endCtaContact": "Fragen zum Build? Melden Sie sich",
     "relatedKicker": "Verwandte Arbeiten",
-    "empty": "Die ersten Beiträge, Fallstudien zum Data Engineering hinter der Forschung, erscheinen im August 2026."
+    "empty": "Die ersten Beiträge, Fallstudien zum Data Engineering hinter der Forschung, erscheinen im August 2026.",
+    "aiNote": "Mit KI geschrieben, von mir geprüft."
   },
   "Author": {
     "roleLine": "Head of Data · Engineer & Forscher",

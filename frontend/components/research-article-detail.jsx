@@ -244,6 +244,7 @@ export default function ResearchArticleDetail({ slug, initialArticle = null }) {
             <h1 className="text-4xl font-bold mb-4">{title}</h1>
             {article.author && <p className="text-lg text-muted-foreground mb-4">{t("byAuthor")} {article.author}</p>}
             <p className="text-lg text-muted-foreground mb-6">{abstract}</p>
+            <p className="text-xs font-mono uppercase tracking-widest text-muted-foreground mb-6">{t("aiNote")}</p>
 
             {article.tags && article.tags.length > 0 && (
               <div className="flex flex-wrap gap-2 mb-6">

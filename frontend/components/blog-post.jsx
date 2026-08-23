@@ -120,6 +120,7 @@ export function BlogPost({ slug, initialPost = null }) {
         <span>{(post.category || "ARTICLE").toUpperCase()}</span>
         <span>{publishedDateTime ? <time dateTime={publishedDateTime}>{published}</time> : published}</span>
         {post.read_time && <span>{post.read_time}</span>}
+        <span>{t("aiNote")}</span>
       </div>
 
       <h1>{title}</h1>
@@ -263,6 +264,9 @@ export function BlogPost({ slug, initialPost = null }) {
       <div className="byline" style={{ marginTop: 48, paddingTop: 24, borderTop: "1px solid var(--rule)" }}>
         <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--mute)" }}>
           {t("bylinePrefix")} Ian Ronk {t("bylineSuffix")}
+        </p>
+        <p style={{ fontFamily: "var(--font-mono)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--mute)", marginTop: 6 }}>
+          {t("aiNote")}
         </p>
       </div>
     </article>

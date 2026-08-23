@@ -61,20 +61,24 @@ export async function PapersSection({ locale = "en" }) {
         </p>
       ) : (
         <div className="blog-list">
-          {papers.map((p, i) => (
-            <Link href={`/${locale}/research/${p.slug}`} key={p.slug} style={{ display: "block" }}>
-              <div className="blog-row">
-                <div className="bi">{String(i + 1).padStart(2, "0")}</div>
-                <div className="by">{(p.published_at || p.date || "").slice(0, 7)}</div>
-                <div className="bt">
-                  {renderTitle(getItemField(p, "title", locale) || p.title, p.italic)}
-                  <span className="bm">{getItemField(p, "excerpt", locale, "") || getItemField(p, "abstract", locale, "")}</span>
+          {papers.map((p, i) => {
+            // First-version papers stay listed but read as in progress.
+            const inProgress = p.slug === "when-metro-capitalizes-paper";
+            return (
+              <Link href={`/${locale}/research/${p.slug}`} key={p.slug} style={{ display: "block", opacity: inProgress ? 0.65 : 1 }}>
+                <div className="blog-row">
+                  <div className="bi">{String(i + 1).padStart(2, "0")}</div>
+                  <div className="by">{(p.published_at || p.date || "").slice(0, 10)}</div>
+                  <div className="bt">
+                    {renderTitle(getItemField(p, "title", locale) || p.title, p.italic)}
+                    <span className="bm">{getItemField(p, "excerpt", locale, "") || getItemField(p, "abstract", locale, "")}</span>
+                  </div>
+                  <div className="bg">{inProgress ? "IN PROGRESS" : (p.category || "PAPER").toUpperCase()}</div>
+                  <div className="barr">→</div>
                 </div>
-                <div className="bg">{(p.category || "PAPER").toUpperCase()}</div>
-                <div className="barr">→</div>
-              </div>
-            </Link>
-          ))}
+              </Link>
+            );
+          })}
         </div>
       )}
 

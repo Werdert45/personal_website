@@ -137,7 +137,9 @@
     "endCtaKicker": "§ Next",
     "endCtaHeading": "Questions about a method, a dataset or a role? Get in touch.",
     "endCtaButton": "Get in touch",
-    "indexDiscuss": "Get in touch"
+    "indexDiscuss": "Get in touch",
+    "aiNote": "Written with AI, checked by me.",
+    "downloadPdf": "Download PDF ↓"
   },
   "Contact": {
     "aboutBadge": "About Me",
@@ -343,7 +345,8 @@
     "endCtaSecondary": "About me",
     "endCtaContact": "Questions about the build? Get in touch",
     "relatedKicker": "Related work",
-    "empty": "No posts yet. The first case studies, on the data engineering behind the research, are in the works."
+    "empty": "No posts yet. The first case studies, on the data engineering behind the research, are in the works.",
+    "aiNote": "Written with AI, checked by me."
   },
   "Author": {
     "roleLine": "Head of Data · Engineer & Researcher",

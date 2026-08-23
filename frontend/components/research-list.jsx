@@ -11,8 +11,8 @@ import { renderTitle } from "@/lib/render-title";
 // Fallback shown only when the CMS returns no published research.
 // Every entry here must describe REAL work with a real detail page.
 const DEFAULT_ITEMS = [
-  { id: 1, slug: "voronoi-postcode-estimation", category: "PREPRINT", date: "2026-07", title: "Calibrating free postcode boundaries from OpenStreetMap", abstract: "How many OSM address points does a usable postcode polygon need? A single Voronoi pipeline calibrated against authoritative NL and DK layers (5,160 polygons), a seed-density-to-IoU curve with a robust asymptote (mean matched IoU ≈ 0.76–0.82), out-of-sample transfer to held-out Belgium, and an application to Italy's 4,209 CAP polygons, where no free authoritative layer exists." },
-  { id: 2, slug: "metro-capitalisation-timing", category: "WORKING-PAPER", date: "2026-07", title: "When does metro infrastructure capitalize into property prices?", abstract: "Phase-decomposed staggered difference-in-differences across seven European cities (n = 42,004). The pooled average locates the largest response at maturity, two or more years after opening. But city-by-year fixed effects collapse that pooled step, and the defensible magnitudes are per-city: foremost Milano's +167 EUR/m² (wild-bootstrap p = 0.004)." },
+  { id: 1, slug: "voronoi-postcode-estimation", category: "PREPRINT", date: "2026-08-14", title: "Calibrating free postcode boundaries from OpenStreetMap", abstract: "How many OSM address points does a usable postcode polygon need? A single Voronoi pipeline calibrated against authoritative NL and DK layers (5,160 polygons), a seed-density-to-IoU curve with a robust asymptote (mean matched IoU ≈ 0.76–0.82), out-of-sample transfer to held-out Belgium, and an application to Italy's 4,209 CAP polygons, where no free authoritative layer exists." },
+  { id: 2, slug: "metro-capitalisation-timing", category: "WORKING-PAPER", date: "2026-07-09", title: "When does metro infrastructure capitalize into property prices?", abstract: "Phase-decomposed staggered difference-in-differences across seven European cities (n = 42,004). The pooled average locates the largest response at maturity, two or more years after opening. But city-by-year fixed effects collapse that pooled step, and the defensible magnitudes are per-city: foremost Milano's +167 EUR/m² (wild-bootstrap p = 0.004)." },
   { id: 3, slug: "gentrification-abm", category: "THESIS", date: "2025-08", title: "Agent-based modelling of gentrification dynamics", abstract: "MSc thesis (2025). An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data, with an honest account of where the aggregation level limits what the model can claim. Case-study posts land here from August 2026." },
 ];
 
@@ -21,6 +21,17 @@ const IN_PROGRESS = [
   { title: "Social housing impact on the gentrification ABM" },
   { title: "Urban heat island research" },
 ];
+
+// Published papers that are still first versions: shown de-emphasized,
+// tagged IN PROGRESS, but the page and PDF stay reachable.
+const IN_PROGRESS_SLUGS = new Set(["when-metro-capitalizes-paper", "metro-capitalisation-timing"]);
+
+// Direct downloads for papers with a compiled PDF in public/papers/.
+const PAPER_PDFS = {
+  "voronoi-postcodes-paper": "/papers/voronoi-postcodes-paper.pdf",
+  "when-metro-capitalizes-paper": "/papers/when-metro-capitalizes-paper.pdf",
+  "us-vs-eu-transfer-autonomous-driving": "/papers/us-vs-eu-transfer-autonomous-driving.pdf",
+};
 
 export function ResearchList({ initialItems = [] }) {
   const [searchQuery, setSearchQuery] = useState("");
@@ -122,20 +133,36 @@ export function ResearchList({ initialItems = [] }) {
       )}
 
       <div className="research-list">
-        {filteredItems.map((item, i) => (
-          <Link key={item.id || item.slug} href={`/${locale}/research/${item.slug}`} style={{ display: "block" }}>
-            <div className="research-item">
-              <div className="ri">{String(i + 1).padStart(2, "0")}</div>
-              <div className="ry">{item.date || ""}</div>
-              <div className="rt">
-                {renderTitle(getItemField(item, "title", locale))}
-                <span className="rm">{getItemField(item, "excerpt", locale) || getItemField(item, "abstract", locale)}</span>
+        {filteredItems.map((item, i) => {
+          const inProgress = IN_PROGRESS_SLUGS.has(item.slug);
+          const pdf = PAPER_PDFS[item.slug];
+          return (
+            <Link key={item.id || item.slug} href={`/${locale}/research/${item.slug}`} style={{ display: "block", opacity: inProgress ? 0.65 : 1 }}>
+              <div className="research-item">
+                <div className="ri">{String(i + 1).padStart(2, "0")}</div>
+                <div className="ry">{item.date || ""}</div>
+                <div className="rt">
+                  {renderTitle(getItemField(item, "title", locale))}
+                  <span className="rm">{getItemField(item, "excerpt", locale) || getItemField(item, "abstract", locale)}</span>
+                  {pdf && (
+                    <span
+                      className="rm"
+                      role="link"
+                      tabIndex={0}
+                      style={{ display: "inline-block", marginTop: 8, borderBottom: "1px solid var(--ink)", color: "var(--ink)", width: "fit-content" }}
+                      onClick={(e) => { e.preventDefault(); e.stopPropagation(); window.open(pdf, "_blank"); }}
+                      onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); e.stopPropagation(); window.open(pdf, "_blank"); } }}
+                    >
+                      {t("downloadPdf")}
+                    </span>
+                  )}
+                </div>
+                <div className="rtag">{inProgress ? "IN PROGRESS" : (item.category || "RESEARCH").toUpperCase()}</div>
+                <div className="rarr">→</div>
               </div>
-              <div className="rtag">{(item.category || "RESEARCH").toUpperCase()}</div>
-              <div className="rarr">→</div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
         {!searchQuery && IN_PROGRESS.map((item, i) => (
           <div key={item.title} className="research-item" style={{ cursor: "default", opacity: 0.65 }}>
             <div className="ri">{String(filteredItems.length + i + 1).padStart(2, "0")}</div>

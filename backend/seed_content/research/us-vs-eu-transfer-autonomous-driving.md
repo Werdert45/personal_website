@@ -8,7 +8,7 @@ publication_status: ""
 tags: ["computer-vision", "autonomous-driving", "domain-transfer", "yolo", "kitti"]
 abstract: "Does an object detector trained on US dashcam data still work on European streets? An original 2024 course project suggested catastrophic transfer failure, but was confounded: precision-only metrics, no held-out test set, a resolution mismatch between datasets, and models never trained in-domain. This controlled redo runs a 2×3 design ({zero-shot COCO, US-fine-tuned, EU-fine-tuned} × {US-test, EU-test}) with YOLOv3u and YOLOv8s on Udacity/CrowdAI (US) and KITTI (EU). On EU test data, EU fine-tuning gains +0.153 mAP@0.5:0.95 over zero-shot while US fine-tuning gains +0.001; the difference-in-differences gap is +0.077 ± 0.007 across three seeds. The pattern is mirror-symmetric, so the honest conclusion is narrow fine-tune specialisation rather than a US-specific geographic bias, with one asymmetry that is genuinely geographic: bicycle detection collapses without European training data."
 read_time: "7 min"
-date: "2025"
+date: "2025-03-05"
 doi: ""
 arxiv_id: ""
 repo_url: ""

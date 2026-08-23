@@ -137,7 +137,9 @@
     "endCtaKicker": "§ Verder",
     "endCtaHeading": "Vragen over een methode, een dataset of een rol? Neem contact op.",
     "endCtaButton": "Neem contact op",
-    "indexDiscuss": "Neem contact op"
+    "indexDiscuss": "Neem contact op",
+    "aiNote": "Geschreven met AI, door mij gecontroleerd.",
+    "downloadPdf": "Download PDF ↓"
   },
   "Contact": {
     "aboutBadge": "Over Mij",
@@ -343,7 +345,8 @@
     "endCtaSecondary": "Over mij",
     "endCtaContact": "Vragen over de build? Neem contact op",
     "relatedKicker": "Gerelateerd werk",
-    "empty": "Nog geen stukken. De eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak."
+    "empty": "Nog geen stukken. De eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak.",
+    "aiNote": "Geschreven met AI, door mij gecontroleerd."
   },
   "Author": {
     "roleLine": "Head of Data · Engineer & onderzoeker",

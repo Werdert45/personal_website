@@ -137,7 +137,9 @@
     "endCtaKicker": "§ Avanti",
     "endCtaHeading": "Domande su un metodo, un dataset o un ruolo? Scrivimi.",
     "endCtaButton": "Scrivimi",
-    "indexDiscuss": "Scrivimi"
+    "indexDiscuss": "Scrivimi",
+    "aiNote": "Scritto con l'IA, verificato da me.",
+    "downloadPdf": "Scarica il PDF ↓"
   },
   "Contact": {
     "aboutBadge": "Su di Me",
@@ -343,7 +345,8 @@
     "endCtaSecondary": "Chi sono",
     "endCtaContact": "Domande sulla build? Scrivimi",
     "relatedKicker": "Lavori correlati",
-    "empty": "Ancora nessun articolo. I primi casi studio, sul data engineering dietro la ricerca, sono in preparazione."
+    "empty": "Ancora nessun articolo. I primi casi studio, sul data engineering dietro la ricerca, sono in preparazione.",
+    "aiNote": "Scritto con l'IA, verificato da me."
   },
   "Author": {
     "roleLine": "Head of Data · Engineer e ricercatore",
