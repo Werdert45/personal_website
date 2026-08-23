@@ -2,10 +2,10 @@ import { BlogList } from "@/components/blog-list";
 
 export const revalidate = 300;
 
-async function fetchBlogList() {
+async function fetchList(endpoint) {
   try {
     const djangoUrl = process.env.DJANGO_API_URL || "http://backend:8001";
-    const res = await fetch(`${djangoUrl}/api/blog/`, {
+    const res = await fetch(`${djangoUrl}/api/${endpoint}/`, {
       next: { revalidate: 300 },
     });
     if (!res.ok) return null;
@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
   return {
     title: "Work: case studies & field notes",
     description:
-      "Case studies and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.",
+      "Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.",
     alternates: {
       canonical: url,
       languages: {
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: "Work: case studies & field notes",
       description:
-        "Case studies and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.",
+        "Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.",
       url,
       type: "website",
     },
@@ -46,10 +46,17 @@ export async function generateMetadata({ params }) {
 }
 
 export default async function BlogPage() {
-  const posts = await fetchBlogList();
+  const [posts, research] = await Promise.all([
+    fetchList("blog"),
+    fetchList("research"),
+  ]);
+  // Papers only: project detail pages stay on /projects.
+  const papers = (research || []).filter(
+    (item) => (item.category || "").toLowerCase() !== "project"
+  );
   return (
     <main>
-      <BlogList initialPosts={posts || []} />
+      <BlogList initialPosts={posts || []} initialPapers={papers} />
     </main>
   );
 }

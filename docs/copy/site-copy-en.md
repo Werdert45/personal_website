@@ -358,7 +358,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[3].stack[4]`  
   XGBoost
 - `Projects.items[3].link`  
-  /research/metro-capitalisation-timing
+  https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025
 - `Projects.items[4].viz`  
   pipelines
 - `Projects.items[4].badge`  
@@ -785,6 +785,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ## Blogs page (/thoughts)
+*Now a single list of entries: case studies AND papers, newest first.*
 
 - `Thoughts.loadingFallback`  
   No posts yet. The first case studies, on the data engineering behind the research, are in the works.
@@ -795,7 +796,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Thoughts.recentItalic`  
   work
 - `Thoughts.subtitle`  
-  Case studies from shipped projects: what got built, what broke, and what it changed.
+  Case studies and papers, newest first: what got built, what broke, and what it changed.
 - `Thoughts.loading`  
   Loading…
 - `Thoughts.featuredKicker`  
@@ -983,9 +984,11 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `thoughts.metadata.title` (frontend/app/[locale]/thoughts/page.jsx)  
   Work: case studies & field notes
 - `thoughts.metadata.description` (frontend/app/[locale]/thoughts/page.jsx)  
-  Case studies and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.
+  Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.
 - `contact.metadata.description` (frontend/app/[locale]/contact/page.jsx)  
   Contact Ian Ronk, data lead and urban-dynamics researcher based in Amsterdam. Questions about the research, the pipelines, a role or a collaboration.
+- `site.metadata.title` (frontend/app/layout.tsx)  
+  Ian Ronk | Head of Data: data systems, analytics, and urban-dynamics research
 
 
 ## Currently unused (kept for reference)
@@ -1033,4 +1036,4 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 
 
 ---
-**Total: 2,602 words.**
+**Total: 2,616 words.**

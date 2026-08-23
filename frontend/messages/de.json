@@ -228,7 +228,7 @@
           "MongoDB",
           "XGBoost"
         ],
-        "link": "/research/metro-capitalisation-timing"
+        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
       },
       {
         "viz": "pipelines",
@@ -321,7 +321,7 @@
     "kicker": "Arbeiten: Fallstudien & Feldnotizen",
     "recentTitle": "Aktuelle",
     "recentItalic": "Arbeiten",
-    "subtitle": "Fallstudien aus ausgelieferten Projekten: was gebaut wurde, was kaputtging und was sich dadurch verändert hat.",
+    "subtitle": "Fallstudien und Papers, neueste zuerst: was gebaut wurde, was kaputtging und was es verändert hat.",
     "loading": "Lädt…",
     "featuredKicker": "Hervorgehoben ·",
     "readPiece": "Beitrag lesen →",
