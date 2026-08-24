@@ -9,7 +9,8 @@ import { LinkedInInsight } from "@/components/analytics/linkedin-insight";
 import { Clarity } from "@/components/analytics/clarity";
 import { CookieConsent } from "@/components/analytics/cookie-consent";
 import { ConsentProvider } from "@/components/consent-provider";
-import { ChatWidget } from "@/components/chat-widget";
+// ASK IAN chat hidden for now; restore by re-adding <ChatWidget /> below
+// import { ChatWidget } from "@/components/chat-widget";
 
 export default async function LocaleLayout({
   children,
@@ -43,7 +44,6 @@ export default async function LocaleLayout({
         <Clarity />
         <LinkedInInsight />
         <CookieConsent />
-        <ChatWidget />
       </ConsentProvider>
     </NextIntlClientProvider>
   );
