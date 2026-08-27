@@ -289,7 +289,7 @@
           "Dijkstra & Network Science",
           "Distributed Compute"
         ],
-        "link": "https://connectivityscore.krafin.tech"
+        "link": "/research/connectivity-score-multimodal-accessibility"
       },
       {
         "viz": "hedonic",
@@ -304,7 +304,7 @@
           "MongoDB",
           "R"
         ],
-        "link": "https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025"
+        "link": "/research/eurostat-monthly-hpi-web-scraped"
       }
     ],
     "viewCase": "Read more",

@@ -416,7 +416,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[6].stack[3]`  
   Distributed Compute
 - `Projects.items[6].link`  
-  https://connectivityscore.krafin.tech
+  /research/connectivity-score-multimodal-accessibility
 - `Projects.items[7].viz`  
   hedonic
 - `Projects.items[7].badge`  
@@ -438,7 +438,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[7].stack[4]`  
   R
 - `Projects.items[7].link`  
-  https://ec.europa.eu/eurostat/web/products-statistical-working-papers/w/ks-01-26-025
+  /research/eurostat-monthly-hpi-web-scraped
 - `Projects.viewCase`  
   Read more
 - `Projects.ctaAll`  
