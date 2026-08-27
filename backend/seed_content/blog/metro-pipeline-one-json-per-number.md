@@ -31,7 +31,7 @@ The second failure mode is a data source that deletes itself. The Italian revenu
 
 ## How it was implemented
 
-At the time of the overhaul the project was a four-city difference-in-differences study of metro capitalization: Milan (M4/M5, on the OMI semestral panel 2004–2025), Amsterdam (Noord/Zuidlijn, on CBS WOZ values), Copenhagen (Cityringen, on Boliga deed data), Paris (Grand Paris Express, on geo-DVF). The pooled panel has since grown to seven cities: Helsinki, Rennes and Rome joined later. Different registries, different measurement instruments, one harmonised panel layer, one paper.
+At the time of the overhaul the project was a four-city difference-in-differences study of metro capitalization: Milan (M4/M5, on the OMI semestral panel 2004–2025), Amsterdam (Noord/Zuidlijn, on CBS WOZ values), Copenhagen (Cityringen, on Boliga deed data), Paris (Grand Paris Express, on geo-DVF). The pooled panel has since grown to seven cities: Helsinki, Rennes and Rome joined later. Different registries and different measurement instruments feed one harmonised panel layer and one paper.
 
 ### One script, one JSON, one figure
 
@@ -77,7 +77,7 @@ The overhaul took one working session instead of three weeks. It was seven decis
 6. A ring restriction for Amsterdam, dropping the contaminated 1.5–3 km donut.
 7. The anticipation retraction.
 
-The defensible numbers, after the overhaul: Milan Ring D, regeneration-controlled, **+167 EUR/m²** (SE 52, p = 0.002, zone-clustered). The combined Milan panel went from +820 with three stars to +813 with p = 0.07: same coefficient, honest clustering, demoted below the line. Amsterdam failed differently: the full-sample estimate of +31,900 EUR per property was sitting on a contaminated control set, and the ring-restricted correction landed at **+69,800 EUR per property** (SE 12.7k, p < 0.001), a levels estimate the paper is careful not to read as proportional capitalization, since the same panel in logs runs slightly negative. And an Amsterdam anticipation claim I had been fond of was retracted outright: β = −0.1, p = 0.997. Not weakened. Retracted.
+The defensible numbers, after the overhaul: Milan Ring D, regeneration-controlled, **+167 EUR/m²** (SE 52, p = 0.002, zone-clustered). The combined Milan panel went from +820 with three stars to +813 with p = 0.07: same coefficient, honest clustering, demoted below the line. Amsterdam failed differently: the full-sample estimate of +31,900 EUR per property was sitting on a contaminated control set, and the ring-restricted correction landed at **+69,800 EUR per property** (SE 12.7k, p < 0.001), a levels estimate the paper is careful not to read as proportional capitalization, since the same panel in logs runs slightly negative. And an Amsterdam anticipation claim I had been fond of was retracted outright rather than weakened: β = −0.1, p = 0.997.
 
 The overhaul did not uniformly shrink the results. The Amsterdam correction ran the other way: removing contaminated controls via the ring restriction nearly doubled the point estimate. Broken pipelines do not systematically flatter you; they are just wrong in directions you have not measured.
 

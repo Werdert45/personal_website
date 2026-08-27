@@ -1,7 +1,7 @@
 ---
 title: "When Does Metro Infrastructure Capitalize into Property Prices? Phase-Decomposed Difference-in-Differences Evidence from Seven European Cities"
 slug: when-metro-capitalizes-paper
-excerpt: "When do new metro lines show up in house prices? Across 42,000 observations from seven European cities, the market pays on delivery, not on promises, and the number worth defending is Milan's +167 EUR/m² within Ring D."
+excerpt: "Across 42,000 observations from seven European cities, new metro lines show up in house prices on delivery, not on promises; the number worth defending is Milan's +167 EUR/m² within Ring D."
 status: published
 category: working-paper
 publication_status: first-version
@@ -51,7 +51,7 @@ The paper follows a deliberate build: the two cities studied in greatest depth (
 2. **Data**: OMI zone-level prices for Milano (2004–2025, area-weighted crosswalk from 2011 to 2025 zone boundaries); CBS WOZ buurt-level values for Amsterdam (2013–2022); staged treatment assignment from actual per-stop opening dates.
 3. **Empirical Strategy**: two-way fixed-effects DiD, distance-band DiD, a continuous inverse-distance specification that removes the buffer-choice degree of freedom, Sun–Abraham event studies, placebo tests and rolling windows. Cluster-robust inference throughout.
 4. **Results: Milano**, the cleanest single case: within-ring **+167 EUR/m²** (about +5.6%) after opening, wild-bootstrap *p* = 0.004, robust to every deletion. The within-ring contrast controls for the Porta Nuova / CityLife / Scalo Farini regeneration confound.
-5. **Results: Amsterdam**, the Noord-Zuid Lijn: **+69,800 EUR** per property under the ring-restricted DiD (+31,900 bare TWFE, both *p* < 0.001), with the paper's own caveat that in log units treated buurten appreciated more slowly than the outer control ring (−4.3% to −5.5%), so the euro figure is a level gain from a 1.74× higher base, not proportional capitalization. Also home to an identification lesson: phase *levels* were unidentified because the panel starts eleven years into construction, and PanelOLS with `check_rank=False` returned pseudo-inverse artifacts with p-values of 1e-9, fixed by estimating phase *contrasts* instead of levels.
+5. **Results: Amsterdam**, the Noord-Zuid Lijn: **+69,800 EUR** per property under the ring-restricted DiD (+31,900 bare TWFE, both *p* < 0.001), with the paper's own caveat that in log units treated buurten appreciated more slowly than the outer control ring (−4.3% to −5.5%), so the euro figure is a level gain from a 1.74× higher base, not proportional capitalization. It also yields an identification lesson: phase *levels* were unidentified because the panel starts eleven years into construction, and PanelOLS with `check_rank=False` returned pseudo-inverse artifacts with p-values of 1e-9, fixed by estimating phase *contrasts* instead of levels.
 6. **Comparative Discussion: Milano and Amsterdam**, on what the two identification environments do and do not share.
 7. **Robustness**: Callaway–Sant'Anna doubly-robust staggered DiD, Honest-DiD pre-trend sensitivity, restricted wild cluster bootstrap (Webb weights), leave-one-city-out, measurement-class split.
 8. **Seven-City Pooled Analysis**: the headline: seventeen cohorts, four phases, the +9 to +12% maturity step, and the fixed-effects stress tests that bound what the pooled average does and does not establish. Roma is a within-city null at every phase (independently corroborated by a Banca d'Italia study using different methods) and disciplines the upper-bound reading.

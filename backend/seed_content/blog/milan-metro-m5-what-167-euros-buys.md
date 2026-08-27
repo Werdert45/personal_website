@@ -16,7 +16,7 @@ meta: {"related_research_slug": "when-metro-capitalizes-paper"}
 
 Milan's M5 (the Lilla, the lilac line) opened in three instalments: seven stops from Bignami to Zara in February 2013, two more to Garibaldi in March 2014, and the final ten out to San Siro in April 2015. Somewhere in the decade since, the neighbourhoods around those stations became more expensive. The question I spent a large part of a paper on is: how much of that was the metro?
 
-My best answer is +167 euros per square metre, about 5.6% of the average control-zone price. Getting to that number was not mostly a story about metros. It was a story about everything else Milan was building at the same time, and about how close I came to publishing a number that was really measuring Porta Nuova.
+My best answer is +167 euros per square metre, about 5.6% of the average control-zone price. Getting to that number was less a story about metros than about everything else Milan was building at the same time, and about how close I came to publishing a number that was really measuring Porta Nuova.
 
 This is the single-city deep read. The cross-city version of this project (seven cities, and a headline that moved with one fixed-effects choice) has [its own post](/thoughts/when-metro-capitalizes-fixed-effects), and I will not retell the methods story here.
 
@@ -26,7 +26,7 @@ Italy has a quietly excellent public data source for this: the Osservatorio del 
 
 A zone counts as treated if it lies within 500 metres of a new M5 or M4 stop, using the actual staged opening dates rather than a single line-opening year. In the 38-zone sample that gives 24 treated zones (16 for M4, 8 for M5) and 14 controls.
 
-The design is a difference-in-differences: each zone is compared with its own history, treated zones against untreated ones, so anything fixed about a neighbourhood (centrality, housing stock, a century of sorting) drops out. What does not drop out is anything that *changed* at the same time as the metro. Hold that thought.
+The design is a difference-in-differences: each zone is compared with its own history, treated zones against untreated ones, so anything fixed about a neighbourhood (centrality, housing stock, a century of sorting) drops out. What does not drop out is anything that *changed* at the same time as the metro. Hold that thought; it comes back below.
 
 ## The number you would get if you weren't careful
 
@@ -67,11 +67,11 @@ Because 16 zones is few enough that conventional clustered inference over-reject
 
 Two texture notes. First, the effect is a level shift, not a widening gap: treated and control zones track each other after opening, just at a new distance. Second, the pre-opening years show close-to-station prices *falling* slightly relative to controls (consistent with construction disturbance, closed streets and displaced parking), which runs opposite to the post-opening jump. If anything, that makes the +167 conservative.
 
-And the timing, within Milan: the construction-phase price differential is a precise zero (+0.010 log points, p = 0.70), the opening phase steps up (+0.106, p = 0.062), and the maturity phase, two or more years after opening, consolidates further (+0.172, p = 0.045). The market did not price the Lilla while the tunnels were being dug. It paid on delivery, and kept paying as the line bedded in.
+And the timing, within Milan: the construction-phase price differential is a precise zero (+0.010 log points, p = 0.70), the opening phase steps up (+0.106, p = 0.062), and the maturity phase, two or more years after opening, consolidates further (+0.172, p = 0.045). The market did not price the Lilla while the tunnels were being dug; it paid on delivery, and kept paying as the line bedded in.
 
 ## Rome, or what happens when you assume the uplift
 
-Here is the part I find most useful, and it is a null result.
+The part of the paper I find most useful is a null result.
 
 Rome's Metro C opened in three tranches (2014, 2015, 2018) over the same period, and it can be studied with the *same instrument*: the same OMI appraisal series, the same 500-metre treatment rule, the same pipeline, run over 232 Roman zones. The result is nothing at every phase. Construction: +0.006 log points (p = 0.73). Opening: −0.013 (p = 0.66). Maturity: −0.020 (p = 0.59). The simple post-opening estimate is slightly negative and insignificant. A Banca d'Italia working paper using a different method and a different outcome source finds a significant *negative* suburban effect of roughly −137 euros per square metre; the shared finding across the two studies is the absence of positive capitalization.
 

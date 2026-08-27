@@ -21,9 +21,9 @@ meta: {"project": "fishfinder-on-device-fish-id"}
 
 ## Why transfer learning was needed
 
-FishFinder's training set is roughly 3,000 photos I collected myself. Sixty-plus species means a few dozen images per class. For context: ImageNet, the dataset image models are typically measured on, has over a million. Training a deep network from scratch on 3,000 photos is not a hard problem; it's an impossible one. The network would memorize every image long before it learned what a fish is.
+FishFinder's training set is roughly 3,000 photos I collected myself. Sixty-plus species means a few dozen images per class. For scale: ImageNet, the dataset most image models are measured against, has over a million. Training a deep network from scratch on 3,000 photos is not a hard problem so much as an impossible one: the network would memorize every image long before it learned what a fish is.
 
-The way out is **transfer learning**: don't start from zero. Take a network already trained on ImageNet and reuse what it learned. This works because of a lucky property of convolutional networks: their early layers learn things that have nothing to do with the original task. Edges, corners, color gradients, textures. Those are as useful for telling a perch from a pike as they were for telling a husky from a muffin. Only the later layers get task-specific, and the very last layer (the "head") is just a lookup from features to class names.
+The way out is **transfer learning**: don't start from zero. Take a network already trained on ImageNet and reuse what it learned. This works because of a lucky property of convolutional networks: their early layers learn things that have nothing to do with the original task: edges, corners, color gradients, textures. Those are as useful for telling a perch from a pike as they were for telling one dog breed from another. Only the later layers get task-specific, and the very last layer (the "head") is just a lookup from features to class names.
 
 Transfer learning brings its own catch, though: your tiny dataset can *damage* the pretrained weights. With a normal learning rate and 3,000 images, the network will happily overwrite its general-purpose edge detectors with noise from your photos. So the implementation question is really how to protect what the network already knows while still letting it learn fish.
 
@@ -31,7 +31,7 @@ Transfer learning brings its own catch, though: your tiny dataset can *damage* t
 
 ### The backbone: what a ResNet50 actually is
 
-FishFinder's classifier is a **ResNet50**: fifty layers of convolutions organized into four stages, where each stage looks at a coarser, more abstract version of the image than the one before. The "Res" is the important part. Each block of layers computes a small *residual correction* to its input rather than a whole new representation, because the block's input is added back to its output through a skip connection. That one trick is what makes fifty-layer networks trainable at all; without it, the training signal degrades as it travels backwards through that many layers.
+FishFinder's classifier is a **ResNet50**: fifty layers of convolutions organized into four stages, where each stage looks at a coarser, more abstract version of the image than the one before. The "Res" is the important part. Each block of layers computes a small *residual correction* to its input rather than a whole new representation, because the block's input is added back to its output through a skip connection. That skip connection is what makes fifty-layer networks trainable at all; without it, the training signal degrades as it travels backwards through that many layers.
 
 Feed it a 224×224 image of a bream and each stage hands the next a smaller, deeper summary: first edges and speckle, then scale patterns and fin shapes, then "long silver body, orange fins", until a final layer turns that summary into 62 species probabilities.
 
@@ -42,7 +42,7 @@ Fine-tuning means continuing to train that pretrained network on your own data, 
 ![Two-row diagram: hard freezing locks the whole backbone and trains only a new head; discriminative learning rates let every layer train, with the learning rate ramping up from conv1 at a tenth of the base rate to the new head at the full rate](/blog-figures/fishfinder-resnet50-finetuning/freeze-vs-discriminative-lr.svg)
 *Two ways to protect pretrained weights: lock them (top) or slow them down in proportion to how general they are (bottom).*
 
-**Version 1 froze everything.** The first FishFinder classifier was a MobileNetV2 feature extractor with `trainable = False`, plus a small new softmax head on top. That is hard freezing: the backbone's weights cannot change at all, and only the head learns. It's fast, it's cheap, it cannot destroy the pretrained features, and for a v1 served from a Flask endpoint it was exactly right. Its ceiling is real, though. A frozen ImageNet backbone has never seen a fish held at arm's length toward a phone camera; it can't adapt its mid-level features to scale texture and fin geometry, because it isn't allowed to.
+**Version 1 froze everything.** The first FishFinder classifier was a MobileNetV2 feature extractor with `trainable = False`, plus a small new softmax head on top. That is hard freezing: the backbone's weights cannot change at all, and only the head learns. It is fast and cheap, it cannot destroy the pretrained features, and for a v1 served from a Flask endpoint it was exactly right. Its ceiling is real, though. A frozen ImageNet backbone has never seen a fish held at arm's length toward a phone camera; it can't adapt its mid-level features to scale texture and fin geometry, because it isn't allowed to.
 
 **The rebuild uses the continuous version of freezing.** The current trainer fine-tunes *all* of ResNet50, but with **discriminative learning rates**: each stage gets its own learning rate, scaled by how general its features are. Straight from the training script:
 
@@ -68,8 +68,8 @@ The rest of the recipe is standard but load-bearing: flips, small rotations and 
 
 On the full 62-class dataset that lands at **75.9% top-1 and 94.0% top-5**. The training log also shows the small-data reality plainly: training accuracy reaches ~100% while validation sits around 80%. That gap is overfitting, and with a few dozen images per class it doesn't fully close; more photos per species is the known fix. I'd rather publish the gap than hide it.
 
-For the app, the trained network gets compressed into an 8.8 MB TFLite file that runs on the phone itself. A ResNet50 spends its knowledge budget wisely enough that, after conversion, a model that started from a million ImageNet images fits in a fishing app's back pocket, with no server and no signal required.
+For the app, the trained network gets compressed into an 8.8 MB TFLite file that runs on the phone itself. A ResNet50 spends its knowledge budget wisely enough that, after conversion, a model that started from a million ImageNet images ends up inside a fishing app, with no server and no signal required.
 
 ## The takeaway
 
-Fine-tuning is a negotiation between what the network already knows and what your data can teach it. Freeze too much and you cap what the model can become; free too much and your 3,000 photos bulldoze features learned from a million. Layer-wise learning rates are the grown-up answer: let every layer learn, at a speed proportional to how much you trust it.
+Fine-tuning is a negotiation between what the network already knows and what your data can teach it. Freeze too much and you cap what the model can become; free too much and your 3,000 photos bulldoze features learned from a million. Layer-wise learning rates split the difference: let every layer learn, at a speed proportional to how much you trust it.

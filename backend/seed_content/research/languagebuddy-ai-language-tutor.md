@@ -21,23 +21,23 @@ is_premium: false
 
 ## The premise
 
-The best moments in language learning happen mid-conversation: the word you reach for and don't have, the article you get wrong, the verb you conjugate on vibes. Most apps let those moments evaporate. LanguageBuddy is my answer, a self-hosted AI tutor for Dutch, Italian and Spanish (CEFR A1 to C1) where nothing you stumble on gets thrown away. Every mistake becomes tomorrow's study material.
+The best moments in language learning happen mid-conversation: the word you reach for and don't have, the article you get wrong, the verb you conjugate by feel. Most apps let those moments evaporate. LanguageBuddy is built so they don't: a self-hosted AI tutor for Dutch, Italian and Spanish (CEFR A1 to C1) where nothing you stumble on gets thrown away. Every mistake becomes tomorrow's study material.
 
 ![LanguageBuddy home dashboard showing streak, words learned, accuracy, daily XP, A1-to-A2 progress and the daily practice checklist](/projects/languagebuddy-ai-language-tutor/home-dashboard.png)
 *The daily loop: streak, accuracy, XP, level progress, and a four-part practice checklist. Real data from my own account.*
 
 ## Talk first, drill later
 
-You start with an adaptive CEFR placement exam that scores vocabulary, reading, listening, writing and speaking as five separate skills, branching difficulty as it goes. Your overall level is your weakest skill. No hiding behind a strong reading score.
+You start with an adaptive CEFR placement exam that scores vocabulary, reading, listening, writing and speaking as five separate skills, branching difficulty as it goes. Your overall level is your weakest skill, so there is no hiding behind a strong reading score.
 
 Then you talk. The core of the app is free conversation with a level-adapted LLM tutor: 177 role-play scenarios (ordering at the bakker, arguing with the huisarts, small talk with the buren) in text, or fully hands-free voice calls using in-browser speech recognition plus neural TTS.
 
 ![Chat view with a sidebar of Dutch role-play scenarios: Supermarkt, Restaurant, Huisarts, Openbaar vervoer and more](/projects/languagebuddy-ai-language-tutor/chat-scenarios.png)
 *Pick a scenario, type or call. The tutor stays in character and at your level.*
 
-While you chat, the system listens for mistakes. Each one gets extracted, lemmatized and fed into an SM-2 spaced-repetition engine, the same algorithm family Anki uses. Those words come back in the next day's exercises and in a personalized, printable PDF workbook for offline study. Conversation in, curriculum out. That is the closed loop.
+While you chat, the system listens for mistakes. Each one gets extracted, lemmatized and fed into an SM-2 spaced-repetition engine, the same algorithm family Anki uses. Those words come back in the next day's exercises and in a personalized, printable PDF workbook for offline study. Conversation in, curriculum out: that is the closed loop.
 
-## The daily grind, made sticky
+## The daily grind
 
 Each morning the system assembles a lesson plan: cloze, grammar, translation and matching drills; listening items generated with neural text-to-speech; reading comprehension built from that day's actual news (NOS, ANSA and EFE, scraped, cleaned and levelled); and writing prompts graded by an LLM against a CEFR rubric. Duolingo-style gamification with XP, combo multipliers, streaks, hearts and milestones keeps me coming back.
 
@@ -55,7 +55,7 @@ The backend is FastAPI on Python 3.12 with a 35-table SQLite schema tracking ses
 
 The content layer is hand-curated: 6,200+ vocabulary entries across A1 to C1 in multiple languages, the 177 scenarios, grammar topic sets and verb conjugation tables. About 2 MB of language data I actually stand behind.
 
-The ~20,000 lines of Python were built with **agentic coding**: AI agents wrote most of the code, I directed. What keeps that from being vibe-coding is the harness the agents work inside. There is a written blueprint that pins down behaviour before any code gets generated. There is a **336-test suite**, with per-language end-to-end tests and dedicated CEFR-assessment tests, that every change has to pass before it lands. And there are adversarial review passes where a second agent's only job is to break what the first one wrote. The agents type; the spec and the tests decide.
+The ~20,000 lines of Python were built with **agentic coding**: AI agents wrote most of the code, I directed. What keeps that from being vibe-coding is the harness the agents work inside: a written blueprint pins down behaviour before any code gets generated; every change has to pass a **336-test suite**, with per-language end-to-end tests and dedicated CEFR-assessment tests, before it lands; and adversarial review passes give a second agent one job, breaking what the first one wrote. The agents type; the spec and the tests decide.
 
 It ships as a small Docker Compose stack with hardened containers: read-only root filesystem, dropped Linux capabilities, tmpfs-only scratch space, health checks on every service.
 

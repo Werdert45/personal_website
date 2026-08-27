@@ -25,7 +25,7 @@ is_premium: false
 
 ## A flood map that can't answer "why?"
 
-Europe's reference fluvial flood maps (Dottori et al. 2016; 250 m resolution, return periods from 10 to 200 years) fall out of a two-dimensional hydrodynamic simulation. They're good. They're also a black box twice over: they can't tell a portfolio manager *why* an asset is flood-prone, and they can't be refreshed when the neighbourhood around that asset changes. My question for KR&A, who screen pan-European real estate for exactly this kind of risk, was almost cheeky: **can I reproduce the simulation's answers using only interpretable, local facts about a location?**
+Europe's reference fluvial flood maps (Dottori et al. 2016; 250 m resolution, return periods from 10 to 200 years) fall out of a two-dimensional hydrodynamic simulation. They are good, but they are a black box twice over: they can't tell a portfolio manager *why* an asset is flood-prone, and they can't be refreshed when the neighbourhood around that asset changes. My question for KR&A, who screen pan-European real estate for exactly this kind of risk, was almost cheeky: **can I reproduce the simulation's answers using only interpretable, local facts about a location?**
 
 ## Sampling half of Europe
 

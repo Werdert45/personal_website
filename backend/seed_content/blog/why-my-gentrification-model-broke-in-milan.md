@@ -41,7 +41,7 @@ The ABM, with its best hyperparameters from grid search (rich_move 0.04, afforda
 
 <!-- fig placeholder: fig: Hyperparameter grid search for the Amsterdam ABM -->
 
-Here is the part most write-ups would skip: a naive null measure (predict zero change for every neighborhood) still wins on city-wide MSE, at 0.00117. That is not a scandal; it is a property of the data. Most neighborhoods barely change over a decade, so "nothing happens" is a strong city-wide predictor. It is also a useless one, because nobody needs a model to tell them that most places stay the same.
+There is a result here that most write-ups would skip. A naive null measure (predict zero change for every neighborhood) still wins on city-wide MSE, at 0.00117. That is not a scandal; it is a property of the data. Most neighborhoods barely change over a decade, so "nothing happens" is a strong city-wide predictor. It is also a useless one, because nobody needs a model to tell them that most places stay the same.
 
 Where the models are actually asked to earn their keep (the Top-20 fastest-gentrifying neighborhoods), the ranking flips. There the ABM is the best model: Top-20 MSE of 0.00985, against 0.01308 for the null measure and 0.01492–0.01894 for the regressions. The ABM is worse at predicting stasis and better at predicting change, which is the trade you want.
 
@@ -74,7 +74,7 @@ The tempting reading is that the model failed to transfer. The more accurate rea
 
 ## The leopard-spots problem
 
-Why does the signal vanish? Semi (2011) observed that gentrification in Milan happens in "leopard spots": scattered, gradual improvements in patches smaller than any administrative unit, rather than uniform neighborhood-wide transformation.
+The signal does not vanish at random. Semi (2011) observed that gentrification in Milan happens in "leopard spots": scattered, gradual improvements in patches smaller than any administrative unit, rather than uniform neighborhood-wide transformation.
 
 Milan's NILs were designed for demographic and economic reporting, not for tracking micro-level urban change. When a gentrifying pocket covers a fraction of a NIL, averaging over the whole unit dilutes it toward zero. The phenomenon is real; the aggregation erases it. Amsterdam's Buurten are small enough that the patches and the units roughly align, which is why the same model, same decision rules, same pipeline produced a usable result there and noise elsewhere.
 

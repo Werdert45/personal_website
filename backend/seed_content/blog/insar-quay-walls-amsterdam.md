@@ -21,7 +21,7 @@ If you walk along the Prinsengracht in spring you would swear the city has stood
 Brick and stone, three storeys above the water, a row of houseboats, the polished wood of the
 bridges. Things that look that solid have a way of feeling permanent.
 
-The thing nobody really talks about is that none of it is solid. The walls along the canals (the
+None of it is solid, though. The walls along the canals (the
 *kademuren*) are masonry plates held against soft Holocene clay by long timber piles driven into
 the sand below. The piles are wooden, and the trick that has kept Amsterdam upright for four
 centuries is a quietly precarious one: as long as the piles stay submerged, anaerobic conditions
@@ -58,8 +58,8 @@ moved.
 
 The Dutch government, through the **Bodemdalingskaart**, has done all of this for us already: a free,
 per-object ground-motion product covering the whole country, joinable to the building register,
-updated annually. Forty-odd billion measurements; millions of Persistent Scatterers. It is free,
-already processed, and already joined to building IDs.
+updated annually. Forty-odd billion measurements; millions of Persistent Scatterers; nothing left to
+process before you can start asking it questions.
 
 So the question that would not leave me alone:
 
@@ -146,8 +146,8 @@ Against the city's own asset register (material, management district, segment le
 nothing: the incremental AUC is roughly zero (+0.002 with a logistic model, −0.014 with boosted trees),
 slightly negative on some folds.
 
-So the prediction was not a little optimistic. It was wrong in the way that matters: the cheap signal
-did *not* already know what the divers and engineers concluded. The rest of this post is the *why*,
+So the prediction was not merely a little optimistic; it was wrong in the way that matters: the cheap
+signal did *not* already know what the divers and engineers concluded. The rest of this post is the *why*,
 because the *why* is more useful than the number, and because there is a company selling exactly this
 thing commercially, which makes "it does not work" a claim I owe you some care on.
 
@@ -177,9 +177,9 @@ four, and I pre-registered each of them so I could not quietly move the goalpost
 - **The shape of the time series**: acceleration, trend-breaks, the things that would show a wall
   *starting* to go. Null.
 
-Four directions, one answer. The free national product carries no segment-level signal for the
-replacement schedule, and the null is now mechanism-tested rather than an artefact of looking in the
-wrong place.
+Four directions, and one answer across all of them: the free national product carries no
+segment-level signal for the replacement schedule, and the null is now mechanism-tested rather than an
+artefact of looking in the wrong place.
 
 ![The four pre-registered signals (vertical line-of-sight rate, reconstructed east–west horizontal, cross-wall motion, and time-series shape), each tested against the city's intervention list. Every one lands at chance.](/blog-figures/insar-quay-walls-amsterdam/timing_null.png)
 
@@ -202,7 +202,7 @@ certainly does not. What *does* provide one is the façade of the building set b
 typically 2.5 m or more above the street. So the measurement you get near a quay is the building, not
 the quay: a proxy for the wall through the shared soil and foundation, and a noisy proxy at that.
 
-**It points the wrong way.** Sentinel-1 sees mostly vertical motion and is essentially blind
+**It points the wrong way.** Sentinel-1 sees mostly vertical motion and is all but blind
 north–south, whereas the failure is horizontal rotation. The component of the real motion that lands
 in the line of sight is a small projection of an already-small number.
 
@@ -228,10 +228,10 @@ There is a Dutch company, **Sensar**, that monitors quay walls with InSAR commer
 line that includes one literally called *QuayScan*), and it works well enough that the **Port of
 Rotterdam** pays for it. Here is the part that should make you suspicious of my null: Sensar's system
 is **Sentinel-1**-capable: it can run on the same free Copernicus radar I used. It is multi-sensor (it
-also pulls RadarSAT-2 or TerraSAR-X), but Copernicus is on the menu. Same satellite, same data class, opposite
-outcome. So what do they have that I do not?
+also pulls RadarSAT-2 or TerraSAR-X), but Copernicus is on the menu. Same satellite, same data class,
+and the opposite outcome. So what do they have that I do not?
 
-Not a better sensor; the difference is the *target*, and the target is decisive.
+It is not a better sensor; the difference is the *target*, and the target is decisive.
 
 **Rotterdam's quays are radar-bright; Amsterdam's are radar-dark.** A modern deep-sea port quay is a
 massive concrete structure (hard edges, bollards, deck furniture) of which the scatterers sit *on
@@ -243,8 +243,8 @@ instead. Sensar measures the quay; I could only ever measure the building behind
 **Their clever processing solves a different hard problem than mine.** Sensar's actual innovation,
 "Robust Scatterers", is about berths being occupied roughly 90% of the time: ships and container
 stacks block the view, so only about one acquisition in ten sees the quay clear. Their algorithm
-detects when the scene changes and stitches together the rare unobstructed glimpses, which is
-genuinely hard and genuinely clever, and it is the wrong tool for my problem. My walls are not
+detects when the scene changes and stitches together the rare unobstructed glimpses, which is hard,
+and clever, and the wrong tool for my problem. My walls are not
 occluded; they are simply not reflective. No amount of scene-adaptive scatterer selection conjures a
 scatterer that is physically not there.
 
@@ -254,8 +254,8 @@ do. It is not the same as asking, from a flat ~0.8 mm/yr signal on the building 
 thousand walls the city will replace and in what order. And here is the detail that reframes the whole
 field for me: even the TerraSAR-X study of these very quays (Venmans & Korff, 2020) reported around
 3 mm precision, *worse* than a surveyor's levelling rod at ~0.5 mm. InSAR is rarely the precise
-instrument in these systems. It is the
-cheap, wide, fast screen: always validated against levelling, fused, never alone.
+instrument in these systems; it is the cheap, wide, fast screen, always validated against levelling,
+always fused with something else, never trusted alone.
 
 So the commercial counterexample does not contradict the null; it *explains* it. A radar-bright
 concrete port quay with an occlusion problem is a different physics problem than a radar-dark masonry
@@ -268,13 +268,13 @@ There is a less flattering explanation for any null: maybe I just processed the 
 cleanest thing that rules that out is a positive control. I pointed the *identical* pipeline at a
 signal I was sure exists (recent construction rather than quays), and it lights up with real skill: it
 separates fresh builds from old ones at an AUC around **0.83**, exactly where the quay signal sat flat at
-0.49–0.54. The pipeline can plainly find surface motion when there is surface motion to find. The quay null is the
-data, not the code.
+0.49–0.54. So the pipeline can find surface motion where there is surface motion to find, and the
+quay null is the data, not the code.
 
 ![Two ROC curves from the identical pipeline: the quay-schedule signal flat along the diagonal at AUC 0.49, and the construction positive control rising to AUC 0.83](/blog-figures/insar-quay-walls-amsterdam/auc-049-vs-083-punchline.png)
 *The same pipeline, two questions. Chance on the quay schedule (0.49), real skill on the construction control (0.83). The silence on the quays is the data, not the code.*
 
-That construction result is a genuinely interesting thread (a positive control that doubles as its
+That construction result is an interesting thread of its own (a positive control that doubles as its
 own detection method), but it is a different research question, and I am keeping the full write-up for
 a separate piece rather than bending this one around it. Here it does one job: it tells you the silence
 on the quays is real.
@@ -333,8 +333,8 @@ large, fast, vertical signals such as new construction, dewatering, and the slow
 reclaimed land. The same data that is useless for the quay schedule is excellent for those; the
 construction positive control hinted at exactly that, and chasing it properly is the next piece of work.
 
-The frontier here was never a better satellite or a bigger GPU. It is the fusion with the city's own
-in-situ data, and that sits behind a data request rather than a download. The cheap signal did not know
+What would move this forward was never a better satellite or a bigger GPU; it is the fusion with the
+city's own in-situ data, and that sits behind a data request rather than a download. The cheap signal did not know
 what the engineers knew. The more I look at *why*, the more reasonable that seems: they were measuring
 the wall, and the satellite was measuring the house next door.
 

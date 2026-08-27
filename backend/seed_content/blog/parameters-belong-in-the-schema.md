@@ -21,7 +21,7 @@ meta: {"series": "research-pipelines-are-production-systems", "series_part": 5, 
 
 On 19 July 2026, during a pre-arXiv audit of my postcode-boundaries project, I found blocker number one. The manuscript said the Netherlands and Denmark validation runs used the tuned operating point (3, 0.3), k=3 for the kNN outlier filter and τ=0.3, because that is what the grid search had selected. The committed result files were from the frozen legacy run at (5, 0.5). The calibration curve and the Belgian transfer test, two of the paper's central results, were built on a mix of operating points that the text nowhere disclosed.
 
-The uncomfortable part is not that the two disagreed. It is that nothing in the data model could contradict either of them. The paper made a claim about provenance; the CSVs made a different one; and the only place the truth lived was a filename suffix and my memory of which script had been run when.
+The uncomfortable part is not that the two disagreed; it is that nothing in the data model could contradict either of them. The paper made a claim about provenance; the CSVs made a different one; and the only place the truth lived was a filename suffix and my memory of which script had been run when.
 
 ## Why the fix was needed
 
@@ -72,12 +72,3 @@ The paper now describes its own artifacts correctly, and the suffix convention i
 The results zone has not been migrated: the frozen CSVs stay frozen, suffixes and all, because they are cited. For a v2 refresh service the posture would be: parquet everywhere, parameters in rows from the start, and a diff gate that compares freshly generated summary JSONs against the published numbers before anything is allowed to ship.
 
 I will keep the conclusion at the size the evidence supports. In one medium-sized research pipeline, three provenance failures reached or nearly reached a paper, and all three had the same cause: metadata that existed only in filenames, prose, or intent. The fix in each case was to move one fact (an operating point, a country list) from convention into schema, where a query can check it. A column costs nothing at write time. The suffix cost me an audit blocker, and it would happily have cost more if the audit had been less paranoid. The goal is an audit that finds nothing because there is nothing left for it to find by hand.
-
-<!--
-Source notes:
-- No conflicts found between the brief and DATA_ENGINEERING.md on any number; brief's "(5, 0.5) vs (3, 0.3), blocker #1, ~line 211" matches source lines 211-217.
-- Fact-check corrections (2026-08-10): committed iou_results_*.csv actually carry only (postcode, iou, status): country is filename-encoded too, and seed/outlier counts live in summary JSONs / nl_dk_seeds_iou.csv, contra DATA_ENGINEERING.md line 116; 0.158 is the calibration-fit RMSE per paper.tex (the transfer RMSE is 0.306); "consolidation sensitive to fragment ordering" and "anything new lands with params in rows" were unsupported and removed.
-- Source says the shipped fix was relabelling the paper + documenting the split in scripts/README.md; the schema-columns fix is stated in the source as the "durable lesson" and the v2 posture ("params in rows", lines 217, 284-286), and the body presents it that way rather than as an implemented migration.
-- meta.series_total bumped to 5 for this fifth chapter; the four existing series posts still carry series_total 4 and would need a matching bump when this publishes.
-- Cover image path is a placeholder consistent with the series' /blog-figures/<slug>/fNN_* convention; figure not yet created.
--->

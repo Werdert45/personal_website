@@ -63,7 +63,7 @@ The DELETE-then-INSERT makes re-runs idempotent, so a retry cannot double-count,
 
 ### Hardening: three bugs, none of them typos
 
-My first version of the operator was 87 lines and passed its manual test. A review pass whose only job was to refute it found three real defects, each of which generalizes beyond this operator.
+My first version of the operator was 87 lines and passed its manual test. A review pass whose only job was to refute it found three real defects, and none of them is specific to this operator.
 
 **1. `sql.split(";")` is not a SQL parser.** The obvious way to run a multi-statement script (split on semicolons, execute each piece) shatters the moment a string literal or comment contains `;`. DuckDB ships the fix:
 
@@ -125,9 +125,9 @@ DuckDB allows **one writing process per database file**: a second `connect()` fa
 ![Observed parse rates per country against their calibrated floor-and-ceiling bands, with the naive 90 percent floor cutting through the noisy countries](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_3_parse_band.png)
 *Real numbers from the warehouse: the naive 90% floor fails IT, CH and BE. The calibrated bands hold. (Image by author)*
 
-**Failure got a defined shape.** A malformed snapshot fails at ingest rather than three tasks downstream, and a mid-script failure rolls back to the exact prior state instead of leaving a country's data visibly corrupt.
+**Failure got a defined shape.** A malformed snapshot now dies at the ingest boundary instead of three tasks downstream, and a mid-script failure rolls back to the exact prior state rather than leaving a country's rows deleted with nothing in their place.
 
-Custom operators are cheap (subclass `BaseOperator`, implement `execute`) and the temptation is to write them casually. The three bugs above all shipped in a version that "worked" on a happy-path manual test. What made the operator trustworthy wasn't writing it. It was the committed contract tests (semicolon-in-literal, rollback-on-failure, DML-never-gates, empty-gate-passes) and a review pass whose job was to break it. The operator is ~130 lines; the tests are ~90. That ratio feels right.
+Although custom operators are cheap (subclass `BaseOperator`, implement `execute`), that cheapness tempts you to write them casually: the three bugs above all shipped in a version that "worked" on a happy-path manual test. What made the operator trustworthy was never the writing of it but the committed contract tests (semicolon-in-literal, rollback-on-failure, DML-never-gates, empty-gate-passes) and a review pass whose job was to break it. The operator is ~130 lines; the tests are ~90. That ratio feels right.
 
 ![Stat strip: about 130 operator lines, about 90 test lines, 3 real bugs found by review, 0 of them typos](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_5_stats.png)
 *What made it trustworthy was never the operator. (Image by author)*

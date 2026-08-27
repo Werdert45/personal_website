@@ -33,15 +33,15 @@ Three specification choices decided what that panel could say: the fixed-effects
 
 The workhorse design here is two-way fixed effects: every neighbourhood gets its own intercept, every year gets its own intercept, and the phase dummies pick up what is left. The year effects are *common*: one shock per year, shared by Milan and Helsinki alike.
 
-That sounds innocuous. It is not. With common year effects, a treated neighbourhood in Milan is implicitly compared against untreated neighbourhoods *everywhere*, including cities whose entire housing markets are on different trajectories. If treated cities happen to boom late in the sample for reasons unrelated to metros, that boom flows into the "maturity" coefficient.
+That sounds innocuous, but it quietly picks the comparison group: with common year effects, a treated neighbourhood in Milan is implicitly compared against untreated neighbourhoods *everywhere*, including cities whose entire housing markets are on different trajectories. If treated cities happen to boom late in the sample for reasons unrelated to metros, that boom flows into the "maturity" coefficient.
 
-The alternative is city-by-year fixed effects: absorb each city's entire annual price path, and identify the effect only from treated-versus-untreated gaps *within the same city and year*. It costs you statistical power and any effect that operates city-wide. It is also, for the question "did the metro raise prices in the neighbourhoods it touched," clearly the more honest comparison. The analysis runs both specifications and reports both.
+The alternative is city-by-year fixed effects: absorb each city's entire annual price path, and identify the effect only from treated-versus-untreated gaps *within the same city and year*. It costs you statistical power and any effect that operates city-wide; it is also, for the question "did the metro raise prices in the neighbourhoods it touched," clearly the more honest comparison. The analysis runs both specifications and reports both.
 
 ### Inference with seven clusters
 
 The second design problem bites anyone doing policy evaluation where treatment is assigned at the level of a city, a region, or a school district. Treatment here varies at the city level, and there are seven cities. Clustered standard errors are asymptotic in the number of clusters; at G = 7 the asymptotics are a polite fiction. The remedy is the restricted wild cluster bootstrap with Webb weights: impose the null, resample signs at the cluster level, and let the bootstrap distribution replace the broken asymptotics.
 
-Fine. But the bootstrap forces a question the asymptotics let you dodge: *what is a cluster?* Cluster on cities and the maturity step's p-value is 0.036. Cluster on the twenty-four cohort blocks (the seventeen treated city-by-opening-cohort cells plus the seven never-treated per-city blocks, also a defensible partition, arguably closer to the assignment level) and it is 0.164. Same coefficient, same data, significant or null depending on a choice that reasonable referees disagree about.
+That much is standard. The bootstrap, however, forces a question the asymptotics let you dodge: *what is a cluster?* Cluster on cities and the maturity step's p-value is 0.036. Cluster on the twenty-four cohort blocks (the seventeen treated city-by-opening-cohort cells plus the seven never-treated per-city blocks, also a defensible partition, arguably closer to the assignment level) and it is 0.164. Same coefficient, same data, significant or null depending on a choice that reasonable referees disagree about.
 
 There is no trick that resolves this. The honest move is the only move: report both partitions, say which one you find more defensible and why, and let the headline carry the ambiguity. One of the quiet findings of this project is how rarely published transit-capitalization studies with a handful of treated cities report any of this at all.
 
@@ -55,11 +55,11 @@ The fix is standard once you see it: estimate *contrasts* between phases, which 
 
 ## What came out
 
-The pooled cross-city average came out clean: prices step up **9 to 12%, but only two or more years after opening**. Stable across the control ladder. Positive when you drop any single city. A satisfying, policy-ready number. Also a reminder that the most dangerous numbers in spatial econometrics are the ones that survive every test you thought to run.
+The pooled cross-city average came out clean: prices step up **9 to 12%, but only two or more years after opening**, stable across the control ladder and positive when you drop any single city. A satisfying, policy-ready number; also a reminder that the most dangerous numbers in spatial econometrics are the ones that survive every test you thought to run.
 
 Under city-by-year effects, that maturity step collapses to a precise nothing (−0.5 log points, p = 0.66). What survives instead is a small **+2.5 log-point step at opening**, with partial reversion afterwards. And even that step, once I ran it through the same few-cluster bootstrap discipline as the headline, turned out to be a pattern rather than a significant estimate.
 
-Neither regression is wrong. They answer different questions. The pooled cross-city average says: places that build metros see prices rise late, partly on city-wide tides that common year effects cannot separate from the treatment. The within-city contrast says: the neighbourhood-level premium is smaller and arrives at opening. The mistake, the one I nearly shipped, is letting the first number wear the second number's interpretation. "Metros raise nearby prices 12% at maturity" is precisely the within-city claim, and it is precisely the claim the data rejects.
+Neither regression is wrong; they answer different questions. The pooled cross-city average says: places that build metros see prices rise late, partly on city-wide tides that common year effects cannot separate from the treatment. The within-city contrast says: the neighbourhood-level premium is smaller and arrives at opening. The mistake, the one I nearly shipped, is letting the first number wear the second number's interpretation. "Metros raise nearby prices 12% at maturity" is a within-city claim, and it is precisely the claim the data rejects.
 
 After the full stress battery (control ladders, leave-one-out, pre-trend sensitivity bounds, both bootstrap partitions, an appraisal-versus-deed measurement split), here is what I am willing to stand behind:
 
@@ -69,7 +69,7 @@ After the full stress battery (control ladders, leave-one-out, pre-trend sensiti
 
 And the meta-result, the one I keep relearning: across this project, the right-hand-side choices (fixed-effects structure, clustering partition, ring width, estimator) moved the headline more than the data did. The paper ships the full lattice of those choices, with every number regenerable from committed scripts, because the alternative is choosing the cell with the best p-value and calling it the finding.
 
-## Key takeaways
+## What transfers
 
 - **Common year effects answer a different question than unit-by-time effects.** Decide which question is yours *before* you see which answer is bigger. The gap between them is itself informative: here it is the entire headline.
 - **With few clusters, the inference is a choice, not a computation.** Wild cluster bootstrap, yes, but report every defensible clustering partition. If significance is partition-dependent, that is a result, and hiding it is the same as fabricating precision.

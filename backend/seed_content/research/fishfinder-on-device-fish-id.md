@@ -1,7 +1,7 @@
 ---
 title: "FishFinder: photo-to-species identification for 63 Dutch fish, fully on-device"
 slug: fishfinder-on-device-fish-id
-excerpt: "Photograph a fish, get the species. On-device, no signal needed. A cross-platform app with a locally hosted classifier and a Pokédex-style FishDex, built on a training pipeline where one click per photo drives Segment Anything masking of ~3,000 self-collected images."
+excerpt: "Photograph a fish and get the species, on-device, with no signal needed: a cross-platform app with a locally hosted classifier and a Pokédex-style FishDex, built on a training pipeline where one click per photo drives Segment Anything masking of ~3,000 self-collected images."
 status: published
 category: project
 publication_status: ""
@@ -21,11 +21,11 @@ is_premium: false
 
 ## What did I just catch?
 
-Every angler knows the moment: fish in hand, dripping, camera out. *What is this thing?* FishFinder is my answer. Point the camera (or pick from the gallery), and the app classifies the catch against **63 Dutch freshwater and coastal species**, then opens a species page I wrote by hand, in Dutch: latin name, typical length, whether you can eat it, conservation status, season, habitat. That content alone is 126 KB of hand-written natural history, one profile per species.
+Fish in hand, dripping, camera out, and no certainty about what you are holding: anyone who fishes knows that moment. FishFinder is my answer to it. Point the camera (or pick from the gallery), and the app classifies the catch against **63 Dutch freshwater and coastal species**, then opens a species page I wrote by hand, in Dutch: latin name, typical length, whether you can eat it, conservation status, season, habitat. That content alone is 126 KB of hand-written natural history, one profile per species.
 
 ## The app
 
-FishFinder is a **cross-platform app**, one Flutter codebase covering iOS and Android, with full camera and gallery capture, and the part I'm proudest of: the machine-learning model is **hosted locally, on the phone itself**. The shipped classifier is an **8.8 MB TFLite file bundled inside the app**. No inference server, no network round-trip, no spinner while your catch flops around. It works on a boat in the middle of a lake with zero bars, which is precisely where you need it.
+FishFinder is a **cross-platform app**, one Flutter codebase covering iOS and Android, with full camera and gallery capture, and the part I'm proudest of: the machine-learning model is **hosted locally, on the phone itself**. The shipped classifier is an **8.8 MB TFLite file bundled inside the app**. There is no inference server, no network round-trip, and no spinner while your catch flops around. It works on a boat in the middle of a lake with zero bars, which is precisely where you need it.
 
 ![Diagram of the FishFinder flow: the camera frames a fish, an on-device ResNet50 in TFLite classifies it with no cloud involved, and the result unlocks a cell in the FishDex](/projects/fishfinder-on-device-fish-id/app-flow-diagram.svg)
 *The whole loop runs on the phone: camera → local model → species page → FishDex unlock.*
@@ -33,7 +33,7 @@ FishFinder is a **cross-platform app**, one Flutter codebase covering iOS and An
 ![Three FishFinder screens side by side: a scan result ranking blankvoorn at 94%, the hand-written blankvoorn species page, and the FishDex collection with caught and uncaught species](/projects/fishfinder-on-device-fish-id/app-screens-triptych.jpg)
 *That loop in the refreshed UI: the classifier's ranked result, the species page behind it, and the FishDex it unlocks into. One Flutter codebase, iOS and Android.*
 
-That was a deliberate reversal. The v1 classifier was MobileNetV2 transfer learning served over Flask: fine on WiFi, useless on the water. Retiring the server and going fully offline was the single best product decision in the project. Firebase sits underneath for auth, storage and the social layer. And because catching fish is collecting fish, the app wraps the classifier in a **FishDex**, a Pokédex-style gallery where every species you catch unlocks, with friends and a dashboard of recent catches. Catch a zeelt, unlock the zeelt. It's exactly as addictive as it sounds.
+That was a deliberate reversal. The v1 classifier was MobileNetV2 transfer learning served over Flask: fine on WiFi, useless on the water. Retiring the server and going fully offline was the single best product decision in the project. Firebase sits underneath for auth, storage and the social layer. And because catching fish is collecting fish, the app wraps the classifier in a **FishDex**, a Pokédex-style gallery where every species you catch unlocks, with friends and a dashboard of recent catches. Catch a zeelt, unlock the zeelt; the collecting instinct does the rest.
 
 ## One click per fish
 
@@ -51,4 +51,4 @@ A pretrained **ResNet50** is fine-tuned on the result. Early accuracy on the sma
 
 ## Where it stands
 
-Functional end-to-end: photo in, species out, FishDex fills up. The UI refresh shown above is rolling in ahead of a broader release. The pipeline is the part I'd defend in any review: one click per image, Segment Anything doing the heavy lifting, and a model small enough to live in your pocket.
+The app is functional end-to-end: photo in, species out, FishDex fills up. The UI refresh shown above is rolling in ahead of a broader release. The pipeline is the part I'd defend in any review: one click per image, Segment Anything turning that click into a mask, and a model small enough to live in your pocket.

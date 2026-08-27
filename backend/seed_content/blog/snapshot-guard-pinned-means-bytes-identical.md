@@ -86,13 +86,13 @@ The `execute()` itself is deliberately boring: stream each file through SHA-256,
 ![The real Graph view of the Voronoi DAG: extract, pin and guard_snapshots feeding the sequential DuckDB ingest chain](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/airflow_voronoi_graph.png)
 *The same chain in the running instance: `SnapshotGuardOperator` between acquisition and the `DuckDBOperator` ingest chain. (Screenshot of the local Airflow 3.3 UI)*
 
-Nothing ingests until the guard passes, so every row the warehouse ever holds descends from bytes-verified inputs; the ingest tasks stamp a `batch_id` (the Airflow `run_id`), which closes the chain: a warehouse row → a run → a set of verified hashes → the pinned snapshots the paper cites.
+Nothing ingests until the guard passes, so every row the warehouse ever holds descends from bytes-verified inputs; the ingest tasks stamp a `batch_id` (the Airflow `run_id`), which closes the chain: every warehouse row traces back to a run, the run to a set of verified hashes, and the hashes to the pinned snapshots the paper cites.
 
 ![The provenance chain from pinned snapshot through sidecar hash, guard, DAG run and warehouse row to the number in the paper](/blog-figures/snapshot-guard-operator-pinned-means-bytes-identical/f03_2_provenance.png)
 *Read it right to left: every published number descends from verified bytes. (Image by author)*
 
 ## What improved
 
-The operator replaced two bash tasks and net-deleted DAG code, but that's not the argument. The argument is that a *contract you rely on in several DAGs* now has a tested implementation: the guard has six unit tests (pass, byte-drift, missing file, missing sidecar, unpinned hash, multi-violation reporting) that run in CI in under a second, coverage a heredoc in a `bash_command` will never have. My rule of thumb after this: bash tasks are for *running things*; the moment a task's job is to *decide* something (verify, gate, compare), it wants to be an operator with tests.
+The operator replaced two bash tasks and net-deleted DAG code, but the deletion is not the argument; the argument is that a *contract you rely on in several DAGs* now has a tested implementation: the guard has six unit tests (pass, byte-drift, missing file, missing sidecar, unpinned hash, multi-violation reporting) that run in CI in under a second, coverage a heredoc in a `bash_command` will never have. My rule of thumb after this: bash tasks are for *running things*; the moment a task's job is to *decide* something (verify, gate, compare), it wants to be an operator with tests.
 
 The same rule produced the DuckDB operator's `fail_on_rows` mode in the previous chapter. Between the two of them, every decision point in the ingestion path (are the inputs the pinned ones? did the load land exactly what was expected? does the SQL parse equal the python parse?) is now a tested, reusable component rather than a convention someone has to remember.

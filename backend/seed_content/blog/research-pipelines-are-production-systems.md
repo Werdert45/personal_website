@@ -24,7 +24,7 @@ Research code has a short half-life. Mine included. The ingestion stack behind m
 
 ## Why this series was needed
 
-That pattern is not an accident of one thesis. Research computing selects for it: the deliverable is the paper, the deadline is the defence or the submission, and the pipeline is whatever got the numbers out in time. Nobody budgets for the second run. But the second run always comes: a reviewer asks for a robustness check, a co-author wants a different specification, you want to reuse the accessibility routing on a new city. That is the moment ad hoc pipelines die. Not dramatically. They die as a working directory nobody can reproduce, an environment variable nobody documented, a cache that silently serves stale data, a hyperparameter that lives in a filename suffix instead of the data model.
+That pattern is not an accident of one thesis. Research computing selects for it: the deliverable is the paper, the deadline is the defence or the submission, and the pipeline is whatever got the numbers out in time. Nobody budgets for the second run. But the second run always comes: a reviewer asks for a robustness check, a co-author wants a different specification, you want to reuse the accessibility routing on a new city. That is the moment ad hoc pipelines die, and not dramatically: a working directory nobody can reproduce, an environment variable nobody documented, a cache that silently serves stale data, a hyperparameter that lives in a filename suffix instead of the data model.
 
 There is also a writing gap. Each project in my portfolio can be written up three ways, and I try to keep the three apart:
 
@@ -68,4 +68,4 @@ Amsterdam quays (726 GB in, 1578 rows out) and the Tokyo ODPT build keep their s
 
 If you write research code and have ever lost an afternoon to a cache you forgot existed, this series is for you. If you hire data engineers to serve researchers, it is also a portfolio: six pipelines, 1.5 GB to 726 GB, each of which produced a thesis chapter, a paper, or a submission, run as systems that can be re-run, audited, and handed over. Each post names the DAGs, operators and guards it describes, with the configuration decisions and the failure modes that motivated them.
 
-Research doesn't need more infrastructure than it can operate. It needs the small set of production habits (idempotency, pinned inputs, schema contracts, honest failure) applied where a wrong number becomes a published wrong number. That is the series.
+Research does not need more infrastructure than it can operate; it needs the small set of production habits (idempotency, pinned inputs, schema contracts, honest failure) applied where a wrong number becomes a published wrong number. That is what this series is about.

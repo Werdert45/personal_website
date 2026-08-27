@@ -29,7 +29,7 @@ The premise is that a sponsor read is a text problem. It has a beginning, an end
 
 No such dataset existed in the shape I needed, so the first half of the project is a data pipeline. Crowd-sourced sponsor-segment timestamps give, per video ID, when the sponsor read starts and ends. A scraper pulls the matching transcripts and captions, the cleaning step aligns caption timings with the labeled intervals, and each sentence inside an interval gets wrapped in segment tags. The result: transcripts where every sentence carries a sponsor-or-content label, stored in MongoDB, about 630 MB of labeled text by the end.
 
-Transcripts are hostile input. Auto-captions arrive as an unpunctuated stream, so the pipeline restores punctuation to recover sentence boundaries before anything can be embedded. Getting from "raw captions" to "clean labeled sentences" was most of the actual work, which is the least surprising sentence a data engineer will ever write.
+Transcripts are hostile input. Auto-captions arrive as an unpunctuated stream, so the pipeline restores punctuation to recover sentence boundaries before anything can be embedded. Getting from "raw captions" to "clean labeled sentences" was most of the actual work, which, for anyone who has built a data pipeline before, will not come as a surprise.
 
 ## Tagging sentences, not classifying documents
 
@@ -44,12 +44,12 @@ Accuracy is the wrong metric here. If the true segment starts at "That brings us
 ![Grouped bar charts comparing the logistic baseline against the T5-plus-BiLSTM tagger: WindowDiff falls from 99.1% to 15.6%, Pk from 76.0% to 12.1%, macro F1 rises from 56.6% to 86.2%, micro F1 from 68.9% to 89.4%](/projects/sponsoredbye-sponsored-segment-detection/results-baseline-vs-bilstm.svg)
 *The whole result in one picture: sequence context is nearly the entire game.*
 
-The baseline is not a strawman; per-sentence logistic regression on good embeddings is a real approach. It still lands at a 99.1% WindowDiff, barely better than guessing boundaries at random. The BiLSTM cuts that to **15.6%**, Pk to **12.1%**, and lifts macro F1 from 56.6% to **86.2%**. Reading sentences in context, rather than one at a time, is nearly the whole story.
+The baseline is not a strawman; per-sentence logistic regression on good embeddings is a real approach, and it still lands at a 99.1% WindowDiff, barely better than guessing boundaries at random. The BiLSTM cuts that to **15.6%**, Pk to **12.1%**, and lifts macro F1 from 56.6% to **86.2%**. Reading sentences in context rather than one at a time accounts for almost all of the improvement.
 
 ## The honest caveats
 
-The labels are crowd-sourced, so the "gold" boundaries are themselves fuzzy; that's precisely why windowed metrics were chosen over exact-match scoring. And there's a robustness question the paper flags for future work: some words are giveaways. A model can score well by keying on "sponsor" and brand names, so the plan includes masked variants of the dataset (giveaway words and named entities removed) to measure how much understanding is left when the shortcuts are gone.
+The labels are crowd-sourced, so the "gold" boundaries are themselves fuzzy; that's precisely why windowed metrics were chosen over exact-match scoring. Note, however, that there is a robustness question the paper flags for future work: some words are giveaways. A model can score well by keying on "sponsor" and brand names, so the plan includes masked variants of the dataset (giveaway words and named entities removed) to measure how much understanding is left when the shortcuts are gone.
 
 ## Where it went
 
-The tagger shipped as a small live demo: paste a video, get the predicted sponsor span. The natural product form is a browser extension with a skip button, which the paper scopes out but I never built; YouTube Premium eventually shipped its own version of the feature, which felt like a fitting way for a side project to retire. The part that lasts is the method: transcripts plus crowd labels are enough to find ads in video, with a sequence model doing the heavy lifting.
+The tagger shipped as a small live demo: paste a video, get the predicted sponsor span. The natural product form is a browser extension with a skip button, which the paper scopes out but I never built; YouTube Premium eventually shipped its own version of the feature, which felt like a fitting way for a side project to retire. The part that lasts is the method: transcripts plus crowd labels are enough to find ads in video, with the sequence model doing most of the work.

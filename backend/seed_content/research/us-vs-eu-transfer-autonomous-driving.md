@@ -21,23 +21,23 @@ is_premium: false
 
 ## Introduction
 
-Most self-driving perception stacks learn to see on American roads, because that's where the dashcam data is. So what happens when that detector lands in Europe, where bicycles share the lane, traffic lights hang on the near side of the intersection, and the streets were laid out centuries before cars? Does US training data transfer? Worse: does fine-tuning on US data actively *hurt* you on European streets?
+Most self-driving perception stacks learn to see on American roads, because that is where the dashcam data is. European streets are a different environment: bicycles share the lane, traffic lights hang on the near side of the intersection, and the streets were laid out centuries before cars. We test whether US training data transfers to that environment, and whether fine-tuning on US data actively *hurts* on European streets.
 
 ![US validation frames with predicted bounding boxes: FedEx trucks, palm trees, wide Mountain View roads](/projects/us-vs-eu-transfer-autonomous-driving/us-udacity-detections.jpg)
 *The American side of the experiment: US-fine-tuned YOLOv8s predictions on Udacity dashcam frames. Wide lanes, palm trees, a FedEx truck.*
 
 ## Background: the 2024 study and its confounds
 
-The 2024 version of this project (a Bocconi computer-vision course) trained a YOLOv3 from a Darknet-53 backbone and found what looked like catastrophic transfer failure. Great headline. Also confounded five ways: precision-only evaluation, no held-out test set, a resolution mismatch between the two datasets, no in-domain baseline to compare against, and far too little training. The project's own conclusion admitted as much. I couldn't leave it there.
+The 2024 version of this project (a Bocconi computer-vision course) trained a YOLOv3 from a Darknet-53 backbone and found what looked like catastrophic transfer failure. The headline was striking; the design was confounded five ways: precision-only evaluation, no held-out test set, a resolution mismatch between the two datasets, no in-domain baseline to compare against, and far too little training. The project's own conclusion admitted as much, which is why we redo the experiment here.
 
 ## Methods: a controlled 2×3 design
 
-The 2025 redo is a controlled **2×3 design**: three training conditions (zero-shot COCO-pretrained, US-fine-tuned, EU-fine-tuned), each evaluated on a US test set and an EU test set that no model ever touches during training or selection. Two architectures (YOLOv3u and YOLOv8s) cross-check each other. Both datasets get identical 416-pixel letterboxing. Fine-tuning gets a fixed 12-epoch budget. US data is Udacity/CrowdAI dashcam footage; EU data is KITTI, which means Karlsruhe. So every "EU" result honestly reads "German driving", not Europe at large.
+The 2025 redo is a controlled **2×3 design**: three training conditions (zero-shot COCO-pretrained, US-fine-tuned, EU-fine-tuned), each evaluated on a US test set and an EU test set that no model ever touches during training or selection. Two architectures (YOLOv3u and YOLOv8s) cross-check each other. Both datasets get identical 416-pixel letterboxing. Fine-tuning gets a fixed 12-epoch budget. US data is Udacity/CrowdAI dashcam footage; EU data is KITTI, which means Karlsruhe, so every "EU" result reads as "German driving", not Europe at large.
 
-The two datasets don't just differ in scenery; the annotations live in different places:
+The two datasets differ in more than scenery; the annotations live in different places:
 
 ![Bounding-box centre heatmaps comparing US and EU datasets per class](/projects/us-vs-eu-transfer-autonomous-driving/box-center-heatmaps-us-vs-eu.png)
-*Where the boxes are: US annotations hug a tight horizontal band, KITTI's spread wider and lower, and KITTI has no traffic-light ground truth at all.*
+*Where the boxes are: US annotations hug a tight horizontal band, KITTI boxes spread wider and lower, and KITTI has no traffic-light ground truth at all.*
 
 ## Results
 
@@ -46,18 +46,18 @@ On the EU test set, fine-tuning on EU data buys YOLOv8s **+0.153 mAP@0.5:0.95** 
 ![Grouped bar chart of shared-class mAP gains over zero-shot for both models and both test regions](/projects/us-vs-eu-transfer-autonomous-driving/finetune-gains-us-vs-eu.svg)
 *The whole study in one picture: each model only improves on the region it was fine-tuned on. The +0.001 sliver is the headline.*
 
-Because the effect is mirror-symmetric (each side loses roughly equally on the other's streets), the honest interpretation is *narrow fine-tune specialisation*, not a uniquely American bias. That's a less dramatic conclusion than the 2024 version's, and a much better-supported one.
+Because the effect is mirror-symmetric (each side loses roughly equally on the other's streets), we read it as *narrow fine-tune specialisation*, not a uniquely American bias. That is a less dramatic conclusion than the 2024 version's, and a much better-supported one.
 
 ![EU validation frames with predicted bounding boxes from the EU-fine-tuned model](/projects/us-vs-eu-transfer-autonomous-driving/eu-kitti-detections.jpg)
-*What in-domain fine-tuning buys: the EU-fine-tuned YOLOv8s on KITTI streets. Cars, pedestrians, and yes, a bicycle.*
+*What in-domain fine-tuning buys: the EU-fine-tuned YOLOv8s on KITTI streets. Cars, pedestrians, and a bicycle.*
 
 ## Discussion: the bicycle asymmetry
 
-One failure *is* genuinely geographic. US driving data contains roughly 30× fewer bicycles per image than European data, and it shows: bicycle AP sits at essentially zero in every US-trained condition and only recovers when the model sees European ground truth. If you're deploying a US-trained perception stack in a European city, the class it silently can't see is the cyclist next to your fender. That's the safety-relevant headline.
+One failure *is* genuinely geographic. US driving data contains roughly 30× fewer bicycles per image than European data, and it shows: bicycle AP sits near zero in every US-trained condition and only recovers when the model sees European ground truth. A US-trained perception stack deployed in a European city has one class it silently cannot see: the cyclist next to the fender. That is the safety-relevant headline.
 
 ## Scope and limitations
 
-By its own audit this is a reproducibility-tier result. The contribution is the controlled correction of an earlier "catastrophic transfer" claim (proper holdouts, both-direction fine-tuning, seed-stable statistics), not a novel domain-adaptation method. I find that more useful than the original headline. The first version told a thrilling story; this one tells a true one.
+By its own audit this is a reproducibility-tier result. The contribution is the controlled correction of an earlier "catastrophic transfer" claim (proper holdouts, both-direction fine-tuning, seed-stable statistics), not a novel domain-adaptation method. We find that more useful than the original headline. The first version told a thrilling story; this one tells a true one.
 
 ## Full paper
 

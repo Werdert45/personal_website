@@ -18,7 +18,7 @@ meta: {"series": "research-pipelines-are-production-systems", "series_part": 2, 
 
 *Series: Data orchestration & data pipelines for research (the setup post)*
 
-My MSc thesis pipeline ran on a rented server: Airflow with a LocalExecutor, MinIO for object storage, PostGIS for the spatial panel, Nginx in front. It worked, produced every panel in the thesis. And when the server was retired, the DAG files went with it. The lesson I took was not "don't rent servers". It was that the stack definition has to live in a repo, and the server has to be the boring part.
+My MSc thesis pipeline ran on a rented server: Airflow with a LocalExecutor, MinIO for object storage, PostGIS for the spatial panel, Nginx in front. It worked, produced every panel in the thesis. And when the server was retired, the DAG files went with it. The lesson I took was not "don't rent servers"; it was that the stack definition has to live in a repo, and the server has to be the boring part.
 
 This post is the current answer: the Airflow 3.3 stack that orchestrates every pipeline in this series, defined in one `docker-compose.yml`, runnable identically on my laptop and on a rented box, and, when a workload needs isolation instead of a bigger box, scaled out with CeleryExecutor across several Hetzner machines. The repo is public: everything below is in it.
 
@@ -36,7 +36,7 @@ Three of these choices need defending.
 ![One compose definition deployed three ways: laptop, one hardened Hetzner box, a Celery fleet](/blog-figures/airflow-stack-laptop-to-hetzner-fleet/f01_1_hero.png)
 *Same compose definition, three deployments. (Image by author)*
 
-**The image is `apache/airflow:3.3.0` plus one pip layer.** The Dockerfile is four lines: base image, copy `requirements-docker.txt`, install. Every dependency a DAG imports at parse time must be in that file: this is a contract, not a convenience. I learned this one the embarrassing way: the DuckDB operator worked in my local venv for a day while the Docker dag-processor was failing the same DAG with `ModuleNotFoundError`, because the package existed in one environment and not the other. A committed DagBag test now runs against both.
+**The image is `apache/airflow:3.3.0` plus one pip layer.** The Dockerfile is four lines: base image, copy `requirements-docker.txt`, install. Every dependency a DAG imports at parse time must be in that file; treat it as a contract rather than a convenience. I learned this one the embarrassing way: the DuckDB operator worked in my local venv for a day while the Docker dag-processor was failing the same DAG with `ModuleNotFoundError`, because the package existed in one environment and not the other. A committed DagBag test now runs against both.
 
 **Paths and interpreters are environment contracts.** DAG files never hardcode where the data lives or which python runs a task:
 
@@ -110,7 +110,7 @@ docker exec $(docker ps -qf name=postgres) \
 
 ## Scaling out: CeleryExecutor across Hetzner machines
 
-One box stops being enough the moment workloads need isolation rather than just CPU: a scraper that can wedge a machine, a job that must originate from a stable network address, a batch that would starve everything else's slots. The scale-out configuration I run for that class of work is CeleryExecutor across multiple Hetzner VMs: one control-plane machine (scheduler, API server, DAG processor, metadata Postgres, broker) and single-purpose worker machines that do nothing but consume their own queues. What follows is how it's set up and what it took to make stable; it draws on a production deployment I operate, with the specifics generalized.
+One box stops being enough the moment workloads need isolation rather than just CPU: a scraper that can wedge a machine, a job that must originate from a stable network address, a batch that would starve everything else's slots. The scale-out configuration I run for that class of work is CeleryExecutor across multiple Hetzner VMs: one control-plane machine (scheduler, API server, DAG processor, metadata Postgres, broker) and single-purpose worker machines that do nothing but consume their own queues. What follows is how it's set up and what it took to make it stable; it draws on a production deployment I operate, with the specifics generalized.
 
 **The move adds a network, not just capacity.** CeleryExecutor splits Airflow into producers and consumers: the scheduler serialises task messages into a broker, workers on other machines pop them off and report into a result backend. I use Redis as the broker. It's sub-millisecond, easy to reason about, and safe enough here because the Airflow metadata DB stays the source of truth: a lost message shows up as a task stuck in "queued", which monitoring catches. The one Redis setting that deserves more respect than it gets is `visibility_timeout`: Celery redelivers any message not acknowledged inside that window, and Airflow acknowledges late, so the timeout must exceed your longest task or you get duplicate runs. Set it generously and you accept the mirror-image failure: a worker that dies holding a message leaves it invisible until the window expires. Decide which failure you'd rather have, then write down the recovery story for it.
 
