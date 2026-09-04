@@ -48,7 +48,7 @@ export function Navigation() {
   })();
 
   const switchLocale = (newLocale) => {
-    const pathWithoutLocale = pathname.replace(/^\/(en|nl)/, "") || "/";
+    const pathWithoutLocale = pathname.replace(new RegExp(`^(?:/(?:${Object.keys(localeLabels).join("|")}))+(?=/|$)`), "") || "/";
     window.location.href = `/${newLocale}${pathWithoutLocale}`;
   };
 
