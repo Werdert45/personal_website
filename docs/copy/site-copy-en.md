@@ -127,7 +127,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Hero.titleHighlight`  
   complex data
 - `Hero.titleEnd`  
-  into insights.
+  into answers.
 - `Hero.description`  
   I am Ian and I build and maintain production data systems and the analytics on top, from any complex data type: weekly high-volume web-scraped data, geospatial, graph or tabular data. I answer stakeholder questions using this data.
 - `Hero.aboutMe`  
@@ -166,13 +166,13 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `AboutTeaser.titleLine1Italic`  
   Ian.
 - `AboutTeaser.titleLine2`  
-  I create insights using
+  I answer questions using
 - `AboutTeaser.titleLine2Underline`  
   data
 - `AboutTeaser.bio1`  
   I work as a Head of Data, where I build and maintain data systems, collecting, processing and structuring data for different data products, used by pension funds, bureaus of statistics and real estate investors with 10B AuM.
 - `AboutTeaser.bio2`  
-  Over the course of my career I worked with many different types of data and tools, creating custom systems for the data problems at hand, talking to client stakeholders and creating innovative solutions.
+  Over the course of my career I worked with many different types of data and tools, building custom systems for the data problems at hand and talking to client stakeholders.
 - `AboutTeaser.factRoleK`  
   Role
 - `AboutTeaser.factRoleV`  
@@ -278,7 +278,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[0].title`  
   LanguageBuddy: AI language tutor
 - `Projects.items[0].outcome`  
-  A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries and helps users reach CEFR alignment faster.
+  A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries.
 - `Projects.items[0].stack[0]`  
   FastAPI
 - `Projects.items[0].stack[1]`  
@@ -489,7 +489,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.lede1`  
   I'm Ian, a data engineer from Amsterdam. Two loves have shaped most of my choices: languages and complex problems. The first has me at five languages and pulled me to Italy for part of my studies. The second became my work: taking a messy, real-world problem and building the system that answers it. Cities are my favourite version of that problem, which is why my research keeps returning to urban dynamics: how neighbourhoods change, when a metro line moves prices, what makes a place reachable.
 - `About.lede2`  
-  My skillset: translating stakeholder requirements into sustainable business solutions that work.
+  My skillset: translating stakeholder requirements into data systems that keep working.
 - `About.journeyTitlePrefixItalic`  
   Five
 - `About.journeyTitleRest`  

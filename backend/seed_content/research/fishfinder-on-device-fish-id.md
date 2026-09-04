@@ -37,7 +37,7 @@ That was a deliberate reversal. The v1 classifier was MobileNetV2 transfer learn
 
 ## One click per fish
 
-The real engineering lives in the training pipeline. My raw material was **~3,000 self-collected fish photos**, small by ImageNet standards and messy in a very specific way: nearly every photo has hands, a boat, grass, a proud angler. A naive classifier will happily learn that "pike" means "green raincoat".
+Most of the engineering went into the training pipeline. My raw material was **~3,000 self-collected fish photos**, small by ImageNet standards and messy in a very specific way: nearly every photo has hands, a boat, grass, a proud angler. A naive classifier will happily learn that "pike" means "green raincoat".
 
 So the pipeline rebuild puts a human in the loop, but only barely. For each photo, I click **one point** on the fish. That point becomes a prompt for **Segment Anything**, which proposes candidate masks; the best one is kept. One click buys pixel-level segmentation, an order of magnitude cheaper than drawing masks by hand. A fitting routine then strips the background, crops tight, and resizes to 224×224, so every training image becomes a consistently framed fish and nothing else.
 

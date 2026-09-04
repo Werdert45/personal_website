@@ -55,7 +55,7 @@ Here is the problem with studying Milan in the 2010s: the M5 was not the only th
 
 For a difference-in-differences design this is close to a worst case: a price shock that switches on at roughly the same time, in roughly the same places, as the treatment. The paper carries a hand-coded covariate for it: a zone counts as regeneration-exposed in a given year if its centroid falls within 800 metres of one of those active projects.
 
-How much does it matter? In Ring C (one band of OMI's concentric zone structure), including the two regeneration-exposed zones puts the estimated M5 effect at +1,696 euros per square metre. Exclude those two zones and it flips to −160. The entire apparent metro effect in that ring was Porta Nuova and its neighbours, wearing a metro costume. If I had published a city-wide number without confronting this, a large share of it would have been regeneration capitalization mislabelled as transit capitalization.
+How much does it matter? In Ring C (one band of OMI's concentric zone structure), including the two regeneration-exposed zones puts the estimated M5 effect at +1,696 euros per square metre. Exclude those two zones and it flips to −160. The entire apparent metro effect in that ring was Porta Nuova and its neighbours, not the M5. If I had published a city-wide number without confronting this, a large share of it would have been regeneration capitalization mislabelled as transit capitalization.
 
 ## The within-ring contrast
 

@@ -43,7 +43,7 @@ The second design problem bites anyone doing policy evaluation where treatment i
 
 That much is standard. The bootstrap, however, forces a question the asymptotics let you dodge: *what is a cluster?* Cluster on cities and the maturity step's p-value is 0.036. Cluster on the twenty-four cohort blocks (the seventeen treated city-by-opening-cohort cells plus the seven never-treated per-city blocks, also a defensible partition, arguably closer to the assignment level) and it is 0.164. Same coefficient, same data, significant or null depending on a choice that reasonable referees disagree about.
 
-There is no trick that resolves this. The honest move is the only move: report both partitions, say which one you find more defensible and why, and let the headline carry the ambiguity. One of the quiet findings of this project is how rarely published transit-capitalization studies with a handful of treated cities report any of this at all.
+There is no trick that resolves this. The honest move is also the only one: report both partitions, say which one you find more defensible and why, and let the headline carry the ambiguity. One of the quiet findings of this project is how rarely published transit-capitalization studies with a handful of treated cities report any of this at all.
 
 ### An identification check the estimator would not do for me
 

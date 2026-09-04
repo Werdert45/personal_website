@@ -55,7 +55,7 @@ The tempting fix (re-run NL and DK at the tuned point so the artifacts match the
 
 ### The fix that shipped
 
-So the fix that shipped was the honest, cheap one: relabel the paper to say what actually ran (the calibration inputs are legacy (5, 0.5) runs; the Italy release is tuned) and document the suffix convention and the split explicitly in the scripts README. No heroics, one afternoon. The durable lesson cost more, because I had to notice it was a lesson.
+So the fix that shipped was the honest, cheap one: relabel the paper to say what actually ran (the calibration inputs are legacy (5, 0.5) runs; the Italy release is tuned) and document the suffix convention and the split explicitly in the scripts README; no heroics, one afternoon. The durable lesson cost more, because I had to notice it was a lesson.
 
 ### Parameters as columns
 

@@ -111,7 +111,7 @@ The `expectations` table is loaded from a committed CSV holding each pinned snap
 
 ### One writing process per database file
 
-DuckDB allows **one writing process per database file**: a second `connect()` fails on the file lock, immediately. Under Airflow's LocalExecutor, "five parallel ingest tasks" means five OS processes, so my original fan-out `create >> [five ingests] >> qa` was a lock collision wearing a parallelism costume (reproduced with three subprocess writers: two die with `IOException`). The write chain is now sequential and says why in a comment; read-only consumers (`read_only=True`) parallelize freely once the writers are done. If you want the parallel *look* without the collision, a 1-slot Airflow pool serializes execution behind the scenes. I chose the explicit chain because the constraint deserves to be visible in the graph.
+DuckDB allows **one writing process per database file**: a second `connect()` fails on the file lock, immediately. Under Airflow's LocalExecutor, "five parallel ingest tasks" means five OS processes, so my original fan-out `create >> [five ingests] >> qa` was a guaranteed lock collision (reproduced with three subprocess writers: two die with `IOException`). The write chain is now sequential and says why in a comment; read-only consumers (`read_only=True`) parallelize freely once the writers are done. If you want the parallel *look* without the collision, a 1-slot Airflow pool serializes execution behind the scenes. I chose the explicit chain because the constraint deserves to be visible in the graph.
 
 ![The fan-out DAG with two ingests dying on IOException next to the explicit sequential write chain with read-only consumers fanning out](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_4_lock.png)
 *Five parallel writers was a lock collision wearing a parallelism costume. (Image by author)*
@@ -127,7 +127,7 @@ DuckDB allows **one writing process per database file**: a second `connect()` fa
 
 **Failure got a defined shape.** A malformed snapshot now dies at the ingest boundary instead of three tasks downstream, and a mid-script failure rolls back to the exact prior state rather than leaving a country's rows deleted with nothing in their place.
 
-Although custom operators are cheap (subclass `BaseOperator`, implement `execute`), that cheapness tempts you to write them casually: the three bugs above all shipped in a version that "worked" on a happy-path manual test. What made the operator trustworthy was never the writing of it but the committed contract tests (semicolon-in-literal, rollback-on-failure, DML-never-gates, empty-gate-passes) and a review pass whose job was to break it. The operator is ~130 lines; the tests are ~90. That ratio feels right.
+Although custom operators are cheap (subclass `BaseOperator`, implement `execute`), that cheapness tempts you to write them casually: the three bugs above all shipped in a version that "worked" on a happy-path manual test. What earned the operator its trust was the committed contract tests (semicolon-in-literal, rollback-on-failure, DML-never-gates, empty-gate-passes) and a review pass whose job was to break it. The operator is ~130 lines; the tests are ~90. That ratio feels right.
 
 ![Stat strip: about 130 operator lines, about 90 test lines, 3 real bugs found by review, 0 of them typos](/blog-figures/custom-duckdb-operator-sql-first-ingestion/f02_5_stats.png)
 *What made it trustworthy was never the operator. (Image by author)*

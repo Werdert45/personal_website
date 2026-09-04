@@ -20,7 +20,7 @@ meta: {"series": "research-pipelines-are-production-systems", "series_part": 1, 
 ![The thesis stack in 2025 next to what survived in 2026: the DAG files and the running system marked lost](/blog-figures/research-pipelines-are-production-systems/f00_1_hero.png)
 *The results are fine. The system that produced them exists only as evidence to be reconstructed. (Image by author)*
 
-Research code has a short half-life. Mine included. The ingestion stack behind my MSc thesis (a containerised Airflow instance with MinIO and PostGIS on a rented server) worked, produced every panel in the thesis, and then the server was retired and the DAG files went with it. What survived was the callable classes, the SQL, the exported GeoJSONs, and a chapter describing the architecture. The results are fine. The system that produced them exists only as evidence to be reconstructed.
+Research code has a short half-life, mine included. The ingestion stack behind my MSc thesis (a containerised Airflow instance with MinIO and PostGIS on a rented server) worked, produced every panel in the thesis, and then the server was retired and the DAG files went with it. What survived was the callable classes, the SQL, the exported GeoJSONs, and a chapter describing the architecture. The results are fine. The system that produced them exists only as evidence to be reconstructed.
 
 ## Why this series was needed
 

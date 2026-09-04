@@ -17,7 +17,7 @@
   },
   "Navigation": {
     "home": "Home",
-    "about": "Over Mij",
+    "about": "Over mij",
     "visualizations": "Blogs",
     "contact": "Contact",
     "letsTalk": "Contact",
@@ -29,7 +29,7 @@
     "role": "Data Lead · Data Engineer & System Architecture",
     "title": "Complexe data,",
     "titleHighlight": "omgezet",
-    "titleEnd": "in inzicht.",
+    "titleEnd": "in antwoorden.",
     "description": "Ik ben Ian en ik bouw en onderhoud productiedatasystemen en de analytics erbovenop, vanuit elk complex datatype: wekelijkse webscraping-data met hoog volume, geodata, graaf- of tabeldata. Met die data beantwoord ik vragen van stakeholders.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
@@ -54,15 +54,15 @@
     "heroTitleLine2": "Engineering",
     "heroTitleLine2Underline": "Systems",
     "heroTitleLine3": "& Data.",
-    "lede1": "Ik ben Ian, data engineer uit Amsterdam. Twee liefdes hebben de meeste van mijn keuzes bepaald: talen en complexe problemen. De eerste bracht me op vijf talen en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk: een rommelig probleem uit de echte wereld nemen en het systeem bouwen dat het beantwoordt. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen beweegt, wat een plek bereikbaar maakt.",
-    "lede2": "Mijn kracht: stakeholdervereisten vertalen naar duurzame businessoplossingen die werken.",
+    "lede1": "Ik ben Ian, data engineer uit Amsterdam. Twee liefdes hebben de meeste van mijn keuzes bepaald: talen en complexe problemen. De eerste bracht me op vijf talen en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk: een rommelig probleem uit de echte wereld nemen en het systeem bouwen dat het beantwoordt. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen in beweging brengt, wat een plek bereikbaar maakt.",
+    "lede2": "Mijn kracht: stakeholdervereisten vertalen naar datasystemen die blijven werken.",
     "journeyTitlePrefixItalic": "Vijf",
     "journeyTitleRest": "jaar bouwen aan",
     "journeyTitleLine2": "productie-datasystemen.",
     "expertise": [
       {
         "name": "Data Engineering",
-        "blurb": "Pipelines en efficiënte opslag bouwen en onderhouden: drie jaar wekelijkse collectie uit 8 geauthenticeerde bronnen met 300k records per week, met schema, orkestratie en foutafhandeling vooraf ontworpen.",
+        "blurb": "Pipelines en efficiënte opslag bouwen en onderhouden: drie jaar wekelijkse dataverzameling uit 8 geauthenticeerde bronnen met 300k records per week, met schema, orkestratie en foutafhandeling vooraf ontworpen.",
         "stack": [
           "Airflow",
           "Python",
@@ -108,17 +108,17 @@
   },
   "AboutPage": {
     "readMore": "Lees meer",
-    "backToAbout": "Terug naar Over Mij"
+    "backToAbout": "Terug naar Over mij"
   },
   "Research": {
     "loadingFallback": "Paperindex is tijdelijk onbereikbaar. Probeer het zo opnieuw.",
-    "title": "Onderzoek & Artikelen",
+    "title": "Onderzoek & artikelen",
     "searchPlaceholder": "Zoek artikelen...",
     "readMore": "Lees meer",
     "noResults": "Geen artikelen gevonden die aan je criteria voldoen.",
     "loading": "Onderzoeksartikelen laden...",
     "previewBadge": "Onderzoek & Blog",
-    "viewAll": "Bekijk Alles",
+    "viewAll": "Bekijk alles",
     "listKicker": "Onderzoek: papers & methodes",
     "listTitlePrefix": "",
     "listTitleItalic": "Papers",
@@ -142,20 +142,20 @@
     "downloadPdf": "Download PDF ↓"
   },
   "Contact": {
-    "aboutBadge": "Over Mij",
+    "aboutBadge": "Over mij",
     "name": "Ian Ronk",
-    "roleTitle": "Head of Data · Engineer & onderzoeker",
+    "roleTitle": "Head of Data · Engineer & Researcher",
     "bio": "Ik ben Ian en ik bouw en onderhoud productiedatasystemen en de analytics erbovenop, vanuit elk complex datatype: wekelijkse webscraping-data met hoog volume, geodata, graaf- of tabeldata. Met die data beantwoord ik vragen van stakeholders.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
-    "formTitle": "Neem Contact Op",
+    "formTitle": "Neem contact op",
     "formSubtitle": "Vragen over een rol, onderzoek of samenwerking? De inbox staat open.",
     "nameLabel": "Naam",
     "namePlaceholder": "Je naam",
     "emailLabel": "E-mail",
     "emailPlaceholder": "jij@email.com",
-    "phoneLabel": "Telefoon (Optioneel)",
+    "phoneLabel": "Telefoon (optioneel)",
     "phonePlaceholder": "+31 6 12345678",
     "subjectLabel": "Onderwerp",
     "subjectPlaceholder": "Waar gaat het over?",
@@ -163,7 +163,7 @@
     "messagePlaceholder": "Je bericht",
     "captchaLabel": "Bevestig dat je een mens bent",
     "captchaHint": "Voltooi de captcha om je bericht te verzenden",
-    "sendButton": "Verstuur Bericht",
+    "sendButton": "Verstuur bericht",
     "sending": "Verzenden...",
     "privacy": "Je bericht wordt versleuteld verstuurd en alleen gebruikt om je te antwoorden.",
     "successMessage": "Bericht verzonden. Ik neem snel contact met je op.",
@@ -187,14 +187,14 @@
     "kicker": "Projecten & papers: systemen, producten, onderzoek",
     "titlePrefix": "Projecten",
     "titleItalic": "& papers.",
-    "subtitle": "Acht stukken werk over de vier sporen: productiesystemen, geleverde producten, en het onderzoek dat ze mogelijk maken.",
+    "subtitle": "Acht stukken werk verdeeld over de vier sporen: productiesystemen, geleverde producten en het onderzoek dat ze mogelijk maken.",
     "items": [
       {
         "viz": "language",
         "badge": "PROJECT",
         "sector": "AI-product",
         "title": "LanguageBuddy: AI language tutor",
-        "outcome": "Een zelf-gehoste AI-taaltutor voor Nederlands, Italiaans en Spaans, gebouwd op taalleeronderzoek, met een LLM-tutor via chat of spraakgesprek en SM-2-herhaling. Elke fout wordt vastgelegd in een spaced-repetition-wachtrij die de oefeningen van de volgende dag aanstuurt, en een scraper van echt nieuws levert het leesmateriaal. Volgt het CEFR-raamwerk met 6.200+ woordenschat-items en helpt gebruikers sneller op CEFR-niveau te komen.",
+        "outcome": "Een zelfgehoste AI-taaltutor voor Nederlands, Italiaans en Spaans, gebouwd op taalleeronderzoek, met een LLM-tutor via chat of spraakgesprek en SM-2-herhaling. Elke fout wordt vastgelegd in een spaced-repetition-wachtrij die de oefeningen van de volgende dag aanstuurt, en een scraper van echt nieuws levert het leesmateriaal. Volgt het CEFR-raamwerk met 6.200+ woordenschat-items.",
         "stack": [
           "FastAPI",
           "LLM",
@@ -282,7 +282,7 @@
         "badge": "KR&A",
         "sector": "Ontwikkeld bij KR&A",
         "title": "Connectivity & walkability scoring",
-        "outcome": "Een project dat ik leidde en uitvoerde tijdens mijn werk bij KR&A: een op verzadiging gevalideerde connectiviteits- en loopbaarheidsscore op perceelniveau, uitgerold over 38 markten in EU/NA/APAC, met TB's aan data en honderden databronnen.",
+        "outcome": "Een project dat ik leidde en uitvoerde tijdens mijn werk bij KR&A: een op verzadiging gevalideerde connectivity- en walkability-score op perceelniveau, uitgerold over 38 markten in EU/NA/APAC, met TB's aan data en honderden databronnen.",
         "stack": [
           "PostGIS",
           "S3",
@@ -314,13 +314,13 @@
     "copyright": "{year} Ian Ronk. Alle rechten voorbehouden.",
     "crmLogin": "CRM",
     "privacyPolicy": "Privacybeleid",
-    "termsOfService": "Servicevoorwaarden",
+    "termsOfService": "Algemene voorwaarden",
     "cookiePolicy": "Cookiebeleid",
     "work": "Contact"
   },
   "Thoughts": {
     "loadingFallback": "Nog geen stukken. De eerste casestudy's, over de data engineering achter het onderzoek, zijn in de maak.",
-    "kicker": "Werk: casestudies & veldnotities",
+    "kicker": "Werk: casestudy's & veldnotities",
     "recentTitle": "Recent",
     "recentItalic": "werk",
     "subtitle": "Casestudy's en papers, nieuwste eerst: wat er gebouwd is, wat er brak, en wat het veranderde.",
@@ -340,7 +340,7 @@
     "endCtaKicker": "§ Meer",
     "endCtaTitle": "Meer schrijfsels op de",
     "endCtaTitleItalic": "blog.",
-    "endCtaBody": "Browse andere essays over geodata, AI/ML en operations, of lees meer over wie er achter de schrijfsels zit.",
+    "endCtaBody": "Bekijk andere essays over geodata, AI/ML en operations, of lees meer over wie er achter de schrijfsels zit.",
     "endCtaButton": "Meer schrijfsels",
     "endCtaSecondary": "Over mij",
     "endCtaContact": "Vragen over de build? Neem contact op",
@@ -349,18 +349,18 @@
     "aiNote": "Geschreven met AI, door mij gecontroleerd."
   },
   "Author": {
-    "roleLine": "Head of Data · Engineer & onderzoeker",
-    "bio": "Ik leid datateams en bouw productie-datasystemen in Amsterdam. Deze site verzamelt de casestudies, papers en veldnotities.",
+    "roleLine": "Head of Data · Engineer & Researcher",
+    "bio": "Ik leid datateams en bouw productie-datasystemen in Amsterdam. Deze site verzamelt de casestudy's, papers en veldnotities.",
     "cta": "Volledige bio →"
   },
   "AboutTeaser": {
     "kicker": "Over mij: wie ben ik",
     "titleLine1": "Hoi, ik ben",
     "titleLine1Italic": "Ian.",
-    "titleLine2": "Ik creëer inzichten uit",
+    "titleLine2": "Ik beantwoord vragen met",
     "titleLine2Underline": "data",
     "bio1": "Ik werk als Head of Data: ik bouw en onderhoud datasystemen die data verzamelen, verwerken en structureren voor verschillende dataproducten, gebruikt door pensioenfondsen, statistiekbureaus en vastgoedbeleggers met 10B AuM.",
-    "bio2": "In de loop van mijn carrière heb ik met veel verschillende soorten data en tools gewerkt: systemen op maat bouwen voor het dataprobleem van dat moment, met stakeholders bij klanten praten en innovatieve oplossingen neerzetten.",
+    "bio2": "In de loop van mijn carrière heb ik met veel verschillende soorten data en tools gewerkt: systemen op maat bouwen voor het dataprobleem van dat moment en met stakeholders bij klanten praten.",
     "factRoleK": "Rol",
     "factRoleV": "Data Lead · Data Engineer",
     "factBasisK": "Basis",
@@ -387,13 +387,13 @@
       },
       {
         "value": "1 score",
-        "unit": "elk perceel · saturatie-gevalideerd",
+        "unit": "elk perceel · gevalideerd op verzadiging",
         "context": "Connectivity Score · build met 13 servers"
       },
       {
         "value": "300k",
         "unit": "records per week · 8 bronnen · 3 jaar",
-        "context": "Web-scraping-pipeline · voedt de maandelijkse huizenprijsindex"
+        "context": "Webscraping-pipeline · voedt de maandelijkse huizenprijsindex"
       }
     ],
     "ctaPrimary": "Download het cv (pdf)",
@@ -425,14 +425,14 @@
     "copied": "Gekopieerd"
   },
   "Newsletter": {
-    "compactHeading": "Blijf op de hoogte",
-    "compactDescription": "Af en toe een notitie over geospatial, ML en AI.",
+    "compactHeading": "Notities uit het veld",
+    "compactDescription": "Af en toe een notitie over geospatiale methoden, ML-pipelines en wat er misgaat in productie.",
     "inlineHeading": "Ontvang het volgende stuk per e-mail",
-    "inlineDescription": "Abonneer, geen spam, je kunt je altijd uitschrijven.",
+    "inlineDescription": "Af en toe. Geen spam. Uitschrijven kan altijd.",
     "homeThoughtsHeading": "Ontvang het volgende stuk.",
-    "homeThoughtsDescription": "Notities uit het veld: af en toe over stadsdynamiek, geospatial methoden en wat er misgaat in productie.",
+    "homeThoughtsDescription": "Notities uit het veld: af en toe een stuk over stedelijke dynamiek, geospatiale methoden en wat er misgaat in productie.",
     "emailPlaceholder": "jij@domein.com",
-    "submit": "Abonneer",
+    "submit": "Abonneren",
     "success": "Dank je, je staat op de lijst.",
     "error": "Er ging iets mis. Probeer opnieuw of mail rechtstreeks.",
     "privacy": "Je adres wordt niet gedeeld."
@@ -447,7 +447,7 @@
     "items": [
       {
         "name": "Data engineering",
-        "blurb": "Datapijplijnen en efficiënte opslag bouwen en onderhouden, zoals drie jaar wekelijkse collectie/scraping uit 8 verschillende bronnen voor een vastgoedfonds met 10B AuM, en die data vervolgens automatisch structureren, opschonen en ontdubbelen.",
+        "blurb": "Datapijplijnen en efficiënte opslag bouwen en onderhouden, zoals drie jaar wekelijkse dataverzameling/scraping uit 8 verschillende bronnen voor een vastgoedfonds met 10B AuM, en die data vervolgens automatisch structureren, opschonen en ontdubbelen.",
         "stack": [
           "Airflow",
           "Python",

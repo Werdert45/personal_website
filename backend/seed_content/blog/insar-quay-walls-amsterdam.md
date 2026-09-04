@@ -226,7 +226,7 @@ honest answer is the most interesting thing I learned.
 
 There is a Dutch company, **Sensar**, that monitors quay walls with InSAR commercially (a product
 line that includes one literally called *QuayScan*), and it works well enough that the **Port of
-Rotterdam** pays for it. Here is the part that should make you suspicious of my null: Sensar's system
+Rotterdam** pays for it. One thing should make you suspicious of my null: Sensar's system
 is **Sentinel-1**-capable: it can run on the same free Copernicus radar I used. It is multi-sensor (it
 also pulls RadarSAT-2 or TerraSAR-X), but Copernicus is on the menu. Same satellite, same data class,
 and the opposite outcome. So what do they have that I do not?
@@ -251,7 +251,7 @@ scatterer that is physically not there.
 **Their "forecast" is not my forecast.** When Sensar projects future settlement, it is extrapolating a
 trend it has *already measured* on a structure that is *visibly moving*, which is a reasonable thing to
 do. It is not the same as asking, from a flat ~0.8 mm/yr signal on the building next door, which of a
-thousand walls the city will replace and in what order. And here is the detail that reframes the whole
+thousand walls the city will replace and in what order. And one detail reframed the whole
 field for me: even the TerraSAR-X study of these very quays (Venmans & Korff, 2020) reported around
 3 mm precision, *worse* than a surveyor's levelling rod at ~0.5 mm. InSAR is rarely the precise
 instrument in these systems; it is the cheap, wide, fast screen, always validated against levelling,

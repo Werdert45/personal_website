@@ -21,7 +21,7 @@ is_premium: false
 
 ## The ad you can't skip
 
-By 2024, the most annoying ad on YouTube wasn't the pre-roll. It was the sponsor read: thirty to sixty seconds of "before we continue, let me tell you about today's sponsor", baked into the video itself. Ad blockers can't touch it. YouTube Premium, at the time, couldn't either; their "skip sponsor" feature shipped later. My research question, written up in the project paper, was blunt: *can NLP models find the sponsored section of a YouTube video accurately enough to skip it?*
+By 2024, the most annoying ad on YouTube was not the pre-roll but the sponsor read: thirty to sixty seconds of "before we continue, let me tell you about today's sponsor", baked into the video itself. Ad blockers can't touch it. YouTube Premium, at the time, couldn't either; their "skip sponsor" feature shipped later. My research question, written up in the project paper, was blunt: *can NLP models find the sponsored section of a YouTube video accurately enough to skip it?*
 
 The premise is that a sponsor read is a text problem. It has a beginning, an end, and a register all of its own ("use code IAN for 10% off"). If you can see the transcript, you should be able to see the ad.
 
@@ -46,7 +46,7 @@ Accuracy is the wrong metric here. If the true segment starts at "That brings us
 
 The baseline is not a strawman; per-sentence logistic regression on good embeddings is a real approach, and it still lands at a 99.1% WindowDiff, barely better than guessing boundaries at random. The BiLSTM cuts that to **15.6%**, Pk to **12.1%**, and lifts macro F1 from 56.6% to **86.2%**. Reading sentences in context rather than one at a time accounts for almost all of the improvement.
 
-## The honest caveats
+## The caveats
 
 The labels are crowd-sourced, so the "gold" boundaries are themselves fuzzy; that's precisely why windowed metrics were chosen over exact-match scoring. Note, however, that there is a robustness question the paper flags for future work: some words are giveaways. A model can score well by keying on "sponsor" and brand names, so the plan includes masked variants of the dataset (giveaway words and named entities removed) to measure how much understanding is left when the shortcuts are gone.
 

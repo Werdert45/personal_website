@@ -65,7 +65,7 @@ The ABM (best hyperparameters from grid search: `rich_move` 0.04, `affordability
 
 *All model results, Amsterdam, in-sample. Bold marks the best score per column.*
 
-Two honest readings of this table. First: the ABM's MSE of 0.00276 is roughly 3x lower than either linear regression: the behavioral model outperforms both econometric baselines on this metric. Second: on city-wide MSE, the zero-change null measure beats everything, because most neighborhoods barely change and predicting "nothing happens" is hard to beat on average.
+This table admits two honest readings. Firstly, the ABM's MSE of 0.00276 is roughly 3x lower than either linear regression: the behavioral model outperforms both econometric baselines on this metric. Secondly, on city-wide MSE, the zero-change null measure beats everything, because most neighborhoods barely change and predicting "nothing happens" is hard to beat on average.
 
 Gentrification research, however, cares less about the average neighborhood than about the ones that change. On the Top-20 most-gentrifying neighborhoods, the ABM is the best model outright: Top-20 MSE 0.00985, against 0.01308 for the null measure and 0.01492–0.01894 for the regressions. On the neighborhoods where gentrification is concentrated, the behavioral model gives the best estimates of the four.
 

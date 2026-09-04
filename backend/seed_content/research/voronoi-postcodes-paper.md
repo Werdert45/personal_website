@@ -77,7 +77,7 @@ Two results we want on the record precisely because they are negative. Inverse-d
 
 And the transferability claim is scoped, not universal. A Swiss evaluation with the same pipeline fits an asymptote of 0.644, well below the NL/DK band, against a reference layer a noise check confirms is sound (independent OSM-traced PLZ agree with swisstopo at mean IoU 0.93). Swiss postcode boundaries follow ridgelines rather than address geography, which is plausibly, not demonstrably, the mechanism. The curve is stable across three flat, high-OSM-completeness countries; Switzerland marks where that regime ends.
 
-The honest per-polygon caveat: the curve's point-level R² is only 0.26. It predicts the population-mean reliability of an estimate, not any individual polygon, which is why every released polygon carries its seed count as a fitness-for-use flag.
+The per-polygon caveat: the curve's point-level R² is only 0.26. It predicts the population-mean reliability of an estimate, not any individual polygon, which is why every released polygon carries its seed count as a fitness-for-use flag.
 
 ## Data and code availability
 
