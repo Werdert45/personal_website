@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: '%s | Ian Ronk',
   },
   description: 'Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top: web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data, with a research specialization in urban dynamics.',
-  keywords: ['Data Lead', 'Data Engineering', 'Big Data', 'Network Science', 'Time Series Forecasting', 'Product Ownership', 'Geodata', 'Geospatial Analysis', 'Geodata Specialist Amsterdam', 'Machine Learning', 'PostGIS', 'Urban Dynamics', 'Amsterdam', 'Ian Ronk'],
+  keywords: ['Head of Data', 'Data Engineering', 'Big Data', 'Network Science', 'Time Series Forecasting', 'Product Ownership', 'Geodata', 'Geospatial Analysis', 'Head of Data Amsterdam', 'Machine Learning', 'PostGIS', 'Urban Dynamics', 'Amsterdam', 'Ian Ronk'],
   authors: [{ name: 'Ian Ronk' }],
   creator: 'Ian Ronk',
   metadataBase: new URL(siteUrl),

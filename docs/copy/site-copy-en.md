@@ -989,17 +989,19 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `about.metadata.title` (frontend/app/[locale]/about/page.jsx)  
   Resume & competences: Head of Data
 - `about.metadata.description` (frontend/app/[locale]/about/page.jsx)  
-  Resume of Ian Ronk, data lead and geodata specialist based in Amsterdam: competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.
+  Resume of Ian Ronk, Head of Data in Amsterdam: leads a team of 4 and builds the systems himself, with competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.
 - `projects.metadata.description` (frontend/app/[locale]/projects/page.jsx)  
   Projects and papers by Ian Ronk: production data systems, shipped products, and research on urban dynamics, housing markets and geospatial methods.
 - `thoughts.metadata.title` (frontend/app/[locale]/thoughts/page.jsx)  
   Work: case studies & field notes
 - `thoughts.metadata.description` (frontend/app/[locale]/thoughts/page.jsx)  
-  Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.
+  Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, Head of Data in Amsterdam.
 - `contact.metadata.description` (frontend/app/[locale]/contact/page.jsx)  
-  Contact Ian Ronk, data lead and urban-dynamics researcher based in Amsterdam. Questions about the research, the pipelines, a role or a collaboration.
+  Contact Ian Ronk, Head of Data in Amsterdam. Questions about a role, the pipelines, the research or a collaboration: the inbox is open.
 - `site.metadata.title` (frontend/app/layout.tsx)  
   Ian Ronk | Head of Data: data systems, analytics, and urban-dynamics research
+- `Meta.homeDescription` (frontend/messages/en.json; homepage SEO description via generateMetadata)  
+  Ian Ronk is Head of Data in Amsterdam. He builds and leads production data systems and the analytics on top: web-scraped market data, official statistics and time series, document pipelines on LLMs and OCR, and spatial and network data, with a research specialization in urban dynamics.
 
 
 ## Currently unused (kept for reference)

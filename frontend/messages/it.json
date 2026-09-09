@@ -53,8 +53,8 @@
     "heroTitleLine1aItalic": "Data.",
     "heroTitleLine2": "Costruisco",
     "heroTitleLine2Underline": "sistemi",
-    "heroTitleLine3": "& guido team.",
-    "lede1": "Sono Ian, Head of Data di Amsterdam. Guido un team di 4 e i sistemi li costruisco ancora io: prendere un problema reale e disordinato, tradurlo in qualcosa di costruibile e far girare ciò che va in produzione. Due amori hanno guidato la maggior parte delle mie scelte: le lingue e i problemi complessi. Il primo mi ha portato a cinque lingue e in Italia per parte dei miei studi. Il secondo è diventato il mio lavoro. Le città sono la mia versione preferita di quel problema, ed è per questo che la mia ricerca torna sempre alle dinamiche urbane: come cambiano i quartieri, quando una metropolitana muove i prezzi, cosa rende un luogo raggiungibile.",
+    "heroTitleLine3": "e guido team.",
+    "lede1": "Sono Ian, Head of Data ad Amsterdam. Guido un team di 4 e i sistemi li costruisco ancora io: prendere un problema reale e disordinato, tradurlo in qualcosa di costruibile e far girare ciò che va in produzione. Due amori hanno guidato la maggior parte delle mie scelte: le lingue e i problemi complessi. Il primo mi ha portato a parlare cinque lingue e mi ha spinto in Italia per parte dei miei studi. Il secondo è diventato il mio lavoro. Le città sono la mia versione preferita di quel problema, ed è per questo che la mia ricerca torna sempre alle dinamiche urbane: come cambiano i quartieri, quando una linea della metropolitana muove i prezzi, cosa rende un luogo raggiungibile.",
     "lede2": "Il mio punto di forza: tradurre i requisiti degli stakeholder in sistemi di dati che continuano a funzionare.",
     "journeyTitlePrefixItalic": "Cinque",
     "journeyTitleRest": "anni a costruire",
@@ -145,12 +145,12 @@
     "aboutBadge": "Su di Me",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "Sono Ian, Head of Data ad Amsterdam. Guido un team di 4 e costruisco sistemi dati in produzione e l'analytics sopra, per ogni tipo di dato complesso: web-scraped, geospaziale, a grafo o tabellare. Rispondo alle domande degli stakeholder e difendo la metodologia dietro le risposte.",
+    "bio": "Sono Ian, Head of Data ad Amsterdam. Guido un team di 4 e costruisco sistemi dati in produzione e l'analytics che ci sta sopra, per ogni tipo di dato complesso: web-scraped, geospaziale, a grafo o tabellare. Rispondo alle domande degli stakeholder e difendo la metodologia dietro le risposte.",
     "location": "Amsterdam, Paesi Bassi",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ anni di data engineering & analytics spaziale",
     "formTitle": "Contattami",
-    "formSubtitle": "Cerco un ruolo in cui mettere in piedi e guidare un piccolo team dati e costruire l'infrastruttura dietro. Domande su un ruolo, una ricerca o una collaborazione? La casella è aperta.",
+    "formSubtitle": "Cerco un ruolo in cui mettere in piedi e guidare un piccolo team dati e costruire l'infrastruttura che ci sta dietro. Domande su un ruolo, una ricerca o una collaborazione? La mia inbox è aperta.",
     "nameLabel": "Nome",
     "namePlaceholder": "Il tuo nome",
     "emailLabel": "Email",
@@ -194,7 +194,7 @@
         "badge": "KR&A",
         "sector": "Sviluppato in KR&A",
         "title": "Connectivity & walkability scoring",
-        "outcome": "Un progetto che ho guidato in KR&A: uno score di connettività e walkability validato a saturazione per ogni indirizzo su una griglia di 250 m, distribuito in 38 paesi tra Europa, Nord America e APAC, lavorando con TB di dati e centinaia di fonti. È nato dalla domanda di un cliente ed è diventato una API in produzione, ora resa prodotto per la clientela più ampia.",
+        "outcome": "Un progetto che ho guidato in KR&A: uno score di connettività e walkability per ogni indirizzo su una griglia di 250 m, distribuito in 38 paesi tra Europa, Nord America e APAC, lavorando con TB di dati e centinaia di fonti. È nato dalla domanda di un cliente ed è diventato un'API in produzione, ora trasformata in prodotto per una clientela più ampia.",
         "stack": [
           "PostGIS",
           "S3",
@@ -208,7 +208,7 @@
         "badge": "KR&A",
         "sector": "Sviluppato in KR&A",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Uno studio pluriennale che ho guidato in KR&A: una pipeline di web scraping su 13 paesi UE che alimenta regressioni edoniche log-prezzo in indici mensili, testati come indicatori di disaggregazione per gli HPI trimestrali di Eurostat e pubblicato come working paper statistico ufficiale di Eurostat.",
+        "outcome": "Uno studio pluriennale che ho guidato in KR&A: una pipeline di web scraping su 13 paesi UE che alimenta regressioni edoniche sui log-prezzi da cui nascono indici mensili, testati come indicatori di disaggregazione per gli HPI trimestrali di Eurostat; il lavoro è stato pubblicato ufficialmente da Eurostat come working paper statistico.",
         "stack": [
           "Python",
           "Scrapy/Selenium",
@@ -387,13 +387,13 @@
       },
       {
         "value": "1 punteggio",
-        "unit": "ogni indirizzo · validato per saturazione",
+        "unit": "ogni indirizzo · completamente scomponibile",
         "context": "Connectivity Score · build a 13 server"
       },
       {
         "value": "300k",
         "unit": "record a settimana · 8 fonti · 3 anni",
-        "context": "Pipeline di web scraping · alimenta l'indice mensile dei prezzi delle case"
+        "context": "Pipeline di web scraping · alimenta i data product di un fondo immobiliare"
       }
     ],
     "ctaPrimary": "Scarica il CV (PDF)",

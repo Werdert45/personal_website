@@ -36,7 +36,7 @@ export const resume = {
       orgNote: "Amsterdam",
       period: "Jul 2025 – present",
       bullets: [
-        "Lead a team of 4 through a transformation of the product offering, serving pension funds and leading FinTechs.",
+        "Lead a team of 4 through a transformation of the product offering, serving pension funds, real estate investors and national statistical offices.",
         "Develop, maintain and expand data pipelines (e.g. a weekly scrape of 300k records) and spatial big data products.",
         "Delivered a global connectivity score: 1TB+ processed across 13 servers into a production API.",
         "Represent the data function with clients: defending methodology against PhD-level scrutiny, presenting to portfolio managers and senior stakeholders.",

@@ -7,7 +7,7 @@
 // module become opaque client references when imported into a server component.
 export const STATIC_PAPERS = {
   "metro-capitalisation-timing": {
-    slug: "metro-capitalisation-timing",
+    slug: "when-metro-capitalizes-paper",
     title: "When does metro infrastructure capitalize into property prices?",
     abstract: "Phase-decomposed difference-in-differences evidence from seven European cities. Seventeen staggered treated cohorts (Milano, Amsterdam, Copenhagen, Paris, Helsinki, Rennes, Roma; n = 42,004) pooled into one panel, with the response decomposed into announcement, construction, opening and maturity phases. The pooled cross-city average locates the largest response at maturity. But that step is a pooled average, not a within-city fact: city-by-year fixed effects collapse it to an insignificant −0.5 log points. The defensible magnitudes are per-city, foremost Milano's within-ring +167 EUR/m² (≈ +5.6%, wild-bootstrap p = 0.004).",
     category: "WORKING-PAPER",
@@ -35,7 +35,7 @@ The pooled cross-city average locates the largest response at maturity: a constr
 Working paper. A Milan case study and a data-engineering write-up of the seven-city pipeline are planned as companion posts here, and the future-work post doubles as an open invitation: extending the phase-decomposed design to more cities is co-author-shaped work.`,
   },
   "voronoi-postcode-estimation": {
-    slug: "voronoi-postcode-estimation",
+    slug: "voronoi-postcodes-paper",
     title: "Calibrating free postcode boundaries from OpenStreetMap",
     abstract: "Postcode polygons are free and authoritative in some European countries and sold or absent in others. Voronoi tessellation of OSM address points is the natural estimator. But how many address points are needed, and does the answer transfer across countries? One pipeline calibrated against national references in NL and DK (5,160 polygons), a seed-density-to-IoU curve whose asymptote is robust across functional forms (mean matched IoU ≈ 0.76–0.82), out-of-sample transfer tested on held-out Belgium (mean matched IoU 0.618 at 81% coverage), and an application to Italy's 4,209 CAP polygons, where no free authoritative intra-city layer exists.",
     category: "PREPRINT",
@@ -63,7 +63,7 @@ The curve's asymptote is robust across functional forms (mean matched IoU satura
 Applied to Italy, the pipeline produces 4,209 estimated CAP polygons with per-polygon seed counts, so downstream users can filter by predicted quality. Full method, uncertainty treatment and limitations are in the paper; the GeoJSON and the complete pipeline are released alongside it (repository and archive links land here with the arXiv submission, August 2026).`,
   },
   "gentrification-abm": {
-    slug: "gentrification-abm",
+    slug: "gentrification-abm-european-cities",
     title: "Agent-based modelling of gentrification dynamics",
     abstract: "MSc thesis (2025). An agent-based model of neighbourhood change driven by attractiveness and affordability, applied to Amsterdam, Utrecht and Milan on open spatial data, including an honest account of where the chosen aggregation level limits what the model can claim.",
     category: "THESIS",

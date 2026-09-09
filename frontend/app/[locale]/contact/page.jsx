@@ -21,7 +21,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: "Contact | Ian Ronk",
       description:
-        "Contact Ian Ronk, data lead and urban-dynamics researcher based in Amsterdam. Questions about the research, the pipelines, a role or a collaboration.",
+        "Contact Ian Ronk, Head of Data in Amsterdam. Questions about a role, the pipelines, the research or a collaboration: the inbox is open.",
       url,
       type: "website",
       images: ["/og.png"],

@@ -54,7 +54,7 @@
     "heroTitleLine2": "Systemen",
     "heroTitleLine2Underline": "bouwen",
     "heroTitleLine3": "& teams leiden.",
-    "lede1": "Ik ben Ian, Head of Data uit Amsterdam. Ik leid een team van 4 en bouw de systemen nog altijd zelf: een rommelig, echt probleem nemen, er iets bouwbaars van maken en draaien wat live gaat. Twee liefdes hebben de meeste van mijn keuzes gevormd: talen en complexe problemen. De eerste bracht me op vijf talen en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen beweegt, wat een plek bereikbaar maakt.",
+    "lede1": "Ik ben Ian, Head of Data uit Amsterdam. Ik leid een team van 4 en bouw de systemen nog altijd zelf: een rommelig probleem uit de echte wereld nemen, er iets bouwbaars van maken en draaiende houden wat live gaat. Twee liefdes hebben de meeste van mijn keuzes gevormd: talen en complexe problemen. De eerste leverde me vijf talen op en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen in beweging brengt, wat een plek bereikbaar maakt.",
     "lede2": "Mijn kracht: stakeholdervereisten vertalen naar datasystemen die blijven werken.",
     "journeyTitlePrefixItalic": "Vijf",
     "journeyTitleRest": "jaar bouwen aan",
@@ -145,7 +145,7 @@
     "aboutBadge": "Over mij",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "Ik ben Ian, Head of Data in Amsterdam. Ik leid een team van 4 en bouw productie-datasystemen en de analytics erbovenop, voor elk complex datatype: web-scraped, geospatiaal, graaf of tabulair. Ik beantwoord stakeholdervragen en verdedig de methodologie achter de antwoorden.",
+    "bio": "Ik ben Ian, Head of Data in Amsterdam. Ik leid een team van 4 en bouw productie-datasystemen en de analytics erbovenop, voor elk complex datatype: webscraping-, geo-, graaf- of tabeldata. Ik beantwoord stakeholdervragen en verdedig de methodologie achter de antwoorden.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
@@ -194,7 +194,7 @@
         "badge": "KR&A",
         "sector": "Ontwikkeld bij KR&A",
         "title": "Connectivity & walkability scoring",
-        "outcome": "Een project dat ik leidde bij KR&A: een saturatie-gevalideerde connectiviteits- en walkability-score voor elk adres op een 250 m-grid, uitgerold over 38 landen in Europa, Noord-Amerika en APAC, met TB's aan data en honderden databronnen. Het begon als de vraag van één klant en werd een productie-API, die nu geproductiseerd wordt voor de bredere klantenkring.",
+        "outcome": "Een project dat ik leidde bij KR&A: een connectiviteits- en walkability-score voor elk adres op een 250 m-grid, uitgerold over 38 landen in Europa, Noord-Amerika en APAC, met TB's aan data en honderden databronnen. Het begon als de vraag van één klant en werd een productie-API, die nu tot product wordt gemaakt voor de bredere klantenkring.",
         "stack": [
           "PostGIS",
           "S3",
@@ -208,7 +208,7 @@
         "badge": "KR&A",
         "sector": "Ontwikkeld bij KR&A",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Een meerjarige studie die ik leidde bij KR&A: een webscraping-pipeline over 13 EU-landen die log-prijs hedonische regressies voedt tot maandelijkse indices, getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat en gepubliceerd als officieel Eurostat statistical working paper.",
+        "outcome": "Een meerjarige studie die ik leidde bij KR&A: een webscraping-pipeline over 13 EU-landen die hedonische log-prijsregressies voedt voor maandelijkse indices, getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat; het werk is door Eurostat officieel gepubliceerd als statistical working paper.",
         "stack": [
           "Python",
           "Scrapy/Selenium",
@@ -387,13 +387,13 @@
       },
       {
         "value": "1 score",
-        "unit": "elk adres · gevalideerd op verzadiging",
+        "unit": "elk adres · volledig ontleedbaar",
         "context": "Connectivity Score · build met 13 servers"
       },
       {
         "value": "300k",
         "unit": "records per week · 8 bronnen · 3 jaar",
-        "context": "Webscraping-pipeline · voedt de maandelijkse huizenprijsindex"
+        "context": "Webscraping-pipeline · voedt de dataproducten van een vastgoedfonds"
       }
     ],
     "ctaPrimary": "Download het cv (pdf)",

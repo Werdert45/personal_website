@@ -194,7 +194,7 @@
         "badge": "KR&A",
         "sector": "Developed at KR&A",
         "title": "Connectivity & walkability scoring",
-        "outcome": "A project I led at KR&A: a saturation-validated connectivity and walkability score for every address on a 250 m grid, rolled out across 38 countries in Europe, North America and APAC, working with TBs of data and 100s of data sources. It began as one client's question and shipped as a production API, now being productised for the wider client base.",
+        "outcome": "A project I led at KR&A: a connectivity and walkability score for every address on a 250 m grid, rolled out across 38 countries in Europe, North America and APAC, working with TBs of data and 100s of data sources. It began as one client's question and shipped as a production API, now being productised for the wider client base.",
         "stack": [
           "PostGIS",
           "S3",
@@ -208,7 +208,7 @@
         "badge": "KR&A",
         "sector": "Developed at KR&A",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "A multi-year study I led at KR&A: a web-scraping pipeline across 13 EU countries feeding log-price hedonic regressions into monthly indices, tested as disaggregation indicators for Eurostat's quarterly HPIs and published as an official Eurostat statistical working paper.",
+        "outcome": "A multi-year study I led at KR&A: a web-scraping pipeline across 13 EU countries feeding log-price hedonic regressions into monthly indices, tested as disaggregation indicators for Eurostat's quarterly HPIs; the work is officially published by Eurostat as a statistical working paper.",
         "stack": [
           "Python",
           "Scrapy/Selenium",
@@ -359,7 +359,7 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "I answer questions using",
     "titleLine2Underline": "data",
-    "bio1": "I work as Head of Data: I lead a team of 4 and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, bureaus of statistics and real estate investors with 10B AuM.",
+    "bio1": "I work as Head of Data: I lead a team of 4 and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors with 10B AuM.",
     "bio2": "Over the course of my career I worked with many different types of data and tools, building custom systems for the data problems at hand and talking to client stakeholders.",
     "factRoleK": "Role",
     "factRoleV": "Head of Data",
@@ -387,13 +387,13 @@
       },
       {
         "value": "1 score",
-        "unit": "every address · saturation-validated",
+        "unit": "every address · fully decomposable",
         "context": "Connectivity Score · 13-server build"
       },
       {
         "value": "300k",
         "unit": "records a week · 8 sources · 3 years",
-        "context": "Web-scraping pipeline · feeds the monthly house-price index"
+        "context": "Web-scraping pipeline · feeds a real estate fund's data products"
       }
     ],
     "ctaPrimary": "Download the CV (PDF)",

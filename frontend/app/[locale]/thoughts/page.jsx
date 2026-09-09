@@ -24,7 +24,7 @@ export async function generateMetadata({ params }) {
   return {
     title: "Work: case studies & field notes",
     description:
-      "Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.",
+      "Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, Head of Data in Amsterdam.",
     alternates: {
       canonical: url,
       languages: {
@@ -38,7 +38,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: "Work: case studies & field notes",
       description:
-        "Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, data lead in Amsterdam.",
+        "Case studies, papers and field notes from shipped data projects (pipelines, forecasting, geospatial methods) by Ian Ronk, Head of Data in Amsterdam.",
       url,
       type: "website",
       images: ["/og.png"],
