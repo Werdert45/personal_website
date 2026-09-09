@@ -11,7 +11,10 @@ export async function generateMetadata({ params }) {
   const { locale } = await params;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://ianronk.nl";
   const url = `${siteUrl}/${locale}`;
+  const { getTranslations } = await import("next-intl/server");
+  const tMeta = await getTranslations({ locale, namespace: "Meta" });
   return {
+    description: tMeta("homeDescription"),
     alternates: {
       canonical: url,
       languages: {

@@ -54,6 +54,33 @@ const nextConfig = {
         destination: `/${locale}/projects`,
         permanent: true,
       },
+      {
+        source: `/${locale}/visualizations`,
+        destination: `/${locale}/thoughts`,
+        permanent: true,
+      },
+      {
+        source: `/${locale}/visualizations/:slug`,
+        destination: `/${locale}/thoughts/:slug`,
+        permanent: true,
+      },
+      // Legacy static-paper slugs: redirect to their CMS twins so the old
+      // indexed URLs stop serving duplicate content.
+      {
+        source: `/${locale}/research/metro-capitalisation-timing`,
+        destination: `/${locale}/research/when-metro-capitalizes-paper`,
+        permanent: true,
+      },
+      {
+        source: `/${locale}/research/voronoi-postcode-estimation`,
+        destination: `/${locale}/research/voronoi-postcodes-paper`,
+        permanent: true,
+      },
+      {
+        source: `/${locale}/research/gentrification-abm`,
+        destination: `/${locale}/research/gentrification-abm-european-cities`,
+        permanent: true,
+      },
     ]);
   },
 };

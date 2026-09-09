@@ -65,10 +65,9 @@ function fullPersonNode(siteUrl) {
     image: `${siteUrl}/profile.jpg`,
     sameAs: PERSON_SAME_AS,
     hasOccupation: [
-      { "@type": "Occupation", name: "Data Lead" },
       {
         "@type": "Occupation",
-        name: "Geodata Specialist",
+        name: "Head of Data",
         occupationLocation: { "@type": "City", name: "Amsterdam" },
       },
     ],

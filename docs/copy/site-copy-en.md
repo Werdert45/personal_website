@@ -107,7 +107,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 ### Author
 
 - `Author.roleLine`  
-  Head of Data · Engineer & Researcher
+  Head of Data
 - `Author.bio`  
   I lead data teams and build production data systems in Amsterdam. This site collects the case studies, papers and field notes.
 - `Author.cta`  
@@ -121,7 +121,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Hero.location`  
   Amsterdam, NL
 - `Hero.role`  
-  Data Lead · Data Engineer & System Architecture
+  Head of Data
 - `Hero.title`  
   Transforming
 - `Hero.titleHighlight`  
@@ -170,13 +170,13 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `AboutTeaser.titleLine2Underline`  
   data
 - `AboutTeaser.bio1`  
-  I work as a Head of Data, where I build and maintain data systems, collecting, processing and structuring data for different data products, used by pension funds, bureaus of statistics and real estate investors with 10B AuM.
+  I work as Head of Data: I lead a team of 4 and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, bureaus of statistics and real estate investors with 10B AuM.
 - `AboutTeaser.bio2`  
   Over the course of my career I worked with many different types of data and tools, building custom systems for the data problems at hand and talking to client stakeholders.
 - `AboutTeaser.factRoleK`  
   Role
 - `AboutTeaser.factRoleV`  
-  Data Lead · Data Engineer
+  Head of Data
 - `AboutTeaser.factBasisK`  
   Based
 - `AboutTeaser.factBasisV`  
@@ -268,177 +268,177 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.titleItalic`  
   & papers.
 - `Projects.subtitle`  
-  Nine pieces of work across the four lanes: production systems, shipped products, and the research they make possible.
+  Eight pieces of work across the four lanes: production systems, shipped products, and the research they make possible.
 - `Projects.items[0].viz`  
-  language
+  connectivity
 - `Projects.items[0].badge`  
-  PROJECT
+  KR&A
 - `Projects.items[0].sector`  
-  AI product
+  Developed at KR&A
 - `Projects.items[0].title`  
-  LanguageBuddy: AI language tutor
+  Connectivity & walkability scoring
 - `Projects.items[0].outcome`  
-  A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries.
+  A project I led at KR&A: a saturation-validated connectivity and walkability score for every address on a 250 m grid, rolled out across 38 countries in Europe, North America and APAC, working with TBs of data and 100s of data sources. It began as one client's question and shipped as a production API, now being productised for the wider client base.
 - `Projects.items[0].stack[0]`  
-  FastAPI
+  PostGIS
 - `Projects.items[0].stack[1]`  
-  LLM
+  S3
 - `Projects.items[0].stack[2]`  
-  TTS
+  Dijkstra & Network Science
 - `Projects.items[0].stack[3]`  
-  SQLite
+  Distributed Compute
 - `Projects.items[0].stack[4]`  
   Docker
 - `Projects.items[0].link`  
-  /research/languagebuddy-ai-language-tutor
+  /research/connectivity-score-multimodal-accessibility
 - `Projects.items[1].viz`  
-  abm
+  hedonic
 - `Projects.items[1].badge`  
-  RESEARCH
+  KR&A
 - `Projects.items[1].sector`  
-  MSc Thesis · Bocconi
+  Developed at KR&A
 - `Projects.items[1].title`  
-  Gentrification agent-based model
+  Monthly house-price index · 13 EU countries
 - `Projects.items[1].outcome`  
-  My MSc Thesis research on gentrification, where I built an agent-based model of neighbourhood change: households interact with neighborhoods in the treated cities Amsterdam, Utrecht and Milan based on their own income, the affordability of the neighborhood and the attractiveness, based on elements such as streetview imagery 'beauty' classification, GTFS connectivity, greenery and neighborhood sentiment online. A two-tenure social-housing extension is in progress.
+  A multi-year study I led at KR&A: a web-scraping pipeline across 13 EU countries feeding log-price hedonic regressions into monthly indices, tested as disaggregation indicators for Eurostat's quarterly HPIs and published as an official Eurostat statistical working paper.
 - `Projects.items[1].stack[0]`  
-  Python/GeoPandas
+  Python
 - `Projects.items[1].stack[1]`  
-  Large Vision Model
+  Scrapy/Selenium
 - `Projects.items[1].stack[2]`  
   PostGIS
 - `Projects.items[1].stack[3]`  
-  Agent-based Modeling
+  MongoDB
 - `Projects.items[1].link`  
-  /research/gentrification-abm-european-cities
+  /research/eurostat-monthly-hpi-web-scraped
 - `Projects.items[2].viz`  
-  pipelines
+  language
 - `Projects.items[2].badge`  
   PROJECT
 - `Projects.items[2].sector`  
-  Engineering
+  AI product
 - `Projects.items[2].title`  
-  Research pipelines as production systems
+  LanguageBuddy: AI language tutor
 - `Projects.items[2].outcome`  
-  Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.
+  A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries.
 - `Projects.items[2].stack[0]`  
-  Airflow
+  FastAPI
 - `Projects.items[2].stack[1]`  
-  Celery
+  LLM
 - `Projects.items[2].stack[2]`  
-  Docker
+  TTS
 - `Projects.items[2].stack[3]`  
-  CI
+  SQLite
 - `Projects.items[2].stack[4]`  
-  DuckDB
+  Docker
 - `Projects.items[2].link`  
-  /thoughts/research-pipelines-are-production-systems
+  /research/languagebuddy-ai-language-tutor
 - `Projects.items[3].viz`  
-  sponsor
+  abm
 - `Projects.items[3].badge`  
-  PROJECT
+  RESEARCH
 - `Projects.items[3].sector`  
-  NLP · sequence tagging
+  MSc Thesis · Bocconi
 - `Projects.items[3].title`  
-  SponsoredBye: sponsor-segment detection
+  Gentrification agent-based model
 - `Projects.items[3].outcome`  
-  A text-only sponsor-skipper for YouTube, built before YouTube Premium shipped one: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.
+  My MSc Thesis research on gentrification, where I built an agent-based model of neighbourhood change: households interact with neighborhoods in the treated cities Amsterdam, Utrecht and Milan based on their own income, the affordability of the neighborhood and the attractiveness, based on elements such as streetview imagery 'beauty' classification, GTFS connectivity, greenery and neighborhood sentiment online. A two-tenure social-housing extension is in progress.
 - `Projects.items[3].stack[0]`  
-  TensorFlow
+  Python/GeoPandas
 - `Projects.items[3].stack[1]`  
-  BiLSTM
+  Large Vision Model
 - `Projects.items[3].stack[2]`  
-  sentence-T5
+  PostGIS
 - `Projects.items[3].stack[3]`  
-  MongoDB
+  Agent-based Modeling
 - `Projects.items[3].stack[4]`  
   Huggingface
 - `Projects.items[3].link`  
-  /research/sponsoredbye-sponsored-segment-detection
+  /research/gentrification-abm-european-cities
 - `Projects.items[4].viz`  
-  fish
+  pipelines
 - `Projects.items[4].badge`  
   PROJECT
 - `Projects.items[4].sector`  
-  Mobile ML
+  Engineering
 - `Projects.items[4].title`  
-  FishFinder: photo-to-species ID
+  Research pipelines as production systems
 - `Projects.items[4].outcome`  
-  A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model for on-device use.
+  Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.
 - `Projects.items[4].stack[0]`  
-  Flutter/Dart
+  Airflow
 - `Projects.items[4].stack[1]`  
-  TFLite
+  Celery
 - `Projects.items[4].stack[2]`  
-  ResNet50
+  Docker
 - `Projects.items[4].stack[3]`  
-  Segment Anything Model (SAM)
+  CI
 - `Projects.items[4].stack[4]`  
-  Firebase
+  DuckDB
 - `Projects.items[4].link`  
-  /research/fishfinder-on-device-fish-id
+  /thoughts/research-pipelines-are-production-systems
 - `Projects.items[5].viz`  
-  flood
+  sponsor
 - `Projects.items[5].badge`  
-  RESEARCH
+  PROJECT
 - `Projects.items[5].sector`  
-  BSc Thesis · UvA
+  NLP · sequence tagging
 - `Projects.items[5].title`  
-  Predicting flooding risk from local features
+  SponsoredBye: sponsor-segment detection
 - `Projects.items[5].outcome`  
-  My BSc thesis, looking at whether flood risk can be explained by local features instead of a black-box hydrodynamic simulation. Collected 33 features across ~45,000 European locations, such as ground imperviousness, ground type and distance to river, across 100GB+ of data and ran a Random Forest to find their relation. Findings: 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.
+  A text-only sponsor-skipper for YouTube, built before YouTube Premium shipped one: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.
 - `Projects.items[5].stack[0]`  
-  scikit-learn
+  TensorFlow
 - `Projects.items[5].stack[1]`  
-  Random Forest
+  BiLSTM
 - `Projects.items[5].stack[2]`  
-  raster data
+  sentence-T5
 - `Projects.items[5].stack[3]`  
-  GIS
-- `Projects.items[5].link`  
-  /research/predicting-flooding-risk-local-features
-- `Projects.items[6].viz`  
-  connectivity
-- `Projects.items[6].badge`  
-  KR&A
-- `Projects.items[6].sector`  
-  Developed at KR&A
-- `Projects.items[6].title`  
-  Connectivity & walkability scoring
-- `Projects.items[6].outcome`  
-  A project led and conducted while working at KR&A: a saturation-validated connectivity and walkability score at parcel resolution, rolled out across 38 EU/NA/APAC markets, working with TBs of data and 100s of data sources.
-- `Projects.items[6].stack[0]`  
-  PostGIS
-- `Projects.items[6].stack[1]`  
-  S3
-- `Projects.items[6].stack[2]`  
-  Dijkstra & Network Science
-- `Projects.items[6].stack[3]`  
-  Distributed Compute
-- `Projects.items[6].link`  
-  /research/connectivity-score-multimodal-accessibility
-- `Projects.items[7].viz`  
-  hedonic
-- `Projects.items[7].badge`  
-  KR&A
-- `Projects.items[7].sector`  
-  Developed at KR&A
-- `Projects.items[7].title`  
-  Monthly house-price index · 13 EU countries
-- `Projects.items[7].outcome`  
-  A project conducted while working at KR&A: a web-scraping pipeline across 13 countries feeding a log-price hedonic regression; monthly indices tested as disaggregation indicators for Eurostat quarterly HPIs.
-- `Projects.items[7].stack[0]`  
-  Python
-- `Projects.items[7].stack[1]`  
-  Scrapy/Selenium
-- `Projects.items[7].stack[2]`  
-  PostGIS
-- `Projects.items[7].stack[3]`  
   MongoDB
+- `Projects.items[5].link`  
+  /research/sponsoredbye-sponsored-segment-detection
+- `Projects.items[6].viz`  
+  fish
+- `Projects.items[6].badge`  
+  PROJECT
+- `Projects.items[6].sector`  
+  Mobile ML
+- `Projects.items[6].title`  
+  FishFinder: photo-to-species ID
+- `Projects.items[6].outcome`  
+  A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model for on-device use.
+- `Projects.items[6].stack[0]`  
+  Flutter/Dart
+- `Projects.items[6].stack[1]`  
+  TFLite
+- `Projects.items[6].stack[2]`  
+  ResNet50
+- `Projects.items[6].stack[3]`  
+  Segment Anything Model (SAM)
+- `Projects.items[6].link`  
+  /research/fishfinder-on-device-fish-id
+- `Projects.items[7].viz`  
+  flood
+- `Projects.items[7].badge`  
+  RESEARCH
+- `Projects.items[7].sector`  
+  BSc Thesis · UvA
+- `Projects.items[7].title`  
+  Predicting flooding risk from local features
+- `Projects.items[7].outcome`  
+  My BSc thesis, looking at whether flood risk can be explained by local features instead of a black-box hydrodynamic simulation. Collected 33 features across ~45,000 European locations, such as ground imperviousness, ground type and distance to river, across 100GB+ of data and ran a Random Forest to find their relation. Findings: 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.
+- `Projects.items[7].stack[0]`  
+  scikit-learn
+- `Projects.items[7].stack[1]`  
+  Random Forest
+- `Projects.items[7].stack[2]`  
+  raster data
+- `Projects.items[7].stack[3]`  
+  GIS
 - `Projects.items[7].stack[4]`  
   R
 - `Projects.items[7].link`  
-  /research/eurostat-monthly-hpi-web-scraped
+  /research/predicting-flooding-risk-local-features
 - `Projects.viewCase`  
   Read more
 - `Projects.ctaAll`  
@@ -477,17 +477,17 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.experienceSubtitle`  
   5+ years building and leading production data systems (pipelines, forecasting, geospatial) across European markets and academic research.
 - `About.heroTitleLine1a`  
-  Data
+  Head of
 - `About.heroTitleLine1aItalic`  
-  Lead
+  Data.
 - `About.heroTitleLine2`  
-  Engineering
+  Building
 - `About.heroTitleLine2Underline`  
-  Systems
+  systems
 - `About.heroTitleLine3`  
-  & Data.
+  & leading teams.
 - `About.lede1`  
-  I'm Ian, a data engineer from Amsterdam. Two loves have shaped most of my choices: languages and complex problems. The first has me at five languages and pulled me to Italy for part of my studies. The second became my work: taking a messy, real-world problem and building the system that answers it. Cities are my favourite version of that problem, which is why my research keeps returning to urban dynamics: how neighbourhoods change, when a metro line moves prices, what makes a place reachable.
+  I'm Ian, Head of Data from Amsterdam. I lead a team of 4 and still build the systems myself: taking a messy, real-world problem, turning it into something buildable, and running what ships. Two loves have shaped most of my choices: languages and complex problems. The first has me at five languages and pulled me to Italy for part of my studies. The second became my work. Cities are my favourite version of that problem, which is why my research keeps returning to urban dynamics: how neighbourhoods change, when a metro line moves prices, what makes a place reachable.
 - `About.lede2`  
   My skillset: translating stakeholder requirements into data systems that keep working.
 - `About.journeyTitlePrefixItalic`  
@@ -539,9 +539,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.expertise[3].name`  
   Product Ownership
 - `About.expertise[3].blurb`  
-  End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a team of 4–5 led at KR&A.
+  End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a team of 4 led at KR&A.
 - `About.expertise[3].stack[0]`  
-  Team of 4–5
+  Team of 4
 - `About.expertise[3].stack[1]`  
   Stakeholders
 - `About.expertise[3].stack[2]`  
@@ -865,9 +865,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Contact.name`  
   Ian Ronk
 - `Contact.roleTitle`  
-  Head of Data · Engineer & Researcher
+  Head of Data
 - `Contact.bio`  
-  I am Ian and I build and maintain production data systems and the analytics on top, from any complex data type: weekly high-volume web-scraped data, geospatial, graph or tabular data. I answer stakeholder questions using this data.
+  I am Ian, Head of Data in Amsterdam. I lead a team of 4 and build production data systems and the analytics on top, from any complex data type: web-scraped, geospatial, graph or tabular. I answer stakeholder questions and defend the methodology behind the answers.
 - `Contact.location`  
   Amsterdam, Netherlands
 - `Contact.company`  
@@ -875,7 +875,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Contact.yearsExperience`  
   5+ years in data engineering & spatial analytics
 - `Contact.formSubtitle`  
-  Questions about a role, research or collaboration? The inbox is open.
+  Looking to set up and run a small data team and build the infrastructure behind it. Questions about a role, research or collaboration? The inbox is open.
 - `Contact.formTitle`  
   Get in Touch
 - `Contact.nameLabel`  
@@ -1024,7 +1024,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Proof.outcomes[1].value`  
   1 score
 - `Proof.outcomes[1].unit`  
-  every parcel · saturation-validated
+  every address · saturation-validated
 - `Proof.outcomes[1].context`  
   Connectivity Score · 13-server build
 - `Proof.outcomes[2].value`  

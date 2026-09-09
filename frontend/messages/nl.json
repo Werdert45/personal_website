@@ -26,7 +26,7 @@
   },
   "Hero": {
     "location": "Amsterdam, NL",
-    "role": "Data Lead · Data Engineer & System Architecture",
+    "role": "Head of Data",
     "title": "Complexe data,",
     "titleHighlight": "omgezet",
     "titleEnd": "in antwoorden.",
@@ -49,12 +49,12 @@
     "experienceBadge": "Ervaring",
     "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master: de methodenkant van de toolkit. De productiekant kwam uit het werk.",
     "experienceSubtitle": "5+ jaar productie-datasystemen bouwen en leiden (pipelines, forecasting, geospatial) in Europese markten en academisch onderzoek.",
-    "heroTitleLine1a": "Data",
-    "heroTitleLine1aItalic": "Lead",
-    "heroTitleLine2": "Engineering",
-    "heroTitleLine2Underline": "Systems",
-    "heroTitleLine3": "& Data.",
-    "lede1": "Ik ben Ian, data engineer uit Amsterdam. Twee liefdes hebben de meeste van mijn keuzes bepaald: talen en complexe problemen. De eerste bracht me op vijf talen en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk: een rommelig probleem uit de echte wereld nemen en het systeem bouwen dat het beantwoordt. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen in beweging brengt, wat een plek bereikbaar maakt.",
+    "heroTitleLine1a": "Head of",
+    "heroTitleLine1aItalic": "Data.",
+    "heroTitleLine2": "Systemen",
+    "heroTitleLine2Underline": "bouwen",
+    "heroTitleLine3": "& teams leiden.",
+    "lede1": "Ik ben Ian, Head of Data uit Amsterdam. Ik leid een team van 4 en bouw de systemen nog altijd zelf: een rommelig, echt probleem nemen, er iets bouwbaars van maken en draaien wat live gaat. Twee liefdes hebben de meeste van mijn keuzes gevormd: talen en complexe problemen. De eerste bracht me op vijf talen en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen beweegt, wat een plek bereikbaar maakt.",
     "lede2": "Mijn kracht: stakeholdervereisten vertalen naar datasystemen die blijven werken.",
     "journeyTitlePrefixItalic": "Vijf",
     "journeyTitleRest": "jaar bouwen aan",
@@ -94,9 +94,9 @@
       },
       {
         "name": "Product Ownership",
-        "blurb": "End-to-end eigenaarschap van methode tot geleverde API: een build over 13 servers, klantstakeholders van pensioenfondsen tot statistiekbureaus, en een team van 4–5 geleid bij KR&A.",
+        "blurb": "End-to-end eigenaarschap van methode tot geleverde API: een build over 13 servers, klantstakeholders van pensioenfondsen tot statistiekbureaus, en een team van 4 geleid bij KR&A.",
         "stack": [
-          "Team van 4–5",
+          "Team van 4",
           "Stakeholders",
           "Roadmap",
           "Shipped APIs"
@@ -144,13 +144,13 @@
   "Contact": {
     "aboutBadge": "Over mij",
     "name": "Ian Ronk",
-    "roleTitle": "Head of Data · Engineer & Researcher",
-    "bio": "Ik ben Ian en ik bouw en onderhoud productiedatasystemen en de analytics erbovenop, vanuit elk complex datatype: wekelijkse webscraping-data met hoog volume, geodata, graaf- of tabeldata. Met die data beantwoord ik vragen van stakeholders.",
+    "roleTitle": "Head of Data",
+    "bio": "Ik ben Ian, Head of Data in Amsterdam. Ik leid een team van 4 en bouw productie-datasystemen en de analytics erbovenop, voor elk complex datatype: web-scraped, geospatiaal, graaf of tabulair. Ik beantwoord stakeholdervragen en verdedig de methodologie achter de antwoorden.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
     "formTitle": "Neem contact op",
-    "formSubtitle": "Vragen over een rol, onderzoek of samenwerking? De inbox staat open.",
+    "formSubtitle": "Op zoek naar een plek om een klein datateam op te zetten en te leiden en de infrastructuur erachter te bouwen. Vragen over een rol, onderzoek of samenwerking? De inbox staat open.",
     "nameLabel": "Naam",
     "namePlaceholder": "Je naam",
     "emailLabel": "E-mail",
@@ -189,6 +189,35 @@
     "titleItalic": "& papers.",
     "subtitle": "Acht stukken werk verdeeld over de vier sporen: productiesystemen, geleverde producten en het onderzoek dat ze mogelijk maken.",
     "items": [
+      {
+        "viz": "connectivity",
+        "badge": "KR&A",
+        "sector": "Ontwikkeld bij KR&A",
+        "title": "Connectivity & walkability scoring",
+        "outcome": "Een project dat ik leidde bij KR&A: een saturatie-gevalideerde connectiviteits- en walkability-score voor elk adres op een 250 m-grid, uitgerold over 38 landen in Europa, Noord-Amerika en APAC, met TB's aan data en honderden databronnen. Het begon als de vraag van één klant en werd een productie-API, die nu geproductiseerd wordt voor de bredere klantenkring.",
+        "stack": [
+          "PostGIS",
+          "S3",
+          "Dijkstra & Network Science",
+          "Distributed Compute"
+        ],
+        "link": "/research/connectivity-score-multimodal-accessibility"
+      },
+      {
+        "viz": "hedonic",
+        "badge": "KR&A",
+        "sector": "Ontwikkeld bij KR&A",
+        "title": "Monthly house-price index · 13 EU countries",
+        "outcome": "Een meerjarige studie die ik leidde bij KR&A: een webscraping-pipeline over 13 EU-landen die log-prijs hedonische regressies voedt tot maandelijkse indices, getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat en gepubliceerd als officieel Eurostat statistical working paper.",
+        "stack": [
+          "Python",
+          "Scrapy/Selenium",
+          "PostGIS",
+          "MongoDB",
+          "R"
+        ],
+        "link": "/research/eurostat-monthly-hpi-web-scraped"
+      },
       {
         "viz": "language",
         "badge": "PROJECT",
@@ -276,35 +305,6 @@
           "GIS"
         ],
         "link": "/research/predicting-flooding-risk-local-features"
-      },
-      {
-        "viz": "connectivity",
-        "badge": "KR&A",
-        "sector": "Ontwikkeld bij KR&A",
-        "title": "Connectivity & walkability scoring",
-        "outcome": "Een project dat ik leidde en uitvoerde tijdens mijn werk bij KR&A: een op verzadiging gevalideerde connectivity- en walkability-score op perceelniveau, uitgerold over 38 markten in EU/NA/APAC, met TB's aan data en honderden databronnen.",
-        "stack": [
-          "PostGIS",
-          "S3",
-          "Dijkstra & Network Science",
-          "Distributed Compute"
-        ],
-        "link": "/research/connectivity-score-multimodal-accessibility"
-      },
-      {
-        "viz": "hedonic",
-        "badge": "KR&A",
-        "sector": "Ontwikkeld bij KR&A",
-        "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Een project uitgevoerd tijdens mijn werk bij KR&A: een webscraping-pijplijn over 13 landen die een hedonische log-prijsregressie voedt; maandelijkse indices getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat.",
-        "stack": [
-          "Python",
-          "Scrapy/Selenium",
-          "PostGIS",
-          "MongoDB",
-          "R"
-        ],
-        "link": "/research/eurostat-monthly-hpi-web-scraped"
       }
     ],
     "viewCase": "Lees meer",
@@ -349,7 +349,7 @@
     "aiNote": "Geschreven met AI, door mij gecontroleerd."
   },
   "Author": {
-    "roleLine": "Head of Data · Engineer & Researcher",
+    "roleLine": "Head of Data",
     "bio": "Ik leid datateams en bouw productie-datasystemen in Amsterdam. Deze site verzamelt de casestudy's, papers en veldnotities.",
     "cta": "Volledige bio →"
   },
@@ -359,10 +359,10 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ik beantwoord vragen met",
     "titleLine2Underline": "data",
-    "bio1": "Ik werk als Head of Data: ik bouw en onderhoud datasystemen die data verzamelen, verwerken en structureren voor verschillende dataproducten, gebruikt door pensioenfondsen, statistiekbureaus en vastgoedbeleggers met 10B AuM.",
+    "bio1": "Ik werk als Head of Data: ik leid een team van 4 en ben eindverantwoordelijk voor de datafunctie, van het bouwen en onderhouden van de datasystemen tot het verzamelen, verwerken en structureren van data voor producten die gebruikt worden door pensioenfondsen, statistiekbureaus en vastgoedbeleggers met 10B AuM.",
     "bio2": "In de loop van mijn carrière heb ik met veel verschillende soorten data en tools gewerkt: systemen op maat bouwen voor het dataprobleem van dat moment en met stakeholders bij klanten praten.",
     "factRoleK": "Rol",
-    "factRoleV": "Data Lead · Data Engineer",
+    "factRoleV": "Head of Data",
     "factBasisK": "Basis",
     "factBasisV": "Amsterdam, NL",
     "factEduK": "Opleiding",
@@ -387,7 +387,7 @@
       },
       {
         "value": "1 score",
-        "unit": "elk perceel · gevalideerd op verzadiging",
+        "unit": "elk adres · gevalideerd op verzadiging",
         "context": "Connectivity Score · build met 13 servers"
       },
       {
@@ -498,5 +498,8 @@
     "subtitle": "Methoden, data en resultaten achter de projecten.",
     "viewAll": "Alle papers →",
     "empty": "Papers verschijnen hier zodra ze gepubliceerd zijn."
+  },
+  "Meta": {
+    "homeDescription": "Ian Ronk is Head of Data in Amsterdam. Hij bouwt en leidt productie-datasystemen en de analytics erbovenop: web-scraped marktdata, officiële statistieken en tijdreeksen, documentpipelines met LLM's en OCR, en ruimtelijke en netwerkdata, met een onderzoeksspecialisatie in stedelijke dynamiek."
   }
 }

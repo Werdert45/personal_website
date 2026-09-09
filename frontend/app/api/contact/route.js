@@ -309,7 +309,7 @@ Sent from your website contact form at ${new Date().toISOString()}
             <p style="color: #374151; line-height: 1.6;">
               Best regards,<br>
               <strong>Ian Ronk</strong><br>
-              Head of Data | Real Estate AI & Analytics
+              Head of Data
             </p>
 
             <hr style="border: none; border-top: 1px solid #eee; margin: 30px 0;">

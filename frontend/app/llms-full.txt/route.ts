@@ -16,8 +16,8 @@ const preamble = (siteUrl: string) => `# Ian Ronk · ianronk.nl
 Big data pipelines · Network science · Time-series forecasting & nowcasting · Spatial analysis (PostGIS, H3, agent-based models) · Product ownership & team leadership
 
 ## Evidence
-- Monthly EU house-price index across 13 countries, tested with Eurostat
-- Connectivity/walkability score at parcel resolution: 13-server build, on budget, two weeks ahead of plan
+- Monthly EU house-price index across 13 countries, published as an official Eurostat statistical working paper
+- Connectivity/walkability score for every address on a 250 m grid: a 13-server build across 38 countries
 - Three-year weekly scrape: 300k records a week across 8 protected sources; used by statistics bureaus`
 
 const stripItalics = (text: string) => text.replace(/[*_]/g, '')

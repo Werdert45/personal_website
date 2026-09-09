@@ -14,7 +14,7 @@ export const resumeSections = {
 export const resume = {
   header: {
     name: "Ian Ronk",
-    roleLine: "Head of Data · Data Engineer",
+    roleLine: "Head of Data",
     location: "Amsterdam, NL",
     email: "ian@ronk.org",
     links: [
@@ -58,7 +58,7 @@ export const resume = {
       orgNote: "",
       period: "Jun 2022 – Jul 2025",
       bullets: [
-        "Project lead for two multi-year projects, including a 3-year hedonic house-price-index project for Eurostat: scraping, storing and managing the data, building the regressions, interpreting results.",
+        "Project lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: scraping, storing and managing the data, building the regressions, interpreting results.",
         "Restructured data infrastructure from legacy systems to Airflow, Iceberg and FastAPI.",
         "Client-facing throughout, with CBS, Eurostat and pension funds.",
       ],

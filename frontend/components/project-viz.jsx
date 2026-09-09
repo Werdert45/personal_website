@@ -236,7 +236,7 @@ export function VizConnectivity() {
     <svg
       viewBox="0 0 320 180"
       role="img"
-      aria-label="Parcel-resolution walkability scoring: isochrone rings over a weighted street network, parcels shaded by score, best parcel highlighted"
+      aria-label="Address-level walkability scoring on a 250 m grid: isochrone rings over a weighted street network, grid cells shaded by score, best cell highlighted"
       style={{ width: "100%", height: "100%" }}
     >
       <defs>
@@ -304,7 +304,7 @@ export function VizConnectivity() {
 
       {/* header fact */}
       <text x="12" y="17" fontFamily="var(--font-mono)" fontSize="7" letterSpacing="0.4" fill="#111110">
-        38 markets · EU/NA/APAC
+        38 countries · EU/NA/APAC
       </text>
 
       {/* score legend: same ramp as the parcels */}
@@ -323,7 +323,7 @@ export function VizConnectivity() {
         />
       ))}
       <text x="82" y="174" fontFamily="var(--font-mono)" fontSize="6.5" fill="#8A8676">
-        parcel score 0–100
+        address score 0–100
       </text>
     </svg>
   );
