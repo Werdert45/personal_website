@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "node scripts/generate-cv.mjs",
+    "prebuild": "node scripts/generate-cv-leadership.mjs",
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",

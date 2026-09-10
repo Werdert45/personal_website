@@ -1,5 +1,6 @@
-// Single source of truth for the resume: the About page section and the
-// generated PDF (scripts/generate-cv.mjs) both render from this object.
+// Source of truth for the About page's resume section. The downloadable PDF
+// (public/ian-ronk-cv.pdf) renders from data/resume-leadership.js instead;
+// scripts/generate-cv.mjs is kept but no longer wired into the build.
 // EN-only by design; content approved 2026-08-11 (v6 render).
 
 export const resumeSections = {
