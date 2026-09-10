@@ -649,7 +649,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.engineering[4].orgNote`  
   part-time
 - `resume.engineering[4].period`  
-  Sep 2019 – Sep 2022
+  Sep 2019 – Oct 2021
 - `resume.engineering[4].bullets[0]`  
   Enterprise expense-declaration software (EmberJS, PHP) under CI/CD and testing.
 - `resume.engineering[4].bullets[1]`  

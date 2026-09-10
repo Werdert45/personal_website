@@ -77,7 +77,7 @@ export const resume = {
       role: "Junior Full-Stack Developer",
       org: "Exact (former SRXP)",
       orgNote: "part-time",
-      period: "Sep 2019 – Sep 2022",
+      period: "Sep 2019 – Oct 2021",
       bullets: [
         "Enterprise expense-declaration software (EmberJS, PHP) under CI/CD and testing.",
         "Maintained a client-facing webapp, working on business logic and styling.",
