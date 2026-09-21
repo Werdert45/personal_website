@@ -140,7 +140,7 @@ export const resume = {
   projects: [
     {
       name: "Research pipelines as production systems",
-      line: "Airflow 3 pipelines hosting every personal research project, scaling from a laptop to a multi-machine CeleryExecutor cluster; idempotency guards, custom operators and agentic monitoring.",
+      line: "Airflow 3 pipelines hosting my research projects, scaling from a laptop to a multi-machine CeleryExecutor cluster; idempotency guards, custom operators and agentic monitoring.",
       stack: "Airflow · Celery · Docker · CI · DuckDB",
     },
     {

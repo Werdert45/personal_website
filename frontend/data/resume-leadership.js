@@ -100,7 +100,7 @@ export const resumeLeadership = {
   project: {
     name: "Research pipelines as production systems (personal platform)",
     line:
-      "Airflow 3 platform hosting every personal research project, scaled from a laptop to a multi-machine Celery cluster: idempotency guards, custom operators and automated recovery, run as production infrastructure on own servers.",
+      "Airflow 3 platform hosting my research projects, scaled from a laptop to a multi-machine Celery cluster: idempotency guards, custom operators and automated recovery, run as production infrastructure on own servers.",
   },
 
   stack: [

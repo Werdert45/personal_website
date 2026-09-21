@@ -541,9 +541,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.expertise[3].name`  
   Client & Stakeholder Work
 - `About.expertise[3].blurb`  
-  End-to-end ownership from method to shipped API: a 13-server build at KR&A and client stakeholders from pension funds to statistics bureaus.
+  End-to-end ownership from method to shipped API: a 13-server Connectivity Score build at KR&A and client stakeholders from pension funds to statistics bureaus.
 - `About.expertise[3].stack[0]`  
-  Team of 4
+  Team lead
 - `About.expertise[3].stack[1]`  
   Stakeholders
 - `About.expertise[3].stack[2]`  

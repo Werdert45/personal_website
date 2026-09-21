@@ -171,7 +171,7 @@ function CvDocument(r) {
       ),
 
       // Research: compact, no job title
-      SectionLabel(`${r.research.heading} — ${r.research.titleLine}, ${r.research.period}`, { textTransform: "none", letterSpacing: 0.4 }),
+      SectionLabel(`${r.research.heading} · ${r.research.titleLine}, ${r.research.period}`, { textTransform: "none", letterSpacing: 0.4 }),
       h(Text, { style: { color: "#222222", marginBottom: 8 } }, r.research.text),
 
       // Education + certifications

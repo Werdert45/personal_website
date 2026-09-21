@@ -1,7 +1,7 @@
 ---
 title: "SponsoredBye: detecting sponsor segments in YouTube videos with NLP"
 slug: sponsoredbye-sponsored-segment-detection
-excerpt: "A text-only sponsor-skipper built before YouTube Premium shipped one. Sentence-T5 embeddings feed a BiLSTM that tags sponsored sentences in video transcripts, cutting segmentation error from a 99% WindowDiff baseline to 15.6%."
+excerpt: "A text-only sponsor-skipper. Sentence-T5 embeddings feed a BiLSTM that tags sponsored sentences in video transcripts, cutting segmentation error from a 99% WindowDiff baseline to 15.6%."
 status: published
 category: project
 publication_status: ""
