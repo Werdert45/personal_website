@@ -25,7 +25,6 @@ export const resumeLeadership = {
     "Technical lead on a three-year Eurostat study on house-price indices from web-scraped listings across 13 EU countries; officially published by Eurostat.",
     "Built the Global Connectivity Score from client question to production API, computed live for any coordinate across 38 countries; now integrated into a.s.r. real assets investment partners' PULSE platform.",
     "Replaced CSV-based data management with a distributed Airflow platform on Iceberg and FastAPI, making the platform reproducible and cutting infrastructure cost.",
-    "Introduced agentic workflows into internal operations and replaced manual parsing of documents with OCR, saving weeks of manual data entry.",
   ],
 
   kra: {
