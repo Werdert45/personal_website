@@ -27,17 +27,17 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data",
-    "title": "Transforming",
-    "titleHighlight": "complex data",
-    "titleEnd": "into answers.",
-    "description": "I am Ian and I build and maintain production data systems and the analytics on top, from any complex data type: weekly high-volume web-scraped data, geospatial, graph or tabular data. I answer stakeholder questions using this data.",
+    "title": "From",
+    "titleHighlight": "client question",
+    "titleEnd": "to production system.",
+    "description": "I am Ian. I build and run production data systems for pension funds, real estate investors and national statistical offices. I take an open client question, turn it into a method and ship the system that answers it.",
     "aboutMe": "About me",
     "workWithMe": "Get in touch",
     "expertise": "Focus areas",
     "expertiseAreas": [
       "Data Engineering",
       "System Architecture",
-      "Complex Data Products",
+      "Client & Stakeholder Work",
       "Analytics & ML"
     ]
   },
@@ -83,7 +83,7 @@
       },
       {
         "name": "System Architecture",
-        "blurb": "The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 8 distributed servers run as production infrastructure.",
+        "blurb": "The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 8 distributed servers run as the standing production infrastructure.",
         "stack": [
           "Linux/Bash",
           "Networking & APIs",
@@ -93,8 +93,8 @@
         ]
       },
       {
-        "name": "Product Ownership",
-        "blurb": "End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a data team built up to four engineers at KR&A.",
+        "name": "Client & Stakeholder Work",
+        "blurb": "End-to-end ownership from method to shipped API: a 13-server build at KR&A and client stakeholders from pension funds to statistics bureaus.",
         "stack": [
           "Team of 4",
           "Stakeholders",
@@ -145,12 +145,12 @@
     "aboutBadge": "About Me",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "I am Ian, Head of Data in Amsterdam. I lead the data team I built up to four engineers. I build production data systems and the analytics on top, from any complex data type: web-scraped, geospatial, graph or tabular. I answer stakeholder questions and defend the methodology behind the answers.",
+    "bio": "I am Ian, Head of Data in Amsterdam. I build production data systems and the analytics on top, from any complex data type: web-scraped, geospatial, graph or tabular. I answer stakeholder questions and defend the methodology behind the answers.",
     "location": "Amsterdam, Netherlands",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ years in data engineering & spatial analytics",
     "formTitle": "Get in Touch",
-    "formSubtitle": "Looking to set up and run a small data team and build the infrastructure behind it. Questions about a role, research or collaboration? The inbox is open.",
+    "formSubtitle": "Looking for a role where I own a client problem from open question to production system. Questions about a role, research or collaboration? The inbox is open.",
     "nameLabel": "Name",
     "namePlaceholder": "Your name",
     "emailLabel": "Email",
@@ -237,7 +237,7 @@
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.",
+        "outcome": "My research projects run on Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.",
         "stack": [
           "Airflow",
           "Celery",
@@ -267,7 +267,7 @@
         "badge": "PROJECT",
         "sector": "NLP · sequence tagging",
         "title": "SponsoredBye: sponsor-segment detection",
-        "outcome": "A text-only sponsor-skipper for YouTube, built before YouTube Premium shipped one: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.",
+        "outcome": "A text-only sponsor-skipper for YouTube: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error to 16% WindowDiff against a 99% naive baseline.",
         "stack": [
           "TensorFlow",
           "BiLSTM",
@@ -360,8 +360,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "I answer questions using",
     "titleLine2Underline": "data",
-    "bio1": "I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors with 10B AuM.",
-    "bio2": "The other half of the job is client-facing: I own the client relationships with pension funds, real estate investors and national statistical offices, present methodology to portfolio managers and defend it against PhD-level statisticians, and turn open client questions into systems we can build.",
+    "bio1": "I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors, including a fund with 10B AuM.",
+    "bio2": "The other half of the job is client-facing: I own the client relationships with pension funds, real estate investors and national statistical offices, present methodology to portfolio managers and defend it in reviews with Eurostat and CBS statisticians, and turn open client questions into systems we can build.",
     "factRoleK": "Role",
     "factRoleV": "Head of Data",
     "factBasisK": "Based",
@@ -384,12 +384,12 @@
       {
         "value": "13",
         "unit": "EU countries · one pipeline",
-        "context": "Monthly house-price index · tested with Eurostat"
+        "context": "Monthly house-price index · published by Eurostat"
       },
       {
         "value": "1 score",
-        "unit": "live for any coordinate · fully decomposable",
-        "context": "Connectivity Score · 13-server build"
+        "unit": "live for any coordinate in 38 countries · fully decomposable",
+        "context": "Connectivity Score · in a.s.r.'s PULSE platform"
       },
       {
         "value": "300k",
@@ -436,13 +436,14 @@
     "submit": "Subscribe",
     "success": "Thanks, you're on the list.",
     "error": "Something went wrong. Try again or email directly.",
-    "privacy": "We won't share your address."
+    "privacy": "We won't share your address.",
+    "emailLabel": "Email address"
   },
   "Lanes": {
     "kicker": "Focus Areas",
     "titleItalic": "Focus",
     "titleRest": "Areas",
-    "subtitle": "Working as Head of Data I wear many hats. My four focus areas are building the data infrastructure, setting up the systems itself, handling different types of data and running analytics on top.",
+    "subtitle": "Head of Data in practice: building the data infrastructure, setting up the systems underneath, owning the client side and running the analytics on top.",
     "appliedAcross": "",
     "automationNote": "",
     "items": [
@@ -459,7 +460,7 @@
       },
       {
         "name": "System Architecture",
-        "blurb": "Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 8 distributed servers run as production infrastructure to handle loads of complex data products.",
+        "blurb": "Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 8 distributed servers run as the standing production infrastructure to handle loads of complex data products.",
         "stack": [
           "Linux/Bash",
           "Resource Management & S3",
@@ -469,8 +470,8 @@
         ]
       },
       {
-        "name": "Complex Data Products",
-        "blurb": "Turning complex and unconventional data types into usable data for analytics: spatial and network data, document data and time series, owned end-to-end from raw data to insights.",
+        "name": "Client & Stakeholder Work",
+        "blurb": "The client side of the job: methodology reviews with Eurostat and CBS statisticians, presentations to portfolio managers, and long-run client relationships with pension funds, real estate investors and national statistical offices. Open questions come in; production APIs go out.",
         "stack": [
           "Spatial",
           "Graph",

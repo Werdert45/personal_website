@@ -38,8 +38,8 @@ export const resumeLeadership = {
         theme: "Head of Data · Jul 2025 – present",
         bullets: [
           "Lead the data team (built up to four engineers) and own the data function: architecture, delivery and the transformation of the product offering.",
-          "Run the data platform in production: 1TB+ processed across 13 servers, with agentic monitoring and containerised deployment.",
-          "Own the client relationships: pension funds, real estate investors and national statistical offices; present and defend methodology to portfolio managers, senior stakeholders and PhD-level statisticians.",
+          "Run the data platform in production on 8 distributed servers, with agentic monitoring and containerised deployment; the Connectivity Score build processed 1TB+ across 13 servers.",
+          "Own the client relationships: pension funds, real estate investors and national statistical offices; present and defend methodology to portfolio managers, senior stakeholders and Eurostat and CBS statisticians.",
         ],
       },
       {

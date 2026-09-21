@@ -56,7 +56,7 @@ export default function NewsletterSubscribe({ variant = "compact", source = "oth
       )}
       <div className="newsletter-row">
         <label htmlFor={`newsletter-email-${variant}`} className="sr-only">
-          {t("emailPlaceholder")}
+          {t("emailLabel")}
         </label>
         <input
           id={`newsletter-email-${variant}`}

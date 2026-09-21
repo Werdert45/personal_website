@@ -27,17 +27,17 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data",
-    "title": "Dati complessi,",
-    "titleHighlight": "trasformati",
-    "titleEnd": "in risposte.",
-    "description": "Sono Ian e costruisco e mantengo sistemi di dati in produzione e l'analytics che ci sta sopra, a partire da qualsiasi tipo di dato complesso: dati web-scraped settimanali ad alto volume, dati geospaziali, a grafo o tabellari. Con questi dati rispondo alle domande degli stakeholder.",
+    "title": "Dalla",
+    "titleHighlight": "domanda del cliente",
+    "titleEnd": "al sistema in produzione.",
+    "description": "Sono Ian. Costruisco e gestisco sistemi dati in produzione per fondi pensione, investitori immobiliari e istituti di statistica. Prendo una domanda aperta di un cliente, la traduco in un metodo e consegno il sistema che dà la risposta.",
     "aboutMe": "Chi sono",
     "workWithMe": "Scrivimi",
     "expertise": "Aree di focus",
     "expertiseAreas": [
       "Data engineering",
       "Architettura di sistema",
-      "Prodotti dati complessi",
+      "Clienti e stakeholder",
       "Analytics & ML"
     ]
   },
@@ -83,7 +83,7 @@
       },
       {
         "name": "System Architecture",
-        "blurb": "La piattaforma sottostante: istanze server, PostGIS, compute Iceberg distribuito, networking/VPN, API e sicurezza. 8 server distribuiti in esecuzione come infrastruttura di produzione.",
+        "blurb": "La piattaforma sottostante: istanze server, PostGIS, compute Iceberg distribuito, networking/VPN, API e sicurezza. 8 server distribuiti in esecuzione come infrastruttura di produzione permanente.",
         "stack": [
           "Linux/Bash",
           "Networking & APIs",
@@ -93,8 +93,8 @@
         ]
       },
       {
-        "name": "Product Ownership",
-        "blurb": "Ownership end-to-end dal metodo all'API consegnata: un'infrastruttura da 13 server, stakeholder che vanno dai fondi pensione agli istituti di statistica, e un team dati che in KR&A ho fatto crescere fino a quattro engineer.",
+        "name": "Client & Stakeholder Work",
+        "blurb": "Ownership end-to-end dal metodo all'API consegnata: un'infrastruttura da 13 server in KR&A e stakeholder che vanno dai fondi pensione agli istituti di statistica.",
         "stack": [
           "Team di 4",
           "Stakeholder",
@@ -145,12 +145,12 @@
     "aboutBadge": "Su di Me",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "Sono Ian, Head of Data ad Amsterdam. Guido il team dati che ho fatto crescere fino a quattro engineer. Costruisco sistemi dati in produzione e l'analytics che ci sta sopra, per ogni tipo di dato complesso: web-scraped, geospaziale, a grafo o tabellare. Rispondo alle domande degli stakeholder e difendo la metodologia dietro le risposte.",
+    "bio": "Sono Ian, Head of Data ad Amsterdam. Costruisco sistemi dati in produzione e l'analytics che ci sta sopra, per ogni tipo di dato complesso: web-scraped, geospaziale, a grafo o tabellare. Rispondo alle domande degli stakeholder e difendo la metodologia dietro le risposte.",
     "location": "Amsterdam, Paesi Bassi",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ anni di data engineering & analytics spaziale",
     "formTitle": "Contattami",
-    "formSubtitle": "Cerco un ruolo in cui mettere in piedi e guidare un piccolo team dati e costruire l'infrastruttura che ci sta dietro. Domande su un ruolo, una ricerca o una collaborazione? La mia inbox è aperta.",
+    "formSubtitle": "Cerco un ruolo in cui possa seguire un problema del cliente dalla domanda aperta al sistema in produzione. Domande su un ruolo, ricerca o collaborazione? La mia inbox è aperta.",
     "nameLabel": "Nome",
     "namePlaceholder": "Il tuo nome",
     "emailLabel": "Email",
@@ -237,7 +237,7 @@
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Ogni mio progetto di ricerca personale usa pipeline di dati Airflow 3 ospitate in questo progetto, che scala dal laptop a un cluster CeleryExecutor multi-macchina. È costruito con controlli di idempotenza, operatori custom e monitoraggio agentico.",
+        "outcome": "I miei progetti di ricerca girano su pipeline di dati Airflow 3 ospitate in questo progetto, che scala dal laptop a un cluster CeleryExecutor multi-macchina. È costruito con controlli di idempotenza, operatori custom e monitoraggio agentico.",
         "stack": [
           "Airflow",
           "Celery",
@@ -267,7 +267,7 @@
         "badge": "PROJECT",
         "sector": "NLP · sequence tagging",
         "title": "SponsoredBye: sponsor-segment detection",
-        "outcome": "Uno skipper di sponsor per YouTube basato solo sul testo, costruito prima che YouTube Premium ne lanciasse uno: embedding sentence-T5 alimentano un sequence tagger BiLSTM che segnala le frasi sponsorizzate e le riporta ai timestamp, riducendo l'errore di segmentazione dal 99% al 16% WindowDiff.",
+        "outcome": "Uno skipper di sponsor per YouTube basato solo sul testo: embedding sentence-T5 alimentano un sequence tagger BiLSTM che individua le frasi sponsorizzate e le riporta ai timestamp, portando l'errore di segmentazione al 16% di WindowDiff contro una baseline naive del 99%.",
         "stack": [
           "TensorFlow",
           "BiLSTM",
@@ -360,8 +360,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Rispondo alle domande con i",
     "titleLine2Underline": "dati",
-    "bio1": "Lavoro come Head of Data: guido il team dati che ho fatto crescere fino a quattro engineer e ho la responsabilità end-to-end della funzione dati, dalla costruzione e manutenzione dei sistemi alla raccolta, elaborazione e strutturazione dei dati per prodotti usati da fondi pensione, istituti di statistica e investitori immobiliari con 10B AuM.",
-    "bio2": "L'altra metà del lavoro è rivolta ai clienti: gestisco le relazioni con fondi pensione, investitori immobiliari e istituti di statistica, presento la metodologia ai portfolio manager, la difendo davanti a statistici di livello PhD e traduco domande aperte dei clienti in sistemi che possiamo costruire.",
+    "bio1": "Lavoro come Head of Data: guido il team dati che ho fatto crescere fino a quattro engineer e ho la responsabilità end-to-end della funzione dati, dalla costruzione e manutenzione dei sistemi alla raccolta, elaborazione e strutturazione dei dati per prodotti usati da fondi pensione, istituti di statistica e investitori immobiliari, tra cui un fondo con 10B AuM.",
+    "bio2": "L'altra metà del lavoro è rivolta ai clienti: gestisco le relazioni con fondi pensione, investitori immobiliari e istituti di statistica, presento la metodologia ai portfolio manager, la difendo in review con statistici di Eurostat e CBS e traduco domande aperte dei clienti in sistemi che possiamo costruire.",
     "factRoleK": "Ruolo",
     "factRoleV": "Head of Data",
     "factBasisK": "Base",
@@ -384,12 +384,12 @@
       {
         "value": "13",
         "unit": "paesi UE · una pipeline",
-        "context": "Indice mensile dei prezzi delle case · testato con Eurostat"
+        "context": "Indice mensile dei prezzi delle case · pubblicato da Eurostat"
       },
       {
         "value": "1 punteggio",
-        "unit": "live per qualsiasi coordinata · completamente scomponibile",
-        "context": "Connectivity Score · build a 13 server"
+        "unit": "live per qualsiasi coordinata in 38 paesi · completamente scomponibile",
+        "context": "Connectivity Score · nella piattaforma PULSE di a.s.r."
       },
       {
         "value": "300k",
@@ -436,13 +436,14 @@
     "submit": "Iscriviti",
     "success": "Grazie, sei in lista.",
     "error": "Qualcosa è andato storto. Riprova o scrivi direttamente.",
-    "privacy": "Non condivideremo il tuo indirizzo."
+    "privacy": "Non condivideremo il tuo indirizzo.",
+    "emailLabel": "Indirizzo email"
   },
   "Lanes": {
     "kicker": "Aree di focus",
     "titleItalic": "Aree",
     "titleRest": "di focus",
-    "subtitle": "Come Head of Data ricopro molti ruoli. Le mie quattro aree di focus sono costruire l'infrastruttura dati, mettere in piedi i sistemi stessi, gestire tipi di dati diversi e farci analytics sopra.",
+    "subtitle": "Head of Data nella pratica: costruire l'infrastruttura dati, mettere in piedi i sistemi sottostanti, presidiare il lato cliente e far girare l'analytics sopra.",
     "appliedAcross": "",
     "automationNote": "",
     "items": [
@@ -459,7 +460,7 @@
       },
       {
         "name": "Architettura di sistema",
-        "blurb": "Metto in piedi la piattaforma sottostante: istanze server, PostGIS, calcolo distribuito su Iceberg e server di elaborazione dati, networking/VPN, API e sicurezza. Un esempio: 8 server distribuiti girano come infrastruttura di produzione per sostenere prodotti dati complessi.",
+        "blurb": "Metto in piedi la piattaforma sottostante: istanze server, PostGIS, calcolo distribuito su Iceberg e server di elaborazione dati, networking/VPN, API e sicurezza. Un esempio: 8 server distribuiti girano come infrastruttura di produzione permanente per sostenere prodotti dati complessi.",
         "stack": [
           "Linux/Bash",
           "Resource Management & S3",
@@ -469,8 +470,8 @@
         ]
       },
       {
-        "name": "Prodotti dati complessi",
-        "blurb": "Trasformo tipi di dati complessi e non convenzionali in dati utilizzabili per l'analytics: dati spaziali e di rete, dati documentali e serie storiche, con ownership end-to-end dal dato grezzo agli insight.",
+        "name": "Clienti e stakeholder",
+        "blurb": "Il lato cliente del lavoro: review metodologiche con statistici di Eurostat e CBS, presentazioni ai portfolio manager e relazioni di lungo periodo con fondi pensione, investitori immobiliari e istituti di statistica. Le domande aperte entrano; le API in produzione escono.",
         "stack": [
           "Spatial",
           "Graph",

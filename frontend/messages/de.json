@@ -27,17 +27,17 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data",
-    "title": "Komplexe Daten,",
-    "titleHighlight": "transformiert",
-    "titleEnd": "zu Antworten.",
-    "description": "Ich bin Ian und ich baue und betreibe Produktionsdatensysteme und die Analytik darauf, aus jedem komplexen Datentyp: wöchentlich gescrapte Daten in hohem Volumen, Geodaten, Graph- oder Tabellendaten. Mit diesen Daten beantworte ich die Fragen von Stakeholdern.",
+    "title": "Von der",
+    "titleHighlight": "Kundenfrage",
+    "titleEnd": "zum Produktionssystem.",
+    "description": "Ich bin Ian. Ich baue und betreibe Produktions-Datensysteme für Pensionsfonds, Immobilieninvestoren und Statistikämter. Ich nehme eine offene Kundenfrage, mache daraus eine Methode und liefere das System, das sie beantwortet.",
     "aboutMe": "Über mich",
     "workWithMe": "Kontakt aufnehmen",
     "expertise": "Schwerpunkte",
     "expertiseAreas": [
       "Data Engineering",
       "Systemarchitektur",
-      "Komplexe Datenprodukte",
+      "Kunden- und Stakeholderarbeit",
       "Analytics & ML"
     ]
   },
@@ -83,7 +83,7 @@
       },
       {
         "name": "System Architecture",
-        "blurb": "Die Plattform darunter: Serverinstanzen, PostGIS, verteiltes Iceberg-Compute, Netzwerk/VPN, APIs und Security. 8 verteilte Server laufen als Produktionsinfrastruktur.",
+        "blurb": "Die Plattform darunter: Serverinstanzen, PostGIS, verteiltes Iceberg-Compute, Netzwerk/VPN, APIs und Security. 8 verteilte Server laufen als dauerhafte Produktionsinfrastruktur.",
         "stack": [
           "Linux/Bash",
           "Networking & APIs",
@@ -93,8 +93,8 @@
         ]
       },
       {
-        "name": "Product Ownership",
-        "blurb": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API: ein Build über 13 Server, Kunden-Stakeholder von Pensionsfonds bis Statistikämtern und ein Datenteam, das ich bei KR&A auf vier Engineers aufgebaut habe.",
+        "name": "Client & Stakeholder Work",
+        "blurb": "End-to-End-Verantwortung von der Methode bis zur ausgelieferten API: ein Build über 13 Server bei KR&A und Kunden-Stakeholder von Pensionsfonds bis Statistikämtern.",
         "stack": [
           "Team von 4",
           "Stakeholder",
@@ -145,12 +145,12 @@
     "aboutBadge": "Über mich",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "Ich bin Ian, Head of Data in Amsterdam. Ich führe das Datenteam, das ich auf vier Engineers aufgebaut habe. Ich baue Produktions-Datensysteme und die Analytics darauf, für jeden komplexen Datentyp: web-scraped, geospatial, Graph- oder Tabellendaten. Ich beantworte Stakeholder-Fragen und verteidige die Methodik hinter den Antworten.",
+    "bio": "Ich bin Ian, Head of Data in Amsterdam. Ich baue Produktions-Datensysteme und die Analytics darauf, für jeden komplexen Datentyp: web-scraped, geospatial, Graph- oder Tabellendaten. Ich beantworte Stakeholder-Fragen und verteidige die Methodik hinter den Antworten.",
     "location": "Amsterdam, Niederlande",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ Jahre in Data Engineering & räumlicher Analytik",
     "formTitle": "Kontakt aufnehmen",
-    "formSubtitle": "Ich suche eine Rolle, in der ich ein kleines Datenteam aufbaue, führe und die Infrastruktur dahinter baue. Fragen zu einer Stelle, Forschung oder Zusammenarbeit? Meine Inbox ist offen.",
+    "formSubtitle": "Ich suche eine Rolle, in der ich ein Kundenproblem von der offenen Frage bis zum Produktionssystem verantworte. Fragen zu einer Rolle, Forschung oder Zusammenarbeit? Meine Inbox ist offen.",
     "nameLabel": "Name",
     "namePlaceholder": "Dein Name",
     "emailLabel": "E-Mail",
@@ -237,7 +237,7 @@
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Jedes persönliche Forschungsprojekt, das ich angehe, nutzt Airflow-3-Datenpipelines, die in diesem Projekt gehostet sind. Es skaliert vom Laptop bis zum Multi-Maschinen-CeleryExecutor-Cluster. Gebaut mit Idempotenz-Guards, eigenen Operatoren und agentischem Monitoring.",
+        "outcome": "Meine Forschungsprojekte laufen auf Airflow-3-Datenpipelines, die in diesem Projekt gehostet sind. Es skaliert vom Laptop bis zum Multi-Maschinen-CeleryExecutor-Cluster. Gebaut mit Idempotenz-Guards, eigenen Operatoren und agentischem Monitoring.",
         "stack": [
           "Airflow",
           "Celery",
@@ -267,7 +267,7 @@
         "badge": "PROJECT",
         "sector": "NLP · Sequence-Tagging",
         "title": "SponsoredBye: sponsor-segment detection",
-        "outcome": "Ein rein textbasierter Sponsor-Skipper für YouTube, gebaut bevor YouTube Premium einen auslieferte: sentence-T5-Embeddings speisen einen BiLSTM-Sequence-Tagger, der gesponserte Sätze markiert und auf Zeitstempel zurückrechnet. Der Segmentierungsfehler sinkt von 99% auf 16% WindowDiff.",
+        "outcome": "Ein rein textbasierter Sponsor-Skipper für YouTube: Sentence-T5-Embeddings speisen einen BiLSTM-Sequenztagger, der gesponserte Sätze markiert und auf Timestamps zurückführt; der Segmentierungsfehler sinkt auf 16% WindowDiff gegenüber einer naiven Baseline von 99%.",
         "stack": [
           "TensorFlow",
           "BiLSTM",
@@ -360,8 +360,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ich beantworte Fragen mit",
     "titleLine2Underline": "Daten",
-    "bio1": "Ich arbeite als Head of Data: Ich führe das Datenteam, das ich auf vier Engineers aufgebaut habe, und verantworte die Datenfunktion von Anfang bis Ende, vom Bau und Betrieb der Datensysteme bis zum Sammeln, Verarbeiten und Strukturieren von Daten für Produkte, die von Pensionsfonds, Statistikämtern und Immobilieninvestoren mit 10 Mrd. AuM genutzt werden.",
-    "bio2": "Die andere Hälfte der Arbeit ist kundenseitig: Ich verantworte die Kundenbeziehungen zu Pensionsfonds, Immobilieninvestoren und Statistikämtern, präsentiere Methodik vor Portfoliomanagern, verteidige sie gegenüber Statistikern auf PhD-Niveau und übersetze offene Kundenfragen in Systeme, die wir bauen können.",
+    "bio1": "Ich arbeite als Head of Data: Ich führe das Datenteam, das ich auf vier Engineers aufgebaut habe, und verantworte die Datenfunktion von Anfang bis Ende, vom Bau und Betrieb der Datensysteme bis zum Sammeln, Verarbeiten und Strukturieren von Daten für Produkte, die von Pensionsfonds, Statistikämtern und Immobilieninvestoren genutzt werden, darunter ein Fonds mit 10 Mrd. AuM.",
+    "bio2": "Die andere Hälfte der Arbeit ist kundenseitig: Ich verantworte die Kundenbeziehungen zu Pensionsfonds, Immobilieninvestoren und Statistikämtern, präsentiere Methodik vor Portfoliomanagern, verteidige sie in Reviews mit Statistikern von Eurostat und CBS und übersetze offene Kundenfragen in Systeme, die wir bauen können.",
     "factRoleK": "Rolle",
     "factRoleV": "Head of Data",
     "factBasisK": "Standort",
@@ -384,12 +384,12 @@
       {
         "value": "13",
         "unit": "EU-Länder · eine Pipeline",
-        "context": "Monatlicher Hauspreisindex · getestet mit Eurostat"
+        "context": "Monatlicher Hauspreisindex · veröffentlicht von Eurostat"
       },
       {
         "value": "1 Score",
-        "unit": "live für jede Koordinate · vollständig zerlegbar",
-        "context": "Connectivity Score · 13-Server-Build"
+        "unit": "live für jede Koordinate in 38 Ländern · vollständig zerlegbar",
+        "context": "Connectivity Score · in der PULSE-Plattform von a.s.r."
       },
       {
         "value": "300k",
@@ -436,13 +436,14 @@
     "submit": "Abonnieren",
     "success": "Danke, du bist auf der Liste.",
     "error": "Etwas ist schiefgelaufen. Versuch es nochmal oder schreib direkt.",
-    "privacy": "Deine Adresse wird nicht weitergegeben."
+    "privacy": "Deine Adresse wird nicht weitergegeben.",
+    "emailLabel": "E-Mail-Adresse"
   },
   "Lanes": {
     "kicker": "Schwerpunkte",
     "titleItalic": "Vier",
     "titleRest": "Schwerpunkte",
-    "subtitle": "Als Head of Data trage ich viele Hüte. Meine vier Schwerpunkte: die Dateninfrastruktur bauen, die Systeme selbst aufsetzen, verschiedene Datentypen handhaben und die Analytik obendrauf betreiben.",
+    "subtitle": "Head of Data in der Praxis: die Dateninfrastruktur bauen, die Systeme darunter aufsetzen, die Kundenseite verantworten und die Analytics darüber betreiben.",
     "appliedAcross": "",
     "automationNote": "",
     "items": [
@@ -459,7 +460,7 @@
       },
       {
         "name": "Systemarchitektur",
-        "blurb": "Die Plattform darunter aufsetzen: Serverinstanzen, PostGIS, verteiltes Iceberg-Compute und Datenverarbeitungsserver, Netzwerk/VPN, APIs und Security. Beispiel: 8 verteilte Server laufen als Produktionsinfrastruktur für eine Menge komplexer Datenprodukte.",
+        "blurb": "Die Plattform darunter aufsetzen: Serverinstanzen, PostGIS, verteiltes Iceberg-Compute und Datenverarbeitungsserver, Netzwerk/VPN, APIs und Security. Beispiel: 8 verteilte Server laufen als dauerhafte Produktionsinfrastruktur für eine Menge komplexer Datenprodukte.",
         "stack": [
           "Linux/Bash",
           "Resource Management & S3",
@@ -469,8 +470,8 @@
         ]
       },
       {
-        "name": "Komplexe Datenprodukte",
-        "blurb": "Komplexe und unkonventionelle Datentypen in nutzbare Daten für die Analytik verwandeln: räumliche und Netzwerkdaten, Dokumentdaten und Zeitreihen, end-to-end verantwortet von den Rohdaten bis zu den Erkenntnissen.",
+        "name": "Kunden- und Stakeholderarbeit",
+        "blurb": "Die Kundenseite der Arbeit: Methodik-Reviews mit Statistikern von Eurostat und CBS, Präsentationen vor Portfoliomanagern und langjährige Kundenbeziehungen zu Pensionsfonds, Immobilieninvestoren und Statistikämtern. Offene Fragen kommen rein; Produktions-APIs gehen raus.",
         "stack": [
           "Spatial",
           "Graph",

@@ -25,9 +25,9 @@ export const resume = {
     ],
     languages: "Dutch C2 · English C2 · Italian B2/C1 · German B2 · Spanish A2",
     softSkills:
-      "Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Dependable",
+      "Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences",
     summary:
-      "Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads the data team, built up to four engineers, as Head of Data; interest in research on urban dynamics.",
+      "Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Head of Data at KR&A; interest in research on urban dynamics.",
   },
 
   engineering: [
@@ -40,8 +40,8 @@ export const resume = {
         "Lead the data team (built up to four engineers) through a transformation of the product offering, serving pension funds, real estate investors and national statistical offices.",
         "Develop, maintain and expand data pipelines (e.g. a weekly scrape of 300k records) and spatial big data products.",
         "Delivered a global connectivity score: 1TB+ processed across 13 servers into a production API.",
-        "Represent the data function with clients: defending methodology against PhD-level scrutiny, presenting to portfolio managers and senior stakeholders.",
-        "Drive AI adoption: OCR and LLM document extraction, agentic pipeline monitoring, agent-assisted development.",
+        "Represent the data function with clients: methodology reviews with Eurostat and CBS statisticians, presentations to portfolio managers and senior stakeholders.",
+        "Drive AI adoption: OCR and LLM document extraction, agentic pipeline monitoring.",
       ],
     },
     {
@@ -54,12 +54,12 @@ export const resume = {
       ],
     },
     {
-      role: "Medior Data Scientist",
+      role: "Data Scientist & Technical Lead",
       org: "KR&A",
-      orgNote: "",
+      orgNote: "part-time",
       period: "Jun 2022 – Jul 2025",
       bullets: [
-        "Technical lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: scraping, storing and managing the data, building the regressions, interpreting results.",
+        "Technical lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: led the technical side for eight people across a two-organisation consortium, from scraping and storage to regressions and interpretation.",
         "Restructured data infrastructure from legacy systems to Airflow, Iceberg and FastAPI.",
         "Client-facing throughout, with CBS, Eurostat and pension funds.",
       ],
@@ -67,11 +67,11 @@ export const resume = {
     {
       role: "Junior Data Scientist",
       org: "KR&A",
-      orgNote: "",
+      orgNote: "part-time",
       period: "Oct 2021 – Jun 2022",
       bullets: [
         "Flood-occurrence prediction from alternative data (BSc-thesis project); 97% accuracy in risk classification.",
-        "Improved API efficiency tenfold through spatial optimisations, resulting in promotion.",
+        "Improved the spatial API's response times tenfold through geospatial query optimisation, resulting in promotion.",
       ],
     },
     {

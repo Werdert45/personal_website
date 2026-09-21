@@ -123,13 +123,13 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Hero.role`  
   Head of Data
 - `Hero.title`  
-  Transforming
+  From
 - `Hero.titleHighlight`  
-  complex data
+  client question
 - `Hero.titleEnd`  
-  into answers.
+  to production system.
 - `Hero.description`  
-  I am Ian and I build and maintain production data systems and the analytics on top, from any complex data type: weekly high-volume web-scraped data, geospatial, graph or tabular data. I answer stakeholder questions using this data.
+  I am Ian. I build and run production data systems for pension funds, real estate investors and national statistical offices. I take an open client question, turn it into a method and ship the system that answers it.
 - `Hero.aboutMe`  
   About me
 - `Hero.workWithMe`  
@@ -141,7 +141,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Hero.expertiseAreas[1]`  
   System Architecture
 - `Hero.expertiseAreas[2]`  
-  Complex Data Products
+  Client & Stakeholder Work
 - `Hero.expertiseAreas[3]`  
   Analytics & ML
 
@@ -170,9 +170,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `AboutTeaser.titleLine2Underline`  
   data
 - `AboutTeaser.bio1`  
-  I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors with 10B AuM.
+  I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors, including a fund with 10B AuM.
 - `AboutTeaser.bio2`  
-  The other half of the job is client-facing: I own the client relationships with pension funds, real estate investors and national statistical offices, present methodology to portfolio managers and defend it against PhD-level statisticians, and turn open client questions into systems we can build.
+  The other half of the job is client-facing: I own the client relationships with pension funds, real estate investors and national statistical offices, present methodology to portfolio managers and defend it in reviews with Eurostat and CBS statisticians, and turn open client questions into systems we can build.
 - `AboutTeaser.factRoleK`  
   Role
 - `AboutTeaser.factRoleV`  
@@ -201,7 +201,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Lanes.titleRest`  
   Areas
 - `Lanes.subtitle`  
-  Working as Head of Data I wear many hats. My four focus areas are building the data infrastructure, setting up the systems itself, handling different types of data and running analytics on top.
+  Head of Data in practice: building the data infrastructure, setting up the systems underneath, owning the client side and running the analytics on top.
 - `Lanes.items[0].name`  
   Data Engineering
 - `Lanes.items[0].blurb`  
@@ -219,7 +219,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Lanes.items[1].name`  
   System Architecture
 - `Lanes.items[1].blurb`  
-  Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 8 distributed servers run as production infrastructure to handle loads of complex data products.
+  Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 8 distributed servers run as the standing production infrastructure to handle loads of complex data products.
 - `Lanes.items[1].stack[0]`  
   Linux/Bash
 - `Lanes.items[1].stack[1]`  
@@ -231,9 +231,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Lanes.items[1].stack[4]`  
   Distributed Compute
 - `Lanes.items[2].name`  
-  Complex Data Products
+  Client & Stakeholder Work
 - `Lanes.items[2].blurb`  
-  Turning complex and unconventional data types into usable data for analytics: spatial and network data, document data and time series, owned end-to-end from raw data to insights.
+  The client side of the job: methodology reviews with Eurostat and CBS statisticians, presentations to portfolio managers, and long-run client relationships with pension funds, real estate investors and national statistical offices. Open questions come in; production APIs go out.
 - `Lanes.items[2].stack[0]`  
   Spatial
 - `Lanes.items[2].stack[1]`  
@@ -342,7 +342,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[3].title`  
   Research pipelines as production systems
 - `Projects.items[3].outcome`  
-  Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.
+  My research projects run on Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.
 - `Projects.items[3].stack[0]`  
   Airflow
 - `Projects.items[3].stack[1]`  
@@ -386,7 +386,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[5].title`  
   SponsoredBye: sponsor-segment detection
 - `Projects.items[5].outcome`  
-  A text-only sponsor-skipper for YouTube, built before YouTube Premium shipped one: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error from 99% to 16% WindowDiff.
+  A text-only sponsor-skipper for YouTube: sentence-T5 embeddings feed a BiLSTM sequence tagger that flags sponsored sentences and maps them back to timestamps, cutting segmentation error to 16% WindowDiff against a 99% naive baseline.
 - `Projects.items[5].stack[0]`  
   TensorFlow
 - `Projects.items[5].stack[1]`  
@@ -527,7 +527,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.expertise[2].name`  
   System Architecture
 - `About.expertise[2].blurb`  
-  The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 8 distributed servers run as production infrastructure.
+  The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 8 distributed servers run as the standing production infrastructure.
 - `About.expertise[2].stack[0]`  
   Linux/Bash
 - `About.expertise[2].stack[1]`  
@@ -539,9 +539,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.expertise[2].stack[4]`  
   S3
 - `About.expertise[3].name`  
-  Product Ownership
+  Client & Stakeholder Work
 - `About.expertise[3].blurb`  
-  End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a data team built up to four engineers at KR&A.
+  End-to-end ownership from method to shipped API: a 13-server build at KR&A and client stakeholders from pension funds to statistics bureaus.
 - `About.expertise[3].stack[0]`  
   Team of 4
 - `About.expertise[3].stack[1]`  
@@ -595,7 +595,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.header.softSkills`  
   Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Reliability
 - `resume.header.summary`  
-  Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads the data team, built up to four engineers, as Head of Data; interest in research on urban dynamics.
+  Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Head of Data at KR&A; interest in research on urban dynamics.
 - `resume.engineering[0].role`  
   Head of Data
 - `resume.engineering[0].org`  
@@ -611,9 +611,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.engineering[0].bullets[2]`  
   Delivered a global connectivity score: 1TB+ processed across 13 servers into a production API.
 - `resume.engineering[0].bullets[3]`  
-  Represent the data function with clients: defending methodology against PhD-level scrutiny, presenting to portfolio managers and senior stakeholders.
+  Represent the data function with clients: methodology reviews with Eurostat and CBS statisticians, presentations to portfolio managers and senior stakeholders.
 - `resume.engineering[0].bullets[4]`  
-  Drive AI adoption: OCR and LLM document extraction, agentic pipeline monitoring, agent-assisted development.
+  Drive AI adoption: OCR and LLM document extraction, agentic pipeline monitoring.
 - `resume.engineering[1].role`  
   Independent Researcher
 - `resume.engineering[1].org`  
@@ -623,13 +623,13 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.engineering[1].bullets[0]`  
   Self-directed research programme: two working papers and a method paper in preparation (see Research), each backed by an open, reproducible pipeline.
 - `resume.engineering[2].role`  
-  Medior Data Scientist
+  Data Scientist & Technical Lead
 - `resume.engineering[2].org`  
   KR&A
 - `resume.engineering[2].period`  
   Jun 2022 – Jul 2025
 - `resume.engineering[2].bullets[0]`  
-  Technical lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: scraping, storing and managing the data, building the regressions, interpreting results.
+  Technical lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: led the technical side for eight people across a two-organisation consortium, from scraping and storage to regressions and interpretation.
 - `resume.engineering[2].bullets[1]`  
   Restructured data infrastructure from legacy systems to Airflow, Iceberg and FastAPI.
 - `resume.engineering[2].bullets[2]`  
@@ -643,7 +643,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.engineering[3].bullets[0]`  
   Flood-occurrence prediction from alternative data (BSc-thesis project); 90%+ accuracy in risk classification.
 - `resume.engineering[3].bullets[1]`  
-  Improved API efficiency tenfold through spatial optimisations, resulting in promotion.
+  Improved the spatial API's response times tenfold through geospatial query optimisation, resulting in promotion.
 - `resume.engineering[4].role`  
   Junior Full-Stack Developer
 - `resume.engineering[4].org`  
@@ -869,7 +869,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Contact.roleTitle`  
   Head of Data
 - `Contact.bio`  
-  I am Ian, Head of Data in Amsterdam. I lead the data team I built up to four engineers. I build production data systems and the analytics on top, from any complex data type: web-scraped, geospatial, graph or tabular. I answer stakeholder questions and defend the methodology behind the answers.
+  I am Ian, Head of Data in Amsterdam. I build production data systems and the analytics on top, from any complex data type: web-scraped, geospatial, graph or tabular. I answer stakeholder questions and defend the methodology behind the answers.
 - `Contact.location`  
   Amsterdam, Netherlands
 - `Contact.company`  
@@ -877,7 +877,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Contact.yearsExperience`  
   5+ years in data engineering & spatial analytics
 - `Contact.formSubtitle`  
-  Looking to set up and run a small data team and build the infrastructure behind it. Questions about a role, research or collaboration? The inbox is open.
+  Looking for a role where I own a client problem from open question to production system. Questions about a role, research or collaboration? The inbox is open.
 - `Contact.formTitle`  
   Get in Touch
 - `Contact.nameLabel`  
@@ -1024,13 +1024,13 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Proof.outcomes[0].unit`  
   EU countries · one pipeline
 - `Proof.outcomes[0].context`  
-  Monthly house-price index · tested with Eurostat
+  Monthly house-price index · published by Eurostat
 - `Proof.outcomes[1].value`  
   1 score
 - `Proof.outcomes[1].unit`  
-  live for any coordinate · fully decomposable
+  live for any coordinate in 38 countries · fully decomposable
 - `Proof.outcomes[1].context`  
-  Connectivity Score · 13-server build
+  Connectivity Score · in a.s.r.'s PULSE platform
 - `Proof.outcomes[2].value`  
   300k
 - `Proof.outcomes[2].unit`  

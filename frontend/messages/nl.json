@@ -27,24 +27,24 @@
   "Hero": {
     "location": "Amsterdam, NL",
     "role": "Head of Data",
-    "title": "Complexe data,",
-    "titleHighlight": "omgezet",
-    "titleEnd": "in antwoorden.",
-    "description": "Ik ben Ian en ik bouw en onderhoud productiedatasystemen en de analytics erbovenop, vanuit elk complex datatype: wekelijkse webscraping-data met hoog volume, geodata, graaf- of tabeldata. Met die data beantwoord ik vragen van stakeholders.",
+    "title": "Van",
+    "titleHighlight": "klantvraag",
+    "titleEnd": "naar productiesysteem.",
+    "description": "Ik ben Ian. Ik bouw en beheer productie-datasystemen voor pensioenfondsen, vastgoedbeleggers en statistiekbureaus. Ik neem een open klantvraag, vertaal die naar een methode en lever het systeem dat het antwoord geeft.",
     "aboutMe": "Over mij",
     "workWithMe": "Neem contact op",
     "expertise": "Focusgebieden",
     "expertiseAreas": [
       "Data engineering",
       "Systeemarchitectuur",
-      "Complexe dataproducten",
+      "Klant- en stakeholderwerk",
       "Analytics & ML"
     ]
   },
   "About": {
     "expertiseBadge": "Expertise",
     "coreCompetencies": "Kerncompetenties",
-    "expertiseSubtitle": "Vier competenties, één uitgangspunt: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
+    "expertiseSubtitle": "Vier competenties, één randvoorwaarde: een gekalibreerde pipeline houdt het langer vol dan een slimme.",
     "educationBadge": "Opleiding",
     "experienceBadge": "Ervaring",
     "educationSubtitle": "Kunstmatige intelligentie als bachelor, data science en analytics als master: de methodenkant van de toolkit. De productiekant kwam uit het werk.",
@@ -83,7 +83,7 @@
       },
       {
         "name": "System Architecture",
-        "blurb": "Het platform eronder: serverinstances, PostGIS, gedistribueerde Iceberg-compute, netwerken/VPN, APIs en security. 8 gedistribueerde servers draaien als productie-infrastructuur.",
+        "blurb": "Het platform eronder: serverinstances, PostGIS, gedistribueerde Iceberg-compute, netwerken/VPN, APIs en security. 8 gedistribueerde servers draaien als vaste productie-infrastructuur.",
         "stack": [
           "Linux/Bash",
           "Networking & APIs",
@@ -93,8 +93,8 @@
         ]
       },
       {
-        "name": "Product Ownership",
-        "blurb": "End-to-end eigenaarschap van methode tot geleverde API: een build over 13 servers, klantstakeholders van pensioenfondsen tot statistiekbureaus, en een datateam dat ik bij KR&A tot vier engineers opbouwde.",
+        "name": "Client & Stakeholder Work",
+        "blurb": "End-to-end eigenaarschap van methode tot geleverde API: een build over 13 servers bij KR&A en klantstakeholders van pensioenfondsen tot statistiekbureaus.",
         "stack": [
           "Team van 4",
           "Stakeholders",
@@ -145,12 +145,12 @@
     "aboutBadge": "Over mij",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "Ik ben Ian, Head of Data in Amsterdam. Ik leid het datateam dat ik tot vier engineers heb opgebouwd. Ik bouw productie-datasystemen en de analytics erbovenop, voor elk complex datatype: webscraping-, geo-, graaf- of tabeldata. Ik beantwoord stakeholdervragen en verdedig de methodologie achter de antwoorden.",
+    "bio": "Ik ben Ian, Head of Data in Amsterdam. Ik bouw productie-datasystemen en de analytics erbovenop, voor elk complex datatype: webscraping-, geo-, graaf- of tabeldata. Ik beantwoord stakeholdervragen en verdedig de methodologie achter de antwoorden.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
     "formTitle": "Neem contact op",
-    "formSubtitle": "Op zoek naar een plek om een klein datateam op te zetten en te leiden en de infrastructuur erachter te bouwen. Vragen over een rol, onderzoek of samenwerking? De inbox staat open.",
+    "formSubtitle": "Op zoek naar een rol waarin ik een klantprobleem draag van open vraag tot productiesysteem. Vragen over een rol, onderzoek of samenwerking? De inbox staat open.",
     "nameLabel": "Naam",
     "namePlaceholder": "Je naam",
     "emailLabel": "E-mail",
@@ -237,7 +237,7 @@
         "badge": "PROJECT",
         "sector": "Engineering",
         "title": "Research pipelines as production systems",
-        "outcome": "Elk persoonlijk onderzoeksproject dat ik doe gebruikt Airflow 3-datapijplijnen die in dit project gehost worden. Het schaalt van een laptop tot een multi-machine CeleryExecutor-cluster. Dit project is gebouwd met idempotentie-guards, custom operators en agentic monitoring.",
+        "outcome": "Mijn onderzoeksprojecten draaien op Airflow 3-datapijplijnen die in dit project gehost worden. Het schaalt van een laptop tot een multi-machine CeleryExecutor-cluster. Dit project is gebouwd met idempotentie-guards, custom operators en agentic monitoring.",
         "stack": [
           "Airflow",
           "Celery",
@@ -267,7 +267,7 @@
         "badge": "PROJECT",
         "sector": "NLP · sequence tagging",
         "title": "SponsoredBye: sponsor-segment detection",
-        "outcome": "Een sponsor-skipper voor YouTube op basis van alleen tekst, gebouwd vóórdat YouTube Premium er een uitbracht: sentence-T5-embeddings voeden een BiLSTM-sequence-tagger die gesponsorde zinnen markeert en terugkoppelt naar tijdstempels, met een segmentatiefout die daalt van 99% naar 16% WindowDiff.",
+        "outcome": "Een sponsor-skipper voor YouTube op basis van alleen tekst: sentence-T5-embeddings voeden een BiLSTM-sequencetagger die gesponsorde zinnen markeert en terugvertaalt naar timestamps, waarmee de segmentatiefout daalt naar 16% WindowDiff tegenover een naïeve baseline van 99%.",
         "stack": [
           "TensorFlow",
           "BiLSTM",
@@ -360,8 +360,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ik beantwoord vragen met",
     "titleLine2Underline": "data",
-    "bio1": "Ik werk als Head of Data: ik leid het datateam dat ik tot vier engineers heb opgebouwd en ben eindverantwoordelijk voor de datafunctie, van het bouwen en onderhouden van de datasystemen tot het verzamelen, verwerken en structureren van data voor producten die gebruikt worden door pensioenfondsen, statistiekbureaus en vastgoedbeleggers met 10B AuM.",
-    "bio2": "De andere helft van het werk is klantgericht: ik onderhoud de klantrelaties met pensioenfondsen, vastgoedbeleggers en statistiekbureaus, presenteer methodologie aan portfoliomanagers en verdedig die tegenover statistici op PhD-niveau, en vertaal open klantvragen naar systemen die we kunnen bouwen.",
+    "bio1": "Ik werk als Head of Data: ik leid het datateam dat ik tot vier engineers heb opgebouwd en ben eindverantwoordelijk voor de datafunctie, van het bouwen en onderhouden van de datasystemen tot het verzamelen, verwerken en structureren van data voor producten die gebruikt worden door pensioenfondsen, statistiekbureaus en vastgoedbeleggers, waaronder een fonds met 10B AuM.",
+    "bio2": "De andere helft van het werk is klantgericht: ik onderhoud de klantrelaties met pensioenfondsen, vastgoedbeleggers en statistiekbureaus, presenteer methodologie aan portfoliomanagers en verdedig die in reviews met statistici van Eurostat en CBS, en vertaal open klantvragen naar systemen die we kunnen bouwen.",
     "factRoleK": "Rol",
     "factRoleV": "Head of Data",
     "factBasisK": "Basis",
@@ -384,12 +384,12 @@
       {
         "value": "13",
         "unit": "EU-landen · één pipeline",
-        "context": "Maandelijkse huizenprijsindex · getest met Eurostat"
+        "context": "Maandelijkse huizenprijsindex · gepubliceerd door Eurostat"
       },
       {
         "value": "1 score",
-        "unit": "live voor elke coördinaat · volledig ontleedbaar",
-        "context": "Connectivity Score · build met 13 servers"
+        "unit": "live voor elke coördinaat in 38 landen · volledig ontleedbaar",
+        "context": "Connectivity Score · in het PULSE-platform van a.s.r."
       },
       {
         "value": "300k",
@@ -436,13 +436,14 @@
     "submit": "Abonneren",
     "success": "Dank je, je staat op de lijst.",
     "error": "Er ging iets mis. Probeer opnieuw of mail rechtstreeks.",
-    "privacy": "Je adres wordt niet gedeeld."
+    "privacy": "Je adres wordt niet gedeeld.",
+    "emailLabel": "E-mailadres"
   },
   "Lanes": {
     "kicker": "Focusgebieden",
     "titleItalic": "Mijn",
     "titleRest": "focusgebieden",
-    "subtitle": "Als Head of Data draag ik veel petten. Mijn vier focusgebieden: de data-infrastructuur bouwen, de systemen zelf opzetten, verschillende soorten data hanteren en de analytics erbovenop draaien.",
+    "subtitle": "Head of Data in de praktijk: de data-infrastructuur bouwen, de systemen eronder opzetten, de klantkant dragen en de analytics erbovenop draaien.",
     "appliedAcross": "",
     "automationNote": "",
     "items": [
@@ -459,7 +460,7 @@
       },
       {
         "name": "Systeemarchitectuur",
-        "blurb": "Het platform eronder opzetten: serverinstances, PostGIS, gedistribueerde Iceberg-compute en dataverwerkingsservers, netwerken/VPN, API's en security. Voorbeeld: 8 gedistribueerde servers die als productie-infrastructuur draaien om bergen complexe dataproducten aan te kunnen.",
+        "blurb": "Het platform eronder opzetten: serverinstances, PostGIS, gedistribueerde Iceberg-compute en dataverwerkingsservers, netwerken/VPN, API's en security. Voorbeeld: 8 gedistribueerde servers die als vaste productie-infrastructuur draaien om bergen complexe dataproducten aan te kunnen.",
         "stack": [
           "Linux/Bash",
           "Resource Management & S3",
@@ -469,8 +470,8 @@
         ]
       },
       {
-        "name": "Complexe dataproducten",
-        "blurb": "Complexe en onconventionele datatypes omzetten in bruikbare data voor analytics: ruimtelijke en netwerkdata, documentdata en tijdreeksen, end-to-end in eigen beheer van ruwe data tot inzichten.",
+        "name": "Klant- en stakeholderwerk",
+        "blurb": "De klantkant van het werk: methodologiereviews met statistici van Eurostat en CBS, presentaties aan portfoliomanagers, en langdurige klantrelaties met pensioenfondsen, vastgoedbeleggers en statistiekbureaus. Open vragen komen binnen; productie-API's gaan eruit.",
         "stack": [
           "Spatial",
           "Graph",
