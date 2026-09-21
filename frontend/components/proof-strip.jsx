@@ -61,7 +61,7 @@ export function ProofStrip() {
       <div className="proof-cta-row">
         <a
           href="/ian-ronk-cv.pdf"
-          download="ian-ronk-cv.pdf"
+          download="IanRonk_CV.pdf"
           className="btn primary"
           onClick={() => trackEvent("cta_click", { cta: "resume_download", location: "home_proof_strip", source: "home_proof_primary" })}
         >

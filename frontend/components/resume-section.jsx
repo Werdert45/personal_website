@@ -55,7 +55,7 @@ export function ResumeSection() {
 
       <a
         href="/ian-ronk-cv.pdf"
-        download="ian-ronk-cv.pdf"
+        download="IanRonk_CV.pdf"
         className="btn primary"
         style={{ marginBottom: 64 }}
       >

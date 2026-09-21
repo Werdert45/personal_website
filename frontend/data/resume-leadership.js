@@ -22,8 +22,8 @@ export const resumeLeadership = {
   },
 
   achievements: [
-    "Led a three-year study for Eurostat on house-price indices from web-scraped listings across 13 EU countries; officially published by Eurostat.",
-    "Took a global connectivity score from client question to production API, rolled out across 38 countries in Europe, North America and APAC; now being productised for the wider client base.",
+    "Technical lead on a three-year Eurostat study on house-price indices from web-scraped listings across 13 EU countries; officially published by Eurostat.",
+    "Built the Global Connectivity Score from client question to production API, computed live for any coordinate across 38 countries; now integrated into a.s.r. real assets investment partners' PULSE platform.",
     "Replaced CSV-based data management with a distributed Airflow platform on Iceberg and FastAPI, making the platform reproducible and cutting infrastructure cost.",
     "Introduced agentic workflows into internal operations and replaced manual parsing of documents with OCR, saving weeks of manual data entry.",
   ],
@@ -37,15 +37,15 @@ export const resumeLeadership = {
       {
         theme: "Head of Data · Jul 2025 – present",
         bullets: [
-          "Lead a team of 4 and own the data function: architecture, delivery and the transformation of the product offering.",
+          "Lead the data team (built up to four engineers) and own the data function: architecture, delivery and the transformation of the product offering.",
           "Run the data platform in production: 1TB+ processed across 13 servers, with agentic monitoring and containerised deployment.",
           "Own the client relationships: pension funds, real estate investors and national statistical offices; present and defend methodology to portfolio managers, senior stakeholders and PhD-level statisticians.",
         ],
       },
       {
-        theme: "Medior Data Scientist · Jun 2022 – Jul 2025",
+        theme: "Data Scientist & Technical Lead · Jun 2022 – Jul 2025",
         bullets: [
-          "Project lead on two multi-year engagements, including the three-year Eurostat study; the Head of Data title formalised a responsibility held since 2022.",
+          "Technical lead on two multi-year engagements, including the three-year Eurostat study: led the technical side for eight people across a two-organisation consortium; the Head of Data title formalised a responsibility held since 2022.",
           "Drove the re-architecture from legacy systems to Airflow, Iceberg and FastAPI, from the decision through migration and operation.",
           "Built and operated production pipelines, including a weekly scrape of 300k records feeding spatial data products; client-facing throughout with CBS, Eurostat and pension funds.",
         ],
@@ -63,7 +63,7 @@ export const resumeLeadership = {
   // Single line, no bullets: five years old, part-time alongside study.
   otherExperience: [
     {
-      line: "Junior Full-Stack Developer, Exact (part-time): expense management software (EmberJS, PHP)",
+      line: "Junior Full-Stack Developer, Exact (formerly SRXP) (part-time): expense management software (EmberJS, PHP)",
       period: "Sep 2019 – Oct 2021",
     },
   ],
