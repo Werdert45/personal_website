@@ -6,7 +6,7 @@ status: published
 category: project
 publication_status: ""
 tags: ["mobile-ml", "flutter", "tflite", "segment-anything", "resnet", "computer-vision"]
-abstract: "A mobile fish-identification app plus its own ML training pipeline. Photograph a fish and the app classifies it on-device against 63 Dutch freshwater and coastal species, returning a hand-written Dutch species profile: size, edibility, conservation status, season. Around the classifier sits a gamified FishDex: a Pokédex-style collection where caught species unlock, with accounts, friends and a catch dashboard. A later training-pipeline rebuild reworks the classifier with a point-prompted Segment Anything masking step over ~3,000 self-collected photos, feeding a fine-tuned ResNet50 that ships compressed into the app."
+abstract: "A mobile fish-identification app plus its own ML training pipeline. Photograph a fish and the app classifies it on-device against 63 Dutch freshwater and coastal species, returning a hand-written Dutch species profile: size, edibility, conservation status, season. Around the classifier sits a gamified FishDex: a Pokédex-style collection where caught species unlock, with accounts, friends and a catch dashboard. A later training-pipeline rebuild reworks the classifier with a point-prompted Segment Anything masking step over ~3,000 self-collected photos, feeding a fine-tuned ResNet50 (a 90 MB full model) that ships compressed to 8.8 MB inside the app."
 read_time: "5 min"
 date: "2022"
 doi: ""
@@ -25,7 +25,7 @@ Fish in hand, dripping, camera out, and no certainty about what you are holding:
 
 ## The app
 
-FishFinder is a **cross-platform app**, one Flutter codebase covering iOS and Android, with full camera and gallery capture, and the part I'm proudest of: the machine-learning model is **hosted locally, on the phone itself**. The shipped classifier is an **8.8 MB TFLite file bundled inside the app**. There is no inference server, no network round-trip, and no spinner while your catch flops around. It works on a boat in the middle of a lake with zero bars, which is precisely where you need it.
+FishFinder is a **cross-platform app**, one Flutter codebase covering iOS and Android, with full camera and gallery capture, and the part I'm proudest of: the machine-learning model is **hosted locally, on the phone itself**. The shipped classifier is an **8.8 MB TFLite file bundled inside the app**, compressed from the 90 MB full ResNet50. There is no inference server, no network round-trip, and no spinner while your catch flops around. It works on a boat in the middle of a lake with zero bars, which is precisely where you need it.
 
 ![Diagram of the FishFinder flow: the camera frames a fish, an on-device ResNet50 in TFLite classifies it with no cloud involved, and the result unlocks a cell in the FishDex](/projects/fishfinder-on-device-fish-id/app-flow-diagram.svg)
 *The whole loop runs on the phone: camera → local model → species page → FishDex unlock.*

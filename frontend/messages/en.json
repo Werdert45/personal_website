@@ -180,8 +180,7 @@
     "bandLine2Italic": "ideas, roles?",
     "bandLine3": "Get in touch.",
     "linkLinkedIn": "LinkedIn",
-    "linkGitHub": "GitHub",
-    "linkBookCall": "Book a call"
+    "linkGitHub": "GitHub"
   },
   "Projects": {
     "kicker": "Projects & papers: systems, products, research",
@@ -282,7 +281,7 @@
         "badge": "PROJECT",
         "sector": "Mobile ML",
         "title": "FishFinder: photo-to-species ID",
-        "outcome": "A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model for on-device use.",
+        "outcome": "A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 (a 90 MB full model) compressed to an 8.8 MB TFLite model for on-device use.",
         "stack": [
           "Flutter/Dart",
           "TFLite",
@@ -487,7 +486,7 @@
           "Regression",
           "Time Series",
           "Simulations",
-          "Insights",
+          "Nowcasting",
           "Statistical Analysis"
         ]
       }

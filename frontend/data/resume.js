@@ -89,7 +89,7 @@ export const resume = {
   research: [
     {
       title: "Calibrating Free Postcode Boundaries from OpenStreetMap",
-      venue: "Release August 2026",
+      venue: "Release expected 2026",
       year: "2026",
       result:
         "Seed-density-to-IoU calibration of an OSM-Voronoi pipeline; NL/DK references, transfer to BE, applied to Italy's 4,209 CAP polygons.",
@@ -150,7 +150,7 @@ export const resume = {
     },
     {
       name: "FishFinder: photo-to-species ID",
-      line: "Flutter app identifying 63 Dutch fish species from a photo, fully on-device: ~3,000 hand-annotated photos masked with Segment Anything, a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model.",
+      line: "Flutter app identifying 63 Dutch fish species from a photo, fully on-device: ~3,000 hand-annotated photos masked with Segment Anything, a fine-tuned ResNet50 (90 MB) compressed to an 8.8 MB TFLite model.",
       stack: "Flutter/Dart · TFLite · ResNet50 · Segment Anything Model (SAM) · Firebase",
     },
   ],

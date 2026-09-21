@@ -255,7 +255,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Lanes.items[3].stack[2]`  
   Simulations
 - `Lanes.items[3].stack[3]`  
-  Insights
+  Nowcasting
 - `Lanes.items[3].stack[4]`  
   Statistical Analysis
 
@@ -408,7 +408,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[6].title`  
   FishFinder: photo-to-species ID
 - `Projects.items[6].outcome`  
-  A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 compressed to an 8.8 MB TFLite model for on-device use.
+  A Flutter app that identifies 63 Dutch fish species from a photo, fully on-device, and fills a Pokédex-style FishDex as you catch them. The training pipeline: ~3,000 hand-annotated photos masked with Segment Anything Model, then a fine-tuned ResNet50 (a 90 MB full model) compressed to an 8.8 MB TFLite model for on-device use.
 - `Projects.items[6].stack[0]`  
   Flutter/Dart
 - `Projects.items[6].stack[1]`  
@@ -659,7 +659,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.research[0].title`  
   Calibrating Free Postcode Boundaries from OpenStreetMap
 - `resume.research[0].venue`  
-  Release August 2026
+  Release expected 2026
 - `resume.research[0].year`  
   2026
 - `resume.research[0].result`  
@@ -940,8 +940,6 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   LinkedIn
 - `Contact.linkGitHub`  
   GitHub
-- `Contact.linkBookCall`  
-  Book a call
 
 
 ## Widgets
