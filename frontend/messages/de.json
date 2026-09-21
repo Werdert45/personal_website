@@ -473,9 +473,9 @@
         "name": "Kunden- und Stakeholderarbeit",
         "blurb": "Die Kundenseite der Arbeit: Methodik-Reviews mit Statistikern von Eurostat und CBS, Präsentationen vor Portfoliomanagern und langjährige Kundenbeziehungen zu Pensionsfonds, Immobilieninvestoren und Statistikämtern. Offene Fragen kommen rein; Produktions-APIs gehen raus.",
         "stack": [
-          "Spatial",
-          "Graph",
-          "NoSQL/MongoDB",
+          "Methodology reviews",
+          "Presentations",
+          "Requirement definition",
           "OCR",
           "Data Validation"
         ]

@@ -473,9 +473,9 @@
         "name": "Klant- en stakeholderwerk",
         "blurb": "De klantkant van het werk: methodologiereviews met statistici van Eurostat en CBS, presentaties aan portfoliomanagers, en langdurige klantrelaties met pensioenfondsen, vastgoedbeleggers en statistiekbureaus. Open vragen komen binnen; productie-API's gaan eruit.",
         "stack": [
-          "Spatial",
-          "Graph",
-          "NoSQL/MongoDB",
+          "Methodology reviews",
+          "Presentations",
+          "Requirement definition",
           "OCR",
           "Data Validation"
         ]

@@ -473,9 +473,9 @@
         "name": "Clienti e stakeholder",
         "blurb": "Il lato cliente del lavoro: review metodologiche con statistici di Eurostat e CBS, presentazioni ai portfolio manager e relazioni di lungo periodo con fondi pensione, investitori immobiliari e istituti di statistica. Le domande aperte entrano; le API in produzione escono.",
         "stack": [
-          "Spatial",
-          "Graph",
-          "NoSQL/MongoDB",
+          "Methodology reviews",
+          "Presentations",
+          "Requirement definition",
           "OCR",
           "Data Validation"
         ]

@@ -235,11 +235,11 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Lanes.items[2].blurb`  
   The client side of the job: methodology reviews with Eurostat and CBS statisticians, presentations to portfolio managers, and long-run client relationships with pension funds, real estate investors and national statistical offices. Open questions come in; production APIs go out.
 - `Lanes.items[2].stack[0]`  
-  Spatial
+  Methodology reviews
 - `Lanes.items[2].stack[1]`  
-  Graph
+  Presentations
 - `Lanes.items[2].stack[2]`  
-  NoSQL/MongoDB
+  Requirement definition
 - `Lanes.items[2].stack[3]`  
   OCR
 - `Lanes.items[2].stack[4]`  

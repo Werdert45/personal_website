@@ -473,9 +473,9 @@
         "name": "Client & Stakeholder Work",
         "blurb": "The client side of the job: methodology reviews with Eurostat and CBS statisticians, presentations to portfolio managers, and long-run client relationships with pension funds, real estate investors and national statistical offices. Open questions come in; production APIs go out.",
         "stack": [
-          "Spatial",
-          "Graph",
-          "NoSQL/MongoDB",
+          "Methodology reviews",
+          "Presentations",
+          "Requirement definition",
           "OCR",
           "Data Validation"
         ]
