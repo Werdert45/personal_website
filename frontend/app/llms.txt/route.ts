@@ -17,7 +17,7 @@ Big data pipelines · Network science · Time-series forecasting & nowcasting ·
 
 ## Evidence
 - Monthly EU house-price index across 13 countries, published as an official Eurostat statistical working paper
-- Connectivity/walkability score computed live for any coordinate across 38 countries: a 13-server build, now in a.s.r. real assets investment partners' PULSE platform
+- Connectivity/walkability score computed live for any coordinate across 38 countries: a 13-server build, now in a.s.r. real assets investment partners' PULSE platform (announced: https://asrrealestate.nl/nieuws-en-publicaties/persberichten/asr-real-assets-en-kra-ontwikkelen-nieuwe-wereldwijde-standaard-voor-vastgoedlocatie-analyses)
 - Three-year weekly scrape: 300k records a week across 8 authenticated sources; feeds a real estate fund's data products`
 
 const stripItalics = (text: string) => text.replace(/[*_]/g, '')
