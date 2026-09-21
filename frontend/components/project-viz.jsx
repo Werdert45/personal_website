@@ -781,7 +781,7 @@ export function VizFlood() {
     <svg
       viewBox="0 0 320 180"
       role="img"
-      aria-label="Terrain cross-section: flood risk predicted from relative height, distance to river, and imperviousness; random forest 97.5% accuracy"
+      aria-label="Terrain cross-section: flood risk predicted from relative height, distance to river, and imperviousness; random forest 97% accuracy"
       style={{ width: "100%", height: "100%" }}
     >
       <defs>
@@ -839,7 +839,7 @@ export function VizFlood() {
       <line x1="48" y1="82" x2="38" y2="93" stroke="#8A8676" strokeWidth="0.6" />
 
       <g fontFamily="var(--font-mono)">
-        <text x="306" y="18" textAnchor="end" fontSize="8" fill="#111110">RF 97.5%</text>
+        <text x="306" y="18" textAnchor="end" fontSize="8" fill="#111110">RF 97%</text>
         <text x="306" y="27" textAnchor="end" fontSize="6.5" fill="#8A8676">33 features</text>
         <text x="116" y="38" textAnchor="middle" fontSize="7" fill="#111110">d(river)</text>
         <text x="141" y="92" fontSize="7" fill="#111110">Δh</text>

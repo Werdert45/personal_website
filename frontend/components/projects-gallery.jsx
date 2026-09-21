@@ -64,8 +64,22 @@ export function ProjectsGallery() {
       </div>
 
       <div className="projects-grid">
-        {items.map((item, i) => {
-          const num = String(i + 1).padStart(2, "0");
+        {items.slice(0, 2).map((item, i) => renderCard(item, i))}
+      </div>
+
+      <div className="section-label" style={{ marginTop: 72 }}>
+        <span className="bar" />
+        <span>{t("secondaryHeading")}</span>
+      </div>
+
+      <div className="projects-grid" style={{ marginTop: 40 }}>
+        {items.slice(2).map((item, i) => renderCard(item, i + 2))}
+      </div>
+    </section>
+  );
+
+  function renderCard(item, i) {
+    const num = String(i + 1).padStart(2, "0");
                     const isExternalLink = item.link && /^https?:\/\//.test(item.link);
           const linkLabel = t("viewCase");
           const localizedHref = item.link ? (isExternalLink ? item.link : `/${locale}${item.link}`) : null;
@@ -125,8 +139,5 @@ export function ProjectsGallery() {
               {cardInner}
             </div>
           );
-        })}
-      </div>
-    </section>
-  );
+  }
 }

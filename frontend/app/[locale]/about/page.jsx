@@ -8,7 +8,7 @@ export async function generateMetadata({ params }) {
   return {
     title: "Resume & competences: Head of Data",
     description:
-      "Resume of Ian Ronk, Head of Data in Amsterdam: leads a team of 4 and builds the systems himself, with competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
+      "Resume of Ian Ronk, Head of Data in Amsterdam: leads the data team he built up to four engineers and builds the systems himself, with competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
     alternates: {
       canonical: url,
       languages: {
@@ -22,7 +22,7 @@ export async function generateMetadata({ params }) {
     openGraph: {
       title: "Resume & competences: Head of Data",
       description:
-        "Resume of Ian Ronk, Head of Data in Amsterdam: leads a team of 4 and builds the systems himself, with competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
+        "Resume of Ian Ronk, Head of Data in Amsterdam: leads the data team he built up to four engineers and builds the systems himself, with competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.",
       url,
       type: "website",
       images: ["/og.png"],

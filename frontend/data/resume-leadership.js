@@ -53,7 +53,7 @@ export const resumeLeadership = {
       {
         theme: "Junior Data Scientist · Oct 2021 – Jun 2022",
         bullets: [
-          "Flood-occurrence prediction from alternative data (BSc-thesis project); 90%+ accuracy in risk classification.",
+          "Flood-occurrence prediction from alternative data (BSc-thesis project); 97% accuracy in risk classification.",
           "Improved the core spatial API's response times tenfold through geospatial query optimisation, resulting in promotion.",
         ],
       },

@@ -170,9 +170,9 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `AboutTeaser.titleLine2Underline`  
   data
 - `AboutTeaser.bio1`  
-  I work as Head of Data: I lead a team of 4 and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, bureaus of statistics and real estate investors with 10B AuM.
+  I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors with 10B AuM.
 - `AboutTeaser.bio2`  
-  Over the course of my career I worked with many different types of data and tools, building custom systems for the data problems at hand and talking to client stakeholders.
+  The other half of the job is client-facing: I own the client relationships with pension funds, real estate investors and national statistical offices, present methodology to portfolio managers and defend it against PhD-level statisticians, and turn open client questions into systems we can build.
 - `AboutTeaser.factRoleK`  
   Role
 - `AboutTeaser.factRoleV`  
@@ -219,7 +219,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Lanes.items[1].name`  
   System Architecture
 - `Lanes.items[1].blurb`  
-  Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 13 different services run as production infrastructure to handle loads of complex data products.
+  Setting up the platform underneath: server instances, PostGIS, distributed Iceberg compute and data processing servers, networking/VPN, APIs and security. Example: 8 distributed servers run as production infrastructure to handle loads of complex data products.
 - `Lanes.items[1].stack[0]`  
   Linux/Bash
 - `Lanes.items[1].stack[1]`  
@@ -269,6 +269,8 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   & papers.
 - `Projects.subtitle`  
   Eight pieces of work across the four lanes: production systems, shipped products, and the research they make possible.
+- `Projects.secondaryHeading`  
+  Side projects & research
 - `Projects.items[0].viz`  
   connectivity
 - `Projects.items[0].badge`  
@@ -278,7 +280,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[0].title`  
   Connectivity & walkability scoring
 - `Projects.items[0].outcome`  
-  A project I led at KR&A: a saturation-validated connectivity and walkability score for every address on a 250 m grid, rolled out across 38 countries in Europe, North America and APAC, working with TBs of data and 100s of data sources. It began as one client's question and shipped as a production API, now being productised for the wider client base.
+  A project I led at KR&A: a connectivity and walkability score computed live for any coordinate in 38 countries across Europe, North America and APAC, with a precomputed 250 m grid as fallback, working with TBs of data and 100s of data sources. It began as one client's question and shipped as a production API, now integrated into a.s.r. real assets investment partners' PULSE platform.
 - `Projects.items[0].stack[0]`  
   PostGIS
 - `Projects.items[0].stack[1]`  
@@ -287,8 +289,6 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   Dijkstra & Network Science
 - `Projects.items[0].stack[3]`  
   Distributed Compute
-- `Projects.items[0].stack[4]`  
-  Docker
 - `Projects.items[0].link`  
   /research/connectivity-score-multimodal-accessibility
 - `Projects.items[1].viz`  
@@ -300,7 +300,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[1].title`  
   Monthly house-price index · 13 EU countries
 - `Projects.items[1].outcome`  
-  A multi-year study I led at KR&A: a web-scraping pipeline across 13 EU countries feeding log-price hedonic regressions into monthly indices, tested as disaggregation indicators for Eurostat's quarterly HPIs and published as an official Eurostat statistical working paper.
+  A multi-year study at KR&A where I was technical lead: a web-scraping pipeline across 13 EU countries feeding log-price hedonic regressions into monthly indices, tested as disaggregation indicators for Eurostat's quarterly HPIs; the work is officially published by Eurostat as a statistical working paper.
 - `Projects.items[1].stack[0]`  
   Python
 - `Projects.items[1].stack[1]`  
@@ -309,74 +309,74 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   PostGIS
 - `Projects.items[1].stack[3]`  
   MongoDB
+- `Projects.items[1].stack[4]`  
+  R
 - `Projects.items[1].link`  
   /research/eurostat-monthly-hpi-web-scraped
 - `Projects.items[2].viz`  
-  language
-- `Projects.items[2].badge`  
-  PROJECT
-- `Projects.items[2].sector`  
-  AI product
-- `Projects.items[2].title`  
-  LanguageBuddy: AI language tutor
-- `Projects.items[2].outcome`  
-  A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries.
-- `Projects.items[2].stack[0]`  
-  FastAPI
-- `Projects.items[2].stack[1]`  
-  LLM
-- `Projects.items[2].stack[2]`  
-  TTS
-- `Projects.items[2].stack[3]`  
-  SQLite
-- `Projects.items[2].stack[4]`  
-  Docker
-- `Projects.items[2].link`  
-  /research/languagebuddy-ai-language-tutor
-- `Projects.items[3].viz`  
   abm
-- `Projects.items[3].badge`  
+- `Projects.items[2].badge`  
   RESEARCH
-- `Projects.items[3].sector`  
+- `Projects.items[2].sector`  
   MSc Thesis · Bocconi
-- `Projects.items[3].title`  
+- `Projects.items[2].title`  
   Gentrification agent-based model
-- `Projects.items[3].outcome`  
+- `Projects.items[2].outcome`  
   My MSc Thesis research on gentrification, where I built an agent-based model of neighbourhood change: households interact with neighborhoods in the treated cities Amsterdam, Utrecht and Milan based on their own income, the affordability of the neighborhood and the attractiveness, based on elements such as streetview imagery 'beauty' classification, GTFS connectivity, greenery and neighborhood sentiment online. A two-tenure social-housing extension is in progress.
-- `Projects.items[3].stack[0]`  
+- `Projects.items[2].stack[0]`  
   Python/GeoPandas
-- `Projects.items[3].stack[1]`  
+- `Projects.items[2].stack[1]`  
   Large Vision Model
-- `Projects.items[3].stack[2]`  
+- `Projects.items[2].stack[2]`  
   PostGIS
-- `Projects.items[3].stack[3]`  
+- `Projects.items[2].stack[3]`  
   Agent-based Modeling
-- `Projects.items[3].stack[4]`  
-  Huggingface
-- `Projects.items[3].link`  
+- `Projects.items[2].link`  
   /research/gentrification-abm-european-cities
-- `Projects.items[4].viz`  
+- `Projects.items[3].viz`  
   pipelines
+- `Projects.items[3].badge`  
+  PROJECT
+- `Projects.items[3].sector`  
+  Engineering
+- `Projects.items[3].title`  
+  Research pipelines as production systems
+- `Projects.items[3].outcome`  
+  Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.
+- `Projects.items[3].stack[0]`  
+  Airflow
+- `Projects.items[3].stack[1]`  
+  Celery
+- `Projects.items[3].stack[2]`  
+  Docker
+- `Projects.items[3].stack[3]`  
+  CI
+- `Projects.items[3].stack[4]`  
+  DuckDB
+- `Projects.items[3].link`  
+  /thoughts/research-pipelines-are-production-systems
+- `Projects.items[4].viz`  
+  language
 - `Projects.items[4].badge`  
   PROJECT
 - `Projects.items[4].sector`  
-  Engineering
+  AI product
 - `Projects.items[4].title`  
-  Research pipelines as production systems
+  LanguageBuddy: AI language tutor
 - `Projects.items[4].outcome`  
-  Every personal research project I undertake uses Airflow 3 data pipelines that are hosted in this project. It can scale from a laptop to a multi-machine CeleryExecutor cluster. This project was built with idempotency guards, custom operators and agentic monitoring.
+  A self-hosted AI language tutor for Dutch, Italian and Spanish, built on language learning research that includes a chat or voice-call LLM tutor and SM-2 repetition. Every mistake is captured into a spaced-repetition queue that drives the next day's exercises and uses a real-news scraper for reading learning. Follows the CEFR framework with 6,200+ vocabulary entries.
 - `Projects.items[4].stack[0]`  
-  Airflow
+  FastAPI
 - `Projects.items[4].stack[1]`  
-  Celery
+  LLM
 - `Projects.items[4].stack[2]`  
-  Docker
+  TTS
 - `Projects.items[4].stack[3]`  
-  CI
+  SQLite
 - `Projects.items[4].stack[4]`  
-  DuckDB
+  Docker
 - `Projects.items[4].link`  
-  /thoughts/research-pipelines-are-production-systems
+  /research/languagebuddy-ai-language-tutor
 - `Projects.items[5].viz`  
   sponsor
 - `Projects.items[5].badge`  
@@ -395,6 +395,8 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   sentence-T5
 - `Projects.items[5].stack[3]`  
   MongoDB
+- `Projects.items[5].stack[4]`  
+  Huggingface
 - `Projects.items[5].link`  
   /research/sponsoredbye-sponsored-segment-detection
 - `Projects.items[6].viz`  
@@ -415,6 +417,8 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   ResNet50
 - `Projects.items[6].stack[3]`  
   Segment Anything Model (SAM)
+- `Projects.items[6].stack[4]`  
+  Firebase
 - `Projects.items[6].link`  
   /research/fishfinder-on-device-fish-id
 - `Projects.items[7].viz`  
@@ -426,7 +430,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Projects.items[7].title`  
   Predicting flooding risk from local features
 - `Projects.items[7].outcome`  
-  My BSc thesis, looking at whether flood risk can be explained by local features instead of a black-box hydrodynamic simulation. Collected 33 features across ~45,000 European locations, such as ground imperviousness, ground type and distance to river, across 100GB+ of data and ran a Random Forest to find their relation. Findings: 97.5% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.
+  My BSc thesis, looking at whether flood risk can be explained by local features instead of a black-box hydrodynamic simulation. Collected 33 features across ~45,000 European locations, such as ground imperviousness, ground type and distance to river, across 100GB+ of data and ran a Random Forest to find their relation. Findings: 97% on the binary 20-year flood question, with surrounding imperviousness and relative height doing most of the work.
 - `Projects.items[7].stack[0]`  
   scikit-learn
 - `Projects.items[7].stack[1]`  
@@ -435,8 +439,6 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
   raster data
 - `Projects.items[7].stack[3]`  
   GIS
-- `Projects.items[7].stack[4]`  
-  R
 - `Projects.items[7].link`  
   /research/predicting-flooding-risk-local-features
 - `Projects.viewCase`  
@@ -487,7 +489,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.heroTitleLine3`  
   & leading teams.
 - `About.lede1`  
-  I'm Ian, Head of Data from Amsterdam. I lead a team of 4 and still build the systems myself: taking a messy, real-world problem, turning it into something buildable, and running what ships. Two loves have shaped most of my choices: languages and complex problems. The first has me at five languages and pulled me to Italy for part of my studies. The second became my work. Cities are my favourite version of that problem, which is why my research keeps returning to urban dynamics: how neighbourhoods change, when a metro line moves prices, what makes a place reachable.
+  I'm Ian, Head of Data from Amsterdam. I lead the data team I built up to four engineers, and still build the systems myself: taking a messy, real-world problem, turning it into something buildable, and running what ships. Two loves have shaped most of my choices: languages and complex problems. The first has me at five languages and pulled me to Italy for part of my studies. The second became my work. Cities are my favourite version of that problem, which is why my research keeps returning to urban dynamics: how neighbourhoods change, when a metro line moves prices, what makes a place reachable.
 - `About.lede2`  
   My skillset: translating stakeholder requirements into data systems that keep working.
 - `About.journeyTitlePrefixItalic`  
@@ -525,7 +527,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.expertise[2].name`  
   System Architecture
 - `About.expertise[2].blurb`  
-  The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 13 different services run as production infrastructure.
+  The platform underneath: server instances, PostGIS, distributed Iceberg compute, networking/VPN, APIs and security. 8 distributed servers run as production infrastructure.
 - `About.expertise[2].stack[0]`  
   Linux/Bash
 - `About.expertise[2].stack[1]`  
@@ -539,7 +541,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `About.expertise[3].name`  
   Product Ownership
 - `About.expertise[3].blurb`  
-  End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a team of 4 led at KR&A.
+  End-to-end ownership from method to shipped API: a 13-server build, client stakeholders from pension funds to statistics bureaus, and a data team built up to four engineers at KR&A.
 - `About.expertise[3].stack[0]`  
   Team of 4
 - `About.expertise[3].stack[1]`  
@@ -593,7 +595,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.header.softSkills`  
   Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Reliability
 - `resume.header.summary`  
-  Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads a team of 4 as Head of Data; interest in research on urban dynamics.
+  Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads the data team, built up to four engineers, as Head of Data; interest in research on urban dynamics.
 - `resume.engineering[0].role`  
   Head of Data
 - `resume.engineering[0].org`  
@@ -603,7 +605,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.engineering[0].period`  
   Jul 2025 – present
 - `resume.engineering[0].bullets[0]`  
-  Lead a team of 4 through a transformation of the product offering, serving pension funds and leading FinTechs.
+  Lead the data team (built up to four engineers) through a transformation of the product offering, serving pension funds and leading FinTechs.
 - `resume.engineering[0].bullets[1]`  
   Develop, maintain and expand data pipelines (e.g. a weekly scrape of 300k records) and spatial big data products.
 - `resume.engineering[0].bullets[2]`  
@@ -627,7 +629,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `resume.engineering[2].period`  
   Jun 2022 – Jul 2025
 - `resume.engineering[2].bullets[0]`  
-  Project lead for two multi-year projects, including a 3-year hedonic house-price-index project for Eurostat: scraping, storing and managing the data, building the regressions, interpreting results.
+  Technical lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: scraping, storing and managing the data, building the regressions, interpreting results.
 - `resume.engineering[2].bullets[1]`  
   Restructured data infrastructure from legacy systems to Airflow, Iceberg and FastAPI.
 - `resume.engineering[2].bullets[2]`  
@@ -867,7 +869,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Contact.roleTitle`  
   Head of Data
 - `Contact.bio`  
-  I am Ian, Head of Data in Amsterdam. I lead a team of 4 and build production data systems and the analytics on top, from any complex data type: web-scraped, geospatial, graph or tabular. I answer stakeholder questions and defend the methodology behind the answers.
+  I am Ian, Head of Data in Amsterdam. I lead the data team I built up to four engineers. I build production data systems and the analytics on top, from any complex data type: web-scraped, geospatial, graph or tabular. I answer stakeholder questions and defend the methodology behind the answers.
 - `Contact.location`  
   Amsterdam, Netherlands
 - `Contact.company`  
@@ -989,7 +991,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `about.metadata.title` (frontend/app/[locale]/about/page.jsx)  
   Resume & competences: Head of Data
 - `about.metadata.description` (frontend/app/[locale]/about/page.jsx)  
-  Resume of Ian Ronk, Head of Data in Amsterdam: leads a team of 4 and builds the systems himself, with competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.
+  Resume of Ian Ronk, Head of Data in Amsterdam: leads the data team he built up to four engineers and builds the systems himself, with competences across big data, network science, forecasting and spatial analysis, plus experience, education and publications.
 - `projects.metadata.description` (frontend/app/[locale]/projects/page.jsx)  
   Projects and papers by Ian Ronk: production data systems, shipped products, and research on urban dynamics, housing markets and geospatial methods.
 - `thoughts.metadata.title` (frontend/app/[locale]/thoughts/page.jsx)  
@@ -1026,7 +1028,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Proof.outcomes[1].value`  
   1 score
 - `Proof.outcomes[1].unit`  
-  every address · saturation-validated
+  live for any coordinate · fully decomposable
 - `Proof.outcomes[1].context`  
   Connectivity Score · 13-server build
 - `Proof.outcomes[2].value`  

@@ -27,7 +27,7 @@ export const resume = {
     softSkills:
       "Multi-year project management · Client & stakeholder communication · Presenting and defending methodology to technical and senior audiences · Dependable",
     summary:
-      "Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads a team of 4 as Head of Data; interest in research on urban dynamics.",
+      "Production data systems and the data engineering behind research: Airflow, DuckDB and PostGIS pipelines that turn open spatial data into papers. Leads the data team, built up to four engineers, as Head of Data; interest in research on urban dynamics.",
   },
 
   engineering: [
@@ -37,7 +37,7 @@ export const resume = {
       orgNote: "Amsterdam",
       period: "Jul 2025 – present",
       bullets: [
-        "Lead a team of 4 through a transformation of the product offering, serving pension funds, real estate investors and national statistical offices.",
+        "Lead the data team (built up to four engineers) through a transformation of the product offering, serving pension funds, real estate investors and national statistical offices.",
         "Develop, maintain and expand data pipelines (e.g. a weekly scrape of 300k records) and spatial big data products.",
         "Delivered a global connectivity score: 1TB+ processed across 13 servers into a production API.",
         "Represent the data function with clients: defending methodology against PhD-level scrutiny, presenting to portfolio managers and senior stakeholders.",
@@ -59,7 +59,7 @@ export const resume = {
       orgNote: "",
       period: "Jun 2022 – Jul 2025",
       bullets: [
-        "Project lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: scraping, storing and managing the data, building the regressions, interpreting results.",
+        "Technical lead for two multi-year projects, including a hedonic house-price-index study for Eurostat, published as an official Eurostat statistical working paper: scraping, storing and managing the data, building the regressions, interpreting results.",
         "Restructured data infrastructure from legacy systems to Airflow, Iceberg and FastAPI.",
         "Client-facing throughout, with CBS, Eurostat and pension funds.",
       ],
@@ -70,7 +70,7 @@ export const resume = {
       orgNote: "",
       period: "Oct 2021 – Jun 2022",
       bullets: [
-        "Flood-occurrence prediction from alternative data (BSc-thesis project); 90%+ accuracy in risk classification.",
+        "Flood-occurrence prediction from alternative data (BSc-thesis project); 97% accuracy in risk classification.",
         "Improved API efficiency tenfold through spatial optimisations, resulting in promotion.",
       ],
     },

@@ -1,12 +1,12 @@
 ---
 title: "Predicting Flooding Risk for Pan-European REIT Assets using Local Features"
 slug: predicting-flooding-risk-local-features
-excerpt: "Can flood risk be explained instead of simulated? A BSc AI thesis reproducing the EU's hydrodynamic flood maps from 33 local features. A Random Forest reaches 97.5% on the binary 20-year flood question, driven by surrounding imperviousness and relative height."
+excerpt: "Can flood risk be explained instead of simulated? A BSc AI thesis reproducing the EU's hydrodynamic flood maps from 33 local features. A Random Forest reaches 97% on the binary 20-year flood question, driven by surrounding imperviousness and relative height."
 status: published
 category: project
 publication_status: thesis
 tags: ["flood-risk", "random-forest", "geospatial", "real-estate", "explainability", "thesis"]
-abstract: "The standard pan-European fluvial flood hazard maps come from a 2D hydrodynamic simulation: accurate, but neither explainable nor adaptable. This BSc thesis (Artificial Intelligence, University of Amsterdam, 2022; industry partner KR&A) asks whether those simulated flood-return-period labels can be reproduced from local, interpretable features of a location. Thirty-three features across micro, meso and macro scales (precipitation extremes, ground type, artificial imperviousness at multiple radii, distance and relative height to the nearest river, terrain depressions, regional economics) are extracted for ~45,700 balanced samples drawn around all European towns above 1,000 inhabitants. A Random Forest reproduces the binary 20-year flood label at 97.5% accuracy and four ordered risk classes at 73.8%, with surrounding imperviousness and relative height dominating feature importance: an explainable-by-construction risk screen for real-estate portfolios."
+abstract: "The standard pan-European fluvial flood hazard maps come from a 2D hydrodynamic simulation: accurate, but neither explainable nor adaptable. This BSc thesis (Artificial Intelligence, University of Amsterdam, 2022; industry partner KR&A) asks whether those simulated flood-return-period labels can be reproduced from local, interpretable features of a location. Thirty-three features across micro, meso and macro scales (precipitation extremes, ground type, artificial imperviousness at multiple radii, distance and relative height to the nearest river, terrain depressions, regional economics) are extracted for ~45,700 balanced samples drawn around all European towns above 1,000 inhabitants. A Random Forest reproduces the binary 20-year flood label at 97% accuracy and four ordered risk classes at 73.8%, with surrounding imperviousness and relative height dominating feature importance: an explainable-by-construction risk screen for real-estate portfolios."
 read_time: "8 min"
 date: "2022"
 doi: ""
@@ -38,7 +38,7 @@ For each point I extracted **33 features in three scale bands**. Micro: one-day 
 
 ## What the forest learned
 
-I raced three models (logistic regression, a Random Forest, and a neural network) on three versions of the label. The Random Forest won every round: **97.5%** on the binary "does this flood within a 20-year return period?" question (97.19% on KR&A's own held-out asset portfolio), **73.8%** on four ordered risk classes, 58.5% on all six return periods.
+I raced three models (logistic regression, a Random Forest, and a neural network) on three versions of the label. The Random Forest won every round: **97%** on the binary "does this flood within a 20-year return period?" question (97.19% on KR&A's own held-out asset portfolio), **73.8%** on four ordered risk classes, 58.5% on all six return periods.
 
 The fun part is *why*. Crack open the forest and the very first split is imperviousness within 500 m:
 

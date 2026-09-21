@@ -64,13 +64,14 @@ CHUNKS = [
             "infrastructure that keeps running: three years of weekly collection across "
             "8 authenticated sources, 300k records a week, Airflow and PostGIS underneath. "
             "(2) Network Science — graph methods on real geographies, including a "
-            "saturation-validated Connectivity Score for every address on a 250 m grid. "
+            "Connectivity Score computed live for any coordinate across 38 countries, "
+            "with a precomputed 250 m grid as fallback. "
             "(3) Timeseries & Forecasting — a monthly house-price index across 13 EU "
             "countries tested with Eurostat, plus nowcasting for sparse official statistics. "
             "(4) Spatial Analysis & Simulation — agent-based models of neighbourhood change, "
             "hedonic pricing, H3 and PostGIS as daily tools. "
             "(5) Product Ownership & Leadership — end-to-end from method to shipped API: a "
-            "13-server build delivered two weeks ahead of plan, a team of 4 led at KR&A. "
+            "13-server build delivered two weeks ahead of plan, a data team built up to four engineers at KR&A. "
             "Machine learning sits inside these rather than above them — predictive models "
             "for valuation and spatial risk, street-view CV — deployed through the same "
             "pipelines."
@@ -97,7 +98,8 @@ CHUNKS = [
         "content": (
             "Ian's market focus is on Dutch (NL), German (DE), UK and Italian (IT) real estate "
             "markets. He works across real estate, climate risk and alternative data sectors. "
-            "The house-price index pipeline he leads at KR&A covers 13 EU countries, tested "
+            "The house-price index pipeline at KR&A, where he was technical lead, covers "
+            "13 EU countries, tested "
             "with Eurostat."
         ),
     },

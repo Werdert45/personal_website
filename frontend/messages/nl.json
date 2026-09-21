@@ -54,7 +54,7 @@
     "heroTitleLine2": "Systemen",
     "heroTitleLine2Underline": "bouwen",
     "heroTitleLine3": "& teams leiden.",
-    "lede1": "Ik ben Ian, Head of Data uit Amsterdam. Ik leid een team van 4 en bouw de systemen nog altijd zelf: een rommelig probleem uit de echte wereld nemen, er iets bouwbaars van maken en draaiende houden wat live gaat. Twee liefdes hebben de meeste van mijn keuzes gevormd: talen en complexe problemen. De eerste leverde me vijf talen op en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen in beweging brengt, wat een plek bereikbaar maakt.",
+    "lede1": "Ik ben Ian, Head of Data uit Amsterdam. Ik leid het datateam dat ik tot vier engineers heb opgebouwd en bouw de systemen nog altijd zelf: een rommelig probleem uit de echte wereld nemen, er iets bouwbaars van maken en draaiende houden wat live gaat. Twee liefdes hebben de meeste van mijn keuzes gevormd: talen en complexe problemen. De eerste leverde me vijf talen op en trok me voor een deel van mijn studie naar Italië. De tweede werd mijn werk. Steden zijn mijn favoriete versie van dat probleem, en daarom keert mijn onderzoek steeds terug naar stedelijke dynamiek: hoe buurten veranderen, wanneer een metrolijn prijzen in beweging brengt, wat een plek bereikbaar maakt.",
     "lede2": "Mijn kracht: stakeholdervereisten vertalen naar datasystemen die blijven werken.",
     "journeyTitlePrefixItalic": "Vijf",
     "journeyTitleRest": "jaar bouwen aan",
@@ -83,7 +83,7 @@
       },
       {
         "name": "System Architecture",
-        "blurb": "Het platform eronder: serverinstances, PostGIS, gedistribueerde Iceberg-compute, netwerken/VPN, APIs en security. 13 verschillende services draaien als productie-infrastructuur.",
+        "blurb": "Het platform eronder: serverinstances, PostGIS, gedistribueerde Iceberg-compute, netwerken/VPN, APIs en security. 8 gedistribueerde servers draaien als productie-infrastructuur.",
         "stack": [
           "Linux/Bash",
           "Networking & APIs",
@@ -94,7 +94,7 @@
       },
       {
         "name": "Product Ownership",
-        "blurb": "End-to-end eigenaarschap van methode tot geleverde API: een build over 13 servers, klantstakeholders van pensioenfondsen tot statistiekbureaus, en een team van 4 geleid bij KR&A.",
+        "blurb": "End-to-end eigenaarschap van methode tot geleverde API: een build over 13 servers, klantstakeholders van pensioenfondsen tot statistiekbureaus, en een datateam dat ik bij KR&A tot vier engineers opbouwde.",
         "stack": [
           "Team van 4",
           "Stakeholders",
@@ -145,7 +145,7 @@
     "aboutBadge": "Over mij",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "Ik ben Ian, Head of Data in Amsterdam. Ik leid een team van 4 en bouw productie-datasystemen en de analytics erbovenop, voor elk complex datatype: webscraping-, geo-, graaf- of tabeldata. Ik beantwoord stakeholdervragen en verdedig de methodologie achter de antwoorden.",
+    "bio": "Ik ben Ian, Head of Data in Amsterdam. Ik leid het datateam dat ik tot vier engineers heb opgebouwd. Ik bouw productie-datasystemen en de analytics erbovenop, voor elk complex datatype: webscraping-, geo-, graaf- of tabeldata. Ik beantwoord stakeholdervragen en verdedig de methodologie achter de antwoorden.",
     "location": "Amsterdam, Nederland",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ jaar in data-engineering & ruimtelijke analytics",
@@ -194,7 +194,7 @@
         "badge": "KR&A",
         "sector": "Ontwikkeld bij KR&A",
         "title": "Connectivity & walkability scoring",
-        "outcome": "Een project dat ik leidde bij KR&A: een connectiviteits- en walkability-score voor elk adres op een 250 m-grid, uitgerold over 38 landen in Europa, Noord-Amerika en APAC, met TB's aan data en honderden databronnen. Het begon als de vraag van één klant en werd een productie-API, die nu tot product wordt gemaakt voor de bredere klantenkring.",
+        "outcome": "Een project dat ik leidde bij KR&A: een connectiviteits- en walkability-score die live wordt berekend voor elke coördinaat in 38 landen in Europa, Noord-Amerika en APAC, met een voorberekend 250 m-grid als fallback, met TB's aan data en honderden databronnen. Het begon als de vraag van één klant en werd een productie-API, nu geïntegreerd in het PULSE-platform van a.s.r. real assets investment partners.",
         "stack": [
           "PostGIS",
           "S3",
@@ -208,7 +208,7 @@
         "badge": "KR&A",
         "sector": "Ontwikkeld bij KR&A",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Een meerjarige studie die ik leidde bij KR&A: een webscraping-pipeline over 13 EU-landen die hedonische log-prijsregressies voedt voor maandelijkse indices, getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat; het werk is door Eurostat officieel gepubliceerd als statistical working paper.",
+        "outcome": "Een meerjarige studie bij KR&A waar ik technical lead was: een webscraping-pipeline over 13 EU-landen die hedonische log-prijsregressies voedt voor maandelijkse indices, getest als disaggregatie-indicatoren voor de kwartaal-HPI's van Eurostat; het werk is door Eurostat officieel gepubliceerd als statistical working paper.",
         "stack": [
           "Python",
           "Scrapy/Selenium",
@@ -217,21 +217,6 @@
           "R"
         ],
         "link": "/research/eurostat-monthly-hpi-web-scraped"
-      },
-      {
-        "viz": "language",
-        "badge": "PROJECT",
-        "sector": "AI-product",
-        "title": "LanguageBuddy: AI language tutor",
-        "outcome": "Een zelfgehoste AI-taaltutor voor Nederlands, Italiaans en Spaans, gebouwd op taalleeronderzoek, met een LLM-tutor via chat of spraakgesprek en SM-2-herhaling. Elke fout wordt vastgelegd in een spaced-repetition-wachtrij die de oefeningen van de volgende dag aanstuurt, en een scraper van echt nieuws levert het leesmateriaal. Volgt het CEFR-raamwerk met 6.200+ woordenschat-items.",
-        "stack": [
-          "FastAPI",
-          "LLM",
-          "TTS",
-          "SQLite",
-          "Docker"
-        ],
-        "link": "/research/languagebuddy-ai-language-tutor"
       },
       {
         "viz": "abm",
@@ -261,6 +246,21 @@
           "DuckDB"
         ],
         "link": "/thoughts/research-pipelines-are-production-systems"
+      },
+      {
+        "viz": "language",
+        "badge": "PROJECT",
+        "sector": "AI-product",
+        "title": "LanguageBuddy: AI language tutor",
+        "outcome": "Een zelfgehoste AI-taaltutor voor Nederlands, Italiaans en Spaans, gebouwd op taalleeronderzoek, met een LLM-tutor via chat of spraakgesprek en SM-2-herhaling. Elke fout wordt vastgelegd in een spaced-repetition-wachtrij die de oefeningen van de volgende dag aanstuurt, en een scraper van echt nieuws levert het leesmateriaal. Volgt het CEFR-raamwerk met 6.200+ woordenschat-items.",
+        "stack": [
+          "FastAPI",
+          "LLM",
+          "TTS",
+          "SQLite",
+          "Docker"
+        ],
+        "link": "/research/languagebuddy-ai-language-tutor"
       },
       {
         "viz": "sponsor",
@@ -297,7 +297,7 @@
         "badge": "RESEARCH",
         "sector": "BSc-thesis · UvA",
         "title": "Predicting flooding risk from local features",
-        "outcome": "Mijn BSc-thesis, over de vraag of overstromingsrisico verklaard kan worden uit lokale kenmerken in plaats van een black-box hydrodynamische simulatie. 33 kenmerken verzameld over ~45.000 Europese locaties, zoals bodemverharding, grondsoort en afstand tot de rivier, uit 100GB+ aan data, en een Random Forest gedraaid om het verband te vinden. Bevindingen: 97,5% op de binaire 20-jaarsvraag, met omliggende verharding en relatieve hoogte als belangrijkste voorspellers.",
+        "outcome": "Mijn BSc-thesis, over de vraag of overstromingsrisico verklaard kan worden uit lokale kenmerken in plaats van een black-box hydrodynamische simulatie. 33 kenmerken verzameld over ~45.000 Europese locaties, zoals bodemverharding, grondsoort en afstand tot de rivier, uit 100GB+ aan data, en een Random Forest gedraaid om het verband te vinden. Bevindingen: 97% op de binaire 20-jaarsvraag, met omliggende verharding en relatieve hoogte als belangrijkste voorspellers.",
         "stack": [
           "scikit-learn",
           "Random Forest",
@@ -308,7 +308,8 @@
       }
     ],
     "viewCase": "Lees meer",
-    "ctaAll": "Bekijk alle papers"
+    "ctaAll": "Bekijk alle papers",
+    "secondaryHeading": "Side projects & onderzoek"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. Alle rechten voorbehouden.",
@@ -359,8 +360,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ik beantwoord vragen met",
     "titleLine2Underline": "data",
-    "bio1": "Ik werk als Head of Data: ik leid een team van 4 en ben eindverantwoordelijk voor de datafunctie, van het bouwen en onderhouden van de datasystemen tot het verzamelen, verwerken en structureren van data voor producten die gebruikt worden door pensioenfondsen, statistiekbureaus en vastgoedbeleggers met 10B AuM.",
-    "bio2": "In de loop van mijn carrière heb ik met veel verschillende soorten data en tools gewerkt: systemen op maat bouwen voor het dataprobleem van dat moment en met stakeholders bij klanten praten.",
+    "bio1": "Ik werk als Head of Data: ik leid het datateam dat ik tot vier engineers heb opgebouwd en ben eindverantwoordelijk voor de datafunctie, van het bouwen en onderhouden van de datasystemen tot het verzamelen, verwerken en structureren van data voor producten die gebruikt worden door pensioenfondsen, statistiekbureaus en vastgoedbeleggers met 10B AuM.",
+    "bio2": "De andere helft van het werk is klantgericht: ik onderhoud de klantrelaties met pensioenfondsen, vastgoedbeleggers en statistiekbureaus, presenteer methodologie aan portfoliomanagers en verdedig die tegenover statistici op PhD-niveau, en vertaal open klantvragen naar systemen die we kunnen bouwen.",
     "factRoleK": "Rol",
     "factRoleV": "Head of Data",
     "factBasisK": "Basis",
@@ -387,7 +388,7 @@
       },
       {
         "value": "1 score",
-        "unit": "elk adres · volledig ontleedbaar",
+        "unit": "live voor elke coördinaat · volledig ontleedbaar",
         "context": "Connectivity Score · build met 13 servers"
       },
       {
@@ -458,7 +459,7 @@
       },
       {
         "name": "Systeemarchitectuur",
-        "blurb": "Het platform eronder opzetten: serverinstances, PostGIS, gedistribueerde Iceberg-compute en dataverwerkingsservers, netwerken/VPN, API's en security. Voorbeeld: 13 verschillende services die als productie-infrastructuur draaien om bergen complexe dataproducten aan te kunnen.",
+        "blurb": "Het platform eronder opzetten: serverinstances, PostGIS, gedistribueerde Iceberg-compute en dataverwerkingsservers, netwerken/VPN, API's en security. Voorbeeld: 8 gedistribueerde servers die als productie-infrastructuur draaien om bergen complexe dataproducten aan te kunnen.",
         "stack": [
           "Linux/Bash",
           "Resource Management & S3",

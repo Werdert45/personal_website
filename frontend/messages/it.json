@@ -54,7 +54,7 @@
     "heroTitleLine2": "Costruisco",
     "heroTitleLine2Underline": "sistemi",
     "heroTitleLine3": "e guido team.",
-    "lede1": "Sono Ian, Head of Data ad Amsterdam. Guido un team di 4 e i sistemi li costruisco ancora io: prendere un problema reale e disordinato, tradurlo in qualcosa di costruibile e far girare ciò che va in produzione. Due amori hanno guidato la maggior parte delle mie scelte: le lingue e i problemi complessi. Il primo mi ha portato a parlare cinque lingue e mi ha spinto in Italia per parte dei miei studi. Il secondo è diventato il mio lavoro. Le città sono la mia versione preferita di quel problema, ed è per questo che la mia ricerca torna sempre alle dinamiche urbane: come cambiano i quartieri, quando una linea della metropolitana muove i prezzi, cosa rende un luogo raggiungibile.",
+    "lede1": "Sono Ian, Head of Data ad Amsterdam. Guido il team dati che ho fatto crescere fino a quattro engineer e i sistemi li costruisco ancora io: prendere un problema reale e disordinato, tradurlo in qualcosa di costruibile e far girare ciò che va in produzione. Due amori hanno guidato la maggior parte delle mie scelte: le lingue e i problemi complessi. Il primo mi ha portato a parlare cinque lingue e mi ha spinto in Italia per parte dei miei studi. Il secondo è diventato il mio lavoro. Le città sono la mia versione preferita di quel problema, ed è per questo che la mia ricerca torna sempre alle dinamiche urbane: come cambiano i quartieri, quando una linea della metropolitana muove i prezzi, cosa rende un luogo raggiungibile.",
     "lede2": "Il mio punto di forza: tradurre i requisiti degli stakeholder in sistemi di dati che continuano a funzionare.",
     "journeyTitlePrefixItalic": "Cinque",
     "journeyTitleRest": "anni a costruire",
@@ -83,7 +83,7 @@
       },
       {
         "name": "System Architecture",
-        "blurb": "La piattaforma sottostante: istanze server, PostGIS, compute Iceberg distribuito, networking/VPN, API e sicurezza. 13 servizi diversi in esecuzione come infrastruttura di produzione.",
+        "blurb": "La piattaforma sottostante: istanze server, PostGIS, compute Iceberg distribuito, networking/VPN, API e sicurezza. 8 server distribuiti in esecuzione come infrastruttura di produzione.",
         "stack": [
           "Linux/Bash",
           "Networking & APIs",
@@ -94,7 +94,7 @@
       },
       {
         "name": "Product Ownership",
-        "blurb": "Ownership end-to-end dal metodo all'API consegnata: un'infrastruttura da 13 server, stakeholder che vanno dai fondi pensione agli istituti di statistica, e un team di 4 guidato in KR&A.",
+        "blurb": "Ownership end-to-end dal metodo all'API consegnata: un'infrastruttura da 13 server, stakeholder che vanno dai fondi pensione agli istituti di statistica, e un team dati che in KR&A ho fatto crescere fino a quattro engineer.",
         "stack": [
           "Team di 4",
           "Stakeholder",
@@ -145,7 +145,7 @@
     "aboutBadge": "Su di Me",
     "name": "Ian Ronk",
     "roleTitle": "Head of Data",
-    "bio": "Sono Ian, Head of Data ad Amsterdam. Guido un team di 4 e costruisco sistemi dati in produzione e l'analytics che ci sta sopra, per ogni tipo di dato complesso: web-scraped, geospaziale, a grafo o tabellare. Rispondo alle domande degli stakeholder e difendo la metodologia dietro le risposte.",
+    "bio": "Sono Ian, Head of Data ad Amsterdam. Guido il team dati che ho fatto crescere fino a quattro engineer. Costruisco sistemi dati in produzione e l'analytics che ci sta sopra, per ogni tipo di dato complesso: web-scraped, geospaziale, a grafo o tabellare. Rispondo alle domande degli stakeholder e difendo la metodologia dietro le risposte.",
     "location": "Amsterdam, Paesi Bassi",
     "company": "Head of Data · KR&A, Amsterdam",
     "yearsExperience": "5+ anni di data engineering & analytics spaziale",
@@ -194,7 +194,7 @@
         "badge": "KR&A",
         "sector": "Sviluppato in KR&A",
         "title": "Connectivity & walkability scoring",
-        "outcome": "Un progetto che ho guidato in KR&A: uno score di connettività e walkability per ogni indirizzo su una griglia di 250 m, distribuito in 38 paesi tra Europa, Nord America e APAC, lavorando con TB di dati e centinaia di fonti. È nato dalla domanda di un cliente ed è diventato un'API in produzione, ora trasformata in prodotto per una clientela più ampia.",
+        "outcome": "Un progetto che ho guidato in KR&A: uno score di connettività e walkability calcolato live per qualsiasi coordinata in 38 paesi tra Europa, Nord America e APAC, con una griglia precalcolata di 250 m come fallback, lavorando con TB di dati e centinaia di fonti. È nato dalla domanda di un cliente ed è diventato un'API in produzione, ora integrata nella piattaforma PULSE di a.s.r. real assets investment partners.",
         "stack": [
           "PostGIS",
           "S3",
@@ -208,7 +208,7 @@
         "badge": "KR&A",
         "sector": "Sviluppato in KR&A",
         "title": "Monthly house-price index · 13 EU countries",
-        "outcome": "Uno studio pluriennale che ho guidato in KR&A: una pipeline di web scraping su 13 paesi UE che alimenta regressioni edoniche sui log-prezzi da cui nascono indici mensili, testati come indicatori di disaggregazione per gli HPI trimestrali di Eurostat; il lavoro è stato pubblicato ufficialmente da Eurostat come working paper statistico.",
+        "outcome": "Uno studio pluriennale in KR&A in cui ero technical lead: una pipeline di web scraping su 13 paesi UE che alimenta regressioni edoniche sui log-prezzi da cui nascono indici mensili, testati come indicatori di disaggregazione per gli HPI trimestrali di Eurostat; il lavoro è stato pubblicato ufficialmente da Eurostat come working paper statistico.",
         "stack": [
           "Python",
           "Scrapy/Selenium",
@@ -217,21 +217,6 @@
           "R"
         ],
         "link": "/research/eurostat-monthly-hpi-web-scraped"
-      },
-      {
-        "viz": "language",
-        "badge": "PROJECT",
-        "sector": "Prodotto AI",
-        "title": "LanguageBuddy: AI language tutor",
-        "outcome": "Un tutor linguistico AI self-hosted per olandese, italiano e spagnolo, costruito sulla ricerca sull'apprendimento delle lingue, con un tutor LLM via chat o chiamata vocale e ripetizione SM-2. Ogni errore finisce in una coda di ripetizione dilazionata che guida gli esercizi del giorno dopo, e uno scraper di notizie reali alimenta l'apprendimento della lettura. Segue il framework CEFR con oltre 6.200 voci di vocabolario.",
-        "stack": [
-          "FastAPI",
-          "LLM",
-          "TTS",
-          "SQLite",
-          "Docker"
-        ],
-        "link": "/research/languagebuddy-ai-language-tutor"
       },
       {
         "viz": "abm",
@@ -261,6 +246,21 @@
           "DuckDB"
         ],
         "link": "/thoughts/research-pipelines-are-production-systems"
+      },
+      {
+        "viz": "language",
+        "badge": "PROJECT",
+        "sector": "Prodotto AI",
+        "title": "LanguageBuddy: AI language tutor",
+        "outcome": "Un tutor linguistico AI self-hosted per olandese, italiano e spagnolo, costruito sulla ricerca sull'apprendimento delle lingue, con un tutor LLM via chat o chiamata vocale e ripetizione SM-2. Ogni errore finisce in una coda di ripetizione dilazionata che guida gli esercizi del giorno dopo, e uno scraper di notizie reali alimenta l'apprendimento della lettura. Segue il framework CEFR con oltre 6.200 voci di vocabolario.",
+        "stack": [
+          "FastAPI",
+          "LLM",
+          "TTS",
+          "SQLite",
+          "Docker"
+        ],
+        "link": "/research/languagebuddy-ai-language-tutor"
       },
       {
         "viz": "sponsor",
@@ -297,7 +297,7 @@
         "badge": "RESEARCH",
         "sector": "Tesi BSc · UvA",
         "title": "Predicting flooding risk from local features",
-        "outcome": "La mia tesi triennale, che indaga se il rischio di alluvione si possa spiegare con caratteristiche locali invece che con una simulazione idrodinamica black-box. Ho raccolto 33 caratteristiche su ~45.000 località europee, come impermeabilizzazione del suolo, tipo di terreno e distanza dal fiume, su oltre 100GB di dati, e ho usato una Random Forest per trovarne la relazione. Il risultato: 97,5% sulla domanda binaria dell'alluvione ventennale, con impermeabilizzazione circostante e altezza relativa a fare la maggior parte del lavoro.",
+        "outcome": "La mia tesi triennale, che indaga se il rischio di alluvione si possa spiegare con caratteristiche locali invece che con una simulazione idrodinamica black-box. Ho raccolto 33 caratteristiche su ~45.000 località europee, come impermeabilizzazione del suolo, tipo di terreno e distanza dal fiume, su oltre 100GB di dati, e ho usato una Random Forest per trovarne la relazione. Il risultato: 97% sulla domanda binaria dell'alluvione ventennale, con impermeabilizzazione circostante e altezza relativa a fare la maggior parte del lavoro.",
         "stack": [
           "scikit-learn",
           "Random Forest",
@@ -308,7 +308,8 @@
       }
     ],
     "viewCase": "Leggi di più",
-    "ctaAll": "Vedi tutti i paper"
+    "ctaAll": "Vedi tutti i paper",
+    "secondaryHeading": "Progetti personali e ricerca"
   },
   "Footer": {
     "copyright": "{year} Ian Ronk. Tutti i diritti riservati.",
@@ -359,8 +360,8 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Rispondo alle domande con i",
     "titleLine2Underline": "dati",
-    "bio1": "Lavoro come Head of Data: guido un team di 4 e ho la responsabilità end-to-end della funzione dati, dalla costruzione e manutenzione dei sistemi alla raccolta, elaborazione e strutturazione dei dati per prodotti usati da fondi pensione, istituti di statistica e investitori immobiliari con 10B AuM.",
-    "bio2": "Nel corso della mia carriera ho lavorato con molti tipi di dati e strumenti diversi, creando sistemi su misura per i problemi di dati del momento e parlando con gli stakeholder dei clienti.",
+    "bio1": "Lavoro come Head of Data: guido il team dati che ho fatto crescere fino a quattro engineer e ho la responsabilità end-to-end della funzione dati, dalla costruzione e manutenzione dei sistemi alla raccolta, elaborazione e strutturazione dei dati per prodotti usati da fondi pensione, istituti di statistica e investitori immobiliari con 10B AuM.",
+    "bio2": "L'altra metà del lavoro è rivolta ai clienti: gestisco le relazioni con fondi pensione, investitori immobiliari e istituti di statistica, presento la metodologia ai portfolio manager, la difendo davanti a statistici di livello PhD e traduco domande aperte dei clienti in sistemi che possiamo costruire.",
     "factRoleK": "Ruolo",
     "factRoleV": "Head of Data",
     "factBasisK": "Base",
@@ -387,7 +388,7 @@
       },
       {
         "value": "1 punteggio",
-        "unit": "ogni indirizzo · completamente scomponibile",
+        "unit": "live per qualsiasi coordinata · completamente scomponibile",
         "context": "Connectivity Score · build a 13 server"
       },
       {
@@ -458,7 +459,7 @@
       },
       {
         "name": "Architettura di sistema",
-        "blurb": "Metto in piedi la piattaforma sottostante: istanze server, PostGIS, calcolo distribuito su Iceberg e server di elaborazione dati, networking/VPN, API e sicurezza. Un esempio: 13 servizi diversi girano come infrastruttura di produzione per sostenere prodotti dati complessi.",
+        "blurb": "Metto in piedi la piattaforma sottostante: istanze server, PostGIS, calcolo distribuito su Iceberg e server di elaborazione dati, networking/VPN, API e sicurezza. Un esempio: 8 server distribuiti girano come infrastruttura di produzione per sostenere prodotti dati complessi.",
         "stack": [
           "Linux/Bash",
           "Resource Management & S3",
