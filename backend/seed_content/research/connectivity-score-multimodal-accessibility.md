@@ -25,7 +25,7 @@ At KR&A I led the build of a connectivity and walkability score: type in any add
 
 Two published methodologies anchor this field. Walk Score covers North America under a single national normalisation; OS-WALK-EU and the more recent European walkability indices are Europe-only. None of them lets you compare a location in Milan against one in Toronto and one in Osaka on the same footing, and most of them score walking only. Closing those two gaps, cross-continental comparability and commensurable modes, is what the project set out to do.
 
-The full method is written up in a [methodology paper](https://connectivityscore.krafin.tech/assets/connectivity-methodology-paper.pdf), and the score itself is live at [connectivityscore.krafin.tech](https://connectivityscore.krafin.tech). The score is now integrated into a.s.r. real assets investment partners' PULSE platform.
+The full method is written up in a [methodology paper](https://connectivityscore.krafin.tech/assets/connectivity-methodology-paper.pdf), and the score itself is live at [connectivityscore.krafin.tech](https://connectivityscore.krafin.tech). The score is now integrated into a.s.r. real assets investment partners' PULSE platform ([a.s.r. press release, in Dutch](https://asrrealestate.nl/nieuws-en-publicaties/persberichten/asr-real-assets-en-kra-ontwikkelen-nieuwe-wereldwijde-standaard-voor-vastgoedlocatie-analyses)).
 
 ## How the score is built
 

@@ -360,7 +360,7 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Rispondo alle domande con i",
     "titleLine2Underline": "dati",
-    "bio1": "Lavoro come Head of Data: guido il team dati che ho fatto crescere fino a quattro engineer e ho la responsabilità end-to-end della funzione dati, dalla costruzione e manutenzione dei sistemi alla raccolta, elaborazione e strutturazione dei dati per prodotti usati da fondi pensione, istituti di statistica e investitori immobiliari, tra cui un fondo con 10B AuM.",
+    "bio1": "Lavoro come Head of Data: guido il team dati che ho fatto crescere fino a quattro engineer e ho la responsabilità end-to-end della funzione dati, dalla costruzione e manutenzione dei sistemi alla raccolta, elaborazione e strutturazione dei dati per prodotti usati da fondi pensione, istituti di statistica e investitori immobiliari, tra cui un fondo con €10B AuM.",
     "bio2": "L'altra metà del lavoro è rivolta ai clienti: gestisco le relazioni con fondi pensione, investitori immobiliari e istituti di statistica, presento la metodologia ai portfolio manager, la difendo in review con statistici di Eurostat e CBS e traduco domande aperte dei clienti in sistemi che possiamo costruire.",
     "factRoleK": "Ruolo",
     "factRoleV": "Head of Data",
@@ -449,7 +449,7 @@
     "items": [
       {
         "name": "Data engineering",
-        "blurb": "Costruisco e mantengo pipeline di dati e storage efficiente: per esempio tre anni di raccolta e scraping settimanale da 8 fonti diverse per un fondo immobiliare con 10B AuM, con strutturazione, pulizia e deduplica automatiche dei dati.",
+        "blurb": "Costruisco e mantengo pipeline di dati e storage efficiente: per esempio tre anni di raccolta e scraping settimanale da 8 fonti diverse per un fondo immobiliare con €10B AuM, con strutturazione, pulizia e deduplica automatiche dei dati.",
         "stack": [
           "Airflow",
           "Python",

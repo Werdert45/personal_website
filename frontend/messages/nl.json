@@ -360,7 +360,7 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ik beantwoord vragen met",
     "titleLine2Underline": "data",
-    "bio1": "Ik werk als Head of Data: ik leid het datateam dat ik tot vier engineers heb opgebouwd en ben eindverantwoordelijk voor de datafunctie, van het bouwen en onderhouden van de datasystemen tot het verzamelen, verwerken en structureren van data voor producten die gebruikt worden door pensioenfondsen, statistiekbureaus en vastgoedbeleggers, waaronder een fonds met 10B AuM.",
+    "bio1": "Ik werk als Head of Data: ik leid het datateam dat ik tot vier engineers heb opgebouwd en ben eindverantwoordelijk voor de datafunctie, van het bouwen en onderhouden van de datasystemen tot het verzamelen, verwerken en structureren van data voor producten die gebruikt worden door pensioenfondsen, statistiekbureaus en vastgoedbeleggers, waaronder een fonds met €10B AuM.",
     "bio2": "De andere helft van het werk is klantgericht: ik onderhoud de klantrelaties met pensioenfondsen, vastgoedbeleggers en statistiekbureaus, presenteer methodologie aan portfoliomanagers en verdedig die in reviews met statistici van Eurostat en CBS, en vertaal open klantvragen naar systemen die we kunnen bouwen.",
     "factRoleK": "Rol",
     "factRoleV": "Head of Data",
@@ -449,7 +449,7 @@
     "items": [
       {
         "name": "Data engineering",
-        "blurb": "Datapijplijnen en efficiënte opslag bouwen en onderhouden, zoals drie jaar wekelijkse dataverzameling/scraping uit 8 verschillende bronnen voor een vastgoedfonds met 10B AuM, en die data vervolgens automatisch structureren, opschonen en ontdubbelen.",
+        "blurb": "Datapijplijnen en efficiënte opslag bouwen en onderhouden, zoals drie jaar wekelijkse dataverzameling/scraping uit 8 verschillende bronnen voor een vastgoedfonds met €10B AuM, en die data vervolgens automatisch structureren, opschonen en ontdubbelen.",
         "stack": [
           "Airflow",
           "Python",

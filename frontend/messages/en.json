@@ -360,7 +360,7 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "I answer questions using",
     "titleLine2Underline": "data",
-    "bio1": "I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors, including a fund with 10B AuM.",
+    "bio1": "I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors, including a fund with €10B AuM.",
     "bio2": "The other half of the job is client-facing: I own the client relationships with pension funds, real estate investors and national statistical offices, present methodology to portfolio managers and defend it in reviews with Eurostat and CBS statisticians, and turn open client questions into systems we can build.",
     "factRoleK": "Role",
     "factRoleV": "Head of Data",
@@ -449,7 +449,7 @@
     "items": [
       {
         "name": "Data Engineering",
-        "blurb": "Building and maintaining data pipelines and efficient storage, such as three years of weekly collection/scraping across 8 different sources for a real estate fund with 10B AuM and then structuring, cleaning and deduplicating this data automatically.",
+        "blurb": "Building and maintaining data pipelines and efficient storage, such as three years of weekly collection/scraping across 8 different sources for a real estate fund with €10B AuM and then structuring, cleaning and deduplicating this data automatically.",
         "stack": [
           "Airflow",
           "Python",

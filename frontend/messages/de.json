@@ -360,7 +360,7 @@
     "titleLine1Italic": "Ian.",
     "titleLine2": "Ich beantworte Fragen mit",
     "titleLine2Underline": "Daten",
-    "bio1": "Ich arbeite als Head of Data: Ich führe das Datenteam, das ich auf vier Engineers aufgebaut habe, und verantworte die Datenfunktion von Anfang bis Ende, vom Bau und Betrieb der Datensysteme bis zum Sammeln, Verarbeiten und Strukturieren von Daten für Produkte, die von Pensionsfonds, Statistikämtern und Immobilieninvestoren genutzt werden, darunter ein Fonds mit 10 Mrd. AuM.",
+    "bio1": "Ich arbeite als Head of Data: Ich führe das Datenteam, das ich auf vier Engineers aufgebaut habe, und verantworte die Datenfunktion von Anfang bis Ende, vom Bau und Betrieb der Datensysteme bis zum Sammeln, Verarbeiten und Strukturieren von Daten für Produkte, die von Pensionsfonds, Statistikämtern und Immobilieninvestoren genutzt werden, darunter ein Fonds mit 10 Mrd. € AuM.",
     "bio2": "Die andere Hälfte der Arbeit ist kundenseitig: Ich verantworte die Kundenbeziehungen zu Pensionsfonds, Immobilieninvestoren und Statistikämtern, präsentiere Methodik vor Portfoliomanagern, verteidige sie in Reviews mit Statistikern von Eurostat und CBS und übersetze offene Kundenfragen in Systeme, die wir bauen können.",
     "factRoleK": "Rolle",
     "factRoleV": "Head of Data",
@@ -449,7 +449,7 @@
     "items": [
       {
         "name": "Data Engineering",
-        "blurb": "Datenpipelines und effiziente Speicherung bauen und warten, etwa drei Jahre wöchentliche Erhebung/Scraping aus 8 verschiedenen Quellen für einen Immobilienfonds mit 10 Mrd. AuM, und diese Daten dann automatisch strukturieren, bereinigen und deduplizieren.",
+        "blurb": "Datenpipelines und effiziente Speicherung bauen und warten, etwa drei Jahre wöchentliche Erhebung/Scraping aus 8 verschiedenen Quellen für einen Immobilienfonds mit 10 Mrd. € AuM, und diese Daten dann automatisch strukturieren, bereinigen und deduplizieren.",
         "stack": [
           "Airflow",
           "Python",

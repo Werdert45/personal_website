@@ -170,7 +170,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `AboutTeaser.titleLine2Underline`  
   data
 - `AboutTeaser.bio1`  
-  I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors, including a fund with 10B AuM.
+  I work as Head of Data: I lead the data team I built up to four engineers and own the data function end to end, from building and maintaining the data systems to collecting, processing and structuring data for products used by pension funds, national statistical offices and real estate investors, including a fund with €10B AuM.
 - `AboutTeaser.bio2`  
   The other half of the job is client-facing: I own the client relationships with pension funds, real estate investors and national statistical offices, present methodology to portfolio managers and defend it in reviews with Eurostat and CBS statisticians, and turn open client questions into systems we can build.
 - `AboutTeaser.factRoleK`  
@@ -205,7 +205,7 @@ Every user-facing English string on ianronk.nl, grouped by page. The `code` labe
 - `Lanes.items[0].name`  
   Data Engineering
 - `Lanes.items[0].blurb`  
-  Building and maintaining data pipelines and efficient storage, such as three years of weekly collection/scraping across 8 different sources for a real estate fund with 10B AuM and then structuring, cleaning and deduplicating this data automatically.
+  Building and maintaining data pipelines and efficient storage, such as three years of weekly collection/scraping across 8 different sources for a real estate fund with €10B AuM and then structuring, cleaning and deduplicating this data automatically.
 - `Lanes.items[0].stack[0]`  
   Airflow
 - `Lanes.items[0].stack[1]`  
