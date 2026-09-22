@@ -1,0 +1,49 @@
+name: Trigger auto deployment for frontend
+
+# When this action will be executed
+on:
+  # Automatically trigger it when detected changes in repo
+  push:
+    branches: 
+      [ master ]
+    paths:
+    - '**'
+    - '.github/workflows/frontend-AutoDeployTrigger-cc40b3bb-5d82-421c-a3cf-9f74fb1ca1f0.yml'
+
+  # Allow manual trigger 
+  workflow_dispatch:      
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions: 
+      id-token: write #This is required for requesting the OIDC JWT Token
+      contents: read #Required when GH token is used to authenticate with private repo
+
+    steps:
+      - name: Checkout to the branch
+        uses: actions/checkout@v2
+
+      - name: Azure Login
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.FRONTEND_AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.FRONTEND_AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.FRONTEND_AZURE_SUBSCRIPTION_ID }}
+
+      - name: Build and push container image to registry
+        uses: azure/container-apps-deploy-action@v2
+        with:
+          appSourcePath: ${{ github.workspace }}/frontend
+          _dockerfilePathKey_: _dockerfilePath_
+          _targetLabelKey_: _targetLabel_
+          registryUrl: ianronkacr.azurecr.io
+          registryUsername: ${{ secrets.FRONTEND_REGISTRY_USERNAME }}
+          registryPassword: ${{ secrets.FRONTEND_REGISTRY_PASSWORD }}
+          containerAppName: frontend
+          resourceGroup: ianronk-rg
+          imageToBuild: ianronkacr.azurecr.io/frontend:${{ github.sha }}
+          _buildArgumentsKey_: |
+            _buildArgumentsValues_
+
+
