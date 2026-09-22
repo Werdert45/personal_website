@@ -40,4 +40,6 @@ RUN DJANGO_DEBUG=True DJANGO_SECRET_KEY=build-only-not-used-at-runtime \
 
 EXPOSE 8001
 
-CMD ["gunicorn", "--bind", "0.0.0.0:8001", "config.wsgi:application"]
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+CMD ["/app/start.sh"]
